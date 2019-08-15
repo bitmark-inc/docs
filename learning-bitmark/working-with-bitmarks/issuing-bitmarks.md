@@ -1,60 +1,100 @@
 # Registering properties on the Bitmark blockchain
 
-The following records are required to register a property on the Bitmark blockchain
 
-* *Asset Record* - contructed by the Asset Registration process
+In the digital age, having a copy of something (such as a photo) is sometimes confused with owning it as property. Just because someone has a copy of your photo does not mean they have the legal rights to distribute it, sell it, or other transfer ownership to someone else. The Bitmark Property System protects your rights by giving you control over your digital assets, allowing you to register provenance of property according to standards recognized by the world’s legal systems.
 
-* *Issue Records* - contructed by the Bitmark Issuance process.
+Your properties can be registered on the public Bitmark blockchain using the [Bitmark App](##Registering properties using Bitmark App), the [Bitmark SDK](##Registering properties using Bitmark SDK), or the [Bitmark CLI](##Registering properties using Bitmark-CLI).
+
+The Bitmark blockchain is a public global database that stores property rights to non-fungible objects in a token-like container. Because it is a decentralized and politically-neutral system, no single entity has the ability to improperly modify property records or transactions — not even the Bitmark team. 
+
+<br>
+
+>The following records are required to register a property on the Bitmark blockchain
+>
+>* *Asset Record* - contructed by the Asset Registration process
+>
+>* *Issue Records* - contructed by the Bitmark Issuance process.
+
+<br>
+
+> **NOTE:** Any user interacting with the Bitmark Property System requires a Bitmark Account.
+> Please refer [Bitmark Account](creating-bitmark-account.md){:target="_blank"} section for instructions of creating a new Bitmark Account.
 
 <br>
 <br>
+
 ## Registering properties using Bitmark App
 
-* Download and install the [Android](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) or [iOS](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) Bitmark App
+The Bitmark app registers legal property rights on the public Bitmark blockchain for your digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether you want to keep it, sell it, or donate it.
 
-* Create a Bitmark Account
+<br>
+Here are the steps to register a new property using the Bitmark app:
 
-* Go to Properties screen
+* On the PROPERTIES screen - Tap **CREATE FIRST PROPERTY** or **+** 
 
-* Tap on the **+** icon
+    > It opens the PROPERTIES > REGISTER screen
 
-* Select a file or photo as the expected asset
+    <div style="background-color: #efefef; text-align: center;">
+        <img src="images/RegisteringProperties_0.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
+        <img src="images/RegisteringProperties_1.png" alt="Properties Register screen" title="Properties Register screen" width="250" style="padding: 20px" />
+    </div>
 
-* Fill in the required fields
+    <br>
+
+* Tap **PHOTOS** or **FILES** to browse the desired asset
+
+    > It requires permission granted to access `Photos` and/or `Files`
+
+    <div style="background-color: #efefef; text-align: center;">
+        <img src="images/RegisteringProperties_2.png" alt="Grant Permission popup" title="Grant Permission popup" width="250" style="padding: 20px" />
+        <img src="images/RegisteringProperties_3.png" alt="Open Photos action sheet" title="Open Photos action sheet" width="250" style="padding: 20px" />
+        <img src="images/RegisteringProperties_4.png" alt="PHOTOS browsed" title="PHOTOS browsed" width="250" style="padding: 20px" />
+    </div>
+
+    <br>
+
+* Fill in the required information
+
+    > As soon as the desired asset is selected, the app computes the asset's fingerprint and opens REGISTER PROPERTY RIGHTS screen which allows users to provide more detailed information for the asset.
+
+    >* Currently, the `PROPERTY NAME` and `NUMBER OF BITMARKS TO ISSUE` fields are mandatory.
+
+    >* For each `Asset`, we are able to issue multiple `Bitmark Certificates` - defined by  `number of bitmarks` in the REGISTER PROPERTY RIGHTS screen.
+
+    <div style="background-color: #efefef; text-align: center;">
+        <img src="images/RegisteringProperties_5.png" alt="Register Property Rights screen" title="Register Property Rights screen" width="250" style="padding: 20px" />
+        <img src="images/RegisteringProperties_6.png" alt="Fill in required information" title="Fill in required information" width="250" style="padding: 20px" />
+    </div>
+
+    <br>
 
 * Tap **ISSUE** button
 
-As tapping on the **ISSUE** button, the Bitmark app submits the requests of asset registration and bitmark issuance to the Bitmark blockchain. It will takes several minutes for the bitmarks to be confirmed on the blockchain.
+    >As soon as users tap **ISSUE**, the app submits both the `Asset Registration` request and `bitmarks Issuance` transactions to the Bitmark network. It would takes few seconds for the submission to be successful. After that the properties will be added to the PROPERTIES > YOURS screen.
+    > 
+    > **NOTE:** It will takes several minutes for the transactions to be confirmed on the Bitmark blockchain after submitted. 
 
-* [Verify bitmark transactions](https://github.com/bitmark-inc/docs/).
+<div style="background-color: #efefef; text-align: center;">
+    <img src="images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
+    <img src="images/RegisteringProperties_8.png" alt="Submission succeeded" title="Submission succeeded" width="250" style="padding: 20px" />
+    <img src="images/RegisteringProperties_9.png" alt="Properties added" title="Properties added" width="250" style="padding: 20px" />
+</div>
+
+<br>
+
+* [Verify](https://github.com/bitmark-inc/docs/) bitmark transactions.
+
 
 <br>
 <br>
 ## Registering properties using Bitmark SDK
 
-In this section we are using the example of **Bitmark JS SDK** to build and submit the Asset Registration and Bitmark Issuance requests.<br>
-For further functions and other languages, please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
+<br>
+>In this section we introduce a very simple way to register properties using **Bitmark JS SDK**.<br>
+>For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md){:target="_blank"} section.
 
-* Install Bitmark JS SDK
-
-    `npm install bitmark-sdk`
-
-* Initialize the SDK configuration
-
-    ```
-    const sdk = require('bitmark-sdk');
-
-    const config = {
-        API_token: "api-token",
-        network: "testnet"
-    };
-
-    sdk.init(config);
-    ```
-
-* Create a new Bitmark account:
-
-    `let account = new sdk.Account();`
+<br>
+Following is the instructions to registering a property to the testing Bitmark blockchain using the Bitmark JS SDK
 
 * Register an asset:
 
@@ -82,22 +122,34 @@ For further functions and other languages, please look at the [Bitmark SDK](http
     let bitmarkId = bitmarks[0].id;
     ```
 
-* [Verify bitmark transactions](https://github.com/bitmark-inc/docs/).
-
+* [Verify](https://github.com/bitmark-inc/docs/){:target="_blank"} bitmark transactions.
 
 <br>
 <br>
 ## Registering properties using Bitmark-CLI 
 
-* Use Bitmark-CLI to create a Bitmark account - refer [Creating Bitmark Account](http://)
+> In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
+> For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md){:target="_blank"} section.
+
+<br>
+    
+> The Bitmark-CLI supports three values for the network and identify it by `--network` argument
+> 
+>* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
+>
+>* `testing`:  a network for testing newly developed programs, it uses testnet coins to pay for transactions.
+> 
+>* `local`: a special case for running a regression test network on the loopback interface.
+
+<br>
+
+Following are the steps to registering a new property with the network option as `testing`
 
 * Compute the asset's fingerprint
 
-    `$bitmark-cli --network=testing fingerprint -f filename`
-
-    Example Output
-
     ```
+    # bitmark-cli --network=testing fingerprint -f filename
+
     {
         "file_name": "filename.test",
         "fingerprint": "0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500"
@@ -106,11 +158,9 @@ For further functions and other languages, please look at the [Bitmark SDK](http
 
 * Issue the first bitmark
 
-    `bitmark-cli --network=testing --identity=first create -a 'Example asset' -m 'Key1\u0000Value1\u0000Key2\u0000Value2' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z`
-
-    Example output:
-
     ```
+    # bitmark-cli --network=testing --identity=first create -a 'Example asset' -m 'Key1\u0000Value1\u0000Key2\u0000Value2' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z
+
     {
         "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
         "issueIds": [
@@ -124,7 +174,7 @@ For further functions and other languages, please look at the [Bitmark SDK](http
     }
     ```
 
-* [Verify bitmark transactions](https://github.com/bitmark-inc/docs/).
+* * [Verify](https://github.com/bitmark-inc/docs/){:target="_blank"} bitmark transactions.
 
 
 
