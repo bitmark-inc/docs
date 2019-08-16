@@ -1,19 +1,18 @@
-# Registering properties on the Bitmark blockchain
+# Registering Bitmark Certificates
 
-
-In the digital age, having a copy of something (such as a photo) is sometimes confused with owning it as property. Just because someone has a copy of your photo does not mean they have the legal rights to distribute it, sell it, or other transfer ownership to someone else. The Bitmark Property System protects your rights by giving you control over your digital assets, allowing you to register provenance of property according to standards recognized by the world’s legal systems.
-
-Your properties can be registered on the public Bitmark blockchain using the [Bitmark App](##Registering properties using Bitmark App), the [Bitmark SDK](##Registering properties using Bitmark SDK), or the [Bitmark CLI](##Registering properties using Bitmark-CLI).
+People have traditionally said that assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets. To do so, you could use the [Bitmark App](##Registering properties using Bitmark App), the [Bitmark SDK](##Registering properties using Bitmark SDK), or the [Bitmark CLI](##Registering properties using Bitmark-CLI).
 
 The Bitmark blockchain is a public global database that stores property rights to non-fungible objects in a token-like container. Because it is a decentralized and politically-neutral system, no single entity has the ability to improperly modify property records or transactions — not even the Bitmark team. 
 
 <br>
 
->The following records are required to register a property on the Bitmark blockchain
+>The process of registering Bitmark Certificates for your digital assets bassically contains two steps
 >
->* *Asset Record* - contructed by the Asset Registration process
+>* Registering your asset - results a *Asset Record* stored on the Bitmark blockchain.
 >
->* *Issue Records* - contructed by the Bitmark Issuance process.
+>* Issuing bitmarks -  results *Issue Records* linking to the corresponding asset record and stored on the Bitmark blockchain.
+> 
+> 
 
 <br>
 
@@ -23,7 +22,7 @@ The Bitmark blockchain is a public global database that stores property rights t
 <br>
 <br>
 
-## Registering properties using Bitmark App
+## Registering Bitmark Certificates using Bitmark App
 
 The Bitmark app registers legal property rights on the public Bitmark blockchain for your digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether you want to keep it, sell it, or donate it.
 
@@ -87,7 +86,7 @@ Here are the steps to register a new property using the Bitmark app:
 
 <br>
 <br>
-## Registering properties using Bitmark SDK
+## Registering Bitmark Certificates using Bitmark SDK
 
 <br>
 >In this section we introduce a very simple way to register properties using **Bitmark JS SDK**.<br>
@@ -126,7 +125,7 @@ Following is the instructions to registering a property to the testing Bitmark b
 
 <br>
 <br>
-## Registering properties using Bitmark-CLI 
+## Registering Bitmark Certificates using Bitmark-CLI 
 
 > In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
 > For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md){:target="_blank"} section.
