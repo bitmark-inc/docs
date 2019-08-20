@@ -60,7 +60,15 @@ A block hash comes from following data:
 
 Difficulty is a way to decide which hash is valid, higher difficulty means harder to find a valid hash.
 
-difficulty is stored in floating point d range from 0 ≤ d < 1, difficuty value is 1/d. The hash of 256 bit is composed as following two parts:
+difficulty is stored in floating point d range from 0 ≤ d < 1, actual difficuty value is 1/d. Difficulty value is encoded as a 57 bit mantissa, normalised to most significant bit to be 1 and can be dropped leaving 56 bits to store:
 
-    [8 bits] [248 bits]
-    exponent mantissa
+    [56 bits] [8 bits] = 64 bits unsigned value
+    mantissa  exponent
+
+mantissa is right shifted by exponent +8 from most siginificat bit.
+
+Examples:
+the "One" value:                00 ff  ff ff  ff ff  ff ff
+represents the 256 bit value:   00ff ffff ffff ffff 8000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+value:                          01 ff  ff ff  ff ff  ff ff
+represents the 256 bit value:   007f ffff ffff ffff c000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
