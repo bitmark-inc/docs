@@ -2,13 +2,13 @@
 
 Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](##Creating Bitmark Account using Bitmark App), the [Bitmark SDK](##Creating Bitmark Account using Bitmark SDK), or the [Bitmark CLI](##Creating Bitmark Account using Bitmark-CLI).
 
-After creating the Account, you will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
+After creating the Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
 <br>
 <br>
 ## Bitmark Account Number
 
-Property owners in Bitmark system are identified by their Ed25519 public keys. Those public keys are represented by the Bitmark account numbers which are in based58 format.
+Property owners in Bitmark system are identified by their Ed25519 public keys. These public keys are represented by the Bitmark account numbers, which are in based58 format.
 
 > * **Example:** Bitmark Account Number on [Livenet](https://registry.bitmark.com/account/bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw){:target="_blank"}
 > 
@@ -20,7 +20,7 @@ Property owners in Bitmark system are identified by their Ed25519 public keys. T
 
 <br>
 <br>
-## Creating Bitmark Account using Bitmark App
+## Creating Bitmark Account using the Bitmark App
 
 Bitmark App is a simple mobile app which allows anyone to protect their legal rights to their data and other digital assets by registering them as properties on the Bitmark blockchain.
 
@@ -43,9 +43,9 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 
     <br>
 
-* Check for the Account Number by accessing Account > SETTINGS
+* Check for the Account Number by accessing **Account > SETTINGS**
 
-    > It allows users to
+    > The Bitmark App allows users to
  
     > * **Copy** the Account Number to clipboard directly by tapping on it 
 
@@ -58,7 +58,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 
     <br>
 
-* Backup the Recovery Phrase by selecting Account > SETTINGS > WRITE DOWN RECOVERY PHRASE
+* Backup the Recovery Phrase by selecting **Account > SETTINGS > WRITE DOWN RECOVERY PHRASE**
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RecoveryPhrase_0.png" alt="Write down Recovery Phrase option" title="Write down Recovery Phrase option" width="250" style="padding: 20px" />
@@ -68,7 +68,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 
 <br>
 <br>
-## Creating Bitmark Account using Bitmark SDK
+## Creating Bitmark Account using the Bitmark SDK
 
 The Bitmark SDK is a collection of libraries for different programming languages and mobile platforms. In addition to providing language-specific bindings to the Bitmark APIs, the SDK simplifies local key management for signing and encryption.
 
@@ -124,7 +124,7 @@ Here are the steps to install the Bitmark-SDK, initalize its configuration, then
 
 <br>
 <br>
-## Creating Bitmark Account using Bitmark-CLI
+## Creating Bitmark Account using the Bitmark-CLI
 
 Bitmark-CLI is a command line tool which allows a user to interact with the Bitmark blockchain by connecting to one or several nodes in the network. All the transactions are submitted directly to one of the connected nodes and consequently be verified by the node before be forwarded to the network.
 
@@ -132,8 +132,12 @@ Bitmark-CLI is a command line tool which allows a user to interact with the Bitm
 > For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md){:target="_blank"} section.
 
 <br>
+> The basic structure of a Bitmark-CLI command:  
+>   `bitmark-cli [global-options] command [command-options]`
+
+<br>
     
-> The Bitmark-CLI supports three values for the network and identify it by `--network` option
+> The Bitmark-CLI determines which network the command will be sent to by the global option `--network` the following possible values
 > 
 >* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
 >
@@ -147,26 +151,31 @@ Following are the intructions to create Bitmark account with the network option 
 
 * Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md){:target="_blank"}
 
-* Initalizing the Bitmark-CLI configuration
-
-    `# bitmark-cli --network=testing --identity=first setup --connect=128.199.89.154:2130 --description='first user' --new`
+* Initalize the Bitmark-CLI configuration
+    ```
+    # bitmark-cli --network=testing --identity=first \ 
+    setup --connect=128.199.89.154:2130 --description='first user' --new
+    ```
 
 > The `setup` command is used to initialize the Bitmark-CLI config file
 > 
-> * It requires a default Bitmark Account created and stored in the config file - In the command above, it creates a Bitmark Account with the identity as `fist` and the description as `first user`
+> * It requires you to select a default user, which is done with the `--identity` option - In the command above, it creates a Bitmark Account with the identity as `first` and the description as `first user`
 > 
 > * The `--connection` option defines the Bitmark node which the Bitmark-CLI connects to - The connected node's chain is also the chain that the Bitmark-CLI works on.
 
 <br>
+
 *  Add an additional Bitmark account
+    ```
+    # bitmark-cli --network=testing --identity=second \ 
+    add --description='second user' --new
+    ```
 
-    `# bitmark-cli --network=testing --identity=second add --description='second user' --new`
-
-> The created account will be added to the initialized config file by `setup` comman
+> The `add` command is to add a new user after the Bitmark-CLI configuration was initialized.
 
 <br>
-* Check the account numbers
 
+* Check the account numbers
     ```
     # bitmark-cli --network=testing list
 
@@ -174,8 +183,8 @@ Following are the intructions to create Bitmark account with the network option 
     SK second   fPWWkW45o12er6oP4EveaURHXstkSXR3odWCgpaDvEvxoR3woC  "second user"
     ```
 
-* Get account seed and recovery phrase by identity
 
+* Get the account seed and recovery phrase for an identity
     ```
     # bitmark-cli --network=testing --identity=first seed
     

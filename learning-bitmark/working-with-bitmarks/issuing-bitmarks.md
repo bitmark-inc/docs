@@ -1,28 +1,27 @@
 # Registering Bitmark Certificates
 
-People have traditionally said that assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets. To do so, you could use the [Bitmark App](##Registering properties using Bitmark App), the [Bitmark SDK](##Registering properties using Bitmark SDK), or the [Bitmark CLI](##Registering properties using Bitmark-CLI).
+Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets. To do so, you could use the [Bitmark App](##Registering properties using Bitmark App), the [Bitmark SDK](##Registering properties using Bitmark SDK), or the [Bitmark CLI](##Registering properties using Bitmark-CLI).
 
-The Bitmark blockchain is a public global database that stores property rights to non-fungible objects in a token-like container. Because it is a decentralized and politically-neutral system, no single entity has the ability to improperly modify property records or transactions — not even the Bitmark team. 
 
 <br>
 
->The process of registering Bitmark Certificates for your digital assets bassically contains two steps
+>The process of registering Bitmark Certificates for your digital assets basically contains two steps
 >
->* Registering your asset - results a *Asset Record* stored on the Bitmark blockchain.
+>* Registering your asset - results in a *Asset Record* stored on the Bitmark blockchain.
 >
->* Issuing bitmarks -  results *Issue Records* linking to the corresponding asset record and stored on the Bitmark blockchain.
+>* Issuing bitmarks -  results in *Issue Records* linking to the corresponding asset record and stored on the Bitmark blockchain.
 > 
 > 
 
 <br>
 
 > **NOTE:** Any user interacting with the Bitmark Property System requires a Bitmark Account.
-> Please refer [Bitmark Account](creating-bitmark-account.md){:target="_blank"} section for instructions of creating a new Bitmark Account.
+> Please refer to the [Bitmark Account](creating-bitmark-account.md){:target="_blank"} section for instructions on creating a new Bitmark Account.
 
 <br>
 <br>
 
-## Registering Bitmark Certificates using Bitmark App
+## Registering Bitmark Certificates using the Bitmark App
 
 The Bitmark app registers legal property rights on the public Bitmark blockchain for your digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether you want to keep it, sell it, or donate it.
 
@@ -31,7 +30,7 @@ Here are the steps to register a new property using the Bitmark app:
 
 * On the PROPERTIES screen - Tap **CREATE FIRST PROPERTY** or **+** 
 
-    > It opens the PROPERTIES > REGISTER screen
+    > It opens the **PROPERTIES > REGISTER** screen
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RegisteringProperties_0.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
@@ -42,7 +41,7 @@ Here are the steps to register a new property using the Bitmark app:
 
 * Tap **PHOTOS** or **FILES** to browse the desired asset
 
-    > It requires permission granted to access `Photos` and/or `Files`
+    > The permission to access `Photos` and/or `Files` must be granted.
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RegisteringProperties_2.png" alt="Grant Permission popup" title="Grant Permission popup" width="250" style="padding: 20px" />
@@ -54,11 +53,11 @@ Here are the steps to register a new property using the Bitmark app:
 
 * Fill in the required information
 
-    > As soon as the desired asset is selected, the app computes the asset's fingerprint and opens REGISTER PROPERTY RIGHTS screen which allows users to provide more detailed information for the asset.
+    > As soon as the desired asset is selected, the app computes the asset's fingerprint and opens the **REGISTER PROPERTY RIGHTS** screen, which allows users to provide more detailed information about the asset.
 
     >* Currently, the `PROPERTY NAME` and `NUMBER OF BITMARKS TO ISSUE` fields are mandatory.
 
-    >* For each `Asset`, we are able to issue multiple `Bitmark Certificates` - defined by  `number of bitmarks` in the REGISTER PROPERTY RIGHTS screen.
+    >* For each `Asset`, a user can issue multiple `Bitmark Certificates` - defined by  `number of bitmarks` in the **REGISTER PROPERTY RIGHTS** screen.
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RegisteringProperties_5.png" alt="Register Property Rights screen" title="Register Property Rights screen" width="250" style="padding: 20px" />
@@ -69,9 +68,9 @@ Here are the steps to register a new property using the Bitmark app:
 
 * Tap **ISSUE** button
 
-    >As soon as users tap **ISSUE**, the app submits both the `Asset Registration` request and `bitmarks Issuance` transactions to the Bitmark network. It would takes few seconds for the submission to be successful. After that the properties will be added to the PROPERTIES > YOURS screen.
+    >As soon as users tap **ISSUE**, the app submits both the `Asset Registration` request and `bitmarks Issuance` transactions to the Bitmark network. It would takes few seconds for the submission to be successful. After that the properties will be added to the **PROPERTIES > YOURS** screen.
     > 
-    > **NOTE:** It will takes several minutes for the transactions to be confirmed on the Bitmark blockchain after submitted. 
+    > **NOTE:** It will take several minutes for the transactions to be confirmed on the Bitmark blockchain after submitted. 
 
 <div style="background-color: #efefef; text-align: center;">
     <img src="images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
@@ -86,14 +85,14 @@ Here are the steps to register a new property using the Bitmark app:
 
 <br>
 <br>
-## Registering Bitmark Certificates using Bitmark SDK
+## Registering Bitmark Certificates using the Bitmark SDK
 
 <br>
 >In this section we introduce a very simple way to register properties using **Bitmark JS SDK**.<br>
 >For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md){:target="_blank"} section.
 
 <br>
-Following is the instructions to registering a property to the testing Bitmark blockchain using the Bitmark JS SDK
+Following are the instructions for registering a property to the testing Bitmark blockchain using the Bitmark JS SDK
 
 * Register an asset:
 
@@ -125,7 +124,7 @@ Following is the instructions to registering a property to the testing Bitmark b
 
 <br>
 <br>
-## Registering Bitmark Certificates using Bitmark-CLI 
+## Registering Bitmark Certificates using the Bitmark-CLI 
 
 > In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
 > For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md){:target="_blank"} section.
@@ -147,7 +146,8 @@ Following are the steps to registering a new property with the network option as
 * Compute the asset's fingerprint
 
     ```
-    # bitmark-cli --network=testing fingerprint -f filename
+    # bitmark-cli --network=testing \ 
+    fingerprint -f filename
 
     {
         "file_name": "filename.test",
@@ -158,7 +158,11 @@ Following are the steps to registering a new property with the network option as
 * Issue the first bitmark
 
     ```
-    # bitmark-cli --network=testing --identity=first create -a 'Example asset' -m 'Key1\u0000Value1\u0000Key2\u0000Value2' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z
+    # bitmark-cli --network=testing --identity=first \ 
+    create -a 'Example asset' \ 
+    -m 'Key1\u0000Value1\u0000Key2\u0000Value2' \ 
+    -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 \ 
+    -z
 
     {
         "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
@@ -173,7 +177,7 @@ Following are the steps to registering a new property with the network option as
     }
     ```
 
-* * [Verify](https://github.com/bitmark-inc/docs/){:target="_blank"} bitmark transactions.
+* [Verify](https://github.com/bitmark-inc/docs/){:target="_blank"} bitmark transactions.
 
 
 
