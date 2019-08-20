@@ -1,6 +1,6 @@
 # Overview
 
-This paragraph describes how mining works, how mining program communicates with `bitmarkd`, what kind of protocl it used, and how is miner rewarded.
+This paragraph describes how mining works, how mining program communicates with `bitmarkd`, what kind of protocl it uses, and what mechanism is miner rewarded.
 
 # Block Diagram
 
@@ -15,3 +15,52 @@ The hashing procedure relates to `bitmarkd` and `recorderd`. `recorderd` is the 
 When `bitmarkd` receives hash from `recorderd`, `bitmarkd` validates hashing task returned is valid (which means the task is sent from this `bitmarkd` node but not other `bitmarkd` node), the hash is valid. After validating hash correctness, `bitmarkd` sends result bask to `recorderd`.
 
 If `bitmarkd` receives no valid hashes from other nodes or from `recorderd`, `bitmarkd` sends hashing task to `recorderd` every 1 minute until valid hash is received.
+
+## Hashing
+
+Hashing is a behavior to convert any form of data into a unique string of text, if a hashing algorithm is well designed, it should be hard to guess original data from generated hash.
+
+The hashing algorithm used in bitmark is `argon2`, which is a memory hard algorithm that can resist from GPU or ASIC hardware computation. Length of a hash is 256 bit (32 bytes).
+
+Many parameters relates to hashing, if `argon2` executable is installed, following command line can demonstrate the hasing process:
+
+```
+printf '%s' 'hello world' | argon2 'hello world' -d -l 32 -m 17 -t 4 -p 1 -r | awk '{for(i=length($1);i>0;i-=2)x=x substr($1,i-1,2);print x}'
+
+f8a17bc25cb53e848e2d09811ade4b8a037f628443661b88611faf5d9a5a1f33
+```
+
+A block hash comes from following data:
+
+1. block record version
+
+    blockchain header version
+
+1. transacion count
+
+    number of transactions in the block
+
+1. merkle root
+
+    the hash of all transaction hashes inside the block
+
+1. timestamp
+
+    block generated time
+
+1. difficulty
+
+    hashing difficulty
+
+1. nonce
+
+    random string to make hash fits difficuty
+
+## Difficulty
+
+Difficulty is a way to decide which hash is valid, higher difficulty means harder to find a valid hash.
+
+difficulty is stored in floating point d range from 0 ≤ d < 1, difficuty value is 1/d. The hash of 256 bit is composed as following two parts:
+
+    [8 bits] [248 bits]
+    exponent mantissa
