@@ -2,15 +2,18 @@
 
 In this section, we will introduce
 
-* How a user pay to its bitmark transactions by blockchain payment
-* How bitmarkd validate a transaction which requires a payment from bitcoin / litecoin blockchain
+* How does the payment flow look like
+* How does bitmarkd validate a transaction which requires a payment from bitcoin / litecoin blockchain
 
-## Overview
+## Flow
 
-When a user submit a new transaction to the blockchain by RPC, bitmarkd will process it and return a transaction detail that inlcudes payment information. Someone needs to pay for the bitmark transaction by either bitcoin or litecoin blockchain according to the payment information. Once bitmark blockchain detects a payment transaction from either blockchain, the target bitmark transaction will be marked as verified and wait for miners to put it into a block.
+When a user submit a new transaction to the blockchain by RPC, bitmarkd will process it and return a transaction detail that inlcudes payment information.
 
+Someone needs to pay for the bitmark transaction by either bitcoin or litecoin blockchain according to the payment information. In the payment transaction, it must include the payment id by using `OP_RETURN` opcode.
 
-## Reservoir
+Once bitmark blockchain detects a payment transaction from either blockchain, the target bitmark transaction will be marked as verified and wait for miners to put it into a block.
+
+## Reservoir Module
 
 Reservoir is module that is used to validating and storing transactions.
 
@@ -21,8 +24,6 @@ When a new transaction is submitted to the blockchain by RPC, it will be process
 ### Generate a payment id
 
 In the `StoreIssues` function, every issue transaction record in the request will be packed into a binary data. These packed data will be concatenated together and be hashed by SHA3 algorithem. The result of that hashing will become the payment id. `StoreTransfer` works in the same way. The only different is that there will be only one transaction record in a transfer request.
-
-<del>Will payment id change?
 
 ### Change the state of a paid transaction
 
@@ -52,7 +53,7 @@ verifiedIndex        map[merkle.Digest]pay.PayId
 
 Verified transactions will be collected periodically and form a block foundation. The block data will be broadcasted to a recorderd so that a block can be generated.
 
-## Payment
+## Payment Module
 
 Payment module defines how bitmarkd handles payment transactions from bitcoin / litecoin blockchain. When payment module is initialised, a background process will be launched to check blockchain transactions using the mechansim that is set in the configuration file.
 
@@ -62,7 +63,7 @@ There are three mechanisms that you can choose for the bitmarkd to validate paym
 
 1. Directly RPC
 1. Discovery Service
-1. Bitcoin peer-to-peer protocol
+1. Bitcoin peer-to-peer protocol (WIP)
 
 ### Directly RPC
 
