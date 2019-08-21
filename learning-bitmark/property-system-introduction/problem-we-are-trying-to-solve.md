@@ -28,7 +28,7 @@ The Bitmark Property System is the answer to these needs: the way to replicate t
 
 * It allows you to **register** your digital assets and data, defining what the assets are in a special asset record, then issuing them to yourself as the initial owner.
 * It also allows you to **transfer** your digital assets and data. You can sell an original asset or license a digital copy. You can make a personal transfer or do so as part of the Bitmark Markets -- which include marketplaces for specific digital properties.
-* Finally, for cases where ownership is shared, it allows you to **divide** a digital asset into shares, then **grant** and **swap** those shares.
+* Finally, for cases where ownership is shared, it allows you to **divide** a Bitmark certificate into shares, then **grant** and **swap** those shares.
 
 With the Bitmark Property System, you can use Bitmark Certificates both to prove ownership of digital assets and data and to ensure irrevocable transfers of that property. It's a turnkey solution for enabling the management, monetization, and trade of digital properties.
 
