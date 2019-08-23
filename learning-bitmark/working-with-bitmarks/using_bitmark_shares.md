@@ -1,10 +1,28 @@
-# Using bitmark shares
+# Bitmark shares
 
-TODO: Write a short text about the ideas of Bitmark shares
+In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provide a feature called the **bitmark shares**. 
+
+Any owner of a Bitmark Certificate is able to:
+
+* [Create bitmark shares](#creating-bitmark-shares) from that certificate (or bitmark).
+
+* [Grant bitmark shares](#granting-bitmark-shares-to-another-account) to another account.
+
+* [Swap bitmark shares](#swapping-bitmark-shares) with others.
+
+
+Currently, only the Bitmark-CLI supports performing those transactions of bitmark shares.
+
+> **NOTE:** Transactions related to the bitmark share require a transaction fee. On the bitmark network, the fee can be pay by BTC or LTC
+> 
+> * Real BTC and/or LTC are used to pay for transaction fee on the Bitmark main chain
+> 
+> * Testnet BTC and/or LTC are used to pay for transaction fee on the Bitmark testing chain
 
 <br>
+<br>
 
-## Bitmark share related records
+## Bitmark shares related records
 
 There are three records related to the Bitmark shares are stored on the Bitmark blockchain 
 
@@ -17,23 +35,9 @@ There are three records related to the Bitmark shares are stored on the Bitmark 
 <br>
 <br>
 
-## Working with bitmark shares using the Bitmark-CLI
+## Prerequisites of working with bitmark share using the Bitmark-CLI
 
-Currently, only the Bitmark-CLI supports performing actions on bitmark shares.
-
-
-> Transactions related to the bitmark share require a transaction fee. On the bitmark network, the fee can be pay by BTC or LTC
-> 
-> * Real BTC and/or LTC are used to pay for transaction fee on the Bitmark main chain
-> 
-> * Testnet BTC and/or LTC are used to pay for transaction fee on the Bitmark testing chain
-
-<br>
-<br>
-
-## Prerequisites
-
-Refer the [Payment using the Bitmark-Wallet]() document to: 
+Refer the [Payment on Bitmark-CLI](payment-on-bitmark-cli.md) document to: 
 
 * Install the Bitmark-Wallet
 
@@ -60,7 +64,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
 <br>
 
-### Create bitmark shares from a bitmark
+### Creating bitmark shares from a bitmark
 
   ```shell
     $ bitmark-cli -n <network> -i <identity> \ 
@@ -119,7 +123,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
 <br>
 
-### Pay for the bitmark share creation using the Bitmark-Wallet
+### Paying for the bitmark share creation using the Bitmark-Wallet
 
   ```shell
     #Run the bitcoind 
@@ -174,7 +178,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
 <br>
 
-### Verify the status of the share creation transaction
+### Verifying the status of the share creation transaction
 
   ```shell
     $ bitmark-cli -n <network> \ 
@@ -215,7 +219,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
 <br>
 
-### Verify that the share has been created and allocated to the owner
+### Verifying that the share has been created and allocated to the owner
 
   ```shell
     $ bitmark-cli -n <network> \
@@ -250,7 +254,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 <br>
 <br>
 
-## Grant bitmark shares to another account
+## Granting bitmark shares to another account
 
 Any owner with a non-zero share balance can grant shares from that balance to another account. 
 
@@ -436,7 +440,7 @@ A grant share transaction is a two signature transaction. Therefore, the current
 <br>
 <br>
 
-## Swap bitmark shares
+## Swapping bitmark shares
 
 Two owners of different bitmark shares are able to swap their shares together. The swap requires signatures from both owners.
 
