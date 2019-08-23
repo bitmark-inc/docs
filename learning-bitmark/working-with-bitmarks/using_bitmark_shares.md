@@ -31,7 +31,7 @@ Currently, only the Bitmark-CLI supports performing actions on bitmark shares.
 <br>
 <br>
 
-### Prerequisites
+## Prerequisites
 
 Refer the [Payment using the Bitmark-Wallet]() document to: 
 
@@ -46,7 +46,7 @@ Refer the [Payment using the Bitmark-Wallet]() document to:
 <br>
 <br>
 
-### Creating bitmark shares
+## Creating bitmark shares
 
 Any bitmark owner is able to create shares of a particular bitmark, that action divides the bitmark into a number of shares
 
@@ -59,9 +59,8 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 * A share creation transaction costs 0.002 LTC or 0.0002 BTC as the transaction fee
 
 <br>
-<br>
 
-#### Create bitmark shares from a bitmark
+### Create bitmark shares from a bitmark
 
   ```shell
     $ bitmark-cli -n <network> -i <identity> \ 
@@ -117,10 +116,10 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
       }
     }
   ```
-<br>
+
 <br>
 
-#### Pay for the bitmark share creation using the Bitmark-Wallet
+### Pay for the bitmark share creation using the Bitmark-Wallet
 
   ```shell
     #Run the bitcoind 
@@ -174,9 +173,8 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
   ```
 
 <br>
-<br>
 
-#### Verify the status of the share creation transaction
+### Verify the status of the share creation transaction
 
   ```shell
     $ bitmark-cli -n <network> \ 
@@ -217,7 +215,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
 <br>
 
-#### Verify that the share has been created and allocated to the owner
+### Verify that the share has been created and allocated to the owner
 
   ```shell
     $ bitmark-cli -n <network> \
@@ -252,7 +250,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 <br>
 <br>
 
-### Grant bitmark shares to another account
+## Grant bitmark shares to another account
 
 Any owner with a non-zero share balance can grant shares from that balance to another account. 
 
@@ -438,7 +436,7 @@ A grant share transaction is a two signature transaction. Therefore, the current
 <br>
 <br>
 
-### Swap bitmark shares
+## Swap bitmark shares
 
 Two owners of different bitmark shares are able to swap their shares together. The swap requires signatures from both owners.
 
