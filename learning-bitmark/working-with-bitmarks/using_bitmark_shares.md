@@ -309,6 +309,7 @@ A grant share transaction is a two signature transaction. Therefore, the current
   ```
 
 <br>
+
 * The new owner signs to accept the shares
 
   ```shell
