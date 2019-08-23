@@ -1,6 +1,6 @@
 # Bitmark Property System Introduction 
 
-Digital assets and data feel ephemeral. It's easy to lose track of your digital assets; and it's easy to let social networks and other content aggregators claim ownership over your data. Hackers and 'bots can steal your digital properties, and today you might not have much recourse.
+Digital assets and data feel ephemeral: it's easy to lose track of your digital assets, and it's easy to let social networks and other content aggregators claim ownership over your data. Hackers and bots can steal your digital properties, and today you have little recourse to recover them.
 
 But it shouldn't be that way. 
 
@@ -12,9 +12,9 @@ That needs to change.
 
 To be able to meaningfully exert property rights requires a robust property system that can define and delineate both what assets are and what rights are associated with those assets. Such a property system is powerful because of the many benefits it can offer.
 
-Most obviously, a property system creates frameworks. It creates an organizational framwork that allows us to itemize the things that we own and assemble them into categories that our minds can easily comprehend; it also creates a legal framework that allows anyone to participate in the acquisition and management of property, something that would be monopolized by the powerful elite without such a system.
+Most obviously, a property system creates frameworks. It creates an organizational framework that allows us to itemize the things that we own and assemble them into categories that our minds can easily comprehend; it also creates a legal framework that allows anyone to participate in the acquisition and management of property, something that would be monopolized by the powerful elite without such a system.
 
-A property system also creates economic opportity. It allows us to gain benefits from what we own. Perhaps we never plan to transfer our property, and in that case we can guarantee our continued ability to enjoy a property's core values by asserting our rights and preventing theft. But we can also use a property system to offer our property for loan, license, or sale in marketplaces. 
+A property system also creates economic opportunity. It allows us to gain benefits from what we own. Perhaps we never plan to transfer our property, and in that case we can guarantee our continued ability to enjoy a property's core values by asserting our rights and preventing theft. But we can also use a property system to offer our property for loan, license, or sale in marketplaces. 
 
 Finally, a property system benefits our entire society. It creates social inclusion by making it easy to register property rights and  to find other people with interest in similar properties; it  promotes environmental stewardship by normalizing respect for property; and it supports societal improvement by making it simple for a community to find who owns properties of importance.
 
