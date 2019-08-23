@@ -130,12 +130,13 @@ Here are the steps to install the Bitmark-SDK, initalize its configuration, then
 
 <br>
 <br>
+
 ## Creating Bitmark Account using the Bitmark-CLI
 
 Bitmark-CLI is a command line tool which allows a user to interact with the Bitmark blockchain by connecting to one or several nodes in the network. All the transactions are submitted directly to one of the connected nodes and consequently be verified by the node before be forwarded to the network.
 
 > In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
-> For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md){:target="_blank"} section.
+> For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) section.
 
 <br>
 > The basic structure of a Bitmark-CLI command:  
