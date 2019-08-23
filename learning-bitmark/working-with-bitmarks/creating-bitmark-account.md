@@ -75,8 +75,8 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 
 The Bitmark SDK is a collection of libraries for different programming languages and mobile platforms. In addition to providing language-specific bindings to the Bitmark APIs, the SDK simplifies local key management for signing and encryption.
 
->In this section we introduce a very simple way to create a new Bitmark Account using **Bitmark JS SDK**.<br>
->For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
+> In this section we introduce a very simple way to create a new Bitmark Account using the **Bitmark JS SDK**.<br>
+> For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
 
 <br>
 
@@ -155,7 +155,7 @@ Bitmark-CLI is a command line tool which allows a user to interact with the Bitm
 
 <br>
 
-Following are the intructions to create Bitmark account with the network option as `testing`
+Here are the steps to create a new Bitmark Account using the Bitmark-CLI:
 
 * Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
 

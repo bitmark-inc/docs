@@ -10,13 +10,13 @@ Assets with titles that have been publicly recorded are more valuable than those
 >* Registering your asset - results in a *Asset Record* stored on the Bitmark blockchain.
 >
 >* Issuing bitmarks -  results in *Issue Records* linking to the corresponding asset record and stored on the Bitmark blockchain.
-> 
-> 
 
 <br>
+<br>
 
-> **NOTE:** Any user interacting with the Bitmark Property System requires a Bitmark Account.
-> Please refer to the [Bitmark Account](creating-bitmark-account.md) section for instructions on creating a new Bitmark Account.
+## Prerequisites
+
+A Bitmark Account is required for any user who want to interact with the Bitmark Property System. Please refer to the [Bitmark Account](creating-bitmark-account.md) section for instructions on creating a new Bitmark Account.
 
 <br>
 <br>
@@ -26,6 +26,7 @@ Assets with titles that have been publicly recorded are more valuable than those
 The Bitmark app registers legal property rights on the public Bitmark blockchain for your digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether you want to keep it, sell it, or donate it.
 
 <br>
+
 Here are the steps to register a new property using the Bitmark app:
 
 * On the PROPERTIES screen - Tap **CREATE FIRST PROPERTY** or **+** 
@@ -88,13 +89,11 @@ Here are the steps to register a new property using the Bitmark app:
 
 ## Registering Bitmark Certificates using the Bitmark SDK
 
-<br>
-
->In this section we introduce a very simple way to register properties using **Bitmark JS SDK**.<br>
->For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
+As a KIT for developers to interact with the Bitmark Property System, the Bitmark-SDKs provide interfaces for users to submit transactions to the Bitmark blockchain including the asset registration and bitmark issuance.
 
 <br>
-Following are the instructions for registering a property to the testing Bitmark blockchain using the Bitmark JS SDK
+
+Here are the steps to register Bitmark Certificates of an asset using the **Bitmark JS SDK**:
 
 * Register an asset:
 
@@ -129,8 +128,12 @@ Following are the instructions for registering a property to the testing Bitmark
 
 ## Registering Bitmark Certificates using the Bitmark-CLI 
 
-> In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
-> For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) section.
+The Bitmark-CLI allows users to register Bitmark Certificates by submitting the transactions to its connected node, and then broadcasting to the network. 
+
+<br>
+
+> The basic structure of a Bitmark-CLI command:  
+>   `bitmark-cli [global-options] command [command-options]`
 
 <br>
     
@@ -144,7 +147,7 @@ Following are the instructions for registering a property to the testing Bitmark
 
 <br>
 
-Following are the steps to registering a new property with the network option as `testing`
+Here are the steps to register a new Bitmark Certificate using the Bitmark-CLI
 
 * Compute the hash of an asset
 
