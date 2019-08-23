@@ -89,8 +89,9 @@ Here are the steps to register a new property using the Bitmark app:
 ## Registering Bitmark Certificates using the Bitmark SDK
 
 <br>
+
 >In this section we introduce a very simple way to register properties using **Bitmark JS SDK**.<br>
->For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md){:target="_blank"} section.
+>For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
 
 <br>
 Following are the instructions for registering a property to the testing Bitmark blockchain using the Bitmark JS SDK

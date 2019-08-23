@@ -139,6 +139,7 @@ Bitmark-CLI is a command line tool which allows a user to interact with the Bitm
 > For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) section.
 
 <br>
+
 > The basic structure of a Bitmark-CLI command:  
 >   `bitmark-cli [global-options] command [command-options]`
 
