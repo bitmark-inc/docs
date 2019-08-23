@@ -72,11 +72,11 @@ Here are the steps to register a new property using the Bitmark app:
     > 
     > **NOTE:** It will take several minutes for the transactions to be confirmed on the Bitmark blockchain after submitted. 
 
-<div style="background-color: #efefef; text-align: center;">
-    <img src="images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
-    <img src="images/RegisteringProperties_8.png" alt="Submission succeeded" title="Submission succeeded" width="250" style="padding: 20px" />
-    <img src="images/RegisteringProperties_9.png" alt="Properties added" title="Properties added" width="250" style="padding: 20px" />
-</div>
+    <div style="background-color: #efefef; text-align: center;">
+        <img src="images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
+        <img src="images/RegisteringProperties_8.png" alt="Submission succeeded" title="Submission succeeded" width="250" style="padding: 20px" />
+        <img src="images/RegisteringProperties_9.png" alt="Properties added" title="Properties added" width="250" style="padding: 20px" />
+    </div>
 
 <br>
 
@@ -96,7 +96,7 @@ Following are the instructions for registering a property to the testing Bitmark
 
 * Register an asset:
 
-    ```    
+    ```js
     let name = "Example asset";
     let metadata = {"Example key":"Example alue"};
 
@@ -111,7 +111,7 @@ Following are the instructions for registering a property to the testing Bitmark
 
 * Issue the first bitmark 
 
-    ```
+    ```js
     let issueParams = sdk.Bitmark.newIssuanceParams(assetId, 1);
     issueParams.sign(account);
 
@@ -131,7 +131,7 @@ Following are the instructions for registering a property to the testing Bitmark
 
 <br>
     
-> The Bitmark-CLI supports three values for the network and identify it by `--network` argument
+> The Bitmark-CLI determines which network the command will be sent to by the global option `--network` with the following possible values
 > 
 >* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
 >
@@ -143,27 +143,62 @@ Following are the instructions for registering a property to the testing Bitmark
 
 Following are the steps to registering a new property with the network option as `testing`
 
-* Compute the asset's fingerprint
+* Compute the hash of an asset
 
+    ```shell
+    $ bitmark-cli -n <network> \
+    fingerprint -f <file>
     ```
-    # bitmark-cli --network=testing \ 
-    fingerprint -f filename
 
+    > The `fingerprint` command is to compute the hash of a file
+    >
+    > * `file` - Define the file from which the hash is computed.
+
+    *Example:*
+
+    ```shell
+    $ bitmark-cli -n testing \
+    fingerprint -f test.txt
+    ```
+    ```json
     {
         "file_name": "filename.test",
         "fingerprint": "0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500"
     }
     ```
 
+<br>
+
 * Issue the first bitmark
 
-    ```
-    # bitmark-cli --network=testing --identity=first \ 
-    create -a 'Example asset' \ 
-    -m 'Key1\u0000Value1\u0000Key2\u0000Value2' \ 
-    -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 \ 
+    ```shell
+    $ bitmark-cli -n <network> -i <identity> \
+    create -a '<asset name>' \
+    -m '<asset metadata>' \
+    -f <asset fingerprint> \
     -z
+    ```
 
+    > The `create` command is to register an asset from a fingerprint along with issuing the corresponding bitmarks
+    >
+    >* `asset name` - Define the `name` field in the asset record.
+    >
+    >* `asset metadata` - Define the `metadata` field in the asset record.
+    > 
+    >* `-f` option - Determine the hash of the asset.
+    >
+    >* `-z` option - Determine that it is the issuance of the first bitmark of the asset.
+
+    *Example:* 
+    
+    ```shell
+    $ bitmark-cli -n testing -i first \
+    create -a 'Example asset' \
+    -m 'Key1\u0000Value1\u0000Key2\u0000Value2' \
+    -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 \
+    -z
+    ```
+    ```json
     {
         "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
         "issueIds": [
@@ -176,6 +211,8 @@ Following are the steps to registering a new property with the network option as
         "proofStatus": "Accepted"
     }
     ```
+
+<br>
 
 * [Verify](https://github.com/bitmark-inc/docs/){:target="_blank"} bitmark transactions.
 

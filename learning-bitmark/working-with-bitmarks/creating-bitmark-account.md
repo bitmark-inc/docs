@@ -85,7 +85,7 @@ Here are the steps to install the Bitmark-SDK, initalize its configuration, then
 
 * Initialize the SDK configuration
 
-    ```
+    ```js
         const sdk = require('bitmark-sdk');
 
         const config = {
@@ -96,31 +96,34 @@ Here are the steps to install the Bitmark-SDK, initalize its configuration, then
         sdk.init(config);
     ```
 
-
-
-> The SDK supports two options for the network, each requires the corresponding API tokens
-> 
-> * "livenet" - all the requests are submitted to the public Bitmark blockchain which is the main chain. 
-> 
-> * "testnet" - all the requests are submitted to the testing Bitmark blockchain which is normally used for testing and developing activities.
+    > The SDK supports two options for the network, each requires the corresponding API tokens
+    > 
+    > * "livenet" - all the requests are submitted to the public Bitmark blockchain which is the main chain. 
+    > 
+    > * "testnet" - all the requests are submitted to the testing Bitmark blockchain which is normally used for testing and developing activities.
 
 <br>
 
 * Create a new Bitmark account:
 
-    `let account = new sdk.Account();`
+    ```js
+    let account = new sdk.Account();
+    ```
 
 * Get the Account number:
 
-    `let account_number = account.getAccountNumber();`
+    ```js
+    let account_number = account.getAccountNumber();
+    ```
 
 * Get the Account seed:
-
-    `let seed = account.getSeed();`
-
+    ```js
+    let seed = account.getSeed();
+    ```
 * Get the Account recovery phrase:
-
-    `let phrase = account.getRecoveryPhrase();`
+    ```js
+    let phrase = account.getRecoveryPhrase();
+    ```
 
 <br>
 <br>
@@ -137,7 +140,7 @@ Bitmark-CLI is a command line tool which allows a user to interact with the Bitm
 
 <br>
     
-> The Bitmark-CLI determines which network the command will be sent to by the global option `--network` the following possible values
+> The Bitmark-CLI determines which network the command will be sent to by the global option `--network` (abbreviation: `-n`) with the following possible values
 > 
 >* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
 >
@@ -152,42 +155,84 @@ Following are the intructions to create Bitmark account with the network option 
 * Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md){:target="_blank"}
 
 * Initalize the Bitmark-CLI configuration
-    ```
-    # bitmark-cli --network=testing --identity=first \ 
-    setup --connect=128.199.89.154:2130 --description='first user' --new
+
+    ```shell
+    $ bitmark-cli -n <network> -i <identity> \
+    setup -c <node>:2130 -d '<description>' -n
     ```
 
-> The `setup` command is used to initialize the Bitmark-CLI config file
-> 
-> * It requires you to select a default user, which is done with the `--identity` option - In the command above, it creates a Bitmark Account with the identity as `first` and the description as `first user`
-> 
-> * The `--connection` option defines the Bitmark node which the Bitmark-CLI connects to - The connected node's chain is also the chain that the Bitmark-CLI works on.
+    >The `setup` command is used to initialize the Bitmark-CLI config file. The command options:
+    >
+    >* `network` - The network to which the command is sent.
+    > 
+    >* `identity` - The identity of the Bitmark-CLI user.
+    >
+    >* `node` - The Bitmark node, to which the Bitmark-CLI connects, all the transactions performed on the Bitmark-CLI are submitted to this node.
+    >
+    >* `description` - The idententity’s description. The command above creates a user with the identity as first and the description as first user.
+    >
+    >* `-n` (abbr. of --new) - Indicate the action of creating a new account.
+    
+    *Example:*
+ 
+    ```shell
+    $ bitmark-cli -n testing -i first \
+    setup -c 128.199.89.154:2130 -d 'first user' -n
+    ```
 
 <br>
 
 *  Add an additional Bitmark account
-    ```
-    # bitmark-cli --network=testing --identity=second \ 
-    add --description='second user' --new
+    ```shell
+    $ bitmark-cli -n <network> -i <identity> \
+    add -d '<description>' -n
     ```
 
-> The `add` command is to add a new user after the Bitmark-CLI configuration was initialized.
+    > The `add` command is to add a new user after the Bitmark-CLI configuration was initialized. 
+    > The command options have the same meanings as in the `setup` command.
+    
+    *Example:*  
+    ```shell
+    $ bitmark-cli -n testing -i second \
+    add -d 'second user' -n
+    ```
 
 <br>
 
 * Check the account numbers
+    ```shell
+    $ bitmark-cli -n <network> list
     ```
-    # bitmark-cli --network=testing list
 
+    > The `list` command is to list all the users of the Bitmark-CLI.
+    
+    *Example:*
+
+    ```shell
+    $ bitmark-cli -n testing list
+    ```
+    ```
     SK first    fUuNhZ6CC4YxUkQB99nuLnUiEevEuwdCoYszJ9Y5uUjp8oiA3A  "first user"
     SK second   fPWWkW45o12er6oP4EveaURHXstkSXR3odWCgpaDvEvxoR3woC  "second user"
     ```
 
 
+
+<br>
+
 * Get the account seed and recovery phrase for an identity
+    ```shell
+    $ bitmark-cli -n <network> -i <identity> seed
     ```
-    # bitmark-cli --network=testing --identity=first seed
+
+    > The `seed` command is to print out all the information of a Bitmark-CLI user. Because sensitive data is included, the user password is required.
     
+    *Example:*
+ 
+    ```shell
+    $ bitmark-cli -n testing -i first seed
+    ```
+    ```json
     {
         "privateKey": "BQVdbCAVQ1KHv4sDSQ5d874BfZYmLeeJveNGXThxU4WKh5K39o6eEVqoBZFKbJWHiJgkyYThnBFdfF9bgSGmhyDLsk7oR9",
         "seed": "9J87ApGrXzDitFk8eviHf31RNXbTcjW8S",
