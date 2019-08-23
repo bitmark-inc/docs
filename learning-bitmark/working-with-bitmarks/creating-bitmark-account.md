@@ -6,6 +6,7 @@ After creating the Account, a user will often want to recover the seed (which is
 
 <br>
 <br>
+
 ## Bitmark Account Number
 
 Property owners in Bitmark system are identified by their Ed25519 public keys. These public keys are represented by the Bitmark account numbers, which are in based58 format.
@@ -20,6 +21,7 @@ Property owners in Bitmark system are identified by their Ed25519 public keys. T
 
 <br>
 <br>
+
 ## Creating Bitmark Account using the Bitmark App
 
 Bitmark App is a simple mobile app which allows anyone to protect their legal rights to their data and other digital assets by registering them as properties on the Bitmark blockchain.
@@ -46,9 +48,9 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 * Check for the Account Number by accessing **Account > SETTINGS**
 
     > The Bitmark App allows users to
- 
+    >
     > * **Copy** the Account Number to clipboard directly by tapping on it 
-
+    >
     > * **Display** the Account Number as a QR Code by tapping on the QR Code icon.
 
     <div style="background-color: #efefef; text-align: center;">
@@ -68,6 +70,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 
 <br>
 <br>
+
 ## Creating Bitmark Account using the Bitmark SDK
 
 The Bitmark SDK is a collection of libraries for different programming languages and mobile platforms. In addition to providing language-specific bindings to the Bitmark APIs, the SDK simplifies local key management for signing and encryption.

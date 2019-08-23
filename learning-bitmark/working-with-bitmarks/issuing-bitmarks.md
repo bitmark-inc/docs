@@ -54,9 +54,9 @@ Here are the steps to register a new property using the Bitmark app:
 * Fill in the required information
 
     > As soon as the desired asset is selected, the app computes the asset's fingerprint and opens the **REGISTER PROPERTY RIGHTS** screen, which allows users to provide more detailed information about the asset.
-
+    >
     >* Currently, the `PROPERTY NAME` and `NUMBER OF BITMARKS TO ISSUE` fields are mandatory.
-
+    >
     >* For each `Asset`, a user can issue multiple `Bitmark Certificates` - defined by  `number of bitmarks` in the **REGISTER PROPERTY RIGHTS** screen.
 
     <div style="background-color: #efefef; text-align: center;">
