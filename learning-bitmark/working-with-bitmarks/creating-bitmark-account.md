@@ -1,6 +1,6 @@
 # Bitmark Account
 
-Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#Creating Bitmark Account using Bitmark SDK), or the [Bitmark CLI](#Creating Bitmark Account using Bitmark-CLI).
+Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-bitmark-account-using-the-bitmark-sdk), or the [Bitmark CLI](#creating-bitmark-account-using-the-bitmark-cli).
 
 After creating the Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
@@ -11,11 +11,11 @@ After creating the Account, a user will often want to recover the seed (which is
 
 Property owners in Bitmark system are identified by their Ed25519 public keys. These public keys are represented by the Bitmark account numbers, which are in based58 format.
 
-> * **Example:** Bitmark Account Number on [Livenet](https://registry.bitmark.com/account/bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw){:target="_blank"}
+> * **Example:** Bitmark Account Number on [Livenet](https://registry.bitmark.com/account/bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw)
 > 
 >       `bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw`
 >          
-> * **Example:** Bitmark Account Number on [Testnet](https://registry.test.bitmark.com/account/fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu/owned){:target="_blank"}
+> * **Example:** Bitmark Account Number on [Testnet](https://registry.test.bitmark.com/account/fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu/owned)
 > 
 >       `fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu`
 
@@ -29,7 +29,7 @@ Bitmark App is a simple mobile app which allows anyone to protect their legal ri
 <br>
 Here are the steps to create a new Bitmark Account using the Bitmark App:
 
-* Download and install the [Android](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796){:target="_blank"} or [iOS](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796){:target="_blank"} Bitmark App
+* Download and install the [Android](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) or [iOS](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) Bitmark App
 
 * Open the app
 
@@ -76,7 +76,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 The Bitmark SDK is a collection of libraries for different programming languages and mobile platforms. In addition to providing language-specific bindings to the Bitmark APIs, the SDK simplifies local key management for signing and encryption.
 
 >In this section we introduce a very simple way to create a new Bitmark Account using **Bitmark JS SDK**.<br>
->For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md){:target="_blank"} section.
+>For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
 
 <br>
 
@@ -155,7 +155,7 @@ Bitmark-CLI is a command line tool which allows a user to interact with the Bitm
 
 Following are the intructions to create Bitmark account with the network option as `testing`
 
-* Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md){:target="_blank"}
+* Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
 
 * Initalize the Bitmark-CLI configuration
 

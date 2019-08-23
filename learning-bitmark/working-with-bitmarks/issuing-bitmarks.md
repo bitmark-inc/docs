@@ -1,6 +1,6 @@
 # Registering Bitmark Certificates
 
-Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets. To do so, you could use the [Bitmark App](#Registering properties using Bitmark App), the [Bitmark SDK](#Registering properties using Bitmark SDK), or the [Bitmark CLI](#Registering properties using Bitmark-CLI).
+Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets. To do so, you could use the [Bitmark App](#registering-bitmark-certificates-using-the-bitmark-app), the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
 
 
 <br>
@@ -16,7 +16,7 @@ Assets with titles that have been publicly recorded are more valuable than those
 <br>
 
 > **NOTE:** Any user interacting with the Bitmark Property System requires a Bitmark Account.
-> Please refer to the [Bitmark Account](creating-bitmark-account.md){:target="_blank"} section for instructions on creating a new Bitmark Account.
+> Please refer to the [Bitmark Account](creating-bitmark-account.md) section for instructions on creating a new Bitmark Account.
 
 <br>
 <br>
@@ -61,7 +61,7 @@ Here are the steps to register a new property using the Bitmark app:
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RegisteringProperties_5.png" alt="Register Property Rights screen" title="Register Property Rights screen" width="250" style="padding: 20px" />
-        <img src="images/RegisteringProperties_6.png" alt="Fill in required information" title="Fill in required information" width="250" style="padding: 20px" />
+        <img src="images/RegisteringProperties_6.PNG" alt="Fill in required information" title="Fill in required information" width="250" style="padding: 20px" />
     </div>
 
     <br>
