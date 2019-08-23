@@ -122,7 +122,7 @@ Following are the instructions for registering a property to the testing Bitmark
     let bitmarkId = bitmarks[0].id;
     ```
 
-* [Verify](https://github.com/bitmark-inc/docs/){:target="_blank"} bitmark transactions.
+* [Verify](https://github.com/bitmark-inc/docs/) bitmark transactions.
 
 <br>
 <br>
@@ -217,7 +217,7 @@ Following are the steps to registering a new property with the network option as
 
 <br>
 
-* [Verify](https://github.com/bitmark-inc/docs/){:target="_blank"} bitmark transactions.
+* [Verify](https://github.com/bitmark-inc/docs/) bitmark transactions.
 
 
 
