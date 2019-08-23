@@ -1,6 +1,6 @@
 # Registering Bitmark Certificates
 
-Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets. To do so, you could use the [Bitmark App](#registering-bitmark-certificates-using-the-bitmark-app), the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark-CLI](#registering-bitmark-certificates-using-the-bitmark--cli).
+Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets. To do so, you could use the [Bitmark App](#registering-bitmark-certificates-using-the-bitmark-app), the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
 
 
 <br>
@@ -81,8 +81,6 @@ Here are the steps to register a new property using the Bitmark app:
 
 <br>
 
-* [Verify](https://github.com/bitmark-inc/docs/) bitmark transactions.
-
 
 <br>
 <br>
@@ -98,41 +96,59 @@ Here are the steps to register Bitmark Certificates of an asset using the **Bitm
 * Register an asset:
 
     ```js
+    // Create a Bitmark Account as the Issuer
+    let account = new sdk.Account();
+
+    // Define the asset name & metadata
     let name = "Example asset";
     let metadata = {"Example key":"Example alue"};
 
+    // Build and sign the asset registration request
     let params = sdk.Asset.newRegistrationParams(name, metadata);
     await params.setFingerprint(filepath);
     params.sign(account);
 
+    // Send the request
     let assets = (await sdk.Asset.register(params)).assets;
 
     let assetId = assets[0].id;
     ```
 
+    <br>
+
 * Issue the first bitmark 
 
     ```js
+    // Build and sign the bitmark issuance request
     let issueParams = sdk.Bitmark.newIssuanceParams(assetId, 1);
     issueParams.sign(account);
 
+    // Send the request
     let bitmarks = (await sdk.Bitmark.issue(issueParams)).bitmarks;
 
     let bitmarkId = bitmarks[0].id;
     ```
 
-* [Verify](https://github.com/bitmark-inc/docs/) bitmark transactions.
+    <br>
+
+* Verify the issuance transaction by querying for the bitmark by its bitmark Id
+
+    ```js
+        await Bitmark.get(bitmarkId);
+    ```
+
+   
 
 <br>
 <br>
 
-## Registering Bitmark Certificates using the Bitmark-CLI 
+## Registering Bitmark Certificates using the Bitmark CLI 
 
-The Bitmark-CLI allows users to register Bitmark Certificates by submitting the transactions to its connected node, and then broadcasting to the network. 
+The Bitmark CLI allows users to register Bitmark Certificates by submitting the transactions to its connected node, and then broadcasting to the network. 
 
 <br>
 
-> The basic structure of a Bitmark-CLI command:  
+> The basic structure of a Bitmark CLI command:  
 >   `bitmark-cli [global-options] command [command-options]`
 
 <br>
@@ -147,7 +163,7 @@ The Bitmark-CLI allows users to register Bitmark Certificates by submitting the 
 
 <br>
 
-Here are the steps to register a new Bitmark Certificate using the Bitmark-CLI
+Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 
 * Compute the hash of an asset
 
@@ -220,11 +236,52 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark-CLI
 
 <br>
 
-* [Verify](https://github.com/bitmark-inc/docs/) bitmark transactions.
+* Verify the status of the bitmark issuance transaction
 
+    ```shell
+    $ bitmark-cli -n <network>\
+      status -t <txid>
+    ```
 
+    > The `create` command is to register an asset from a fingerprint along with issuing the corresponding bitmarks
+    >
+    >* `asset name` - Define the `name` field in the asset record.
+    >
+    >* `asset metadata` - Define the `metadata` field in the asset record.
+    > 
+    >* `-f` option - Determine the hash of the asset.
+    >
+    >* `-z` option - Determine that it is the issuance of the first bitmark of the asset.
 
+    *Example:* 
+    
+    ```shell  
+    $ bitmark-cli -n testing \
+      status -t \
+      b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
+    ```
 
+    ```json
+    // Check right after the create command 
+    {
+      "status": "Pending"
+    }
 
+    // Check again after several minutes
+    {
+      "status": "Confirmed"
+    }
+    ```
+
+<br>
+<br>
+
+## Explore the Bitmark transactions using the Bitmark Registry website
+
+Bitmark build a web application for users to explore all the transactions happened on the Bitmark blockchain at:
+    
+* For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
+
+* For transaction on the Bitmark testnet blockchain: https://registry.bitmark.com
 
 

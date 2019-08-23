@@ -1,6 +1,6 @@
 # Bitmark shares
 
-In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provide a feature called the **bitmark shares**. 
+In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provides a feature called the **[bitmark shares]()**. 
 
 Any owner of a Bitmark Certificate is able to:
 
@@ -11,7 +11,7 @@ Any owner of a Bitmark Certificate is able to:
 * [Swap bitmark shares](#swapping-bitmark-shares) with others.
 
 
-Currently, only the Bitmark-CLI supports performing those transactions of bitmark shares.
+Currently, only the Bitmark CLI supports performing those transactions of bitmark shares.
 
 > **NOTE:** Transactions related to the bitmark share require a transaction fee. On the bitmark network, the fee can be pay by BTC or LTC
 > 
@@ -35,9 +35,9 @@ There are three records related to the Bitmark shares are stored on the Bitmark 
 <br>
 <br>
 
-## Prerequisites of working with bitmark share using the Bitmark-CLI
+## Prerequisites of working with bitmark shares using the Bitmark CLI
 
-Refer the [Payment on Bitmark-CLI](payment-on-bitmark-cli.md) document to: 
+Refer the [Payment on Bitmark CLI](payment-on-bitmark-cli.md) document to: 
 
 * Install the Bitmark-Wallet
 

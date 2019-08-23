@@ -1,6 +1,6 @@
 # Bitmark Account
 
-Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-bitmark-account-using-the-bitmark-sdk), or the [Bitmark-CLI](#creating-bitmark-account-using-the-bitmark--cli).
+Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-bitmark-account-using-the-bitmark-sdk), or the [Bitmark CLI](#creating-bitmark-account-using-the-bitmark-cli).
 
 After creating the Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
@@ -131,21 +131,21 @@ Here are the steps to install the Bitmark-SDK, initalize its configuration, then
 <br>
 <br>
 
-## Creating Bitmark Account using the Bitmark-CLI
+## Creating Bitmark Account using the Bitmark CLI
 
-Bitmark-CLI is a command line tool which allows a user to interact with the Bitmark blockchain by connecting to one or several nodes in the network. All the transactions are submitted directly to one of the connected nodes and consequently be verified by the node before be forwarded to the network.
+Bitmark CLI is a command line tool which allows a user to interact with the Bitmark blockchain by connecting to one or several nodes in the network. All the transactions are submitted directly to one of the connected nodes and consequently be verified by the node before be forwarded to the network.
 
 > In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
-> For the command structures, detailed explanation, other functions - Please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) section.
+> For the command structures, detailed explanation, other functions - Please refer the [Bitmark CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) section.
 
 <br>
 
-> The basic structure of a Bitmark-CLI command:  
+> The basic structure of a Bitmark CLI command:  
 >   `bitmark-cli [global-options] command [command-options]`
 
 <br>
     
-> The Bitmark-CLI determines which network the command will be sent to by the global option `--network` (abbreviation: `-n`) with the following possible values
+> The Bitmark CLI determines which network the command will be sent to by the global option `--network` (abbreviation: `-n`) with the following possible values
 > 
 >* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
 >
@@ -155,7 +155,7 @@ Bitmark-CLI is a command line tool which allows a user to interact with the Bitm
 
 <br>
 
-Here are the steps to create a new Bitmark Account using the Bitmark-CLI:
+Here are the steps to create a new Bitmark Account using the Bitmark CLI:
 
 * Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
 
