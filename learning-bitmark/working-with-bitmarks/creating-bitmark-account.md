@@ -1,6 +1,6 @@
 # Bitmark Account
 
-Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-bitmark-app), the [Bitmark SDK](#Creating Bitmark Account using Bitmark SDK), or the [Bitmark CLI](#Creating Bitmark Account using Bitmark-CLI).
+Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#Creating Bitmark Account using Bitmark SDK), or the [Bitmark CLI](#Creating Bitmark Account using Bitmark-CLI).
 
 After creating the Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
