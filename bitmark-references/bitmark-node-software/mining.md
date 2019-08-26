@@ -1,6 +1,6 @@
 # Overview
 
-This paragraph describes how mining works, how mining program communicates with `bitmarkd`, what kind of protocl it uses, and what mechanism is miner rewarded.
+This paragraph describes mining mechanism, including hashing, program communication protocal, and rewards.
 
 # Block Diagram
 
@@ -58,17 +58,54 @@ A block hash comes from following data:
 
 ## Difficulty
 
-Difficulty is a way to decide which hash is valid, higher difficulty means harder to find a valid hash.
+Difficulty is a way to decide which hash is valid, higher difficulty means harder to find a valid hash. A hash meets difficulty means hash vaue is less than or equal to difficulty value.
 
-difficulty is stored in floating point d range from 0 ≤ d < 1, actual difficuty value is 1/d. Difficulty value is encoded as a 57 bit mantissa, normalised to most significant bit to be 1 and can be dropped leaving 56 bits to store:
+The hash is considered is considerd as a 256 bit fixed point value composeda as following two parts:
 
-    [56 bits] [8 bits] = 64 bits unsigned value
-    mantissa  exponent
+    [8 bits] [248 bits]
+    exponent mantissa
 
-mantissa is right shifted by exponent +8 from most siginificat bit.
+Difficulty value is encoded as 64 bits, including 8 bits of exponent and 56 bits of mantissa.
 
-Examples:
-the "One" value:                00 ff  ff ff  ff ff  ff ff
-represents the 256 bit value:   00ff ffff ffff ffff 8000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
-value:                          01 ff  ff ff  ff ff  ff ff
-represents the 256 bit value:   007f ffff ffff ffff c000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+    [56 bits] [8 bits]
+    mantissa  exponent = 64 bits unsigned value
+
+Mantissa is normalized so that most significat bits is one and can be droppped leaving 56 bits to store, itt is right shifted by exponent +8 from the most significant bit.
+
+The difficulty `One` is defined as `00 ff  ff ff  ff ff  ff ff`, represents 256 bits value `0ff ffff ffff ffff 8000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000`.
+
+The `Two` is doubled of difficulty `One`: `01ffffffffffffff`, represents 256 bits value `007fffffffffffffc00000000000000000000000000000000000000000000000`.
+
+## Communication
+
+After `bitmarkd` verifies transaction, it sends out hashing job to `recorderd`. Each `bitmarkd` posses a job queue to keep record of what job has been sent to `recorderd`. If `recorderd` finds possible hash that might fits difficulty, it sends result back to `bitmarkd`, and `bitmarkd` returns verify result back to `recorderd`.
+
+The reply format from `recorderd` as follows:
+
+1. request
+
+    a string "block.nonce" to represent what kind of request
+
+1. job
+
+    `bitmarkd` provided number to denote job in queue
+
+1. packed
+
+    nonce that may makes hash meets difficulty
+
+reply from `bitmarkd`:
+
+1. job
+
+    job number
+
+2. ok
+
+    denote hash is valid or not
+
+## Reward
+
+Every block preserves miner data to denote which account mines (owns) the block, and each block contains some number of transactions. Miner is rewarded fix amount of fee (0.001 LTC) when transaction inside miner mined block has transferred, so for the asset that has more transfer, more mining fee is rewarded to miner.
+
+For example, miner A mines a block which block number is 1000, and this block contains an ownership of specific asset. After some period of time, owner of the asset transfer to another user C, once the transaction has be recorded, miner A receives mining fee of 0.001 LTC.
