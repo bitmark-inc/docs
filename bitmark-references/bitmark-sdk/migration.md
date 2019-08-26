@@ -29,6 +29,3 @@ Migration.migrate(phrase, new Callback1<Pair<Account, List<String>>>() {
                 }
             });
 ```
-
-```go
-```

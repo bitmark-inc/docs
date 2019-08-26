@@ -42,26 +42,14 @@ Asset.register(params, new Callback1<RegistrationResponse>() {
 ```
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/account"
-	"github.com/bitmark-inc/bitmark-sdk-go/asset"
+registrant, _ := account.FromSeed("USER_A_SEED")
+params, _ := asset.NewRegistrationParams(
+    "SDK usage example",
+    map[string]string{"author": "developer@bitmark.com"},
 )
-
-// This sample assumes the SDK is already correctly initialized
-func registerAssetExample(owner account.Account) {
-    params, err := asset.NewRegistrationParams(
-        "name", // asset name
-        map[string]string{"k1": "v1", "k2": "v2"}, // asset metadata
-    )
-
-    dat, err := ioutil.ReadFile("/tmp/dat")
-    params.SetFingerprint(dat) // calculate the fingerprint
-
-    params.Sign(owner)
-    params.JSON()
-
-    assetId, err := asset.Register(p)
-}
+params.SetFingerprintFromData([]byte("Hello, world!"))
+params.Sign(registrant)
+assetID, err := asset.Register(params)
 ```
 
 The first step to create a digital property is to register assets.
@@ -81,68 +69,7 @@ An asset record won't be added to the blockchain without accompanying bitmark is
 
 This system records ownership claims for digital assets as digital property titles known as bitmarks.
 
-After the asset is registered, you can issue bitmarks with a permananent reference to the corresponding asset record. 
-
-There can be multiple issues for the same asset, each defined by a different nonce, and each representing a different instance of the property.
-
-## Create issuances with nonces
-
-```javascript
-let params = Bitmark.newIssuanceParams(assetId, nonces = [1, 2, ..., 100]);
-params.sign(account);
-
-let response = await Bitmark.issue(params);
-```
-
-```swift
-var params = Bitmark.newIssuanceParams(assetId: assetId,
-                                       nonces: [1..100])
-try params.sign(issuer)
-
-let bitmarkIds = try Bitmark.issue(params)
-```
-
-```java
-Address owner = account.toAddress();
-IssuanceParams params = new IssuanceParams(assetId, owner, new int[] {1, 2, 3, 4, 5});
-params.sign(ownerKey);
-Bitmark.issue(params, new Callback1<List<String>>() {
-            @Override
-            public void onSuccess(List<String> bitmarkIds) {
-                
-            }
-
-            @Override
-            public void onError(Throwable throwable) {
-
-            }
-        });
-```
-
-```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/account"
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func issueByNoncesExample(issuer account.Account) {
-    params := bitmark.NewIssuanceParams(
-        assetId,
-        bitmark.QuantityOptions{
-            Nonces: []uint64{uint64(1), uint64(2), uint64(3)},
-        },
-    )
-    params.Sign(issuer)
-    bitmarkIds, err := bitmark.Issue(params) // returns three bitmark IDs
-}
-```
-
-Nonce is a counter value that distinguishes different issuances for the same asset of the same owner. Typically, these represent “limited editions” of a digital asset, and the nonce can be viewed as edition number.
-
-The combination of nonce, owner and asset should be unique over the blockchain. To issue more bitmarks, developers need to make sure there is no duplicated nonces for issuing within a same owner and asset pair.
-
-## Create issuances without nonces
+After the asset is registered, you can issue bitmarks with a permanent reference to the corresponding asset record. 
 
 ```javascript
 let params = Bitmark.newIssuanceParams(assetId, quantity = 100);
@@ -178,29 +105,11 @@ Bitmark.issue(params, new Callback1<List<String>>() {
 ```
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/account"
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func issueByQuantityExample(issuer account.Account) {
-    params := bitmark.NewIssuanceParams(
-        assetId,
-        bitmark.QuantityOptions{
-            Quantity: 3,
-        },
-    )
-    params.Sign(issuer)
-    bitmarkIds, err := bitmark.Issue(params) // returns three bitmark IDs
-}
+issuer, _ := account.FromSeed("USER_A_SEED")
+params := bitmark.NewIssuanceParams("YOUR ASSET ID", 10)
+params.Sign(issuer)
+bitmarkIDs, err := bitmark.Issue(params)
 ```
-
-If you simply want to generate authorized copies of digital data on demand, you can set `quantity` instead. The SDK will generate random nonces automatically for issuing.
-
-<aside class="notice">
-Either <code>quantity</code> or <code>nonces</code> should be specified when issuing bitmarks. The setting of <code>nonces</code> takes precendence over <code>quantity</code>.
-</aside>
 
 # Transfer a bitmark
 
@@ -264,22 +173,11 @@ Bitmark.transfer(params, new Callback1<String>() {
 ```
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/account"
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func transferExample(sender account.Account) {
-    params := bitmark.NewTransferParams("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9") // set receiver's account number
-    params.FromBitmark("71131367bc56628bb2eee15da274e466f2ae1533c192d60c9eeef6484b1117e3") // specify which bitmark to be transferred
-
-    // In addition to specifying bitmark directly, you can also specify the latest tx ID of this bitmark
-    // params.FromLatestTx("0374d3cd9a901d0c3d084c0e1d57b2c29331eafbbd183fa4fabb40eae331a3d7")
-
-    params.Sign(sender)
-    txId, err := bitmark.Transfer(params)
-}
+sender, _ := account.FromSeed("USER_A_SEED")
+params, _ := bitmark.NewTransferParams("YOUR RECEIVER ACCOUNT NUMBER")
+params.FromBitmark("YOUR BITMARK ID")
+params.Sign(sender)
+txID, err := bitmark.Transfer(params)
 ```
 
 The sender can transfer a bitmark to another account without additional consent.
@@ -331,20 +229,11 @@ Bitmark.offer(params, new Callback1<String>() {
 ```
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/account"
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func offerBitmarkExample(sender account.Account) {
-    params := bitmark.NewOfferParams(receiverAccountNumber, true)
-    params.FromBitmark() // asynchrous, just to check the head_id
-    // params.FromTx() // or synchrous
-    params.Sign(sender)
-
-    bitmark.Offer(params)
-}
+sender, _ := account.FromSeed("USER_A_SEED")
+params, _ := bitmark.NewOfferParams("YOUR RECEIVER ACCOUNT NUMBER", nil)
+params.FromBitmark("YOUR BITMARK ID")
+params.Sign(sender)
+err := bitmark.Offer(params)
 ```
 
 The current owner of a bitmark can propose a transfer offer for another account if the status of the bitmark is `settled`,
@@ -385,18 +274,8 @@ Bitmark.list(builder, new Callback1<GetBitmarksResponse>() {
 ```
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func listOfferingBitmarksExample() {
-    builder := bitmark.NewQueryParamsBuilder().
-		OfferFrom("e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog").
-		Limit(10)
-
-    bitmarks, err := bitmark.List(builder)
-}
+builder := bitmark.NewQueryParamsBuilder().OfferTo("YOUR RECEIVER ACCOUNT NUMBER")
+bitmarks, referencedAssets, err := bitmark.List(builder)
 ```
 
 The receiver needs to query if there is any bitmark transfer offer waiting for the countersignature.
@@ -439,17 +318,11 @@ If the receiver decides to accept the bitmark, the countersignature is generated
 The status of the bitmark will change from `offering` to `transferring`. The 
 
 ```go
-import (
-    "github.com/bitmark-inc/bitmark-sdk-go/account"
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func acceptOfferExample(receiver account.Account) {
-    params := bitmark.NewTransferResponseParams(bitmark, sdk.Bitmark.Accpet)
-    params.Sign(receiver)
-    txId, err := bitmark.Respond(params)
-}
+bmk, _ := bitmark.Get("YOUR BITMARK ID")
+receiver, _ := account.FromSeed("USER_B_SEED")
+params := bitmark.NewTransferResponseParams(bmk, bitmark.Accept)
+params.Sign(receiver)
+_, err := bitmark.Respond(params)
 ```
 
 ### Reject the transfer offer
@@ -487,15 +360,18 @@ Bitmark.respond(params, new Callback1<String>() {
 
 ```go
 import (
-    "github.com/bitmark-inc/bitmark-sdk-go/account"
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
+	"fmt"
+	bmAccount "github.com/bitmark-inc/bitmark-sdk-go/account"
+	bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"
 )
 
 // This sample assumes the SDK is already correctly initialized
-func rejectOfferExample(receiver account.Account) {
-    params := bitmark.NewTransferResponseParams(bitmark, sdk.Bitmark.Reject)
-    params.Sign(receiver)
-    txId, err := bitmark.Respond(params)
+func acceptOffer(receiver bmAccount.Account, bitmark *bmBitmark.Bitmark) {
+	rp := bmBitmark.NewTransferResponseParams(bitmark, bmBitmark.Reject)
+	rp.Sign(receiver)
+
+	_, err := bmBitmark.Respond(rp)
+	fmt.Println(err)
 }
 ```
 
@@ -536,17 +412,20 @@ Bitmark.respond(params, new Callback1<String>() {
 
 ```go
 import (
-    "github.com/bitmark-inc/bitmark-sdk-go/account"
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
+	"fmt"
+	bmAccount "github.com/bitmark-inc/bitmark-sdk-go/account"
+	bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"
 )
 
 // This sample assumes the SDK is already correctly initialized
-func cancelOfferExample(receiver account.Account) {
-    params := bitmark.NewTransferResponseParams(bitmark, sdk.Bitmark.Cancel)
-    params.Sign(receiver)
-    txId, err := bitmark.Respond(params)
+func acceptOffer(sender bmAccount.Account, bitmark *bmBitmark.Bitmark) {
+	rp := bmBitmark.NewTransferResponseParams(bitmark, bmBitmark.Cancel)
+	rp.Sign(sender)
+
+	_, err := bmBitmark.Respond(rp)
+	fmt.Println(err)
 }
 ```
 
 If the receiver hasn't responded to the bitmark transfer offer (neither accepted nor rejected), the sender can cancel the offer.
-Similar to the case of the receiver rejectting the offer, the status of the bitmark will be set to `settled` again, and becomes available for the next transfer.
+Similar to the case of the receiver rejecting the offer, the status of the bitmark will be set to `settled` again, and becomes available for the next transfer.

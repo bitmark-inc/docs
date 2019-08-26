@@ -1,6 +1,6 @@
 # Account
 
-Within the Bitmark system, an account represents any entity capable of creating and owning property, whether individuals, insitutions, or organizations. 
+Within the Bitmark system, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations. 
 
 An account incorporates the public-private keypair and the private key is required to [digitally sign](https://en.wikipedia.org/wiki/Digital_signature) any Bitmark blockchain record, including asset records, issue records, and transfer records.
 
@@ -28,11 +28,7 @@ Account account = new Account();
 ```
 
 ```go
-import "github.com/bitmark-inc/bitmark-sdk-go/account"
-
-func createNewAccountExample() {
-    account, err := account.New()
-}
+acct, err := account.New()
 ```
 
 ## Get the account number
@@ -52,11 +48,8 @@ String accountNumber = account.getAccountNumber();
 ```
 
 ```go
-import "github.com/bitmark-inc/bitmark-sdk-go/account"
-
-func getAccountNumberExample(acct account.Account) {
-    accountNumber := acct.AccountNumber()
-}
+acct, _ := account.New()
+accountNumber := acct.AccountNumber()
 ```
 
 The account number of an account serves as a pseudonymous identifier within the Bitmark blockchain, which can represent:
@@ -93,11 +86,8 @@ String encodedSeed = seed.getEncodedSeed();
 ```
 
 ```go
-import "github.com/bitmark-inc/bitmark-sdk-go/account"
-
-func getSeedExample(acct account.Account) {
-    seed := acct.Seed()
-}
+acct, _ := account.New()
+seed := acct.Seed()
 ```
 
 The seed is the more compact format of an exported account for your program to re-instantiate an account.
@@ -141,14 +131,8 @@ String[] mnemonicWords = recoveryPhrase.getMnemonicWords();
 ```
 
 ```go
-import (
-    "github.com/bitmark-inc/bitmark-sdk-go/account"
-    "golang.org/x/text/language"
-)
-
-func getRecoveryPhraseExample(acct account.Account) {
-    phrase, err := acct.RecoveryPhrase(language.AmericanEnglish)
-}
+acct, _ := account.New()
+phrase, err := acct.RecoveryPhrase(language.AmericanEnglish)
 ```
 
 The recovery phrase, which consists of 12 [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior for human interaction compared to the handling of seed. If you don't plan to custody user's private key, make sure you present the recovery phrase to your user. Currently English and traditional Chinese are supported.
@@ -178,11 +162,7 @@ Account account = Account.fromSeed(seed);
 ```
 
 ```go
-import "github.com/bitmark-inc/bitmark-sdk-go/account"
-
-func recoverFromSeedExample() {
-    account, err := account.FromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8")
-}
+acct, err := account.FromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8")
 ```
 
 ### Recover from phrase
@@ -206,7 +186,7 @@ let account = try Account(recoverPhrase: [
     language: .english
 )
 
-// Tranditional Chinese version
+// Traditional Chinese version
 let account = try Account(recoverPhrase: [
     "婆", "潮", "睛", "毫", "壤", "殿", "北", "謝", "人", "答", "隊", "星"],
     language: .chineseTraditional
@@ -222,17 +202,13 @@ Account account = Account.fromRecoveryPhrase("箱", "阻", "起", "归", "彻", 
 ```
 
 ```go
-import "github.com/bitmark-inc/bitmark-sdk-go/account"
-
-func recoverFromPhraseExample() {
-    account := account.FromRecoveryPhrase(
-        []string{
-            "name", "gaze", "apart", "lamp", " lift", " zone",
-            "believe" , "steak", "session", "laptop", "crowd", "hill",
-        },
-        language.AmericanEnglish,
-    )
-}
+acct, err := account.FromRecoveryPhrase(
+    []string{
+        "name", "gaze", "apart", "lamp", " lift", " zone",
+        "believe", "steak", "session", "laptop", "crowd", "hill",
+    },
+    language.AmericanEnglish,
+)
 ```
 
 ## Account utility functions
@@ -254,42 +230,8 @@ boolean isValid = Account.isValidAccountNumber(accountNumber);
 ```
 
 ```go
-import "github.com/bitmark-inc/bitmark-sdk-go/account"
-
-func main() {
-    valid := account.IsValidAccountNumber(accountNumber)
-}
+err := account.ValidateAccountNumber("e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog")
 ```
 
-The function returns a boolean to indicate whether a given account number is valid in current runtime environment, i.e.,
+The function returns an error to indicate whether a given account number is valid in current runtime environment, i.e.,
 the format is correct and its network matches to the network specified in the SDK config during initialization.
-
-### Parse information from an account number
-
-```javascript
-let accountInfo = Account.parseAccountNumber(accountNumber);
-//{
-//  network: "livenet",
-//  pubKey: "6kJrV6VNhS6juuceTCKMmek1WrXopvbzNTvYqANy"
-//}
-```
-
-```swift
-let (network, pubkey) = try Account.parseAccountNumber(accountNumber)
-```
-
-```java
-AccountNumberData accountNumberData = Account.parseAccountNumber(accountNumber);
-Network network = accountNumberData.getNetwork();
-byte[] publicKey = accountNumberData.getPublicKey().toBytes();
-```
-
-```go
-import "github.com/bitmark-inc/bitmark-sdk-go/account"
-
-func main() {
-    network, pubkey, err := account.ParseAccountNumber(accountNumber)
-}
-```
-
-The function parses an account number and returns its network and public key.

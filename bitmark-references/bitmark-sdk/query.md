@@ -67,17 +67,11 @@ let assets = try Asset.list(params: params)
 ````
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/asset"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func listAssetsExample() {
-    params := asset.NewQueryParamsBuilder().
-        RegisteredBy("ec6yMcJATX6gjNwvqp8rbc4jNEasoUgbfBBGGyV5NvoJ54NXva").
-        Limit(10)
-    assets, err := asset.List(params)
-}
+// import bmAsset "github.com/bitmark-inc/bitmark-sdk-go/asset"
+params := bmAsset.NewQueryParamsBuilder().
+		RegisteredBy("ec6yMcJATX6gjNwvqp8rbc4jNEasoUgbfBBGGyV5NvoJ54NXva").
+		Limit(10)
+assets, err := bmAsset.List(params)
 ```
 
 ```java
@@ -134,14 +128,8 @@ let bitmark = Bitmark.get(bitmarkID: bitmarkId);
 ````
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func getBitmarkExample() {
-    bitmark, err := bitmark.Get(bitmarkId, false)
-}
+// import bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"
+bitmark, err := bmBitmark.Get("3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1")
 ```
 
 ### Query for a set of bitmarks
@@ -175,23 +163,16 @@ let (bitmarks, assets) = try Bitmark.list(params: query)
 ````
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func listBitmarksExample() {
-    params := bitmark.NewQueryParamsBuilder().
-        IssuedBy("e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog").
-        OwnedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9", true).
-        OfferTo("dzJjGazcRuC7KhgU5o2Y2YV8wGXhBBabGRACa2Uyg4ZkVWwyNu").
-        OfferFrom("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9").
-        ReferencedAsset("1f21148a273b5e63773ceee976a84bcd014d88ac2c18a29cac4442120b430e158386b0ad90515c69e7d1fd6df8f3d523e3550741e88d0d04798627a57b0006c9").
-        LoadAsset(true).
-        Limit(10)
-
-    bitmarks, err := bitmark.List(params)
-}
+// import bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"
+params := bmBitmark.NewQueryParamsBuilder().
+    IssuedBy("e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog").
+    OwnedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9").
+    OfferTo("dzJjGazcRuC7KhgU5o2Y2YV8wGXhBBabGRACa2Uyg4ZkVWwyNu").
+    OfferFrom("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9").
+    ReferencedAsset("1f21148a273b5e63773ceee976a84bcd014d88ac2c18a29cac4442120b430e158386b0ad90515c69e7d1fd6df8f3d523e3550741e88d0d04798627a57b0006c9").
+    LoadAsset(true).
+    Limit(10)
+bitmarks, referencedAssets, err := bmBitmark.List(params)
 ```
 
 ```java
@@ -236,14 +217,8 @@ let txResponse = await Transaction.get(txId);
 ````
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/tx"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func getTxExample() {
-    tx, err := tx.Get(txId, true)
-}
+// import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"
+tx, err := bmTx.Get("3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1")
 ```
 
 ```java
@@ -287,21 +262,14 @@ let (txs, assets) = try Transaction.list(params: query)
 ````
 
 ```go
-import (
-	"github.com/bitmark-inc/bitmark-sdk-go/tx"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func listTxsExample() {
-    params := tx.NewQueryParamsBuilder().
-        OwnedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9", true).
-        ReferencedAsset("0e0b4e3bd771811d35a23707ba6197aa1dd5937439a221eaf8e7909309e7b31b6c0e06a1001c261a099abf04c560199db898bc154cf128aa9efa5efd36030c64").
-        ReferencedBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518").
-        LoadAsset(true).
-        Limit(10)
-
-    txs, err := tx.List(params)
-}
+// import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"
+params := bmTx.NewQueryParamsBuilder().
+    OwnedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9").
+    ReferencedAsset("0e0b4e3bd771811d35a23707ba6197aa1dd5937439a221eaf8e7909309e7b31b6c0e06a1001c261a099abf04c560199db898bc154cf128aa9efa5efd36030c64").
+    ReferencedBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518").
+    LoadAsset(true).
+    Limit(10)
+txs, referencedAssets, err := bmTx.List(params)
 ```
 
 ```java
@@ -340,8 +308,10 @@ let (txs, _) = try Transaction.list(params: query)
 ````
 
 ```go
-params := tx.NewQueryParamsBuilder().
+// import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"
+params := bmTx.NewQueryParamsBuilder().
     ReferencedBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518")
+txs, referencedAssets, err := bmTx.List(params)
 ```
 
 ```java
@@ -376,8 +346,10 @@ let (txs, _) = try Transaction.list(params: query)
 ````
 
 ```go
-params := tx.NewQueryParamsBuilder().
-    OwnedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9", true)
+// import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"
+params := bmTx.NewQueryParamsBuilder().
+    OwnedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9")
+txs, referencedAssets, err := bmTx.List(params)
 ```
 
 ```java
