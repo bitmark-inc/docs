@@ -1,6 +1,6 @@
 # Overview
 
-This paragraph describes mining mechanism, including hashing, program communication protocal, and rewards.
+This paragraph describes mining mechanism, including hashing, communication protocal, and rewards.
 
 # Block Diagram
 
@@ -10,17 +10,17 @@ This paragraph describes mining mechanism, including hashing, program communicat
             |              |  <----------------  |               |
             +--------------+  zero mq protocal   +---------------+
 
-The hashing procedure relates to `bitmarkd` and `recorderd`. `recorderd` is the program to perform hashing, it receives messages from `bitmarkd` and tries to find hashes possibly meets hashing criteria, if any possible hash is found, `recorderd` sends message back to `bitmarkd` to ask for validation.
+The hashing procedure relates to `bitmarkd` and `recorderd` only. `recorderd` is program to perform hashing, it receives jobs from `bitmarkd` and tries to find hashes possibly meets hashing criteria, if any possible hash is found, `recorderd` sends message back to `bitmarkd` to ask for validation.
 
-When `bitmarkd` receives hash from `recorderd`, `bitmarkd` validates hashing task returned is valid (which means the task is sent from this `bitmarkd` node but not other `bitmarkd` node), the hash is valid. After validating hash correctness, `bitmarkd` sends result bask to `recorderd`.
+When `bitmarkd` receives special string from `recorderd`, `bitmarkd` validates hashes from this special string and returns validation result to `recorderd`.
 
-If `bitmarkd` receives no valid hashes from other nodes or from `recorderd`, `bitmarkd` sends hashing task to `recorderd` every 1 minute until valid hash is received.
+If `bitmarkd` receives no valid hashes from other nodes or from `recorderd`, `bitmarkd` sends hashing task to `recorderd` periodically (currently every 1 minute), until valid hash is found or received.
 
 ## Hashing
 
-Hashing is a behavior to convert any form of data into a unique string of text, if a hashing algorithm is well designed, it should be hard to guess original data from generated hash.
+Hashing is a behavior to convert any form of data into a unique string of text, if a hashing algorithm is well designed, it should be hard to guess original data from generated output.
 
-The hashing algorithm used in bitmark is `argon2`, which is a memory hard algorithm that can resist from GPU or ASIC hardware computation. Length of a hash is 256 bit (32 bytes).
+Hashing algorithm used in bitmark is `argon2`, which is a memory hard algorithm that can resist from GPU or ASIC hardware computation. Length of a hash is 256 bits long.
 
 Many parameters relates to hashing, if `argon2` executable is installed, following command line can demonstrate the hasing process:
 
@@ -30,7 +30,7 @@ printf '%s' 'hello world' | argon2 'hello world' -d -l 32 -m 17 -t 4 -p 1 -r | a
 f8a17bc25cb53e848e2d09811ade4b8a037f628443661b88611faf5d9a5a1f33
 ```
 
-A block hash comes from following data:
+A block hash contains following data:
 
 1. block record version
 
@@ -58,14 +58,14 @@ A block hash comes from following data:
 
 ## Difficulty
 
-Difficulty is a way to decide which hash is valid, higher difficulty means harder to find a valid hash. A hash meets difficulty means hash vaue is less than or equal to difficulty value.
+Difficulty is a number to decide which hash is valid, higher difficulty means harder to find a valid hash. A hash meets difficulty means hash vaue is less than or equal to difficulty value.
 
-The hash is considered is considerd as a 256 bit fixed point value composeda as following two parts:
+The hash is considered as a 256 bit fixed point value composeda as following two parts:
 
     [8 bits] [248 bits]
     exponent mantissa
 
-Difficulty value is encoded as 64 bits, including 8 bits of exponent and 56 bits of mantissa.
+Difficulty value is encoded by 64 bits, including 8 bits of exponent and 56 bits of mantissa.
 
     [56 bits] [8 bits]
     mantissa  exponent = 64 bits unsigned value
@@ -78,9 +78,9 @@ The `Two` is doubled of difficulty `One`: `01ffffffffffffff`, represents 256 bit
 
 ## Communication
 
-After `bitmarkd` verifies transaction, it sends out hashing job to `recorderd`. Each `bitmarkd` posses a job queue to keep record of what job has been sent to `recorderd`. If `recorderd` finds possible hash that might fits difficulty, it sends result back to `bitmarkd`, and `bitmarkd` returns verify result back to `recorderd`.
+`bitmarkd` sends hashing job to `recorderd`. Each `bitmarkd` posses a job queue to keep records of what job has been sent to `recorderd`. If `recorderd` finds possible hash that might fits difficulty, it sends result back to `bitmarkd`, and `bitmarkd` returns verified result back to `recorderd`.
 
-The reply format from `recorderd` as follows:
+The message format from `recorderd` to `bitmarkd` as follows:
 
 1. request
 
@@ -94,7 +94,7 @@ The reply format from `recorderd` as follows:
 
     nonce that may makes hash meets difficulty
 
-reply from `bitmarkd`:
+The message from `bitmarkd` to reply `recorderd` as follows:
 
 1. job
 
