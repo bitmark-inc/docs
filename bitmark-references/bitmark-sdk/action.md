@@ -359,20 +359,11 @@ Bitmark.respond(params, new Callback1<String>() {
 ```
 
 ```go
-import (
-	"fmt"
-	bmAccount "github.com/bitmark-inc/bitmark-sdk-go/account"
-	bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func acceptOffer(receiver bmAccount.Account, bitmark *bmBitmark.Bitmark) {
-	rp := bmBitmark.NewTransferResponseParams(bitmark, bmBitmark.Reject)
-	rp.Sign(receiver)
-
-	_, err := bmBitmark.Respond(rp)
-	fmt.Println(err)
-}
+bmk, _ := bitmark.Get("YOUR BITMARK ID")
+receiver, _ := account.FromSeed("USER_B_SEED")
+params := bitmark.NewTransferResponseParams(bmk, bitmark.Reject)
+params.Sign(receiver)
+_, err := bitmark.Respond(params)
 ```
 
 The receiver can also reject the bitmark transfer offer.
@@ -411,20 +402,11 @@ Bitmark.respond(params, new Callback1<String>() {
 ```
 
 ```go
-import (
-	"fmt"
-	bmAccount "github.com/bitmark-inc/bitmark-sdk-go/account"
-	bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"
-)
-
-// This sample assumes the SDK is already correctly initialized
-func acceptOffer(sender bmAccount.Account, bitmark *bmBitmark.Bitmark) {
-	rp := bmBitmark.NewTransferResponseParams(bitmark, bmBitmark.Cancel)
-	rp.Sign(sender)
-
-	_, err := bmBitmark.Respond(rp)
-	fmt.Println(err)
-}
+bmk, _ := bitmark.Get("YOUR BITMARK ID")
+sender, _ := account.FromSeed("USER_A_SEED")
+params := bitmark.NewTransferResponseParams(bmk, bitmark.Cancel)
+params.Sign(sender)
+_, err := bitmark.Respond(params)
 ```
 
 If the receiver hasn't responded to the bitmark transfer offer (neither accepted nor rejected), the sender can cancel the offer.
