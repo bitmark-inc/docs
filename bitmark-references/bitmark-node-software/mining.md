@@ -104,6 +104,12 @@ The message from `bitmarkd` to reply `recorderd` as follows:
 
     denote hash is valid or not
 
+## Block Verification and Broadcast
+
+If a hash is valid, then `bitmarkd` stores that block locally. While sotring block, it will check block data again, including correctness of hash, chain is linked to previous one, payment informatino is valid, etc. After block is successfully stored, `bitmarkd` will broadcast block information to all connected nodes.
+
+When a node recieves block message from other node, it will verify received block by itself, including correctness of hash, owner, payment, etc. As a block is verified, node will store that block and broadcast out to all nodes connected. A newly generated block is propagate in this way to whole network.
+
 ## Reward
 
 Every block preserves miner data to denote which account mines (owns) the block, and each block contains some number of transactions. Miner is rewarded fix amount of fee (0.001 LTC) when transaction inside miner mined block has transferred, so for the asset that has more transfer, more mining fee is rewarded to miner.
