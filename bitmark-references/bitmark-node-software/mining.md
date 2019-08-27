@@ -42,7 +42,7 @@ A block hash contains following data:
 
 1. merkle root
 
-    the hash of all transaction hashes inside the block
+    the hash of all transaction hashes inside the block, if verified transactions are less than block allowable limit (9999), then all verified transactions will be put into a block. If verified transactions above block allowable limit, random transactions will be selected
 
 1. timestamp
 
