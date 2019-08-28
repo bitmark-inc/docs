@@ -2,9 +2,9 @@
 
 ## Introduction
 
-RPC is the abbreviation of remote procedure call, which is an interprocess communication technique used for client-server based applications. It is also known as subroutine call or function call.
+RPC is the abbreviation of remote procedure call, which is an inter-process communication technique used for client-server based applications. It is also known as subroutine call or function call.
 
-A client has a request message that the RPC translates and sends to the server. This request may be a procedure or a function call to a remote server. When the server receives the request, it sends the required response back to the client. The client is blocked while the server is processing the call and only resumed execution after the server is finished.
+A client has a request message that the RPC translates and sends to the server. This request may be a procedure call or a function call to a remote server. When the server receives the request, it sends the required response back to the client. The client is blocked while the server is processing the call and only resumed execution after the server is finished.
 
 The sequence of events in a remote procedure call are given as follows:
 
@@ -20,13 +20,13 @@ The sequence of events in a remote procedure call are given as follows:
 
 ## Initialization
 
-When `bitmarkd` starts, it initialises rpc settings including maximum connection count, connection bandwidth, communication encryption key, binds RPC on specific port, listen rpc port.
+When `bitmarkd` starts, it initialises RPC settings including maximum connection count, connection bandwidth, communication encryption key, binds RPC on specific port, listen RPC port.
 
 ## Processing Messages
 
-Different rpc command is processed by differnet function, following sections describes each command with examples. Each message is in json format, with one key `method` to denote which remote method to be executed, and the other key `params` to denote what arguments are passed.
+Different RPC command is processed by differnet function, following sections describes each command with examples. Each message is in json format, with one key `method` denotes which remote method being executed, and the other key `params` denotes what arguments are passed.
 
-In order to test examples, `bitmarkd` should be started in advance, default rpc port is on `2130`. `openssl` should be installed to run communication.
+In order to test example, `bitmarkd` should be started in advance, default RPC port is on `2130`. `openssl` should be installed in advance to run communication.
 
 All methods are named in the format of `file_name.method_name`, for example, `Assets.Get` stands for method `Get` in file `assets.go`.
 
