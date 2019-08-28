@@ -90,20 +90,17 @@ Example shell command:
 
 1. BlockOwner.Transfer - transfer block ownership to another account
 
-Some data is needed to transfer block ownership, including transaction hash (link), payment version (version), payment information (payments), next owner (owner), hex string of
+Some data is needed to transfer block ownership, including transaction hash (link), version to specify available payments (version), payment information (payments), next owner (owner), hex string of owner (signature), hex strnig of next owner (countersignature).
 
 Example shell command:
 
 ```shell
-(echo '{"id":"1","method":"BlockOwner.Transfer","params":[{"link":"1bebd06c8ecb8b11ea93e93c9d38b7f6d7dfdf015530819015172cf51c7f33f7", "version": 5, "payments": ["1": "BTC"], "owner": "eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9", "signature": "a3e456a31a4a64962a32bcbf6549d14134deeb5d87285a04c648355eb9e59d938f8ab440d2b50c781baf2c1a5a2112c2167301bb128c8f850a9d54f3b27c5a08"}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
+(echo '{"id":"1","method":"BlockOwner.Transfer","params":[{"link":"1bebd06c8ecb8b11ea93e93c9d38b7f6d7dfdf015530819015172cf51c7f33f7", "version": 1, "payments": {"1": "BTC-address", "2": "LTC-address"}, "owner": "eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9", "signature": "a3e456a31a4a64962a32bcbf6549d14134deeb5d87285a04c648355eb9e59d938f8ab440d2b50c781baf2c1a5a2112c2167301bb128c8f850a9d54f3b27c5a08"}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
 ```
 
-1. Node.Info
+1. Node.Info - retrieve node info
 
-This method is in file `rpc/node.go#77: Info`. It is used to get
-node info.
-
-There no need to have any parameter for this method.
+No extra parameters are needed.
 
 Example shell command:
 
@@ -111,28 +108,19 @@ Example shell command:
 (echo '{"id":"1","method":"Node.Info","params":[{}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
 ```
 
-1. Node.List
+1. Node.List - list available nodes
 
-Lists the RPC services available in the network.
+Parameter to specify how many nodes to return (count).
 
 Example shell command:
 
 ```shell
-(echo '{"id":"1","method":"Node.List","params":[{}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
+(echo '{"id":"1","method":"Node.List","params":[{"count": 20}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
+
 ```
+1. Transaction.Status - retrieve status of a transaction
 
-1. Transaction.Status
-
-This method is in file `rpc/transaction.go#32: Status`. It is used
-to get transaction status.
-
-Input format `TransactionArguments` includes string (`txId`)
-
-```go
-    type TransactionArguments struct {
-        TxId merkle.Digest `json:"txId"`
-    }
-```
+Only argument to provide is array of transaction hash (txId)
 
 Example shell command:
 
