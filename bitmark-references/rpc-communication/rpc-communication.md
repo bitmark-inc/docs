@@ -34,7 +34,7 @@ Available commands:
 
 1. Assets.Get - retrieve assets information
 
-It is necessary to provide asset fingerprints to query asset information, multiple assets information can be retrieved in a rpc call.
+It is necessary to provide array of asset fingerprints to query asset information fingerprints).
 
 Example shell command:
 
