@@ -12,7 +12,8 @@ Byte
 : A single binary byte.
 
 Unn
-: An unsigned integer of "nn" bits length.
+: An unsigned integer of "nn" bits length. Normally these will
+  multiples of 8 bits like: U8, U16, U32, U64.
 
 VarInt
 : A sequence of 1 to 9 bytes that represents a 64 bit unsigned
@@ -73,7 +74,7 @@ The Issue Record structure
 Item              Type       Description
 ----------------  ---------  ------------------------
 Type code         Byte       Issue Record type code
-AssetId           Binary     Link to asset record
+AssetId           Binary     Link to asset record (SHA3-512 of asset fingerprint)
 Owner             Account    The public key of the signer
 Nonce             VarInt     Allow for multiple issues of the same asset
 Signature         Signature  Ed25519 signature of signer
@@ -83,7 +84,7 @@ The Transfer Record structure
 Item              Type       Description
 ----------------  ---------  ------------------------
 Type code         Byte       Transfer Record type code
-Link              Binary     Link to previous Issue or Transfer
+Link              Binary     Link to previous Issue or Transfer (SHA3-256)
 Owner             Account    The public key of the signer
 Signature         Signature  Ed25519 signature of linked previous owner
 CounterSignature  Signature  Ed25519 signature of this record owner
@@ -104,8 +105,8 @@ Item              Type       Description
 Version           U16        The version control block rules in action
 TransactionCount  U16        Number of transactions in the block
 Number            U64        The number of this block
-PreviousBlock     Argon2     Thirty two byte has of the previous block
-MerkleRoot        SHA3-256   Thirty two byte has of the transaction Merkle tree
+PreviousBlock     Argon2     Thirty two byte hash of the previous block
+MerkleRoot        SHA3-256   Thirty two byte hash of the transaction Merkle tree
 Timestamp         U64        Timestamp as a Unix (seconds after start of 1970-01-01)
 Difficulty        U64        Difficulty fraction as 57 bit mantissa + 8 bit exponent
 Nonce             U64        Nonce created by hashing to meet the difficulty
@@ -127,6 +128,8 @@ SHA2 would have to be uses twice to protect against this and that
 costs more CPU resources.  The SHA3 is faster so reduces the time to
 build the Merkle Tree.  SHA1 has been broken so was not considered.
 
+The SHA3 algorithm is also used for transaction IDs and is simply the
+hash of the packed binary transaction including all signatures.
 
 ### Block Hashing (argon2, difficulty, proof of work ...)
 
@@ -137,7 +140,9 @@ typical x86 CPU core.  At the settings uses the hashing power of CPUs
 is still very low on the order of a few hashes per second, this means
 that the difficulty scale is much lower than other blockchain systems.
 
-The difficulty is represented as a floating point value in the range:
+The difficulty is represented as a
+[https://en.wikipedia.org/wiki/Floating-point_arithmetic](floating
+point) value in the range:
 
     1 ≥ d > 0
 
@@ -163,4 +168,6 @@ to store:
      value: 01 ff  ff ff  ff ff  ff ff
      represents the 256 bit value: 007f ffff ffff ffff c000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
 
-    Note: the values here are shown as big endian, but the header is stored little endian
+    Notes:
+      1. the values here are shown as big endian, but the header is stored little endian
+      2. the "one" value is current in the packed 64 bit for does represent exactly a difficulty of 1.0

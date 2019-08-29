@@ -23,10 +23,11 @@
 * Shares can be granted from the original supply to others.
 
 * Accounts holding shares can effectively trade them, but only among
-  holders of a single Bitmark Share.  This leads to a requirement of a
-  **swap** action to do inter share trading or something approximating
-  to currency exchange.  This could also be used to swap out old
-  shares for new shares with a different total amount.
+  holders of a single Bitmark Share (i.e. same Share ID).  This leads
+  to a requirement of a **swap** action to do inter share trading or
+  something approximating to currency exchange.  This could also be
+  used to swap out old shares for new shares with a different total
+  amount.
 
 * account holders must be able to determine their balance.
 
