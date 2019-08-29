@@ -66,5 +66,5 @@
   from share creation to present for transactions by that account on
   the share in question.
 
-* A data-table is kept of every non-zero balance.  Any balance record2
+* A data-table is kept of every non-zero balance.  Any balance record
   that would become zero by a Grant or Swap is deleted.
