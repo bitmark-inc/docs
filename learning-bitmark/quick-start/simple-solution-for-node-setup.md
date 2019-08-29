@@ -51,7 +51,7 @@ This section will quide you to start a bitmark docker node. The **docker** node,
 + input your BTC and LTC address for rewarding in a pop-up screen
 ![Input your BTC&LTC Address](https://i.imgur.com/IRTlyjY.jpg?1)
 
-### Step 2: Run bitmarkd node and recorderd
+### Step 2: Run bitmarkd and recorderd
 + Startup screen
     + Run bitmarkd by click "start button" of "Bitmark Node (bitmarkd)"
     + After bitmarkd is running, run a recorderd by click "start button" of "Recorder Node (recorderd)"
