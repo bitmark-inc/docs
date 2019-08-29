@@ -117,7 +117,7 @@ single hash such that only the same records in the same order will
 have the same hash.  It is done by making the hashes of all the
 records the final elements in a binary tree, with each pair hashed
 together to get the value above.  Any item not forming a pair at at
-some level of the tree if hashed with itself.  The final hash is known
+some level of the tree is hashed with itself.  The final hash is known
 as the root.  In this system the SHA3-256 algorithm is used for the
 hashing process.
 
