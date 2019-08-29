@@ -39,13 +39,7 @@ There are three records related to the Bitmark shares are stored on the Bitmark 
 
 Refer the [Payment on Bitmark CLI](payment-on-bitmark-cli.md) document to: 
 
-* Install the Bitmark-Wallet
-
-* Install the bitcoind or litecoind
-
-* Link the Bitmark-Wallet with the bitcoind or litecoind
-
-* Get `testnet` bitcoin or litecoin.
+* Install the Bitmark-Wallet for transaction payments.
 
 <br>
 <br>
