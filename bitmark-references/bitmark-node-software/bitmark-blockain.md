@@ -55,7 +55,7 @@ In order for a block to be accepted by network participants, miners must complet
 
 For a block to be valid it must hash to a value less than the current target; this means that each block indicates that work has been done generating it. Each block contains the hash of the preceding block, thus each block has a chain of blocks that together contain a large amount of work. Changing a block (which can only be done by making a new block containing the same predecessor) requires regenerating all successors and redoing the work they contain. This protects the block chain from tampering.
 
-Bitmark uses [argon2](https://en.wikipedia.org/wiki/Argon2) to hash whole block.
+Bitmark uses [argon2](https://en.wikipedia.org/wiki/Argon2) to hash the block header; remaining data is covered by having the Merkle Tree Root hash as part of the header. If transactions are different or in a different order the the Merkle Root has will not match and the block will be rejected.
 
 #### Majority Votes
 
