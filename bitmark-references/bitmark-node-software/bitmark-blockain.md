@@ -5,7 +5,7 @@
 Block is a bunch of transactions that have been added to blockchain. A bitmark block contains data as follows:
 
 | size (bytes) | data                                                           |
-|--------------+----------------------------------------------------------------|
+|--------------|----------------------------------------------------------------|
 |            2 | block version number                                           |
 |            2 | transaction count inside the block                             |
 |            8 | block number (block height)                                    |
@@ -66,7 +66,7 @@ Some conditionas could happen when deciding block:
 1. majority votes exists
 
 | Node | Block Height | Block Hash |
-|------+--------------+------------|
+|------|--------------|------------|
 | A    |         1000 | abcdefg    |
 | B    |         1000 | abcdefg    |
 | C    |         1000 | gfedcba    |
@@ -81,7 +81,7 @@ For node A, when it asks other nodes situation with following response
 (assumes all nodes are connected):
 
 | Count | Block Height | Block Hash |
-|-------+--------------+------------|
+|-------|--------------|------------|
 | 4     |         1000 | abcdefg    |
 | 1     |         1000 | gfedcba    |
 
@@ -92,7 +92,7 @@ For node C, when it asks other nodes situation with following response
 (assumes all nodes are connectd):
 
 | Count | Block Height | Block Hash |
-|-------+--------------+------------|
+|-------|--------------|------------|
 | 5     |         1000 | abcdefg    |
 
 So node C will choose chain that has hash abcdefg on block height
@@ -101,7 +101,7 @@ So node C will choose chain that has hash abcdefg on block height
 1. several groups with same votes
 
 | Node | Block Height | Block Hash |
-|------+--------------+------------|
+|------|--------------|------------|
 | A    |         1000 | abcdefg    |
 | B    |         1000 | abcdefg    |
 | C    |         1000 | abcdefg    |
@@ -113,7 +113,7 @@ In thie example, two groups of nodes with equal votes. If there's a
 new node G connect into network, the response from G as follows:
 
 | Count | Block Height | Block Hash |
-|-------+--------------+------------|
+|-------|--------------|------------|
 | 3     |         1000 | abcdefg    |
 | 3     |         1000 | gfedcba    |
 
