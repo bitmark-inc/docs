@@ -11,7 +11,7 @@ The Bitmark SDK enables creation, transfer, and authentication of digital proper
 ## Installation
 
 ```javascript
-npm install bitmark-sdk
+npm install bitmark-sdk-js
 ```
 
 ```swift
@@ -47,10 +47,10 @@ Please contact our [support](mailto:support@bitmark.com) to create your develope
 ### Configuration
 
 ```javascript
-const sdk = require('bitmark-sdk');
+const sdk = require('bitmark-sdk-js');
 
 const config = {
-  API_token: "api-token",
+  apiToken: "api-token",
   network: "testnet"
 };
 
