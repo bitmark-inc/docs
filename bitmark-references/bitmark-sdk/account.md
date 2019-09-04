@@ -2,7 +2,7 @@
 
 Within the Bitmark system, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations. 
 
-An account incorporates the public-private keypair and the private key is required to [digitally sign](https://en.wikipedia.org/wiki/Digital_signature) any Bitmark blockchain record, including asset records, issue records, and transfer records.
+An account incorporates the public-private key-pair and the private key is required to [digitally sign](https://en.wikipedia.org/wiki/Digital_signature) any Bitmark blockchain record, including asset records, issue records, and transfer records.
 
 ## Create an account
 
@@ -135,7 +135,7 @@ acct, _ := account.New()
 phrase, err := acct.RecoveryPhrase(language.AmericanEnglish)
 ```
 
-The recovery phrase, which consists of 12 [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior for human interaction compared to the handling of seed. If you don't plan to custody user's private key, make sure you present the recovery phrase to your user. Currently English and traditional Chinese are supported.
+The recovery phrase, which consists of 12 [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior for human interaction compared to the handling of seed. If you don't plan to custody user's private key, make sure you present the recovery phrase to your user. Currently English and traditional Chinese phrases are supported.
 
 ## Import an account
 
@@ -209,6 +209,33 @@ acct, err := account.FromRecoveryPhrase(
     },
     language.AmericanEnglish,
 )
+```
+
+## Sign and Verify
+
+An account can be used to sign arbitrary message, and any party with the received message and the corresponding signature can validate if the message was created by a known sender (authentication), and the message was not altered in transit (integrity). This functionality is usually useful when you have a server application which needs to authenticate if the requests are from valid users.
+
+```javascript
+// TODO
+```
+
+```swift
+// TODO
+```
+
+```java
+// TODO
+```
+
+```go
+// client side
+acct, _ := account.FromSeed("YOUR SEED")
+
+msg := []byte("Hello, world!")
+sig := acct.Sign(msg)
+
+// server side can verify if the message is from the client and 
+err := account.Verify(acct.AccountNumber(), msg, sig)
 ```
 
 ## Account utility functions
