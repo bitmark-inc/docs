@@ -1,14 +1,14 @@
 # Overview
 
-This paragraph describes mining mechanism, including hashing, communication protocal, and rewards.
+This paragraph describes mining mechanism, including hashing, communication protocol, and rewards.
 
 # Block Diagram
 
-            +--------------+  zero mq protocal   +---------------+
+            +--------------+  zero mq protocol   +---------------+
             |              |  ---------------->  |               |
             |   bitmarkd   |                     |   recorderd   |
             |              |  <----------------  |               |
-            +--------------+  zero mq protocal   +---------------+
+            +--------------+  zero mq protocol   +---------------+
 
 The hashing procedure relates to `bitmarkd` and `recorderd` only. `recorderd` is program to perform hashing, it receives jobs from `bitmarkd` and tries to find hashes possibly meets hashing criteria, if any possible hash is found, `recorderd` sends message back to `bitmarkd` to ask for validation.
 
