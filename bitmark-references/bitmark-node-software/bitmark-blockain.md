@@ -20,13 +20,13 @@ Different types of transaction include different length and content inside.
 
 ### Block Verification
 
-When a block is received, following checks will be made:
+When a block is received, the following checks will be made:
 
 1. Length of all parts inside a block should match
 1. Incoming block version number should be equal or largen than current block version number
 1. Incoming block height is 1 ahead of current block height
 1. Incoming block contans at least 1 transaction, at most 9999 transactions inside
-1. Incoming block generation time no further than 5 minutes after received time
+1. Incoming block generation time, compared to received time, should within 5 minutes
 1. Incoming block generation time can not be larger then 10 minutes compares to current block generation time
 1. Incoming block generation time within specific range
 1. Incoming block difficulty is same as current difficulty
