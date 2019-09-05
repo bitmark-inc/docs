@@ -112,6 +112,6 @@ When a node recieves block message from other node, it will verify received bloc
 
 ## Reward
 
-Every block preserves miner data to denote which account mines (owns) the block, and each block contains some number of transactions. Miner is rewarded fix amount of fee (0.001 LTC) when transaction inside miner mined block has transferred, so for the asset that has more transfer, more mining fee is rewarded to miner.
+Every block preserves miner data to denote which account mines (owns) the block, and each block contains some number of transactions. Miner is not rewarded when a block is mined, miner is rewarded when transaction inside mined block has been transferred in the future, and each transfer time gets fix amount of fee (0.001 LTC). For issuance that has been transfered more times, more mining fee is rewarded to miner.
 
 For example, miner A mines a block which block number is 1000, and this block contains an ownership of specific asset. After some period of time, owner of the asset transfer to another user C, once the transaction has be recorded, miner A receives mining fee of 0.001 LTC.
