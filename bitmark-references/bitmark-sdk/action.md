@@ -24,14 +24,13 @@ Map<String, String> metadata = new HashMap<>(){{
 	put("name", "name");
 	put("desc", "sdk_example");
 }};
-Address registrant = account.toAddress();
-RegistrationParams params = new RegistrationParams("asset_name", metadata, registrant);
-params.generateFingerprint(file);
-params.sign(key);
+RegistrationParams params = new RegistrationParams("asset_name", metadata);
+params.setFingerprintFromFile(file);
+params.sign(registrantKey);
 Asset.register(params, new Callback1<RegistrationResponse>() {
             @Override
             public void onSuccess(RegistrationResponse res) {
-                
+
             }
 
             @Override
@@ -69,7 +68,7 @@ An asset record won't be added to the blockchain without accompanying bitmark is
 
 This system records ownership claims for digital assets as digital property titles known as bitmarks.
 
-After the asset is registered, you can issue bitmarks with a permanent reference to the corresponding asset record. 
+After the asset is registered, you can issue bitmarks with a permanent reference to the corresponding asset record.
 
 ```javascript
 let params = Bitmark.newIssuanceParams(assetId, quantity = 100);
@@ -89,12 +88,12 @@ let bitmarkIds = try Bitmark.issue(params)
 
 ```java
 Address owner = account.toAddress();
-IssuanceParams params = new IssuanceParams(assetId, owner, quantity);
-params.sign(ownerKey);
+IssuanceParams params = new IssuanceParams(assetId, issuer, quantity);
+params.sign(issuerKey);
 Bitmark.issue(params, new Callback1<List<String>>() {
             @Override
             public void onSuccess(List<String> txIds) {
-                
+
             }
 
             @Override
@@ -156,13 +155,12 @@ BitmarkRecord bitmark = await((Callable1<GetBitmarkResponse>) callback -> Bitmar
 String link = bitmark.getHeadId();            
 
 // Transfer bitmark
-Address receiver = account.toAddress();
 TransferParams params = new TransferParams(receiver, link);
 params.sign(senderKey);
 Bitmark.transfer(params, new Callback1<String>() {
             @Override
             public void onSuccess(String txId) {
-                
+
             }
 
             @Override
@@ -212,13 +210,12 @@ BitmarkRecord bitmark = await((Callable1<GetBitmarkResponse>) callback -> Bitmar
 String link = bitmark.getHeadId();            
 
 // Offer bitmark
-Address receiver = account.toAddress();
 TransferOfferParams params = new TransferOfferParams(receiver, link);
 params.sign(senderKey);
 Bitmark.offer(params, new Callback1<String>() {
             @Override
             public void onSuccess(String txId) {
-                
+
             }
 
             @Override
@@ -263,7 +260,7 @@ BitmarkQueryBuilder builder = new BitmarkQueryBuilder().offerFrom("e1pFRPqPhY2gp
 Bitmark.list(builder, new Callback1<GetBitmarksResponse>() {
             @Override
             public void onSuccess(GetBitmarksResponse res) {
-                
+
             }
 
             @Override
@@ -304,7 +301,7 @@ params.sign(receiverKey);
 Bitmark.respond(params, new Callback1<String>() {
             @Override
             public void onSuccess(String txId) {
-                
+
             }
 
             @Override
@@ -315,7 +312,7 @@ Bitmark.respond(params, new Callback1<String>() {
 ```
 
 If the receiver decides to accept the bitmark, the countersignature is generated and make the transfer action take effect.
-The status of the bitmark will change from `offering` to `transferring`. The 
+The status of the bitmark will change from `offering` to `transferring`. The
 
 ```go
 bmk, _ := bitmark.Get("YOUR BITMARK ID")
@@ -348,7 +345,7 @@ params.sign(receiverKey);
 Bitmark.respond(params, new Callback1<String>() {
             @Override
             public void onSuccess(String txId) {
-                
+
             }
 
             @Override
@@ -391,7 +388,7 @@ params.sign(senderKey);
 Bitmark.respond(params, new Callback1<String>() {
             @Override
             public void onSuccess(String txId) {
-                
+
             }
 
             @Override

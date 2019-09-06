@@ -38,7 +38,7 @@ func getAssetExample() {
 Asset.get(assetId, new Callback1<AssetRecord>() {
             @Override
             public void onSuccess(AssetRecord asset) {
-                
+
             }
 
             @Override
@@ -76,11 +76,11 @@ assets, err := bmAsset.List(params)
 ```
 
 ```java
-AssetQueryBuilder builder = new AssetQueryBuilder().limit(limit).registrant(registrant);
+AssetQueryBuilder builder = new AssetQueryBuilder().limit(limit).registeredBy(registrant);
 Asset.list(builder, new Callback1<List<AssetRecord>>() {
             @Override
             public void onSuccess(List<AssetRecord> assets) {
-                
+
             }
 
             @Override
@@ -121,11 +121,11 @@ Asset.list(builder, new Callback1<List<AssetRecord>>() {
 
 ### Query for a specific bitmark
 ````javascript
-let response = await Bitmark.get(bitmarkId, false); // false: not include asset, true: include asset 
+let response = await Bitmark.get(bitmarkId, false); // false: not include asset, true: include asset
 ````
 
 ````swift
-let bitmark = Bitmark.get(bitmarkID: bitmarkId); 
+let bitmark = Bitmark.get(bitmarkID: bitmarkId);
 ````
 
 ```go
@@ -182,13 +182,13 @@ BitmarkQueryBuilder builder = new BitmarkQueryBuilder()
                             .ownedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9")
                             .offerTo("dzJjGazcRuC7KhgU5o2Y2YV8wGXhBBabGRACa2Uyg4ZkVWwyNu")
                             .offerFrom("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9")
-                            .referenceAsset("1f21148a273b5e63773ceee976a84bcd014d88ac2c18a29cac4442120b430e158386b0ad90515c69e7d1fd6df8f3d523e3550741e88d0d04798627a57b0006c9")
+                            .referencedAsset("1f21148a273b5e63773ceee976a84bcd014d88ac2c18a29cac4442120b430e158386b0ad90515c69e7d1fd6df8f3d523e3550741e88d0d04798627a57b0006c9")
                             .loadAsset(true)
                             .limit(10);
 Bitmark.list(builder, new Callback1<GetBitmarksResponse>() {
             @Override
             public void onSuccess(GetBitmarksResponse res) {
-                
+
             }
 
             @Override
@@ -229,7 +229,7 @@ tx, err := bmTx.Get("3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405
 Transaction.get(txId, new Callback1<GetTransactionResponse>() {
             @Override
             public void onSuccess(GetTransactionResponse res) {
-                
+
             }
 
             @Override
@@ -279,14 +279,14 @@ txs, referencedAssets, err := bmTx.List(params)
 ```java
 TransactionQueryBuilder builder = new TransactionQueryBuilder()
                                 .ownedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9")
-                                .referenceAsset("0e0b4e3bd771811d35a23707ba6197aa1dd5937439a221eaf8e7909309e7b31b6c0e06a1001c261a099abf04c560199db898bc154cf128aa9efa5efd36030c64")
-                                .referenceBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518")
+                                .referencedAsset("0e0b4e3bd771811d35a23707ba6197aa1dd5937439a221eaf8e7909309e7b31b6c0e06a1001c261a099abf04c560199db898bc154cf128aa9efa5efd36030c64")
+                                .referencedBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518")
                                 .loadAsset(true)
                                 .limit(10);
 Transaction.list(builder, new Callback1<GetTransactionsResponse>() {
             @Override
             public void onSuccess(GetTransactionsResponse res) {
-                
+
             }
 
             @Override
@@ -320,11 +320,11 @@ txs, referencedAssets, err := bmTx.List(params)
 
 ```java
 TransactionQueryBuilder builder = new TransactionQueryBuilder()
-                                .referenceBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518");
+                                .referencedBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518");
 Transaction.list(builder, new Callback1<GetTransactionsResponse>() {
             @Override
             public void onSuccess(GetTransactionsResponse res) {
-                
+
             }
 
             @Override
@@ -362,7 +362,7 @@ TransactionQueryBuilder builder = new TransactionQueryBuilder()
 Transaction.list(builder, new Callback1<GetTransactionsResponse>() {
             @Override
             public void onSuccess(GetTransactionsResponse res) {
-                
+
             }
 
             @Override

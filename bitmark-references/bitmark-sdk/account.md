@@ -1,6 +1,6 @@
 # Account
 
-Within the Bitmark system, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations. 
+Within the Bitmark system, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations.
 
 An account incorporates the public-private key-pair and the private key is required to [digitally sign](https://en.wikipedia.org/wiki/Digital_signature) any Bitmark blockchain record, including asset records, issue records, and transfer records.
 
@@ -97,7 +97,7 @@ The seed is the more compact format of an exported account for your program to r
 ```javascript
 // English version
 let recoveryPhrase = account.getRecoveryPhrase();
-// or 
+// or
 let recoveryPhrase = account.getRecoveryPhrase("en");
 // "name gaze apart lamp lift zone believe steak session laptop crowd hill"
 
@@ -125,7 +125,7 @@ String[] mnemonicWords = recoveryPhrase.getMnemonicWords();
 //  "believe", "steak", "session", "laptop", "crowd", "hill"]
 
 // Chinese ver
-RecoveryPhrase recoveryPhrase = account.getRecoveryPhrase(Locale.CHINESE);
+RecoveryPhrase recoveryPhrase = account.getRecoveryPhrase(Locale.TRADITIONAL_CHINESE);
 String[] mnemonicWords = recoveryPhrase.getMnemonicWords();
 // ["箱", "阻", "起", "归", "彻", "矮", "问", "栽", "瓜", "鼓", "支", "乐"]
 ```
@@ -152,13 +152,7 @@ account = Account(fromSeed: "5XEECttvVsk5xPjZ1zrgtWoauw2xmPwTKCWEN5GF24UpaGZhAGS
 ```
 
 ```java
-// 12 words
-Seed seed = SeedTwelve.fromEncodedSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8");
-
-// 24 words
-Seed seed = SeedTwentyFour.fromEncodedSeed("5XEECt18HGBGNET1PpxLhy5CsCLG9jnmM6Q8QGF4U2yGb1DABXZsVeD");
-
-Account account = Account.fromSeed(seed);
+Account account = Account.fromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8");
 ```
 
 ```go
@@ -196,7 +190,7 @@ let account = try Account(recoverPhrase: [
 ```java
 Account account = Account.fromRecoveryPhrase("name", "gaze", "apart", "lamp", "lift", "zone", "believe", "steak", "session", "laptop", "crowd", "hill"); // English
 
-// Or 
+// Or
 Account account = Account.fromRecoveryPhrase("箱", "阻", "起", "归", "彻", "矮", "问", "栽", "瓜", "鼓", "支", "乐"); // Chinese
 
 ```
@@ -234,7 +228,7 @@ acct, _ := account.FromSeed("YOUR SEED")
 msg := []byte("Hello, world!")
 sig := acct.Sign(msg)
 
-// server side can verify if the message is from the client and 
+// server side can verify if the message is from the client and
 err := account.Verify(acct.AccountNumber(), msg, sig)
 ```
 

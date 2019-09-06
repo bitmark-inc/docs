@@ -1,8 +1,8 @@
 # Account migration
 
-Bitmark allows users migrate their own account from previous twenty four recovery phrase words to new twelve one. 
+Bitmark allows users migrate their own account from previous twenty four recovery phrase words to new twelve one.
 
-The method requires a valid 24 recovery phrase words and return new `Account` object with 12 recovery phrase words as well as a new list bitmark id. 
+The method requires a valid 24 recovery phrase words and return new `Account` object with 12 recovery phrase words as well as a new list bitmark id.
 
 ```javascript
 ```
@@ -20,7 +20,7 @@ Migration.migrate(phrase, new Callback1<Pair<Account, List<String>>>() {
                 @Override
                 public void onSuccess(Pair<Account, List<String>> data){
                     final Account account = data.first();
-                    final List<String> bitmarkids = data.second();
+                    final List<String> bitmarkIds = data.second();
                 }
 
                 @Override

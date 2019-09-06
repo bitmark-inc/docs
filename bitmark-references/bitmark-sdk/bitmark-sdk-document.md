@@ -28,9 +28,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.bitmark.sdk:java-sdk:1.5' // Java SDK
+    implementation 'com.bitmark.sdk:java-sdk:2.1.0' // Java SDK
     // Or
-    implementation 'com.bitmark.sdk:android-sdk:1.4' // Android SDK
+    implementation 'com.bitmark.sdk:android-sdk:2.1.0' // Android SDK
 }
 ```
 
