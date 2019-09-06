@@ -8,7 +8,7 @@
 
 **Development process:**
 
-Our current workflow is based on OKR, where we define sprints as a deadline to deliver the software artefact. Also as part of this workflow, we have daily standup meetings where we can follow up the progress of each individual and its related tasks to accomplish the OKR. The OKR is defined quarterly. To track the deliverables, nowadays we are using a mix of project management with software management methodologies.
+Our current workflow is based on OKR, where we define sprints as a deadline to deliver the software artefact.
 
 ![](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/contributing-to-bitmark/imgs/project_bitmarkd.png)
 
@@ -30,7 +30,7 @@ We have a peer review process, where the developer can assign one or more indivi
 
 **Development process:**
 
-This is a proposal for our working flow using GitHub. Here I describe 3 basic areas that will improve development, quality assurance and release.
+This is our working flow using GitHub. Here I describe 3 basic areas of our development process.
 
 
 ![](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/contributing-to-bitmark/imgs/new-review-process.png)
