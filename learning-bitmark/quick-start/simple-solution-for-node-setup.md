@@ -11,7 +11,7 @@ A user can run a bitmark node in several ways. This section will guide you to st
 + you [log in](https://docs.docker.com/engine/reference/commandline/login/) your docker with [docker hub]((https://hub.docker.com/)) account
 + you have and know your **public IP** address
 + you have **a bitcoin and a litecoin address** for receiving mining reward
-+ you may need to setup your network, ie. port forwarding, in order to allow other bitmark nodes to communicate with your bitmark node.
++ you may need to setup your network to allow other bitmark nodes to communicate with your bitmark node. You can check more information on "Important Notice On Network" below.
 
 ## Installation
 
@@ -68,5 +68,27 @@ Downloaded script will help you to manage bitmark node container. The  installat
 
 ![running screen](https://i.imgur.com/g9baqm8.jpg)
 
+## Important Notice On Network
+
+User must ensure the following ports to be accessible from Internet.
+
+| PORT | DESCRIPTION                                     |
+|------|--------------------------------------------------|
+| 2136 | Port for connecting to other peer bitmarkd nodes |
+| 2135 | Port for publishing blockchain events            |
+| 2130 | Port for Bitmark node RPC serve                  |
+When running bitmark-node, user can make sure ports are opened with the following commands.
+
+netcat -v [Your Public IP] 2136
+
+netcat -v [Your Public IP] 2135
+
+netcat -v [Your Public IP] 2130
+
+WebUI is an interface to control bitmark-node. User can only access WebUI through local network. Please notice that user can not access the port from internet due to security reason.
+
+| PORT | DESCRIPTION                |
+|------|----------------------------|
+| 9980 | Web server port for web UI |
 
 ###### tags: 'bitmark-node' 'documentation' 'quick start' 'bitmark'
