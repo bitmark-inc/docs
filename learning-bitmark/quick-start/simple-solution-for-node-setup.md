@@ -17,10 +17,12 @@ A user can run a bitmark node in several ways. This section will guide you to st
 
 ### Step 0: Preparation
 + Have your **Public IP** ready
-+ Setup port-forwarding if nessasary
++ Make sure following ports are accessible from internet
     + port	**2136** for connecting to other peer bitmarkd nodes
     + port	**2135** for publishing blockchain events
     + port 	**2130** for Bitmark node RPC server
+
+You can check more information on "Important Notice On Network" below.
 
 
 ### Step 1: Download and Run Script
@@ -77,7 +79,7 @@ User must ensure the following ports to be accessible from Internet.
 | 2136 | Port for connecting to other peer bitmarkd nodes |
 | 2135 | Port for publishing blockchain events            |
 | 2130 | Port for Bitmark node RPC serve                  |
-When running bitmark-node, user can make sure ports are opened with the following commands.
+When running bitmark node container, user can make sure ports are opened with the following commands.
 
 netcat -v [Your Public IP] 2136
 
@@ -85,7 +87,7 @@ netcat -v [Your Public IP] 2135
 
 netcat -v [Your Public IP] 2130
 
-WebUI is an interface to control bitmark-node. User can only access WebUI through local network. Please notice that user can not access the port from internet due to security reason.
+WebUI is an interface to control bitmark node services. User can only access WebUI through local network. Please notice that user can not access the port from internet due to security reason.
 
 | PORT | DESCRIPTION                |
 |------|----------------------------|
