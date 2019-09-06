@@ -1,16 +1,17 @@
-#  [Learning Bitmark / Quick start] - Simple solution for node setup
+#  [ Learning Bitmark / Quick start ] - Simple solution for node setup
 
-### Start your bitmark-node
-This section will quide you to start a bitmark docker node. The **docker** node, also called **bitmark-node**, is a bitmark full-node. A full-node can generate blocks, mine the blocks and do verification of payments. 
+## Start your bitmark node
 
-### Assumptions
-+ [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is installed in your system
+A user can run a bitmark node in several ways. This section will guide you to start a bitmark node using docker container. Inside a bitmark node docker container, there are bitmarkd, recorderd, payment system and a user interface to control and monitor services.
+
+## Prerequisites
+
 + [docker](https://docs.docker.com/install/) is installed in your system
     +  Windows user run docker on Hyper-V
 + you [log in](https://docs.docker.com/engine/reference/commandline/login/) your docker with [docker hub]((https://hub.docker.com/)) account
 + you have and know your **public IP** address
-+ If you are behind a firewall, you know how to setup a **port-forwarding**
-+ you have **a bitcoin and a litecoin address** for recieving mining reward
++ you have **a bitcoin and a litecoin address** for receiving mining reward
++ you may need to setup your network, ie. port forwarding, in order to allow other bitmark nodes to communicate with your bitmark node.
 
 ## Installation
 
@@ -23,6 +24,9 @@ This section will quide you to start a bitmark docker node. The **docker** node,
 
 
 ### Step 1: Download and Run Script
+
+Downloaded script will help you to manage bitmark node container. The  installation of the script will pull down a latest bitmark node container image from docker hub and then start a bitmark node container for you.  To check what functions the script supports and how to run it, simply run ``` bash install-node-linux-mac.sh```.  or ```bitmarkNode-HyperV.bat```.
+
 
 +  Linux and mac users
     + [download scripts for linux and mac](https://bitmark-node-docker-scripts.s3-ap-northeast-1.amazonaws.com/install-node-linux-mac.sh)
@@ -42,8 +46,6 @@ This section will quide you to start a bitmark docker node. The **docker** node,
 + execute **docker ps** in your command-line/shell to check if bitmark-node is running
 ![docker ps result](https://i.imgur.com/l3dF4Hl.jpg)
 
-
-
 ## Management Panel
 
 ### Step 1: Open A Node-Management Webpage 
@@ -52,15 +54,18 @@ This section will quide you to start a bitmark docker node. The **docker** node,
 ![Input your BTC&LTC Address](https://i.imgur.com/IRTlyjY.jpg?1)
 
 ### Step 2: Run bitmarkd and recorderd
-+ Startup screen
-    + Run bitmarkd by click "start button" of "Bitmark Node (bitmarkd)"
-    + After bitmarkd is running, run a recorderd by click "start button" of "Recorder Node (recorderd)"
++ startup screen
+    + run bitmarkd by click "start button" of "Bitmark Node (bitmarkd)"
+    + after bitmarkd is running, run a recorderd by click "start button" of "Recorder Node (recorderd)"
+    +  if you don't want to use your machine to help us on mining, you can stop recorderd.
+
 ![startup screen](https://i.imgur.com/aeONALb.jpg)
 
 + Running screen
-    + Wait untill 5 connections to establish a distribute network
-    + "Current Block" shows progress of recieving blocks
+    + wait until 5 connections to establish a distribute network
+    + "Current Block" shows progress of receiving blocks
     + "Your Blocks" shows the blocks that this account has won
+
 ![running screen](https://i.imgur.com/g9baqm8.jpg)
 
 
