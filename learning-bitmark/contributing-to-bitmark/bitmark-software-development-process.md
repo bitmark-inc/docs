@@ -8,7 +8,7 @@
 
 **Development process:**
 
-Our current workflow is based on OKR, where we define sprints as a deadline to deliver the software artefact.
+Our current workflow is based on OKR, where we define sprints as a deadline to deliver the software artefact. The OKR is translated in ISSUES on Github where we can track them. The external contributors can get involved with the project opening new ISSUES, being part of the discussion in existent ISSUES and make PULL REQUESTS within our projects.
 
 ![](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/contributing-to-bitmark/imgs/project_bitmarkd.png)
 
