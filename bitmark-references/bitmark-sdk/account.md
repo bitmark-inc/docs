@@ -214,7 +214,15 @@ An account can be used to sign arbitrary message, and any party with the receive
 ```
 
 ```swift
-// TODO
+account := try Account()
+
+// create a signature
+let message = "Hello, world!".data(using: .utf8)!
+let signature = try account.sign(message: message)
+
+// verify the signature from other side
+let senderAccountNumber = account.address
+let isAuthentic = senderAccountNumber.verify(message: message, signature: signature)
 ```
 
 ```java
