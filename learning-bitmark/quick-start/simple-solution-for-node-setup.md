@@ -42,7 +42,7 @@ Downloaded script will help you to manage bitmark node container. The  installat
 ## Management Panel
 
 ### Step 1: Open A Node-Management Webpage 
-+ View our node-mangement webpage on http://127.0.0.1:9980 in a browser
++Access the node management webpage at http://127.0.0.1:9980
 + Input your BTC and LTC address for rewarding in a pop-up screen
 ![Input your BTC&LTC Address](https://i.imgur.com/IRTlyjY.jpg?1)
 
@@ -55,8 +55,8 @@ Downloaded script will help you to manage bitmark node container. The  installat
 ![startup screen](https://i.imgur.com/aeONALb.jpg)
 
 + Running screen
-    + Wait until 5 connections to establish a distribute network
-    + "Current Block" shows progress of receiving blocks
+    + Wait for 5 connections to establish a distribute network
+    + The "Current Block" shows the progress of blocks synchronization of the node
     + "Your Blocks" shows the blocks that this account has won
 
 ![running screen](https://i.imgur.com/g9baqm8.jpg)
