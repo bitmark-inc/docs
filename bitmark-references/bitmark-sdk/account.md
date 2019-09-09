@@ -226,7 +226,16 @@ let isAuthentic = senderAccountNumber.verify(message: message, signature: signat
 ```
 
 ```java
-// TODO
+final Account account = new Account();
+final accountNumber = account.getAccountNumber();
+final message = "Hello, world!".getBytes();
+
+// sign
+byte[] signature = account.sign(message);
+
+// verify
+boolean verified = Account.verify(accountNumber, signature, message);
+
 ```
 
 ```go
