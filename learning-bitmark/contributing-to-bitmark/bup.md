@@ -10,3 +10,5 @@ We maintain an entity at Github only for BUP, we want to keep a clean
 environment where developers will not have distraction with too many 
 repos, that is the reason why we don't maintain it under the 
 Bitmark documentation ![repository](https://github.com/bitmark-inc/docs).
+
+To have full acess to all BUPs, please access: ![Bitmark Upgrade Proposal](https://github.com/bitmark-inc/docs)
