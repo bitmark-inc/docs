@@ -12,5 +12,3 @@ repos, that is the reason why we do not maintain it under the
 Bitmark documentation ![repository](https://github.com/bitmark-inc/docs).
 
 To have full access to all BUPs, please access: ![Bitmark Upgrade Proposal](https://github.com/bitmark-inc/docs)
-
-t
