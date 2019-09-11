@@ -1,0 +1,40 @@
+# Golang CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-go/ for more details
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version
+      - image: circleci/golang:1.12
+        environment:
+          - GO111MODULE: "on"
+
+    working_directory: ~/docs-testing/
+    steps:
+      - checkout
+      - run: sudo sh -c 'mkdir -p /etc/apt/source.list.d/'
+      - run:
+          name: Add repo testing
+          command: |
+             sudo sh -c 'echo "deb http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list.d/testing.list'
+             sudo sh -c 'echo "deb-src http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list.d/testing.list'
+             sudo sh -c 'echo "deb http://security.debian.org/ testing/updates  main contrib non-free" >> /etc/apt/source.list.d/testing.list'
+      - run:
+          name: Add repo stable 
+          command: |
+             sudo sh -c 'echo "deb http://ftp.de.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list.d/stable.list'
+             sudo sh -c 'echo "deb-src http://ftp.de.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list.d/stable.list'
+             sudo sh -c 'echo "deb http://security.debian.org/ stable/updates  main contrib non-free" >> /etc/apt/source.list.d/stable.list'
+      - run:
+          name: Prepare environment
+          command: |
+             sudo apt-get update
+             sudo apt-get install perl
+             sudo apt-get install git
+             ls /
+             ls .
+             git clone "https://github.com/bitmark-inc/docs.git" ~/docs-testing/docs
+             git clone "https://github.com/araujobsd/igor" ~/docs-testing/igor
+             cd ~/docs-testing/igor/ && sh make-spellingwords
+             ~/docs-testing/igor/check-all ~/docs-testing/docs/
