@@ -37,4 +37,4 @@ jobs:
              git clone "https://github.com/bitmark-inc/docs.git" ~/docs-testing/docs
              git clone "https://github.com/araujobsd/igor" ~/docs-testing/igor
              cd ~/docs-testing/igor/ && sh make-spellingwords
-             perl ~/docs-testing/igor/igor -vR ~/docs-testing/docs/*
+             sh ~/docs-testing/igor/check-all ~/docs-testing/docs/*
