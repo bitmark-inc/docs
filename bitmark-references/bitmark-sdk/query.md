@@ -203,10 +203,11 @@ Bitmark.list(builder, new Callback1<GetBitmarksResponse>() {
 | Attribute | Description |
 | --------- | ----------- |
 | id | The tx ID |
+| owner | The account owning the bitmark |
+| previous_id | Links to the previous tx (ignored for issue tx) |
+| previous_owner | The previous owner of the bitmark (ignored for issue tx) |
 | bitmark_id | Links to the bitmark which this tx is applied to |
 | asset_id | The asset ID |
-| asset | The asset record |
-| owner | The account owning the bitmark |
 | status | Possible values: `pending`, `confirmed` |
 | block_number | The block which incorporates the tx record |
 | offset | TODO |
