@@ -25,7 +25,7 @@ Downloaded script will help you to manage bitmark node container. The  installat
     + [Download scripts for linux and mac](https://bitmark-node-docker-scripts.s3-ap-northeast-1.amazonaws.com/install-node-linux-mac.sh)
     + Execute bash install-node-linux-mac.sh [Your Public IP]. When run the script without providing [Your Public IP], the script will find your IP from Internet
 
-        ```bash install-node-linux-mac.sh 123.123.123.123```
+        ```bash install-node-linux-mac.sh  <Your Public IP>```
     + Follow script instruction and select "1)Installation"
 
     
