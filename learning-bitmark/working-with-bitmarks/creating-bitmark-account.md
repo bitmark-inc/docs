@@ -80,7 +80,7 @@ The Bitmark SDK is a collection of libraries for different programming languages
 
 <br>
 
-Here are the steps to install the Bitmark-SDK, initalize its configuration, then create a new Bitmark Account and export the related information:
+Here are the steps to install the Bitmark-SDK, initialize its configuration, then create a new Bitmark Account and export the related information:
 
 * Install Bitmark JS SDK
 
@@ -159,7 +159,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark-CLI:
 
 * Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
 
-* Initalize the Bitmark-CLI configuration
+* Initialize the Bitmark-CLI configuration
 
     ```shell
     $ bitmark-cli -n <network> -i <identity> \
