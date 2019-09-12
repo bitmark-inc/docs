@@ -80,7 +80,7 @@ The Bitmark SDK is a collection of libraries for different programming languages
 
 <br>
 
-Here are the steps to install the Bitmark-SDK, initalize its configuration, then create a new Bitmark Account and export the related information:
+Here are the steps to install the Bitmark-SDK, initialize its configuration, then create a new Bitmark Account and export the related information:
 
 * Install Bitmark JS SDK
 
@@ -145,7 +145,7 @@ Bitmark CLI is a command line tool which allows a user to interact with the Bitm
 
 <br>
     
-> The Bitmark CLI determines which network the command will be sent to by the global option `--network` (abbreviation: `-n`) with the following possible values
+> The Bitmark CLI determines which network to send the command by using the global option `--network` (abbreviation: `-n`). Option values:
 > 
 >* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
 >
@@ -159,7 +159,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark CLI:
 
 * Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
 
-* Initalize the Bitmark-CLI configuration
+* Initialize the Bitmark-CLI configuration
 
     ```shell
     $ bitmark-cli -n <network> -i <identity> \

@@ -1,6 +1,6 @@
 # Bitmark shares
 
-In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provides a feature called the **[bitmark shares]()**. 
+In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provides a feature called the **[bitmark shares]()**.
 
 Any owner of a Bitmark Certificate is able to:
 
@@ -14,9 +14,9 @@ Any owner of a Bitmark Certificate is able to:
 Currently, only the Bitmark CLI supports performing those transactions of bitmark shares.
 
 > **NOTE:** Transactions related to the bitmark share require a transaction fee. On the bitmark network, the fee can be pay by BTC or LTC
-> 
+>
 > * Real BTC and/or LTC are used to pay for transaction fee on the Bitmark main chain
-> 
+>
 > * Testnet BTC and/or LTC are used to pay for transaction fee on the Bitmark testing chain
 
 <br>
@@ -24,7 +24,7 @@ Currently, only the Bitmark CLI supports performing those transactions of bitmar
 
 ## Bitmark shares related records
 
-There are three records related to the Bitmark shares are stored on the Bitmark blockchain 
+There are three records related to the Bitmark shares are stored on the Bitmark blockchain
 
 * *Balance Record* - created by a bitmark owner to permanently set the total number of a particular share for the bitmark.
 
@@ -37,7 +37,7 @@ There are three records related to the Bitmark shares are stored on the Bitmark 
 
 ## Prerequisites of working with bitmark shares using the Bitmark CLI
 
-Refer the [Payment on Bitmark CLI](payment-on-bitmark-cli.md) document to: 
+Refer the [Payment on Bitmark CLI](payment-on-bitmark-cli.md) document to:
 
 * Install the Bitmark-Wallet for transaction payments.
 
@@ -48,9 +48,9 @@ Refer the [Payment on Bitmark CLI](payment-on-bitmark-cli.md) document to:
 
 Any bitmark owner is able to create shares of a particular bitmark, that action divides the bitmark into a number of shares
 
-* The initial number of shares is not changable after created.
+* The initial number of shares is not changeable after created.
 
-* Once the bitmark is converted into shares, it cannot be transferred anymore. The provenance of the bitmark is terminated.
+* Once the bitmark is converted into shares, it cannot be transferred any more. The provenance of the bitmark is terminated.
 
 * All the created shares are alocated to the owner.
 
@@ -61,14 +61,14 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 ### Creating bitmark shares from a bitmark
 
   ```shell
-    $ bitmark-cli -n <network> -i <identity> \ 
+    $ bitmark-cli -n <network> -i <identity> \
       share -t <txid> -q <quantity>
   ```
 
   >The `share` command is to create shares of a bitmark. The options:
   >
   >* `identity` - The bitmark owner's identity.
-  > 
+  >
   >* `txid` - The latest transaction id in the bitmark's provenance.
   >
   >* `quantity` - The number of shares.
@@ -82,7 +82,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
   >* The payment information (payId, currency, address, amount).
 
 
-*Example:* 
+*Example:*
 
   ```shell
     $ bitmark-cli -n testing -i first \
@@ -120,22 +120,22 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 ### Paying for the bitmark share creation using the Bitmark-Wallet
 
   ```shell
-    #Run the bitcoind 
+    #Run the bitcoind
     $ bitcoind -datadir=<bitcoind config dir>
 
-    # OR run the litecoind 
+    # OR run the litecoind
     $ litecoind -datadir=<litcoind config dir>
 
     #Pay by BTC
-    $ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> \ 
+    $ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> \
       sendmany --hex-data '<payId>' '<btc address>,<btc amount in satoshi>'
 
     #OR Pay by LTC
-    $ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> \ 
+    $ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> \
       sendmany --hex-data '<payId>' '<ltc address>,<ltc amount in photon>'
 
   ```
-  
+
   >To execute a bitcoin or litecoin transaction on the local environment, the bitcoind or litecoind need to be running.
   >
   >* `payId` - The payment id for the share creation transaction, it is printed in the output of share creation command
@@ -144,7 +144,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
   >**NOTE:** The payment is able to be performed using another tool which allows users to add the exact hex data to an OP_RETURN as part of the coin transaction
 
-*Example:* 
+*Example:*
 
 * Run bitcoind
 
@@ -154,7 +154,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
 <br>
 
-* Pay for the transaction by bitcoin using the Bitmark-Wallet 
+* Pay for the transaction by bitcoin using the Bitmark-Wallet
 
   ```shell
     $ bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf \
@@ -165,7 +165,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
   ```
   ```json
     {
-      "txId": "fc208c0...12c3d82", 
+      "txId": "fc208c0...12c3d82",
       "rawTx": "0100000001e45...7b41300000000"
     }
   ```
@@ -175,7 +175,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 ### Verifying the status of the share creation transaction
 
   ```shell
-    $ bitmark-cli -n <network> \ 
+    $ bitmark-cli -n <network> \
       status -t <txid>
   ```
 
@@ -184,15 +184,15 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
   >* `txid` - The transaction id which is printed in the output of the share creation command.
   >
   >The returned status:
-  > 
+  >
   >* `Pending` - Has not been paid.
-  > 
+  >
   >* `Verified` - Paid but not confirmed on the blockchain.
-  > 
+  >
   >* `Confirmed` - Confirmed on the blockchain.
 
 
-*Example:* 
+*Example:*
 
   ```shell
     $ bitmark-cli -n testing \
@@ -205,7 +205,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
       "status": "Verified"
     }
 
-    //Check again fter several minutes
+    //Check again fter some minutes
     {
       "status": "Confirmed"
     }
@@ -226,10 +226,10 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
   >* `owner identity` - The identity of the owner of the bitmark from which the shares are created.
 
 
-*Example:* 
+*Example:*
 
   ```shell
-    $ bitmark-cli -n testing \ 
+    $ bitmark-cli -n testing \
       balance -o first
   ```
   ```json
@@ -250,9 +250,9 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
 ## Granting bitmark shares to another account
 
-Any owner with a non-zero share balance can grant shares from that balance to another account. 
+Any owner with a non-zero share balance can grant shares from that balance to another account.
 
-A grant share transaction is a two signature transaction. Therefore, the current share owner initializes the transaction and the new owner needs to sign to accept the shares. 
+A grant share transaction is a two signature transaction. Therefore, the current share owner initializes the transaction and the new owner needs to sign to accept the shares.
 
   ```shell
     # The current owner initializes the grant shares transaction
@@ -287,13 +287,13 @@ A grant share transaction is a two signature transaction. Therefore, the current
   >**NOTE:** The grant shares transaction cost a transaction fee of 0.001 LTC or 0.0001 BTC. Only when the fee is paid, the transaction is able to be confirmed on the blockchain.
 
 
-*Example:* 
+*Example:*
 
 * The current owner initializes the grant share transaction
-  
+
   ```shell
     $ bitmark-cli -n testing -i first \
-      grant -r second \ 
+      grant -r second \
       -s 6f8cccbb8db2e2304227abb91cf0cbceaed79376b9d7b0181d28fa20f04fe2a3 \
       -q 100
   ```
@@ -358,9 +358,9 @@ A grant share transaction is a two signature transaction. Therefore, the current
       'mv7pHLntNcEe8YQqCJGWTyL6aa8hjMRL9B,100000' \
       'mzkCaHJmu1gdnsL9jxW2bwqtw2MCCy66Ds,100000'
   ```
-  ```json   
+  ```json
     {
-      "txId": "f61c41e7261508f9f65fa73c5af93a86e02ba82361e8f01afde9245d0bbe82dc", 
+      "txId": "f61c41e7261508f9f65fa73c5af93a86e02ba82361e8f01afde9245d0bbe82dc",
       "rawTx": "0100000001b6e8...846200000000"
     }
   ```
@@ -369,7 +369,7 @@ A grant share transaction is a two signature transaction. Therefore, the current
 
 * Verify the grant shares transaction status
 
-  ```shell  
+  ```shell
     $ bitmark-cli -n testing \
       status -t \
       fc88099d56c6f33bd90eb35937aa5d6e875c00017e7a78046ab3e5279b337e57
@@ -379,7 +379,7 @@ A grant share transaction is a two signature transaction. Therefore, the current
       "status": "Verified"
     }
 
-    //Check again after several minutes
+    //Check again after some minutes
     {
       "status": "Confirmed"
     }
@@ -445,7 +445,7 @@ A swap share transaction is a two signature transaction. Therefore, both the own
     $ bitmark-cli -n <network> -i <owner identity> \
       swap -r <receiver> -s <shareId1> -q <quantity1> \
       -S <shareId2> \
-      -Q <quantity2> \ 
+      -Q <quantity2> \
       -b <block_number>
 
 
@@ -468,7 +468,7 @@ A swap share transaction is a two signature transaction. Therefore, both the own
   >
   >* `block_number` - This provides a time-limit to let the request expire and become invalid. Every 30 blocks from the current block adds one hour of expiration.
   >
-  > 
+  >
   >The `countersign` command is used to sign for a data. In this case, it is used by the `receiver` to sign for swapping the shares.
   >
   >* `<hex-data>` - The data is returned by the `swap` command.
@@ -481,8 +481,8 @@ A swap share transaction is a two signature transaction. Therefore, both the own
 * One of the owner to initialize the swap shares request
 
   ```shell
-    $ bitmark-cli -n testing -i first \ 
-      swap -r second \ 
+    $ bitmark-cli -n testing -i first \
+      swap -r second \
       -s b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23 \
       -q 150 \
       -S 0f366f3ee477a75c6304746f45296d804c08be06ad0941313371a17fe07d778f \
@@ -552,7 +552,7 @@ A swap share transaction is a two signature transaction. Therefore, both the own
   ```
   ```json
     {
-      "txId": "2d636380c17c7792b6e659efe7c978dcbab44b9161fd8ad65b6c084a05376ab7", 
+      "txId": "2d636380c17c7792b6e659efe7c978dcbab44b9161fd8ad65b6c084a05376ab7",
       "rawTx": "0100000001dc...4e2800000000"
     }
   ```
@@ -572,7 +572,7 @@ A swap share transaction is a two signature transaction. Therefore, both the own
       "status": "Verified"
     }
 
-    // Check again after several minutes
+    // Check again after some minutes
     {
       "status": "Confirmed"
     }
@@ -584,7 +584,7 @@ A swap share transaction is a two signature transaction. Therefore, both the own
 
   ```shell
     $ bitmark-cli -n testing balance -o first
-  ```  
+  ```
   ```json
     {
       "balances": [

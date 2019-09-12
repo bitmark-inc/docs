@@ -1,13 +1,13 @@
 # Registering Bitmark Certificates
 
-Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets. To do so, you could use the [Bitmark App](#registering-bitmark-certificates-using-the-bitmark-app), the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
+Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles individuals' digital assets. To do so, an individual could use the [Bitmark App](#registering-bitmark-certificates-using-the-bitmark-app), the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
 
 
 <br>
 
->The process of registering Bitmark Certificates for your digital assets basically contains two steps
+>The process of registering Bitmark Certificates for a digital asset contains two steps
 >
->* Registering your asset - results in a *Asset Record* stored on the Bitmark blockchain.
+>* Registering the asset - results in a *Asset Record* stored on the Bitmark blockchain.
 >
 >* Issuing bitmarks -  results in *Issue Records* linking to the corresponding asset record and stored on the Bitmark blockchain.
 
@@ -23,13 +23,13 @@ A Bitmark Account is required for any user who want to interact with the Bitmark
 
 ## Registering Bitmark Certificates using the Bitmark App
 
-The Bitmark app registers legal property rights on the public Bitmark blockchain for your digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether you want to keep it, sell it, or donate it.
+The Bitmark app registers legal property rights on the public Bitmark blockchain for individuals' digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether the individual wants to keep it, sell it, or donate it.
 
 <br>
 
 Here are the steps to register a new property using the Bitmark app:
 
-* On the PROPERTIES screen - Tap **CREATE FIRST PROPERTY** or **+** 
+* On the PROPERTIES screen - Tap **CREATE FIRST PROPERTY** or **+**
 
     > It opens the **PROPERTIES > REGISTER** screen
 
@@ -69,9 +69,9 @@ Here are the steps to register a new property using the Bitmark app:
 
 * Tap **ISSUE** button
 
-    >As soon as users tap **ISSUE**, the app submits both the `Asset Registration` request and `bitmarks Issuance` transactions to the Bitmark network. It would takes few seconds for the submission to be successful. After that the properties will be added to the **PROPERTIES > YOURS** screen.
-    > 
-    > **NOTE:** It will take several minutes for the transactions to be confirmed on the Bitmark blockchain after submitted. 
+    >As soon as users tap **ISSUE**, the app submits both the `Asset Registration` request and `bitmarks Issuance` transactions to the Bitmark network. After the submission is successful, the properties will be added to the **PROPERTIES > YOURS** screen.
+    >
+    > **NOTE:** It will take a while for the transactions to be confirmed on the Bitmark blockchain after submitted.
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
@@ -116,7 +116,7 @@ Here are the steps to register Bitmark Certificates of an asset using the **Bitm
 
     <br>
 
-* Issue the first bitmark 
+* Issue the first bitmark
 
     ```js
     // Build and sign the bitmark issuance request
@@ -137,28 +137,28 @@ Here are the steps to register Bitmark Certificates of an asset using the **Bitm
         await Bitmark.get(bitmarkId);
     ```
 
-   
+
 
 <br>
 <br>
 
-## Registering Bitmark Certificates using the Bitmark CLI 
+## Registering Bitmark Certificates using the Bitmark CLI
 
-The Bitmark CLI allows users to register Bitmark Certificates by submitting the transactions to its connected node, and then broadcasting to the network. 
+The Bitmark CLI allows users to register Bitmark Certificates by submitting the transactions to its connected node, and then broadcasting to the network.
 
 <br>
 
-> The basic structure of a Bitmark CLI command:  
+> The basic structure of a Bitmark CLI command:
 >   `bitmark-cli [global-options] command [command-options]`
 
 <br>
-    
-> The Bitmark-CLI determines which network the command will be sent to by the global option `--network` with the following possible values
-> 
+
+> The Bitmark CLI determines which network to send the command by using the global option `--network` (abbreviation: `-n`). Option values:
+>
 >* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
 >
 >* `testing`:  a network for testing newly developed programs, it uses testnet coins to pay for transactions.
-> 
+>
 >* `local`: a special case for running a regression test network on the loopback interface.
 
 <br>
@@ -206,13 +206,13 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
     >* `asset name` - Define the `name` field in the asset record.
     >
     >* `asset metadata` - Define the `metadata` field in the asset record.
-    > 
+    >
     >* `-f` option - Determine the hash of the asset.
     >
     >* `-z` option - Determine that it is the issuance of the first bitmark of the asset.
 
-    *Example:* 
-    
+    *Example:*
+
     ```shell
     $ bitmark-cli -n testing -i first \
     create -a 'Example asset' \
@@ -248,26 +248,26 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
     >* `asset name` - Define the `name` field in the asset record.
     >
     >* `asset metadata` - Define the `metadata` field in the asset record.
-    > 
+    >
     >* `-f` option - Determine the hash of the asset.
     >
     >* `-z` option - Determine that it is the issuance of the first bitmark of the asset.
 
-    *Example:* 
-    
-    ```shell  
+    *Example:*
+
+    ```shell
     $ bitmark-cli -n testing \
       status -t \
       b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
     ```
 
     ```json
-    // Check right after the create command 
+    // Check right after the create command
     {
       "status": "Pending"
     }
 
-    // Check again after several minutes
+    // Check again after some minutes
     {
       "status": "Confirmed"
     }
@@ -279,9 +279,7 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 ## Explore the Bitmark transactions using the Bitmark Registry website
 
 Bitmark build a web application for users to explore all the transactions happened on the Bitmark blockchain at:
-    
+
 * For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
 
 * For transaction on the Bitmark testnet blockchain: https://registry.bitmark.com
-
-

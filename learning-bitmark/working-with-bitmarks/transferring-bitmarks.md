@@ -1,12 +1,12 @@
-#Transferring bitmarks 
+#Transferring bitmarks
 
-Once an asset has been registered, trading it simply requires the owner to create a new transfer record that points back to the original issue record (or to the previous transfer record) and that shows the new owner of the asset. Because the blockchain is ordered and because it’s immutable, this creates a permanent chain of custody, reaching back to the asset’s origins.
+Once an asset has been registered, trading it only requires the owner to create a new transfer record that points back to the original issue record (or to the previous transfer record) and that shows the new owner of the asset. Because the blockchain is ordered and because it’s immutable, this creates a permanent chain of custody, reaching back to the asset’s origins.
 
 <div style="background-color: #efefef; text-align: center;">
     <img src="images/TransferringBitmark_0.png" alt="Record chain" title="Record chain" style="padding: 20px" />
 </div>
 
-The bitmark transfer are able to be performed using the following tools
+The bitmark transfer are able to be performed using
 
 * The [Bitmark App](#transferring-bitmarks-using-bitmark-app)
 
@@ -76,7 +76,7 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 
     <br>
 
-* Observe changes on the recipient side after several minutes
+* Observe changes on the recipient side after some minutes
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/TransferBitmark_10.png" alt="Confirmed Properties screen" title="Confirmed Properties screen" width="250" style="padding: 20px" />
@@ -107,7 +107,7 @@ Here are the steps to transfer bitmarks using the **Bitmark JS SDK**:
 
 <br>
 
-* Verify the transfer transaction by querying the the transaction by its transaction id
+* Verify the transfer transaction
 
     ```js
         await Transaction.get(txId);
@@ -116,23 +116,23 @@ Here are the steps to transfer bitmarks using the **Bitmark JS SDK**:
 <br>
 <br>
 
-## Transferring bitmarks using Bitmark CLI 
+## Transferring bitmarks using Bitmark CLI
 
-The Bitmark CLI allows users to transfer bitmarks by submitting the transactions to its connected node, and then broadcasting to the network. 
+The Bitmark CLI allows users to transfer bitmarks by submitting the transactions to its connected node, and then broadcasting to the network.
 
 <br>
 
-> The basic structure of a Bitmark CLI command:  
+> The basic structure of a Bitmark CLI command:
 >   `bitmark-cli [global-options] command [command-options]`
 
 <br>
-    
-> The Bitmark-CLI determines which network the command will be sent to by the global option `--network` with the following possible values
-> 
+
+> The Bitmark CLI determines which network to send the command by using the global option `--network` (abbreviation: `-n`). Option values:
+>
 >* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
 >
 >* `testing`:  a network for testing newly developed programs, it uses testnet coins to pay for transactions.
-> 
+>
 >* `local`: a special case for running a regression test network on the loopback interface.
 
 <br>
@@ -190,22 +190,22 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 * Paying for the bitmark transfer using the Bitmark-Wallet
 
     ```shell
-    #Run the bitcoind 
+    #Run the bitcoind
     $ bitcoind -datadir=<bitcoind config dir>
 
-    # OR run the litecoind 
+    # OR run the litecoind
     $ litecoind -datadir=<litcoind config dir>
 
     #Pay by BTC
-    $ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> \ 
+    $ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> \
       sendmany --hex-data '<payId>' '<btc address>,<btc amount in satoshi>'
 
     #OR Pay by LTC
-    $ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> \ 
+    $ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> \
       sendmany --hex-data '<payId>' '<ltc address>,<ltc amount in photon>'
 
     ```
-  
+
     >To execute a bitcoin or litecoin transaction on the local environment, the bitcoind or litecoind need to be running.
     >
     > - `payId` - The payment id for the share creation transaction, it is printed in the output of share creation command
@@ -214,7 +214,7 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 
     > **NOTE:** The payment is able to be performed using another tool which allows users to add the exact hex data to an OP_RETURN as part of the coin transaction
 
-    *Example of paying by ltc:* 
+    *Example of paying by ltc:*
 
     ```shell
     # run litecoind
@@ -229,7 +229,7 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
     ```
     ```json
     {
-      "txId": "ca94ae188ba8bfdc42e026950c5e13a2f1082dae484a45c5dc29217ac0c9a23f", 
+      "txId": "ca94ae188ba8bfdc42e026950c5e13a2f1082dae484a45c5dc29217ac0c9a23f",
       "rawTx": "0100000001b76a37054a086c5bd68afd61914bb4badc78c9e7ef59e6b692777cc18063632d020000006b483045022100db6f27ec3e1e59c34887f262217d5ff819947c561f0ecd11034ba8b32dbdc87002203ef82d80be8e43434eb16e22248e4533a1d3c2831e19802ce55a308604d76f3c012103b45a55c3e48209581d63ba5ceea9a0e94ae49e18056d85a6dadec535dbe237a2ffffffff03400d0300000000001976a914d2ebb7b259fb7410dca19b707c4091195d818ac488ac8091e305000000001976a9142d477753d17099534f9249b54cda36081d4e5eba88ac0000000000000000326a30d819cff364b9211093fe09c2b462bdd05154472a72fac91a882a8f1129674dc92ac5d2724c8d26b16d414de8fbc5c62e00000000"
     }
     ```
@@ -239,7 +239,7 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 * Verifying the status of the share creation transaction
 
     ```shell
-    $ bitmark-cli -n <network> \ 
+    $ bitmark-cli -n <network> \
       status -t <txid>
     ```
 
@@ -248,15 +248,15 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
     >* `txid` - The transaction id which is printed in the output of the `transfer` command.
     >
     >The returned status:
-    > 
+    >
     >* `Pending` - Has not been paid.
-    > 
+    >
     >* `Verified` - Paid but not confirmed on the blockchain.
-    > 
+    >
     >* `Confirmed` - Confirmed on the blockchain.
 
 
-    *Example:* 
+    *Example:*
 
     ```shell
     $ bitmark-cli -n testing \
@@ -269,7 +269,7 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
       "status": "Verified"
     }
 
-    //Check again fter several minutes
+    //Check again fter some minutes
     {
       "status": "Confirmed"
     }
@@ -280,17 +280,17 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 * Verifying the bitmark's provenance
 
     ```shell
-    $ bitmark-cli -n <network> \ 
+    $ bitmark-cli -n <network> \
       provenance -t <txid>
     ```
 
-    >The `provenance` command returns all the transaction records from the transaction corresponding to the inputed txid back to the bitmark's asset registration record. The options:
+    >The `provenance` command returns all the transaction records from the transaction corresponding to the inputted txid back to the bitmark's asset registration record. The options:
     >
     >* `txid` - The transaction id which is printed in the output of the `transfer` command.
     >
 
 
-    *Example:* 
+    *Example:*
 
     ```shell
     $ bitmark-cli -n testing \
@@ -349,7 +349,7 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 ## Explore the Bitmark transactions using the Bitmark Registry website
 
 Bitmark build a web application for users to explore all the transactions happened on the Bitmark blockchain at:
-    
+
 * For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
 
 * For transaction on the Bitmark testnet blockchain: https://registry.bitmark.com
