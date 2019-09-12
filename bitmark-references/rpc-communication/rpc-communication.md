@@ -4,18 +4,6 @@
 
 RPC is the abbreviation of remote procedure call, which is an inter-process communication technique used for client-server based applications. It is also known as subroutine call or function call.
 
-A client has a request message that the RPC translates and sends to the server. This request may be a procedure call or a function call to a remote server. When the server receives the request, it sends the required response back to the client. The client is blocked while the server is processing the call and only resumed execution after the server is finished.
-
-The sequence of events in a remote procedure call are given as follows:
-
-1. Client initiates a RPC procedure call
-1. Client makes a system call to send the message to the server and puts parameters in the message
-1. Message is sent from client to server by client's operating system
-1. Message is passed to server by the server's operating system
-1. Server executes procedure call with provided parameters
-1. After server finished executing, sends reponse back to client
-1. Client receives response from server
-
 # Flow
 
 ## Initialization
