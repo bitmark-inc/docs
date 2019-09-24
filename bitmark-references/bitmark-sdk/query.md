@@ -11,7 +11,7 @@
 | registrant | The account registering the asset |
 | status | Possible values: `pending`, `confirmed` |
 | block_number | The block which incorporates the asset record |
-| offset | TODO |
+| offset | An auto-incremental number which increments when the data is updated |
 | created_at | When the asset status becomes `confirmed` |
 
 ### Query for a specific asset
@@ -102,7 +102,7 @@ Asset.list(builder, new Callback1<List<AssetRecord>>() {
 | offer | See the offer attributes below. |
 | status | Possible values: `issuing`, `transferring`, `offering`, `settled` See the following diagram for definition. |
 | block_number | The block which incorporates the latest tx of this bitmark |
-| offset | TODO |
+| offset | An auto-incremental number which increments when the data is updated |
 | created_at | When the bitmark is issued |
 | confirmed_at | The last time when the bitmark is transferred |
 
@@ -210,7 +210,7 @@ Bitmark.list(builder, new Callback1<GetBitmarksResponse>() {
 | asset_id | The asset ID |
 | status | Possible values: `pending`, `confirmed` |
 | block_number | The block which incorporates the tx record |
-| offset | TODO |
+| offset | An auto-incremental number which increments when the data is updated |
 | confirmation | the number of blocks in the block chain that have been accepted by the network since the block that includes the transaction |
 | countersign | Indicates if this tx is a 2-sig transfer |
 
