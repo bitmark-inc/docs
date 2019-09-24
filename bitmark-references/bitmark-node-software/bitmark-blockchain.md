@@ -52,12 +52,16 @@ Signature
 
 ## Transactions: Asset, Issue and Transfer Records
 
+The main sorts of transactions on the Bitmark blockchain are asset,
+issue, and transfer records.  These are concerned with creating chains
+of provenance for individual copies of specific assets.
+
 ### Asset Record
 
 This contains the metadata to describe an asset that will be issued on
 the blockchain.  All assets will have at least one issue.
 
-The Asset Record structure
+The Record structure
 
 Item              Type       Description
 ----------------  ---------  ------------------------
@@ -68,8 +72,10 @@ Metadata          Map        Key-Value to describe Asset
 Registrant        Account    The public key of the signer
 Signature         Signature  Ed25519 signature of signer
 
+### Issue Record
 
-The Issue Record structure
+This is the transaction that actually issues an asset or an additional
+copy to an owner on the Bitmark blockchain.
 
 Item              Type       Description
 ----------------  ---------  ------------------------
@@ -79,24 +85,113 @@ Owner             Account    The public key of the signer
 Nonce             VarInt     Allow for multiple issues of the same asset
 Signature         Signature  Ed25519 signature of signer
 
-The Transfer Record structure
+### Transfer Record
+
+The is the transaction to transfer ownership in a provenance chain on
+the Bitmark blockchain.
 
 Item              Type       Description
 ----------------  ---------  ------------------------
 Type code         Byte       Transfer Record type code
-Link              Binary     Link to previous Issue or Transfer (SHA3-256)
-Owner             Account    The public key of the signer
+Link              Binary     Link to previous Issue or Transfer (SHA3-256 of previous transaction)
+Escrow            Payment    Optional escrow payment and address
+Owner             Account    The public key of the new owner
 Signature         Signature  Ed25519 signature of linked previous owner
 CounterSignature  Signature  Ed25519 signature of this record owner
 
 
 ## Transactions: Share
 
+### Bitmark Share
+
+This record marks the end of a provenance chain and it splits the item
+into an initial quantity of shares.  From this point the shares can
+then be granted or swapped with other Bitmark owner accounts.
+
+Item              Type       Description
+----------------  ---------  ------------------------
+Type code         Byte       Bitmark Balance type code
+Link              Binary     Link to previous Issue or Transfer (SHA3-256 of previous transaction)
+Quantity          VarInt     Initial balance quantity
+Signature         Signature  Ed25519 signature of linked previous owner
+
+
+### Share Grant
+
+This transaction moves a quantity of shares from one owner to another.
+
+Item              Type       Description
+----------------  ---------  ------------------------
+Type code         Byte       Share Grant type code
+ShareId           Binary     Link to previous Issue (SHA3-256 of issue transaction)
+Quantity          VarInt     Number of shares to transfer to recipient
+Owner             Account    The public key of the current owner
+Recipient         Account    The public key of the new owner
+BeforeBlock       VarInt     Transaction expires after this block height
+Signature         Signature  Ed25519 signature of current owner
+CounterSignature  Signature  Ed25519 signature of recipient
+
+### Share Swap
+
+This transaction is used to perform an atomic swap between two owners
+with two different share types.  The action is indivisible and there
+is no possibility of a half transaction being executed.
+
+Item              Type       Description
+----------------  ---------  ------------------------
+Type code         Byte       Share Swap type code
+ShareIdOne        Binary     Link to previous Issue (SHA3-256 of issue transaction)
+QuantityOne       VarInt     Number of shares one to transfer to owner two
+OwnerOne          Account    The public key of the share one owner
+ShareIdTwo        Binary     Link to previous Issue (SHA3-256 of issue transaction)
+QuantityTwo       VarInt     Number of shares two to transfer to owner one
+OwnerTwo          Account    The public key of the share two owner
+BeforeBlock       VarInt     Transaction expires after this block height
+Signature         Signature  Ed25519 signature of owner one
+CounterSignature  Signature  Ed25519 signature of owner two
 
 ## Transactions: Block ownership record
 
+### Block Foundation
+
+This is the first transaction in a block and defines the ownership of
+that block.  It is only set by the block mining process.  It is also
+used to set the miners payment addresses which are used when
+transaction reference those in this block.2
+
+Item              Type       Description
+----------------  ---------  ------------------------
+Type code         Byte       Block Foundation type code
+Version           VarInt     Sets the combination of supported currencies
+Payments          Map        Map of Currency and Address
+Owner             Account    The public key of the owner
+Nonce             VarInt     Addional NONCE for mining
+Signature         Signature  Ed25519 signature of owner
+
+
+### Block Owner Transfer
+
+This transaction allows the current owner of a block to transfer any
+futre earnings from this block to another owner with new currency
+addresses.
+
+Item              Type       Description
+----------------  ---------  ------------------------
+Type code         Byte       Block Foundation type code
+Link              Binary     Link to previous Foundation or Block Transfer (SHA3-256 of previous transaction)
+Escrow            Payment    Optional escrow payment and address
+Version           VarInt     Sets the combination of supported currencies
+Payments          Map        Map of Currency and Address
+Owner             Account    The public key of the new owner
+Signature         Signature  Ed25519 signature of linked previous owner
+CounterSignature  Signature  Ed25519 signature of this record owner
+
 
 ## Blockchain structure
+
+Transactions are gathered together into blocks, which start with a
+header followed by a foundation record and then the rest of the
+transactions.
 
 ### Block Header
 
@@ -113,14 +208,15 @@ Nonce             U64        Nonce created by hashing to meet the difficulty
 
 ### Merkle tree
 
-This is a way of combining hashes of a list of records to obtain a
-single hash such that only the same records in the same order will
-have the same hash.  It is done by making the hashes of all the
-records the final elements in a binary tree, with each pair hashed
-together to get the value above.  Any item not forming a pair at
-some level of the tree is hashed with itself.  The final hash is known
-as the root.  In this system the SHA3-256 algorithm is used for the
-hashing process.
+A Merkle Tree combines the hashes of individual records, such that
+only the same records hashed together in the same order will result in
+the same Merkle Tree root. It does so by hashing individual
+transactions to create the leaves of a binary tree. Each pair of
+hashes in the tree is then combined to form a new hash, repeating the
+process until only a single hash is left: the Merkle Tree
+root. Whenever a hash in the tree does not have a paired hash to
+combine with, it is instead hashed with itself. The hashing process is
+conducted by the SHA3-256 algorithm.
 
 The SHA3 algorithm is the current recommended hashing algorithm to use
 and fixes some vulnerability problems that were found in SHA2.  The
@@ -158,7 +254,8 @@ The difficulty value is encoded as a 57 bit mantissa, normalised so
 that the most significant bit is one and can be dropped leaving 56 bits
 to store:
 
-    [56 bits mantissa][8 bits exponent] = 64 bit unsigned value
+~~~
+    [8 bits exponent][56 bits mantissa] = 64 bit unsigned value
 
     mantissa is right shifted by exponent+8 from the most significant bit
     examples:
@@ -171,3 +268,4 @@ to store:
     Notes:
       1. the values here are shown as big endian, but the header is stored little endian
       2. the "one" value is current in the packed 64 bit for does represent exactly a difficulty of 1.0
+~~~

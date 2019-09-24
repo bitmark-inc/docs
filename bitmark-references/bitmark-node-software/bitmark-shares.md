@@ -6,7 +6,8 @@
   divide the ownership.
 
 * Once a property has been divided it does not make sense to combine
-  it back into a single unit again.
+  it back into a single unit again becase the single chain of
+  provenance has be broken.
 
 * The number of shares initially created is a fixed amount and cannot
   be changed as this would fundamentally alter the valuation of one
