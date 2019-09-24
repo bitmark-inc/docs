@@ -210,7 +210,12 @@ acct, err := account.FromRecoveryPhrase(
 An account can be used to sign arbitrary message, and any party with the received message and the corresponding signature can validate if the message was created by a known sender (authentication), and the message was not altered in transit (integrity). This functionality is usually useful when you have a server application which needs to authenticate if the requests are from valid users.
 
 ```javascript
-// TODO
+let account = new Account();
+let message = "Hello, world!"; // message could be either string or buffer
+let signature = account.sign(message); // signature is a buffer
+
+let accountNumber = account.getAccountNumber();
+let isAuthentic = Account.verify(accountNumber, message, signature);
 ```
 
 ```swift
