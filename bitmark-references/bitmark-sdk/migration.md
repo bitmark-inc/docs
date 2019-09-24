@@ -5,6 +5,7 @@ Bitmark allows users migrate their own account from previous twenty four recover
 The method requires a valid 24 recovery phrase words and return new `Account` object with 12 recovery phrase words as well as a new list bitmark id.
 
 ```javascript
+// Not supported at the moment. If you have demand for this function, please feel free to contact us.
 ```
 
 ```swift
