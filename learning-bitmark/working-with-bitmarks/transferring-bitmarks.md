@@ -137,7 +137,7 @@ The Bitmark CLI allows users to transfer bitmarks by submitting the transactions
 
 <br>
 
-Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
+Here are the steps to transfer a Bitmark Certificate using the Bitmark CLI
 
 * Submit a transfer request
 
@@ -146,20 +146,23 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
       transfer -r <receiver> \
       -t <txid> -u
     ```
+    
     > The `transfer` command is to submit a transfer transaction to the network. The options:
     >
-    >* `receiver` - The identity of the recipient
+    >* `sender identity` - The identity of the sender's Bitmark Account which is created and stored in the Bitmark CLI config file
+    >
+    >* `receiver` - The identitifer of the recipient's Bitmark Account. It can be the Bitmark Account Number or the Bitmark Account's identity which is created and stored in the Bitmark CLI config file
     >
     > `txid` - The id of the last transaction of the bitmark which is transferring.
     >
-    >**NOTE: ** A transfer transaction on the Bitmark blockchain requires a transaction fee of 0.0002 BTC or 0.002 LTC. Therefore, after the `transfer` command, the user needs to execute the payment for the transaction to be confirmed on the blockchain. The payment information is included in the output of the `transfer` command.
+    >**NOTE:** A transfer transaction on the Bitmark blockchain requires a transaction fee of 0.0002 BTC (20000 satoshis) or 0.002 LTC (200000 photons). Therefore, after the `transfer` command, the user needs to execute the payment for the transaction to be confirmed on the blockchain. The payment information is included in the output of the `transfer` command.
 
     *Example:*
 
     ```shell
-    $ bitmark-cli -n <network> -i first\
+    $ bitmark-cli -n testing -i first\
       transfer -r second \
-      -t 7e3337ae7596864e6dfd918c07780480ef80cea96fa039ed17d35c3849fcb3ca -u
+      -t 6b35dfb5d623f6cae22fd03b3e28f1fde5255a29c1328a5d39ddfdfcd0ce6cf9 -u
     ```
     ```json
     {
@@ -182,8 +185,14 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
           }
         ]
       }
+    },
+    "commands": {
+      "BTC": "bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf btc --testnet sendmany --hex-data 'd819cff364b9211093fe09c2b462bdd05154472a72fac91a882a8f1129674dc92ac5d2724c8d26b16d414de8fbc5c62e' 'mnTuuYNZmmswFT8iqr7ex82HAQYLJ8LXkC,10000' 'mr8DEygRvQwKfP4sVZuHVozqvzW89e193j,20000'",
+      "LTC": "bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf ltc --testnet sendmany --hex-data 'd819cff364b9211093fe09c2b462bdd05154472a72fac91a882a8f1129674dc92ac5d2724c8d26b16d414de8fbc5c62e' 'mzkCaHJmu1gdnsL9jxW2bwqtw2MCCy66Ds,200000'"
     }
     ```
+
+  >**Note:** The transfer command auto generates the Bitmark Wallet command to pay for the transaction and displays them at the end of the output.
 
 <br>
 
@@ -218,10 +227,10 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 
     ```shell
     # run litecoind
-    $ bitcoind -datadir=${HOME}/.config/litecoin/
+    $ bitcoind -datadir=~/.config/litecoin/
 
     # Perform payment
-    $ bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf \
+    $ bitmark-wallet --conf ~/.config/bitmark-wallet/test/test-bitmark-wallet.conf \
       ltc --testnet \
       sendmany --hex-data \
       'd819cff364b9211093fe09c2b462bdd05154472a72fac91a882a8f1129674dc92ac5d2724c8d26b16d414de8fbc5c62e' \
@@ -240,12 +249,12 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 
     ```shell
     $ bitmark-cli -n <network> \
-      status -t <txid>
+      status -t <transferId>
     ```
 
     >The `status` command is to query a transaction's status. The options:
     >
-    >* `txid` - The transaction id which is printed in the output of the `transfer` command.
+    >* `transferId` - The transfer transaction id which is printed as `transferId` in the output of the `transfer` command.
     >
     >The returned status:
     >
@@ -281,12 +290,12 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 
     ```shell
     $ bitmark-cli -n <network> \
-      provenance -t <txid>
+      provenance -t <transferID>
     ```
 
     >The `provenance` command returns all the transaction records from the transaction corresponding to the inputted txid back to the bitmark's asset registration record. The options:
     >
-    >* `txid` - The transaction id which is printed in the output of the `transfer` command.
+    >* `transferID` - `transferId` - The transfer transaction id which is printed as `transferId` in the output of the `transfer` command.
     >
 
 

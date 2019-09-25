@@ -203,6 +203,8 @@ Here are the steps to register a new Bitmark Certificate using the Bitmark CLI
 
     > The `create` command is to register an asset from a fingerprint along with issuing the corresponding bitmarks
     >
+    >* `idenity` - The identity of the registrant's Bitmark Account which is created and stored in the Bitmark CLI config file. 
+    >
     >* `asset name` - Define the `name` field in the asset record.
     >
     >* `asset metadata` - Define the `metadata` field in the asset record.

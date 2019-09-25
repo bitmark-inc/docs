@@ -46,11 +46,11 @@ Refer the [Payment on Bitmark CLI](payment-on-bitmark-cli.md) document to:
 
 ## Creating bitmark shares
 
-Any bitmark owner is able to create shares of a particular bitmark, that action divides the bitmark into a number of shares
+Any bitmark owner can divide a Bitmark certificate into a number of shares by creating the shares, then paying the associated fees. Additional commands can be used to verify the transaction.
 
 * The initial number of shares is not changeable after created.
 
-* Once the bitmark is converted into shares, it cannot be transferred any more. The provenance of the bitmark is terminated.
+* Once the bitmark is converted into shares, the certificate cannot be transferred any more, though the shares can be granted or swaped. The provenance of the bitmark is concluded.
 
 * All the created shares are alocated to the owner.
 
@@ -67,7 +67,7 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
   >The `share` command is to create shares of a bitmark. The options:
   >
-  >* `identity` - The bitmark owner's identity.
+  >* `identity` - The identity of the Bitmark Account of the Bitmark Certificate's Owner. The Bitmark Account and its identity are created and stored in the Bitmark CLI config file.
   >
   >* `txid` - The latest transaction id in the bitmark's provenance.
   >
@@ -250,46 +250,31 @@ Any bitmark owner is able to create shares of a particular bitmark, that action 
 
 ## Granting bitmark shares to another account
 
-Any owner with a non-zero share balance can grant shares from that balance to another account.
+Any owner with a non-zero share balance can grant shares from that balance to another account. This is a three part process, initializing the granting of shares, a counter signature, and then a payment. Afterward, the transaction can be verified.
 
-A grant share transaction is a two signature transaction. Therefore, the current share owner initializes the transaction and the new owner needs to sign to accept the shares.
+<br>
+<br>
+
+### Initializing the granting of shares
 
   ```shell
     # The current owner initializes the grant shares transaction
     $ bitmark-cli -n <network> -i <current owner identity> \
       grant -r <receiver> -s <shareid> -q <quantity>
-
-    # The receiver signs to accept the shares
-    $ bitmark-cli -n <network> -i <receiver identity> \
-      countersign -t <hex-data>
   ```
 
   >The `grant` account allows a bitmark shares owner to grant some of his share balance to another account. Only after the new owner signs to accept the shares, the grant transaction is created and submitted to the blockchain. The `grant` command options:
   >
-  >* `receiver` - The identity of the new owner of the granted shares.
+  >* `current owner identity` - The identity of the current share owner's Bitmark Account which is created and stored in the Bitmark CLI
+  >
+  >* `receiver` - The identifier of the new owner of the granted shares. It can be the receiver's Bitmark Account identity created by the Bitmark CLI or the receiver's Bitmark Account Number.
   >
   >* `shareid` - The share id (share id = bitmark id).
   >
   >* `quantity` - The number of granted shares.
-  >
-  >The returns:
-  >
-  >* `identity` - The account number of the current share owner.
-  >
-  >* `grant` - The hex-data which needs to be signed by the new owner.
-  >
-  >
-  >The `countersign` command is used to sign for a data. In this case, it is used by the `receiver` to sign for accepting the shares.
-  >
-  >* `<hex-data>` - The grant data is returned by the `grant` command.
-  >
-  >
-  >**NOTE:** The grant shares transaction cost a transaction fee of 0.001 LTC or 0.0001 BTC. Only when the fee is paid, the transaction is able to be confirmed on the blockchain.
 
 
 *Example:*
-
-* The current owner initializes the grant share transaction
 
   ```shell
     $ bitmark-cli -n testing -i first \
@@ -304,9 +289,38 @@ A grant share transaction is a two signature transaction. Therefore, the current
     }
   ```
 
+  >The returned fields:
+  >
+  >* `identity` - The Bitmark Account Number of the current share owner.
+  >
+  >* `grant` - The hex-data which needs to be signed by the new owner.
+
+
+<br>
 <br>
 
-* The new owner signs to accept the shares
+### Counter signing to accept the shares granting
+
+A grant share transaction is a two signature transaction. Therefore, after the current share owner initializes the granting, the new owner needs to sign to accept the shares.
+
+  ```
+    # The receiver signs to accept the shares
+    $ bitmark-cli -n <network> -i <receiver identity> \
+      countersign -t <hex-data>
+  ```
+
+  
+  >The `countersign` command is used to sign for a data. In this case, it is used by the `receiver` to sign to accept the shares.
+  >
+  >* `receiver identity` - The identity of the Bitmark Account which is created and stored in the Bitmark CLI config file.
+  >
+  >* `<hex-data>` - The grant data is returned by the `grant` command.
+  >
+  >**NOTE:** The grant shares transaction cost a transaction fee of 0.002 LTC (200000 photons) or 0.0002 BTC (20000 satoshis). Only when the fee is paid, the transaction is able to be confirmed on the blockchain.
+  >The payment information is included in the `coutersign` command's returns.
+
+
+*Example:*
 
   ```shell
     $ bitmark-cli -n testing -i second \
@@ -346,12 +360,21 @@ A grant share transaction is a two signature transaction. Therefore, the current
     }
   ```
 
+  >The returned fields:
+  >
+  >* `grantId` - The transaction id of the share granting.
+  >
+  >* `payId` - The payid to attach to the payment command.
+  >
+  >* `payment` - The corresponding amounts and addresses to pay for the transaction in different currencies.
+
+<br>
 <br>
 
-* Pay for the grant shares transaction by LTC
+### Pay for the granting share transaction by LTC
 
   ```shell
-    $ bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf \
+    $ bitmark-wallet --conf ~/.config/bitmark-wallet/test/test-bitmark-wallet.conf \
       ltc --testnet \
       sendmany --hex-data \
       '3728cb6a24f92801ac5fb0f29db58803339fecbe77dafad5cda9b1be9755a9a7d16b67428f7c3cebaccd10a20f6d8462' \
@@ -366,8 +389,11 @@ A grant share transaction is a two signature transaction. Therefore, the current
   ```
 
 <br>
+<br>
 
-* Verify the grant shares transaction status
+### Verify the granting
+
+* Check the transaction status
 
   ```shell
     $ bitmark-cli -n testing \
@@ -436,49 +462,45 @@ A grant share transaction is a two signature transaction. Therefore, the current
 
 ## Swapping bitmark shares
 
-Two owners of different bitmark shares are able to swap their shares together. The swap requires signatures from both owners.
+Owners of shares of two different bitmark Bitmark Certificates are able to swap their shares together. 
 
-A swap share transaction is a two signature transaction. Therefore, both the owners need to sign to transfer and accept the corresponding shares.
+Similar to the share granting, the share swapping is a three part process, one owner (the sender) initializes the swapping, the other owner (the receiver) countersigns to accept the swapping as well as to execute the transaction, and then a payment. Afterward, the transaction can be verified.
+
+<br>
+<br>
+
+### The sender initializes the swapping share transaction
 
   ```shell
-    # One of the owner initializes the swap shares transaction
-    $ bitmark-cli -n <network> -i <owner identity> \
+    $ bitmark-cli -n <network> -i <sender identity> \
       swap -r <receiver> -s <shareId1> -q <quantity1> \
       -S <shareId2> \
       -Q <quantity2> \
       -b <block_number>
-
-
-    # The other owner (the receiver) signs to swap the shares
-    $ bitmark-cli -n <network> -i <receiver identity> \
-      countersign -t <hex-data>
   ```
 
   >The `swap` command is to initialize a swap shares request, the request needs to be sign by the sender. Once the receiver signs to accept the request, the swap shares transaction is created and submitted to the blockchain. The `swap` command options:
   >
-  >* `receiver` - The receiver's identity.
+  >* `sender identity` - The identity of the sender's Bitmark Account which is created and stored in the Bitmark CLI config file.
   >
-  >* `shareId1` - The id of the sender's shares.
+  >* `receiver` - The receiver's identifier. It could be the receiver's Bitmark Account Number or the identity which is created and stored in the Bitmark CLI.
+  >
+  >* `shareId1` - The id of the shares of that the sender is swapping.
   >
   >* `quantity1` - The number of shares that the sender wants to swap with the receiver.
   >
-  >* `shareId2` - The id of the receiver's shares for which the sender wants to swap.
+  >* `shareId2` - The id of the shares that the receiver is owning and for which the sender wants to swap.
   >
   >* `quantity2` - The number of the receiver's shares for which the sender wants to swap.
   >
-  >* `block_number` - This provides a time-limit to let the request expire and become invalid. Every 30 blocks from the current block adds one hour of expiration.
+  >* `block_number` - This provides a time-limit to let the request expire and become invalid. Every 30 blocks from the current block adds one hour of expiration. 
+  > - [Bitmark Blockchain's current block height](https://registry.bitmark.com)
+  > - [Bitmark Testnet Blockchain's current block height](https://registry.test.bitmark.com)
   >
-  >
-  >The `countersign` command is used to sign for a data. In this case, it is used by the `receiver` to sign for swapping the shares.
-  >
-  >* `<hex-data>` - The data is returned by the `swap` command.
-  >
-  >
-  >**NOTE:** The grant shares transaction cost a transaction fee of 0.001 LTC or 0.0001 BTC. Only when the fee is paid, the transaction is able to be confirmed on the blockchain.
+  >**Note:** The `shareId1` and the `shareId2` are different. They are the ids of different shares which are generated from different Bitmark Certificates. 
+
 
 *Example:*
-
-* One of the owner to initialize the swap shares request
 
   ```shell
     $ bitmark-cli -n testing -i first \
@@ -497,8 +519,11 @@ A swap share transaction is a two signature transaction. Therefore, both the own
   ```
 
 <br>
+<br>
 
-* The receiver signs to accept swapping the shares
+#### Another owner countersign to accept swapping the shares
+
+A swapping share transaction is a two signature transaction. Therefore, both the owners need to sign to transfer and accept the corresponding shares.
 
   ```shell
     $ bitmark-cli -n testing -i second \
@@ -539,11 +564,12 @@ A swap share transaction is a two signature transaction. Therefore, both the own
   ```
 
 <br>
+<br>
 
-* Pay for the swap share transaction
+### Pay for the swapping share transaction
 
   ```shell
-    $ bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf \
+    $ bitmark-wallet --conf ~/.config/bitmark-wallet/test/test-bitmark-wallet.conf \
       ltc --testnet \
       sendmany --hex-data \
       'c369cc6d69b34d009cdfe7ff1b3f93dc7c38d90cf13cafe45731793bf6cf37e04f8694cde7a2171e12b6623b5fa64e28' \
@@ -558,8 +584,11 @@ A swap share transaction is a two signature transaction. Therefore, both the own
   ```
 
 <br>
+<br>
 
-* Verify the swap shares transaction status
+### Verify the share swapping
+
+* Check the swap shares transaction status
 
   ```shell
     $ bitmark-cli -n testing \
