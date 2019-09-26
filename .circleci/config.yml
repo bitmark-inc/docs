@@ -39,4 +39,4 @@ jobs:
              ls
              pwd
              ls ../
-             ~/docs-testing/igor/check-all ~/docs-testing/docs/
+             ~/docs-testing/igor/check-all ~/docs-testing/
