@@ -36,4 +36,6 @@ jobs:
              ls .
              git clone "https://github.com/araujobsd/igor" ~/docs-testing/igor
              cd ~/docs-testing/igor/ && sh make-spellingwords
+             ls
+             pwd
              ~/docs-testing/igor/check-all ~/docs-testing/docs/
