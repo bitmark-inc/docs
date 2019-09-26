@@ -38,4 +38,5 @@ jobs:
              cd ~/docs-testing/igor/ && sh make-spellingwords
              ls
              pwd
+             ls ../
              ~/docs-testing/igor/check-all ~/docs-testing/docs/
