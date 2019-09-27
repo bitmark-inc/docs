@@ -40,7 +40,7 @@ Features:
 
 ## Instructions for Using the Bitmark Wallet
 
-The following sections explain the main actions involved with using the Bitmark wallet including how to:
+The next sections explain the main actions involved with using the Bitmark wallet including how to:
 
 * Install the Bitmark Wallet.
 
