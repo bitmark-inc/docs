@@ -1,6 +1,6 @@
 ## Storage
 
-The bitmarkd program uses [LevelDB](https://github.com/google/leveldb) as the storage backend. LevelDB is a fast key-value storage without the concept of logical tables in traditional relational databases, so we partition the key space by adding a prefix byte to each key. The key-value pairs with the same prefix corresponds to a pool of data entries with the same attributes. The values to be stored are compactly serialized in order to reduce the disk usage.
+The bitmarkd program uses [LevelDB](https://github.com/google/leveldb) as the storage backend. LevelDB is a fast key-value storage without the concept of logical tables in traditional relational databases, so we partition the key space by adding a prefix byte to each key. The key-value pairs with the same prefix corresponds to a pool of data entries with the same attributes. The values to be stored are compactly serialized to reduce the disk usage.
 
 There are two separate LevelDB databases under the data directory of bitmarkd:
 
@@ -8,16 +8,16 @@ There are two separate LevelDB databases under the data directory of bitmarkd:
 
 | pool name | prefix | key | value |
 |-----------|--------|-----|-------|
-| Blocks            | B | block number              | block data 
-| BlockHeaderHash   | 2 | block number              | block hash           
+| Blocks            | B | block number              | block data
+| BlockHeaderHash   | 2 | block number              | block hash
 | BlockOwnerPayment | H | block number              | acceptable cryptocurrencies in this block
 | BlockOwnerTxIndex | I | block foundation tx ID    | block number
 
-2. *The index DB* is built based on the blocks db. It's mainly for efficient client queries.
+2. *The index DB* is built based on the blocks db, mainly for efficient client queries.
 
 | pool name | prefix | key | value |
 |-----------|--------|-----|-------|
-| Transactions      | T | tx ID              | the block number in which the tx was recorded + the tx record 
+| Transactions      | T | tx ID              | the block number in which the tx was recorded + the tx record
 | Assets            | A | asset ID           | the block number in which the asset was recorded + the asset record
 | OwnerNextCount    | N | account            | next index value for this account in OwnerList
 | OwnerList         | L | account + index    | tx ID
