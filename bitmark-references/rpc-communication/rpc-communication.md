@@ -24,6 +24,10 @@ Available commands:
 
 It is necessary to provide array of asset fingerprints to query asset information fingerprints).
 
+Parameters:
+
+- fingerprints - an array of asset fingerprints for querying asset information
+
 Example shell command:
 
 ```shell
@@ -32,7 +36,10 @@ Example shell command:
 
 1. Bitmark.Provenance - retrieve transfer history of a bitmark
 
-In order to get provenance (asset transfer history), two arguments need to be provided, one is number of history to get (count), the other is transaction ID (txID).
+In order to get provenance (asset transfer history), following parameters are needed:
+
+- count - number of return history
+- txID - string of transaction ID
 
 Example shell command:
 
@@ -42,23 +49,37 @@ Example shell command:
 
 1. Bitmark.Transfer - transfer a bitmark
 
-To transfer a bitmark, some data is needed: previous transaction hash (link), next owner account (owner), previous hex string of owner (signature), next hex string of owner (countersignature).
+To transfer a bitmark, following parameters are needed:
+
+- link - previous transaciton ID
+- owner - next owner account
+- signature - previous hex string of owner
+- countersignature - next hex string of owner
 
 Example shell command:
 
 ```shell
-(echo '{"id":"1","method":"Bitmark.Transfer","params":[{"link":"1bebd06c8ecb8b11ea93e93c9d38b7f6d7dfdf015530819015172cf51c7f33f7", "owner": "eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9", "signature": "a3e456a31a4a64962a32bcbf6549d14134deeb5d87285a04c648355eb9e59d938f8ab440d2b50c781baf2c1a5a2112c2167301bb128c8f850a9d54f3b27c5a08"}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
+(echo '{"method":"Bitmark.Transfer","params":[{"link":"1bebd06c8ecb8b11ea93e93c9d38b7f6d7dfdf015530819015172cf51c7f33f7", "owner": "eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9", "signature": "a3e456a31a4a64962a32bcbf6549d14134deeb5d87285a04c648355eb9e59d938f8ab440d2b50c781baf2c1a5a2112c2167301bb128c8f850a9d54f3b27c5a08"}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
 ```
 
 1. Bitmarks.Create - create a bitmark
 
 A bitmark is to represent property ownership, it is composed of two parts: asset and owner.
 
-Asset data includes name of asset (name), fingerprint of asset (fingerprint), some attributes to note an asset (metadata), owner accoutn (registrant), and hext string of account (signature).
+asset parameters:
 
-Each attribute of metadata is composed of two parts, key and value, separated by `\u0000`. For example, to denote a key "date" to have value "2001.01.01" is as "metadata": "date\u00002001.01.01".
+- name - name of asset
+- fingerprint - fingerprint of asset
+- metadata - attributes related to an asset; each attribute of metadata is composed of two parts, key and value, separated by \u0000, for example to denote a key "date" to have value "2001.01.01" would be "metadata": "date\u00002001.01.01"
+- registrant - owner accoun
+- signature - hext string of account
 
-Owner data includes asset id (assetID), account of owner (owner), string to make hash meets difficulty requirement (nonce), and hex string of account (signature).
+owner parameters:
+
+- assetID - Owner data includes asset id
+- owner - account of owner
+- nonce - string to make hash meets difficulty requirement
+- signature - hex string of account (signature)
 
 Example shell command:
 
@@ -68,7 +89,10 @@ Example shell command:
 
 1. Bitmarks.Proof - provide payment information
 
-Payment informatin includes payment id (payId) and string to make hash meets difficulty criteria (nonce).
+Payment informatin parameters:
+
+- payID - payment id
+- nonce - string to make hash meets difficulty criteria (nonce)
 
 Example shell command:
 
@@ -78,7 +102,14 @@ Example shell command:
 
 1. BlockOwner.Transfer - transfer block ownership to another account
 
-Some data is needed to transfer block ownership, including transaction hash (link), version to specify available payments (version), payment information (payments), next owner (owner), hex string of owner (signature), hex strnig of next owner (countersignature).
+Parameters to transfer block ownership:
+
+- link - transaction hash
+- version - version to specify available payments
+- payments - payment information
+- owner - next owner
+- signature - hex string of owner
+- countersignature - hex strnig of next owner
 
 Example shell command:
 
@@ -93,12 +124,14 @@ No extra parameters are needed.
 Example shell command:
 
 ```shell
-(echo '{"id":"1","method":"Node.Info","params":[{}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
+(echo '{"method":"Node.Info","params":[{}]}'; sleep 0.5; echo Q) | openssl s_client -connect 127.0.0.1:2130 -quiet
 ```
 
 1. Node.List - list available nodes
 
-Parameter to specify how many nodes to return (count).
+Parameter:
+
+- count - how many nodes to return
 
 Example shell command:
 
@@ -108,7 +141,9 @@ Example shell command:
 ```
 1. Transaction.Status - retrieve status of a transaction
 
-Only argument to provide is array of transaction hash (txId)
+Parameter:
+
+- txID - array of transaction hash
 
 Example shell command:
 
