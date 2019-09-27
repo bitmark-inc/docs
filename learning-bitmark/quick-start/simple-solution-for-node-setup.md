@@ -2,7 +2,8 @@
 
 ## Start your bitmark node
 
-A user can run a bitmark node in several ways. This section will guide you to start a bitmark node using docker container. Inside a bitmark node docker container, there are bitmarkd, recorderd, payment system and a user interface to control and monitor services.
+A user can install services like bitmarkd, discovery and recorderd base their own interested.  To install those services, the user needs to configure the settings and install dependencies before running each service. For the first time user,  a  docker container with a bitmark node and miner services is the quickest and easiest way to start with bitmark node. 
+This section will guide you to start a bitmark node using docker container. Inside a bitmark node docker container, there are bitmarkd, recorderd, payment system and a user interface to control and monitor services.
 
 ## Prerequisites
 
@@ -18,7 +19,7 @@ A user can run a bitmark node in several ways. This section will guide you to st
 
 ### Step 1: Download and Run Script
 
-Downloaded script will help you to manage bitmark node container. The  installation of the script will pull down a latest bitmark node container image from docker hub and then start a bitmark node container for you.  To check what functions the script supports and how to run it, simply run ``` bash install-node-linux-mac.sh```.  or ```bitmarkNode-HyperV.bat```.
+Downloaded script will help you to manage bitmark node container. The  installation of the script will pull down a latest bitmark node container image from docker hub and then start a bitmark node container for you.  To check what functions the script supports and how to run it, simply run ``` bash install-node-linux-mac.sh``` on linux or mac.  or ```bitmarkNode-HyperV.bat``` on windows.
 
 
 +  Linux and mac users
@@ -34,9 +35,9 @@ Downloaded script will help you to manage bitmark node container. The  installat
     +  [Download script for windows](https://s3-ap-northeast-1.amazonaws.com/bitmark-node-docker-scripts/bitmarkNode-HyperV.bat)
     + Execute bitmarkNode-HyperV.bat [Your Public IP]. When run the script without providing [Your Public IP], the script find your IP from Internet
 
-        ``` bitmarkNode-HyperV.bat 117.166.111.123```
+         ``` bitmarkNode-HyperV.bat 117.166.111.123```
     + Follow script instruction and select "1)Installation"
-+ Execute **docker ps** in your command-line/shell to check if bitmark-node is running
++ Execute ```docker``` ps in your command-line/shell to check if bitmark-node is running
 ![docker ps result](https://i.imgur.com/l3dF4Hl.jpg)
 
 ## Management Panel
@@ -46,6 +47,7 @@ Downloaded script will help you to manage bitmark node container. The  installat
 + Input your BTC and LTC address for rewarding in a pop-up screen
 ![Input your BTC&LTC Address](https://i.imgur.com/IRTlyjY.jpg?1)
 
++ Notice: WebUI is an interface to control bitmark node services. User can only access WebUI through local network. Please notice that user can not access the port from internet due to security reason.
 ### Step 2: Run bitmarkd and recorderd
 + Startup screen
     + Run bitmarkd by click "start button" of "Bitmark Node (bitmarkd)"
@@ -75,11 +77,5 @@ User must ensure the following ports to be accessible from Internet.
 When running bitmark node container, user can make sure ports are opened with the following commands.
 
 netcat -v [Your Public IP] 2136
-
-WebUI is an interface to control bitmark node services. User can only access WebUI through local network. Please notice that user can not access the port from internet due to security reason.
-
-| PORT | DESCRIPTION                |
-|------|----------------------------|
-| 9980 | Web server port for web UI |
 
 ###### tags: 'bitmark-node' 'documentation' 'quick start' 'bitmark'
