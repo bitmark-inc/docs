@@ -1,6 +1,6 @@
 # Overview
 
-This paragraph describes mining mechanism, including hashing, communication protocol, and rewards.
+Mining on the Bitmark blockchain requires an understanding of hashing and difficulty, as well as the communication, verification, and reward protocols.
 
 # Block Diagram
 
@@ -10,7 +10,7 @@ This paragraph describes mining mechanism, including hashing, communication prot
             |              |  <----------------  |               |
             +--------------+  zero mq protocol   +---------------+
 
-The hashing procedure relates to `bitmarkd` and `recorderd` only. The `recorderd` is a program that performs hashing, it receives jobs from `bitmarkd` and tries to find possible hashes that meets a certain criteria, if a hash is found, the `recorderd` sends a message back to `bitmarkd` and requests a validation.
+The mining procedure for Bitmark occurs through interactions between `bitmarkd` and `recorderd`. The hashing procedure relates to `bitmarkd` and `recorderd` only. The `recorderd` is a program that performs hashing, it receives jobs from `bitmarkd` and tries to find possible hashes that meets a certain criteria, if a hash is found, the `recorderd` sends a message back to `bitmarkd` and requests a validation.
 
 When `bitmarkd` receives this message from `recorderd`, the `bitmarkd` validates the hash from this special message and returns the result to the `recorderd`.
 
@@ -30,7 +30,7 @@ printf '%s' 'hello world' | argon2 'hello world' -d -l 32 -m 17 -t 4 -p 1 -r | a
 f8a17bc25cb53e848e2d09811ade4b8a037f628443661b88611faf5d9a5a1f33
 ```
 
-A block hash contains the following data:
+The hash of a block is made from following information, hashes through `argon2` algorithm:
 
 1. block record version
 
@@ -42,7 +42,7 @@ A block hash contains the following data:
 
 1. merkle tree
 
-    there is an allowable limit of maximum 9999 transactions hashes per block, if the number of verified transactions are above the limit, random transactions are selected.
+    A binary tree where the leaves are hashes of transactions; there is an allowable limit of 9999 transaction hashes maximum per block, with random transactions selected if the number of verified transactions exceeds that value.
 
 1. timestamp
 
@@ -58,8 +58,10 @@ A block hash contains the following data:
 
 ## Difficulty
 
-It is possible to set the level of difficulty to find a valid hash, higher difficulty means harder to find a valid hash, when a hash meets difficulty, it means the hash value is less than or equal to the difficulty level. Usually the difficulty level is represented by a number.
+Difficulty is decided by blockchain consensus rules, higher difficulty means harder to find a valid hash, when a hash meets difficulty, it means the hash value is less than or equal to the difficulty level. Usually the difficulty level is represented by a number.
 
+For example, when difficulty is 2, it means the hash of a block should contains at least 10 (8+2) leading zeros, so if a block hash is "012345678901234567890123456789012" does not meet criteria of this difficulty because only one leading zero. If another block hash is "00000000001234567890123456789012", then it meets difficulty criteria because it contains 10 leading zeros.
+```
 The hash is considered as a fixed 256 bits value and it is composed by two parts:
 
     [8 bits] [248 bits]
@@ -102,7 +104,9 @@ Here is the message format send from `bitmarkd` to `recorderd`:
 
 1. ok
 
-    denote hash is valid or not
+    a string value of "true" and "false", it is used to denote hash is valid or not
+
+For example, if `recorderd` receives a message of `job:2479 ok:false`, it means job number 2479 doesn't meet difficulty criteria. If `recorderd` receives a message of ``job:3000 ok:true`, it means job number 3000 meets difficulty criteria.
 
 ## Block Verification and Broadcast
 
