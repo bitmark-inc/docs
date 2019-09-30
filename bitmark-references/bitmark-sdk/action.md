@@ -120,7 +120,7 @@ Direct transfer is similar to sending emails, the sender does not get the consen
 Countersigned transfer is similar to certified mail or a package delivery that requires a signature, the receiver has the right to accept or reject the delivery of a package.
 The actual transfer won't take effect until the receiver explicitly provides the second signature, a.k.a. countersignature, as the consent.
 
-A newly created bitmark can be transferred right after the issue tx is sent. After the first transfer transaction, any transfer can only be executed when the previous transfer transaction is already confirmed on the blockchain.
+A newly created bitmark can be transferred right after the issue tx is sent. After the first transfer transaction, any transfer can only be executed when the previous transfer transaction is already confirmed on the blockchain (i.e., the status of the bitmark has to be `settled`).
 
 ## Direct transfer
 
