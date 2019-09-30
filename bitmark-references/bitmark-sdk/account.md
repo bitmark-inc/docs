@@ -18,11 +18,7 @@ let account = new Account();
 ```
 
 ```swift
-let account = try Account() // default will be version 1
-
-// or we can create bitmark account v2
-
-let account = try Account(version: .v2, network: .testnet)
+let account = try Account()
 ```
 
 ```java
