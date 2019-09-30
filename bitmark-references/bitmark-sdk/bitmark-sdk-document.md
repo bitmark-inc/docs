@@ -44,9 +44,7 @@ The API token is required to authenticate your requests to the Bitmark API.
 
 Please contact our [support](mailto:support@bitmark.com) to create your developer account and get the API token.
 
-## Initialize
-
-### Configuration
+## Configuration
 
 Before working with the Bitmark blockchain, you'll need to configure the SDK for your API token and the Bitmark network that you'll be using.
 
@@ -61,7 +59,6 @@ const config = {
 };
 
 sdk.init(config);
-
 ```
 
 ```swift
@@ -75,7 +72,6 @@ BitmarkSDK.initialize(config: SDKConfig(apiToken: "api-token",
 ```java
 final GlobalConfiguration.Builder builder = GlobalConfiguration.builder().withApiToken("api-token").withNetwork(Network.LIVE_NET);
 BitmarkSDK.init(builder);
-
 ```
 
 ```java
