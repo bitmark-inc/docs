@@ -1,5 +1,14 @@
 # Register an asset
 
+The first step to create a digital property is to register assets.
+An asset can any digital object, including files, applications, code, and data.
+
+Each asset can described by name and metadata (both optional), and can be uniquely identified by its fingerprint.
+
+If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain.
+
+An asset record won't be added to the blockchain without accompanying bitmark issuances (refer to the next section for more info). The "orphaned" asset records will be vanished after 3 days.
+
 ```javascript
 let params = Asset.newRegistrationParams(assetName, metadata);
 await params.setFingerprint(filePath);
@@ -50,19 +59,6 @@ params.SetFingerprintFromData([]byte("Hello, world!"))
 params.Sign(registrant)
 assetID, err := asset.Register(params)
 ```
-
-The first step to create a digital property is to register assets.
-An asset can any digital object, including files, applications, code, and data.
-
-Each asset is described by name and metadata (optional), and can be uniquely identified by its fingerprint.
-
-If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain.
-
-<aside class="notice">
-
-An asset record won't be added to the blockchain without accompanying bitmark issuances (refer to the next section for more info). The "orphaned" asset records will be vanished after 3 days.
-
-</aside>
 
 # Issue bitmarks
 
@@ -121,19 +117,19 @@ There are two ways to transfer a bitmark:
 
 Direct transfer is similar to sending emails, the sender does not get the consent from the receiver before sending a mail.
 
-Countersigned transfer is similar to express delivery, the receiver has the right to accept or reject the delivery of a package.
+Countersigned transfer is similar to certified mail or a package delivery that requires a signature, the receiver has the right to accept or reject the delivery of a package.
 The actual transfer won't take effect until the receiver explicitly provides the second signature, a.k.a. countersignature, as the consent.
 
-<aside class="notice">
-A bitmark can be transferred only when its status is settled.
-</aside>
+A newly created bitmark can be transferred right after the issue tx is sent. After the first transfer transaction, any transfer can only be executed when the previous transfer transaction is already confirmed on the blockchain.
 
 ## Direct transfer
 
+The sender can transfer a bitmark to another account without additional consent.
+
 ```javascript
 let params = Bitmark.newTransferParams(receiverAccountNumber);
-await params.fromBitmark(bitmarkId); // asynchrous, just to check the head_id
-// params.fromTxId(lastestTxId); // or synchrous
+await params.fromBitmark(bitmarkId); // asynchronous, just to check the head_id
+// params.fromTxId(latestTxId); // or synchronous
 params.sign(account);
 
 let response = await Bitmark.transfer(params);
@@ -178,13 +174,13 @@ params.Sign(sender)
 txID, err := bitmark.Transfer(params)
 ```
 
-The sender can transfer a bitmark to another account without additional consent.
-
 ## Countersigned transfer
 
 For some scenario, the developer want to get a permission from the receiver before we transfer a property to it. In the case, you will submit a two-signature transfer.
 
 ### Propose a bitmark transfer offer
+
+The current owner of a bitmark can propose a transfer offer for another account. The actual ownership transfer won't happen until the receiver accepts the offer.
 
 ```javascript
 let params = Bitmark.newTransferOfferParams(receiverAccountNumber);
@@ -233,11 +229,10 @@ params.Sign(sender)
 err := bitmark.Offer(params)
 ```
 
-The current owner of a bitmark can propose a transfer offer for another account if the status of the bitmark is `settled`,
-i.e. either the issue or the transfer transaction of this bitmark is already confirmed on the blockchain.
-The actual ownership transfer won't happen until the receiver accepts the offer.
-
 ### Query offering bitmarks
+
+The receiver needs to query if there is any bitmark transfer offer waiting for the countersignature.
+For the details of query execution, please refer to [Query Bitmark](query.md##Bitmark).
 
 ```javascript
 let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder()
@@ -275,10 +270,11 @@ builder := bitmark.NewQueryParamsBuilder().OfferTo("YOUR RECEIVER ACCOUNT NUMBER
 bitmarks, referencedAssets, err := bitmark.List(builder)
 ```
 
-The receiver needs to query if there is any bitmark transfer offer waiting for the countersignature.
-For the details of query execution, please refer to [Query Bitmark](#bitmark).
-
 ### Accept the bitmark transfer offer
+
+If the receiver decides to accept the bitmark, the countersignature is generated and make the transfer action take effect.
+
+The status of the bitmark will change from `offering` to `transferring`.
 
 ```javascript
 let transferOfferResponseParams = Bitmark.newTransferResponseParams(BITMARK_CONSTANTS.TRANSFER_OFFER_RESPONSE_TYPES.ACCEPT);
@@ -311,9 +307,6 @@ Bitmark.respond(params, new Callback1<String>() {
         });
 ```
 
-If the receiver decides to accept the bitmark, the countersignature is generated and make the transfer action take effect.
-The status of the bitmark will change from `offering` to `transferring`. The
-
 ```go
 bmk, _ := bitmark.Get("YOUR BITMARK ID")
 receiver, _ := account.FromSeed("USER_B_SEED")
@@ -324,10 +317,13 @@ _, err := bitmark.Respond(params)
 
 ### Reject the transfer offer
 
+The receiver can also reject the bitmark transfer offer.
+The status of the bitmark will reverted to `settled`, and the sender can create a new transfer offer.
+
 ```javascript
 let transferOfferResponseParams = Bitmark.newTransferResponseParams(BITMARK_CONSTANTS.TRANSFER_OFFER_RESPONSE_TYPES.REJECT);
-await transferOfferResponseParams.fromBitmark(bitmark.id);  // asynchrous, just to get offer from Bitmark
-// transferOfferResponseParams.fromOffer(offer) // or synchrous
+await transferOfferResponseParams.fromBitmark(bitmark.id);  // asynchronous, just to get offer from Bitmark
+// transferOfferResponseParams.fromOffer(offer) // or synchronous
 transferOfferResponseParams.sign(receiverAccount);
 
 response = await Bitmark.response(transferOfferResponseParams, receiverAccount);
@@ -363,15 +359,16 @@ params.Sign(receiver)
 _, err := bitmark.Respond(params)
 ```
 
-The receiver can also reject the bitmark transfer offer.
-The status of the bitmark will reverted to `settled`, and the sender can create a new transfer offer.
-
 ### Cancel the transfer offer
+
+If the receiver hasn't responded to the bitmark transfer offer (neither accepted nor rejected), the sender can cancel the offer.
+
+Similar to the case of the receiver rejecting the offer, the status of the bitmark will be set to `settled` again, and becomes available for the next transfer.
 
 ```javascript
 let transferOfferResponseParams = Bitmark.newTransferResponseParams(BITMARK_CONSTANTS.TRANSFER_OFFER_RESPONSE_TYPES.CANCEL);
-await transferOfferResponseParams.fromBitmark(bitmark.id);  // asynchrous, just to get offer from Bitmark
-// transferOfferResponseParams.fromOffer(offer) // or synchrous
+await transferOfferResponseParams.fromBitmark(bitmark.id);  // asynchronous, just to get offer from Bitmark
+// transferOfferResponseParams.fromOffer(offer) // or synchronous
 
 response = await Bitmark.response(transferOfferResponseParams, senderAccount);
 ```
@@ -405,6 +402,3 @@ params := bitmark.NewTransferResponseParams(bmk, bitmark.Cancel)
 params.Sign(sender)
 _, err := bitmark.Respond(params)
 ```
-
-If the receiver hasn't responded to the bitmark transfer offer (neither accepted nor rejected), the sender can cancel the offer.
-Similar to the case of the receiver rejecting the offer, the status of the bitmark will be set to `settled` again, and becomes available for the next transfer.
