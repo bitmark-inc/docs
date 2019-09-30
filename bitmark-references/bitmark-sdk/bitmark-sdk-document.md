@@ -48,6 +48,10 @@ Please contact our [support](mailto:support@bitmark.com) to create your develope
 
 ### Configuration
 
+Before working with the Bitmark blockchain, you'll need to configure the SDK for your API token and the Bitmark network that you'll be using.
+
+Every code example in other sections presumes the SDK is already correctly initialized.
+
 ```javascript
 const sdk = require('bitmark-sdk-js');
 
@@ -90,11 +94,5 @@ func main() {
 		},
 	}
 	sdk.Init(config)
-
-	// Every example assumes the SDK is already correctly initialized
 }
 ```
-
-<aside class="notice">
-You need to replace <code>api-token</code> with your personal API token.
-</aside>
