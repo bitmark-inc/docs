@@ -6,6 +6,8 @@ An account incorporates the public-private key-pair and the private key is requi
 
 ## Create an account
 
+Create a new identity to participate Bitmark blockchain.
+
 ```javascript
 let account = new sdk.Account();
 
@@ -33,6 +35,13 @@ acct, err := account.New()
 
 ## Get the account number
 
+The account number of an account serves as a pseudonymous identifier within the Bitmark blockchain, which can represent:
+
+- **registrant** of an asset
+- **owner** of a bitmark
+- **sender** of a bitmark transfer offer
+- **receiver** of a bitmark transfer offer
+
 ```javascript
 let accountNumber = account.getAccountNumber();
 // ffzcoJeg7p6kJrV6VNhS6juuceTCKMmek1WrXopvbzNTvYqANy
@@ -52,22 +61,15 @@ acct, _ := account.New()
 accountNumber := acct.AccountNumber()
 ```
 
-The account number of an account serves as a pseudonymous identifier within the Bitmark blockchain, which can represent:
-
-- **registrant** of an asset
-- **owner** of a bitmark
-- **sender** of a bitmark transfer offer
-- **receiver** of a bitmark transfer offer
-
 ## Export an account
 
-We provide two formats for exporting an account: **seed** and **recovery phrase**, both of which store all the required information to instantiate an account.
+There are two formats for exporting an account: **seed** and **recovery phrase**, both of which store all the required information to instantiate an account.
 
-<aside class="warning">
-Because seed and recovery phrase is the "ticket" that allows someone to control properties under an account, it is important they are kept secure.
-</aside>
+Both seed and recovery phrase can be used to derive the original private key of an account, so it is critical to keep them stored securely. 
 
 ### Seed
+
+The seed is the more compact format of an exported account. See [Store seed](store_seed.md) to learn how to securely store seeds in mobile phones.
 
 ```javascript
 let seed = account.getSeed();
@@ -90,9 +92,9 @@ acct, _ := account.New()
 seed := acct.Seed()
 ```
 
-The seed is the more compact format of an exported account for your program to re-instantiate an account.
-
 ### Recovery Phrase
+
+The recovery phrase, which consists of 12 [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior for human interaction compared to the handling of seed. If you don't custody the seeds of your users, make sure you present the recovery phrase to them and teach them [how to store it in a secure place](https://help.trustwallet.com/hc/en-us/articles/360016509753-Best-Practices-for-Storing-Your-Recovery-Phrase). Currently English and traditional Chinese phrases are supported.
 
 ```javascript
 // English version
@@ -110,7 +112,7 @@ let recoveryPhrase = account.getRecoveryPhrase("cn");
 // English version
 let phrase = try account.getRecoverPhrase(language: .english)
 
-// Tranditional Chinese version
+// Traditional Chinese version
 let phrase = try account.getRecoverPhrase(language: .chineseTraditional)
 ```
 
@@ -135,13 +137,13 @@ acct, _ := account.New()
 phrase, err := acct.RecoveryPhrase(language.AmericanEnglish)
 ```
 
-The recovery phrase, which consists of 12 [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior for human interaction compared to the handling of seed. If you don't plan to custody user's private key, make sure you present the recovery phrase to your user. Currently English and traditional Chinese phrases are supported.
-
 ## Import an account
 
-On the contrast, there are functions for you to recover the accounts.
+As mentioned in [Export an account](#Export-an-account), an account could be exported as either `seed` or `recovery phrase`, so there are two corresponding functions to recover an account from the supported exported formats.
 
 ### Recover from seed
+
+To instantiate an account from a given seed.
 
 ```javascript
 let account = Account.fromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8");
@@ -160,6 +162,8 @@ acct, err := account.FromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8")
 ```
 
 ### Recover from phrase
+
+To instantiate an account from a given recovery phrase.
 
 ```javascript
 // English version
@@ -254,11 +258,10 @@ sig := acct.Sign(msg)
 err := account.Verify(acct.AccountNumber(), msg, sig)
 ```
 
-## Account utility functions
+## Validate an account number
 
-Here are some are some helper functions.
-
-### Validate account number
+The function returns an error to indicate whether a given account number is valid in current runtime environment, i.e.,
+the format is correct and its network matches to the network specified in the SDK config during initialization.
 
 ```javascript
 let isValid = Account.isValidAccountNumber(accountNumber);
@@ -275,6 +278,3 @@ boolean isValid = Account.isValidAccountNumber(accountNumber);
 ```go
 err := account.ValidateAccountNumber("e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog")
 ```
-
-The function returns an error to indicate whether a given account number is valid in current runtime environment, i.e.,
-the format is correct and its network matches to the network specified in the SDK config during initialization.
