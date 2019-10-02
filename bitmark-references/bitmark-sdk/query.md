@@ -240,6 +240,10 @@ Transaction.get(txId, new Callback1<GetTransactionResponse>() {
         });
 ```
 
+```swift
+let tx = try Transaction.get(transactionID: "3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1")
+```
+
 ### Query for a set of transactions
 ````javascript
 let transactionQueryParams = Transaction.newTransactionQueryBuilder()
