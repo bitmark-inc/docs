@@ -74,10 +74,6 @@ final GlobalConfiguration.Builder builder = GlobalConfiguration.builder().withAp
 BitmarkSDK.init(builder);
 ```
 
-```java
-BitmarkSDK.init("api-token");
-```
-
 ```go
 import sdk "github.com/bitmark/bitmark-inc/bitmark-sdk-go"
 
