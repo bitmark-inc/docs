@@ -12,13 +12,15 @@ This tutorial explains how to set up the bitmarkd service and/or the recorderd s
 * Install the ZMQ4 and Argon2 libraries
 
 
-## FreeBSD
+### Meeting PreRequisites
+
+#### Installing Packages on FreeBSD
 
 ~~~~~
 pkg install libzmq4 libargon2
 ~~~~~
 
-## MacOSX
+#### Installing Packages on MacOSX
 
 (be sure that homebrew is installed correctly)
 ~~~~
@@ -27,13 +29,14 @@ brew install argon2
 brew install zeromq43
 ~~~~
 
-## Ubuntu
+#### Installing Packages on Ubuntu
 (tested on version 18.04)
 
 Install following packages
    `sudo apt install libargon2-0-dev uuid-dev libzmq3-dev`
 
-## Debian
+
+#### Installing Packages on Debian
 (tested on version 9)
 
 First we need to add access to testing package's repo as well as to our current version, in this case stable.
@@ -59,7 +62,11 @@ For the other packages, install from stable or testing, both versions work:
 apt install uuid-dev libzmq3-dev
 ```
 
-## To manually compile, run these commands:
+## Installing Bitmarkd
+
+### Compiling Bitmarkd
+
+To manually compile, run these commands:
 
 ~~~~~
 go get github.com/bitmark-inc/bitmarkd
@@ -82,7 +89,18 @@ If AVX is not available, make sure Argon2 has no reference to AVX otherwise bitm
 make OPTTARGET=generic
 ```
 
-# Set up
+## Installing a Prebuilt Binary
+
+* Flatpak
+
+    Please refer to [wiki](https://github.com/bitmark-inc/bitmarkd/wiki/Instruction-for-Flatpak-Prebuilt)
+
+* Docker
+
+    Please refer to [bitmark-node](https://github.com/bitmark-inc/bitmark-node)
+
+
+## Setting Up Bitmarkd
 
 Create the configuration directory, copy sample configuration, edit it to
 set up IPs, ports and local bitcoin testnet connection.
@@ -114,15 +132,5 @@ bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" start
 ~~~~~
 
 Note that a similar process is needed for the recorderd (mining subsystem)
-
-# Prebuilt Binary
-
-* Flatpak
-
-    Please refer to [wiki](https://github.com/bitmark-inc/bitmarkd/wiki/Instruction-for-Flatpak-Prebuilt)
-
-* Docker
-
-    Please refer to [bitmark-node](https://github.com/bitmark-inc/bitmark-node)
 
 ###### tags: `bitmarkd` `documentation` `tutorial'` `bitmark`
