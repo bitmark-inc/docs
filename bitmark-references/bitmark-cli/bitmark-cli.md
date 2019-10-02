@@ -1,24 +1,3 @@
----
-documentclass: scrreprt
-header-includes: |
-   \RedeclareSectionCommand[
-     beforeskip=-10pt plus -2pt minus -1pt,
-     afterskip=1sp plus -1sp minus 1sp,
-     font=\normalfont\itshape]{paragraph}
-   \RedeclareSectionCommand[
-     beforeskip=-10pt plus -2pt minus -1pt,
-     afterskip=1sp plus -1sp minus 1sp,
-     font=\normalfont\scshape,
-     indent=0pt]{subparagraph}
-geometry:
-  - top=30mm
-  - bottom=30mm
-  - left=20mm
-  - right=20mm
-  - heightrounded
-papersize: a4
-...
-
 # bitmark-cli Command Reference
 
 ## Basic Command Structure
@@ -51,9 +30,7 @@ Options listed as long form and their single character abbreviation.
 
 `--identity|-i NAME`             Optionally override the default identity to allow
                                  running commands as another account.
-                                 Extra accounts are appended to the
-                                 configuration file using the `add`
-                                 command.
+                                 (See "Identity definition" for more details)
 
 `--password|-p PASSWORD`         This is primarily used for regression testing
                                  scripts to supply a password.  It is
@@ -71,8 +48,26 @@ Options listed as long form and their single character abbreviation.
                                  the password.
 -------------------------------  ---------------------------------
 
+### Identity definition
 
-### Parameters passed to the agent program:
+To represent a Bitmark account a short mnemonic **Identity** string is used.
+
+The identities are stored in the configuration file and contain 3 parts:
+* The password protected private key, used for signing transactions
+* The public Account Number (a Base58 string), used as the recipient in transfers
+* A description just to hold some additional text, never sent to blockchain
+
+After initial setup that first identity is normally used to sign all
+transactions, however it can be overridden by the global `--identity` option.
+
+### Options and parameters passed to the agent program:
+
+The CLI program can use an external program or an executable script to
+request the password from a password manager.  The CLI provides a set
+of parameters that allows this program to determine which password is
+required, the `cache-id`.  The other parameters are for display
+purposes and correspond the the data required by the GNU Privacy Guard
+password dialog.
 
 ~~~
 0:   --clear             = clear any cached password to force reprompt
@@ -83,6 +78,10 @@ Options listed as long form and their single character abbreviation.
 4:   prompt              = "<IDENTITY>"
 5:   description         = descriptive string shows create/transfer operation
 ~~~
+
+A sample `ask-gpg-agent` script is provided in the bitmarkd source
+code repository and this can be used to produce a similar script for
+other password managers.
 
 
 # CLI Command Synopsis
@@ -117,19 +116,28 @@ help           Shows a list of commands or help for one command
 
 ## setup
 
-Used to initially create the configuration file for a network and sets
-the default identity, so both these global flags must be specified.
-If the configuration file already exists then this command will
-terminate with an error and not modify the file.
+Creates the initial configuration file for a network and sets the
+default identity.  There are separate files for each network.
 
-Before creating the file the CLI will prompt for a password to encrypt
-the generated seed, choose a good random password to secure the
-account's private key.
+**Arguments.** Both the `--network` and `--identity` global options must
+be set.
 
-### OPTIONS
+**Additional input.** Before creating the file, the CLI will prompt
+for a password to encrypt the generated seed. Be sure to choose a good
+random password to secure the account's private key.
+
+**Errors.**  If the configuration file already exists then this command
+will terminate with an error and not modify the file.
+
+**Bugs.** Currently only adds one connection and no way to update this
+other than manual editing of the configuration file.
+
+### Command options
 
 ------------------------------  ---------------------------------
-`--connect|-c HOST:PORT`        Sets the default bitmarkd connection
+`--connect|-c HOST:PORT`        Sets the default bitmarkd connection, this
+                                TCP connection will be used for all data
+                                submitted to the blockchain.
 
 `--description|-d "STRING"`     Sets a description string for the initial
                                 identity.  This is only for the CLI
@@ -144,7 +152,6 @@ account's private key.
                                 both V1 and V2 Base58 encoded seeds.
 ------------------------------  ---------------------------------
 
-
 ### EXAMPLE
 
 ~~~
@@ -154,16 +161,22 @@ bitmark-cli --identity=fred --network=testing setup --connect=node-d1.test.bitma
 
 ## add
 
-Update the configuration file, adding a new identity for a
-network. Both `--identity` and `--network` global flags must be
-specified.
+Update the configuration file by adding a new identity for a
+network.
 
-Before creating the file the CLI will prompt for a password to encrypt
-the generated seed, choose a good random password to secure
-the account's private key.  The password is not prompted when using
-the `--account` option since only the public key is present.
+**Arguments.** Both the `--identity` and `--network` global options must
+be specified.
 
-### OPTIONS
+**Additional input.** Before creating the file the CLI will prompt for a
+password to encrypt the generated seed, choose a good random password
+to secure the account's private key.  The password is not prompted
+when using the `--account` option since only the public key is
+present.
+
+**Errors.** The identity must not already exist or the command will
+terminate with an error and not modify the file.
+
+### Command options
 
 ------------------------------  ---------------------------------
 `--description|-d "STRING"`     Sets a description string for the initial identity.
@@ -195,12 +208,18 @@ bitmark-cli --identity=wilma --network=testing add --description="The real Ruler
 This command create a bitmark by sending both an Asset record and one
 or more issue records.
 
-The first issue is free, but the CLI must solve a proof-of-work
-problem to do this.  Subsequent issues after the first is confirmed
-require payment and this command will display the appropriate
-`bitmark-wallet` command for the supported crypto-currencies.
+**Arguments.** The `--network` global option must be specified.
 
-### OPTIONS
+**Additional input.** Before creating the Bitmark the CLI will prompt
+for a password to decrypt the identity's private key to perform the
+signing operation.
+
+**Errors.** The command will terminate with an error if the asset name
+or metadata do not match exactly when creating additional Bitmarks.
+In the "free issue (--zero)" case there will be an error if this issue
+already exists.
+
+### Command options
 
 ------------------------------  ---------------------------------
 `--asset|-a "STRING"`           A short name to describe the asset being issued
@@ -217,12 +236,8 @@ require payment and this command will display the appropriate
                                 that will give the same hex string that
                                 Bitmark Inc. applications also use.
 
-`--zero|-z`                     Restrict the issue to the initial free one.  This will
-                                return an error if the free issue has
-                                already been used for this asset. It
-                                is intended for use in a script where
-                                doing an additional paid issue is not
-                                wanted.
+`--zero|-z`                     Restrict the issue to the initial free one.
+                                (See "Free issues" below)
 
 `--quantity|-q NUMBER`          Allows issuing a block of bitmarks for a single
                                 payment up to a maximum of 100.  If
@@ -238,19 +253,48 @@ require payment and this command will display the appropriate
 bitmark-cli --identity=fred --network=testing create --asset='Fred Flintstone' --metadata='desc\u0000photo of Fred Flintstone\u0000src\u0000Wikipedia' --fingerprint=01ee0039791329016fc93e083ede6bd4266ed6f65812b483c05b5bf75252112178a4ffeeb4ede5949c6e4d9e26fba00f95fbc71b4fa7c5a9220bec49e6c18848fe
 ~~~
 
+
+### Free issues
+
+For any asset there is a special issue that is free of cost.  Even if
+an asset already exists a different Bitmark account can create a free
+issue for it.  Internally the issue record has a NONCE value of zero.
+
+This leads to the following cases:
+
+* A new asset, a free issue must be made and must be confirmed before
+  any other issue can be made against this asset.  Trying to issue
+  quantity greater than one in this case will always fail as the
+  confirmed asset does not yet exist.
+
+* A confirmed existing asset, an account that never made an issue
+  against this asset could choose to make its single free issue or
+  simply issue a quantity of two or more and pay for them.  In this
+  case the free issue does not have to be used, but the CLI will
+  always attempt to make a free issue for a one off issue and try a
+  paid if it cannot.
+
 ## transfer
 
 To transfer a bitmark to another account.
 
 The default case is to perform a two signature transfer and requires
 the use of the `countersign` command to produce the final record to
-send to the blockchain.  Also the recipient who countersigns must be the
-same as the recipient in the transfer.
+send to the blockchain.
 
 If the unratified mode is used then the transfer is sent right away
 and the payment details are returned.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+**Additional input.** Before transferring the Bitmark the CLI will
+prompt for a password to decrypt the identity's private key to perform
+the signing operation.
+
+**Errors.** The command will terminate with an error if the transfer
+cannot be validated by the blockchain.
+
+### Command options
 
 -------------------------------  ---------------------------------
 `--txid|-t HEX-ID`               Transaction id from a previous issue or transfer.
@@ -281,10 +325,18 @@ bitmark-cli --identity=fred --network=testing transfer --txid=8981eb58c965e2360b
 ## countersign
 
 To complete a two signature operation.  This command take the hex code
-and signs with the global identity.  This identity must match the
-receiver in the transaction or the blockchain will reject it.
+and signs with the global identity.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+**Additional input.** Before creating the Bitmark the CLI will prompt
+for a password to decrypt the identity's private key to perform the
+signing operation.
+
+**Errors.** The command will terminate with an error if this identity
+does not match the receiver in the transaction.
+
+### Command options
 
 -------------------------------  ---------------------------------
 `--transaction|-t HEX-DATA`      The transaction hex data from a previous
@@ -308,7 +360,16 @@ the crypto-currency addresses.
 This can only be used if the account belonging to a miner is added to
 the CLI configuration.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+**Additional input.** Before creating the Bitmark the CLI will prompt
+for a password to decrypt the identity's private key to perform the
+signing operation.
+
+**Errors.** The command will terminate with an error if the blockchain
+cannot validate the transaction.
+
+### Command options
 -------------------------------  ---------------------------------
 `--txid|-t HEX-ID`               The transaction id from a previous issue or
                                  transfer.
@@ -349,7 +410,9 @@ it may be necessary to use the last transaction id with a new call to
 `provenance` to display more records; then repeat until the asset
 record is output.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+### Command options
 
 ------------------------------  ---------------------------------
 `--txid|-t HEX-ID`              The transaction id from a previous issue or
@@ -371,7 +434,9 @@ bitmark-cli --identity=fred --network=testing provenance --txid=8981eb58c965e236
 
 Display the ownership records for a given identity or account
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+### Command options
 
 ------------------------------  ---------------------------------
 `--owner|-o IDENTITY|ACCOUNT`   To list records for a different account
@@ -408,7 +473,16 @@ is ended and only `grant` or `swap` commands can operate on the
 fractions created.  The quantity of shares created must be some
 meaningful value and once set can never be changes.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+**Additional input.** Before creating the Bitmark Share the CLI will
+prompt for a password to decrypt the identity's private key to perform
+the signing operation.
+
+**Errors.** The command will terminate with an error if the
+transaction id is already converted to shares.
+
+### Command options
 
 -------------------------------  ---------------------------------
 `--txid|-t HEX-ID`               The transaction id from a previous
@@ -432,7 +506,16 @@ bitmark-cli --identity=fred --network=testing share --txid=8981eb58c965e2360b3ff
 
 Transfer a number of shares of a particular id to a receiver.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+**Additional input.** Before granting the Bitmark Share the CLI will
+prompt for a password to decrypt the identity's private key to perform
+the signing operation.
+
+**Errors.** The command will terminate with an error if the share
+quantity is greater than the remaining balance.
+
+### Command options
 
 -------------------------------  ---------------------------------
 `--receiver|-r IDENTITY|ACCOUNT` The identity or Base58 account that
@@ -462,37 +545,46 @@ bitmark-cli --identity=fred --network=testing grant --receiver=barney --share-id
 
 ## swap
 
-Perform an atomic swap between two different shares.  The owner send
-quantity-one share-one to the recipient.  The recipient sends
-quantity-two of share-two to the owner.  The system ensures the swap
-occurs as a single operation and no possibility of partial completion.
-This is a two signature command ad the recipient must use
-`countersign` to submit and pay before the expiry block is reached on
-the blockchain.
+Perform an atomic swap between two different shares.
 
-### OPTIONS
+The system ensures the swap occurs as a single operation and no
+possibility of partial completion.  This is a two signature command
+and the recipient must use `countersign` to submit and pay before the
+expiry block is reached on the blockchain.
+
+**Arguments.** The `--network` global option must be specified.
+
+**Additional input.** Before granting the Bitmark Share the CLI will
+prompt for a password to decrypt the identity's private key to perform
+the signing operation.
+
+**Errors.** The command will terminate with an error if the
+share quantities are greater than the remaining balances.
+
+### Command options
 
 -------------------------------  ---------------------------------
-`--receiver|-r IDENTITY|ACCOUNT` The identity or Base58 account that
-                                 is to receive the shares.
+`--receiver|-r IDENTITY|ACCOUNT` The *countersigner* identity or Base58
+                                 account.
 
 `--share-id-one|-s SHARE-ID`     The transaction id of the share record,
-                                 which is used to identify the
-                                 fractional item.
+                                 that the *initiator* is sending, used
+                                 to identify the first fractional item.
 
-`--quantity-one|-q NUMBER`       The quantity of share to grant to the
-                                 receiving account.  The default is
-                                 one and can be any value up to the
-                                 current balance of the owner.
+`--quantity-one|-q NUMBER`       The quantity of share-id-one that the
+                                 *initiator* is granting to the *countersigner*.
+                                 The default is one and can be any value up to the
+                                 current balance of the *initiator*.
 
 `--share-id-two|-S SHARE-ID`     The transaction id of the share record,
-                                 which is used to identify the
-                                 fractional item.
+                                 that the *countersigner* is sending, used
+                                 to identify the second fractional item.
 
-`--quantity-two|-Q NUMBER`       The quantity of share to grant to the
-                                 receiving account.  The default is
+`--quantity-two|-Q NUMBER`       The quantity of  share-id-two that the
+                                 *countersigner* is granting to the
+                                 *initiator*.  The default is
                                  one and can be any value up to the
-                                 current balance of the owner.
+                                 current balance of the *countersigner*.
 
 `--before-block|-b NUMBER`       This is used to provide a "time" limit on
                                  the operation and the transaction
@@ -504,19 +596,22 @@ the blockchain.
 ### EXAMPLE
 
 ~~~
-bitmark-cli --identity=fred --network=testing grant --receiver=barney --share-id=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --quantity=1000 --before-block=234765
+bitmark-cli --identity=fred --network=testing swap --receiver=barney --share-id-one=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --quantity-one=1000 --share-id-two=1bf75e25d7770ba6405500d39cac30f40249927fd3ee46beae42c9d9b85202f8 --quantity-otwo=79 --before-block=234765 --before-block=234765
 ~~~
 
 
 ## balance
 
-Display the share balances for a particular owner.  The display starts
-at the particular id and outputs `count` items.  To display more take
-the last share id and use in another `balance` command.  (To avoid a
-repeat of that record use the incremented id as the command will
-search for the next used id)
+Display the share balances for a particular owner.
 
-### OPTIONS
+The display starts at the particular id and outputs `count` items.  To
+display more take the last share id and use in another `balance`
+command.  (To avoid a repeat of that record use the incremented id as
+the command will search for the next used id)
+
+**Arguments.** The `--network` global option must be specified.
+
+### Command options
 
 -------------------------------  ---------------------------------
 `--owner|-o IDENTITY|ACCOUNT`    To list records for a different account
@@ -549,7 +644,9 @@ Display the status of a particular transaction id to set whether it is:
 * Verified = payment is confirmed and just waiting to be incorporated into a block.
 * Confirmed = store on the blockchain.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+### Command options
 
 -------------------------------  ---------------------------------
 `--txid|-t HEX-ID`               The transaction id from a previous
@@ -572,7 +669,7 @@ Display all the configuration file identities' public data:
 * Base58 account string (the encoded public key)
 * Descriptive text
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
 
 ### EXAMPLE
 
@@ -585,7 +682,7 @@ bitmark-cli --network=testing list
 
 Display basic blockchain status from the selected bitmark node program.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
 
 ### EXAMPLE
 
@@ -601,7 +698,13 @@ Display the decrypted seed basic blockchain status from the selected
 bitmark node program.  The output is a JSON block containing all
 account data both public and private.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+**Additional input.** Before displaying the seed the CLI will
+prompt for a password to decrypt the identity's private key
+to be able to display it.
+
+### Command options
 
 -------------------------------  ---------------------------------
 `--recovery|-r`                  Only display the words of the recovery
@@ -618,10 +721,13 @@ bitmark-cli --identity=fred --network=testing seed --recovery
 
 ## password
 
-Change the password of the selected identity.  The program will prompt
-for old password then the new password twice to ensure accurate entry.
+Change the password of the selected identity.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+**Additional input.** The CLI will prompt for a password, then prompt
+for the new password.  The new password will be prompted a second time
+to ensure that the password was entered accurately.
 
 ### EXAMPLE
 
@@ -632,11 +738,13 @@ bitmark-cli --identity=fred --network=testing password
 
 ## fingerprint
 
-Display a hex fingerprint that is compatible to the method used by
+Display a fingerprint that is compatible to the method used by
 other Bitmark Inc applications.  The result is shown as a hexadecimal
 string.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+### Command options
 
 -------------------------------  ---------------------------------
 `--file|-f PATH-NAME`            Specify the file to fingerprint.
@@ -651,12 +759,20 @@ bitmark-cli --network=testing fingerprint --file=Fred_Flintsone.png
 
 ## sign
 
-Display a hex signature for a file.  The global identity is
+Display a signature for a file.  The result is shown as a hexadecimal
+string.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
 
-`--file|-f PATH-NAME`
-: Specify the file to sign.
+**Additional input.** The CLI will prompt for a password to decrypt
+the private key to perform the signing operation.
+
+### Command options
+
+-------------------------------  ---------------------------------
+`--file|-f PATH-NAME`            Specify the file to sign
+-------------------------------  ---------------------------------
+
 
 ### EXAMPLE
 
@@ -670,10 +786,17 @@ bitmark-cli --identity=fred --network=testing sign --file=Fred_Flintsone.png
 Verify the signature of a file matches the expected owner.  This is
 the corresponding command to the `sign` command.
 
-### OPTIONS
+**Arguments.** The `--network` global option must be specified.
+
+**Errors.** The command will indicate an error if the signature does
+not match.
+
+### Command options
 
 -------------------------------  ---------------------------------
-`--file|-f PATH-NAME`            Specify the file to sign.
+`--file|-f PATH-NAME`            Specify the file to verify
+
+`--signature|-s HEX`             Signature hex string from the sign command
 
 `--owner|-o IDENTITY|ACCOUNT`    To check the signer by an identity
                                  or a Base58 account string.  The
@@ -691,13 +814,8 @@ bitmark-cli --network=testing verify --file=Fred_Flintsone.png --owner=fred
 
 Display the version of the CLI program.
 
-### OPTIONS
-
 ### EXAMPLE
 
 ~~~
 bitmark-cli --network=testing version
 ~~~
-
-
-<!-- LocalWords: Prepends BTC LTC testnet loopback -->

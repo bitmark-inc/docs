@@ -1,24 +1,3 @@
----
-documentclass: scrreprt
-header-includes: |
-   \RedeclareSectionCommand[
-     beforeskip=-10pt plus -2pt minus -1pt,
-     afterskip=1sp plus -1sp minus 1sp,
-     font=\normalfont\itshape]{paragraph}
-   \RedeclareSectionCommand[
-     beforeskip=-10pt plus -2pt minus -1pt,
-     afterskip=1sp plus -1sp minus 1sp,
-     font=\normalfont\scshape,
-     indent=0pt]{subparagraph}
-geometry:
-  - top=30mm
-  - bottom=30mm
-  - left=20mm
-  - right=20mm
-  - heightrounded
-papersize: a4
-...
-
 # Quick Setup
 
 The bitmark-cli program is able to create an initial configuration
