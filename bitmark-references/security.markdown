@@ -33,9 +33,10 @@ The important features for the Bitmark Block chain are:
 Transactions are securely incorporated into a block through the
 SHA3-256 algorithm, which is used to derive a 32-byte identifier for
 each transaction.  This secure hash is performed over all bytes,
-including signatures of the packed transaction.  This is a NIST
-standard and is the replacement for SHA2.  SHA3 is used here because
-it has protection against the length extension attack that can be
+including the signatures of the packed transaction.  This is a NIST
+standard and is the replacement for the old SHA2 algorithm.
+The SHA3 algorithm is used here because it is fgaster and also
+has protection against a length extension attack that can be
 performed against SHA2.
 
 For more details: https://en.wikipedia.org/wiki/SHA-3
@@ -51,8 +52,11 @@ hashes and also to the order of the hashes in the tree it can be used
 to minimise the amount of data that is stored in the block header to
 secure the transactions.  The Bitmark Blockchain uses SHA3-256 for the
 Merkle Tree generation so that the result of the Merkle Tree
-calculation is that a single 32 byte value is stored in the block
-header as oppose to an ordered list of every transaction in the block,
+calculation is that it is only necessary to store a single 32 byte value
+in the block header as opposed to an ordered list of every transaction
+identifier in the block.  Also reduces the amount of data that has to be
+read to calculate the block hash and the amount of disk storage used for
+storing the blocks.
 
 ## Block Identifiers
 
@@ -65,8 +69,8 @@ that can be performed on minimal hardware it was decided to use a
 memory hard algorithm for the Block Identifiers to prevent the use of
 ASIC miners and to set the memory parameters to make GPUs uneconomic
 leaving CPUs as the best way to perform the Proof of Work.  This
-prevents existing Bitcoin and Litecoin mining hardware from using
-their large mining systems against the chain.
+prevents existing owners of Bitcoin and Litecoin mining hardware from
+using their large mining systems from disrupting the chain.
 
 So the Argon2 was chosen as a modern high security memory hard hashing
 algorithm from: https://github.com/P-H-C/phc-winner-argon2
