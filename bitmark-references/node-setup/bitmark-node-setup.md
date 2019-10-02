@@ -1,5 +1,6 @@
 #  Tutorial for node setup 
 
+<<<<<<< HEAD
 A full-node of bitmarkd consists of a bitmard, a recorderd, a payment system, a litecoind, and a bitcoind services. For a beginner, it is easy and fast to run a bitmark-node-docker which wrapped all components and settings. For a developer or someone who wants to study the main program, the person can run bitmarkd or recorderd service directly. 
 Bitmarkd project is the main program of bitmark node. It consists bitmarkd service for verifying and recording transactions in the Bitmark blockchain and recorderd service for computing the Bitmark proof-of-work algorithm that allows nodes to compete to win blocks on the Bitmark blockchain. 
 
@@ -8,19 +9,35 @@ This tutorial explains how to set up the bitmarkd service and/or the recorderd s
 ## Prerequisites
 
 * Install the go language package for the system
+=======
+## Run bitmarkd  service
+
+
+### Prerequisites
+
+* Install the go language package for your system
+>>>>>>> edb6196a8566a74d394d044ca6ad02b8c12f3540
 * Configure environment variables for go system
 * Install the ZMQ4 and Argon2 libraries
 
 
+<<<<<<< HEAD
 ### Meeting PreRequisites
 
 #### Installing Packages on FreeBSD
+=======
+### FreeBSD
+>>>>>>> edb6196a8566a74d394d044ca6ad02b8c12f3540
 
 ~~~~~
 pkg install libzmq4 libargon2
 ~~~~~
 
+<<<<<<< HEAD
 #### Installing Packages on MacOSX
+=======
+### MacOSX
+>>>>>>> edb6196a8566a74d394d044ca6ad02b8c12f3540
 
 (be sure that homebrew is installed correctly)
 ~~~~
@@ -29,7 +46,11 @@ brew install argon2
 brew install zeromq43
 ~~~~
 
+<<<<<<< HEAD
 #### Installing Packages on Ubuntu
+=======
+### Ubuntu
+>>>>>>> edb6196a8566a74d394d044ca6ad02b8c12f3540
 (tested on version 18.04)
 
 Install following packages
