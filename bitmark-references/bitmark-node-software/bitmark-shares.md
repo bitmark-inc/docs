@@ -2,12 +2,13 @@
 
 ## Reasoning
 
-* There may be some reason to turn a property into shares in order to
-  divide the ownership.
+* There may be a requirement to turn a particular property into shares
+  in order to divide the ownership or to treat it a fungible item for
+  trading purposes.
 
-* Once a property has been divided it does not make sense to combine
-  it back into a single unit again becase the single chain of
-  provenance has be broken.
+* Once a property has been divided it does not make sense to
+  reassemble it back into a single unit again since the single chain
+  of provenance has been broken into multiple threads.
 
 * The number of shares initially created is a fixed amount and cannot
   be changed as this would fundamentally alter the valuation of one
@@ -21,7 +22,7 @@
 
 * Shares can be created.
 
-* Shares can be granted from the original supply to others.
+* Shares can be granted from the original supply to other accounts.
 
 * Accounts holding shares can effectively trade them, but only among
   holders of a single Bitmark Share (i.e. same Share ID).  This leads

@@ -13,7 +13,8 @@ Byte
 
 Unn
 : An unsigned integer of "nn" bits length. Normally these will
-  multiples of 8 bits like: U8, U16, U32, U64.
+  multiples of 8 bits like: U8, U16, U32, U64.  These kind of items
+  are only used in the Block Header as they are fixed length fields.
 
 VarInt
 : A sequence of 1 to 9 bytes that represents a 64 bit unsigned
@@ -24,28 +25,28 @@ VarInt
 
 String
 : A sequence of UTF-8 byte sequence preceded by a VarInt byte count.
-  The count is validated by various routines to prevent massive
+  The count is validated by various routines to prevent excessive
   storage use.
 
 Binary
 : A sequence of bytes preceded by a VarInt byte count.  The count is
-  validated by various routines to prevent massive storage use.
+  validated by various routines to prevent excessive storage use.
 
 Map
 : Sequence of NUL separated UTF-8 byte sequences preceded by a VarInt
   byte count.  There must be an even number sequences and these form
   key→value pairs.  The must not be a trailing NUL byte.  In JSON
   representation the NUL byte will show as `\u0000`.  The count is
-  validated by various routines to prevent massive storage use.
+  validated by various routines to prevent excessive storage use.
 
 Account
 : The encoded Ed25519 public key, there is a type code in this to
-  allow for other key types and it is preceeded by a VarInt byte
+  allow for other key types and it is preceded by a VarInt byte
   count.  Currently the count will be 33.
 
 Signature
 : An Ed25519 signature over all previous bytes including VarInt
-  fields.  This will preceeded by a VarInt that will be 64.  This
+  fields.  This will preceded by a VarInt that will be 64.  This
   value will change once other signature algorithms are used and will
   depend on the type code inside the Account field.
 
@@ -55,6 +56,18 @@ Signature
 The main sorts of transactions on the Bitmark blockchain are asset,
 issue, and transfer records.  These are concerned with creating chains
 of provenance for individual copies of specific assets.
+
+Asset records have an identifier that is the SHA3-512 hash of the bytes
+making up the fingerprint.  This allows the fingerprint field to have
+any data, binary or text and be represented by a fixed length 64 byte
+identifier in issue records.  Only using the fingerprint for the hash
+is to prevent duplicate assets with the same fingerprint and different
+name or metadata.
+
+Other transactions have an identifier that is the SHA3-256 hash of
+their entire record (including all signatures).  A shorted identifier
+is used both to save space in records and to easily distinguish
+transaction ids from asset ids.
 
 ### Asset Record
 
@@ -76,6 +89,9 @@ Signature         Signature  Ed25519 signature of signer
 
 This is the transaction that actually issues an asset or an additional
 copy to an owner on the Bitmark blockchain.
+
+Each issue must have a unique NONCE value to distinguish individual
+copies of that asset.
 
 Item              Type       Description
 ----------------  ---------  ------------------------
@@ -101,6 +117,9 @@ CounterSignature  Signature  Ed25519 signature of this record owner
 
 
 ## Transactions: Share
+
+These are a set of transactions dealing with fractional bitmarks as a
+kind of fungible token.
 
 ### Bitmark Share
 
@@ -165,14 +184,14 @@ Type code         Byte       Block Foundation type code
 Version           VarInt     Sets the combination of supported currencies
 Payments          Map        Map of Currency and Address
 Owner             Account    The public key of the owner
-Nonce             VarInt     Addional NONCE for mining
+Nonce             VarInt     Additional NONCE for mining
 Signature         Signature  Ed25519 signature of owner
 
 
 ### Block Owner Transfer
 
 This transaction allows the current owner of a block to transfer any
-futre earnings from this block to another owner with new currency
+future earnings from this block to another owner with new currency
 addresses.
 
 Item              Type       Description
@@ -190,10 +209,24 @@ CounterSignature  Signature  Ed25519 signature of this record owner
 ## Blockchain structure
 
 Transactions are gathered together into blocks, which start with a
-header followed by a foundation record and then the rest of the
+header followed by a single foundation record and then the rest of the
 transactions.
 
+The chain itself is formed by having each block link to the previous
+block by having the hash of the previous block be contained in the
+block header.  The chain is secured by having a NONCE and a difficulty
+value embedded in the header.  It is possible to determine if a header
+is valid by checking if its hash value is less than or equal to the
+value indicated by the difficulty.  The difficulty can only change at
+specific points and in ways defined in the bitmarkd consensus
+algorithm and any block with a difficulty that does not comply is
+immediately rejected.
+
 ### Block Header
+
+The block header is used both to provide metadata (like timestamp) for
+that block as well as to verify that the list of transactions attached
+to it are really part of it.
 
 Item              Type       Description
 ----------------  ---------  ------------------------
