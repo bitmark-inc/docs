@@ -2,7 +2,8 @@
 
 ## Start your bitmark node
 
-A user can install services like bitmarkd, discovery and recorderd base their own interested.  To install those services, the user needs to configure the settings and install dependencies before running each service. For the first time user,  a  docker container with a bitmark node and miner services is the quickest and easiest way to start with bitmark node. 
+There are several ways to run bitmark node. A user can install services like bitmarkd, discovery and recorderd base on their own interested.  To install those services, the user needs to configure the settings and install dependencies before running each service. For the first time user,  a  docker container with a bitmark node and miner services is the quickest and easiest way to start with bitmark node.  We have setup environment and run  services  for users.
+
 This section will guide you to start a bitmark node using docker container. Inside a bitmark node docker container, there are bitmarkd, recorderd, payment system and a user interface to control and monitor services.
 
 ## Prerequisites
@@ -37,7 +38,7 @@ Downloaded script will help you to manage bitmark node container. The  installat
 
          ``` bitmarkNode-HyperV.bat 117.166.111.123```
     + Follow script instruction and select "1)Installation"
-+ Execute ```docker``` ps in your command-line/shell to check if bitmark-node is running
++ Execute docker ps in your command-line/shell to check if bitmark-node is running
 ![docker ps result](https://i.imgur.com/l3dF4Hl.jpg)
 
 ## Management Panel
@@ -74,8 +75,13 @@ User must ensure the following ports to be accessible from Internet.
 |------|--------------------------------------------------|
 | 2136 | Port for connecting to other peer bitmarkd nod      |
 
-When running bitmark node container, user can make sure ports are opened with the following commands.
+When running bitmark node container, user can make sure ports are opened with the following command in Linux and Mac.
 
 netcat -v [Your Public IP] 2136
+
+For windows users, telnet can be used to test on an open port.
+
+telnet [Your Public IP] 2136
+
 
 ###### tags: 'bitmark-node' 'documentation' 'quick start' 'bitmark'
