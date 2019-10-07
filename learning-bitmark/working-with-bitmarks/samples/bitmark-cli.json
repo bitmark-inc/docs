@@ -1,0 +1,15 @@
+{
+  "default_identity": "first",
+  "testnet": false,
+  "connections": [
+    "13.231.147.254:2130"
+  ],
+  "identities": {
+    "first": {
+      "description": "first user",
+      "account": "bm53eDwFoNQreDBndmAoFJRXnsvtH7BtqP9KzH9VpCfrzpMUTX",
+      "data": "d0f22ccec3f9fa4bf95ee258605c7abe2e441454238fd115106cba48b76a621ab40d02323d800aa8869266a5c4978cd0149d71f86acb59c6112afa69b5d9c9eb8fc36b706c26a452f0",
+      "salt": "45f7331f443cdb1debeb9af191e0c84a696173d6a153ec884a26010f71656a5c"
+    }
+  }
+}
