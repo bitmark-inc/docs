@@ -91,7 +91,7 @@ setup          Initialise bitmark-cli configuration file
 add            Add a new identity to configuration file
 create         Create one or more new bitmarks
 transfer       Transfer a bitmark to another account
-countersign    Countersign a transaction using current identity
+countersign    Countersign a two signature transaction
 blocktransfer  Transfer a bitmark to another account
 provenance     List provenance of a bitmark
 owned          List bitmarks owned
