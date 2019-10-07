@@ -1,10 +1,10 @@
 # Store Seed
 
-Store key in mobile application is very important to ensure the security, protect user data against attackers. **Bitmark** is a blockchain platform, everything is decentralized, so we need to keep the user's key more secure to guarantee the ownership. So we provide the utility for storing key securely in mobile application, support **Android/iOS** platform.
+Store key in mobile application is very important to ensure the security, protect user data against attackers. Bitmark SDK provides the utility for storing key securely in mobile application, support **Android/iOS** platform.
 
 ## Android
 
-We use `KeyAuthenticationSpec.Builder` to declare how we store/retrieve `Account` securely. The `KeyAuthenticationSpec.Builder` attributes is described following.
+Bitmark SDK Android provides `KeyAuthenticationSpec.Builder` to declare how we store/retrieve `Account` securely. The `KeyAuthenticationSpec.Builder` attributes is described following.
 
 | Attribute | Function | Description |
 | --------- | ----------- | ----------- |
@@ -20,8 +20,8 @@ The following describes `Exception` would be thrown.
 | Exception | Description |
 | --------- | ----------- |
 | `AuthenticationException` | This exception let you know the corresponding behaviors from users when we do authenticate them |
-| `AuthenticationRequiredException` | This exception will be thrown if users didn't setup the authentication method in System Setting |
-| `HardwareNotSupportedException` | This exception let you know the device didn't support required hardware for authentication |
+| `AuthenticationRequiredException` | This exception will be returned if users didn't setup the authentication method in System Setting |
+| `HardwareNotSupportedException` | This exception let you know the device does not support required hardware for authentication |
 
 ```java
 // Storing your account
@@ -83,12 +83,12 @@ account.removeFromKeyStore(activity, spec, new Callback0() {
 
 Bitmark Android SDK supports storing key from Android **API 23(M)** and above because of the security level.
 
-Bitmark Android SDK will authenticate user **each time** they use the key (depend on your `KeyAuthenticationSpec`), so protects user against attackers. We use Android Key Store system with a lot of security algorithm for protecting user's key.
+Bitmark Android SDK would authenticate user **each time** they use the key (depend on your `KeyAuthenticationSpec`), so protects user against attackers. We use Android Key Store system with a lot of security algorithm for protecting user's key.
 
 **NOTE**:
 
-- You **need** to `extends StatefulActivity` in the host activity you pass for storing/getting/deleting the key.
-- **React Native** is also supported as the *experimental*. You **need** to `extends StatefulReactActivity` in the host activity you want to pass for storing/getting/deleting the key.
+- You **need** to `extends StatefulActivity` in the host `Activity` you pass for storing/getting/deleting the key.
+- **React Native** is also supported as an *experimental* feature. You **need** to `extends StatefulReactActivity` in the host `Activity` you want to pass for storing/getting/deleting the key.
 - We use Android Key store for securely storing the `Account` so that if the key is used to encrypt `Account` is invalidated by some reasons like add/remove the fingerprint or even the key is no longer available, some official `Exception` will be thrown. For more detail, please visit [here](https://developer.android.com/training/articles/keystore).
 
 ## iOS
