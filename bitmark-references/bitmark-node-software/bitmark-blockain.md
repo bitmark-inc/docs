@@ -1,6 +1,6 @@
 # Blockchain
 
-The blockchain is a distributed database of records of all transactions or digital event that have been shared among participating parties, and each transaction is verified by every participant of the system. Blockchain is distributed over the network thus making it incorruptible. Anything of value like digital currencies, digital data, etc. can be recorded on Blockchain as a transaction.
+The blockchain is a distributed database of records of all transactions or digital event that have been shared among participating parties, and each transaction is validated by every participant of the system. Blockchain is distributed over the network thus making it incorruptible. Anything of value like digital currencies, digital data, etc. can be recorded on Blockchain as a transaction.
 
 ## Block
 
@@ -20,8 +20,21 @@ Block is a bunch of transactions that have been added to blockchain. A bitmark b
 
 Different types of transaction include different length and content inside.
 =======
-For example, a block header string of "05008300a1820000000000001e886357e769dab9c5f9b68a9101c13888a8b9aaf2bc21ff3aa2b78fbac114002684b245a1f51f54677770530032471f0ec4c36ffae5f14001eb15f42082e31becc1895d00000000d3dbb256c7042f00deb653d83b4a0bc7". Follow by rules listed above, following fields can be decoded:
+For example, consider the block header string of:
 
+```
+05008300a1820000000000001e886357e769dab9c5f9b68a9101c13888a8b9aaf2bc21ff3aa2b78fbac114002684b245a1f51f54677770530032471f0ec4c36ffae5f14001eb15f42082e31becc1895d00000000d3dbb256c7042f00deb653d83b4a0bc7
+```
+
+Remember that a byte is made up of two hexadecimal characters. The header string could thus be broken up as follows, using the byte counts above:
+
+```
+0500/8300/a182000000000000/1e886357e769dab9c5f9b68a9101c13888a8b9aaf2bc21ff3aa2b78fbac11400/2684b245a1f51f54677770530032471f0ec4c36ffae5f14001eb15f42082e31b/ecc1895d00000000/d3dbb256c7042f00/deb653d83b4a0bc7
+```
+
+Also remember that each element has its bytes reversed because it's encoded in little endian. The various fields are thus decoded as follows:
+
+```
 Version:0x5,
 TransactionCount:0x83,
 Number:0x82a1,
@@ -30,8 +43,9 @@ MerkleRoot: 0x1be38220f415eb0140f1e5fa6fc3c40e1f47320053707767541ff5a145b28426,
 Timestamp:0x5d89c1ec,
 Difficulty:00978263ab596de9800000000000000000000000000000000000000000000000,
 Nonce:0xc70b4a3bd853b6de
+```
 
-### Block Verification
+### Block Validation
 
 When a block is received, the following checks will be made:
 
@@ -50,10 +64,10 @@ When a block is received, the following checks will be made:
 1. Incoming transaction payment is valid
 1. Incoming block's sha3 of all transactions inside is valid
 
-After a block is verified, a node stores that block into its internal
+After a block is validated, a node stores that block into its internal
 database (leveldb), then node broadcast this newly saved block to all connected
 nodes. When other node receives the broadcast of a block, each node
-verifies block correctness by rules described above.
+validates block correctness by rules described above.
 
 ### Block Synchronization
 
@@ -136,3 +150,8 @@ has smaller value will be chosen. Since block hash is stored in little
 endian, so block hash of gfedcba is choosen by node-7. As node-7
 connects to network and chooses chain gfedcba, separated groups no
 longer in tie and eventuall, chain gfedcba dominates network.
+
+Even if there's no new node connects to the network, as long as some
+node founds all other connected remote nodes separates into groups,
+the node will also use hash value to decide which chain should be
+adopted.
