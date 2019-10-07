@@ -1,8 +1,8 @@
 # Account migration
 
-Bitmark allows users migrate their own account from previous twenty four recovery phrase words to new twelve one.
+Bitmark SDK provides `rekey` method to allow users to transfer all bitmarks from an `Account` to another one. This is helpful in case users want to migrate all their own bitmarks from old `Account` to another new one and keep the bitmarks provenance as well.
 
-The method requires a valid 24 recovery phrase words and return new `Account` object with 12 recovery phrase words as well as a new list bitmark id.
+The method takes different `Account` as source and destination one and return the collection of new transaction id when complete.
 
 ```javascript
 // Not supported at the moment. If you have demand for this function, please feel free to contact us.
@@ -15,18 +15,21 @@ let (account, bitmarkids) = try Migration.migrate(recoverPhrase: phrase, languag
 ```
 
 ```java
-final String[] phrase = new String[] {"abuse", "tooth", "riot", "whale", "dance", "dawn", "armor", "patch", "tube", "sugar", "edit", "clean","guilt", "person", "lake", "height", "tilt", "wall", "prosper", "episode", "produce", "spy", "artist", "account"};
+Account source = new Account();
+Account destination = new Account();
+Migration.rekey(
+                source,
+                destination,
+                new Callback1<List<String>>() {
+                    @Override
+                    public void onSuccess(List<String> txIds) {
+                        // collection of new tx id is returned here
+                    }
 
-Migration.migrate(phrase, new Callback1<Pair<Account, List<String>>>() {
-                @Override
-                public void onSuccess(Pair<Account, List<String>> data){
-                    final Account account = data.first();
-                    final List<String> bitmarkIds = data.second();
+                    @Override
+                    public void onError(Throwable e) {
+                        // handle error here
+                    }
                 }
-
-                @Override
-                public void onError(Throwable throwable) {
-                	// Throwable goes here
-                }
-            });
+        );
 ```
