@@ -126,7 +126,7 @@ A new tx record is generated accordingly when one of the following actions is ap
 
 - a new bitmark is issued
 - a bitmark is transferred
-- an offer is accepted 
+- an offer is accepted
 
 Actions which are applied to the same bitmark will create a chain of transactions linked by `previous_id` (See [Record data structure](###-Record-data-structure)).
 
@@ -181,7 +181,7 @@ let tx = try Transaction.get(transactionID: "3bfe21170de3ff1767a166896cf9c69c125
 
 #### the provenance of a bitmark
 
-A list of transaction records to show the ownership changes of a bitmark. If a bitmark is issued by user A, and then transferred to user B and C, the return will include 3 transactions with user A, B and C as transaction owners respectively. 
+A list of transaction records to show the ownership changes of a bitmark. If a bitmark is issued by user A, and then transferred to user B and C, the return will include 3 transactions with user A, B and C as transaction owners respectively.
 
 ````javascript
 let transactionQueryParams = Transaction.newTransactionQueryBuilder()
@@ -265,7 +265,7 @@ Transaction.list(builder, new Callback1<GetTransactionsResponse>() {
 
 The bitmark record is literally a compact data structure for a chain of transaction records towards the same digital property.
 
-When a bitmark is issued, the corresponding bitmark and transaction record are created. 
+When a bitmark is issued, the corresponding bitmark and transaction record are created.
 
 ![bitmark record at the time of issuance](record_bitmark_issue.png)
 
@@ -315,6 +315,20 @@ let bitmark = Bitmark.get(bitmarkID: bitmarkId);
 ```go
 // import bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"
 bitmark, err := bmBitmark.Get("3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1")
+```
+
+```java
+Bitmark.get(bitmarkId, new Callback1<GetBitmarkResponse>() {
+            @Override
+            public void onSuccess(GetBitmarkResponse res) {
+                BitmarkRecord bitmark = res.getBitmark();
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+        });
 ```
 
 ### Query for a set of bitmarks
