@@ -9,9 +9,13 @@ The method takes different `Account` as source and destination one and return th
 ```
 
 ```swift
-let phrase = ["abuse", "tooth", "riot", "whale", "dance", "dawn", "armor", "patch", "tube", "sugar", "edit", "clean",
-                "guilt", "person", "lake", "height", "tilt", "wall", "prosper", "episode", "produce", "spy", "artist", "account"]
-let (account, bitmarkids) = try Migration.migrate(recoverPhrase: phrase, language: .english)
+let source = try Account();
+let destination = try Account();
+
+let (account, bitmarkids) = Migration.rekey(from: source, to: destination) { (txIds, error) in
+    // collection of new tx id is returned here
+    print(txIds)
+}
 ```
 
 ```java
