@@ -1,8 +1,8 @@
-#  [ Learning Bitmark / Quick start ] - Simple solution for node setup
+# Run a Bitmark Node
 
-## Start your bitmark node
+## Start your Bitmark Node
 
-There are several ways to run bitmark node. A user can install services like bitmarkd, discovery and recorderd base on their own interested.  To install those services, the user needs to configure the settings and install dependencies before running each service. For the first time user,  a  docker container with a bitmark node and miner services is the quickest and easiest way to start with bitmark node.  We have setup environment and run  services  for users.
+There are several way to run a Bitmark Node. A user can install services like bitmarkd, discovery and recorderd base on their own interested.  To install those services, the user needs to configure the settings and install dependencies before running each service. For the first time user,  a  docker container with a bitmark node and miner services is the quickest and easiest way to start with bitmark node.  We have setup environment and run  services  for users.
 
 This section will guide you to start a bitmark node using docker container. Inside a bitmark node docker container, there are bitmarkd, recorderd, payment system and a user interface to control and monitor services.
 
