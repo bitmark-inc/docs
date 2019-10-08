@@ -5,7 +5,7 @@ Bitmark SDK offers Web Socket event triggering to help the application can be no
 ## Event
 - New block: This event will be sent when bitmark blockchain has a new block.
   + `blockNumber` : new block number
-- Bitmark changed: This event will be sent when users issue new bitmarks, received new bitmarks, or send them to new owner.
+- Bitmark changed: This event will be sent when users issue new bitmarks, receive new bitmarks, or send them to new owner.
   + `bitmarkId`: the id of bitmark is changed
   + `txId`: the corresponding transaction id
   + `presence`: indicate that the bitmark is owned or not by the corresponding `Account`
@@ -13,13 +13,13 @@ Bitmark SDK offers Web Socket event triggering to help the application can be no
   + `bitmarkId`: the id of bitmark is comming
 - New pending issuance: This event will be sent when users issue new bitmarks.
   + `bitmarkId` : the id of bitmark is issuing
-- New pending transaction: This event will be sent to both sender and receiver.
-  + `txId`: the id of this pending transaction
-  + `owner`: the current owner of corresponding bitmark
-  + `prevTxId`: the previous id of this transaction
-  + `prevOwner`: the previous owner of corresponding bitmark
+- New pending transfer: This event will be sent to both sender and receiver.
+  + `txId`: the transaction id
+  + `owner`: the receiver of this transfer
+  + `prevTxId`: the previous transaction id
+  + `prevOwner`: the sender who made the transfer
 
-Note: The attributes name is the sample from Bitmark Java SDK. There are something different in Swift SDK but the meaning is the same.
+Note: The attributes name could be different depends on the SDK is used. This instruction prefers the Java SDK for the explanation.
 
 ## Java
 
