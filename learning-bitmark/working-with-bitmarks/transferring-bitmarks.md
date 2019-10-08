@@ -1,4 +1,4 @@
-#Transferring bitmarks
+# Transferring bitmarks
 
 Once an asset has been registered, trading it only requires the owner to create a new transfer record that points back to the original issue record (or to the previous transfer record) and that shows the new owner of the asset. Because the blockchain is ordered and because it’s immutable, this creates a permanent chain of custody, reaching back to the asset’s origins.
 
