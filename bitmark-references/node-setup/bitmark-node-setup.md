@@ -1,4 +1,4 @@
-#  Tutorial for node setup 
+#  Tutorial For Node Setup 
 
 A full-node of bitmarkd consists of a bitmard, a recorderd, a payment system, a litecoind, and a bitcoind services. For a beginner, it is easy and fast to run a bitmark-node-docker which wrapped all components and settings. For a developer or someone who wants to study the main program, the person can run bitmarkd or recorderd service directly. 
 Bitmarkd project is the main program of bitmark node. It consists bitmarkd service for verifying and recording transactions in the Bitmark blockchain and recorderd service for computing the Bitmark proof-of-work algorithm that allows nodes to compete to win blocks on the Bitmark blockchain. 
@@ -62,75 +62,77 @@ For the other packages, install from stable or testing, both versions work:
 apt install uuid-dev libzmq3-dev
 ```
 
-## Installing Bitmarkd
 
-### Compiling Bitmarkd
+## Set Up For Running A Node
 
-To manually compile, run these commands:
 
-~~~~~
-go get github.com/bitmark-inc/bitmarkd
-go install -v github.com/bitmark-inc/bitmarkd/command/bitmarkd
-~~~~~
+### Compilation Commands For All Operating Systems
+To compile use use the git command to clone the repository and the go command to compile all commands. The process requires that the Go installation be 1.12 or later as the build process uses Go Modules.
 
-:warning: **Argon2 optimization**
-
-Argon2 can achieve better performance if [AVX instructions](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) is available. But the potential optimization is not enabled if Argon2 is installed by package managers.
-
-To leverage AVX instructions, extra flag has to be specified during the compilation process.
-
-```shell
-make OPTTARGET=native
+```
+git clone https://github.com/bitmark-inc/bitmarkd
+cd bitmarkd
+go install -v ./...
 ```
 
-If AVX is not available, make sure Argon2 has no reference to AVX otherwise bitmarkd will crash.
+### Setup Directory
 
-```shell
-make OPTTARGET=generic
+Ensure that the ${HOME}/go/bin directory is on the path before continuing. The commands below assume that a checked out and compiled version of the system exists in the ${HOME}/bitmarkd directory.
+
+### Setup and Run bitmarkd
+
+Create the configuration directory, copy sample configuration, edit it to set up IP addresses, ports and local bitcoin testnet connection. The sample configuration has some embedded instructions for quick setup and only a few items near the beginning of the file need to be set for basic use.
+
 ```
-
-## Installing a Prebuilt Binary
-
-* Flatpak
-
-    Please refer to [wiki](https://github.com/bitmark-inc/bitmarkd/wiki/Instruction-for-Flatpak-Prebuilt)
-
-* Docker
-
-    Please refer to [bitmark-node](https://github.com/bitmark-inc/bitmark-node)
-
-
-## Setting Up Bitmarkd
-
-Create the configuration directory, copy sample configuration, edit it to
-set up IPs, ports and local bitcoin testnet connection.
-
-~~~~~
 mkdir -p ~/.config/bitmarkd
-cp command/bitmarkd/bitmarkd.conf.sample  ~/.config/bitmarkd/bitmarkd.conf
-${EDITOR}   ~/.config/bitmarkd/bitmarkd.conf
-~~~~~
-
+cp ~/bitmarkd/command/bitmarkd/bitmarkd.conf.sample  ~/.config/bitmarkd/bitmarkd.conf
+${EDITOR} ~/.config/bitmarkd/bitmarkd.conf
+```
 To see the bitmarkd sub-commands:
 
-~~~~~
+```
 bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" help
-~~~~~
+```
 
 Generate key files and certificates.
 
-~~~~~
-bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" gen-peer-identity
-bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" gen-rpc-cert
-bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" gen-proof-identity
-~~~~~
+```
+bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" gen-peer-identity "${HOME}/.config/bitmarkd/
+bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" gen-rpc-cert "${HOME}/.config/bitmarkd/
+bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" gen-proof-identity "${HOME}/.config/bitmarkd/
+```
+Start the program.
+
+```
+bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" start
+```
+
+### Setup and Run Recorderd (the mining program)
+
+This is similar to the bitmarkd steps above. For mining on the local bitmarkd the sample configuration should work without changes.
+
+```
+mkdir -p ~/.config/recorderd
+cp ~/bitmarkd/command/recorderd/recorderd.conf.sample  ~/.config/recorderd/recorderd.conf
+${EDITOR} ~/.config/recorderd/recorderd.conf
+```
+
+To see the recorderd sub-commands:
+
+```
+recorderd --config-file="${HOME}/.config/recorderd/recorderd.conf" help
+```
+
+Generate key files and certificates.
+
+```
+recorderd --config-file="${HOME}/.config/recorderd/recorderd.conf" generate-identity "${HOME}/.config/recorderd/
+```
 
 Start the program.
 
-~~~~~
-bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" start
-~~~~~
-
-Note that a similar process is needed for the recorderd (mining subsystem)
+```
+recorderd --config-file="${HOME}/.config/recorderd/recorderd.conf" start
+```
 
 ###### tags: `bitmarkd` `documentation` `tutorial'` `bitmark`
