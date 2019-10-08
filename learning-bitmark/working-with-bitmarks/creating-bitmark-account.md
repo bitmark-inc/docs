@@ -1,4 +1,4 @@
-# Bitmark Account
+# Creating Bitmark Account
 
 Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-bitmark-account-using-the-bitmark-sdk), or the [Bitmark CLI](#creating-bitmark-account-using-the-bitmark-cli).
 

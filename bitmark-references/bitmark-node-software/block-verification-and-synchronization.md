@@ -1,7 +1,3 @@
-# Blockchain
-
-The blockchain is a distributed database of records of all transactions or digital event that have been shared among participating parties, and each transaction is validated by every participant of the system. Blockchain is distributed over the network thus making it incorruptible. Anything of value like digital currencies, digital data, etc. can be recorded on Blockchain as a transaction.
-
 ## Block
 
 Block is a bunch of transactions that have been added to blockchain. A bitmark block contains data as follows:
