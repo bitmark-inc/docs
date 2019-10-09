@@ -1,10 +1,13 @@
 
+# learning-bitmark
+## property-system-introduction
 
 * [Bitmark Property System Introduction](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
   * [The Power of Property Systems](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
   * [Bitmark's Property System](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmarks-property-system)
   * [Bitmark's Technology](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmarks-technology)
 
+## quick-start
 
 * [Run a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
   * [Start your Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#start-your-bitmark-node)
@@ -15,6 +18,7 @@
     * [Step 2: Run bitmarkd and recorderd](learning-bitmark/quick-start/simple-solution-for-node-setup.md#step-2-run-bitmarkd-and-recorderd)
   * [Important Notice On Network](learning-bitmark/quick-start/simple-solution-for-node-setup.md#important-notice-on-network)
 
+## working-with-bitmarks
 
 * [Creating Bitmark Account](learning-bitmark/working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
   * [Bitmark Account Number](learning-bitmark/working-with-bitmarks/creating-bitmark-account.md#bitmark-account-number)
@@ -58,10 +62,11 @@
     * [Pay for the swapping share transaction](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#pay-for-the-swapping-share-transaction)
     * [Verify the share swapping](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#verify-the-share-swapping)
 
+## contributing-to-bitmark
+
 * [Bitmark Upgrade Proposal](learning-bitmark/contributing-to-bitmark/bup.md#bitmark-upgrade-proposal)
   * [What is BUP?](learning-bitmark/contributing-to-bitmark/bup.md#what-is-bup)
   * [Where I can find the BUPs?](learning-bitmark/contributing-to-bitmark/bup.md#where-i-can-find-the-bups)
-
 
 
 * [BUG BOUNTY PROGRAM](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-bounty-program)
@@ -76,6 +81,8 @@
   * [Disclosure policy](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#disclosure-policy)
           * [Check more:](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#check-more)
 
+# bitmark-references
+## node-setup
 
 * [Tutorial For Node Setup](bitmark-references/node-setup/bitmark-node-setup.md#tutorial-for-node-setup)
   * [Prerequisites](bitmark-references/node-setup/bitmark-node-setup.md#prerequisites)
@@ -90,12 +97,13 @@
     * [Setup and Run bitmarkd](bitmark-references/node-setup/bitmark-node-setup.md#setup-and-run-bitmarkd)
     * [Setup and Run Recorderd (the mining program)](bitmark-references/node-setup/bitmark-node-setup.md#setup-and-run-recorderd-the-mining-program)
 
-
+## bitmark-sdk
 * [Overview](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#overview)
 * [Getting Started](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#getting-started)
   * [Installation](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#installation)
   * [Get your API token](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#get-your-api-token)
   * [Configuration](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#configuration)
+
 
 
 * [Account](bitmark-references/bitmark-sdk/account.md#account)
@@ -158,6 +166,7 @@
       * [Subscribe/Unsubscribe](bitmark-references/bitmark-sdk/websocket.md#subscribeunsubscribe)
   * [Swift](bitmark-references/bitmark-sdk/websocket.md#swift)
 
+## bitmark-cli
 
 * [Quick Setup](bitmark-references/bitmark-cli/quick-setup.md#quick-setup)
 * [Adding extra connections](bitmark-references/bitmark-cli/quick-setup.md#adding-extra-connections)
@@ -231,6 +240,7 @@
   * [version](bitmark-references/bitmark-cli/bitmark-cli.md#version)
     * [EXAMPLE](bitmark-references/bitmark-cli/bitmark-cli.md#example-20)
 
+## rpc-communication
 
 * [RPC](bitmark-references/rpc-communication/rpc-communication.md#rpc)
   * [Introduction](bitmark-references/rpc-communication/rpc-communication.md#introduction)
@@ -238,6 +248,7 @@
   * [Initialization](bitmark-references/rpc-communication/rpc-communication.md#initialization)
   * [Processing Messages](bitmark-references/rpc-communication/rpc-communication.md#processing-messages)
 
+## bitmark-node-software
 
 * [Basic Bitmark Blockchain Overview](bitmark-references/bitmark-node-software/bitmark-blockchain.md#basic-bitmark-blockchain-overview)
   * [Definitions](bitmark-references/bitmark-node-software/bitmark-blockchain.md#definitions)
@@ -268,7 +279,6 @@
 
 * [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
 
-
 * [Overview](bitmark-references/bitmark-node-software/mining.md#overview)
 * [Block Diagram](bitmark-references/bitmark-node-software/mining.md#block-diagram)
   * [Hashing](bitmark-references/bitmark-node-software/mining.md#hashing)
@@ -276,6 +286,7 @@
   * [Communication](bitmark-references/bitmark-node-software/mining.md#communication)
   * [Block Verification and Broadcast](bitmark-references/bitmark-node-software/mining.md#block-verification-and-broadcast)
   * [Reward](bitmark-references/bitmark-node-software/mining.md#reward)
+
 
 
 * [Payment Verification](bitmark-references/bitmark-node-software/payment-verification.md#payment-verification)
@@ -298,15 +309,17 @@
   * [Proof of Work and Difficulty](bitmark-references/security.md#proof-of-work-and-difficulty)
 
 
-
-* [Bitmark versus Ethereum](bitmark-appendix/bitmark-eth-comparison.md#bitmark-versus-ethereum)
-
-
 * [Bitmark shares](bitmark-references/bitmark-node-software/bitmark-shares.md#bitmark-shares)
   * [Reasoning](bitmark-references/bitmark-node-software/bitmark-shares.md#reasoning)
   * [Actions that can be performed](bitmark-references/bitmark-node-software/bitmark-shares.md#actions-that-can-be-performed)
   * [The implementation](bitmark-references/bitmark-node-software/bitmark-shares.md#the-implementation)
 
 
+## terms-and-glossary
+
 * [Bitmark Glossary](bitmark-references/terms-and-glossary/bitmark-terms-and-glossary.md#bitmark-glossary)
+
+# bitmark-appendix
+
+* [Bitmark versus Ethereum](bitmark-appendix/bitmark-eth-comparison.md#bitmark-versus-ethereum)
 
