@@ -83,7 +83,6 @@
 
 # bitmark-references
 ## node-setup
-
 * [Tutorial For Node Setup](bitmark-references/node-setup/bitmark-node-setup.md#tutorial-for-node-setup)
   * [Prerequisites](bitmark-references/node-setup/bitmark-node-setup.md#prerequisites)
     * [Meeting PreRequisites](bitmark-references/node-setup/bitmark-node-setup.md#meeting-prerequisites)
@@ -97,13 +96,14 @@
     * [Setup and Run bitmarkd](bitmark-references/node-setup/bitmark-node-setup.md#setup-and-run-bitmarkd)
     * [Setup and Run Recorderd (the mining program)](bitmark-references/node-setup/bitmark-node-setup.md#setup-and-run-recorderd-the-mining-program)
 
+
 ## bitmark-sdk
+
 * [Overview](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#overview)
 * [Getting Started](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#getting-started)
   * [Installation](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#installation)
   * [Get your API token](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#get-your-api-token)
   * [Configuration](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#configuration)
-
 
 
 * [Account](bitmark-references/bitmark-sdk/account.md#account)
@@ -279,6 +279,7 @@
 
 * [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
 
+
 * [Overview](bitmark-references/bitmark-node-software/mining.md#overview)
 * [Block Diagram](bitmark-references/bitmark-node-software/mining.md#block-diagram)
   * [Hashing](bitmark-references/bitmark-node-software/mining.md#hashing)
@@ -286,7 +287,6 @@
   * [Communication](bitmark-references/bitmark-node-software/mining.md#communication)
   * [Block Verification and Broadcast](bitmark-references/bitmark-node-software/mining.md#block-verification-and-broadcast)
   * [Reward](bitmark-references/bitmark-node-software/mining.md#reward)
-
 
 
 * [Payment Verification](bitmark-references/bitmark-node-software/payment-verification.md#payment-verification)
@@ -302,12 +302,12 @@
     * [Discovery Service](bitmark-references/bitmark-node-software/payment-verification.md#discovery-service)
     * [Bitcoin peer\-to\-peer protocol (WIP)](bitmark-references/bitmark-node-software/payment-verification.md#bitcoin-peer-to-peer-protocol-wip)
 
+
 * [Security feature of the Bitmark Blockchain](bitmark-references/security.md#security-feature-of-the-bitmark-blockchain)
   * [Transactions](bitmark-references/security.md#transactions)
   * [Transaction Identifiers](bitmark-references/security.md#transaction-identifiers)
   * [Block Identifiers](bitmark-references/security.md#block-identifiers)
   * [Proof of Work and Difficulty](bitmark-references/security.md#proof-of-work-and-difficulty)
-
 
 * [Bitmark shares](bitmark-references/bitmark-node-software/bitmark-shares.md#bitmark-shares)
   * [Reasoning](bitmark-references/bitmark-node-software/bitmark-shares.md#reasoning)
