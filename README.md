@@ -1,11 +1,11 @@
 
-
+# Introduction
 * [Bitmark Property System Introduction](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
   * [The Power of Property Systems](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
   * [Bitmark's Property System](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmarks-property-system)
   * [Bitmark's Technology](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmarks-technology)
 
-
+# Tech Stuff
 * [Run a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
   * [Start your Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#start-your-bitmark-node)
   * [Prerequisites](learning-bitmark/quick-start/simple-solution-for-node-setup.md#prerequisites)
