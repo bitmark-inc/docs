@@ -1,9 +1,9 @@
 
+
 * [Bitmark Property System Introduction](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
   * [The Power of Property Systems](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
   * [Bitmark's Property System](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmarks-property-system)
   * [Bitmark's Technology](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmarks-technology)
-
 
 
 * [Run a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
@@ -60,14 +60,12 @@
     * [Pay for the swapping share transaction](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#pay-for-the-swapping-share-transaction)
     * [Verify the share swapping](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#verify-the-share-swapping)
 
+
 * [What is BUP?](learning-bitmark/contributing-to-bitmark/bup.md#what-is-bup)
 * [Where I can find the BUPs?](learning-bitmark/contributing-to-bitmark/bup.md#where-i-can-find-the-bups)
 
 
-
 * [BUG BOUNTY PROGRAM](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-bounty-program)
-  * [<strong>Important:</strong> We only accept bug reports for <strong>bitmarkd</strong> project\. Bug reports for web applications or any other project that is not <strong>bitmarkd</strong> will not be accepted and given any reward\.](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#important-we-only-accept-bug-reports-for-bitmarkd-project-bug-reports-for-web-applications-or-any-other-project-that-is-not-bitmarkd-will-not-be-accepted-and-given-any-reward)
-      * [Bitmark strives to make the Bitmark system safe and secure for everyone\. We greatly value the work done by security researchers in improving the security of our products and service offerings\. We are committed to working with this community to verify, reproduce, and respond to legitimate reported vulnerabilities\. We encourage the community to participate in our responsible reporting process\.](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bitmark-strives-to-make-the-bitmark-system-safe-and-secure-for-everyone-we-greatly-value-the-work-done-by-security-researchers-in-improving-the-security-of-our-products-and-service-offerings-we-are-committed-to-working-with-this-community-to-verify-reproduce-and-respond-to-legitimate-reported-vulnerabilities-we-encourage-the-community-to-participate-in-our-responsible-reporting-process)
         * [We offer rewards in Bitcoin:](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#we-offer-rewards-in-bitcoin)
       * [Latest bug updates:](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#latest-bug-updates)
   * [How to report a bug](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#how-to-report-a-bug)
@@ -94,7 +92,6 @@
     * [Setup Directory](bitmark-references/node-setup/bitmark-node-setup.md#setup-directory)
     * [Setup and Run bitmarkd](bitmark-references/node-setup/bitmark-node-setup.md#setup-and-run-bitmarkd)
     * [Setup and Run Recorderd (the mining program)](bitmark-references/node-setup/bitmark-node-setup.md#setup-and-run-recorderd-the-mining-program)
-          * [tags: bitmarkd documentation tutorial' bitmark](bitmark-references/node-setup/bitmark-node-setup.md#tags-bitmarkd-documentation-tutorial-bitmark)
 
 
 * [Overview](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#overview)
@@ -244,6 +241,7 @@
   * [Initialization](bitmark-references/rpc-communication/rpc-communication.md#initialization)
   * [Processing Messages](bitmark-references/rpc-communication/rpc-communication.md#processing-messages)
 
+
 * [Basic Bitmark Blockchain Overview](bitmark-references/bitmark-node-software/bitmark-blockchain.md#basic-bitmark-blockchain-overview)
   * [Definitions](bitmark-references/bitmark-node-software/bitmark-blockchain.md#definitions)
   * [Transactions: Asset, Issue and Transfer Records](bitmark-references/bitmark-node-software/bitmark-blockchain.md#transactions-asset-issue-and-transfer-records)
@@ -263,7 +261,6 @@
     * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](bitmark-references/bitmark-node-software/bitmark-blockchain.md#block-hashing-argon2-difficulty-proof-of-work-)
 
 
-
   * [Block](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#block)
 * [Different types of transaction include different length and content inside\.](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#different-types-of-transaction-include-different-length-and-content-inside)
     * [Block Validation](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#block-validation)
@@ -271,8 +268,8 @@
       * [Proof of Work](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#proof-of-work)
       * [Majority Votes](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#majority-votes)
 
-
 * [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
+
 
 
 * [Overview](bitmark-references/bitmark-node-software/mining.md#overview)
