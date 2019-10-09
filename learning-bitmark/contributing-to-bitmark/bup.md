@@ -1,3 +1,4 @@
+# Bitmark Upgrade Proposal
 ## What is BUP?
 A Bitmark Upgrade Proposal (BUP) is a design document providing
 information to Bitmark community, or describing a new feature for
