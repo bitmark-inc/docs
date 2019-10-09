@@ -58,10 +58,10 @@
     * [Pay for the swapping share transaction](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#pay-for-the-swapping-share-transaction)
     * [Verify the share swapping](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#verify-the-share-swapping)
 
-
 * [Bitmark Upgrade Proposal](learning-bitmark/contributing-to-bitmark/bup.md#bitmark-upgrade-proposal)
   * [What is BUP?](learning-bitmark/contributing-to-bitmark/bup.md#what-is-bup)
   * [Where I can find the BUPs?](learning-bitmark/contributing-to-bitmark/bup.md#where-i-can-find-the-bups)
+
 
 
 * [BUG BOUNTY PROGRAM](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-bounty-program)
@@ -265,8 +265,8 @@
       * [Proof of Work](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#proof-of-work)
       * [Majority Votes](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#majority-votes)
 
-* [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
 
+* [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
 
 
 * [Overview](bitmark-references/bitmark-node-software/mining.md#overview)
@@ -308,4 +308,5 @@
   * [The implementation](bitmark-references/bitmark-node-software/bitmark-shares.md#the-implementation)
 
 
+* [Bitmark Glossary](bitmark-references/terms-and-glossary/bitmark-terms-and-glossary.md#bitmark-glossary)
 
