@@ -64,8 +64,7 @@ Downloaded script will help you to manage bitmark node container. The  installat
 
 ![running screen](https://i.imgur.com/g9baqm8.jpg)
 
-If block does not start to  synchronize  with remote bitmark node over 20 minutes, check your network. Also see [Important Notice On Network
-](#important-notice-on-network ) 
+If block does not start to  synchronize  with remote bitmark node over 20 minutes, check your network. Also see [Important Notice On Network](#important-notice-on-network)
 
 ## Important Notice On Network
 
