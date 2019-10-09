@@ -134,5 +134,3 @@ Start the program.
 ```
 recorderd --config-file="${HOME}/.config/recorderd/recorderd.conf" start
 ```
-
-###### tags: `bitmarkd` `documentation` `tutorial'` `bitmark`
