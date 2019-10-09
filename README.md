@@ -1,9 +1,9 @@
 
-
 * [Bitmark Property System Introduction](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
   * [The Power of Property Systems](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
   * [Bitmark's Property System](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmarks-property-system)
   * [Bitmark's Technology](learning-bitmark/property-system-introduction/problem-we-are-trying-to-solve.md#bitmarks-technology)
+
 
 
 * [Run a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
@@ -60,9 +60,9 @@
     * [Pay for the swapping share transaction](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#pay-for-the-swapping-share-transaction)
     * [Verify the share swapping](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#verify-the-share-swapping)
 
-
 * [What is BUP?](learning-bitmark/contributing-to-bitmark/bup.md#what-is-bup)
 * [Where I can find the BUPs?](learning-bitmark/contributing-to-bitmark/bup.md#where-i-can-find-the-bups)
+
 
 
 * [BUG BOUNTY PROGRAM](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-bounty-program)
@@ -244,7 +244,6 @@
   * [Initialization](bitmark-references/rpc-communication/rpc-communication.md#initialization)
   * [Processing Messages](bitmark-references/rpc-communication/rpc-communication.md#processing-messages)
 
-
 * [Basic Bitmark Blockchain Overview](bitmark-references/bitmark-node-software/bitmark-blockchain.md#basic-bitmark-blockchain-overview)
   * [Definitions](bitmark-references/bitmark-node-software/bitmark-blockchain.md#definitions)
   * [Transactions: Asset, Issue and Transfer Records](bitmark-references/bitmark-node-software/bitmark-blockchain.md#transactions-asset-issue-and-transfer-records)
@@ -262,6 +261,7 @@
     * [Block Header](bitmark-references/bitmark-node-software/bitmark-blockchain.md#block-header)
     * [Merkle tree](bitmark-references/bitmark-node-software/bitmark-blockchain.md#merkle-tree)
     * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](bitmark-references/bitmark-node-software/bitmark-blockchain.md#block-hashing-argon2-difficulty-proof-of-work-)
+
 
 
   * [Block](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#block)
@@ -307,9 +307,9 @@
 
 * [Bitmark versus Ethereum](bitmark-appendix/bitmark-eth-comparison.md#bitmark-versus-ethereum)
 
-
 * [Bitmark shares](bitmark-references/bitmark-node-software/bitmark-shares.md#bitmark-shares)
   * [Reasoning](bitmark-references/bitmark-node-software/bitmark-shares.md#reasoning)
   * [Actions that can be performed](bitmark-references/bitmark-node-software/bitmark-shares.md#actions-that-can-be-performed)
   * [The implementation](bitmark-references/bitmark-node-software/bitmark-shares.md#the-implementation)
+
 
