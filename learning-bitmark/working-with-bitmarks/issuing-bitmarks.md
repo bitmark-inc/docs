@@ -284,4 +284,4 @@ Bitmark build a web application for users to explore all the transactions happen
 
 * For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
 
-* For transaction on the Bitmark testnet blockchain: https://registry.bitmark.com
+* For transactions on the Bitmark testnet blockchain: https://registry.test.bitmark.com
