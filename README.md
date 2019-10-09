@@ -10,12 +10,10 @@
   * [Start your Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#start-your-bitmark-node)
   * [Prerequisites](learning-bitmark/quick-start/simple-solution-for-node-setup.md#prerequisites)
   * [Installation](learning-bitmark/quick-start/simple-solution-for-node-setup.md#installation)
-    * [Step 1: Download and Run Script](learning-bitmark/quick-start/simple-solution-for-node-setup.md#step-1-download-and-run-script)
   * [Management Panel](learning-bitmark/quick-start/simple-solution-for-node-setup.md#management-panel)
     * [Step 1: Open A Node\-Management Webpage](learning-bitmark/quick-start/simple-solution-for-node-setup.md#step-1-open-a-node-management-webpage)
     * [Step 2: Run bitmarkd and recorderd](learning-bitmark/quick-start/simple-solution-for-node-setup.md#step-2-run-bitmarkd-and-recorderd)
   * [Important Notice On Network](learning-bitmark/quick-start/simple-solution-for-node-setup.md#important-notice-on-network)
-          * [tags: 'bitmark\-node' 'documentation' 'quick start' 'bitmark'](learning-bitmark/quick-start/simple-solution-for-node-setup.md#tags-bitmark-node-documentation-quick-start-bitmark)
 
 
 * [Creating Bitmark Account](learning-bitmark/working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
@@ -60,9 +58,9 @@
     * [Pay for the swapping share transaction](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#pay-for-the-swapping-share-transaction)
     * [Verify the share swapping](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#verify-the-share-swapping)
 
-
 * [What is BUP?](learning-bitmark/contributing-to-bitmark/bup.md#what-is-bup)
 * [Where I can find the BUPs?](learning-bitmark/contributing-to-bitmark/bup.md#where-i-can-find-the-bups)
+
 
 
 * [BUG BOUNTY PROGRAM](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-bounty-program)
@@ -268,8 +266,8 @@
       * [Proof of Work](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#proof-of-work)
       * [Majority Votes](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#majority-votes)
 
-* [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
 
+* [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
 
 
 * [Overview](bitmark-references/bitmark-node-software/mining.md#overview)
@@ -304,9 +302,9 @@
 
 * [Bitmark versus Ethereum](bitmark-appendix/bitmark-eth-comparison.md#bitmark-versus-ethereum)
 
+
 * [Bitmark shares](bitmark-references/bitmark-node-software/bitmark-shares.md#bitmark-shares)
   * [Reasoning](bitmark-references/bitmark-node-software/bitmark-shares.md#reasoning)
   * [Actions that can be performed](bitmark-references/bitmark-node-software/bitmark-shares.md#actions-that-can-be-performed)
   * [The implementation](bitmark-references/bitmark-node-software/bitmark-shares.md#the-implementation)
-
 
