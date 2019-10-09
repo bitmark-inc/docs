@@ -61,7 +61,7 @@ The hash of a block is made from following information, hashes through `argon2` 
 Difficulty is decided by blockchain consensus rules, higher difficulty means harder to find a valid hash, when a hash meets difficulty, it means the hash value is less than or equal to the difficulty level. Usually the difficulty level is represented by a number.
 
 For example, when difficulty is 2, it means the hash of a block should contains at least 10 (8+2) leading zeros, so if a block hash is "012345678901234567890123456789012" does not meet criteria of this difficulty because only one leading zero. If another block hash is "00000000001234567890123456789012", then it meets difficulty criteria because it contains 10 leading zeros.
-```
+
 The hash is considered as a fixed 256 bits value and it is composed by two parts:
 
     [8 bits] [248 bits]
