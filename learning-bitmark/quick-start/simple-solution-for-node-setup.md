@@ -18,8 +18,6 @@ This section will guide you to start a bitmark node using docker container. Insi
 
 ## Installation
 
-### Step 1: Download and Run Script
-
 Downloaded script will help you to manage bitmark node container. The  installation of the script will pull down a latest bitmark node container image from docker hub and then start a bitmark node container for you.  To check what functions the script supports and how to run it, simply run ``` bash install-node-linux-mac.sh``` on linux or mac.  or ```bitmarkNode-HyperV.bat``` on windows.
 
 
@@ -64,8 +62,7 @@ Downloaded script will help you to manage bitmark node container. The  installat
 
 ![running screen](https://i.imgur.com/g9baqm8.jpg)
 
-If block does not start to  synchronize  with remote bitmark node over 20 minutes, check your network. Also see [Important Notice On Network
-](#important-notice-on-network ) 
+If block does not start to  synchronize  with remote bitmark node over 20 minutes, check your network. Also see [Important Notice On Network](#important-notice-on-network)
 
 ## Important Notice On Network
 
@@ -82,6 +79,3 @@ netcat -v [Your Public IP] 2136
 For windows users, telnet can be used to test on an open port.
 
 telnet [Your Public IP] 2136
-
-
-###### tags: 'bitmark-node' 'documentation' 'quick start' 'bitmark'
