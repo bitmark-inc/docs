@@ -58,14 +58,13 @@
     * [Pay for the swapping share transaction](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#pay-for-the-swapping-share-transaction)
     * [Verify the share swapping](learning-bitmark/working-with-bitmarks/using-bitmark-shares.md#verify-the-share-swapping)
 
-* [What is BUP?](learning-bitmark/contributing-to-bitmark/bup.md#what-is-bup)
-* [Where I can find the BUPs?](learning-bitmark/contributing-to-bitmark/bup.md#where-i-can-find-the-bups)
 
+* [Bitmark Upgrade Proposal](learning-bitmark/contributing-to-bitmark/bup.md#bitmark-upgrade-proposal)
+  * [What is BUP?](learning-bitmark/contributing-to-bitmark/bup.md#what-is-bup)
+  * [Where I can find the BUPs?](learning-bitmark/contributing-to-bitmark/bup.md#where-i-can-find-the-bups)
 
 
 * [BUG BOUNTY PROGRAM](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-bounty-program)
-        * [We offer rewards in Bitcoin:](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#we-offer-rewards-in-bitcoin)
-      * [Latest bug updates:](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#latest-bug-updates)
   * [How to report a bug](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#how-to-report-a-bug)
       * [Scope:](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#scope)
         * [Bug scope:](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-scope)
@@ -266,8 +265,8 @@
       * [Proof of Work](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#proof-of-work)
       * [Majority Votes](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#majority-votes)
 
-
 * [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
+
 
 
 * [Overview](bitmark-references/bitmark-node-software/mining.md#overview)
@@ -292,12 +291,12 @@
     * [Discovery Service](bitmark-references/bitmark-node-software/payment-verification.md#discovery-service)
     * [Bitcoin peer\-to\-peer protocol (WIP)](bitmark-references/bitmark-node-software/payment-verification.md#bitcoin-peer-to-peer-protocol-wip)
 
-
 * [Security feature of the Bitmark Blockchain](bitmark-references/security.md#security-feature-of-the-bitmark-blockchain)
   * [Transactions](bitmark-references/security.md#transactions)
   * [Transaction Identifiers](bitmark-references/security.md#transaction-identifiers)
   * [Block Identifiers](bitmark-references/security.md#block-identifiers)
   * [Proof of Work and Difficulty](bitmark-references/security.md#proof-of-work-and-difficulty)
+
 
 
 * [Bitmark versus Ethereum](bitmark-appendix/bitmark-eth-comparison.md#bitmark-versus-ethereum)
@@ -307,4 +306,6 @@
   * [Reasoning](bitmark-references/bitmark-node-software/bitmark-shares.md#reasoning)
   * [Actions that can be performed](bitmark-references/bitmark-node-software/bitmark-shares.md#actions-that-can-be-performed)
   * [The implementation](bitmark-references/bitmark-node-software/bitmark-shares.md#the-implementation)
+
+
 
