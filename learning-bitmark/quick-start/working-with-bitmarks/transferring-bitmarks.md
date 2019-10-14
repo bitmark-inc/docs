@@ -23,7 +23,7 @@ Bitmark owners can transfer their Bitmark Certificates to others using
 
 * [Bitmark Certificates](issuing-bitmarks.md) are registered.
 
-* In case of using the Bitmark CLI, [Payment on Bitmark CLI](payment-on-bitmark-cli.md) tools need to be ready.
+* In case of using the Bitmark CLI, [Payment on Bitmark CLI](payment-for-bitmark-cli.md) tools need to be ready.
 
 <br>
 <br>
