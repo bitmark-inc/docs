@@ -53,8 +53,8 @@
 
   * [Overview](bitmark-references/bitmark-sdk/README.md#overview)
   * [Getting Started](bitmark-references/bitmark-sdk/README.md#getting-started)
-  * [<Account](bitmark-references/bitmark-sdk/README.md#account)
-  * [<Actions](bitmark-references/bitmark-sdk/README.md#actions)
+  * [Account](bitmark-references/bitmark-sdk/README.md#account)
+  * [Actions](bitmark-references/bitmark-sdk/README.md#actions)
   * [Query](bitmark-references/bitmark-sdk/README.md#query)
   * [Store Seed](bitmark-references/bitmark-sdk/README.md#store-seed)
   * [Web Socket](bitmark-references/bitmark-sdk/README.md#web-socket)
