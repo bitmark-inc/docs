@@ -1,21 +1,28 @@
-## Block
+# Block Verification and Synchronization
+
+## Bitmark Block
 
 Block is a bunch of transactions that have been added to blockchain. A bitmark block contains data as follows:
 
+```
   size (bytes)                                  data
- --------------  -------------------------------------------------------------------------
-   2              block version number
-   2              transaction count inside the block
-   8              block number (block height)
-  32              argon2 hash of previous block header
-  32              sha3 hash of all transactions in the block (merkle root)
-   8              timestamp of block generation time, seconds since 1970-01-01T00:00:00 UTC
-   8              current difficulty in compact mode
-   8              number to make hash meets difficulty
-   ... to end     transactions
+ -------------- -------------------------------------------------------------------------
+   2             block version number
+   2             transaction count inside the block
+   8             block number (block height)
+  32             argon2 hash of previous block header
+  32             sha3 hash of all transactions in the block (merkle root)
+   8             timestamp of block generation time, seconds since 1970-01-01T00:00:00 UTC
+   8             current difficulty in compact mode
+   8             number to make hash meets difficulty
+   ... to end    transactions
 
-Different types of transaction include different length and content inside.
-=======
+```
+
+## Different types of transactions
+
+Different types of transactions include different lengths and content inside.
+
 For example, consider the block header string of:
 
 ```
@@ -41,7 +48,7 @@ Difficulty:00978263ab596de9800000000000000000000000000000000000000000000000,
 Nonce:0xc70b4a3bd853b6de
 ```
 
-### Block Validation
+## Block Validation
 
 When a block is received, the following checks will be made:
 
@@ -65,12 +72,12 @@ database (leveldb), then node broadcast this newly saved block to all connected
 nodes. When other node receives the broadcast of a block, each node
 validates block correctness by rules described above.
 
-### Block Synchronization
+## Block Synchronization
 
 Bitmark blockchain uses both proof-of-work (PoW) and majority votes to
 choose blocks.
 
-#### Proof of Work
+### Proof of Work
 
 Proof of work is the traditional method of Sybil defense on a blockchain, used by Bitcoin and (at the moment) by Ethereum. Every participant is given the opportunity to solve a math problem. Whoever manages to do so is allowed to propose a block for the blockchain, contributing to the consensus and the growth of the ledger. Sybil defense is provided by the fact that it’s very hard to make these calculations, and so has real costs in energy.
 
@@ -80,7 +87,7 @@ For a block to be valid it must hash to a value less than the current target; th
 
 Bitmark uses [argon2](https://en.wikipedia.org/wiki/Argon2) to hash the block header; remaining data is covered by having the Merkle Tree Root hash as part of the header. If transactions are different or in a different order the the Merkle Root has will not match and the block will be rejected.
 
-#### Majority Votes
+### Majority Votes
 
 When deciding next block, every node considers decisions from other nodes, the block selected by the most other nodes will be chosen. Every 30 seconds, a node asks its connected nodes for their block hash and block height. This information will be used to determine the main chain based on majority vote. For different chains, same block hegith with different block hash, so a node can distinguish a fork chain by information of block hash on specific block number.
 
