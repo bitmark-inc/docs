@@ -1,4 +1,3 @@
-
 # Quick Start
 
 ## [Run a Bitmark Node](simple-solution-for-node-setup.md#run-a-bitmark-node)

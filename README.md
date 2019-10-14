@@ -10,7 +10,7 @@
   * [Bitmark's Property System](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-property-system)
   * [Bitmark's Technology](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-technology)
 
-### [Quick Start](learning-bitmark/README.md#quick-start)
+### [Quick Start](learning-bitmark/quick-start/README.md#quick-start)
 
   * [Run a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
   * [Working with bitmarks](learning-bitmark/quick-start/working-with-bitmarks/README.md#working-with-bitmarks)
@@ -19,7 +19,7 @@
     * [Transferring Bitmark Certificates](learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md#transferring-bitmark-certificates)
     * [Bitmark shares](learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
 
-### [Contributing to Bitmark](learning-bitmark/README.md#contribute-to-bitmark)
+### [Contributing to Bitmark](learning-bitmark/contributing-to-bitmark/README.md#contribute-to-bitmark)
 
   * [Bitmark Upgrade Proposal](learning-bitmark/contributing-to-bitmark/bup.md#bitmark-upgrade-proposal)
   * [BUG BOUNTY PROGRAM](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-bounty-program)
