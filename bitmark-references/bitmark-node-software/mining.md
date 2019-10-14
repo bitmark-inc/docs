@@ -1,8 +1,10 @@
-# Overview
+# Bitmark Mining
+
+## Overview
 
 Mining on the Bitmark blockchain requires an understanding of hashing and difficulty, as well as the communication, verification, and reward protocols.
 
-# Block Diagram
+## Block Diagram
 
             +--------------+  zero mq protocol   +---------------+
             |              |  ---------------->  |               |
