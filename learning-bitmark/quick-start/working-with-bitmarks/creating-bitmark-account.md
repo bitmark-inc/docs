@@ -29,7 +29,7 @@ Bitmark App is a simple mobile app which allows anyone to protect their legal ri
 <br>
 Here are the steps to create a new Bitmark Account using the Bitmark App:
 
-* Download and install the [Android](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) or [iOS](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) Bitmark App
+* Download and install the [Android](https://play.google.com/store/apps/details?id=com.bitmark.registry) or [iOS](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) Bitmark App
 
 * Open the app
 
