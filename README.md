@@ -37,7 +37,7 @@
 
 ### [Bitmark Node Software](bitmark-references/bitmark-node-software/README.md#bitmark-node-software)
 
-  * [Bitmark Blockchain](bitmark-references/bitmark-node-software/README.md#bitmark-blockchain)
+  * [Bitmark Blockchain](bitmark-references/bitmark-node-software/bitmark-blockchain.md#bitmark-blockchain)
   * [Block Verification and Synchronization](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#block-verification-and-synchronization)
   * [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
   * [Bitmark Mining](bitmark-references/bitmark-node-software/mining.md##bitmark-mining)
