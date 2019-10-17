@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-appendix/bitmark-eth-comparison/
+---
+
 # Bitmark versus Ethereum
 
 The Bitmark Property System enables management of digital property rights, but the Ethereum blockchain has two Ethereum Improvement Proposals that can similarly organize and administer digital assets: ERC-20 standardizes the control and transfer of tokens on the Ethereum blockchain and may be used to manage fungible assets; while ERC-721 introduces standards for collectible and other non-fungible assets.

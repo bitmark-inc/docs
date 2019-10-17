@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares/
+---
 # Bitmark shares
 
 In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provides a feature called the **[bitmark shares]()**.
@@ -37,7 +41,7 @@ There are three records related to the Bitmark shares are stored on the Bitmark 
 
 ## Prerequisites of working with bitmark shares using the Bitmark CLI
 
-Refer the [Payment on Bitmark CLI](payment-for-bitmark-cli.md) document to:
+Refer the [Payment on Bitmark CLI](payment-for-bitmark-cli) document to:
 
 * Install the Bitmark-Wallet for transaction payments.
 

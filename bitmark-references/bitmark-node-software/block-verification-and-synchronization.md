@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-node-software/block-verification-and-synchronization/
+---
+
 # Block Verification and Synchronization
 
 ## Bitmark Block

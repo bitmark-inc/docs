@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-cli/bitmark-cli/
+---
+
 # bitmark-cli Command Reference
 
 ## Basic Command Structure

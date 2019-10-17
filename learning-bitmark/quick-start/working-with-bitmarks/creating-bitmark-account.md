@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account/
+---
 # Creating Bitmark Account
 
 Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-bitmark-account-using-the-bitmark-sdk), or the [Bitmark CLI](#creating-bitmark-account-using-the-bitmark-cli).
@@ -38,9 +42,9 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
     > There are options to enable Touch/Face ID and Notification while creating a new account 
 
     <div style="background-color: #efefef; text-align: center;">
-        <img src="images/CreateAccount_0.png" alt="Create New Account option" title="Create New Account option" width="250" style="padding: 20px" />
-        <img src="images/CreateAccount_1.png" alt="Touch/Face ID option" title="Touch/Face ID option" width="250" style="padding: 20px" /> 
-        <img src="images/CreateAccount_3.png" alt="Notification option" title="Notification option" width="250" style="padding: 20px" />
+        <img src="../images/CreateAccount_0.png" alt="Create New Account option" title="Create New Account option" width="250" style="padding: 20px" />
+        <img src="../images/CreateAccount_1.png" alt="Touch/Face ID option" title="Touch/Face ID option" width="250" style="padding: 20px" /> 
+        <img src="../images/CreateAccount_3.png" alt="Notification option" title="Notification option" width="250" style="padding: 20px" />
     </div>
 
     <br>
@@ -54,8 +58,8 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
     > * **Display** the Account Number as a QR Code by tapping on the QR Code icon.
 
     <div style="background-color: #efefef; text-align: center;">
-        <img src="images/AccountMenu.png" alt="Account Menu" title="Account Menu" width="250" style="padding: 20px" />
-        <img src="images/AccountSettings.png" alt="Account Settings" title="Account Settings" width="250" style="padding: 20px" />
+        <img src="../images/AccountMenu.png" alt="Account Menu" title="Account Menu" width="250" style="padding: 20px" />
+        <img src="../images/AccountSettings.png" alt="Account Settings" title="Account Settings" width="250" style="padding: 20px" />
     </div>
 
     <br>
@@ -63,9 +67,9 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 * Backup the Recovery Phrase by selecting **Account > SETTINGS > WRITE DOWN RECOVERY PHRASE**
 
     <div style="background-color: #efefef; text-align: center;">
-        <img src="images/RecoveryPhrase_0.png" alt="Write down Recovery Phrase option" title="Write down Recovery Phrase option" width="250" style="padding: 20px" />
-        <img src="images/RecoveryPhrase_1.png" alt="Write down Recovery Phrase" title="Write down Recovery Phrase" width="250" style="padding: 20px" />
-        <img src="images/RecoveryPhrase_2.png" alt="Recovery Phrase" title="Recovery Phrase" width="250" style="padding: 20px" />
+        <img src="../images/RecoveryPhrase_0.png" alt="Write down Recovery Phrase option" title="Write down Recovery Phrase option" width="250" style="padding: 20px" />
+        <img src="../images/RecoveryPhrase_1.png" alt="Write down Recovery Phrase" title="Write down Recovery Phrase" width="250" style="padding: 20px" />
+        <img src="../images/RecoveryPhrase_2.png" alt="Recovery Phrase" title="Recovery Phrase" width="250" style="padding: 20px" />
     </div>
 
 <br>
@@ -76,7 +80,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 The Bitmark SDK is a collection of libraries for different programming languages and mobile platforms. In addition to providing language-specific bindings to the Bitmark APIs, the SDK simplifies local key management for signing and encryption.
 
 > In this section we introduce a very simple way to create a new Bitmark Account using the **Bitmark JS SDK**.<br>
-> For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
+> For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document) section.
 
 <br>
 
@@ -136,7 +140,7 @@ Here are the steps to install the Bitmark-SDK, initialize its configuration, the
 Bitmark CLI is a command line tool which allows a user to interact with the Bitmark blockchain by connecting to one or several nodes in the network. All the transactions are submitted directly to one of the connected nodes and consequently be verified by the node before be forwarded to the network.
 
 > In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
-> For the command structures, detailed explanation, other functions - Please refer the [Bitmark CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) section.
+> For the command structures, detailed explanation, other functions - Please refer the [Bitmark CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli) section.
 
 <br>
 
@@ -157,7 +161,7 @@ Bitmark CLI is a command line tool which allows a user to interact with the Bitm
 
 Here are the steps to create a new Bitmark Account using the Bitmark CLI:
 
-* Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
+* Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli)
 
 * Initialize the Bitmark-CLI configuration
 

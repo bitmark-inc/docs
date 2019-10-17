@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /learning-bitmark/contributing-to-bitmark/bitmark-software-development-process/
+---
 # Current development workflow
 
 **Right now we have these projects:**

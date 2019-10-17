@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /learning-bitmark/contributing-to-bitmark/bug-bounty-program/
+---
 # BUG BOUNTY PROGRAM
 
 **Important:** We only accept bug reports for **bitmarkd** project. Bug reports for web applications or any other project that is not **bitmarkd** will not be accepted and given any reward.

@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /learning-bitmark/quick-start/simple-solution-for-node-setup/
+---
+
 # Run a Bitmark Node
 
 ## Start your Bitmark Node

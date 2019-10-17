@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-sdk/query/
+---
+
 # Query
 
 The bitmark SDK support queries over these records: assets, bitmarks and transactions (txs). These records are created or updated when different actions (register, issue or transfer) are applied.

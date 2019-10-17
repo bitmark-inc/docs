@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-terms-and-glossary/
+---
+
 # Bitmark Glossary
 
 **Account** — _See Bitmark Account._

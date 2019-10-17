@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-node-software/payment-verification/
+---
+
 # Payment Verification
 
 In this section, we will introduce

@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-appendix/bitmark-shares/
+---
+
 # Bitmark shares
 
 ## Reasoning

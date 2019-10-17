@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-node-software/bitmark-blockchain/
+---
+
 # Basic Bitmark Blockchain Overview
 
 This briefly describe the structure of the block chain. It builds up

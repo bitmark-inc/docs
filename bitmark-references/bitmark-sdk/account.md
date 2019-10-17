@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-sdk/account/
+---
+
 # Account
 
 Within the Bitmark system, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations.
@@ -65,7 +70,7 @@ Both seed and recovery phrase can be used to derive the original private key of 
 
 ### Seed
 
-The seed is the more compact format of an exported account. See [Store seed](store_seed.md) to learn how to securely store seeds in mobile phones.
+The seed is the more compact format of an exported account. See [Store seed](store_seed) to learn how to securely store seeds in mobile phones.
 
 ```javascript
 let seed = account.getSeed();

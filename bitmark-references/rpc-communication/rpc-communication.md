@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/rpc-communication/rpc-communication/
+---
+
 # RPC
 
 ## Introduction

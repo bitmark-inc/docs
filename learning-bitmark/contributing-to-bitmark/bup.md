@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /learning-bitmark/contributing-to-bitmark/bup/
+---
 # Bitmark Upgrade Proposal
 ## What is BUP?
 A Bitmark Upgrade Proposal (BUP) is a design document providing

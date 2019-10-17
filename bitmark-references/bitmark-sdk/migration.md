@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-sdk/migration/
+---
+
 # Account migration
 
 Bitmark SDK provides `rekey` method to allow users to transfer all bitmarks from an `Account` to another one. This is helpful in case users want to migrate all their own bitmarks from old `Account` to another new one and keep the bitmarks provenance as well.

@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-node-software/security/
+---
+
 # Security feature of the Bitmark Blockchain
 
 The Bitmark Property System uses digital signatures and cryptographic

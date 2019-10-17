@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-cli/quick-setup/
+---
+
 # Quick Setup
 
 The bitmark-cli program is able to create an initial configuration

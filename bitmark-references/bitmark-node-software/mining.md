@@ -1,3 +1,8 @@
+---
+layout: default
+permalink: /bitmark-references/bitmark-node-software/mining/
+---
+
 # Bitmark Mining
 
 ## Overview
