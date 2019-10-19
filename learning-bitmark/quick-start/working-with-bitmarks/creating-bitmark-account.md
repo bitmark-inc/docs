@@ -47,9 +47,9 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
     > There are options to enable Touch/Face ID and Notification while creating a new account 
 
     <div style="background-color: #efefef; text-align: center;">
-        <img src="/images/CreateAccount_0.png" alt="Create New Account option" title="Create New Account option" width="250" style="padding: 20px" />
-        <img src="/images/CreateAccount_1.png" alt="Touch/Face ID option" title="Touch/Face ID option" width="250" style="padding: 20px" /> 
-        <img src="/images/CreateAccount_3.png" alt="Notification option" title="Notification option" width="250" style="padding: 20px" />
+        <img src="/assets/images/CreateAccount_0.png" alt="Create New Account option" title="Create New Account option" width="250" style="padding: 20px" />
+        <img src="/assets/images/CreateAccount_1.png" alt="Touch/Face ID option" title="Touch/Face ID option" width="250" style="padding: 20px" /> 
+        <img src="/assets/images/CreateAccount_3.png" alt="Notification option" title="Notification option" width="250" style="padding: 20px" />
     </div>
 
     <br>
@@ -63,8 +63,8 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
     > * **Display** the Account Number as a QR Code by tapping on the QR Code icon.
 
     <div style="background-color: #efefef; text-align: center;">
-        <img src="/images/AccountMenu.png" alt="Account Menu" title="Account Menu" width="250" style="padding: 20px" />
-        <img src="/images/AccountSettings.png" alt="Account Settings" title="Account Settings" width="250" style="padding: 20px" />
+        <img src="/assets/images/AccountMenu.png" alt="Account Menu" title="Account Menu" width="250" style="padding: 20px" />
+        <img src="/assets/images/AccountSettings.png" alt="Account Settings" title="Account Settings" width="250" style="padding: 20px" />
     </div>
 
     <br>
@@ -72,9 +72,9 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 * Backup the Recovery Phrase by selecting **Account > SETTINGS > WRITE DOWN RECOVERY PHRASE**
 
     <div style="background-color: #efefef; text-align: center;">
-        <img src="/images/RecoveryPhrase_0.png" alt="Write down Recovery Phrase option" title="Write down Recovery Phrase option" width="250" style="padding: 20px" />
-        <img src="/images/RecoveryPhrase_1.png" alt="Write down Recovery Phrase" title="Write down Recovery Phrase" width="250" style="padding: 20px" />
-        <img src="/images/RecoveryPhrase_2.png" alt="Recovery Phrase" title="Recovery Phrase" width="250" style="padding: 20px" />
+        <img src="/assets/images/RecoveryPhrase_0.png" alt="Write down Recovery Phrase option" title="Write down Recovery Phrase option" width="250" style="padding: 20px" />
+        <img src="/assets/images/RecoveryPhrase_1.png" alt="Write down Recovery Phrase" title="Write down Recovery Phrase" width="250" style="padding: 20px" />
+        <img src="/assets/images/RecoveryPhrase_2.png" alt="Recovery Phrase" title="Recovery Phrase" width="250" style="padding: 20px" />
     </div>
 
 <br>
