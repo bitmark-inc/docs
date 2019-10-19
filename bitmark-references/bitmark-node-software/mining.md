@@ -1,3 +1,12 @@
+---
+title: Bitmark Mining
+keywords: mining
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: mining.html
+folder: bitmark-references/bitmark-node-software
+---
+
 # Bitmark Mining
 
 ## Overview

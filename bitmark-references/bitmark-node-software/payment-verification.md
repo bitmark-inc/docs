@@ -1,3 +1,12 @@
+---
+title: Payment Verification
+keywords: payment, payment verification
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: payment-verification.html
+folder: bitmark-references/bitmark-node-software
+---
+
 # Payment Verification
 
 In this section, we will introduce

@@ -61,10 +61,10 @@
     * [bitmarks offered to the specific receiver](query.md#bitmarks-offered-to-the-specific-receiver)
 
 
-## [Store Seed](store_seed.md#store-seed)
+## [Store Seed](store-seed.md#store-seed)
   
-* [Android](store_seed.md#android)
-* [iOS](store_seed.md#ios)
+* [Android](store-seed.md#android)
+* [iOS](store-seed.md#ios)
 
 
 ## [Web Socket](websocket.md#web-socket)

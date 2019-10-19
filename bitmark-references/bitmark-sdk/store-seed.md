@@ -1,3 +1,12 @@
+---
+title: Store Seed
+keywords: sdk, store seed
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: store-seed.html
+folder: bitmark-references/bitmark-sdk
+---
+
 # Store Seed
 
 Store key in mobile application is very important to ensure the security, protect user data against attackers. Bitmark SDK provides the utility for storing Account seed securely in mobile application, support **Android/iOS** platform.

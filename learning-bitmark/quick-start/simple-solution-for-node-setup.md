@@ -1,3 +1,12 @@
+---
+title: Run a Bitmark Node
+keywords: node setup
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: simple-solution-for-node-setup.html
+folder: learning-bitmark/quick-start
+---
+
 # Run a Bitmark Node
 
 ## Start your Bitmark Node

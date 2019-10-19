@@ -1,3 +1,12 @@
+---
+title: Bitmark Property System Introduction
+keywords: introduction
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: problem-we-are-trying-to-solve.html
+folder: learning-bitmark
+---
+
 # Bitmark Property System Introduction
 
 Digital assets and data feel ephemeral: it is easy to lose track of your digital assets, and it is easy to let social networks and other content aggregators claim ownership over your data. Hackers and bots can steal your digital properties, and today you have little recourse to recover them.

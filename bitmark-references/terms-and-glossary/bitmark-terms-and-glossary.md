@@ -1,3 +1,12 @@
+---
+title: Bitmark Glossary
+keywords: terms, glossary
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: bitmark-terms-and-glossary.html
+folder: bitmark-references/terms-and-glossary
+---
+
 # Bitmark Glossary
 
 **Account** — _See Bitmark Account._

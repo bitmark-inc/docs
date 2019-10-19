@@ -1,3 +1,12 @@
+---
+title: Bitmark-CLI Command Reference
+keywords: cli, bitmark-cli, command line interface
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: bitmark-cli.html
+folder: bitmark-references/bitmark-cli
+---
+
 # bitmark-cli Command Reference
 
 ## Basic Command Structure

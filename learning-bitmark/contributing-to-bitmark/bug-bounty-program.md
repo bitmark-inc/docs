@@ -1,3 +1,12 @@
+---
+title: BUG BOUNTY PROGRAM
+keywords: bug bounty
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: bug-bounty-program.html
+folder: learning-bitmark/contributing-to-bitmark
+---
+
 # BUG BOUNTY PROGRAM
 
 **Important:** We only accept bug reports for **bitmarkd** project. Bug reports for web applications or any other project that is not **bitmarkd** will not be accepted and given any reward.

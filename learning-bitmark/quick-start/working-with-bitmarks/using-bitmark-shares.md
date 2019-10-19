@@ -1,3 +1,12 @@
+---
+title: Bitmark shares
+keywords: bitmark shares
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: using-bitmark-shares.html
+folder: learning-bitmark/quick-start/working-with-bitmarks
+---
+
 # Bitmark shares
 
 In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provides a feature called the **[bitmark shares]()**.
@@ -37,7 +46,11 @@ There are three records related to the Bitmark shares are stored on the Bitmark 
 
 ## Prerequisites of working with bitmark shares using the Bitmark CLI
 
+<<<<<<< HEAD
 Refer the [Payment on Bitmark CLI](payment-for-bitmark-cli.md) document to:
+=======
+Refer the [Payment on Bitmark CLI](payment-for-bitmark-cli) document to:
+>>>>>>> generate static website from md using jekyll
 
 * Install the Bitmark-Wallet for transaction payments.
 

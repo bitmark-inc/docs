@@ -1,3 +1,12 @@
+---
+title: Security feature of the Bitmark Blockchain
+keywords: security
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: security.html
+folder: bitmark-references/bitmark-node-software
+---
+
 # Security feature of the Bitmark Blockchain
 
 The Bitmark Property System uses digital signatures and cryptographic

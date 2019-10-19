@@ -1,0 +1,175 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Bitmark Docs
+  version: 1.0
+  folders:
+
+  - title: Learning Bitmark
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /learning-bitmark-index.html
+      output: web
+
+    - title: Bitmark Property System
+      url: /problem-we-are-trying-to-solve.html
+      output: web
+
+      subfolders:
+        - title: Quick Start
+          output: web
+          subfolderitems:
+
+            - title: Run a Bitmark Node
+              url: simple-solution-for-node-setup.html
+              output: web
+
+            - title: Creating Bitmark Account
+              url: creating-bitmark-account.html
+              output: web
+
+            - title: Registering Bitmark Certificates
+              url: issuing-bitmarks.html
+              output: web
+
+            - title: Transferring Bitmark Certificates
+              url: transferring-bitmarks.html
+              output: web
+
+            - title: Bitmark shares
+              url: bitmark-shares.html
+              output: web
+
+        - title: Contributing to Bitmark
+          output: web
+          subfolderitems:
+
+            - title: Bitmark Upgrade Proposal
+              url: bup.html
+              output: web
+
+            - title: BUG BOUNTY PROGRAM
+              url: bug-bounty-program.html
+              output: web
+
+  - title: Bitmark References
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /bitmark-references-index.html
+      output: web
+
+    - title: Tutorial For Node Setup
+      url: /bitmark-node-setup.html
+      output: web
+
+      subfolders:
+        - title: Bitmark Node Software
+          output: web
+          subfolderitems:
+
+          - title: Bitmark Blockchain
+            url: bitmark-blockchain.html
+            output: web
+
+          - title: Block Verification and Synchronization
+            url: block-verification-and-synchronization.html
+            output: web
+
+          - title: Storage
+            url: node-modules.html
+            output: web
+
+          - title: Bitmark Mining
+            url: mining.html
+            output: web
+
+          - title: Payment Verification
+            url: payment-verification.html
+            output: web
+
+          - title: Security feature of the Bitmark Blockchain
+            url: security.html
+            output: web
+
+    - title: RPC Communication
+      url: /rpc-communication.html
+      output: web
+
+      subfolders:
+        - title: Bitmark SDK
+          output: web
+          subfolderitems:
+
+          - title: Overview
+            url: bitmark-sdk-document.html#overview
+            output: web
+
+          - title: Getting Started
+            url: bitmark-sdk-document.html#getting-started
+            output: web
+
+          - title: Account
+            url: account.html
+            output: web
+
+          - title: Actions
+            url: action.html
+            output: web
+
+          - title: Query
+            url: query.html
+            output: web
+
+          - title: Store Seed
+            url: store-seed.html
+            output: web
+
+          - title: Web Socket
+            url: websocket.html
+            output: web
+
+      
+        - title: Bitmark CLI
+          output: web
+          subfolderitems:
+
+          - title: Quick Setup
+            url: bitmark-cli-quick-setup.html
+            output: web
+
+          - title: Bitmark-CLI Command Reference
+            url: bitmark-cli.html#bitmark-cli-command-reference
+            output: web
+
+          - title: CLI Command Synopsis
+            url: bitmark-cli.html#cli-command-synopsis
+            output: web
+
+          - title: CLI commands
+            url: bitmark-cli.html#cli-commands
+            output: web
+
+
+    - title: Bitmark Glossary
+      url: /bitmark-terms-and-glossary.html
+      output: web
+
+  - title: Bitmark Appendix
+    output: web, pdf
+    folderitems:
+
+    - title: Bitmark versus Ethereum
+      url: bitmark-eth-comparison.html
+      output: web
+
+    - title: Bitmark shares
+      url: bitmark-shares.html
+      output: web
+
+
+

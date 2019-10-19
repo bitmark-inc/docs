@@ -1,3 +1,12 @@
+---
+title: Tutorial For Node Setup 
+keywords: node, node setup
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: bitmark-node-setup.html
+folder: bitmark-references/node-setup
+---
+
 #  Tutorial For Node Setup 
 
 A full-node of bitmarkd consists of a bitmard, a recorderd, a payment system, a litecoind, and a bitcoind services. For a beginner, it is easy and fast to run a bitmark-node-docker which wrapped all components and settings. For a developer or someone who wants to study the main program, the person can run bitmarkd or recorderd service directly. 

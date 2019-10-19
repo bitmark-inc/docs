@@ -1,3 +1,12 @@
+---
+title: Action
+keywords: action, sdk, register asset, issue bitmark, transfer bitmark
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: action.html
+folder: bitmark-references/bitmark-sdk
+---
+
 # Register an asset
 
 The first step to create a digital property is to register assets.
@@ -232,7 +241,11 @@ err := bitmark.Offer(params)
 ### Query offering bitmarks
 
 The receiver needs to query if there is any bitmark transfer offer waiting for the countersignature.
+<<<<<<< HEAD
 For the details of query execution, please refer to [Query Bitmark](query.md##Bitmark).
+=======
+For the details of query execution, please refer to [Query Bitmark](query##Bitmark).
+>>>>>>> generate static website from md using jekyll
 
 ```javascript
 let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder()

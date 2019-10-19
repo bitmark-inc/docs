@@ -1,3 +1,12 @@
+---
+title: Bitmark shares
+keywords: bitmark shares
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: bitmark-shares.html
+folder: bitmark-appendix
+---
+
 # Bitmark shares
 
 ## Reasoning

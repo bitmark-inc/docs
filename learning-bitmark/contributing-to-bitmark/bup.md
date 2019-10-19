@@ -1,3 +1,12 @@
+---
+title: Bitmark Upgrade Proposal
+keywords: upgrade proposal
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: bup.html
+folder: learning-bitmark/contributing-to-bitmark
+---
+>>>>>>> generate static website from md using jekyll
 # Bitmark Upgrade Proposal
 ## What is BUP?
 A Bitmark Upgrade Proposal (BUP) is a design document providing

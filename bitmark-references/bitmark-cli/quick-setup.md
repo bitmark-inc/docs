@@ -1,3 +1,12 @@
+---
+title: Bitmark-CLI Quick Setup
+keywords: cli, bitmark-cli, command line interface, quick setup
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: bitmark-cli-quick-setup.html
+folder: bitmark-references/bitmark-cli
+---
+
 # Quick Setup
 
 The bitmark-cli program is able to create an initial configuration

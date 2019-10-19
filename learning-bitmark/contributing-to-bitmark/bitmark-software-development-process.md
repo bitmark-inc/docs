@@ -1,3 +1,12 @@
+---
+title: Bitmark Software Development Process
+keywords: development process, work flow
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: bitmark-software-development-process.html
+folder: learning-bitmark/contributing-to-bitmark
+---
+
 # Current development workflow
 
 **Right now we have these projects:**

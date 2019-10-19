@@ -1,3 +1,12 @@
+---
+title: Web Socket
+keywords: sdk, web socket
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: websocket.html
+folder: bitmark-references/bitmark-sdk
+---
+
 # Web Socket
 Realtime event triggering is trending in modern application development nowadays. It helps the application is always up to date and so provides better user experience.
 Bitmark SDK offers Web Socket event triggering to help the application can be notified immediately when there are anything changes.

@@ -1,3 +1,12 @@
+---
+title: Bitmark transaction payment
+keywords: transaction payment
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: payment-for-bitmark-cli.html
+folder: learning-bitmark/quick-start/working-with-bitmarks
+---
+
 # Bitmark transaction payment
 
 Bitmark transaction fees can be paid in either Bitcoin or Litecoin cryptocurrencies.

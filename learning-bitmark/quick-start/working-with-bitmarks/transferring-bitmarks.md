@@ -1,9 +1,22 @@
+---
+title: Transferring Bitmark Certificates
+keywords: transaction, transfer
+last_updated: 
+sidebar: mydoc_sidebar
+permalink: transferring-bitmarks.html
+folder: learning-bitmark/quick-start/working-with-bitmarks
+---
+
 # Transferring Bitmark Certificates
 
 Once an asset has been registered, trading it only requires the owner to create a new transfer record that points back to the original issue record (or to the previous transfer record) and that shows the new owner of the asset. Because the blockchain is ordered and because it’s immutable, this creates a permanent chain of custody, reaching back to the asset’s origins.
 
 <div style="background-color: #efefef; text-align: center;">
+<<<<<<< HEAD
     <img src="images/TransferringBitmark_0.png" alt="Record chain" title="Record chain" style="padding: 20px" />
+=======
+    <img src="/images/TransferringBitmark_0.png" alt="Record chain" title="Record chain" style="padding: 20px" />
+>>>>>>> generate static website from md using jekyll
 </div>
 
 Bitmark owners can transfer their Bitmark Certificates to others using
@@ -19,11 +32,19 @@ Bitmark owners can transfer their Bitmark Certificates to others using
 
 ## Prerequisites
 
+<<<<<<< HEAD
 * [Bitmark Accounts](creating-bitmark-account.md) are created.
 
 * [Bitmark Certificates](issuing-bitmarks.md) are registered.
 
 * In case of using the Bitmark CLI, [Payment on Bitmark CLI](payment-for-bitmark-cli.md) tools need to be ready.
+=======
+* [Bitmark Accounts](creating-bitmark-account) are created.
+
+* [Bitmark Certificates](issuing-bitmarks) are registered.
+
+* In case of using the Bitmark CLI, [Payment on Bitmark CLI](payment-for-bitmark-cli) tools need to be ready.
+>>>>>>> generate static website from md using jekyll
 
 <br>
 <br>
@@ -35,8 +56,13 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 * From the **Properties > YOURS** screen, tap on the desired property to open the Property details screen
 
     <div style="background-color: #efefef; text-align: center;">
+<<<<<<< HEAD
         <img src="images/TransferBitmark_1.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
         <img src="images/TransferBitmark_2.png" alt="Property Details screen" title="Property Details screen" width="250" style="padding: 20px" />
+=======
+        <img src="/images/TransferBitmark_1.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
+        <img src="/images/TransferBitmark_2.png" alt="Property Details screen" title="Property Details screen" width="250" style="padding: 20px" />
+>>>>>>> generate static website from md using jekyll
     </div>
 
     <br>
@@ -44,8 +70,13 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 * Tap on the `...` on the top right corner to open the options and select the **TRANSFER** option
 
     <div style="background-color: #efefef; text-align: center;">
+<<<<<<< HEAD
         <img src="images/TransferBitmark_3.png" alt="Property options" title="Property options" width="250" style="padding: 20px" />
         <img src="images/TransferBitmark_4.png" alt="Bitmark Transfer screen" title="Bitmark Transfer screen" width="250" style="padding: 20px" />
+=======
+        <img src="/images/TransferBitmark_3.png" alt="Property options" title="Property options" width="250" style="padding: 20px" />
+        <img src="/images/TransferBitmark_4.png" alt="Bitmark Transfer screen" title="Bitmark Transfer screen" width="250" style="padding: 20px" />
+>>>>>>> generate static website from md using jekyll
     </div>
 
     <br>
@@ -53,8 +84,13 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 * Fill in the recipient account and tap **TRANSFER**
 
     <div style="background-color: #efefef; text-align: center;">
+<<<<<<< HEAD
         <img src="images/TransferBitmark_5.png" alt="Enter Account screen" title="Enter Account screen" width="250" style="padding: 20px" />
         <img src="images/TransferBitmark_6.png" alt="Transferring screen" title="Transferring screen" width="250" style="padding: 20px" />
+=======
+        <img src="/images/TransferBitmark_5.png" alt="Enter Account screen" title="Enter Account screen" width="250" style="padding: 20px" />
+        <img src="/images/TransferBitmark_6.png" alt="Transferring screen" title="Transferring screen" width="250" style="padding: 20px" />
+>>>>>>> generate static website from md using jekyll
     </div>
 
     <br>
@@ -62,7 +98,11 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 * Observe changes on the sender side - The property disappears
 
     <div style="background-color: #efefef; text-align: center;">
+<<<<<<< HEAD
         <img src="images/TransferBitmark_7.png" alt="Transferred" title="Transferred" width="250" style="padding: 20px" />
+=======
+        <img src="/images/TransferBitmark_7.png" alt="Transferred" title="Transferred" width="250" style="padding: 20px" />
+>>>>>>> generate static website from md using jekyll
     </div>
 
     <br>
@@ -70,8 +110,13 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 * Observe changes on the recipient side right after the transfer
 
     <div style="background-color: #efefef; text-align: center;">
+<<<<<<< HEAD
         <img src="images/TransferBitmark_8.png" alt="Recipient Properties screen" title="Recipient Properties screen" width="250" style="padding: 20px" />
         <img src="images/TransferBitmark_9.png" alt=" Recipient Properties Details screen" title="Recipient Properties Details screen" width="250" style="padding: 20px" />
+=======
+        <img src="/images/TransferBitmark_8.png" alt="Recipient Properties screen" title="Recipient Properties screen" width="250" style="padding: 20px" />
+        <img src="/images/TransferBitmark_9.png" alt=" Recipient Properties Details screen" title="Recipient Properties Details screen" width="250" style="padding: 20px" />
+>>>>>>> generate static website from md using jekyll
     </div>
 
     <br>
@@ -79,8 +124,13 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 * Observe changes on the recipient side after some minutes
 
     <div style="background-color: #efefef; text-align: center;">
+<<<<<<< HEAD
         <img src="images/TransferBitmark_10.png" alt="Confirmed Properties screen" title="Confirmed Properties screen" width="250" style="padding: 20px" />
         <img src="images/TransferBitmark_11.png" alt="Confirmed Details screen" title="Confirmed Details screen" width="250" style="padding: 20px" />
+=======
+        <img src="/images/TransferBitmark_10.png" alt="Confirmed Properties screen" title="Confirmed Properties screen" width="250" style="padding: 20px" />
+        <img src="/images/TransferBitmark_11.png" alt="Confirmed Details screen" title="Confirmed Details screen" width="250" style="padding: 20px" />
+>>>>>>> generate static website from md using jekyll
     </div>
 
 <br>
