@@ -25,11 +25,7 @@ Assets with titles that have been publicly recorded are more valuable than those
 
 ## Prerequisites
 
-<<<<<<< HEAD
 A Bitmark Account is required for any user who want to interact with the Bitmark Property System. Please refer to the [Bitmark Account](creating-bitmark-account.md) section for instructions on creating a new Bitmark Account.
-=======
-A Bitmark Account is required for any user who want to interact with the Bitmark Property System. Please refer to the [Bitmark Account](creating-bitmark-account) section for instructions on creating a new Bitmark Account.
->>>>>>> generate static website from md using jekyll
 
 <br>
 <br>
@@ -47,13 +43,8 @@ Here are the steps to register a new property using the Bitmark app:
     > It opens the **PROPERTIES > REGISTER** screen
 
     <div style="background-color: #efefef; text-align: center;">
-<<<<<<< HEAD
-        <img src="images/RegisteringProperties_0.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
-        <img src="images/RegisteringProperties_1.png" alt="Properties Register screen" title="Properties Register screen" width="250" style="padding: 20px" />
-=======
         <img src="/images/RegisteringProperties_0.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
         <img src="/images/RegisteringProperties_1.png" alt="Properties Register screen" title="Properties Register screen" width="250" style="padding: 20px" />
->>>>>>> generate static website from md using jekyll
     </div>
 
     <br>
@@ -63,15 +54,9 @@ Here are the steps to register a new property using the Bitmark app:
     > The permission to access `Photos` and/or `Files` must be granted.
 
     <div style="background-color: #efefef; text-align: center;">
-<<<<<<< HEAD
-        <img src="images/RegisteringProperties_2.png" alt="Grant Permission popup" title="Grant Permission popup" width="250" style="padding: 20px" />
-        <img src="images/RegisteringProperties_3.png" alt="Open Photos action sheet" title="Open Photos action sheet" width="250" style="padding: 20px" />
-        <img src="images/RegisteringProperties_4.png" alt="PHOTOS browsed" title="PHOTOS browsed" width="250" style="padding: 20px" />
-=======
         <img src="/images/RegisteringProperties_2.png" alt="Grant Permission popup" title="Grant Permission popup" width="250" style="padding: 20px" />
         <img src="/images/RegisteringProperties_3.png" alt="Open Photos action sheet" title="Open Photos action sheet" width="250" style="padding: 20px" />
         <img src="/images/RegisteringProperties_4.png" alt="PHOTOS browsed" title="PHOTOS browsed" width="250" style="padding: 20px" />
->>>>>>> generate static website from md using jekyll
     </div>
 
     <br>
@@ -85,13 +70,8 @@ Here are the steps to register a new property using the Bitmark app:
     >* For each `Asset`, a user can issue multiple `Bitmark Certificates` - defined by  `number of bitmarks` in the **REGISTER PROPERTY RIGHTS** screen.
 
     <div style="background-color: #efefef; text-align: center;">
-<<<<<<< HEAD
-        <img src="images/RegisteringProperties_5.png" alt="Register Property Rights screen" title="Register Property Rights screen" width="250" style="padding: 20px" />
-        <img src="images/RegisteringProperties_6.PNG" alt="Fill in required information" title="Fill in required information" width="250" style="padding: 20px" />
-=======
         <img src="/images/RegisteringProperties_5.png" alt="Register Property Rights screen" title="Register Property Rights screen" width="250" style="padding: 20px" />
         <img src="/images/RegisteringProperties_6.PNG" alt="Fill in required information" title="Fill in required information" width="250" style="padding: 20px" />
->>>>>>> generate static website from md using jekyll
     </div>
 
     <br>
@@ -103,15 +83,9 @@ Here are the steps to register a new property using the Bitmark app:
     > **NOTE:** It will take a while for the transactions to be confirmed on the Bitmark blockchain after submitted.
 
     <div style="background-color: #efefef; text-align: center;">
-<<<<<<< HEAD
-        <img src="images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
-        <img src="images/RegisteringProperties_8.png" alt="Submission succeeded" title="Submission succeeded" width="250" style="padding: 20px" />
-        <img src="images/RegisteringProperties_9.PNG" alt="Properties added" title="Properties added" width="250" style="padding: 20px" />
-=======
         <img src="/images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
         <img src="/images/RegisteringProperties_8.png" alt="Submission succeeded" title="Submission succeeded" width="250" style="padding: 20px" />
         <img src="/images/RegisteringProperties_9.PNG" alt="Properties added" title="Properties added" width="250" style="padding: 20px" />
->>>>>>> generate static website from md using jekyll
     </div>
 
 <br>

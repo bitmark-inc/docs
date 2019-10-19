@@ -241,11 +241,7 @@ err := bitmark.Offer(params)
 ### Query offering bitmarks
 
 The receiver needs to query if there is any bitmark transfer offer waiting for the countersignature.
-<<<<<<< HEAD
 For the details of query execution, please refer to [Query Bitmark](query.md##Bitmark).
-=======
-For the details of query execution, please refer to [Query Bitmark](query##Bitmark).
->>>>>>> generate static website from md using jekyll
 
 ```javascript
 let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder()

@@ -46,11 +46,7 @@ There are three records related to the Bitmark shares are stored on the Bitmark 
 
 ## Prerequisites of working with bitmark shares using the Bitmark CLI
 
-<<<<<<< HEAD
 Refer the [Payment on Bitmark CLI](payment-for-bitmark-cli.md) document to:
-=======
-Refer the [Payment on Bitmark CLI](payment-for-bitmark-cli) document to:
->>>>>>> generate static website from md using jekyll
 
 * Install the Bitmark-Wallet for transaction payments.
 
