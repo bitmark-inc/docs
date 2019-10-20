@@ -6,9 +6,9 @@
 ### [Bitmark Property System](learning-bitmark/README.md#bitmark-property-system)
   
   * [Bitmark Property System Introduction](learning-bitmark/problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
-  * [The Power of Property Systems](learning-bitmark/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
-  * [Bitmark's Property System](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-property-system)
-  * [Bitmark's Technology](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-technology)
+    * [The Power of Property Systems](learning-bitmark/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
+    * [Bitmark's Property System](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-property-system)
+    * [Bitmark's Technology](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-technology)
 
 ### [Quick Start](learning-bitmark/quick-start/README.md#quick-start)
 
