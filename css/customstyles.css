@@ -275,6 +275,14 @@ div#toc >ul::before {
     padding-left:10px;
 }
 
+div#toc {
+    margin-top: 20px;
+}
+
+div#main {
+    margin-top: 50px;
+}
+
 li.dropdownActive a {
     font-weight: bold;
 }
