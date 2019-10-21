@@ -1,6 +1,6 @@
 # Creating a Bitmark Account
 
-Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-bitmark-account-using-the-bitmark-sdk), or the [Bitmark CLI](#creating-bitmark-account-using-the-bitmark-cli).
+Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-bitmark-account-using-the-bitmark-sdk), or the [Bitmark-CLI](#creating-bitmark-account-using-the-bitmark-cli).
 
 After creating an Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
@@ -12,18 +12,18 @@ Property owners in Bitmark system are identified by their Ed25519 public keys. T
 >       `bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw`
          
        
-*Example — Bitmark Account Number on [Testnet](https://registry.test.bitmark.com/account/fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu/owned):
+*Example — Bitmark Account Number on [Testnet](https://registry.test.bitmark.com/account/fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu/owned):*
 >       `fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu`
 
 ## Creating a Bitmark Account using the Bitmark App
 
-To creat a Bitmark Account with the Bitmark App:
+To create a Bitmark Account using the Bitmark App:
 
 * Download and install the [Android](https://play.google.com/store/apps/details?id=com.bitmark.registry) or [iOS](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) Bitmark App
 
-* Open the app
+* Open the App
 
-* Start creating a new Bitmark Account by tapping the **Create New Account** option
+* Tap the **Create New Account** option
     
     > There are options to enable Touch/Face ID and Notification while creating a new account 
 
@@ -35,12 +35,11 @@ To creat a Bitmark Account with the Bitmark App:
 
     <br>
 
-* Check for the Account Number by accessing **Account > SETTINGS**
+* Look up the Account Number by accessing **Account > SETTINGS**; record it
 
     > The Bitmark App allows users to
     >
-    > * **Copy** the Account Number to clipboard directly by tapping on it 
-    >
+    > * **Copy** the Account Number to clipboard directly by tapping on it; or
     > * **Display** the Account Number as a QR Code by tapping on the QR Code icon.
 
     <div style="background-color: #efefef; text-align: center;">
@@ -60,15 +59,11 @@ To creat a Bitmark Account with the Bitmark App:
 
 ## Creating a Bitmark Account using the Bitmark SDK
 
+This section introduces a simple way to create a new Bitmark Account using the Bitmark JS SDK. For a detailed explanation, further functions, and other languages please consult the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) documents.
 
-> In this section we introduce a very simple way to create a new Bitmark Account using the **Bitmark JS SDK**.<br>
-> For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
+To initialize the Bitmark JS SDK, create a Bitmark Account, and export the related information:
 
-<br>
-
-Here are the steps to install the Bitmark-SDK, initialize its configuration, then create a new Bitmark Account and export the related information:
-
-* Install Bitmark JS SDK
+* Install the Bitmark JS SDK
 
     `# npm install bitmark-sdk`
 
@@ -85,13 +80,11 @@ Here are the steps to install the Bitmark-SDK, initialize its configuration, the
         sdk.init(config);
     ```
 
-    > The SDK supports two options for the network, each requires the corresponding API tokens
+    > The SDK supports two options for the network, each requiring a corresponding API tokens:
     > 
-    > * "livenet" - all the requests are submitted to the public Bitmark blockchain which is the main chain. 
+    > * "livenet" - all requests are submitted to the public Bitmark blockchain, which is the main chain. 
     > 
-    > * "testnet" - all the requests are submitted to the testing Bitmark blockchain which is normally used for testing and developing activities.
-
-<br>
+    > * "testnet" - all  requests are submitted to the testing Bitmark blockchain, which is normally used for testing and development activities.
 
 * Create a new Bitmark account:
 
@@ -99,46 +92,41 @@ Here are the steps to install the Bitmark-SDK, initialize its configuration, the
     let account = new sdk.Account();
     ```
 
-* Get the Account number:
+* Retrieve the Account number:
 
     ```js
     let account_number = account.getAccountNumber();
     ```
 
-* Get the Account seed:
+* Retrieve the Account seed:
     ```js
     let seed = account.getSeed();
     ```
-* Get the Account recovery phrase:
+* Retrieve the Account recovery phrase:
     ```js
     let phrase = account.getRecoveryPhrase();
     ```
 
-## Creating a Bitmark Account using the Bitmark CLI
+## Creating a Bitmark Account using the Bitmark-CLI
 
+This section introduces simple commands to create a new Bitmark Account using the Bitmark-CLI. For the command structures, detailed explanations, and other functions please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) documents.
 
+### The Basics of Bitmark-CLI
 
-> In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
-> For the command structures, detailed explanation, other functions - Please refer the [Bitmark CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) section.
+All Bitmark-CLI commands follow the same basic structure:
 
-<br>
-
-> The basic structure of a Bitmark CLI command:  
->   `bitmark-cli [global-options] command [command-options]`
-
-<br>
+    `$ bitmark-cli [global-options] command [command-options]`
     
-> The Bitmark CLI determines which network to send the command by using the global option `--network` (abbreviation: `-n`). Option values:
-> 
->* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
->
->* `testing`:  a network for testing newly developed programs, it uses testnet coins to pay for transactions.
-> 
->* `local`: a special case for running a regression test network on the loopback interface.
+You will need to send the Bitmark-CLI the global option `--network` (abbreviation: `-n`) to identify the network that you are sending the command to.
 
-<br>
+**Network Options:**
+* `bitmark`:  the live network, which uses live BTC or LTC to pay for the transactions.
+* `testing`:  a network for testing newly developed programs, which uses testnet coins to pay for transactions.
+* `local`: a special case for running a regression test network on the loopback interface.
 
-Here are the steps to create a new Bitmark Account using the Bitmark CLI:
+### Creating the Account
+
+To create a Bitmark Account using the Bitmark App:
 
 * Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
 
@@ -149,17 +137,16 @@ Here are the steps to create a new Bitmark Account using the Bitmark CLI:
     setup -c <node>:2130 -d '<description>' -n
     ```
 
-    >The `setup` command is used to initialize the Bitmark-CLI config file. The command options:
+    >The `setup` command is used to initialize the Bitmark-CLI config file.
     >
+    > **Global Options:**
     >* `network` - The network to which the command is sent.
-    > 
     >* `identity` - The identity of the Bitmark-CLI user.
     >
-    >* `node` - The Bitmark node, to which the Bitmark-CLI connects, all the transactions performed on the Bitmark-CLI are submitted to this node.
-    >
-    >* `description` - The idententity’s description. The command above creates a user with the identity as first and the description as first user.
-    >
-    >* `-n` (abbr. of --new) - Indicate the action of creating a new account.
+    > **Command Options:**
+    >* `node` - The Bitmark node to which the Bitmark-CLI connects and submits its transactions.
+    >* `description` - The identity’s description. 
+    >* `-n` (abbr. of --new) - Indicates that a new account is being created.
     
     *Example:*
  
@@ -167,8 +154,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark CLI:
     $ bitmark-cli -n testing -i first \
     setup -c 128.199.89.154:2130 -d 'first user' -n
     ```
-
-<br>
+> This command creates a user on the testing network using the node 128.199.89.154:2130 with the user having an identity of "first" and a description of "first user".
 
 *  Add an additional Bitmark account
     ```shell
@@ -176,7 +162,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark CLI:
     add -d '<description>' -n
     ```
 
-    > The `add` command is to add a new user after the Bitmark-CLI configuration was initialized. 
+    > The `add` command adds a new user after the Bitmark-CLI configuration was initialized. 
     > The command options have the same meanings as in the `setup` command.
     
     *Example:*  
@@ -185,14 +171,12 @@ Here are the steps to create a new Bitmark Account using the Bitmark CLI:
     add -d 'second user' -n
     ```
 
-<br>
-
 * Check the account numbers
     ```shell
     $ bitmark-cli -n <network> list
     ```
 
-    > The `list` command is to list all the users of the Bitmark-CLI.
+    > The `list` command is lists all the users of the Bitmark-CLI.
     
     *Example:*
 
@@ -205,15 +189,12 @@ Here are the steps to create a new Bitmark Account using the Bitmark CLI:
     ```
 
 
-
-<br>
-
 * Get the account seed and recovery phrase for an identity
     ```shell
     $ bitmark-cli -n <network> -i <identity> seed
     ```
 
-    > The `seed` command is to print out all the information of a Bitmark-CLI user. Because sensitive data is included, the user password is required.
+    > The `seed` command prints out all the information about a Bitmark-CLI user. 
     
     *Example:*
  
@@ -231,11 +212,8 @@ Here are the steps to create a new Bitmark Account using the Bitmark CLI:
     }
     ```
 
-<br>
-
 >**NOTE:** 
 >
->* The account creation commands require users to provide and confirm password
->
->* All the identity-required commands ask for the account password. 
+>* The account creation commands require users to provide and confirm a password.
+>* All identity-required commands ask for the account password. For example, the `seed` command requires it because it outputs sensitive data.
 
