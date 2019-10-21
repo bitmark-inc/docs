@@ -1,15 +1,15 @@
-# Creating Bitmark Account
+# Creating a Bitmark Account
 
 Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-bitmark-account-using-the-bitmark-sdk), or the [Bitmark CLI](#creating-bitmark-account-using-the-bitmark-cli).
 
-After creating the Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
+After creating an Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
 <br>
 <br>
 
-## Bitmark Account Number
+### Bitmark Account Number
 
-Property owners in Bitmark system are identified by their Ed25519 public keys. These public keys are represented by the Bitmark account numbers, which are in based58 format.
+Property owners in Bitmark system are identified by their Ed25519 public keys. These public keys are represented in the Bitmark Property System by Bitmark Account Numbers, which encode the Ed25519 key in based58 format.
 
 > * **Example:** Bitmark Account Number on [Livenet](https://registry.bitmark.com/account/bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw)
 > 
@@ -22,9 +22,8 @@ Property owners in Bitmark system are identified by their Ed25519 public keys. T
 <br>
 <br>
 
-## Creating Bitmark Account using the Bitmark App
+## Creating a Bitmark Account using the Bitmark App
 
-Bitmark App is a simple mobile app which allows anyone to protect their legal rights to their data and other digital assets by registering them as properties on the Bitmark blockchain.
 
 <br>
 Here are the steps to create a new Bitmark Account using the Bitmark App:
@@ -73,7 +72,6 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
 
 ## Creating Bitmark Account using the Bitmark SDK
 
-The Bitmark SDK is a collection of libraries for different programming languages and mobile platforms. In addition to providing language-specific bindings to the Bitmark APIs, the SDK simplifies local key management for signing and encryption.
 
 > In this section we introduce a very simple way to create a new Bitmark Account using the **Bitmark JS SDK**.<br>
 > For the detailed explanation, further, functions and other languages - Please look at the [Bitmark SDK](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-sdk/bitmark-sdk-document.md) section.
@@ -133,7 +131,7 @@ Here are the steps to install the Bitmark-SDK, initialize its configuration, the
 
 ## Creating Bitmark Account using the Bitmark CLI
 
-Bitmark CLI is a command line tool which allows a user to interact with the Bitmark blockchain by connecting to one or several nodes in the network. All the transactions are submitted directly to one of the connected nodes and consequently be verified by the node before be forwarded to the network.
+
 
 > In this section, we introduce very simple commands to create a new Bitmark Account using the Bitmark-CLI
 > For the command structures, detailed explanation, other functions - Please refer the [Bitmark CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) section.
