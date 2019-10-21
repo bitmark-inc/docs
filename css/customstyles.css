@@ -277,6 +277,8 @@ div#toc >ul::before {
 
 div#toc {
     margin-top: 20px;
+    overflow: auto;
+    max-height: 90%;
 }
 
 div#main {
