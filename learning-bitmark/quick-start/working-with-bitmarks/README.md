@@ -2,7 +2,7 @@
 
 Interacting with Bitmark requires the creation of a Bitmark Account. Afterward, you can register Bitmark Certificates for your digital properties, which you may later transfer or divide into Bitmark Shares.
 
-Most work with Bitmark can be done via one of three methods: the [Bitmark App](https://a.bitmark.com/) (for iOS or Android), the [Bitmark SDK](https://github.com/bitmark-inc), or the Bitmark CLI (available as part of the [Bitcoin node](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/quick-start/simple-solution-for-node-setup.md). These documents detail each of these methods. 
+Most work with Bitmark can be done via one of three methods: the [Bitmark App](https://a.bitmark.com/) (for iOS or Android), the [Bitmark SDK](https://github.com/bitmark-inc) (for a variety of languages), or the Bitmark CLI (available as part of the [Bitcoin node](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/quick-start/simple-solution-for-node-setup.md). These documents detail each of these methods. 
 
 ## [Creating a Bitmark Account](creating-bitmark-account.md#creating-bitmark-account)
   
