@@ -14,10 +14,10 @@
 
   * [Running a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
   * [Working with Bitmarks](learning-bitmark/quick-start/working-with-bitmarks/README.md#working-with-bitmarks)
-    * [Creating Bitmark Account](learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
+    * [Creating a Bitmark Account](learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
     * [Registering Bitmark Certificates](learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md#registering-bitmark-certificates)
     * [Transferring Bitmark Certificates](learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md#transferring-bitmark-certificates)
-    * [Bitmark shares](learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
+    * [Working with Bitmark Shares](learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
 
 ### [Contributing to Bitmark](learning-bitmark/contributing-to-bitmark/README.md#contribute-to-bitmark)
 
