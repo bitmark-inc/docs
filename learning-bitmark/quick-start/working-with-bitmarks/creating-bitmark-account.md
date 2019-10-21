@@ -4,29 +4,19 @@ Any user interacting with the Bitmark Property System requires a Bitmark Account
 
 After creating an Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
-<br>
-<br>
-
 ### Bitmark Account Number
 
 Property owners in Bitmark system are identified by their Ed25519 public keys. These public keys are represented in the Bitmark Property System by Bitmark Account Numbers, which encode the Ed25519 key in based58 format.
 
-> * **Example:** Bitmark Account Number on [Livenet](https://registry.bitmark.com/account/bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw)
-> 
+*Example:* Bitmark Account Number on [Livenet](https://registry.bitmark.com/account/bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw)
 >       `bqSUHTVRYnrUPBEU48riv9UwDmdRnHm9Mf9LWYuYEa7JKtqgKw`
->          
-> * **Example:** Bitmark Account Number on [Testnet](https://registry.test.bitmark.com/account/fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu/owned)
-> 
+         
+*Example:* Bitmark Account Number on [Testnet](https://registry.test.bitmark.com/account/fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu/owned)
 >       `fABCJxXc8aYGoj1yLLXmsGdWEo1Y5cZE9Ko5DrHhy4HvgGYMAu`
-
-<br>
-<br>
 
 ## Creating a Bitmark Account using the Bitmark App
 
-
-<br>
-Here are the steps to create a new Bitmark Account using the Bitmark App:
+To creat a Bitmark Account with the Bitmark App:
 
 * Download and install the [Android](https://play.google.com/store/apps/details?id=com.bitmark.registry) or [iOS](https://apps.apple.com/us/app/bitmark-property-registry/id1429427796) Bitmark App
 
@@ -67,10 +57,7 @@ Here are the steps to create a new Bitmark Account using the Bitmark App:
         <img src="images/RecoveryPhrase_2.png" alt="Recovery Phrase" title="Recovery Phrase" width="250" style="padding: 20px" />
     </div>
 
-<br>
-<br>
-
-## Creating Bitmark Account using the Bitmark SDK
+## Creating a Bitmark Account using the Bitmark SDK
 
 
 > In this section we introduce a very simple way to create a new Bitmark Account using the **Bitmark JS SDK**.<br>
@@ -126,10 +113,7 @@ Here are the steps to install the Bitmark-SDK, initialize its configuration, the
     let phrase = account.getRecoveryPhrase();
     ```
 
-<br>
-<br>
-
-## Creating Bitmark Account using the Bitmark CLI
+## Creating a Bitmark Account using the Bitmark CLI
 
 
 
