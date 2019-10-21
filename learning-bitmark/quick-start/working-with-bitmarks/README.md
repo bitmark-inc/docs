@@ -1,6 +1,8 @@
-# Working with bitmarks
+# Working with Bitmarks
 
-## [Creating Bitmark Account](creating-bitmark-account.md#creating-bitmark-account)
+Interacting with Bitmark requires the creation of a Bitmark Account. Afterward, you can register Bitmark Certificates for your digital properties, which you may later transfer or divide into Bitmark Shares.
+
+## [Creating a Bitmark Account](creating-bitmark-account.md#creating-bitmark-account)
   
 * [Bitmark Account Number](creating-bitmark-account.md#bitmark-account-number)
 * [Creating Bitmark Account using the Bitmark App](creating-bitmark-account.md#creating-bitmark-account-using-the-bitmark-app)
@@ -26,7 +28,7 @@
 * [Explore the Bitmark transactions using the Bitmark Registry website](transferring-bitmarks.md#explore-the-bitmark-transactions-using-the-bitmark-registry-website)
 
 
-## [Bitmark shares](using-bitmark-shares.md#bitmark-shares)
+## [Working with Bitmark Shares](using-bitmark-shares.md#bitmark-shares)
   
 * [Bitmark shares related records](using-bitmark-shares.md#bitmark-shares-related-records)
 * [Prerequisites of working with bitmark shares using the Bitmark CLI](using-bitmark-shares.md#prerequisites-of-working-with-bitmark-shares-using-the-bitmark-cli)
