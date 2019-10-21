@@ -115,7 +115,7 @@ This section introduces simple commands to create a new Bitmark Account using th
 
 All Bitmark-CLI commands follow the same basic structure:
 
-    `$ bitmark-cli [global-options] command [command-options]`
+`$ bitmark-cli [global-options] command [command-options]`
     
 You will need to send the Bitmark-CLI the global option `--network` (abbreviation: `-n`) to identify the network that you are sending the command to.
 
@@ -154,7 +154,7 @@ To create a Bitmark Account using the Bitmark App:
     $ bitmark-cli -n testing -i first \
     setup -c 128.199.89.154:2130 -d 'first user' -n
     ```
-> This command creates a user on the testing network using the node 128.199.89.154:2130 with the user having an identity of "first" and a description of "first user".
+    > This command creates a user on the testing network using the node 128.199.89.154:2130 with the user having an identity of "first" and a description of "first user".
 
 *  Add an additional Bitmark account
     ```shell
@@ -212,8 +212,8 @@ To create a Bitmark Account using the Bitmark App:
     }
     ```
 
->**NOTE:** 
->
->* The account creation commands require users to provide and confirm a password.
->* All identity-required commands ask for the account password. For example, the `seed` command requires it because it outputs sensitive data.
+**NOTE:** 
+
+* The account creation commands require users to provide and confirm a password.
+* All identity-required commands ask for the account password. For example, the `seed` command requires it because it outputs sensitive data.
 
