@@ -86,23 +86,23 @@ To initialize the Bitmark JS SDK, create a Bitmark Account, and export the relat
     > 
     > * "testnet" - all  requests are submitted to the testing Bitmark blockchain, which is normally used for testing and development activities.
 
-* Create a new Bitmark account:
+* Create a new Bitmark account
 
     ```js
     let account = new sdk.Account();
     ```
 
-* Retrieve the Account number:
+* Retrieve the Account number
 
     ```js
     let account_number = account.getAccountNumber();
     ```
 
-* Retrieve the Account seed:
+* Retrieve the Account seed
     ```js
     let seed = account.getSeed();
     ```
-* Retrieve the Account recovery phrase:
+* Retrieve the Account recovery phrase
     ```js
     let phrase = account.getRecoveryPhrase();
     ```
