@@ -143,6 +143,7 @@ To create a Bitmark Account using the Bitmark App:
     >* `network` - The network to which the command is sent.
     >* `identity` - The identity of the Bitmark-CLI user.
     >
+    >
     > **Command Options:**
     >* `node` - The Bitmark node to which the Bitmark-CLI connects and submits its transactions.
     >* `description` - The identity’s description. 
