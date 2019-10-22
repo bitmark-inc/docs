@@ -33,10 +33,10 @@ These documents detail the usage of each of these methods.
 ## [Transferring Bitmark Certificates](transferring-bitmarks.md#transferring-bitmark-certificates)
   
 * [Prerequisites](transferring-bitmarks.md#prerequisites)
-* [Transferring bitmarks using Bitmark App](transferring-bitmarks.md#transferring-bitmarks-using-bitmark-app)
-* [Transferring bitmarks using Bitmark SDK](transferring-bitmarks.md#transferring-bitmarks-using-bitmark-sdk)
-* [Transferring bitmarks using Bitmark CLI](transferring-bitmarks.md#transferring-bitmarks-using-bitmark-cli)
-* [Explore the Bitmark transactions using the Bitmark Registry website](transferring-bitmarks.md#explore-the-bitmark-transactions-using-the-bitmark-registry-website)
+* [Transferring bitmarks using the Bitmark App](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-app)
+* [Transferring bitmarks using the Bitmark SDK](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-sdk)
+* [Transferring bitmarks using the Bitmark CLI](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-cli)
+* [Exploreing Bitmark transactions using the Bitmark Registry website](transferring-bitmarks.md#explore-the-bitmark-transactions-using-the-bitmark-registry-website)
 
 
 ## [Working with Bitmark Shares](using-bitmark-shares.md#bitmark-shares)
