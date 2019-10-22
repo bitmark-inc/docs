@@ -18,7 +18,7 @@ Any user who want to interact with the Bitmark Property System must have a Bitma
 
 To register a new property using the Bitmark App:
 
-* On the PROPERTIES screen tap **CREATE FIRST PROPERTY** or **+**
+* On the **PROPERTIES** screen tap **CREATE FIRST PROPERTY** or **+**
 
     > This opens the **PROPERTIES > REGISTER** screen
 
