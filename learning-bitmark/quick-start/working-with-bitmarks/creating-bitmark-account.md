@@ -137,7 +137,7 @@ To create a Bitmark Account using the Bitmark App:
     setup -c <node>:2130 -d '<description>' -n
     ```
 
-    >The `setup` command is used to initialize the Bitmark-CLI config file.
+    >The `setup` command initializes the Bitmark-CLI config file.
     >
     > **Global Options:**
     >* `network` - The network to which the command is sent.
@@ -176,7 +176,7 @@ To create a Bitmark Account using the Bitmark App:
     $ bitmark-cli -n <network> list
     ```
 
-    > The `list` command is lists all the users of the Bitmark-CLI.
+    > The `list` command lists all the users of the Bitmark-CLI.
     
     *Example:*
 
