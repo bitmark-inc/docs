@@ -44,7 +44,7 @@ These documents detail the usage of each of these methods.
 * [About Bitmark shares records](using-bitmark-shares.md#about-bitmark-shares-records)
 * [Prerequisites of working with bitmark shares using the Bitmark CLI](using-bitmark-shares.md#prerequisites-of-working-with-bitmark-shares-using-the-bitmark-cli)
 * [Creating bitmark shares](using-bitmark-shares.md#creating-bitmark-shares)
-  * [Creating bitmark shares from a bitmark](using-bitmark-shares.md#creating-bitmark-shares-from-a-bitmark)
+  * [Creating Bitmark shares from a Bitmark Certificate](using-bitmark-shares.md#creating-bitmark-shares-from-a-bitmark-certificate)
   * [Paying for the bitmark share creation using the Bitmark\-Wallet](using-bitmark-shares.md#paying-for-the-bitmark-share-creation-using-the-bitmark-wallet)
   * [Verifying the status of the share creation transaction](using-bitmark-shares.md#verifying-the-status-of-the-share-creation-transaction)
   * [Verifying that the share has been created and allocated to the owner](using-bitmark-shares.md#verifying-that-the-share-has-been-created-and-allocated-to-the-owner)
