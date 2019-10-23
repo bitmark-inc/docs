@@ -198,10 +198,10 @@ To register a new property using the Bitmar-CLI:
 
     > The `status` commands checks if a Bitmark has been issued
     >
+    >**Command Options:**
     >* `txid` — Lists the transaction being verified, corresponding to the `issueIds` from the `create` command
     >
-    >The returned status:
-    >
+    >**Returns:**
     >* `Pending` - Has not been paid.
     >
     >* `Verified` - Paid but not confirmed on the blockchain.
