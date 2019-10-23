@@ -216,12 +216,12 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
       status -t <transferId>
     ```
 
-    >The `status` command queries a transaction's status. The options:
+    >The `status` command queries a transaction's status.
     >
+    >**Command Options:**
     >* `transferId` - The transfer transaction id, printed as `transferId` in the output of the `transfer` command.
     >
-    >The returned status:
-    >
+    >**Returns:**
     >* `Pending` - Has not been paid.
     >
     >* `Verified` - Paid but not confirmed on the blockchain.
