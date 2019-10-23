@@ -4,7 +4,7 @@ Any user interacting with the Bitmark Property System requires a Bitmark Account
 
 After creating an Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
-### Bitmark Account Number
+### About the Bitmark Account Number
 
 Property owners in Bitmark system are identified by their Ed25519 public keys. These public keys are represented in the Bitmark Property System by Bitmark Account Numbers, which encode the Ed25519 key in based58 format.
 
