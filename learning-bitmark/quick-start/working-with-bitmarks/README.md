@@ -41,7 +41,7 @@ These documents detail the usage of each of these methods.
 
 ## [Working with Bitmark Shares](using-bitmark-shares.md#bitmark-shares)
   
-* [Bitmark shares related records](using-bitmark-shares.md#bitmark-shares-related-records)
+* [About Bitmark shares records](using-bitmark-shares.md#about-bitmark-shares-records)
 * [Prerequisites of working with bitmark shares using the Bitmark CLI](using-bitmark-shares.md#prerequisites-of-working-with-bitmark-shares-using-the-bitmark-cli)
 * [Creating bitmark shares](using-bitmark-shares.md#creating-bitmark-shares)
   * [Creating bitmark shares from a bitmark](using-bitmark-shares.md#creating-bitmark-shares-from-a-bitmark)
