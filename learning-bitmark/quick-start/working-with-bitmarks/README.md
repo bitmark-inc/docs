@@ -42,7 +42,7 @@ These documents detail the usage of each of these methods.
 ## [Working with Bitmark Shares](using-bitmark-shares.md#bitmark-shares)
   
 * [About Bitmark shares records](using-bitmark-shares.md#about-bitmark-shares-records)
-* [Prerequisites of working with bitmark shares using the Bitmark CLI](using-bitmark-shares.md#prerequisites-of-working-with-bitmark-shares-using-the-bitmark-cli)
+* [Prerequisites](using-bitmark-shares.md#prerequisites)
 * [Creating bitmark shares](using-bitmark-shares.md#creating-bitmark-shares)
   * [Creating Bitmark shares from a Bitmark Certificate](using-bitmark-shares.md#creating-bitmark-shares-from-a-bitmark-certificate)
   * [Paying for the bitmark share creation using the Bitmark\-Wallet](using-bitmark-shares.md#paying-for-the-bitmark-share-creation-using-the-bitmark-wallet)
