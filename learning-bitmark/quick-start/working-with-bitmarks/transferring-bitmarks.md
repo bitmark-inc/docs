@@ -183,7 +183,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
 
     ```
 
-    >To execute a bitcoin or litecoin transaction on the local environment, the bitcoind or litecoind need to be running.
+    >To execute a bitcoin or litecoin transaction on the local environment, the bitcoind or litecoind daemon needs to be running.
     >
     > - `payId` - The payment id for transfer transaction, printed in the results as `payId`
     > - `btc address` or `ltc address` - The address for payment, printed in the results as `address` under `BTC` or `LTC`
