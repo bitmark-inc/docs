@@ -50,7 +50,7 @@ These documents detail the usage of each of these methods.
   * [Verifying that the shares have been created and allocated to the owner](using-bitmark-shares.md#verifying-that-the-shares-have-been-created-and-allocated-to-the-owner)
 * [Granting bitmark shares to another account](using-bitmark-shares.md#granting-bitmark-shares-to-another-account)
   * [Initializing a share grant](using-bitmark-shares.md#initializing-a-share-grant)
-  * [Counter signing to accept the shares granting](using-bitmark-shares.md#counter-signing-to-accept-the-shares-granting)
+  * [Counter signing to accept granted shares](using-bitmark-shares.md#counter-signing-to-accept-granted-shares)
   * [Pay for the granting share transaction by LTC](using-bitmark-shares.md#pay-for-the-granting-share-transaction-by-ltc)
   * [Verify the granting](using-bitmark-shares.md#verify-the-granting)
 * [Swapping bitmark shares](using-bitmark-shares.md#swapping-bitmark-shares)
