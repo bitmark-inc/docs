@@ -52,7 +52,7 @@ These documents detail the usage of each of these methods.
   * [Initializing a share grant](using-bitmark-shares.md#initializing-a-share-grant)
   * [Counter signing to accept granted shares](using-bitmark-shares.md#counter-signing-to-accept-granted-shares)
   * [Paying for a share grant](using-bitmark-shares.md#paying-for-a-share-grant)
-  * [Verify the granting](using-bitmark-shares.md#verify-the-granting)
+  * [Verifying a grant](verifying-a-grant)
 * [Swapping bitmark shares](using-bitmark-shares.md#swapping-bitmark-shares)
   * [The sender initializes the swapping share transaction](using-bitmark-shares.md#the-sender-initializes-the-swapping-share-transaction)
     * [Another owner countersign to accept swapping the shares](using-bitmark-shares.md#another-owner-countersign-to-accept-swapping-the-shares)
