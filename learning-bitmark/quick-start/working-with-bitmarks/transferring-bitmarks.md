@@ -102,6 +102,7 @@ To transfer a Bitmark Certificate using the Bitmark JS SDK:
 The Bitmark-CLI allows users to transfer bitmarks by submitting the transactions to its connected node and then broadcasting to the network.
 
 See [The Basics of Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli) for more information on the interface.
+
 To transfer a Bitmark Certificate using the Bitmark-CLI:
 
 * Submit a transfer request
