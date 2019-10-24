@@ -3,7 +3,7 @@ title: Bitmark Glossary
 keywords: terms, glossary
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bitmark-terms-and-glossary.html
+permalink: /bitmark-references/terms-and-glossary/bitmark-terms-and-glossary
 folder: bitmark-references/terms-and-glossary
 ---
 

@@ -9,11 +9,11 @@ entries:
     folderitems:
 
     - title: Introduction
-      url: /learning-bitmark-index.html
+      url: /learning-bitmark/introduction
       output: web
 
     - title: Bitmark Property System
-      url: /problem-we-are-trying-to-solve.html
+      url: /learning-bitmark/problem-we-are-trying-to-solve
       output: web
 
       subfolders:
@@ -22,23 +22,23 @@ entries:
           subfolderitems:
 
             - title: Run a Bitmark Node
-              url: /simple-solution-for-node-setup.html
+              url: /learning-bitmark/quick-start/simple-solution-for-node-setup
               output: web
 
             - title: Creating Bitmark Account
-              url: /creating-bitmark-account.html
+              url: /learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account
               output: web
 
             - title: Registering Bitmark Certificates
-              url: /issuing-bitmarks.html
+              url: /learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks
               output: web
 
             - title: Transferring Bitmark Certificates
-              url: /transferring-bitmarks.html
+              url: /learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks
               output: web
 
             - title: Bitmark shares
-              url: /bitmark-shares.html
+              url: /bitmark-appendix/bitmark-shares
               output: web
 
         - title: Contributing to Bitmark
@@ -46,11 +46,11 @@ entries:
           subfolderitems:
 
             - title: Bitmark Upgrade Proposal
-              url: /bup.html
+              url: /learning-bitmark/contributing-to-bitmark/bup
               output: web
 
             - title: BUG BOUNTY PROGRAM
-              url: /bug-bounty-program.html
+              url: /learning-bitmark/contributing-to-bitmark/bug-bounty-program
               output: web
 
   - title: Bitmark References
@@ -58,11 +58,11 @@ entries:
     folderitems:
 
     - title: Introduction
-      url: /bitmark-references-index.html
+      url: /bitmark-references/introduction
       output: web
 
     - title: Tutorial For Node Setup
-      url: /bitmark-node-setup.html
+      url: /bitmark-references/node-setup/bitmark-node-setup
       output: web
 
       subfolders:
@@ -71,64 +71,59 @@ entries:
           subfolderitems:
 
           - title: Bitmark Blockchain
-            url: /bitmark-blockchain.html
+            url: /bitmark-references/bitmark-node-software/bitmark-blockchain
+            output: web
+
+          - title: RPC Communication
+            url: /bitmark-references/rpc-communication/rpc-communication
             output: web
 
           - title: Block Verification and Synchronization
-            url: /block-verification-and-synchronization.html
+            url: /bitmark-references/bitmark-node-software/block-verification-and-synchronization
             output: web
 
           - title: Storage
-            url: /node-modules.html
+            url: /bitmark-references/bitmark-node-software/node-modules
             output: web
 
           - title: Bitmark Mining
-            url: /mining.html
+            url: /bitmark-references/bitmark-node-software/mining
             output: web
 
           - title: Payment Verification
-            url: /payment-verification.html
+            url: /bitmark-references/bitmark-node-software/payment-verification
             output: web
 
           - title: Security feature of the Bitmark Blockchain
-            url: /security.html
+            url: /bitmark-references/bitmark-node-software/security
             output: web
 
-    - title: RPC Communication
-      url: /rpc-communication.html
-      output: web
-
-      subfolders:
         - title: Bitmark SDK
           output: web
           subfolderitems:
 
           - title: Overview
-            url: /bitmark-sdk-document.html#overview
-            output: web
-
-          - title: Getting Started
-            url: /bitmark-sdk-document.html#getting-started
+            url: /bitmark-references/bitmark-sdk/bitmark-sdk-document
             output: web
 
           - title: Account
-            url: /account.html
+            url: /bitmark-references/bitmark-sdk/account
             output: web
 
           - title: Actions
-            url: /action.html
+            url: /bitmark-references/bitmark-sdk/action
             output: web
 
           - title: Query
-            url: /query.html
+            url: /bitmark-references/bitmark-sdk/query
             output: web
 
           - title: Store Seed
-            url: /store-seed.html
+            url: /bitmark-references/bitmark-sdk/store-seed
             output: web
 
           - title: Web Socket
-            url: /websocket.html
+            url: /bitmark-references/bitmark-sdk/websocket
             output: web
 
       
@@ -137,24 +132,24 @@ entries:
           subfolderitems:
 
           - title: Quick Setup
-            url: /bitmark-cli-quick-setup.html
+            url: /bitmark-references/bitmark-cli/bitmark-cli-quick-setup
             output: web
 
           - title: Bitmark-CLI Command Reference
-            url: /bitmark-cli.html#bitmark-cli-command-reference
+            url: /bitmark-references/bitmark-cli/bitmark-cli#bitmark-cli-command-reference
             output: web
 
           - title: CLI Command Synopsis
-            url: /bitmark-cli.html#cli-command-synopsis
+            url: /bitmark-references/bitmark-cli/bitmark-cli#cli-command-synopsis
             output: web
 
           - title: CLI commands
-            url: /bitmark-cli.html#cli-commands
+            url: /bitmark-references/bitmark-cli/bitmark-cli#cli-commands
             output: web
 
 
     - title: Bitmark Glossary
-      url: /bitmark-terms-and-glossary.html
+      url: /bitmark-references/terms-and-glossary/bitmark-terms-and-glossary
       output: web
 
   - title: Bitmark Appendix
@@ -162,11 +157,11 @@ entries:
     folderitems:
 
     - title: Bitmark versus Ethereum
-      url: /bitmark-eth-comparison.html
+      url: /bitmark-appendix/bitmark-eth-comparison
       output: web
 
     - title: Bitmark shares
-      url: /bitmark-shares.html
+      url: /bitmark-appendix/bitmark-shares
       output: web
 
 

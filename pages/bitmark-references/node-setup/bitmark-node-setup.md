@@ -3,7 +3,7 @@ title: Tutorial For Node Setup
 keywords: node, node setup
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bitmark-node-setup.html
+permalink: /bitmark-references/node-setup/bitmark-node-setup
 folder: bitmark-references/node-setup
 ---
 

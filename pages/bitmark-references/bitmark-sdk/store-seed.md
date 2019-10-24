@@ -3,7 +3,7 @@ title: Store Seed
 keywords: sdk, store seed
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: store-seed.html
+permalink: /bitmark-references/bitmark-sdk/store-seed
 folder: bitmark-references/bitmark-sdk
 ---
 

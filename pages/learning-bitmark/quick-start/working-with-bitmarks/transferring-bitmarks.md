@@ -3,7 +3,7 @@ title: Transferring Bitmark Certificates
 keywords: transaction, transfer
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: transferring-bitmarks.html
+permalink: /learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 

@@ -3,7 +3,7 @@ title: RPC Communication
 keywords: rpc
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: rpc-communication.html
+permalink: /bitmark-references/rpc-communication/rpc-communication
 folder: bitmark-references/rpc-communication
 ---
 

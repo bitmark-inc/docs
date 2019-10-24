@@ -3,7 +3,7 @@ title: Action
 keywords: action, sdk, register asset, issue bitmark, transfer bitmark
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: action.html
+permalink: /bitmark-references/bitmark-sdk/action
 folder: bitmark-references/bitmark-sdk
 ---
 

@@ -3,7 +3,7 @@ title: Bitmark shares
 keywords: bitmark shares
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bitmark-shares.html
+permalink: /bitmark-appendix/bitmark-shares
 folder: bitmark-appendix
 ---
 

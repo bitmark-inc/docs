@@ -3,7 +3,7 @@ title: BUG BOUNTY PROGRAM
 keywords: bug bounty
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bug-bounty-program.html
+permalink: /learning-bitmark/contributing-to-bitmark/bug-bounty-program
 folder: learning-bitmark/contributing-to-bitmark
 ---
 

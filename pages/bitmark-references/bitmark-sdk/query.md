@@ -3,7 +3,7 @@ title: Query
 keywords: sdk, query
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: query.html
+permalink: /bitmark-references/bitmark-sdk/query
 folder: bitmark-references/bitmark-sdk
 ---
 

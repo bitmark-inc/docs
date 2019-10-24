@@ -3,7 +3,7 @@ title: Action
 keywords: sdk, sdk doc
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bitmark-sdk-document.html
+permalink: /bitmark-references/bitmark-sdk/bitmark-sdk-document
 folder: bitmark-references/bitmark-sdk
 ---
 

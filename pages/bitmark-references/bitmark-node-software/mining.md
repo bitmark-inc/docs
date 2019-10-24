@@ -3,7 +3,7 @@ title: Bitmark Mining
 keywords: mining
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: mining.html
+permalink: /bitmark-references/bitmark-node-software/mining
 folder: bitmark-references/bitmark-node-software
 ---
 

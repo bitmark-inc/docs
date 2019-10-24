@@ -3,7 +3,7 @@ title: Creating Bitmark Account
 keywords: create account
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: creating-bitmark-account.html
+permalink: /learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 

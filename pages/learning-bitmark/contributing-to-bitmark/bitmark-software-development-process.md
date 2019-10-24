@@ -3,7 +3,7 @@ title: Bitmark Software Development Process
 keywords: development process, work flow
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bitmark-software-development-process.html
+permalink: /learning-bitmark/contributing-to-bitmark/bitmark-software-development-process
 folder: learning-bitmark/contributing-to-bitmark
 ---
 

@@ -3,7 +3,7 @@ title: Block Verification and Synchronization
 keywords: blockchain, verification, sync, synchronization
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: block-verification-and-synchronization.html
+permalink: /bitmark-references/bitmark-node-software/block-verification-and-synchronization
 folder: bitmark-references/bitmark-node-software
 ---
 

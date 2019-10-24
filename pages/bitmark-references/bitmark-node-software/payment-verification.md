@@ -3,7 +3,7 @@ title: Payment Verification
 keywords: payment, payment verification
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: payment-verification.html
+permalink: /bitmark-references/bitmark-node-software/payment-verification
 folder: bitmark-references/bitmark-node-software
 ---
 

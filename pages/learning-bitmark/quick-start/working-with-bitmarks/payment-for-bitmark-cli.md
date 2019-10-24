@@ -3,7 +3,7 @@ title: Bitmark transaction payment
 keywords: transaction payment
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: payment-for-bitmark-cli.html
+permalink: /learning-bitmark/quick-start/working-with-bitmarks/payment-for-bitmark-cli
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 

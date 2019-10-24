@@ -3,7 +3,7 @@ title: Account
 keywords: account, sdk
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: account.html
+permalink: /bitmark-references/bitmark-sdk/account
 folder: bitmark-references/bitmark-sdk
 ---
 

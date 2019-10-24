@@ -3,7 +3,7 @@ title: Basic Bitmark Blockchain Overview
 keywords: blockchain
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bitmark-blockchain.html
+permalink: /bitmark-references/bitmark-node-software/bitmark-blockchain
 folder: bitmark-references/bitmark-node-software
 ---
 

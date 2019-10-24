@@ -3,7 +3,7 @@ title: Web Socket
 keywords: sdk, web socket
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: websocket.html
+permalink: /bitmark-references/bitmark-sdk/websocket
 folder: bitmark-references/bitmark-sdk
 ---
 

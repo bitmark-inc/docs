@@ -3,7 +3,7 @@ title: Account Migration
 keywords: sdk, migration
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: migration.html
+permalink: /bitmark-references/bitmark-sdk/migration
 folder: bitmark-references/bitmark-sdk
 ---
 

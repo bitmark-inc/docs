@@ -3,7 +3,7 @@ title: Bitmark-CLI Quick Setup
 keywords: cli, bitmark-cli, command line interface, quick setup
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bitmark-cli-quick-setup.html
+permalink: /bitmark-references/bitmark-cli/bitmark-cli-quick-setup
 folder: bitmark-references/bitmark-cli
 ---
 

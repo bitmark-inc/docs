@@ -3,7 +3,7 @@ title: Security feature of the Bitmark Blockchain
 keywords: security
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: security.html
+permalink: /bitmark-references/bitmark-node-software/security
 folder: bitmark-references/bitmark-node-software
 ---
 

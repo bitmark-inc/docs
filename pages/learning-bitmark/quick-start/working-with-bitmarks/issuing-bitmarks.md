@@ -3,7 +3,7 @@ title: Registering Bitmark Certificates
 keywords: register bitmark certificates
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: issuing-bitmarks.html
+permalink: /learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 

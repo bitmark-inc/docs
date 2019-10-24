@@ -3,7 +3,7 @@ title: Bitmark versus Ethereum
 keywords: ethereum, bitmarkvsethereum
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: bitmark-eth-comparison.html
+permalink: /bitmark-appendix/bitmark-eth-comparison
 folder: bitmark-appendix
 ---
 

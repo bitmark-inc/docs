@@ -3,7 +3,7 @@ title: Bitmark Property System Introduction
 keywords: introduction
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: problem-we-are-trying-to-solve.html
+permalink: /learning-bitmark/problem-we-are-trying-to-solve
 folder: learning-bitmark
 ---
 

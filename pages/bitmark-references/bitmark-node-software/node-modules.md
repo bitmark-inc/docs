@@ -3,7 +3,7 @@ title: Node Modules
 keywords: node modules, storage
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: node-modules.html
+permalink: /bitmark-references/bitmark-node-software/node-modules
 folder: bitmark-references/bitmark-node-software
 ---
 
