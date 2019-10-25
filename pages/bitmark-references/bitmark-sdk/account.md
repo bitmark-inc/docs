@@ -17,6 +17,8 @@ An account incorporates the public-private key-pair and the private key is requi
 
 Create a new identity to participate Bitmark blockchain.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let account = new sdk.Account();
 
@@ -25,18 +27,23 @@ const Account = sdk.Account;
 let account = new Account();
 
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 let account = try Account()
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Account account = new Account();
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 acct, err := account.New()
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Get the account number
 
@@ -47,24 +54,31 @@ The account number of an account serves as a pseudonymous identifier within the 
 - **sender** of a bitmark transfer offer
 - **receiver** of a bitmark transfer offer
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let accountNumber = account.getAccountNumber();
 // ffzcoJeg7p6kJrV6VNhS6juuceTCKMmek1WrXopvbzNTvYqANy
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 let accountNumber = account.accountNumber()
 // ffzcoJeg7p6kJrV6VNhS6juuceTCKMmek1WrXopvbzNTvYqANy
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 String accountNumber = account.getAccountNumber();
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 acct, _ := account.New()
 accountNumber := acct.AccountNumber()
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Export an account
 
@@ -76,31 +90,40 @@ Both seed and recovery phrase can be used to derive the original private key of 
 
 The seed is the more compact format of an exported account. See [Store seed](store-seed.md) to learn how to securely store seeds in mobile phones.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let seed = account.getSeed();
 // 9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 let seed = try account.toSeed()
 // 5XEECttvVsk5xPjZ1zrgtWoauw2xmPwTKCWEN5GF24UpaGZhAGS6tXd
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Seed seed = account.getSeed();
 String encodedSeed = seed.getEncodedSeed();
 // 9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 acct, _ := account.New()
 seed := acct.Seed()
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Recovery Phrase
 
 The recovery phrase, which consists of 12 [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior for human interaction compared to the handling of seed. If you don't custody the seeds of your users, make sure you present the recovery phrase to them and teach them [how to store it in a secure place](https://help.trustwallet.com/hc/en-us/articles/360016509753-Best-Practices-for-Storing-Your-Recovery-Phrase). Currently English and traditional Chinese phrases are supported.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 // English version
 let recoveryPhrase = account.getRecoveryPhrase();
@@ -112,7 +135,8 @@ let recoveryPhrase = account.getRecoveryPhrase("en");
 let recoveryPhrase = account.getRecoveryPhrase("cn");
 // "箱 阻 起 归 彻 矮 问 栽 瓜 鼓 支 乐"
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 // English version
 let phrase = try account.getRecoverPhrase(language: .english)
@@ -120,7 +144,8 @@ let phrase = try account.getRecoverPhrase(language: .english)
 // Traditional Chinese version
 let phrase = try account.getRecoverPhrase(language: .chineseTraditional)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 // English ver
 RecoveryPhrase recoveryPhrase = account.getRecoveryPhrase();
@@ -136,11 +161,14 @@ RecoveryPhrase recoveryPhrase = account.getRecoveryPhrase(Locale.TRADITIONAL_CHI
 String[] mnemonicWords = recoveryPhrase.getMnemonicWords();
 // ["箱", "阻", "起", "归", "彻", "矮", "问", "栽", "瓜", "鼓", "支", "乐"]
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 acct, _ := account.New()
 phrase, err := acct.RecoveryPhrase(language.AmericanEnglish)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Import an account
 
@@ -150,26 +178,35 @@ As mentioned in [Export an account](#Export-an-account), an account could be exp
 
 To instantiate an account from a given seed.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let account = Account.fromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8");
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 account = Account(fromSeed: "5XEECttvVsk5xPjZ1zrgtWoauw2xmPwTKCWEN5GF24UpaGZhAGS6tXd")
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Account account = Account.fromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8");
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 acct, err := account.FromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8")
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Recover from phrase
 
 To instantiate an account from a given recovery phrase.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 // English version
 let account = Account.fromRecoveryPhrase("name gaze apart lamp lift zone believe steak session laptop crowd hill");
@@ -180,7 +217,8 @@ let account = Account.fromRecoveryPhrase("name gaze apart lamp lift zone believe
 // Chinese version
 let account = Account.fromRecoveryPhrase("箱 阻 起 归 彻 矮 问 栽 瓜 鼓 支 乐", "cn");
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 // English version
 let account = try Account(recoverPhrase: [
@@ -195,7 +233,8 @@ let account = try Account(recoverPhrase: [
     language: .chineseTraditional
 )
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Account account = Account.fromRecoveryPhrase("name", "gaze", "apart", "lamp", "lift", "zone", "believe", "steak", "session", "laptop", "crowd", "hill"); // English
 
@@ -203,7 +242,8 @@ Account account = Account.fromRecoveryPhrase("name", "gaze", "apart", "lamp", "l
 Account account = Account.fromRecoveryPhrase("箱", "阻", "起", "归", "彻", "矮", "问", "栽", "瓜", "鼓", "支", "乐"); // Chinese
 
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 acct, err := account.FromRecoveryPhrase(
     []string{
@@ -213,11 +253,15 @@ acct, err := account.FromRecoveryPhrase(
     language.AmericanEnglish,
 )
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Sign and Verify
 
 An account can be used to sign arbitrary message, and any party with the received message and the corresponding signature can validate if the message was created by a known sender (authentication), and the message was not altered in transit (integrity). This functionality is usually useful when you have a server application which needs to authenticate if the requests are from valid users.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let account = new Account();
 let message = "Hello, world!"; // message could be either string or buffer
@@ -226,7 +270,8 @@ let signature = account.sign(message); // signature is a buffer
 let accountNumber = account.getAccountNumber();
 let isAuthentic = Account.verify(accountNumber, message, signature);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 account := try Account()
 
@@ -238,7 +283,8 @@ let signature = try account.sign(message: message)
 let senderAccountNumber = account.address
 let isAuthentic = senderAccountNumber.verify(message: message, signature: signature)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 final Account account = new Account();
 final accountNumber = account.getAccountNumber();
@@ -251,7 +297,8 @@ byte[] signature = account.sign(message);
 boolean verified = Account.verify(accountNumber, signature, message);
 
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 // client side
 acct, _ := account.FromSeed("YOUR SEED")
@@ -262,24 +309,33 @@ sig := acct.Sign(msg)
 // server side can verify if the message is from the client and
 err := account.Verify(acct.AccountNumber(), msg, sig)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Validate an account number
 
 The function returns an error to indicate whether a given account number is valid in current runtime environment, i.e.,
 the format is correct and its network matches to the network specified in the SDK config during initialization.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let isValid = Account.isValidAccountNumber(accountNumber);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 let isValid = Account.isValidAccountNumber(accountNumber)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 boolean isValid = Account.isValidAccountNumber(accountNumber);
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 err := account.ValidateAccountNumber("e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog")
 ```
+{% endcodetab %}
+{% endcodetabs %}

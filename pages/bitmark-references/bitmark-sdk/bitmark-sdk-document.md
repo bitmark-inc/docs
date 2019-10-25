@@ -21,14 +21,18 @@ You can work with the Bitmark blockchain to look up Bitmark certificates or even
 
 ## Installation
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 npm install bitmark-sdk-js
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 pod 'BitmarkSDK'
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 // From your build.gradle
 repositories {
@@ -42,10 +46,13 @@ dependencies {
     implementation 'com.bitmark.sdk:android-sdk:2.1.0' // Android SDK
 }
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 go get github.com/bitmark-inc/bitmark-sdk-go
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Get your API token
 
@@ -59,6 +66,8 @@ Before working with the Bitmark blockchain, you'll need to configure the SDK for
 
 Every code example in other sections presumes the SDK is already correctly initialized.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 const sdk = require('bitmark-sdk-js');
 
@@ -69,7 +78,8 @@ const config = {
 
 sdk.init(config);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 import BitmarkSDK
 
@@ -77,12 +87,14 @@ BitmarkSDK.initialize(config: SDKConfig(apiToken: "api-token",
                                         network: .testnet,
                                         urlSession: URLSession.shared))
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 final GlobalConfiguration.Builder builder = GlobalConfiguration.builder().withApiToken("api-token").withNetwork(Network.LIVE_NET);
 BitmarkSDK.init(builder);
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 import sdk "github.com/bitmark/bitmark-inc/bitmark-sdk-go"
 
@@ -97,3 +109,5 @@ func main() {
 	sdk.Init(config)
 }
 ```
+{% endcodetab %}
+{% endcodetabs %}

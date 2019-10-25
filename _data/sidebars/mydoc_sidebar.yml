@@ -8,10 +8,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Introduction
-      url: /learning-bitmark/introduction
-      output: web
-
     - title: Bitmark Property System
       url: /learning-bitmark/problem-we-are-trying-to-solve
       output: web
@@ -56,10 +52,6 @@ entries:
   - title: Bitmark References
     output: web, pdf
     folderitems:
-
-    - title: Introduction
-      url: /bitmark-references/introduction
-      output: web
 
     - title: Tutorial For Node Setup
       url: /bitmark-references/node-setup/bitmark-node-setup

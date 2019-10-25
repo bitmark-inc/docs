@@ -18,6 +18,8 @@ If an asset record with the same fingerprint value already exists in the blockch
 
 An asset record won't be added to the blockchain without accompanying bitmark issuances (refer to the next section for more info). The "orphaned" asset records will be vanished after 3 days.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let params = Asset.newRegistrationParams(assetName, metadata);
 await params.setFingerprint(filePath);
@@ -25,7 +27,8 @@ params.sign(account);
 
 let response = await Asset.register(params);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 var params = try Asset.newRegistrationParams(name: "asset_name",
                                             metadata: ["desc": "sdk example"])
@@ -36,7 +39,8 @@ try params.sign(account)
 
 let assetId = try Asset.register(params)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Map<String, String> metadata = new HashMap<>(){{
 	put("name", "name");
@@ -57,7 +61,8 @@ Asset.register(params, new Callback1<RegistrationResponse>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 registrant, _ := account.FromSeed("USER_A_SEED")
 params, _ := asset.NewRegistrationParams(
@@ -68,6 +73,8 @@ params.SetFingerprintFromData([]byte("Hello, world!"))
 params.Sign(registrant)
 assetID, err := asset.Register(params)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 # Issue bitmarks
 
@@ -75,13 +82,16 @@ This system records ownership claims for digital assets as digital property titl
 
 After the asset is registered, you can issue bitmarks with a permanent reference to the corresponding asset record.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let params = Bitmark.newIssuanceParams(assetId, quantity = 100);
 params.sign(account);
 
 let bitmarkIds = Bitmark.issue(params);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 var params = try Bitmark.newIssuanceParams(assetId: assetId,
                                             owner: issuer.accountNumber,
@@ -90,7 +100,8 @@ try params.sign(issuer)
 
 let bitmarkIds = try Bitmark.issue(params)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Address owner = account.toAddress();
 IssuanceParams params = new IssuanceParams(assetId, issuer, quantity);
@@ -107,13 +118,16 @@ Bitmark.issue(params, new Callback1<List<String>>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 issuer, _ := account.FromSeed("USER_A_SEED")
 params := bitmark.NewIssuanceParams("YOUR ASSET ID", 10)
 params.Sign(issuer)
 bitmarkIDs, err := bitmark.Issue(params)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 # Transfer a bitmark
 
@@ -135,6 +149,8 @@ A newly created bitmark can be transferred right after the issue tx is sent. Aft
 
 The sender can transfer a bitmark to another account without additional consent.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let params = Bitmark.newTransferParams(receiverAccountNumber);
 await params.fromBitmark(bitmarkId); // asynchronous, just to check the head_id
@@ -143,7 +159,8 @@ params.sign(account);
 
 let response = await Bitmark.transfer(params);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 var params = try Bitmark.newTransferParams(to: receiverAccountNumber)
 try params.from(bitmarkID: bitmarkId)
@@ -151,7 +168,8 @@ try params.sign(account)
 
 let txId = try Bitmark.transfer(params)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 // Get the link from bitmarkId
 // You can use traditional callback or modern await
@@ -174,7 +192,8 @@ Bitmark.transfer(params, new Callback1<String>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 sender, _ := account.FromSeed("USER_A_SEED")
 params, _ := bitmark.NewTransferParams("YOUR RECEIVER ACCOUNT NUMBER")
@@ -182,6 +201,8 @@ params.FromBitmark("YOUR BITMARK ID")
 params.Sign(sender)
 txID, err := bitmark.Transfer(params)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Countersigned transfer
 
@@ -191,6 +212,8 @@ For some scenario, the developer want to get a permission from the receiver befo
 
 The current owner of a bitmark can propose a transfer offer for another account. The actual ownership transfer won't happen until the receiver accepts the offer.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let params = Bitmark.newTransferOfferParams(receiverAccountNumber);
 await params.fromBitmark(bitmarkId); // asynchrous, just to check the head_id
@@ -198,7 +221,8 @@ await params.fromBitmark(bitmarkId); // asynchrous, just to check the head_id
 params.sign(senderAccount);
 let response = await Bitmark.offer(params);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 var params := Bitmark.newOfferParams(to: receiverAccountNumber, info: nil) // info: extra info attach to the transfer offer, it can be nil
 try params.from(bitmarkID: bitmarkId)
@@ -206,7 +230,8 @@ try params.sign(account)
 
 try Bitmark.offer(withOfferParams: params)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 // Get the link from bitmarkId
 // You can use traditional callback or modern await
@@ -229,7 +254,8 @@ Bitmark.offer(params, new Callback1<String>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 sender, _ := account.FromSeed("USER_A_SEED")
 params, _ := bitmark.NewOfferParams("YOUR RECEIVER ACCOUNT NUMBER", nil)
@@ -237,12 +263,16 @@ params.FromBitmark("YOUR BITMARK ID")
 params.Sign(sender)
 err := bitmark.Offer(params)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Query offering bitmarks
 
 The receiver needs to query if there is any bitmark transfer offer waiting for the countersignature.
 For the details of query execution, please refer to [Query Bitmark](query.md##Bitmark).
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder()
     .offerFrom("e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog")
@@ -251,14 +281,16 @@ let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder()
 
 let response = await Bitmark.list(bitmarkQueryParams);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 let query = try Bitmark.newBitmarkQueryParams()
     .limit(size: 100)
     .offer(from: "e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog")
 let bitmarks = try Bitmark.list(params: query)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 BitmarkQueryBuilder builder = new BitmarkQueryBuilder().offerFrom("e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog");
 Bitmark.list(builder, new Callback1<GetBitmarksResponse>() {
@@ -273,11 +305,14 @@ Bitmark.list(builder, new Callback1<GetBitmarksResponse>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 builder := bitmark.NewQueryParamsBuilder().OfferTo("YOUR RECEIVER ACCOUNT NUMBER")
 bitmarks, referencedAssets, err := bitmark.List(builder)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Accept the bitmark transfer offer
 
@@ -285,6 +320,8 @@ If the receiver decides to accept the bitmark, the countersignature is generated
 
 The status of the bitmark will change from `offering` to `transferring`.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let transferOfferResponseParams = Bitmark.newTransferResponseParams(BITMARK_CONSTANTS.TRANSFER_OFFER_RESPONSE_TYPES.ACCEPT);
 await transferOfferResponseParams.fromBitmark(bitmark.id);  // asynchrous, just to get offer from Bitmark
@@ -293,13 +330,15 @@ transferOfferResponseParams.sign(receiverAccount);
 
 response = await Bitmark.response(transferOfferResponseParams, receiverAccount);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 var responseParams = try Bitmark.newTransferResponseParams(withBitmark: receivingBitmark, action: .accept)
 try responseParams.sign(receiverAccount)
 try Bitmark.response(withResponseParams: responseParams)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 TransferResponseParams params = TransferResponseParams.accept(offerRecord);
 params.sign(receiverKey);
@@ -315,7 +354,8 @@ Bitmark.respond(params, new Callback1<String>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 bmk, _ := bitmark.Get("YOUR BITMARK ID")
 receiver, _ := account.FromSeed("USER_B_SEED")
@@ -323,12 +363,16 @@ params := bitmark.NewTransferResponseParams(bmk, bitmark.Accept)
 params.Sign(receiver)
 _, err := bitmark.Respond(params)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Reject the transfer offer
 
 The receiver can also reject the bitmark transfer offer.
 The status of the bitmark will reverted to `settled`, and the sender can create a new transfer offer.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let transferOfferResponseParams = Bitmark.newTransferResponseParams(BITMARK_CONSTANTS.TRANSFER_OFFER_RESPONSE_TYPES.REJECT);
 await transferOfferResponseParams.fromBitmark(bitmark.id);  // asynchronous, just to get offer from Bitmark
@@ -337,13 +381,15 @@ transferOfferResponseParams.sign(receiverAccount);
 
 response = await Bitmark.response(transferOfferResponseParams, receiverAccount);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 var responseParams = try Bitmark.newTransferResponseParams(withBitmark: receivingBitmark, action: .reject)
 try responseParams.sign(receiverAccount)
 try Bitmark.response(withResponseParams: responseParams)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 TransferResponseParams params = TransferResponseParams.reject(offerRecord);
 params.sign(receiverKey);
@@ -359,7 +405,8 @@ Bitmark.respond(params, new Callback1<String>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 bmk, _ := bitmark.Get("YOUR BITMARK ID")
 receiver, _ := account.FromSeed("USER_B_SEED")
@@ -367,6 +414,8 @@ params := bitmark.NewTransferResponseParams(bmk, bitmark.Reject)
 params.Sign(receiver)
 _, err := bitmark.Respond(params)
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Cancel the transfer offer
 
@@ -374,6 +423,8 @@ If the receiver hasn't responded to the bitmark transfer offer (neither accepted
 
 Similar to the case of the receiver rejecting the offer, the status of the bitmark will be set to `settled` again, and becomes available for the next transfer.
 
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 let transferOfferResponseParams = Bitmark.newTransferResponseParams(BITMARK_CONSTANTS.TRANSFER_OFFER_RESPONSE_TYPES.CANCEL);
 await transferOfferResponseParams.fromBitmark(bitmark.id);  // asynchronous, just to get offer from Bitmark
@@ -381,13 +432,15 @@ await transferOfferResponseParams.fromBitmark(bitmark.id);  // asynchronous, jus
 
 response = await Bitmark.response(transferOfferResponseParams, senderAccount);
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 var responseParams = try Bitmark.newTransferResponseParams(withBitmark: bitmark, action: .cancel)
 try responseParams.sign(senderAccount)
 try Bitmark.response(withResponseParams: responseParams)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 TransferResponseParams params = TransferResponseParams.cancel(offerRecord, sender);
 params.sign(senderKey);
@@ -403,7 +456,8 @@ Bitmark.respond(params, new Callback1<String>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 bmk, _ := bitmark.Get("YOUR BITMARK ID")
 sender, _ := account.FromSeed("USER_A_SEED")
@@ -411,3 +465,5 @@ params := bitmark.NewTransferResponseParams(bmk, bitmark.Cancel)
 params.Sign(sender)
 _, err := bitmark.Respond(params)
 ```
+{% endcodetab %}
+{% endcodetabs %}

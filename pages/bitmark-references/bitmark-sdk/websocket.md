@@ -30,9 +30,9 @@ Bitmark SDK offers Web Socket event triggering to help the application can be no
 
 Note: The attributes name could be different depends on the SDK is used. This instruction prefers the Java SDK for the explanation.
 
-## Java
-
-#### Connect/Disconnect
+### Connect/Disconnect
+{% codetabs %}
+{% codetab Java %}
 ```java
 WebSocket.ConnectionEvent connEvent = new WebSocket.ConnectionEvent() {
             @Override
@@ -58,7 +58,18 @@ ws.connect(authKeyPair);
 // disconnect
 ws.disconnect();
 ```
-#### Subscribe/Unsubscribe
+{% endcodetab %}
+{% codetab Swift %}
+```swift
+// TODO
+```
+{% endcodetab %}
+{% endcodetabs %}
+
+
+### Subscribe/Unsubscribe
+{% codetabs %}
+{% codetab Java %}
 ```java
 // subscribe
 ws.subscribeBitmarkChanged(
@@ -89,6 +100,10 @@ ws.subscribeBitmarkChanged(
 // unsubscribe
 ws.unsubscribeBitmarkChanged(address);
 ```
-
-
-## Swift
+{% endcodetab %}
+{% codetab Swift %}
+```swift
+// TODO
+```
+{% endcodetab %}
+{% endcodetabs %}

@@ -4,6 +4,7 @@
 <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
 <meta name="keywords" content="{{page.tags}}{% if page.tags %}, {% endif %} {{page.keywords}}">
 <title>{{ page.title }} | {{ site.site_title }}</title>
+
 <link rel="stylesheet" href="{{ "/css/syntax.css" }}">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,6 +31,9 @@
 <script src="{{ "/js/customscripts.js" }}"></script>
 
 <link rel="shortcut icon" href="{{ "/assets/images/favicon.ico"  }}">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -48,14 +48,18 @@ An asset record is available when it's registered and there is at least one acco
 
 ### Query for a specific asset
 
+{% codetabs %}
+{% codetab JS %}
 ````javascript
 let response = await Asset.get(assetId);
 ````
-
+{% endcodetab %}
+{% codetab Swift %}
 ````swift
 let response = Asset.get(assetID: assetId)
 ````
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 import (
 	"github.com/bitmark-inc/bitmark-sdk-go/asset"
@@ -66,7 +70,8 @@ func getAssetExample() {
     asset, err := asset.Get(assetId)
 }
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Asset.get(assetId, new Callback1<AssetRecord>() {
             @Override
@@ -80,6 +85,8 @@ Asset.get(assetId, new Callback1<AssetRecord>() {
             }
         });
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Query for a set of assets
 
@@ -87,6 +94,8 @@ Asset.get(assetId, new Callback1<AssetRecord>() {
 
 Use the account number of the registrant as the query argument.
 
+{% codetabs %}
+{% codetab JS %}
 ````javascript
 let assetQueryParams = Asset.newAssetQueryBuilder()
     .registeredBy("ec6yMcJATX6gjNwvqp8rbc4jNEasoUgbfBBGGyV5NvoJ54NXva")
@@ -96,7 +105,8 @@ let assetQueryParams = Asset.newAssetQueryBuilder()
 
 let response = await Asset.list(assetQueryParams);
 ````
-
+{% endcodetab %}
+{% codetab Swift %}
 ````swift
 let params = try Asset.newQueryParams()
                 .limit(size: 100)
@@ -104,7 +114,8 @@ let params = try Asset.newQueryParams()
 
 let assets = try Asset.list(params: params)
 ````
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 // import bmAsset "github.com/bitmark-inc/bitmark-sdk-go/asset"
 params := bmAsset.NewQueryParamsBuilder().
@@ -112,7 +123,8 @@ params := bmAsset.NewQueryParamsBuilder().
 		Limit(10)
 assets, err := bmAsset.List(params)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 AssetQueryBuilder builder = new AssetQueryBuilder().limit(limit).registeredBy(registrant);
 Asset.list(builder, new Callback1<List<AssetRecord>>() {
@@ -127,7 +139,8 @@ Asset.list(builder, new Callback1<List<AssetRecord>>() {
             }
         });
 ```
-
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Transaction (tx)
 
@@ -159,15 +172,24 @@ Actions which are applied to the same bitmark will create a chain of transaction
 
 ### Query for a specific transaction
 
+{% codetabs %}
+{% codetab JS %}
 ````javascript
 let txResponse = await Transaction.get(txId);
 ````
-
+{% endcodetab %}
+{% codetab Swift %}
+```swift
+let tx = try Transaction.get(transactionID: "3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1")
+```
+{% endcodetab %}
+{% codetab Go %}
 ```go
 // import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"
 tx, err := bmTx.Get("3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1")
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Transaction.get(txId, new Callback1<GetTransactionResponse>() {
             @Override
@@ -181,10 +203,8 @@ Transaction.get(txId, new Callback1<GetTransactionResponse>() {
             }
         });
 ```
-
-```swift
-let tx = try Transaction.get(transactionID: "3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1")
-```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Query for a set of transactions
 
@@ -192,6 +212,8 @@ let tx = try Transaction.get(transactionID: "3bfe21170de3ff1767a166896cf9c69c125
 
 A list of transaction records to show the ownership changes of a bitmark. If a bitmark is issued by user A, and then transferred to user B and C, the return will include 3 transactions with user A, B and C as transaction owners respectively.
 
+{% codetabs %}
+{% codetab JS %}
 ````javascript
 let transactionQueryParams = Transaction.newTransactionQueryBuilder()
     .referencedBitmark("c8e021c1a093c32909e4d29b4624f8a5443e349a597314b7c9527ce310749121")
@@ -199,20 +221,23 @@ let transactionQueryParams = Transaction.newTransactionQueryBuilder()
 
 let response = await Transaction.list(transactionQueryParams);
 ````
-
+{% endcodetab %}
+{% codetab Swift %}
 ````swift
 let query = try Transaction.newTransactionQueryParams()
     .referenced(toBitmarkID: "58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518")
 let (txs, _) = try Transaction.list(params: query)
 ````
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 // import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"
 params := bmTx.NewQueryParamsBuilder().
     ReferencedBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518")
 txs, referencedAssets, err := bmTx.List(params)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 TransactionQueryBuilder builder = new TransactionQueryBuilder()
                                 .referencedBitmark("58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518");
@@ -228,11 +253,15 @@ Transaction.list(builder, new Callback1<GetTransactionsResponse>() {
             }
         });
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 #### the transaction history of an account
 
 <!-- TODO: what does this mean? -->
 
+{% codetabs %}
+{% codetab JS %}
 ````javascript
 let transactionQueryParams = Transaction.newTransactionQueryBuilder()
     .ownedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9")
@@ -240,20 +269,23 @@ let transactionQueryParams = Transaction.newTransactionQueryBuilder()
 
 let response = await Transaction.list(transactionQueryParams);
 ````
-
+{% endcodetab %}
+{% codetab Swift %}
 ````swift
 let query = try Transaction.newTransactionQueryParams()
     .owned(by: "eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9", transient: true)
 let (txs, _) = try Transaction.list(params: query)
 ````
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 // import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"
 params := bmTx.NewQueryParamsBuilder().
     OwnedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9")
 txs, referencedAssets, err := bmTx.List(params)
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 TransactionQueryBuilder builder = new TransactionQueryBuilder()
                                 .ownedBy("eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9");
@@ -269,6 +301,8 @@ Transaction.list(builder, new Callback1<GetTransactionsResponse>() {
             }
         });
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ## Bitmark
 
@@ -313,19 +347,24 @@ When a bitmark is transferred, more transaction records are added to the propert
 
 ### Query for a specific bitmark
 
+{% codetabs %}
+{% codetab JS %}
 ````javascript
 let response = await Bitmark.get(bitmarkId, false); // false: not include asset, true: include asset
 ````
-
+{% endcodetab %}
+{% codetab Swift %}
 ````swift
 let bitmark = Bitmark.get(bitmarkID: bitmarkId);
 ````
-
+{% endcodetab %}
+{% codetab Go %}
 ```go
 // import bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"
 bitmark, err := bmBitmark.Get("3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1")
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Bitmark.get(bitmarkId, new Callback1<GetBitmarkResponse>() {
             @Override
@@ -339,6 +378,8 @@ Bitmark.get(bitmarkId, new Callback1<GetBitmarkResponse>() {
             }
         });
 ```
+{% endcodetab %}
+{% endcodetabs %}
 
 ### Query for a set of bitmarks
 

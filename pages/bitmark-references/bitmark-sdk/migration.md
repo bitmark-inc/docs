@@ -13,11 +13,13 @@ folder: bitmark-references/bitmark-sdk
 Bitmark SDK provides `rekey` method to allow users to transfer all bitmarks from an `Account` to another one. This is helpful in case users want to migrate all their own bitmarks from old `Account` to another new one and keep the bitmarks provenance as well.
 
 The method takes different `Account` as source and destination one and return the collection of new transaction id when complete.
-
+{% codetabs %}
+{% codetab JS %}
 ```javascript
 // Not supported at the moment. If you have demand for this function, please feel free to contact us.
 ```
-
+{% endcodetab %}
+{% codetab Swift %}
 ```swift
 let source = try Account();
 let destination = try Account();
@@ -27,7 +29,8 @@ let (account, bitmarkids) = Migration.rekey(from: source, to: destination) { (tx
     print(txIds)
 }
 ```
-
+{% endcodetab %}
+{% codetab Java %}
 ```java
 Account source = new Account();
 Account destination = new Account();
@@ -47,3 +50,5 @@ Migration.rekey(
                 }
         );
 ```
+{% endcodetab %}
+{% endcodetabs %}
