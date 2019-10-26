@@ -25,7 +25,7 @@ To create a Bitmark Account using the Bitmark App:
 
 * Tap the **Create New Account** option
     
-    > There are options to enable Touch/Face ID and Notification while creating a new account 
+    > While creating an account, users can enable Touch/Face ID and Notification options.
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/CreateAccount_0.png" alt="Create New Account option" title="Create New Account option" width="250" style="padding: 20px" />
@@ -126,7 +126,7 @@ You will need to send the Bitmark-CLI the global option `--network` (abbreviatio
 
 ### Creating the Account
 
-To create a Bitmark Account using the Bitmark App:
+To create a Bitmark Account using the BitmarkCLI:
 
 * Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
 
@@ -143,11 +143,10 @@ To create a Bitmark Account using the Bitmark App:
     >* `network` - The network to which the command is sent.
     >* `identity` - The identity of the Bitmark-CLI user.
     >
-    >
     > **Command Options:**
     >* `node` - The Bitmark node to which the Bitmark-CLI connects and submits its transactions.
     >* `description` - The identity’s description. 
-    >* `-n` (abbr. of --new) - Indicates that a new account is being created.
+    >* `-n` (abbr. of --new) - A new account is being created.
     
     *Example:*
  
@@ -162,7 +161,6 @@ To create a Bitmark Account using the Bitmark App:
     $ bitmark-cli -n <network> -i <identity> \
     add -d '<description>' -n
     ```
-
     > The `add` command adds a new user after the Bitmark-CLI configuration was initialized. 
     > The command options have the same meanings as in the `setup` command.
     
