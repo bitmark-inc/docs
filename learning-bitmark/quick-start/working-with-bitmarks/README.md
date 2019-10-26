@@ -1,8 +1,8 @@
 # Working with Bitmarks
 
-Interacting with Bitmark requires the creation of a Bitmark Account. Afterward, users can register Bitmark Certificates for their digital properties, which they may later transfer or divide into Bitmark Shares.
+Interacting with Bitmark requires the creation of a Bitmark Account. Afterward, users can register Bitmark Certificates for their digital properties, which they may later transfer to other users or divide into Bitmark shares.
 
-Most work with the Bitmark Property System can be done via one of three methods: the [Bitmark App](https://a.bitmark.com/) (for iOS or Android), the [Bitmark SDK](https://github.com/bitmark-inc) (for a variety of languages), or the Bitmark CLI (available as part of the [Bitcoin node](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/quick-start/simple-solution-for-node-setup.md). 
+Most work with the Bitmark Property System can be done via one of three methods: the [Bitmark App](https://a.bitmark.com/) (for iOS or Android), the [Bitmark SDK](https://github.com/bitmark-inc) (for a variety of programming languages), or the Bitmark CLI (available as part of the [Bitcoin node](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/quick-start/simple-solution-for-node-setup.md). 
 
 * The **Bitmark App** is a simple mobile app that allows anyone to protect their legal rights to their data and other digital assets by registering them as properties on the Bitmark blockchain.
 
