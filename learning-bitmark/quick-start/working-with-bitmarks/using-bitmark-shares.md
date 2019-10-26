@@ -562,7 +562,7 @@ Paying for a share swap transaction works just the same as paying for a transfer
     }
   ```
 
-### Verify a share swap
+### Verifying a share swap
 
 To thoroughly check the results of a share swap using the Bitcoin-CLI:
 
