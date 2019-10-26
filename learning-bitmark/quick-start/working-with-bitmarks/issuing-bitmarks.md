@@ -14,7 +14,7 @@ This process registers legal property rights on the public Bitmark blockchain fo
 
 Any user who want to interact with the Bitmark Property System must have a Bitmark Account. Please refer to the [Bitmark Account](creating-bitmark-account.md) section for instructions on creating a new Bitmark Account.
 
-# Registering Bitmark Certificates using the Bitmark App
+## Registering Bitmark Certificates using the Bitmark App
 
 To register a new property using the Bitmark App:
 
