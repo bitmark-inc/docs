@@ -23,7 +23,7 @@ To create a Bitmark Account using the Bitmark App:
 
 * Open the App
 
-* Tap the **Create New Account** option
+* Tap the **CREATE NEW ACCOUNT** option
     
     > While creating an account, users can enable Touch/Face ID and Notification options.
 
@@ -35,7 +35,7 @@ To create a Bitmark Account using the Bitmark App:
 
     <br>
 
-* Look up the Account Number by accessing **Account > SETTINGS**; record it
+* Look up the Account Number by accessing **ACCOUNT > SETTINGS**; record it
 
     > The Bitmark App allows users to
     >
@@ -49,7 +49,7 @@ To create a Bitmark Account using the Bitmark App:
 
     <br>
 
-* Backup the Recovery Phrase by selecting **Account > SETTINGS > WRITE DOWN RECOVERY PHRASE**
+* Backup the Recovery Phrase by selecting **ACCOUNT > SETTINGS > WRITE DOWN RECOVERY PHRASE**
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RecoveryPhrase_0.png" alt="Write down Recovery Phrase option" title="Write down Recovery Phrase option" width="250" style="padding: 20px" />
