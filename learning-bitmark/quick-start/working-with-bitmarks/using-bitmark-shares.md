@@ -28,6 +28,8 @@ Three records related to Bitmark shares are stored on the Bitmark blockchain.
 
 The `bitmark-wallet` software is required for paying for transactions. Please refer to the [Payment on Bitmark CLI](payment-for-bitmark-cli.md) document for instructions on installing it.
 
+See [The Basics of Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli) for more information on the interface.
+
 ## Creating Bitmark shares
 
 Any Bitmark owner can divide a Bitmark Certificate into a number of shares by creating the shares and paying the associated fees. Additional commands can be used to verify the transaction.
@@ -130,7 +132,7 @@ To do so using the Bitmark-CLI:
     > - `btc amount` or `ltc amount` - The payment amount, printed in the results as `amount` under `BTC` or `LTC`
 
 
-*Example:*
+*Example — Paying with BTC:*
 
 * Run bitcoind
 
@@ -169,7 +171,7 @@ To verify the status of the share creation using Bitmark-CLI:
   >* `txid` - The transaction id, which is printed in the output of the share creation command.
   >
   >**Returns:**
-  >* `Pending` - Has not been paid.
+  >* `Pending` - Not paid.
   >
   >* `Verified` - Paid but not confirmed on the blockchain.
   >
@@ -234,7 +236,7 @@ To verify a user's share balance using Bitmark-CLI:
 
 ## Granting Bitmark shares to another account
 
-Any user with a non-zero share balance can grant shares from that balance to another account. This is a three-part process: initializing the granting of shares; counter signing the grant; and paying for the transaction. Afterward, the transaction can be verified.
+Any user with a non-zero share balance can grant shares from that balance to another account. This is a three-part process: initializing the granting of shares; countersigning the grant; and paying for the transaction. Afterward, the transaction can be verified.
 
 ### Initializing a share grant
 
@@ -246,13 +248,13 @@ To initialize a grant of shares using the Bitcoin-CLI:
       grant -r <receiver> -s <shareid> -q <quantity>
   ```
 
-  >The `grant` command allows a Bitmark shares owner to grant some of his share balance to another account. Only after the new owner signs to accept the shares will the grant transaction be created and submitted to the blockchain. T
+  >The `grant` command allows a Bitmark shares owner to grant some of his share balance to another account. Only after the new owner signs to accept the shares will the grant transaction be created and submitted to the blockchain.
   >
   >**Global Options:**
   >* `current owner identity` - The identity of the current share owner's Bitmark Account, which is stored in the Bitmark-CLI config file.
   >
   >**Command Options:**
-  >* `receiver` - The identifier of the new owner of the granted shares. It can be the receiver's Bitmark Account identity, stored by the Bitmark-CLI, or the receiver's Bitmark Account Number.
+  >* `receiver` - The identifier of the new owner of the granted shares. This can be the receiver's Bitmark Account identity, stored by the Bitmark-CLI, or the receiver's Bitmark Account Number.
   >
   >* `shareid` - The share id (share id = bitmark id).
   >
@@ -281,9 +283,9 @@ To initialize a grant of shares using the Bitcoin-CLI:
 
 ### Countersigning a share grant
 
-The share granting transactions requires two signatures. Therefore, after the current share owner initializes the grant, the new owner needs to sign to accept the shares.
+The share grant transaction requires two signatures. Therefore, after the current share owner initializes the grant, the new owner needs to sign to accept the shares.
 
-To counter sign a share grant using the Bitcoin-CLI:
+To countersign a share grant using the Bitcoin-CLI:
 
   ```
     # The receiver signs to accept the shares
@@ -291,14 +293,14 @@ To counter sign a share grant using the Bitcoin-CLI:
       countersign -t <hex-data>
   ```
 
-  >The `countersign` command signs hexdata. In this case, it is used by the `receiver` to sign to accept granted shares.
+  >The `countersign` command signs hex data. (In this case, it is used by the `receiver` to sign to accept granted shares.)
   >
   >**Global Options:**
   >* `receiver identity` - The identity of the receiving Bitmark Account, which is stored in the Bitmark-CLI config file.
   >
   >* `hex-data` - The `grant` data returned by the `grant` command.
   >
-  >**NOTE:** The grant shares transaction cost a transaction fee of 0.002 LTC (200000 photons) or 0.0002 BTC (20000 satoshis). Only when the fee is paid, the transaction is able to be confirmed on the blockchain.
+  >**NOTE:** The share grant transaction cost a transaction fee of 0.002 LTC (200000 photons) or 0.0002 BTC (20000 satoshis). Only when the fee is paid, can the transaction be confirmed on the blockchain.
   >The payment information is included in the `coutersign` command's returns.
 
 
@@ -456,7 +458,7 @@ To initialize a swap of shares using the Bitcoin-CLI:
       -b <block_number>
   ```
 
-  >The `swap` command initializes a swap shares request, the request must be signed by the sender. Once the receiver signs to accept the request, the swap shares transaction is created and submitted to the blockchain. 
+  >The `swap` command initializes a share swap request; this request must be signed by the sender. Once the receiver signs to accept the request, the share swap transaction is created and submitted to the blockchain. 
   >
   >**Global Options:**
   >* `sender identity` - The identity of the sender's Bitmark Account, which is stored in the Bitmark-CLI config file.
