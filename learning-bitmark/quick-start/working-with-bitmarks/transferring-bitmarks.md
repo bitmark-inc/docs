@@ -1,12 +1,12 @@
 # Transferring Bitmark Certificates
 
-Once an asset has been registered, the owner can trade it by creating a transfer record that points back to the original issue record (or to a previous transfer record) and that lists the new owner of the asset. Because the blockchain is ordered and because it's immutable, this creates a permanent chain of custody, reaching back to the asset's origins.
+Once an asset has been registered, the owner can trade it by creating a transfer record that points back to the original issue record (or to a previous transfer record) and that lists the new owner of the asset. Because the blockchain is ordered and because it's immutable, this creates a permanent chain of custody reaching back to the asset's origins.
 
 <div style="background-color: #efefef; text-align: center;">
     <img src="images/TransferringBitmark_0.png" alt="Record chain" title="Record chain" style="padding: 20px" />
 </div>
 
-Bitmark owners can transfer their Bitmark Certificates to others using the [Bitmark App](#transferring-bitmarks-using-the-bitmark-app), the [Bitmark SDK](#transferring-bitmarks-using-the-bitmark-sdk), or the [Bitmark CLI](#transferring-bitmarks-using-the-bitmark-cli).
+Bitmark owners can transfer their Bitmark Certificates to others using the [Bitmark App](#transferring-bitmarks-using-the-bitmark-app), the [Bitmark SDK](#transferring-bitmarks-using-the-bitmark-sdk), or the [Bitmark-CLI](#transferring-bitmarks-using-the-bitmark-cli).
 
 ## Prerequisites
 
@@ -119,7 +119,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
     >* `sender identity` - The identity of the sender's Bitmark Account, which is stored in the Bitmark-CLI config file
     >
     > **Command Options:**
-    >* `receiver` - The identitifer of the recipient's Bitmark Account. This can be a Bitmark Account Number or the Bitmark Account's identity, if it's stored in the Bitmark-CLI config file
+    >* `receiver` - The identifier of the recipient's Bitmark Account. This can be a Bitmark Account Number or the Bitmark Account's identity, if it's stored in the Bitmark-CLI config file
     >
     > `txid` - The id of the last transaction of the Bitmark that is being transferring.
     >
@@ -183,13 +183,13 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
 
     ```
 
-    >To execute a bitcoin or litecoin transaction on the local environment, the bitcoind or litecoind daemon needs to be running.
+    >To execute a bitcoin or litecoin transaction on the local environment, the `bitcoind` or `litecoind` daemon must be running.
     >
-    > - `payId` - The payment id for transfer transaction, printed in the results as `payId`
+    > - `payId` - The payment id for the transfer transaction, printed in the results as `payId`
     > - `btc address` or `ltc address` - The address for payment, printed in the results as `address` under `BTC` or `LTC`
     > - `btc amount` or `ltc amount` - The payment amount, printed in the results as `amount` under `BTC` or `LTC`
 
-    *Example of paying by ltc:*
+    *Example — Paying by LTC:*
 
     ```shell
     # run litecoind
@@ -222,7 +222,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
     >* `transferId` - The transfer transaction id, printed as `transferId` in the output of the `transfer` command.
     >
     >**Returns:**
-    >* `Pending` - Has not been paid.
+    >* `Pending` - Not paid.
     >
     >* `Verified` - Paid but not confirmed on the blockchain.
     >
@@ -257,7 +257,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
       provenance -t <transferID>
     ```
 
-    >The `provenance` command returns all the transaction records from the transaction corresponding to the txid, back to the Bitmark's asset registration record. 
+    >The `provenance` command returns all the transaction records related to an asset from the transaction corresponding to the txid back to the Bitmark's asset registration record. 
     >
     > **Command options:**
     >* `transferID` - `transferId` - The transfer transaction id, printed as `transferId` in the output of the `transfer` command
@@ -316,7 +316,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
     
 ## Exploring Bitmark transactions using the Bitmark Registry website
 
-Userse can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry web application:
+Users can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry web application:
 
 * For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
 
