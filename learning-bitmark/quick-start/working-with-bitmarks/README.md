@@ -26,7 +26,7 @@ These documents detail the usage of each of these methods.
 * [Registering Bitmark Certificates using the Bitmark App](issuing-bitmarks.md#registering-bitmark-certificates-using-the-bitmark-app)
 * [Registering Bitmark Certificates using the Bitmark SDK](issuing-bitmarks.md#registering-bitmark-certificates-using-the-bitmark-sdk)
 * [Registering Bitmark Certificates using the Bitmark CLI](issuing-bitmarks.md#registering-bitmark-certificates-using-the-bitmark-cli)
-* [Exploring the Bitmark transactions using the Bitmark Registry website](issuing-bitmarks.md#exploring-bitmark-transactions-using-the-bitmark-registry-website)
+* [Exploring Bitmark transactions using the Bitmark Registry website](issuing-bitmarks.md#exploring-bitmark-transactions-using-the-bitmark-registry-website)
 
 
 ## [Transferring Bitmark Certificates](transferring-bitmarks.md#transferring-bitmark-certificates)
