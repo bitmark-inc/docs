@@ -1,10 +1,10 @@
 # Registering Bitmark Certificates
 
-Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates. This can be done using the [Bitmark App](#registering-bitmark-certificates-using-the-bitmark-app), the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
+Assets with titles that have been publicly recorded are [more valuable](../../problem-we-are-trying-to-solve.md) than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates. This can be done using the [Bitmark App](#registering-bitmark-certificates-using-the-bitmark-app), the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark-CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
 
 The process of registering a Bitmark Certificate for a digital asset occurs in two steps:
 
-* Registering the asset: this creates an *Asset Record*, which stored on the Bitmark blockchain.
+* Registering the asset: this creates an *Asset Record*, which is stored on the Bitmark blockchain.
 
 * Issuing bitmarks: this creates *Issue Records* linking to the corresponding asset record, which are also stored on the Bitmark blockchain.
 
@@ -20,7 +20,7 @@ To register a new property using the Bitmark App:
 
 * On the **PROPERTIES** screen tap **CREATE FIRST PROPERTY** or **+**
 
-    > This opens the **PROPERTIES > REGISTER** screen
+    > This opens the **PROPERTIES > REGISTER** screen.
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RegisteringProperties_0.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
@@ -29,7 +29,7 @@ To register a new property using the Bitmark App:
 
 * Tap **PHOTOS** or **FILES** to browse the desired asset on your mobile device
 
-    > You must grant permission for access to `Photos` and/or `Files`
+    > You must grant permission for access to `Photos` and/or `Files`.
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RegisteringProperties_2.png" alt="Grant Permission popup" title="Grant Permission popup" width="250" style="padding: 20px" />
@@ -41,11 +41,11 @@ To register a new property using the Bitmark App:
 
 * Fill in the required information
 
-    > As soon as the desired asset is selected, the App will compute the asset's fingerprint and opens the **REGISTER PROPERTY RIGHTS** screen, which allows users to provide more detailed information about the asset
+    > As soon as the desired asset is selected, the App will compute the asset's fingerprint and open the **REGISTER PROPERTY RIGHTS** screen, which allows users to provide more detailed information about the asset.
     >
-    >* Currently, the `PROPERTY NAME` and `NUMBER OF BITMARKS TO ISSUE` fields are mandatory
+    >* Currently, the `PROPERTY NAME` and `NUMBER OF BITMARKS TO ISSUE` fields are mandatory.
     >
-    >* For each `Asset`, a user can issue multiple Bitmark Certificates, which the number defined by  `number of bitmarks` in the **REGISTER PROPERTY RIGHTS** screen.
+    >* For each `Asset`, a user can issue multiple Bitmark Certificates, with the number defined by  `number of bitmarks` in the **REGISTER PROPERTY RIGHTS** screen.
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="images/RegisteringProperties_5.png" alt="Register Property Rights screen" title="Register Property Rights screen" width="250" style="padding: 20px" />
@@ -54,7 +54,7 @@ To register a new property using the Bitmark App:
 
 * Tap **ISSUE** button
 
-    >As soon **ISSUE** is tapped, the App submits both the `Asset Registration` request and `bitmarks Issuance` transactions to the Bitmark network. After the submission is successful, the properties will be added to the **PROPERTIES > YOURS** screen.
+    >As soon as **ISSUE** is tapped, the App submits both the `Asset Registration` and `bitmarks Issuance` transactions to the Bitmark network. After the submission is successful, the properties will be added to the **PROPERTIES > YOURS** screen.
     >
     > **NOTE:** It will take a while for the transactions to be confirmed on the Bitmark blockchain after submission.
 
@@ -115,7 +115,7 @@ To register a new property using the Bitmark JS SDK:
 
 See [The Basics of Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli) for more information on the interface.
 
-To register a new property using the Bitmar-CLI:
+To register a new property using the Bitmark-CLI:
 
 * Compute the hash of an asset
 
@@ -127,7 +127,7 @@ To register a new property using the Bitmar-CLI:
     > The `fingerprint` command computes the hash of a file
     >
     > **Command Options:**
-    > * `file` - Defines the file from which the hash is computed.
+    > * `file` - The file from which the hash is computed.
 
     *Example:*
 
@@ -158,13 +158,13 @@ To register a new property using the Bitmar-CLI:
     >* `identity` - The identity of the registrant's Bitmark Account, which is stored in the Bitmark-CLI config file. 
     >
     > **Command Options:**
-    >* `asset name` - Defines the `name` field in the asset record.
+    >* `asset name` - The `name` field in the asset record.
     >
-    >* `asset metadata` - Defines the `metadata` field in the asset record.
+    >* `asset metadata` - The `metadata` field in the asset record.
     >
-    >* `-f` option - Determines the hash of the asset.
+    >* `asset fingerprint` - The hash of the asset.
     >
-    >* `-z` option - States that this is the first bitmark issued for the asset.
+    >* `-z` option - This is the first Bitmark issued for the asset.
 
     *Example:*
 
@@ -199,10 +199,10 @@ To register a new property using the Bitmar-CLI:
     > The `status` commands checks if a Bitmark has been issued
     >
     >**Command Options:**
-    >* `txid` — Lists the transaction being verified, corresponding to the `issueIds` from the `create` command
+    >* `txid` — The transaction being verified, corresponding to the `issueIds` from the `create` command
     >
     >**Returns:**
-    >* `Pending` - Has not been paid.
+    >* `Pending` - Not paid.
     >
     >* `Verified` - Paid but not confirmed on the blockchain.
     >
