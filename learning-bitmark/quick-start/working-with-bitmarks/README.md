@@ -44,7 +44,7 @@ These documents detail the usage of each of these methods.
 * [Prerequisites](using-bitmark-shares.md#prerequisites)
 * [Creating Bitmark shares](using-bitmark-shares.md#creating-bitmark-shares)
   * [Creating Bitmark shares from a Bitmark Certificate](using-bitmark-shares.md#creating-bitmark-shares-from-a-bitmark-certificate)
-  * [Paying for share creation](using-bitmark-shares.md#paying-for-share-creation)
+  * [Paying for a share creation](using-bitmark-shares.md#paying-for--ashare-creation)
   * [Verifying a share creation transaction](using-bitmark-shares.md#verifying-a-share-creation-transaction)
   * [Verifying share creation results](using-bitmark-shares.md#verifying-share-creation-results)
 * [Granting Bitmark shares to another account](using-bitmark-shares.md#granting-bitmark-shares-to-another-account)
