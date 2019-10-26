@@ -1,9 +1,8 @@
 # Working with Bitmarks
 
-Interacting with Bitmark requires the creation of a Bitmark Account. Afterward, you can register Bitmark Certificates for your digital properties, which you may later transfer or divide into Bitmark Shares.
+Interacting with Bitmark requires the creation of a Bitmark Account. Afterward, users can register Bitmark Certificates for their digital properties, which they may later transfer or divide into Bitmark Shares.
 
-Most work with Bitmark can be done via one of three methods: the [Bitmark App](https://a.bitmark.com/) (for iOS or Android), the [Bitmark SDK](https://github.com/bitmark-inc) (for a variety of languages), or the Bitmark CLI (available as part of the [Bitcoin node](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/quick-start/simple-solution-for-node-setup.md). 
-
+Most work with the Bitmark Property System can be done via one of three methods: the [Bitmark App](https://a.bitmark.com/) (for iOS or Android), the [Bitmark SDK](https://github.com/bitmark-inc) (for a variety of languages), or the Bitmark CLI (available as part of the [Bitcoin node](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/quick-start/simple-solution-for-node-setup.md). 
 
 * The **Bitmark App** is a simple mobile app that allows anyone to protect their legal rights to their data and other digital assets by registering them as properties on the Bitmark blockchain.
 
@@ -33,9 +32,9 @@ These documents detail the usage of each of these methods.
 ## [Transferring Bitmark Certificates](transferring-bitmarks.md#transferring-bitmark-certificates)
   
 * [Prerequisites](transferring-bitmarks.md#prerequisites)
-* [Transferring bitmarks using the Bitmark App](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-app)
-* [Transferring bitmarks using the Bitmark SDK](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-sdk)
-* [Transferring bitmarks using the Bitmark CLI](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-cli)
+* [Transferring Bitmarks using the Bitmark App](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-app)
+* [Transferring Bitmarks using the Bitmark SDK](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-sdk)
+* [Transferring Bitmarks using the Bitmark CLI](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-cli)
 * [Exploring Bitmark transactions using the Bitmark Registry website](transferring-bitmarks.md#exploring-the-bitmark-transactions-using-the-bitmark-registry-website)
 
 
@@ -48,12 +47,12 @@ These documents detail the usage of each of these methods.
   * [Paying for share creation](using-bitmark-shares.md#paying-for-share-creation)
   * [Verifying a share creation transaction](using-bitmark-shares.md#verifying-a-share-creation-transaction)
   * [Verifying share creation results](using-bitmark-shares.md#verifying-share-creation-results)
-* [Granting bitmark shares to another account](using-bitmark-shares.md#granting-bitmark-shares-to-another-account)
+* [Granting Bitmark shares to another account](using-bitmark-shares.md#granting-bitmark-shares-to-another-account)
   * [Initializing a share grant](using-bitmark-shares.md#initializing-a-share-grant)
   * [Counter signing a share grant](using-bitmark-shares.md#countersigning-a-share-grant)
   * [Paying for a share grant](using-bitmark-shares.md#paying-for-a-share-grant)
   * [Verifying a share grant](verifying-a-share-grant)
-* [Swapping bitmark shares](using-bitmark-shares.md#swapping-bitmark-shares)
+* [Swapping Bitmark shares](using-bitmark-shares.md#swapping-bitmark-shares)
   * [Initalizing a share swap](using-bitmark-shares.md#initalizing-a-share-swap)
   * [Countersigning a share swap](using-bitmark-shares.md#countersigning-a-share-swap)
   * [Paying for a share swap](using-bitmark-shares.md#paying-for-a-share-swap)
