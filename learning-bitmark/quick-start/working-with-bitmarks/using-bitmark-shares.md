@@ -154,7 +154,7 @@ To do so using the Bitmark-CLI:
     }
   ```
 
-### Verifying the status of the share creation transaction
+### Verifying a share creation transaction
 
 To verify the status of the share creation using Bitmark-CLI:
 
@@ -197,7 +197,7 @@ To verify the status of the share creation using Bitmark-CLI:
 
 <br>
 
-### Verifying that the share has been created and allocated to the owner
+### Verifying the share creation results
 
 To verify a user's share balance using Bitmark-CLI:
 
