@@ -53,7 +53,7 @@ These documents detail the usage of each of these methods.
   * [Paying for a share grant](using-bitmark-shares.md#paying-for-a-share-grant)
   * [Verifying a share grant](using-bitmark-shares.md#verifying-a-share-grant)
 * [Swapping Bitmark shares](using-bitmark-shares.md#swapping-bitmark-shares)
-  * [Initalizing a share swap](using-bitmark-shares.md#initalizing-a-share-swap)
+  * [Initializing a share swap](using-bitmark-shares.md#initializing-a-share-swap)
   * [Countersigning a share swap](using-bitmark-shares.md#countersigning-a-share-swap)
   * [Paying for a share swap](using-bitmark-shares.md#paying-for-a-share-swap)
   * [Verifying a share swap](using-bitmark-shares.md#verifying-a-share-swap)
