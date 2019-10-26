@@ -6,18 +6,18 @@
 ### [Bitmark Property System](learning-bitmark/README.md#bitmark-property-system)
   
   * [Bitmark Property System Introduction](learning-bitmark/problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
-  * [The Power of Property Systems](learning-bitmark/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
-  * [Bitmark's Property System](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-property-system)
-  * [Bitmark's Technology](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-technology)
+    * [The Power of Property Systems](learning-bitmark/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
+    * [Bitmark's Property System](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-property-system)
+    * [Bitmark's Technology](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-technology)
 
 ### [Quick Start](learning-bitmark/quick-start/README.md#quick-start)
 
-  * [Run a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
-  * [Working with bitmarks](learning-bitmark/quick-start/working-with-bitmarks/README.md#working-with-bitmarks)
-    * [Creating Bitmark Account](learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
+  * [Running a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
+  * [Working with Bitmarks](learning-bitmark/quick-start/working-with-bitmarks/README.md#working-with-bitmarks)
+    * [Creating a Bitmark Account](learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
     * [Registering Bitmark Certificates](learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md#registering-bitmark-certificates)
     * [Transferring Bitmark Certificates](learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md#transferring-bitmark-certificates)
-    * [Bitmark shares](learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
+    * [Working with Bitmark Shares](learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
 
 ### [Contributing to Bitmark](learning-bitmark/contributing-to-bitmark/README.md#contribute-to-bitmark)
 
