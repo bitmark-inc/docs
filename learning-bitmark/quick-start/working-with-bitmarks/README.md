@@ -67,4 +67,4 @@ These documents detail the usage of each of these methods.
   * [Installing the Bitmark Wallet](payment-for-bitmark-cli.md#installing-the-bitmark-wallet)
   * [Connecting the Bitmark Wallet](payment-for-bitmark-cli.md#connecting-the-bitmark-wallet)
   * [Running the Bitmark Wallet](payment-for-bitmark-cli.md#running-the-bitmark-wallet)
-  * [Getting testnet coins](payment-for-bitmark-cli.md#getting-testnet-coins]
+  * [Getting testnet coins](payment-for-bitmark-cli.md#getting-testnet-coins)
