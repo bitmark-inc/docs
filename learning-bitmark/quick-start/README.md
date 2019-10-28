@@ -17,4 +17,4 @@
 * [Registering Bitmark Certificates](working-with-bitmarks/issuing-bitmarks.md#registering-bitmark-certificates)
 * [Transferring Bitmark Certificates](working-with-bitmarks/transferring-bitmarks.md#transferring-bitmark-certificates)
 * [Working with Bitmark Shares](working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
-* [Paying for Bitmark Transactions](payment-for-bitmark-cli.md)
+* [Paying for Bitmark Transactions](working-with-bitmarks/payment-for-bitmark-cli.md)
