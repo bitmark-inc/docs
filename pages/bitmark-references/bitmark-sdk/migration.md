@@ -14,11 +14,6 @@ Bitmark SDK provides `rekey` method to allow users to transfer all bitmarks from
 
 The method takes different `Account` as source and destination one and return the collection of new transaction id when complete.
 {% codetabs %}
-{% codetab JS %}
-```javascript
-// Not supported at the moment. If you have demand for this function, please feel free to contact us.
-```
-{% endcodetab %}
 {% codetab Swift %}
 ```swift
 let source = try Account();

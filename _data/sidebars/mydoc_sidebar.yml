@@ -110,6 +110,10 @@ entries:
             url: /bitmark-references/bitmark-sdk/query
             output: web
 
+          - title: Migration
+            url: /bitmark-references/bitmark-sdk/migration
+            output: web
+
           - title: Store Seed
             url: /bitmark-references/bitmark-sdk/store-seed
             output: web
@@ -154,6 +158,18 @@ entries:
 
     - title: Bitmark shares
       url: /bitmark-appendix/bitmark-shares
+      output: web
+
+    - title: 'Bitmark: The property system for the digital environment'
+      url: /assets/pdf/bitmark-technical-white-paper.pdf
+      output: web
+
+    - title: Defining Property in the Digital Environment
+      url: /assets/pdf/bitmark-defining-property-dig-env.pdf
+      output: web
+
+    - title: 'ObjectMinutiae: Fingerprinting for Object Authentication'
+      url: /assets/pdf/objectminutiae.pdf
       output: web
 
 
