@@ -57,7 +57,7 @@
   * [Account](bitmark-references/bitmark-sdk/account.md#account)
   * [Actions](bitmark-references/bitmark-sdk/action.md#register-an-asset)
   * [Query](bitmark-references/bitmark-sdk/query.md#query)
-  * [Store Seed](bitmark-references/bitmark-sdk/store_seed.md#store-seed)
+  * [Store Seed](bitmark-references/bitmark-sdk/store-seed.md#store-seed)
   * [Web Socket](bitmark-references/bitmark-sdk/websocket.md#web-socket)
 
 
