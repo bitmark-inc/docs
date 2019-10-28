@@ -49,6 +49,11 @@ entries:
               url: /learning-bitmark/contributing-to-bitmark/bug-bounty-program
               output: web
 
+    - title: Bitmark Glossary
+      url: /bitmark-references/terms-and-glossary/bitmark-terms-and-glossary
+      output: web
+
+
   - title: Bitmark References
     output: web, pdf
     folderitems:
@@ -131,22 +136,9 @@ entries:
             url: /bitmark-references/bitmark-cli/bitmark-cli-quick-setup
             output: web
 
-          - title: Bitmark-CLI Command Reference
-            url: /bitmark-references/bitmark-cli/bitmark-cli#bitmark-cli-command-reference
+          - title: Bitmark-CLI Command
+            url: /bitmark-references/bitmark-cli/bitmark-cli
             output: web
-
-          - title: CLI Command Synopsis
-            url: /bitmark-references/bitmark-cli/bitmark-cli#cli-command-synopsis
-            output: web
-
-          - title: CLI commands
-            url: /bitmark-references/bitmark-cli/bitmark-cli#cli-commands
-            output: web
-
-
-    - title: Bitmark Glossary
-      url: /bitmark-references/terms-and-glossary/bitmark-terms-and-glossary
-      output: web
 
   - title: Bitmark Appendix
     output: web, pdf
