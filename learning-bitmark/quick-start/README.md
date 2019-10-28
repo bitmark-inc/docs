@@ -1,13 +1,13 @@
 # Quick Start
 
-## [Run a Bitmark Node](simple-solution-for-node-setup.md#run-a-bitmark-node)
+## [Running a Bitmark Node](simple-solution-for-node-setup.md#run-a-bitmark-node)
   
-* [Start your Bitmark Node](simple-solution-for-node-setup.md#start-your-bitmark-node)
+* [Starting your Bitmark Node](simple-solution-for-node-setup.md#starting-your-bitmark-node)
 * [Prerequisites](simple-solution-for-node-setup.md#prerequisites)
-* [Installation](simple-solution-for-node-setup.md#installation)
-* [Management Panel](simple-solution-for-node-setup.md#management-panel)
-  * [Step 1: Open A Node\-Management Webpage](simple-solution-for-node-setup.md#step-1-open-a-node-management-webpage)
-  * [Step 2: Run bitmarkd and recorderd](simple-solution-for-node-setup.md#step-2-run-bitmarkd-and-recorderd)
+* [Installing Your Bitmark Node](simple-solution-for-node-setup.md#installing-your-bitmark-node)
+* [Using the Management Panel](simple-solution-for-node-setup.md#using-the-management-panel)
+  * [Step 1: Opening A Node\-Management Webpage](simple-solution-for-node-setup.md#step-1-opening-a-node-management-webpage)
+  * [Step 2: Running bitmarkd and recorderd](simple-solution-for-node-setup.md#step-2-running-bitmarkd-and-recorderd)
 * [Important Notice On Network](simple-solution-for-node-setup.md#important-notice-on-network)
 
 
