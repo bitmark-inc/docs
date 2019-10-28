@@ -58,3 +58,13 @@ These documents detail the usage of each of these methods.
   * [Paying for a share swap](using-bitmark-shares.md#paying-for-a-share-swap)
   * [Verifying a share swap](using-bitmark-shares.md#verifying-a-share-swap)
 
+
+## [Paying for Bitmark Transactions](payment-for-bitmark-cli.md)
+
+* [About the Bitmark Wallet](payment-for-bitmark-cli.md#about-the-bitmark-wallet)
+* [Prerequisites]payment-for-bitmark-cli.md#prerequisites)
+* [Using the Bitmark Wallet](payment-for-bitmark-cli.md#using-the-bitmark-wallet)
+  * [Installing the Bitmark Wallet](payment-for-bitmark-cli.md#installing-the-bitmark-wallet)
+  * [Connecting the Bitmark Wallet](payment-for-bitmark-cli.md#connecting-the-bitmark-wallet)
+  * [Running the Bitmark Wallet](payment-for-bitmark-cli.md#running-the-bitmark-wallet)
+  * [Getting testnet coins](payment-for-bitmark-cli.md#getting-testnet-coins]
