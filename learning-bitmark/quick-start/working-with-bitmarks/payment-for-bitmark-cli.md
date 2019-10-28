@@ -1,8 +1,10 @@
 # Paying for Bitmark Transactions
 
-Bitmark transaction fees for transfers and share-related transactions can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies.
+Bitmark transaction fees for transfers and share-related transactions can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies. 
 
-The Bitmark-CLI submits transactions to its connected Bitmark Node via RPC. Once the Node server receives a transaction, it processes it, sets the transactions as Pending, and returns corresponding payment IDs, amounts, and addresses. The transaction is only updated from Pending to Verified, making it ready to be mined, once a payment is executed, either in BTC or LTC.
+The process is as follows:
+
+The Bitmark-CLI submits transactions to its connected Bitmark Node via RPC. Once the Node server receives a transaction, it processes the transaction, sets it as Pending, and returns corresponding payment IDs, amounts, and addresses. The transaction is only updated from Pending to Verified, making it ready to be mined, once a payment is executed, either in BTC or LTC.
 
 In order for bitcoin or litecoin payment to be correctly recognized, freeing up the Bitmark transaction, it must include:
 
@@ -10,15 +12,15 @@ In order for bitcoin or litecoin payment to be correctly recognized, freeing up 
 
 * To the correct address
 
-* With the correct payment ID added as BTC/LTC OP_RETURN opcode.
+* With the correct payment ID added as a BTC/LTC OP_RETURN opcode.
 
 Because common wallets do not support attaching the Bitmark blockchain payment identifier to the BTC/LTC transactions, Bitmark provides an app called the Bitmark Wallet to pay for Bitmark transactions that come from the Bitmark-CLI.
 
 ### About the Bitmark Wallet
 
-The Bitmark Wallet is a dual-currency wallet, supporting both bitcoin and litecoin. It allows the sending of multiple payments to different addresses and the attaching of a hex data item to a transaction using the OP_RETURN feature of BTC/LTC.
+The Bitmark Wallet is a dual-currency wallet, supporting both bitcoin and litecoin. It allows a user to send multiple payments to different addresses and to attach a hex data item to a transaction using the OP_RETURN feature of BTC/LTC.
 
-The wallet is a command-line tool which is written in Go and cannot work standalone; it can only send bitcoin and litecoin transactions via a correct configured `bitcoind` and/or `litecoind`. Depending on the configuration of `bitcoind` and `litecoind`, the payment transactions are submitted as mainnet coins or testnet coins.
+The wallet is a command-line tool which is written in Go and cannot work standalone; it can only send bitcoin and litecoin transactions via a correctly configured `bitcoind` and/or `litecoind`. Depending on the configuration of `bitcoind` and `litecoind`, the payment transactions are submitted as mainnet coins or testnet coins.
 
 Features:
 
@@ -42,7 +44,7 @@ To use the Bitmark Wallet:
 
 * Python3 must be installed.
 
-* bitcoind/litecoind must be installed.
+* `bitcoind`/`litecoind` must be installed.
 
 
 ## Using the Bitmark Wallet
@@ -55,7 +57,7 @@ The main actions required to use the Bitmark wallet are:
 
 * Running the wallet.
 
-* Aquiring testnet coins.
+* Acquiring testnet coins.
 
 ### Installing the Bitmark Wallet
 
@@ -75,7 +77,7 @@ To install the Bitmark wallet:
         $go install
     ```
 
-* Create Bitmark Wallet's config file
+* Create the Bitmark Wallet's config file
 
     ```shell
         $ touch <CONFIG DIR>/bitmark-wallet/bitmark-wallet.conf
@@ -89,7 +91,7 @@ To install the Bitmark wallet:
 
 ### Connecting the Bitmark Wallet
 
-The Bitmark Wallet communicates with `litecoind` and `bitcoind` using RPC, so RPC needs to be enabled in the `bitcoin.conf` and `litecoin.conf` and the corresponding RPC username and password needs to be added into the appropriate config file.
+The Bitmark Wallet communicates with `litecoind` and `bitcoind` using RPC, so RPC needs to be enabled in the `bitcoin.conf` and `litecoin.conf` and the corresponding RPC username and password needs to be added into the appropriate config files.
 
 * Enable RPC in the BTC and LTC config files
 
@@ -148,7 +150,7 @@ The Bitmark Wallet communicates with `litecoind` and `bitcoind` using RPC, so RP
 
 <br>
 
-* Copy the corresponding rpcauth lines and paste to the  litecoin and bitcoin config files
+* Copy the corresponding `rpcauth` lines and paste them into the litecoin and bitcoin config files
 
     *Example:*
     ```
@@ -165,7 +167,7 @@ The Bitmark Wallet communicates with `litecoind` and `bitcoind` using RPC, so RP
         rpcauth=cotzntmnxllhcpsshvdzzuue:1c1671f8ffbdd8d845688dc450d2c4e1$ec4723c3a7c29d072c40749017d4d326576c68264595355fac8816d525220f7a
     ```
 
-* Copy the BTC and LTC RPC usernames and passwords and paste to the corresponding fields in the `bitmark-wallet.conf`
+* Copy the BTC and LTC RPC usernames and passwords and paste them into the corresponding fields in the `bitmark-wallet.conf`
 
     *Example:*
     ``` # bitmark-wallet.conf
@@ -212,7 +214,7 @@ To use the Bitmark Wallet:
         $ litecoind -datadir=${HOME}/.config/litecoin
     ```
 
-* Initialize the bitmark wallet
+* Initialize the Bitmark Wallet
 
     ```shell
         $  bitmark-wallet --conf=<conf file> init
@@ -223,7 +225,7 @@ To use the Bitmark Wallet:
         $ bitmark-wallet --conf=${HOME}/.config/bitmark-wallet/test/bitmark-wallet.conf init
     ```
 
-* Sync the wallet with the coins 
+* Sync the Wallet
 
     > Syncing scans the blockchain from the block that was highest at the time it was last used to the current block height to see if any transactions matching any addresses in the wallet were sent.
 
@@ -248,9 +250,7 @@ To use the Bitmark Wallet:
           ltc sync --testnet
     ```
 
-<br>
-
-* Generate the BTC/LTC addresses
+* Generate BTC/LTC addresses for sending coins
 
     ```shell
         # bitcoin
@@ -275,12 +275,13 @@ To use the Bitmark Wallet:
 
 ### Getting testnet coins
 
-To fund a mainnet wallet, you'll need to send coins to the address, but to fund a testnet wallet, you can simply request coins from a faucet.
+To fund a mainnet wallet, you'll need to send coins to the BTC or LTC address, but to fund a testnet wallet, you can simply request coins from a faucet.
 
 * Get some testnet litecoins at https://faucet.xblau.com/
 
 * Get some testnet bitcoins at https://coinfaucet.eu/en/btc-testnet/
 
+## Paying for the Transaction
 
-
+Once your Bitcoin Wallet is set up, it can be used to pay for transactions. Instructions and examples can be found in the sections on [Transferring Bitmarks](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-cli), [Paying for a Share Creation](using-bitmark-shares.md#paying-for-a-share-creation), [Paying for a Share Grant](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#paying-for-a-share-grant), and [Paying for a Share Swap](using-bitmark-shares.md#paying-for-a-share-swap).
 
