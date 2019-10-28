@@ -110,3 +110,6 @@ sidebars:
 
 
 github: [metadata]
+
+plugins:
+  - jekyll-code-tabs
