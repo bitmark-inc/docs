@@ -11,6 +11,6 @@
 
 ## [Bitmark Papers](bitmark-papers.md)
 
-* [Bitmark: The property system for the digital environment](bitmark-papers.md#bitmark:-the-property-system-for-the-digital-environment)
+* [Bitmark\: The property system for the digital environment](bitmark-papers.md#bitmark-the-property-system-for-the-digital-environment)
 * [Defining Property in the Digital Environment](bitmark-papers.md#defining-property-in-the-digital-environment)
-* [ObjectMinutiae: Fingerprinting for Object Authentication](bitmark-papers.md#objectminutiae:-fingerprinting-for-object-uthentication)
+* [ObjectMinutiae\: Fingerprinting for Object Authentication](bitmark-papers.md#objectminutiae-fingerprinting-for-object-uthentication)
