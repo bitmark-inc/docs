@@ -1,5 +1,5 @@
 ---
-title: BUG BOUNTY PROGRAM
+title: Bug Bounty Program
 keywords: bug bounty
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,7 +7,7 @@ permalink: /learning-bitmark/contributing-to-bitmark/bug-bounty-program
 folder: learning-bitmark/contributing-to-bitmark
 ---
 
-# BUG BOUNTY PROGRAM
+# Bug Bounty Program
 
 **Important:** We only accept bug reports for **bitmarkd** project. Bug reports for web applications or any other project that is not **bitmarkd** will not be accepted and given any reward.
 
@@ -16,9 +16,9 @@ folder: learning-bitmark/contributing-to-bitmark
 Bitmark strives to make the Bitmark system safe and secure for everyone. We greatly value the work done by security researchers in improving the security of our products and service offerings. We are committed to working with this community to verify, reproduce, and respond to legitimate reported vulnerabilities. We encourage the community to participate in our responsible reporting process.
 
 We offer rewards in Bitcoin:
-| Critical | High | Medium | Low | Note |
-|----------|------|--------|-----|------|
-| 1BTC | 0.5 BTC | 0.2 BTC | 0.1 BTC | 0.01 BTC |
+| Critical | High    | Medium  | Low     | Note     |
+|----------|---------|---------|---------|----------|
+| 1BTC     | 0.5 BTC | 0.2 BTC | 0.1 BTC | 0.01 BTC |
 
 Latest bug updates:
 * **2018.11.14**: Congratulations to bughunterboy for finding bugs and earning rewards!
