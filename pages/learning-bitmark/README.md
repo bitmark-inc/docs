@@ -15,16 +15,16 @@
 
 ## [Quick Start](quick-start/README.md#quick-start)
 
-* [Run a Bitmark Node](quick-start/README.md#run-a-bitmark-node)
-* [Creating Bitmark Account](quick-start/README.md#creating-bitmark-account)
-* [Registering Bitmark Certificates](quick-start/README.md#registering-bitmark-certificates)
-* [Transferring Bitmark Certificates](quick-start/README.md#transferring-bitmark-certificates)
-* [Bitmark shares](quick-start/README.md#bitmark-shares)
+* [Run a Bitmark Node](quick-start/run-a-bitmark-node.md)
+* [Creating Bitmark Account](quick-start/creating-bitmark-account.md)
+* [Registering Bitmark Certificates](quick-start/registering-bitmark-certificates.md)
+* [Transferring Bitmark Certificates](quick-start/transferring-bitmark-certificates.md)
+* [Bitmark shares](quick-start/using-bitmark-shares.md)
 
-## [Contributing to Bitmark](contributing-to-bitmark/README.md#contribute-to-bitmark)
+## [Contributing to Bitmark](contributing-to-bitmark/README.md)
 
-* [Bitmark Upgrade Proposal](contributing-to-bitmark/README.md#bitmark-upgrade-proposal)
-* [Bug Bounty Program](contributing-to-bitmark/README.md#bug-bounty-program)
+* [Bitmark Upgrade Proposal](contributing-to-bitmark/bup.md)
+* [Bug Bounty Program](contributing-to-bitmark/bug-bounty-program.md)
 
 ## [Bitmark Terms and Glossary](bitmark-terms-and-glossary.md)
 * [Bitmark Terms and Glossary](bitmark-terms-and-glossary.md)

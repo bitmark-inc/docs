@@ -21,7 +21,7 @@ It features some of the same strengths as other blockchains, such as the immutab
 
 To read more about the Bitmark property system, how it expands on the basic ideas of the blockchain, and how it uses a variety of blockchain records to manage digital property and data, please [read our blog posts here](https://medium.com/clean-titles/defining-property-in-the-digital-environment-part-three-4c3ecbab5833).
 
-For more details, read our Technical FAQ below or our [papers](/pages/bitmark-appendix/bitmark-papers.md).
+For more details, read our Technical FAQ below or our [papers](https://docs.bitmark.com/bitmark-appendix/bitmark-papers).
 
 ## Technical FAQ
 
