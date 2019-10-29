@@ -9,7 +9,7 @@ folder: learning-bitmark/quick-start/working-with-bitmarks
 
 # Bitmark shares
 
-In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provides a feature called the **[bitmark shares]()**.
+In some cases, the ownership of a property is shared between different parties or people. To support those cases, the Bitmark Property System provides a feature called the **[bitmark shares](https://docs.bitmark.com/bitmark-appendix/bitmark-shares)**.
 
 Any owner of a Bitmark Certificate is able to:
 
