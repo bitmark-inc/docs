@@ -1,9 +1,9 @@
 ---
-title: Bitmark transaction payment
+title: Bitmark CLI Payment
 keywords: transaction payment
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/quick-start/working-with-bitmarks/payment-for-bitmark-cli
+permalink: /learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: Overview
+title: Getting Started
 keywords: sdk, sdk doc
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /bitmark-references/bitmark-sdk/bitmark-sdk-overview
+permalink: /bitmark-references/bitmark-sdk/getting-started
 folder: bitmark-references/bitmark-sdk
 ---
 

@@ -13,20 +13,18 @@ folder: bitmark-references/bitmark-node-software
 
 Block is a bunch of transactions that have been added to blockchain. A bitmark block contains data as follows:
 
-```
-  size (bytes)                                  data
- -------------- -------------------------------------------------------------------------
-   2             block version number
-   2             transaction count inside the block
-   8             block number (block height)
-  32             argon2 hash of previous block header
-  32             sha3 hash of all transactions in the block (merkle root)
-   8             timestamp of block generation time, seconds since 1970-01-01T00:00:00 UTC
-   8             current difficulty in compact mode
-   8             number to make hash meets difficulty
-   ... to end    transactions
+|  size (bytes)   | data                                                                      |
+| --------------- | ------------------------------------------------------------------------- |
+|   2             | block version number                                                      |
+|   2             | transaction count inside the block                                        |
+|   8             | block number (block height)                                               |
+|  32             | argon2 hash of previous block header                                      |
+|  32             | sha3 hash of all transactions in the block (merkle root)                  |
+|   8             | timestamp of block generation time, seconds since 1970-01-01T00:00:00 UTC |
+|   8             | current difficulty in compact mode                                        |
+|   8             | number to make hash meets difficulty                                      |
+|   ... to end    | transactions                                                              |
 
-```
 
 ## Different types of transactions
 
@@ -104,16 +102,14 @@ Some conditionas could happen when deciding block:
 
 1. majority votes exists
 
-```
-  Node    Block Height    Block Hash
- ------  --------------  ------------
-  1       1000            abcdefg
-  2       1000            abcdefg
-  3       1000            gfedcba
-  4       1000            abcdefg
-  5       1000            abcdefg
-  6       1000            abcdefg
-```
+| Node   | Block Height   | Block Hash | 
+| ------ | -------------- | ---------- |
+| 1      | 1000           | abcdefg    |
+| 2      | 1000           | abcdefg    |
+| 3      | 1000           | gfedcba    |
+| 4      | 1000           | abcdefg    |
+| 5      | 1000           | abcdefg    |
+| 6      | 1000           | abcdefg    |
 
 In this example, node-3 resides on different chain than other (because
 its block hash is different from others at same block height).
@@ -121,12 +117,10 @@ its block hash is different from others at same block height).
 For node-1, when it asks other nodes situation with following response
 (assumes all nodes are connected):
 
-```
-  Count    Block Height    Block Hash
- -------  --------------  ------------
-  4        1000            abcdefg
-  1        1000            gfedcba
-```
+|  Count  |  Block Height  |  Block Hash  |
+| ------- | -------------- | ------------ |
+|  4      |  1000          |  abcdefg     |
+|  1      |  1000          |  gfedcba     |
 
 So node-1 will keep choose chain that has hash abcdefg on block
 height 1000.
@@ -134,36 +128,32 @@ height 1000.
 For node-3, when it asks other nodes situation with following response
 (assumes all nodes are connectd):
 
-```
-  Count   Block Height   Block Hash
- ------- -------------- ------------
-  5       1000           abcdefg
-```
+|  Count  |  Block Height  |  Block Hash  |
+| ------- | -------------- | ------------ |
+|  5      |  1000          |  abcdefg     |
 
 So node-3 will choose chain that has hash abcdefg on block height
 1000, which means it selft will sync to other nodes.
 
 1. several groups with same votes
-```
-  Node   Block Height   Block Hash
- ------ -------------- ------------
-  A      1000           abcdefg
-  B      1000           abcdefg
-  C      1000           abcdefg
-  D      1000           gfedcba
-  E      1000           gfedcba
-  F      1000           gfedcba
-```
+
+|  Node  |  Block Height  |  Block Hash  |
+| ------ | -------------- | ------------ |
+|  A     |  1000          |  abcdefg     |
+|  B     |  1000          |  abcdefg     |
+|  C     |  1000          |  abcdefg     |
+|  D     |  1000          |  gfedcba     |
+|  E     |  1000          |  gfedcba     |
+|  F     |  1000          |  gfedcba     |
 
 In thie example, two groups of nodes with equal votes. If there's a
 new node-7 connect into network, the response from node-7 as follows:
 
-```
-  Count   Block Height   Block Hash
- ------- -------------- ------------
-  3       1000           abcdefg
-  3       1000           gfedcba
-```
+
+|  Count  |  Block Height  |  Block Hash  |
+| ------- | -------------- | ------------ |
+|  3      |  1000          |  abcdefg     |
+|  3      |  1000          |  gfedcba     |
 
 So it's a tie in this situation, when this situation happens, node-7 will
 check hash value of two chains: abcdefg & gfedcba. To which chain
