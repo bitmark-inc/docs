@@ -16,6 +16,7 @@ folder: learning-bitmark/contributing-to-bitmark
 Bitmark strives to make the Bitmark system safe and secure for everyone. We greatly value the work done by security researchers in improving the security of our products and service offerings. We are committed to working with this community to verify, reproduce, and respond to legitimate reported vulnerabilities. We encourage the community to participate in our responsible reporting process.
 
 We offer rewards in Bitcoin:
+
 | Critical | High    | Medium  | Low     | Note     |
 |----------|---------|---------|---------|----------|
 | 1BTC     | 0.5 BTC | 0.2 BTC | 0.1 BTC | 0.01 BTC |
