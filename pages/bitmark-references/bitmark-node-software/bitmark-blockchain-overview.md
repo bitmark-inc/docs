@@ -1,9 +1,9 @@
 ---
-title: Bitmark Blockchain Technical Overview
+title: Bitmark Blockchain Overview
 keywords: blockchain
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /bitmark-references/bitmark-node-software/bitmark-blockchain-technical-overview
+permalink: /bitmark-references/bitmark-node-software/bitmark-blockchain-overview
 folder: bitmark-references/bitmark-node-software
 ---
 

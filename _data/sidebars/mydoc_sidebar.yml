@@ -75,8 +75,8 @@ entries:
           output: web
           subfolderitems:
 
-          - title: Bitmark Blockchain Technical Overview
-            url: /bitmark-references/bitmark-node-software/bitmark-blockchain-technical-overview
+          - title: Bitmark Blockchain Overview
+            url: /bitmark-references/bitmark-node-software/bitmark-blockchain-overview
             output: web
 
           - title: RPC Communication

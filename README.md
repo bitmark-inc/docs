@@ -5,6 +5,8 @@
 
 **[Bitmark Property System](/pages/learning-bitmark/problem-we-are-trying-to-solve.md)**
 
+**[Bitmark Blockchain](/pages/learning-bitmark/bitmark-blockchain.md)**
+
 **[Quick Start](/pages/learning-bitmark/quick-start/README.md)**
 * [Running a Bitmark Node](/pages/learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
 * [Creating a Bitmark Account](/pages/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md)
@@ -25,7 +27,7 @@
 **[Tutorial For Node Setup](/pages/bitmark-references/node-setup/bitmark-node-setup.md)**
 
 **[Bitmark Node Software](/pages/bitmark-references/bitmark-node-software/README.md)**
-* [Bitmark Blockchain Technical Overview](/pages/bitmark-references/bitmark-node-software/bitmark-blockchain-technical-overview.md)
+* [Bitmark Blockchain Overview](/pages/bitmark-references/bitmark-node-software/bitmark-blockchain-overview.md)
 * [RPC Communication](/pages/bitmark-references/rpc-communication/README.md)
 * [Block Verification and Synchronization](/pages/bitmark-references/bitmark-node-software/block-verification-and-synchronization.md)
 * [Storage](/pages/bitmark-references/bitmark-node-software/node-modules.md)

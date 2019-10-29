@@ -10,7 +10,7 @@
 
 ## [Bitmark Node Software](bitmark-node-software/README.md)
 
-* [Bitmark Blockchain Technical Overview](bitmark-node-software/bitmark-blockchain-technical-overview.md)
+* [Bitmark Blockchain Overview](bitmark-node-software/bitmark-blockchain-overview.md)
 * [RPC Communication](bitmark-node-software/rpc-communication.md)
 * [Block Verification and Synchronization](bitmark-node-software/block-verification-and-synchronization.md)
 * [Storage](bitmark-node-software/node-modules.md)

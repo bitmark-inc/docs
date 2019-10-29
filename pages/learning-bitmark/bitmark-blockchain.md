@@ -41,8 +41,6 @@ The following questions and answers are drawn in part from our papers and provid
 
 * [How are Bitmark miners encouraged to publish issue records?](#how-are-bitmark-miners-encouraged-to-publish-issue-records)
 
-* [Are bitmark certificates private?](#are-bitmark-certificates-private)
-
 * [How does the Bitmark Blockchain protect property?](#how-does-the-bitmark-blockchain-protect-property)
 
 **Transferring bitmark certificates**
