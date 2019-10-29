@@ -8,6 +8,11 @@
 * [Bitmark's Property System](problem-we-are-trying-to-solve.md#bitmarks-property-system)
 * [Bitmark's Technology](problem-we-are-trying-to-solve.md#bitmarks-technology)
 
+## [Bitmark Blockchain](bitmark-blockchain.md)
+
+* [Technical Overview](bitmark-blockchain.md#technical-overview)
+* [Technical FAQ](bitmark-blockchain.md#technical-faq)
+
 ## [Quick Start](quick-start/README.md#quick-start)
 
 * [Run a Bitmark Node](quick-start/README.md#run-a-bitmark-node)
@@ -19,4 +24,7 @@
 ## [Contributing to Bitmark](contributing-to-bitmark/README.md#contribute-to-bitmark)
 
 * [Bitmark Upgrade Proposal](contributing-to-bitmark/README.md#bitmark-upgrade-proposal)
-* [BUG BOUNTY PROGRAM](contributing-to-bitmark/README.md#bug-bounty-program)
+* [Bug Bounty Program](contributing-to-bitmark/README.md#bug-bounty-program)
+
+## [Bitmark Terms and Glossary](bitmark-terms-and-glossary.md)
+* [Bitmark Terms and Glossary](bitmark-terms-and-glossary.md)

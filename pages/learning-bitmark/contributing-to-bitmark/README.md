@@ -6,7 +6,7 @@
 * [Where I can find the BUPs?](bup.md#where-i-can-find-the-bups)
 
 
-## [BUG BOUNTY PROGRAM](bug-bounty-program.md#bug-bounty-program)
+## [Bug Bounty Program](bug-bounty-program.md#bug-bounty-program)
   
 * [How to report a bug](bug-bounty-program.md#how-to-report-a-bug)
     * [Scope](bug-bounty-program.md#scope)

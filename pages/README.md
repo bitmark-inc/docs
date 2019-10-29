@@ -1,7 +1,7 @@
 
 # Bitmark Documentation
 
-## [Learning Bitmark](/pages/learning-bitmark/README.md)
+**[Learning Bitmark](/pages/learning-bitmark/README.md)**
 
 **[Bitmark Property System](/pages/learning-bitmark/problem-we-are-trying-to-solve.md)**
 
