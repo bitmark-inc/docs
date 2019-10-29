@@ -1,9 +1,9 @@
 ---
 title: Bitmark Property System Introduction
-keywords: introduction
+keywords: introduction, property system
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/problem-we-are-trying-to-solve
+permalink: /learning-bitmark/bitmark-property-system-introduction
 folder: learning-bitmark
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Bitmark Mining
+title: Mining
 keywords: mining
 last_updated: 
 sidebar: mydoc_sidebar

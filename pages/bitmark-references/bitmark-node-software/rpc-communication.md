@@ -3,8 +3,8 @@ title: RPC Communication
 keywords: rpc
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /bitmark-references/rpc-communication/rpc-communication
-folder: bitmark-references/rpc-communication
+permalink: /bitmark-references/bitmark-node-software/rpc-communication
+folder: bitmark-references/bitmark-node-software
 ---
 
 # RPC

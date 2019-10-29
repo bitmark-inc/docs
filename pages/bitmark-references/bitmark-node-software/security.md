@@ -1,5 +1,5 @@
 ---
-title: Security feature of the Bitmark Blockchain
+title: Security
 keywords: security
 last_updated: 
 sidebar: mydoc_sidebar

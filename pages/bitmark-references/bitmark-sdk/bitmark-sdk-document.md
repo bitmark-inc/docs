@@ -1,9 +1,9 @@
 ---
-title: Action
+title: Overview
 keywords: sdk, sdk doc
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /bitmark-references/bitmark-sdk/bitmark-sdk-document
+permalink: /bitmark-references/bitmark-sdk/bitmark-sdk-overview
 folder: bitmark-references/bitmark-sdk
 ---
 

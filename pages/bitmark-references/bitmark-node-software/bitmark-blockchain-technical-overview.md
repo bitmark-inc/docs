@@ -1,13 +1,13 @@
 ---
-title: Basic Bitmark Blockchain Overview
+title: Bitmark Blockchain Technical Overview
 keywords: blockchain
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /bitmark-references/bitmark-node-software/bitmark-blockchain
+permalink: /bitmark-references/bitmark-node-software/bitmark-blockchain-technical-overview
 folder: bitmark-references/bitmark-node-software
 ---
 
-# Basic Bitmark Blockchain Overview
+# Bitmark Blockchain Technical Overview
 
 This briefly describe the structure of the block chain. It builds up
 from the transactions through to the final structure of the chain

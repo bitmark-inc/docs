@@ -1,5 +1,5 @@
 ---
-title: Bitmark shares
+title: Using Bitmark Shares
 keywords: bitmark shares
 last_updated: 
 sidebar: mydoc_sidebar
