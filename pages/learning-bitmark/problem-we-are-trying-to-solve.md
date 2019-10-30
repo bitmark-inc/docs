@@ -23,7 +23,7 @@ To be able to meaningfully exert property rights requires a robust property syst
 
 Most obviously, a property system creates frameworks. It creates an organizational framework that allows us to itemize the things that we own and assemble them into categories that our minds can easily comprehend; it also creates a legal framework that allows anyone to participate in the acquisition and management of property, something that would be monopolized by the powerful elite without such a system.
 
-A property system also creates economic opportunity. It allows us to gain benefits from what we own. Perhaps we never plan to transfer our property, and in that case we can guarantee our continued ability to enjoy a property's core values by asserting our rights and preventing theft. But we can also use a property system to offer our property for loan, license, or sale in marketplaces.
+A property system also creates economic opportunity. It allows us to gain benefits from what we own. Perhaps we never plan to transfer our property, and in that case we can guarantee our continued ability to enjoy a property's core values by asserting our rights, by preventing theft, and by leveraging the property as capital. But we can also use a property system to offer our property for loan, license, or sale in marketplaces.
 
 Finally, a property system benefits our entire society. It creates social inclusion by making it easy to register property rights and  to find other people with interest in similar properties; it  promotes environmental stewardship by normalizing respect for property; and it supports societal improvement by making it simple for a community to find who owns properties of importance.
 
@@ -33,7 +33,7 @@ All of these advantages are magnified as a property system grows larger, making 
 
 ## Bitmark's Property System
 
-The Bitmark Property System is the answer to these needs: the way to replicate the property rights of the physical world in a global property system for the digital world. It is _the_ property system for establishing value and legal control over the whole world’s data.
+The Bitmark Property System is the answer to these needs: a way to replicate the property rights of the physical world in a global property system for the digital world. It is _the_ property system for establishing value and legal control over the whole world’s data.
 
 * It allows you to **register** your digital assets and data, defining what the assets are in a special asset record, then issuing them to yourself as the initial owner.
 * It also allows you to **transfer** your digital assets and data. You can sell an original asset or license a digital copy. You can make a personal transfer or do so as part of the Bitmark Markets -- which include marketplaces for specific digital properties.
