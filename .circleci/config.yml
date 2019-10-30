@@ -1,16 +1,23 @@
 # Golang CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-go/ for more details
-version: 2
+version: 2.1
+
+executors:
+  build-deploy-executor:
+    docker: 
+      - image: circleci/ruby:2.6.5
+
+    working_directory: ~/docs
+
 jobs:
-  build:
+  test:
     docker:
-      # specify the version
       - image: circleci/golang:1.12
         environment:
           - GO111MODULE: "on"
 
-    working_directory: ~/docs-testing/
+    working_directory: ~/docs
     steps:
       - checkout
       - run: sudo sh -c 'mkdir -p /etc/apt/source.list.d/'
@@ -31,7 +38,85 @@ jobs:
           command: |
              sudo apt-get update
              sudo apt-get install perl
-             sudo apt-get install git
-             git clone "https://github.com/araujobsd/igor" ~/docs-testing/igor
-             cd ~/docs-testing/igor/ && sh make-spellingwords
-             ~/docs-testing/igor/check-all ~/docs-testing/
+             git clone "https://github.com/araujobsd/igor" ~/docs/igor
+
+      - run: 
+          name: Test 
+          command: |
+            cd ~/docs/igor/ && sh make-spellingwords
+            ~/docs/igor/check-all ~/docs/
+
+  build: 
+    executor: build-deploy-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - bundler-{{ checksum "Gemfile.lock" }}
+            - bundler-
+
+      - run:
+          name: Prepare environment
+          command: |
+            gem install jekyll bundler
+            bundle install --clean --path vendor/bundle
+
+      - save_cache:
+          key: bundler-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Build
+          command: |
+            bundle exec jekyll build
+
+      - persist_to_workspace:
+          root: ~/docs
+          paths: 
+            - _site
+
+  deploy:
+    executor: build-deploy-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/docs
+
+      - add_ssh_keys:
+          fingerprints:
+            - "c8:fc:c0:b1:ad:0e:9c:52:f2:be:ea:0e:9f:69:40:a3"
+
+      - run:
+          name: Prepare environment
+          command: |
+            
+            git config --global user.email "hieupham@bitmark.com"
+            git config --global user.name "hieupham.bitmark"
+            echo 'export GH_COMMIT=$(git rev-parse HEAD)' >> $BASH_ENV
+      
+      - run: 
+          name: Deploy
+          command : |
+            git clone "git@github.com:bitmark-inc/bitmark-inc.github.io.git" ~/docs-deploy
+            cp -r ~/docs/_site/. ~/docs-deploy
+            cd ~/docs-deploy
+            git commit -am "commit automatically by CircleCI, reflect the change from /docs repo at commit '$GH_COMMIT'"
+            git push origin master
+
+
+workflows:
+  version: 2
+  test-build-deploy:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: 
+                - master
