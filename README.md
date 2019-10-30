@@ -1,85 +1,57 @@
 
 # Bitmark Documentation
 
-## [Learning Bitmark](learning-bitmark/README.md#learning-bitmark)
+## [Learning Bitmark](/pages/learning-bitmark/README.md)
 
-### [Bitmark Property System](learning-bitmark/README.md#bitmark-property-system)
-  
-  * [Bitmark Property System Introduction](learning-bitmark/problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
-  * [The Power of Property Systems](learning-bitmark/problem-we-are-trying-to-solve.md#the-power-of-property-systems)
-  * [Bitmark's Property System](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-property-system)
-  * [Bitmark's Technology](learning-bitmark/problem-we-are-trying-to-solve.md#bitmarks-technology)
+**[Bitmark Property System](/pages/learning-bitmark/problem-we-are-trying-to-solve.md)**
 
-### [Quick Start](learning-bitmark/quick-start/README.md#quick-start)
+**[Bitmark Blockchain](/pages/learning-bitmark/bitmark-blockchain.md)**
 
-  * [Run a Bitmark Node](learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
-  * [Working with bitmarks](learning-bitmark/quick-start/working-with-bitmarks/README.md#working-with-bitmarks)
-    * [Creating Bitmark Account](learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
-    * [Registering Bitmark Certificates](learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md#registering-bitmark-certificates)
-    * [Transferring Bitmark Certificates](learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md#transferring-bitmark-certificates)
-    * [Bitmark shares](learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
+**[Quick Start](/pages/learning-bitmark/quick-start/README.md)**
+* [Running a Bitmark Node](/pages/learning-bitmark/quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
+* [Creating a Bitmark Account](/pages/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md)
+* [Registering Bitmark Certificates](/pages/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md)
+* [Transferring Bitmark Certificates](/pages/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md)
+* [Using Bitmark Shares](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md)
 
-### [Contributing to Bitmark](learning-bitmark/contributing-to-bitmark/README.md#contribute-to-bitmark)
+**[Contributing to Bitmark](/pages/learning-bitmark/contributing-to-bitmark/README.md)**
+* [Bitmark Upgrade Proposal](/pages/learning-bitmark/contributing-to-bitmark/bup.md)
+* [Bug Bounty Program](/pages/learning-bitmark/contributing-to-bitmark/bug-bounty-program.md)
 
-  * [Bitmark Upgrade Proposal](learning-bitmark/contributing-to-bitmark/bup.md#bitmark-upgrade-proposal)
-  * [BUG BOUNTY PROGRAM](learning-bitmark/contributing-to-bitmark/bug-bounty-program.md#bug-bounty-program)
+**[Bitmark Terms and Glossary](/pages/bitmark-references/terms-and-glossary/bitmark-terms-and-glossary.md)**
 
 <br>
 
-## [Bitmark References](bitmark-references/README.md#bitmark-references)
+## [Bitmark References](/pages/bitmark-references/README.md#bitmark-references)
 
-### [Tutorial For Node Setup](bitmark-references/node-setup/README.md#tutorial-for-node-setup)
-  
-  * [Prerequisites](bitmark-references/node-setup/bitmark-node-setup.md#prerequisites)
-  * [Meeting Prerequisites](bitmark-references/node-setup/bitmark-node-setup.md#meeting-prerequisites)
-  * [Setup For Running A Node](bitmark-references/node-setup/bitmark-node-setup.md#setup-for-running-a-node)
+**[Tutorial For Node Setup](/pages/bitmark-references/node-setup/bitmark-node-setup.md)**
 
+**[Bitmark Node Software](/pages/bitmark-references/bitmark-node-software/README.md)**
+* [Bitmark Blockchain Overview](/pages/bitmark-references/bitmark-node-software/bitmark-blockchain-overview.md)
+* [RPC Communication](/pages/bitmark-references/rpc-communication/README.md)
+* [Block Verification and Synchronization](/pages/bitmark-references/bitmark-node-software/block-verification-and-synchronization.md)
+* [Storage](/pages/bitmark-references/bitmark-node-software/node-modules.md)
+* [Mining](/pages/bitmark-references/bitmark-node-software/mining.md)
+* [Payment Verification](/pages/bitmark-references/bitmark-node-software/payment-verification.md)
+* [Security](/pages/bitmark-references/bitmark-node-software/security.md)
 
-### [Bitmark Node Software](bitmark-references/bitmark-node-software/README.md#bitmark-node-software)
+**[Bitmark SDK](/pages/bitmark-references/bitmark-sdk/README.md)**
+* [Overview](/pages/bitmark-references/bitmark-sdk/bitmark-sdk-document.md)
+* [Getting Started](/pages/bitmark-references/bitmark-sdk/bitmark-sdk-document.md)
+* [Account](/pages/bitmark-references/bitmark-sdk/account.md)
+* [Actions](/pages/bitmark-references/bitmark-sdk/action.md)
+* [Query](/pages/bitmark-references/bitmark-sdk/query.md)
+* [Store Seed](/pages/bitmark-references/bitmark-sdk/store-seed.md)
+* [Web Socket](/pages/bitmark-references/bitmark-sdk/websocket.md)
 
-  * [Bitmark Blockchain](bitmark-references/bitmark-node-software/bitmark-blockchain.md#bitmark-blockchain)
-  * [Block Verification and Synchronization](bitmark-references/bitmark-node-software/block-verification-and-synchronization.md#block-verification-and-synchronization)
-  * [Storage](bitmark-references/bitmark-node-software/node-modules.md#storage)
-  * [Bitmark Mining](bitmark-references/bitmark-node-software/mining.md##bitmark-mining)
-  * [Payment Verification](bitmark-references/bitmark-node-software/payment-verification.md#payment-verification)
-  * [Security feature of the Bitmark Blockchain](bitmark-references/bitmark-node-software/security.md#security-feature-of-the-bitmark-blockchain)
-
-### [RPC Communication](bitmark-references/rpc-communication/README.md#rpc-communication)
- 
-  * [RPC](bitmark-references/rpc-communication/rpc-communication.md#rpc)
-  * [Flow](bitmark-references/rpc-communication/rpc-communication.md#flow)
-
-
-### [Bitmark SDK](bitmark-references/bitmark-sdk/README.md#bitmark-sdk)
-
-  * [Overview](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#overview)
-  * [Getting Started](bitmark-references/bitmark-sdk/bitmark-sdk-document.md#getting-started)
-  * [Account](bitmark-references/bitmark-sdk/account.md#account)
-  * [Actions](bitmark-references/bitmark-sdk/action.md#register-an-asset)
-  * [Query](bitmark-references/bitmark-sdk/query.md#query)
-  * [Store Seed](bitmark-references/bitmark-sdk/store_seed.md#store-seed)
-  * [Web Socket](bitmark-references/bitmark-sdk/websocket.md#web-socket)
-
-
-### [Bitmark\-CLI](bitmark-references/bitmark-cli/README.md#bitmark-cli)
-
-  * [Quick Setup](bitmark-references/bitmark-cli/quick-setup.md#quick-setup)
-  * [Bitmark\-CLI Command Reference](bitmark-references/bitmark-cli/bitmark-cli.md#bitmark-cli-command-reference)
-  * [CLI Command Synopsis](bitmark-references/bitmark-cli/bitmark-cli.md#cli-command-synopsis)
-  * [CLI commands](bitmark-references/bitmark-cli/bitmark-cli.md#cli-commands)
-
-
-### [Bitmark Glossary](bitmark-references/terms-and-glossary/bitmark-terms-and-glossary.md#bitmark-glossary)
+**[Bitmark\-CLI](/pages/bitmark-references/bitmark-cli/README.md)**
+* [Quick Setup](/pages/bitmark-references/bitmark-cli/quick-setup.md)
+* [Bitmark\-CLI Command Reference](/pages/bitmark-references/bitmark-cli/bitmark-cli.md)
 
 <br>
 
-## [Bitmark Appendix](bitmark-appendix/README.md#bitmark-appendix)
+## [Bitmark Appendix](/pages/bitmark-appendix/README.md#bitmark-appendix)
 
-### [Bitmark versus Ethereum](bitmark-appendix/bitmark-eth-comparison.md#bitmark-versus-ethereum)
-
-
-### [Bitmark shares](bitmark-appendix/README.md#bitmark-shares)
-  
-  * [Reasoning](bitmark-appendix/bitmark-shares.md#reasoning)
-  * [Actions that can be performed](bitmark-appendix/bitmark-shares.md#actions-that-can-be-performed)
-  * [The implementation](bitmark-appendix/bitmark-shares.md#the-implementation)
+* [Bitmark versus Ethereum](/pages/bitmark-appendix/bitmark-eth-comparison.md)
+* [Bitmark shares](/pages/bitmark-appendix/bitmark-shares.md)
+* [Bitmark papers](/pages/bitmark-appendix/bitmark-papers.md)
