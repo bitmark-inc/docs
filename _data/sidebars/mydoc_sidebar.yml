@@ -1,0 +1,169 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  folders:
+
+  - title: Learning Bitmark
+    output: web, pdf
+    folderitems:
+
+    - title: Bitmark Property System
+      url: /learning-bitmark/bitmark-property-system-introduction
+      output: web
+
+    - title: Bitmark Blockchain
+      url: /learning-bitmark/bitmark-blockchain
+      output: web
+
+      subfolders:
+        - title: Quick Start
+          output: web
+          subfolderitems:
+
+            - title: Run a Bitmark Node
+              url: /learning-bitmark/quick-start/simple-solution-for-node-setup
+              output: web
+
+            - title: Creating Bitmark Account
+              url: /learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account
+              output: web
+
+            - title: Registering Bitmark Certificates
+              url: /learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks
+              output: web
+
+            - title: Transferring Bitmark Certificates
+              url: /learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks
+              output: web
+
+            - title: Using Bitmark Shares
+              url: /learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares
+              output: web
+
+            - title: Bitmark-CLI Payment
+              url: /learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment
+              output: web
+
+        - title: Contributing to Bitmark
+          output: web
+          subfolderitems:
+
+            - title: Bitmark Upgrade Proposal
+              url: /learning-bitmark/contributing-to-bitmark/bup
+              output: web
+
+            - title: Bug Bounty Program
+              url: /learning-bitmark/contributing-to-bitmark/bug-bounty-program
+              output: web
+
+    - title: Bitmark Terms and Glossary
+      url: /learning-bitmark/bitmark-terms-and-glossary
+      output: web
+
+
+  - title: Bitmark References
+    output: web, pdf
+    folderitems:
+
+    - title: Tutorial For Node Setup
+      url: /bitmark-references/node-setup/tutorial-for-node-setup
+      output: web
+
+      subfolders:
+        - title: Bitmark Node Software
+          output: web
+          subfolderitems:
+
+          - title: Bitmark Blockchain Overview
+            url: /bitmark-references/bitmark-node-software/bitmark-blockchain-overview
+            output: web
+
+          - title: RPC Communication
+            url: /bitmark-references/bitmark-node-software/rpc-communication
+            output: web
+
+          - title: Block Verification and Synchronization
+            url: /bitmark-references/bitmark-node-software/block-verification-and-synchronization
+            output: web
+
+          - title: Payment Verification
+            url: /bitmark-references/bitmark-node-software/payment-verification
+            output: web
+
+          - title: Bitmark Mining
+            url: /bitmark-references/bitmark-node-software/bitmark-mining
+            output: web
+
+          - title: Storage
+            url: /bitmark-references/bitmark-node-software/storage
+            output: web
+
+          - title: Security
+            url: /bitmark-references/bitmark-node-software/security
+            output: web
+
+        - title: Bitmark SDK
+          output: web
+          subfolderitems:
+
+          - title: Getting Started
+            url: /bitmark-references/bitmark-sdk/getting-started
+            output: web
+
+          - title: Account
+            url: /bitmark-references/bitmark-sdk/account
+            output: web
+
+          - title: Actions
+            url: /bitmark-references/bitmark-sdk/action
+            output: web
+
+          - title: Query
+            url: /bitmark-references/bitmark-sdk/query
+            output: web
+
+          - title: Migration
+            url: /bitmark-references/bitmark-sdk/migration
+            output: web
+
+          - title: Store Seed
+            url: /bitmark-references/bitmark-sdk/store-seed
+            output: web
+
+          - title: Web Socket
+            url: /bitmark-references/bitmark-sdk/websocket
+            output: web
+
+
+        - title: Bitmark CLI
+          output: web
+          subfolderitems:
+
+          - title: Quick Setup
+            url: /bitmark-references/bitmark-cli/bitmark-cli-quick-setup
+            output: web
+
+          - title: Bitmark-CLI Command Reference
+            url: /bitmark-references/bitmark-cli/bitmark-cli-command-reference
+            output: web
+
+  - title: Bitmark Appendix
+    output: web, pdf
+    folderitems:
+
+    - title: Bitmark versus Ethereum
+      url: /bitmark-appendix/bitmark-eth-comparison
+      output: web
+
+    - title: Bitmark Shares
+      url: /bitmark-appendix/bitmark-shares
+      output: web
+
+    - title: Bitmark Papers
+      url: /bitmark-appendix/bitmark-papers
+      output: web
+
+
+
+
