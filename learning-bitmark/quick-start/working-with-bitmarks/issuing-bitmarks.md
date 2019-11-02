@@ -152,7 +152,7 @@ To register a new property using the Bitmark-CLI:
     -z
     ```
 
-    > The `create` command registers an asset from a fingerprint *and* issues the corresponding Bitmarks
+    > The `create` command registers an asset from a fingerprint *and* issues the corresponding bitmarks
     >
     > **Global Options:**
     >* `identity` - The identity of the registrant's Bitmark Account, which is stored in the Bitmark-CLI config file. 
