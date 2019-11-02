@@ -209,7 +209,7 @@ To verify a user's share balance using Bitmark-CLI:
 
   ```
 
-  >The `owned` command lists all the Bitmarks and shares that are owned by a user.
+  >The `owned` command lists all the bitmarks and shares that are owned by a user.
   >
   >**Command Options:**
   >* `owner identity` - The identity of the owner whose shares are being listed (in this case, the owner of the Bitmark Certificate that was just converted into shares)
