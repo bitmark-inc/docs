@@ -16,7 +16,7 @@ Bitmark owners can transfer their Bitmark Certificates to others using the [Bitm
 
 * If using the Bitmark-CLI, [Payment on Bitmark-CLI](payment-for-bitmark-cli.md) tools must be ready.
 
-## Transferring Bitmarks using the Bitmark App
+## Transferring bitmarks using the Bitmark App
 
 To transfer a Bitmark Certificate using the Bitmark App:
 
@@ -74,7 +74,7 @@ To transfer a Bitmark Certificate using the Bitmark App:
 <br>
 <br>
 
-## Transferring Bitmarks using the Bitmark SDK
+## Transferring bitmarks using the Bitmark SDK
 
 To transfer a Bitmark Certificate using the Bitmark JS SDK:
 
@@ -97,7 +97,7 @@ To transfer a Bitmark Certificate using the Bitmark JS SDK:
         await Transaction.get(txId);
     ```
 
-## Transferring Bitmarks using the Bitmark-CLI
+## Transferring bitmarks using the Bitmark-CLI
 
 The Bitmark-CLI allows users to transfer bitmarks by submitting the transactions to its connected node and then broadcasting to the network.
 
