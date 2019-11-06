@@ -13,7 +13,9 @@
 
 ## [Working with bitmarks](working-with-bitmarks/README.md#working-with-bitmarks)
 
-* [Creating Bitmark Account](working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
+* [Creating a Bitmark Account](working-with-bitmarks/creating-bitmark-account.md#creating-bitmark-account)
 * [Registering Bitmark Certificates](working-with-bitmarks/issuing-bitmarks.md#registering-bitmark-certificates)
 * [Transferring Bitmark Certificates](working-with-bitmarks/transferring-bitmarks.md#transferring-bitmark-certificates)
+* [Working with Bitmark Shares](working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
+* [Paying for Bitmark Transactions](working-with-bitmarks/payment-for-bitmark-cli.md)
 * [Bitmark shares](working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)

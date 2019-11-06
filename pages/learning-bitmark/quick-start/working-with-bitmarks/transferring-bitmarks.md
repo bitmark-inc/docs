@@ -9,39 +9,27 @@ folder: learning-bitmark/quick-start/working-with-bitmarks
 
 # Transferring Bitmark Certificates
 
-Once an asset has been registered, trading it only requires the owner to create a new transfer record that points back to the original issue record (or to the previous transfer record) and that shows the new owner of the asset. Because the blockchain is ordered and because it’s immutable, this creates a permanent chain of custody, reaching back to the asset’s origins.
+Once an asset has been registered, the owner can trade it by creating a transfer record that points back to the original issue record (or to a previous transfer record) and that lists the new owner of the asset. Because the blockchain is ordered and because it's immutable, this creates a permanent chain of custody reaching back to the asset's origins.
 
 <div style="background-color: #efefef; text-align: center;">
     <img src="/assets/images/TransferringBitmark_0.png" alt="Record chain" title="Record chain" style="padding: 20px" />
 </div>
 
-Bitmark owners can transfer their Bitmark Certificates to others using
-
-* The [Bitmark App](#transferring-bitmarks-using-bitmark-app)
-
-* The [Bitmark SDK](#transferring-bitmarks-using-bitmark-sdk)
-
-* The [Bitmark CLI](#transferring-bitmarks-using-bitmark-cli)
-
-<br>
-<br>
+Bitmark owners can transfer their Bitmark Certificates to others using the [Bitmark App](#transferring-bitmarks-using-the-bitmark-app), the [Bitmark SDK](#transferring-bitmarks-using-the-bitmark-sdk), or the [Bitmark-CLI](#transferring-bitmarks-using-the-bitmark-cli).
 
 ## Prerequisites
 
-* [Bitmark Accounts](creating-bitmark-account.md) are created.
+* [Bitmark Accounts](creating-bitmark-account.md) must be created.
 
-* [Bitmark Certificates](issuing-bitmarks.md) are registered.
+* [Bitmark Certificates](issuing-bitmarks.md) must be registered.
 
-* In case of using the Bitmark CLI, [Payment on Bitmark CLI](payment-for-bitmark-cli.md) tools need to be ready.
+* If using the Bitmark-CLI, [Payment on Bitmark-CLI](payment-for-bitmark-cli.md) tools must be ready.
 
-<br>
-<br>
+## Transferring bitmarks using the Bitmark App
 
-## Transferring bitmarks using Bitmark App
+To transfer a Bitmark Certificate using the Bitmark App:
 
-The Bitmark App allows a user to transfer a bitmark to another account by accessing the Property details screen and selecting the Transfer option.
-
-* From the **Properties > YOURS** screen, tap on the desired property to open the Property details screen
+* On the **PROPERTIES > YOURS** screen, tap on the desired property to open the **PROPERTY DETAILS** screen
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="/assets/images/TransferBitmark_1.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
@@ -50,7 +38,7 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 
     <br>
 
-* Tap on the `...` on the top right corner to open the options and select the **TRANSFER** option
+* Tap on the `...` at the top right corner to open the options and select the **TRANSFER** option
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="/assets/images/TransferBitmark_3.png" alt="Property options" title="Property options" width="250" style="padding: 20px" />
@@ -68,7 +56,7 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 
     <br>
 
-* Observe changes on the sender side - The property disappears
+* Observe changes on the sender side: the property disappears
 
     <div style="background-color: #efefef; text-align: center;">
         <img src="/assets/images/TransferBitmark_7.png" alt="Transferred" title="Transferred" width="250" style="padding: 20px" />
@@ -95,13 +83,11 @@ The Bitmark App allows a user to transfer a bitmark to another account by access
 <br>
 <br>
 
-## Transferring bitmarks using Bitmark SDK
+## Transferring bitmarks using the Bitmark SDK
 
-As a KIT for developers to interact with the Bitmark Property System, the Bitmark-SDKs provide interfaces for users to submit transactions to the Bitmark blockchain including the bitmark transfer.
+To transfer a Bitmark Certificate using the Bitmark JS SDK:
 
-<br>
-
-Here are the steps to transfer bitmarks using the **Bitmark JS SDK**:
+* [Configure the SDK and create an account (`sender`)](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-sdk) and/or [register a Bitmark Certificate and retrieve its `bitmarkId`](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md#registering-bitmark-certificates-using-the-bitmark-sdk)
 
 * Submit a transfer transaction
 
@@ -114,39 +100,19 @@ Here are the steps to transfer bitmarks using the **Bitmark JS SDK**:
         let txId = txs[0].id;
     ```
 
-<br>
-
 * Verify the transfer transaction
 
     ```js
         await Transaction.get(txId);
     ```
 
-<br>
-<br>
+## Transferring bitmarks using the Bitmark-CLI
 
-## Transferring bitmarks using Bitmark CLI
+The Bitmark-CLI allows users to transfer bitmarks by submitting the transactions to its connected node and then broadcasting to the network.
 
-The Bitmark CLI allows users to transfer bitmarks by submitting the transactions to its connected node, and then broadcasting to the network.
+See [The Basics of Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli) for more information on the interface.
 
-<br>
-
-> The basic structure of a Bitmark CLI command:
->   `bitmark-cli [global-options] command [command-options]`
-
-<br>
-
-> The Bitmark CLI determines which network to send the command by using the global option `--network` (abbreviation: `-n`). Option values:
->
->* `bitmark`:  the live network which uses live BTC or LTC to pay for the transactions.
->
->* `testing`:  a network for testing newly developed programs, it uses testnet coins to pay for transactions.
->
->* `local`: a special case for running a regression test network on the loopback interface.
-
-<br>
-
-Here are the steps to transfer a Bitmark Certificate using the Bitmark CLI
+To transfer a Bitmark Certificate using the Bitmark-CLI:
 
 * Submit a transfer request
 
@@ -156,15 +122,20 @@ Here are the steps to transfer a Bitmark Certificate using the Bitmark CLI
       -t <txid> -u
     ```
     
-    > The `transfer` command is to submit a transfer transaction to the network. The options:
+    > The `transfer` command submits a transfer transaction to the network. 
     >
-    >* `sender identity` - The identity of the sender's Bitmark Account which is created and stored in the Bitmark CLI config file
+    > **Global Options:**
+    >* `sender identity` - The identity of the sender's Bitmark Account, which is stored in the Bitmark-CLI config file
     >
-    >* `receiver` - The identitifer of the recipient's Bitmark Account. It can be the Bitmark Account Number or the Bitmark Account's identity which is created and stored in the Bitmark CLI config file
+    > **Command Options:**
+    >* `receiver` - The identifier of the recipient's Bitmark Account. This can be a Bitmark Account Number or the Bitmark Account's identity, if it's stored in the Bitmark-CLI config file
     >
-    > `txid` - The id of the last transaction of the bitmark which is transferring.
+    > `txid` - The id of the last transaction of the Bitmark that is being transferring.
     >
-    >**NOTE:** A transfer transaction on the Bitmark blockchain requires a transaction fee of 0.0002 BTC (20000 satoshis) or 0.002 LTC (200000 photons). Therefore, after the `transfer` command, the user needs to execute the payment for the transaction to be confirmed on the blockchain. The payment information is included in the output of the `transfer` command.
+    >**NOTE:** A transfer transaction on the Bitmark blockchain requires a transaction fee of 0.0002 BTC (20000 satoshis) or 0.002 LTC (200000 photons). Therefore, after the `transfer` command, the user will need to execute the payment on the Bitcoin or Litecoin blockchain. This payment information is included in the output of the `transfer` command.
+    >
+    > The transfer command also auto generates the `bitmark-wallet` commands for paying for the transaction and displays them at the end of the output.
+
 
     *Example:*
 
@@ -201,11 +172,8 @@ Here are the steps to transfer a Bitmark Certificate using the Bitmark CLI
     }
     ```
 
-  >**Note:** The transfer command auto generates the Bitmark Wallet command to pay for the transaction and displays them at the end of the output.
 
-<br>
-
-* Paying for the bitmark transfer using the Bitmark-Wallet
+* Pay for the bitmark transfer using `bitmark-wallet`
 
     ```shell
     #Run the bitcoind
@@ -224,19 +192,17 @@ Here are the steps to transfer a Bitmark Certificate using the Bitmark CLI
 
     ```
 
-    >To execute a bitcoin or litecoin transaction on the local environment, the bitcoind or litecoind need to be running.
+    >To execute a bitcoin or litecoin transaction on the local environment, the `bitcoind` or `litecoind` daemon must be running.
     >
-    > - `payId` - The payment id for the share creation transaction, it is printed in the output of share creation command
+    > - `payId` - The payment id for the transfer transaction, printed in the results as `payId`
+    > - `btc address` or `ltc address` - The address for payment, printed in the results as `address` under `BTC` or `LTC`
+    > - `btc amount` or `ltc amount` - The payment amount, printed in the results as `amount` under `BTC` or `LTC`
 
-    <br>
-
-    > **NOTE:** The payment is able to be performed using another tool which allows users to add the exact hex data to an OP_RETURN as part of the coin transaction
-
-    *Example of paying by ltc:*
+    *Example — Paying by LTC:*
 
     ```shell
     # run litecoind
-    $ bitcoind -datadir=~/.config/litecoin/
+    $ litecoind -datadir=~/.config/litecoin/
 
     # Perform payment
     $ bitmark-wallet --conf ~/.config/bitmark-wallet/test/test-bitmark-wallet.conf \
@@ -252,22 +218,20 @@ Here are the steps to transfer a Bitmark Certificate using the Bitmark CLI
     }
     ```
 
-<br>
-
-* Verifying the status of the share creation transaction
+* Verify the status of the transfer transaction
 
     ```shell
     $ bitmark-cli -n <network> \
       status -t <transferId>
     ```
 
-    >The `status` command is to query a transaction's status. The options:
+    >The `status` command queries a transaction's status.
     >
-    >* `transferId` - The transfer transaction id which is printed as `transferId` in the output of the `transfer` command.
+    >**Command Options:**
+    >* `transferId` - The transfer transaction id, printed as `transferId` in the output of the `transfer` command.
     >
-    >The returned status:
-    >
-    >* `Pending` - Has not been paid.
+    >**Returns:**
+    >* `Pending` - Not paid.
     >
     >* `Verified` - Paid but not confirmed on the blockchain.
     >
@@ -295,18 +259,17 @@ Here are the steps to transfer a Bitmark Certificate using the Bitmark CLI
 
     <br>
 
-* Verifying the bitmark's provenance
+* Verify the Bitmark's provenance
 
     ```shell
     $ bitmark-cli -n <network> \
       provenance -t <transferID>
     ```
 
-    >The `provenance` command returns all the transaction records from the transaction corresponding to the inputted txid back to the bitmark's asset registration record. The options:
+    >The `provenance` command returns all the transaction records related to an asset from the transaction corresponding to the txid back to the Bitmark's asset registration record. 
     >
-    >* `transferID` - `transferId` - The transfer transaction id which is printed as `transferId` in the output of the `transfer` command.
-    >
-
+    > **Command options:**
+    >* `transferID` - `transferId` - The transfer transaction id, printed as `transferId` in the output of the `transfer` command
 
     *Example:*
 
@@ -359,14 +322,10 @@ Here are the steps to transfer a Bitmark Certificate using the Bitmark CLI
           "_IDENTITY": "first"
     }
     ```
+    
+## Exploring Bitmark transactions using the Bitmark Registry website
 
-
-<br>
-<br>
-
-## Explore the Bitmark transactions using the Bitmark Registry website
-
-Bitmark build a web application for users to explore all the transactions happened on the Bitmark blockchain at:
+Users can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry web application:
 
 * For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
 
