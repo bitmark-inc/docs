@@ -12,7 +12,7 @@
 * [Creating Bitmark Accounts](/pages/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md)
 * [Registering Bitmark Certificates](/pages/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md)
 * [Transferring Bitmark Certificates](/pages/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md)
-* [Using Bitmark Shares](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md)
+* [Working with Bitmark shares](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md)
 
 **[Contributing to Bitmark](/pages/learning-bitmark/contributing-to-bitmark/README.md)**
 * [Bitmark Upgrade Proposal](/pages/learning-bitmark/contributing-to-bitmark/bup.md)
