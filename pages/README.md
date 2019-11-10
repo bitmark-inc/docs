@@ -9,7 +9,7 @@
 
 **[Quick Start](/pages/learning-bitmark/quick-start/README.md)**
 * [Running a Bitmark Node](/pages/learning-bitmark/quick-start/simple-solution-for-node-setup.md)
-* [Creating a Bitmark Account](/pages/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md)
+* [Creating Bitmark Accounts](/pages/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md)
 * [Registering Bitmark Certificates](/pages/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md)
 * [Transferring Bitmark Certificates](/pages/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md)
 * [Using Bitmark Shares](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md)
