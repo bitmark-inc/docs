@@ -3,9 +3,9 @@
 
 ## [Learning Bitmark](/pages/learning-bitmark/README.md)
 
-**[Bitmark Property System](/pages/learning-bitmark/problem-we-are-trying-to-solve.md)**
+**[Bitmark Property System Introduction](/pages/learning-bitmark/problem-we-are-trying-to-solve.md)**
 
-**[Bitmark Blockchain](/pages/learning-bitmark/bitmark-blockchain.md)**
+**[Bitmark Blockchain Introduction](/pages/learning-bitmark/bitmark-blockchain.md)**
 
 **[Quick Start](/pages/learning-bitmark/quick-start/README.md)**
 * [Running a Bitmark Node](/pages/learning-bitmark/quick-start/simple-solution-for-node-setup.md)
