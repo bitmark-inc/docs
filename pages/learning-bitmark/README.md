@@ -1,14 +1,13 @@
 
 # Learning Bitmark
 
-## [Bitmark Property System](problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
+## [Bitmark Property System Introduction](problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
   
-* [Bitmark Property System Introduction](problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
 * [The Power of Property Systems](problem-we-are-trying-to-solve.md#the-power-of-property-systems)
 * [Bitmark's Property System](problem-we-are-trying-to-solve.md#bitmarks-property-system)
 * [Bitmark's Technology](problem-we-are-trying-to-solve.md#bitmarks-technology)
 
-## [Bitmark Blockchain](bitmark-blockchain.md)
+## [Bitmark Blockchain Introduction](bitmark-blockchain.md)
 
 * [Technical Overview](bitmark-blockchain.md#technical-overview)
 * [Technical FAQ](bitmark-blockchain.md#technical-faq)
