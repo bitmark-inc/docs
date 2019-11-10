@@ -15,7 +15,7 @@
 ## [Quick Start](quick-start/README.md#quick-start)
 
 * [Running a Bitmark Node](quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
-* [Creating a Bitmark Account](quick-start/working-with-bitmarks/creating-a-bitmark-account.md)
+* [Creating a Bitmark Account](quick-start/working-with-bitmarks/creating-bitmark-account.md)
 * [Registering Bitmark Certificates](quick-start/working-with-bitmarks/issuing-bitmarks.md)
 * [Transferring Bitmark Certificates](quick-start/working-with-bitmarks/transferring-bitmarks.md)
 * [Working with Bitmark shares](quick-start//working-with-bitmarks/using-bitmark-shares.md)
