@@ -1,5 +1,5 @@
 ---
-title: Bitmark Blockchain
+title: Bitmark Blockchain Introduction
 keywords: blockchain
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,17 +7,15 @@ permalink: /learning-bitmark/bitmark-blockchain
 folder: learning-bitmark
 ---
 
-# Bitmark Blockchain
+# Bitmark Blockchain Introduction
 
 ## Technical Overview
 
-The Bitmark blockchain is the property system for the digital generation.
+The Bitmark blockchain is the property system for the digital generation. It was built with cutting-edge blockchain technology to match the needs of our borderless and global digital lives and futures.
 
 ![Bitmark Blockchain](/assets/images/bitmark_processes_en_2500w.png)
 
-The Bitmark property system was built with cutting-edge blockchain technology to match the needs of our borderless and global digital lives and futures.
-
-It features some of the same strengths as other blockchains, such as the immutability of an ordered and distributed ledger. However, Bitmark is specialized for property transactions and has strengths related to that: by uniquely identifying property, encoding its title, and supporting transfers, Bitmark creates clear provenance and chain of ownership for unique digital assets. This decentralized structure empowers individuals by granting them personal control over their assets.
+The Bitmark blockchain features some of the same strengths as other blockchains, such as the immutability of an ordered and distributed ledger. However, the Bitmark blockchain is specialized for property transactions and has speciific strengths related to that: by uniquely identifying property, encoding its title, and supporting transfers, Bitmark creates clear provenance and chain of ownership for unique digital assets. This decentralized structure empowers individuals by granting them personal control over their assets.
 
 To read more about the Bitmark property system, how it expands on the basic ideas of the blockchain, and how it uses a variety of blockchain records to manage digital property and data, please [read our blog posts here](https://medium.com/clean-titles/defining-property-in-the-digital-environment-part-three-4c3ecbab5833).
 
@@ -35,17 +33,17 @@ The following questions and answers are drawn in part from our papers and provid
 
 **Registering Bitmark Certificates**
 
-* [How are property owners identified in Bitmark?](#how-are-property-owners-identified-in-bitmark)
+* [How are property owners identified in the Bitmark Property System?](#how-are-property-owners-identified-in-the-bitmark-property-system)
 
-* [How is property registered in Bitmark?](#how-is-property-registered-in-bitmark)
+* [How is property registered in the Bitmark Property System?](#how-is-property-registered-in-the-bitmark-property-system)
 
 * [How are Bitmark miners encouraged to publish issue records?](#how-are-bitmark-miners-encouraged-to-publish-issue-records)
 
 * [How does the Bitmark Blockchain protect property?](#how-does-the-bitmark-blockchain-protect-property)
 
-**Transferring bitmark certificates**
+**Transferring Bitmark Certificates**
 
-* [How is property transferred in Bitmark?](#how-is-property-transferred-in-bitmark)
+* [How is property transferred in the Bitmark Propeerty System?](#how-is-property-transferred-in-the-bitmark-property-system)
 
 * [How are Bitmark miners encouraged to publish transfer records?](#how-are-bitmark-miners-encouraged-to-publish-transfer-records)
 
@@ -53,29 +51,29 @@ The following questions and answers are drawn in part from our papers and provid
 
 #### Why use the Bitmark Blockchain to record property?
 
-You might own land, means of production, inventions, creative works, or other assets, but you also have a title to those assets. A property title is the legal instrument by which an entity claims ownership of an asset. It also serves as a "container" for transferring property rights from one owner to another. To be legally binding, title transfers must be publicly recorded in property systems such as county land registrars or a state departments of motor vehicles.
+When you own land, means of production, inventions, creative works, or other assets, you also have a title to those assets. A property title is the legal instrument by which an entity claims ownership of an asset. It also serves as a "container" for transferring property rights from one owner to another. To be legally binding, title transfers must be publicly recorded in property systems such as county land registrars or a state departments of motor vehicles.
 
 ![Bitmark Ownership](/assets/images/bitmark_ownership_en_2500w.png)
 
-In other words, people have traditionally said that assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets.
+Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets.
 
 #### Why not just use Bitcoin or Ethereum tokens to represent property?
 
-Traditional cryptocurrency tokens can be split and rejoined, which is a bad model for property: you wouldn’t want to cut a painting into six parts, then put it back together! The fungibility of traditional cryptocurrency also is at odds with the necessity to record provenance for property. Finally, there’s no ability on traditional systems for a recipient to countersign to agree to the transfer of property.
+Traditional cryptocurrency tokens can be split and rejoined, which is a bad model for property: you wouldn’t want to cut a painting into six parts, then put it back together! The fungibility of traditional cryptocurrency is also at odds with the need to record provenance for property. Finally, there’s no ability on traditional systems for a recipient to countersign to agree to the transfer of property.
 
-There are methods to get around some of this issues on Bitcoin, such as recording information in OP_RETURNS or directly encoding data in UTXOs. Similarly, specific smart contracts could have been created in Ethereum to create non-fungible tokens.
+There are methods to get around some of this issues on the Bitcoin blockchain, such as recording information in OP_RETURNS or directly encoding data in UTXOs. Similarly, specific smart contracts could have been created in Ethereum to create non-fungible tokens.
 
 However, we ultimately felt that a network designed specifically for registering property rights could minimize resource requirements and reduce security attack vectors. The question then became “Is registering, tracking, and trading digital property popular enough to warrant a specialized system?” History shows that the answer to that is clearly “yes”; we believe that it’s the most sustainable long-term strategy.
 
 ### Registering Bitmark Certificates
 
-#### How are property owners identified in Bitmark?
+#### How are property owners identified in the Bitmark Property System?
 
-Each property owner in Bitmark is identified by a public key. They must then decide how to store their linked private key. They could choose to do so themselves, possibly using the Bitmark mobile app, or they could store it directly with Bitmark. They can also decide to link their public key to a real-world identity or to remain pseudonymous.
+Each property owner in the Bitmark Property System is identified by a public key. They must then decide how to store their linked private key. They could choose to do so themselves, possibly using the Bitmark mobile app, or they could store it directly with Bitmark. They can also decide to link their public key to a real-world identity or to remain pseudonymous.
 
-#### How is property registered in Bitmark?
+#### How is property registered in the Bitmark Property System?
 
-Company easily checks the Bitmark blockchain for the corresponding bitmark certificate.
+The Bitmark blockchain records registrations with Bitmark Certificates that can be easily read and verified.
 
 An asset record contains the following information:
 
@@ -105,17 +103,19 @@ There can be multiple issue records for the same property, each defined by a dif
 
 #### How are Bitmark miners encouraged to publish issue records?
 
-Though a miner isn’t immediately paid for these issuances in his block, he’s still incentivized to mine the issue records because he’s given a bitmark certificate on the block. This will reward him when the digital properties in the block are later transferred.
+Registration of a an asset on the Bitmark Blockchain usually doesn't require a payment; instead, a Hashcash calculation is conducted by the asset owner.
+
+Though a miner isn’t immediately paid for these issuances in his block, he’s still incentivized to mine the issue records because he’s given a Bitmark Certificate on the block. This will reward him when the digital properties in the block are later transferred.
 
 #### How does the Bitmark Blockchain protect property?
 
-A decentralized system such as Bitmark allows almost anyone to issue bitmark certificates to just about anything. When legal disputes arise, the immutability of the blockchain allows it to serve as evidence in conflicting ownership claims. This permanent public record of ownership can also help deter bad actors. Encryption can be used to further protect digital assets that have been registered as bitmark certificates.
+A decentralized system such as Bitmark allows almost anyone to issue Bitmark Certificates to just about anything. When legal disputes arise, the immutability of the blockchain allows it to serve as evidence in conflicting ownership claims. This permanent public record of ownership can also help deter bad actors. Encryption can be used to further protect digital assets that have been registered as bitmark certificates.
 
 ![Bitmark Blockchain protects Ownership](/assets/images/ownership_blockchain-digital_property_en_2500w.png)
 
-### Transferring bitmark certificates
+### Transferring Bitmark Certificates
 
-#### How is property transferred in Bitmark?
+#### How is property transferred in the Bitmark Property System?
 
 Once an asset has been issued, trading it simply requires the owner to create a new transfer record that points back to the original issue record (or to the previous transfer record) and that shows the new owner of the asset. Because the blockchain is ordered and because it’s immutable, this creates a permanent chain of custody, reaching back to the asset’s origins.
 
@@ -150,6 +150,7 @@ The placement of a record in the pending mempool marks the beginning of a five-s
 3. Bitmark watches those other blockchains; when it spots a payment it moves the associated Bitmark transaction from the pending mempool to the verified mempool, making it available for mining.
 
 4. When a miner successfully mines a block, he includes his own payment addresses for all possible currencies.
+
 5. Bitmark pays fees from the block to the miner at his linked addresses.
 
 Even though the Bitmark blockchain doesn’t transact currencies, it is able to leverage the advantages of cryptocurrencies by these links to other blockchains.
