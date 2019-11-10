@@ -1,6 +1,6 @@
 # Quick Start
 
-## [Running Bitmark Nodes](simple-solution-for-node-setup.md#run-a-bitmark-node)
+## [Running a Bitmark Node](simple-solution-for-node-setup.md#run-a-bitmark-node)
   
 * [Starting your Bitmark Node](simple-solution-for-node-setup.md#starting-your-bitmark-node)
 * [Prerequisites](simple-solution-for-node-setup.md#prerequisites)
