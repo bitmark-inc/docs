@@ -70,5 +70,5 @@ Please discuss with us before disclosure of your bugs. Bitmark will endeavor to 
 
 [CONTACT US](mailto:security@bitmark.com)
 
-###### For more info:
+#### For more info
 Read our [Governance policy](https://bitmark.com/en/legal/governance-policy), or view the [Bitmark Github](https://bitmark.com/en/developers/github) repo if you are interested in contributing code.
