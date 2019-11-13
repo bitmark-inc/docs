@@ -2,7 +2,7 @@
 
 ## [Bitmark Upgrade Proposal](bup.md#bitmark-upgrade-proposal)
   
-* [What is BUP?](bup.md#what-is-bup)
+* [What is a BUP?](bup.md#what-is-a-bup)
 * [Where I can find the BUPs?](bup.md#where-i-can-find-the-bups)
 
 
