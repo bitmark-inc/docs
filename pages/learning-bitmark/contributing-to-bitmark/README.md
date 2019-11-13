@@ -1,4 +1,4 @@
-# Contribute to Bitmark
+# Contributing to Bitmark
 
 ## [Bitmark Upgrade Proposal](bup.md#bitmark-upgrade-proposal)
   
