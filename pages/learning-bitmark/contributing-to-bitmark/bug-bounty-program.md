@@ -27,10 +27,10 @@ Latest bug updates:
 
 ## How to report a bug
 
-#### Scope:
+### Determining scope
 [Bitmarkd](https://github.com/bitmark-inc/bitmarkd) is the codebase for the Bitmark blockchain.
 
-##### Bug scope:
+##### Bug scope
 Only bugs in Scope are eligible for a bug bounty. A qualifying bug has to be a danger to the blockchain records, privacy, or client operations. These include bugs in:
 1. **Protocol**: Flaws in protocol design, an example being the incentive design flaw in the [white paper](https://bitmark.com/assets/bitmark_technical-white-paper.pdf)
 2. **Implementation of client**: Any implementation bug in `bitmarkd` that could cause cause bad block, invalid assets, transaction failure, bad operations, or program crashes
@@ -42,19 +42,20 @@ Only bugs in Scope are eligible for a bug bounty. A qualifying bug has to be a d
 * `node-d3.test.bitmark.com`
 * `node-a3.test.bitmark.com`
 
-##### Bugs in third-party packages:
+##### Bugs in third-party packages
 Third-party package bugs may or may not be rewarded by Bitmark. In theory, you should claim the bug(s) directly with a third-party bounty program; however, we may also reward you for your efforts.
 
-##### Bugs out of scope include:
+##### Out-of-scope bugs
+Bugs that are out of scope include those that require:
 * Physical access to a user’s device
 * Social engineering
 * MITM attacks
 * DDoS / Fuzzing / High-Bandwidth Attack
 
-##### Submit
+### Submitting a bug
 * Submit your report to: [Bug Bounty Submission Form](https://docs.google.com/forms/d/e/1FAIpQLSeVzZfd-DDQNuVVDMkwgu4VSxmPnvB6OLo_sw_9CH1w34xoZA/viewform)
 
-##### Collect rewards
+### Collecting rewards
 Rewards are considered based on the impact and severity of the vulnerability, with relation to the scope and quality of the report. 
 
 * Critical Bugs: key leaks
