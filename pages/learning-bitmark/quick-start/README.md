@@ -18,4 +18,3 @@
 * [Transferring Bitmark Certificates](working-with-bitmarks/transferring-bitmarks.md#transferring-bitmark-certificates)
 * [Working with Bitmark Shares](working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)
 * [Paying for Bitmark Transactions](working-with-bitmarks/payment-for-bitmark-cli.md)
-* [Bitmark shares](working-with-bitmarks/using-bitmark-shares.md#bitmark-shares)

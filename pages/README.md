@@ -3,16 +3,16 @@
 
 ## [Learning Bitmark](/pages/learning-bitmark/README.md)
 
-**[Bitmark Property System](/pages/learning-bitmark/problem-we-are-trying-to-solve.md)**
+**[Bitmark Property System Introduction](/pages/learning-bitmark/problem-we-are-trying-to-solve.md)**
 
-**[Bitmark Blockchain](/pages/learning-bitmark/bitmark-blockchain.md)**
+**[Bitmark Blockchain Introduction](/pages/learning-bitmark/bitmark-blockchain.md)**
 
 **[Quick Start](/pages/learning-bitmark/quick-start/README.md)**
 * [Running a Bitmark Node](/pages/learning-bitmark/quick-start/simple-solution-for-node-setup.md)
-* [Creating a Bitmark Account](/pages/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md)
+* [Creating Bitmark Accounts](/pages/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md)
 * [Registering Bitmark Certificates](/pages/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md)
 * [Transferring Bitmark Certificates](/pages/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md)
-* [Using Bitmark Shares](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md)
+* [Working with Bitmark shares](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md)
 
 **[Contributing to Bitmark](/pages/learning-bitmark/contributing-to-bitmark/README.md)**
 * [Bitmark Upgrade Proposal](/pages/learning-bitmark/contributing-to-bitmark/bup.md)

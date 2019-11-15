@@ -1,5 +1,5 @@
 ---
-title: Creating Bitmark Account
+title: Creating Bitmark Accounts
 keywords: create account
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,7 +7,7 @@ permalink: /learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 
-# Creating Bitmark a Accounts
+# Creating Bitmark Accounts
 
 Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark App](#creating-a-bitmark-account-using-the-bitmark-app), the [Bitmark SDK](#creating-a-bitmark-account-using-the-bitmark-sdk), or the [Bitmark-CLI](#creating-a-bitmark-account-using-the-bitmark-cli).
 
