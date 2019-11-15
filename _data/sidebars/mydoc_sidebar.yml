@@ -49,6 +49,10 @@ entries:
           output: web
           subfolderitems:
 
+            - title: Bitmark Software Development Process
+              url: /learning-bitmark/contributing-to-bitmark/bitmark-software-development-process
+              output: web
+
             - title: Bitmark Upgrade Proposal
               url: /learning-bitmark/contributing-to-bitmark/bup
               output: web
