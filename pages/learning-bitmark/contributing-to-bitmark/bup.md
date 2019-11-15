@@ -8,17 +8,16 @@ folder: learning-bitmark/contributing-to-bitmark
 ---
 
 # Bitmark Upgrade Proposal
-## What is BUP?
+## What is a BUP?
 A Bitmark Upgrade Proposal (BUP) is a design document providing
-information to Bitmark community, or describing a new feature for
-Bitmark or its processes or environment. A BUP shall provide a
-concise technical specification of the feature and a rationale for the
-feature.
+information to the Bitmark community or describing a new feature for
+Bitmark or its processes or environment. A BUP provides a
+concise technical specification of the feature and a rationale for it.
 
 ## Where I can find the BUPs?
-We maintain an entity at Github only for BUP, we want to keep a clean 
-environment where developers will not have distraction with other
-repos, this is the reason why we do not maintain it under
-Bitmark documentation [repository](https://github.com/bitmark-inc/docs).
+We have a repo at Github specifically for BUPs. We do not maintain it as part of the
+Bitmark documentation [repository](https://github.com/bitmark-inc/docs) because we want that to be a clean 
+environment where developers are not distracted by other
+repos.
 
-To have full access to all BUPs, please access: [Bitmark Upgrade Proposal](https://github.com/bitmark-property-system/bups)
+For full access to all BUPs, please go to: [Bitmark Upgrade Proposal](https://github.com/bitmark-property-system/bups)
