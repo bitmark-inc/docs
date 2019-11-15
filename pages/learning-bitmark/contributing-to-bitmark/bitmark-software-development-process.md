@@ -20,21 +20,21 @@ folder: learning-bitmark/contributing-to-bitmark
 
 Our current workflow uses OKR, where we define sprints as a deadline to deliver the software artefact, but we do not limit ourselves. We do translate the OKR in ISSUES on Github where we can track them. The external contributors can get involved with the project opening new ISSUES, being part of the discussion in existent ISSUES and make PULL REQUESTS within our projects.
 
-![](https://github.com/bitmark-inc/docs/blob/master/assets/images/project_bitmarkd.png)
+![](/assets/images/project_bitmarkd.png)
 
 
 **Branch, Tag and release process:**
 
 We have a single development branch master, from where we create tags to perform minor and major releases. The development never happens directly on branch master, instead the developer create a development branch from master, after the developer believes its branch is ready, it opens a pull request and assign another developer to make a review. After the review process, the developer merges its branch to master branch and deletes the development branch. The developers never commit directly into the master branch without passing through the review process.
 
-![](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/contributing-to-bitmark/assets/images/github_branches.png)
+![](/assets/images/github_branches.png)
 
 
 **Review process:**
 
 We have a peer review process, where the developer can assign one or more individuals to verify its code, these individuals shall suggest modifications or accept the pull request, also the reviewer can reassign the review. Currently there are no time outs specified for reviewers, and in such a case, if a reviewer is delaying the review, it must discuss during the stand-up daily meeting.
 
-![](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/contributing-to-bitmark/assets/images/review-process.png)
+![](/assets/images/review-process.png)
 
 # Development work-flow improvements
 
@@ -43,7 +43,7 @@ We have a peer review process, where the developer can assign one or more indivi
 This is our working flow using GitHub. Here I describe 3 basic areas of our development process.
 
 
-![](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/contributing-to-bitmark/assets/images/new-review-process.png)
+![](/assets/images/new-review-process.png)
 
 
 **What to do when there is a new patch?**
@@ -101,7 +101,7 @@ The quality assurance team must focus on the number of issues closed and must be
 
 To make the software stable, we need to stabilize a branch and let the Developers test it and give time for QA to validate it prior to RELEASE it and also we need to enforce a freeze time where the branch won't receive any critical change or new feature.
 
-![](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/contributing-to-bitmark/assets/images/freeze-branch.png)
+![](/assets/images/freeze-branch.png)
 
 **Code freeze and QA steps:**
 
@@ -120,7 +120,7 @@ To make the software stable, we need to stabilize a branch and let the Developer
 The release process is a critical path that ensures we will accomplish the stakeholders requirements and deliver the intended objectives. Also it establishes a routine of communication internally and external, stakeholders, developers and users have a standard to follow and knows what to expect from the project.
 
 
-![](https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/contributing-to-bitmark/assets/images/release-process.png)
+![](/assets/images/release-process.png)
 
 **Release steps:**
 
