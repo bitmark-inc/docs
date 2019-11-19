@@ -76,7 +76,7 @@ _Tested on Ubuntu 18.04._
     $ apt install libargon2-0-dev uuid-dev libzmq3-dev
 ```
 
-## Downloading & Installing Your Bitmark Node
+## Downloading and Installing a Bitmark Node
 
 Download the Bitmark Node repository using the `git` command:
 ```shell
@@ -89,13 +89,13 @@ Afterward, compile the repo using `go`. This process requires that the Go instal
     $ go install -v ./...
 ```
 
-## Setting Up & Running Your Bitmark Node
+## Setting Up and running a Bitmark Node
 
 Ensure that the `${HOME}/go/bin` directory is part of your shell's `${PATH}` before continuing.
 
 The commands below assume you checked out and compiled your Bitmark Node into the ${HOME}/bitmarkd directory.
 
-### Setting up & Running `bitmarkd`
+### Setting up and running `bitmarkd`
 
 Create the configuration directory and copy the sample configuration:
 
@@ -129,7 +129,7 @@ For more information on `bitmarkd` sub-commands, run the following command:
     $ bitmarkd --config-file="${HOME}/.config/bitmarkd/bitmarkd.conf" help
 ```
 
-### Setting up & Running `recorderd`
+### Setting up and running `recorderd`
 
 `recorderd` is the mining program for the Bitmark Property System, which can optionally be run to support the Bitmark blockchain (and to earn bitmarks on blocks). 
 
