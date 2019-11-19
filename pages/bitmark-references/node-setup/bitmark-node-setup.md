@@ -89,7 +89,7 @@ Afterward, compile the repo using `go`. This process requires that the Go instal
     $ go install -v ./...
 ```
 
-## Setting Up & Installing Your Bitmark Node
+## Setting Up & Running Your Bitmark Node
 
 Ensure that the `${HOME}/go/bin` directory is part of your shell's `${PATH}` before continuing.
 
