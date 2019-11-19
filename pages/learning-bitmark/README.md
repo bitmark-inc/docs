@@ -1,6 +1,8 @@
 
 # Learning Bitmark
 
+_Learning Bitmark provides an introduction to the Bitmark Property System, including tutorial-style documents that will take you step by step through the basic Bitmark Property System features._
+
 ## [Bitmark Property System Introduction](problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
   
 * [The Power of Property Systems](problem-we-are-trying-to-solve.md#the-power-of-property-systems)
