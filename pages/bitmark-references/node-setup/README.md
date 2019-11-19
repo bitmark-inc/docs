@@ -10,10 +10,10 @@
  * [Installing packages on MacOSX](bitmark-node-setup.md#installing-packages-on-macosx)
  * [Installing packages on Ubuntu](bitmark-node-setup.md#installing-packages-on-ubuntu)
 
-## [Downloading & Installing Your Bitmark Node](bitmark-node-setup.md#downloading-&-installing-your-bitmark-node)
+## [Downloading and Installing a Bitmark Node](bitmark-node-setup.md#downloading-and-installing-a-bitmark-node)
 
-## [Setting Up & Running Your Bitmark Node](bitmark-node-setup.md#setting-up-running-your-bitmark-node)
+## [Setting Up and Running a Bitmark Node](bitmark-node-setup.md#setting-up-and-running-a-bitmark-node)
 
-* [Setting up & running bitmarkd](bitmark-node-setup.md#setting-up-running-bitmarkd)
-* [Setting up & running recorderd](bitmark-node-setup.md#setting-up-running-recorderd)
+* [Setting up and running bitmarkd](bitmark-node-setup.md#setting-up-and-running-bitmarkd)
+* [Setting up and running recorderd](bitmark-node-setup.md#setting-up-and-running-recorderd)
 
