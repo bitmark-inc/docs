@@ -1,6 +1,8 @@
 
 # Bitmark References
 
+_The Bitmark References offer you an encyclopedia of features for the Bitmark Property System that can be used for reference purposes._
+
 ## [Tutorial For Node Setup](node-setup/bitmark-node-setup.md)
   
 * [Prerequisites](node-setup/bitmark-node-setup.md#prerequisites)
