@@ -17,7 +17,7 @@ There are several way to run a Bitmark Node: services such as `bitmarkd`, `disco
 
 This section will guide you through the installation of a bitmark node using a docker container. The bitmark node docker container includes `bitmarkd`, `recorderd`, a payment system, and a user interface to control and monitor the services.
 
-If you prefer, you can install a Bitmark Node using a [packages system](../..//bitmark-references/node-setup/bitmark-node-setup.md).
+If you prefer, you can install a Bitmark Node [by hand](../..//bitmark-references/node-setup/bitmark-node-setup.md), as detailed in the [Bitmark References](../../bitmark-references).
 
 ## Prerequisites
 
