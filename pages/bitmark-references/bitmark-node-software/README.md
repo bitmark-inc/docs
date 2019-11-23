@@ -2,7 +2,7 @@
 # Bitmark Node Software
 
 
-## [Bitmark Blockchain Overview](bitmark-blockchain-overview.md)
+## [Bitmark Blockchain Technical Overview](bitmark-blockchain-overview.md)
 
 * [Definitions](bitmark-blockchain-overview.md#definitions)
 * [Transactions: Asset, Issue and Transfer Records](bitmark-blockchain-overview.md#transactions-asset-issue-and-transfer-records)
