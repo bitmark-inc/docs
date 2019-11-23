@@ -1,5 +1,5 @@
 ---
-title: Bitmark Blockchain Overview
+title: Bitmark Blockchain Technical Overview
 keywords: blockchain
 last_updated: 
 sidebar: mydoc_sidebar
@@ -9,95 +9,95 @@ folder: bitmark-references/bitmark-node-software
 
 # Bitmark Blockchain Technical Overview
 
-This briefly describe the structure of the block chain. It builds up
-from the transactions through to the final structure of the chain
+This briefly describe the structure of the block chain. It moves
+from the transactions up to the final structure of the chain
 itself.
 
 ## Definitions
 
-The following items are used in the descriptions below.
+The following terms are used in the overview below.
+
+Account
+: An encoded Ed25519 public key. Contains a type code to
+  allow for other key types. It is preceded by a _VarInt_ _byte_
+  count that is currently set to 33.
+  
+Binary
+: A sequence of _bytes_ preceded by a _VarInt_ byte count.  The count is
+  validated by various routines to prevent excessive storage use.
 
 Byte
-: A single binary byte.
+: A single _binary_ byte.
 
-Unn
-: An unsigned integer of "nn" bits length. Normally these will
-  multiples of 8 bits like: U8, U16, U32, U64.  These kind of items
-  are only used in the Block Header as they are fixed length fields.
+Map
+: A sequence of NUL-separated UTF-8 _byte_ sequences preceded by a _VarInt_
+  byte count. The count is
+  validated by various routines to prevent excessive storage use.
+  There must be an even number of sequences, as they form
+  key-value pairs. There must not be a trailing NUL byte.  In JSON
+  representation the NUL byte will show as `\u0000`.  
 
-VarInt
-: A sequence of 1 to 9 bytes that represents a 64 bit unsigned
-  integer.  The high bit of each byte is used as a continuation flag
-  so 0…127 can be represented by a single byte.  Each successive bytes
-  adds 7 more bits and the values is in Little-Endian form. The 9^th^
-  byte adds all eight bits bringing the total to 64.
-
+Signature
+: An Ed25519 signature over all previous _bytes_ including _VarInt_
+  fields. It is preceded by a VarInt with a count of 64.  This
+  value will change once other signature algorithms are used and will
+  depend on the type code inside the _Account_ field.
+  
 String
-: A sequence of UTF-8 byte sequence preceded by a VarInt byte count.
+: A sequence of UTF-8 _bytes_ preceded by a _VarInt_ byte count.
   The count is validated by various routines to prevent excessive
   storage use.
 
-Binary
-: A sequence of bytes preceded by a VarInt byte count.  The count is
-  validated by various routines to prevent excessive storage use.
+Unn
+: An unsigned integer with a length of "nn" bits. Normally this will be
+  multiples of 8 bits such as: U8, U16, U32, U64.  These kind of items
+  are only used in the Block Header because they are fixed length fields.
 
-Map
-: Sequence of NUL separated UTF-8 byte sequences preceded by a VarInt
-  byte count.  There must be an even number sequences and these form
-  key→value pairs.  The must not be a trailing NUL byte.  In JSON
-  representation the NUL byte will show as `\u0000`.  The count is
-  validated by various routines to prevent excessive storage use.
+VarInt
+: A sequence of 1 to 9 _bytes_ that represents a 64-bit unsigned
+  integer in Little-Endian form. The high bit of each byte is used as a continuation flag,
+  so 0 … 127 can be represented by each byte. Each successive byte
+  adds 7 more bits. The 9^th^
+  byte does not have a continuation flag, so it adds eight bits to the integer, bringing the total for the nine bytes to 64 bits.
 
-Account
-: The encoded Ed25519 public key, there is a type code in this to
-  allow for other key types and it is preceded by a VarInt byte
-  count.  Currently the count will be 33.
+## Transactions: Asset, Issue, and Transfer Records
 
-Signature
-: An Ed25519 signature over all previous bytes including VarInt
-  fields.  This will preceded by a VarInt that will be 64.  This
-  value will change once other signature algorithms are used and will
-  depend on the type code inside the Account field.
-
-
-## Transactions: Asset, Issue and Transfer Records
-
-The main sorts of transactions on the Bitmark blockchain are asset,
-issue, and transfer records.  These are concerned with creating chains
+The main types of transactions on the Bitmark blockchain are asset,
+issue, and transfer records. Together, they create chains
 of provenance for individual copies of specific assets.
 
 Asset records have an identifier that is the SHA3-512 hash of the bytes
-making up the fingerprint.  This allows the fingerprint field to have
-any data, binary or text and be represented by a fixed length 64 byte
+making up the fingerprint.  This allows the fingerprint field to contain
+any data, binary, or text and to be represented by a fixed length 64-byte
 identifier in issue records.  Only using the fingerprint for the hash
-is to prevent duplicate assets with the same fingerprint and different
-name or metadata.
+prevents duplicate assets that have the same fingerprint but different
+names or metadata.
 
 Other transactions have an identifier that is the SHA3-256 hash of
-their entire record (including all signatures).  A shorted identifier
-is used both to save space in records and to easily distinguish
+the entire record (including all signatures). This shorter identifier
+of 256 bits is used both to save space in records and to easily distinguish
 transaction ids from asset ids.
 
 ### Asset Record
 
-This contains the metadata to describe an asset that will be issued on
+An asset record contains the metadata describing an asset that will be issued on
 the blockchain.  All assets will have at least one issue.
 
-The Record structure
+The Record structure:
 
 Item             | Type      | Description
 :--------------- | :-------- | :-----------------------
 Type code        | Byte      | Asset Record type code
 Name             | String    | Short descriptive name
-Fingerprint      | String    | A unique identifier for the Asset
+Fingerprint      | String    | Unique identifier for the Asset
 Metadata         | Map       | Key-Value to describe Asset
-Registrant       | Account   | The public key of the signer
+Registrant       | Account   | Public key of the signer
 Signature        | Signature | Ed25519 signature of signer
 
 ### Issue Record
 
-This is the transaction that actually issues an asset or an additional
-copy to an owner on the Bitmark blockchain.
+An issue record actually issues an asset (or an additional
+copy) to an owner on the Bitmark blockchain.
 
 Each issue must have a unique NONCE value to distinguish individual
 copies of that asset.
@@ -112,7 +112,7 @@ Signature        | Signature | Ed25519 signature of signer
 
 ### Transfer Record
 
-The is the transaction to transfer ownership in a provenance chain on
+A transfer record transfers ownership of an issued asset in a provenance chain on
 the Bitmark blockchain.
 
 Item             | Type      | Description
@@ -127,14 +127,14 @@ CounterSignature | Signature | Ed25519 signature of this record owner
 
 ## Transactions: Share
 
-These are a set of transactions dealing with fractional bitmarks as a
+The Bitmark blockchain also supports transactions that deal with fractional bitmarks as a
 kind of fungible token.
 
-### Bitmark Share
+### Share Balance Record
 
-This record marks the end of a provenance chain and it splits the item
-into an initial quantity of shares.  From this point the shares can
-then be granted or swapped with other Bitmark owner accounts.
+A share balance record marks the end of a provenance chain. It splits the issued asset
+into an initial quantity of shares.  From this point on, the shares can
+ be granted or swapped with other Bitmark accounts.
 
 Item             | Type      | Description
 :--------------- | :-------- | :-----------------------
@@ -144,25 +144,25 @@ Quantity         | VarInt    | Initial balance quantity
 Signature        | Signature | Ed25519 signature of linked previous owner
 
 
-### Share Grant
+### Grant Record
 
-This transaction moves a quantity of shares from one owner to another.
+A share grant record moves a quantity of shares from one owner to another.
 
 Item             | Type      | Description
 :--------------- | :-------- | :-----------------------
 Type code        | Byte      | Share Grant type code
 ShareId          | Binary    | Link to previous Issue (SHA3-256 of issue transaction)
 Quantity         | VarInt    | Number of shares to transfer to recipient
-Owner            | Account   | The public key of the current owner
-Recipient        | Account   | The public key of the new owner
-BeforeBlock      | VarInt    | Transaction expires after this block height
+Owner            | Account   | Public key of the current owner
+Recipient        | Account   | Public key of the new owner
+BeforeBlock      | VarInt    | Expiry block height for transaction
 Signature        | Signature | Ed25519 signature of current owner
 CounterSignature | Signature | Ed25519 signature of recipient
 
-### Share Swap
+### Swap Record
 
-This transaction is used to perform an atomic swap between two owners
-with two different share types.  The action is indivisible and there
+A share swap record performs an atomic swap between two owners
+with two different share types.  The action is indivisible, and there
 is no possibility of a half transaction being executed.
 
 Item             | Type      | Description
@@ -174,33 +174,33 @@ OwnerOne         | Account   | The public key of the share one owner
 ShareIdTwo       | Binary    | Link to previous Issue (SHA3-256 of issue transaction)
 QuantityTwo      | VarInt    | Number of shares two to transfer to owner one
 OwnerTwo         | Account   | The public key of the share two owner
-BeforeBlock      | VarInt    | Transaction expires after this block height
+BeforeBlock      | VarInt    | Expiry block height for transaction
 Signature        | Signature | Ed25519 signature of owner one
 CounterSignature | Signature | Ed25519 signature of owner two
 
-## Transactions: Block ownership record
+## Transactions: Block Ownership
 
-### Block Foundation
+### Block Foundation Record
 
-This is the first transaction in a block and defines the ownership of
+A block foundation record is the first transaction in a block and defines the ownership of
 that block.  It is only set by the block mining process.  It is also
-used to set the miners payment addresses which are used when
-transaction reference those in this block.2
+used to set the miner's payment addresses, which are used when
+transactions reference those in this block.
 
 Item             | Type      | Description
 :--------------- | :-------- | :-----------------------
 Type code        | Byte      | Block Foundation type code
 Version          | VarInt    | Sets the combination of supported currencies
 Payments         | Map       | Map of Currency and Address
-Owner            | Account   | The public key of the owner
+Owner            | Account   | Public key of the owner
 Nonce            | VarInt    | Additional NONCE for mining
 Signature        | Signature | Ed25519 signature of owner
 
 
-### Block Owner Transfer
+### Block Owner Transfer Record
 
-This transaction allows the current owner of a block to transfer any
-future earnings from this block to another owner with new currency
+A block owner transfer record allows the current owner of a block to transfer any
+future earnings from that block to another owner, with new currency
 addresses.
 
 Item             | Type      | Description
@@ -210,11 +210,11 @@ Link             | Binary    | Link to previous Foundation or Block Transfer (SH
 Escrow           | Payment   | Optional escrow payment and address
 Version          | VarInt    | Sets the combination of supported currencies
 Payments         | Map       | Map of Currency and Address
-Owner            | Account   | The public key of the new owner
+Owner            | Account   | Public key of the new owner
 Signature        | Signature | Ed25519 signature of linked previous owner
 CounterSignature | Signature | Ed25519 signature of this record owner
 
-
+[ETH]
 ## Blockchain structure
 
 Transactions are gathered together into blocks, which start with a
