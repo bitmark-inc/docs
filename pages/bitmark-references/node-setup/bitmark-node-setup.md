@@ -9,7 +9,7 @@ folder: bitmark-references/node-setup
 
 #  Bitmark Node Installation
 
-The [Bitmark Quickstart](../../learning-bitmark/quick-start) includes a tutorial on [installing the Bitmark Property System using docker](../../learning-bitmark/quick-start/simple-solution-for-node-setup.md). That setup is intended for beginners who want to make it fast and fast and easy to run the Bitmark Property System using a `docker` container that wraps all components and settings. Developers, or people who want to study the main program, may instead choose to run `bitmarkd` or `recorderd` services directly. 
+The [Bitmark Quickstart](../../learning-bitmark/quick-start) includes a tutorial on [installing the Bitmark Property System using docker](../../learning-bitmark/quick-start/simple-solution-for-node-setup.md). That setup is intended for beginners who want to make it fast and easy to run the Bitmark Property System using a `docker` container that wraps all components and settings. Developers, or people who want to study the main program, may instead choose to run `bitmarkd` or `recorderd` services directly. 
 
 A full-node of bitmarkd consists of a `bitmarkd`, a `recorderd`, a payment system, a `litecoind`, and a `bitcoind`. The `bitmarkd` service  verifies and records transactions on the Bitmark blockchain while the `recorderd` service computes the Bitmark proof-of-work algorithm that allows nodes to compete to win blocks on the Bitmark blockchain. 
 
