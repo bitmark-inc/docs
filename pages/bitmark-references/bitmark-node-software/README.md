@@ -21,6 +21,12 @@
   * [Merkle tree](bitmark-blockchain-overview.md#merkle-tree)
   * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
 
+## [RPC Communication](rpc-communication.md)
+
+* [Introduction](rpc-communication.md#introduction)
+* [RPC Flow](rpc-communication#rpc-flow)
+  * [Initializing](rpc-communication#initializing)
+  * [Processing Messages](rpc-communication#processing-messages)
 
 ## [Block Verification and Synchronization](block-verification-and-synchronization.md#block-verification-and-synchronization)
 
