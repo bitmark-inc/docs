@@ -24,9 +24,9 @@
 ## [RPC Communication](rpc-communication.md)
 
 * [Introduction](rpc-communication.md#introduction)
-* [RPC Flow](rpc-communication#rpc-flow)
-  * [Initializing](rpc-communication#initializing)
-  * [Processing Messages](rpc-communication#processing-messages)
+* [RPC Flow](rpc-communication.md#rpc-flow)
+  * [Initializing](rpc-communication.md#initializing)
+  * [Processing Messages](rpc-communication.md#processing-messages)
 
 ## [Block Verification and Synchronization](block-verification-and-synchronization.md#block-verification-and-synchronization)
 
