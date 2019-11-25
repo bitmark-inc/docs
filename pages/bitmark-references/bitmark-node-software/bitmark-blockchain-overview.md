@@ -15,7 +15,7 @@ itself.
 
 ## Definitions
 
-The following terms are used in the overview below.
+The following variable types are used in most Bitmark records:
 
 Account
 : An encoded Ed25519 public key. Contains a type code to
@@ -48,17 +48,18 @@ String
   The count is validated by various routines to prevent excessive
   storage use.
 
-Unn
-: An unsigned integer with a length of "nn" bits. Normally this will be
-  multiples of 8 bits such as: U8, U16, U32, U64.  These kind of items
-  are only used in the Block Header because they are fixed length fields.
-
 VarInt
 : A sequence of 1 to 9 _bytes_ that represents a 64-bit unsigned
   integer in Little-Endian form. The high bit of each byte is used as a continuation flag,
   so 0 … 127 can be represented by each byte. Each successive byte
   adds 7 more bits. The 9^th^
   byte does not have a continuation flag, so it adds eight bits to the integer, bringing the total for the nine bytes to 64 bits.
+  
+The following variable types are used only in Bitmark block headers, because they are fixed length fields:
+
+Unn
+: An unsigned integer with a length of "nn" bits. Normally this will be
+  multiples of 8 bits such as: U8, U16, U32, U64. 
 
 ## Transactions: Asset, Issue, and Transfer Records
 
@@ -180,12 +181,14 @@ CounterSignature | Signature | Ed25519 signature of owner two
 
 ## Transactions: Block Ownership
 
+Finally, the Bitmark blockchain also supports a few transactions for defining block ownership.
+
 ### Block Foundation Record
 
 A block foundation record is the first transaction in a block and defines the ownership of
 that block.  It is only set by the block mining process.  It is also
 used to set the miner's payment addresses, which are used when
-transactions reference those in this block.
+transactions reference those in the block.
 
 Item             | Type      | Description
 :--------------- | :-------- | :-----------------------
@@ -214,37 +217,37 @@ Owner            | Account   | Public key of the new owner
 Signature        | Signature | Ed25519 signature of linked previous owner
 CounterSignature | Signature | Ed25519 signature of this record owner
 
-[ETH]
 ## Blockchain structure
 
 Transactions are gathered together into blocks, which start with a
-header followed by a single foundation record and then the rest of the
+block header, followed by a single foundation record and then the rest of the
 transactions.
 
-The chain itself is formed by having each block link to the previous
-block by having the hash of the previous block be contained in the
-block header.  The chain is secured by having a NONCE and a difficulty
-value embedded in the header.  It is possible to determine if a header
+A block is secured by having a nonce and a difficulty
+value embedded in the header. The difficulty can only change at
+specific points and in specific ways defined in the `bitmarkd` consensus
+algorithm; any block with a difficulty that does not comply is
+immediately rejected. It is possible to determine if a header
 is valid by checking if its hash value is less than or equal to the
-value indicated by the difficulty.  The difficulty can only change at
-specific points and in ways defined in the bitmarkd consensus
-algorithm and any block with a difficulty that does not comply is
-immediately rejected.
+value indicated by the difficulty.  
+
+The chain itself is formed by storing the hash of the previous block in the
+block header, which by links the current block to the previous block.
 
 ### Block Header
 
 The block header is used both to provide metadata (like timestamp) for
-that block as well as to verify that the list of transactions attached
-to it are really part of it.
+that block and to verify that the list of transactions attached
+to the block are valid.
 
 Item             | Type      | Description
 :--------------- | :-------- | :-----------------------
-Version          | U16       | The version control block rules in action
+Version          | U16       | Version of block rules in action
 TransactionCount | U16       | Number of transactions in the block
 Number           | U64       | The number of this block
-PreviousBlock    | Argon2    | Thirty two byte hash of the previous block
-MerkleRoot       | SHA3-256  | Thirty two byte hash of the transaction Merkle tree
-Timestamp        | U64       | Timestamp as a Unix (seconds after start of 1970-01-01)
+PreviousBlock    | Argon2    | Thirty-two byte hash of the previous block
+MerkleRoot       | SHA3-256  | Thirty-two byte hash of the transaction Merkle tree
+Timestamp        | U64       | UNIX timestamp (seconds after start of 1970-01-01)
 Difficulty       | U64       | Difficulty fraction as 57 bit mantissa + 8 bit exponent
 Nonce            | U64       | Nonce created by hashing to meet the difficulty
 
@@ -253,29 +256,27 @@ Nonce            | U64       | Nonce created by hashing to meet the difficulty
 A Merkle Tree combines the hashes of individual records, such that
 only the same records hashed together in the same order will result in
 the same Merkle Tree root. It does so by hashing individual
-transactions to create the leaves of a binary tree. Each pair of
-hashes in the tree is then combined to form a new hash, repeating the
-process until only a single hash is left: the Merkle Tree
-root. Whenever a hash in the tree does not have a paired hash to
-combine with, it is instead hashed with itself. The hashing process is
-conducted by the SHA3-256 algorithm.
+transactions using the SHA3-256 algorithm to create the leaves of a binary tree. Each pair of
+hashes in the tree is then combined to form a new hash. Whenever a hash in the tree does not have a paired hash to
+combine with, it is instead hashed with itself.  This process is repeated until only a single hash is left: the Merkle Tree
+root. 
 
 The SHA3 algorithm is the current recommended hashing algorithm to use
 and fixes some vulnerability problems that were found in SHA2.  The
-SHA2 would have to be uses twice to protect against this and that
-costs more CPU resources.  The SHA3 is faster so reduces the time to
-build the Merkle Tree.  SHA1 has been broken so was not considered.
+SHA2 algorithm would have to be used twice to protect against this, which would
+cost more CPU resources.  The SHA3 is faster, so it reduces the time to
+build the Merkle Tree. SHA1 has been broken so was not considered.
 
-The SHA3 algorithm is also used for transaction IDs and is simply the
+The SHA3 algorithm is also used for transaction IDs and is similarly the
 hash of the packed binary transaction including all signatures.
 
 ### Block Hashing (argon2, difficulty, proof of work ...)
 
 To prevent hardware attack of the Proof of Work system using GPUs or
-ASICs a memory hard algorithm was used: Argon2.  Its parameters are
+ASICs, a memory hard algorithm is used: Argon2.  Its parameters are
 set such that a GPU will be some orders of magnitude slower that a
-typical x86 CPU core.  At the settings uses the hashing power of CPUs
-is still very low on the order of a few hashes per second, this means
+typical x86 CPU core.  The current setting for the hashing power of CPUs
+is still very low, on the order of a few hashes per second; this means
 that the difficulty scale is much lower than other blockchain systems.
 
 The difficulty is represented as a
@@ -284,23 +285,16 @@ point) value in the range:
 
     1 ≥ d > 0
 
-The hash is considered as a 256 bit fixed point value with 8 bits
-before the decimal point:
-
-    [8 bits] . [248 bits]
-
-A hash meets the difficulty if it's value less than or equal to
-difficulty value.
-
-The difficulty value is encoded as a 57 bit mantissa, normalised so
-that the most significant bit is one and can be dropped leaving 56 bits
+The difficulty value is encoded as a 57-bit mantissa, normalised so
+that the most significant bit is one and can be dropped, leaving 56 bits
 to store:
 
 ~~~
     [8 bits exponent][56 bits mantissa] = 64 bit unsigned value
 
     mantissa is right shifted by exponent+8 from the most significant bit
-    examples:
+    
+    Examples:
      the "One" value: 00 ff  ff ff  ff ff  ff ff
      represents the 256 bit value: 00ff ffff ffff ffff 8000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
 
@@ -309,5 +303,14 @@ to store:
 
     Notes:
       1. the values here are shown as big endian, but the header is stored little endian
-      2. the "one" value is current in the packed 64 bit for does represent exactly a difficulty of 1.0
+      2. the "one" value represents exactly a difficulty of 1.0 ins the packed 64 bits
 ~~~
+
+The hash is considered as a 256-bit fixed point value with 8 bits
+before the decimal point:
+
+    [8 bits] . [248 bits]
+
+A hash meets the difficulty if its value is less than or equal to
+difficulty value.
+
