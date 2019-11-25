@@ -7,7 +7,7 @@ permalink: /bitmark-references/bitmark-node-software/rpc-communication
 folder: bitmark-references/bitmark-node-software
 ---
 
-# RPC
+# RPC Communication
 
 ## Introduction
 
