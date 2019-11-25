@@ -145,7 +145,7 @@ Quantity         | VarInt    | Initial balance quantity
 Signature        | Signature | Ed25519 signature of linked previous owner
 
 
-### Grant Record
+### Share Grant Record
 
 A share grant record moves a quantity of shares from one owner to another.
 
@@ -160,7 +160,7 @@ BeforeBlock      | VarInt    | Expiry block height for transaction
 Signature        | Signature | Ed25519 signature of current owner
 CounterSignature | Signature | Ed25519 signature of recipient
 
-### Swap Record
+### Share Swap Record
 
 A share swap record performs an atomic swap between two owners
 with two different share types.  The action is indivisible, and there
