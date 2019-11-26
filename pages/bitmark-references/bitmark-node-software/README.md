@@ -20,6 +20,14 @@
   * [Block Header](bitmark-blockchain-overview.md#block-header)
   * [Merkle tree](bitmark-blockchain-overview.md#merkle-tree)
   * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
+  
+## [Block Validation and Synchronization](block-verification-and-synchronization.md#block-verification-and-synchronization)
+
+* [Block Structure](block-verification-and-synchronization.md#block-structure)
+* [Block Validation](block-verification-and-synchronization.md#block-validation)
+* [Block Synchronization](block-verification-and-synchronization.md#block-synchronization)
+  * [Proof of Work](block-verification-and-synchronization.md#proof-of-work)
+  * [Majority Votes](block-verification-and-synchronization.md#majority-votes)
 
 ## [RPC Communication](rpc-communication.md)
 
@@ -28,14 +36,7 @@
   * [Initializing](rpc-communication.md#initializing)
   * [Processing Messages](rpc-communication.md#processing-messages)
 
-## [Block Verification and Synchronization](block-verification-and-synchronization.md#block-verification-and-synchronization)
 
-* [Bitmark Block](block-verification-and-synchronization.md#bitmark-block)
-* [Different types of transactions](block-verification-and-synchronization.md#different-types-of-transactions)
-* [Block Validation](block-verification-and-synchronization.md#block-validation)
-* [Block Synchronization](block-verification-and-synchronization.md#block-synchronization)
-  * [Proof of Work](block-verification-and-synchronization.md#proof-of-work)
-  * [Majority Votes](block-verification-and-synchronization.md#majority-votes)
 
 ## [Storage](node-modules.md#storage)
 
