@@ -11,8 +11,8 @@
 ## [Bitmark Node Software](bitmark-node-software/README.md)
 
 * [Bitmark Blockchain Overview](bitmark-node-software/bitmark-blockchain-overview.md)
-* [RPC Communication](bitmark-node-software/rpc-communication.md)
 * [Block Verification and Synchronization](bitmark-node-software/block-verification-and-synchronization.md)
+* [RPC Communication](bitmark-node-software/rpc-communication.md)
 * [Storage](bitmark-node-software/node-modules.md)
 * [Bitmark Mining](bitmark-node-software/mining.md)
 * [Payment Verification](bitmark-node-software/payment-verification.md)
