@@ -121,7 +121,7 @@ The following message format is used to send from  `bitmarkd` to `recorderd`:
 
 For example, if `recorderd` receives a message of `job:2479 ok:false`, it means job number 2479 doesn't meet difficulty criteria. If `recorderd` receives a message of ``job:3000 ok:true`, it means job number 3000 meets the difficulty criteria.
 
-## Block Verification and Broadcast
+## Verification and Broadcast
 
 `bitmarkd` receives blocks from other nodes or from `recorderd`; every received block needs to pass the following verifications:
 
