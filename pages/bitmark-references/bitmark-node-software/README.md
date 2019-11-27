@@ -36,10 +36,11 @@
   * [Initializing](rpc-communication.md#initializing)
   * [Processing Messages](rpc-communication.md#processing-messages)
 
+## [Storage Databases](node-modules.md)
 
-
-## [Storage](node-modules.md#storage)
-
+* [Blocks DB](node-modules.md#blocks-db)
+* [Index DB](node-modules.md#index-db)
+* [Use Cases](node-modules.md#use-cases)
 
 ## [Bitmark Mining](mining.md##bitmark-mining)
 
