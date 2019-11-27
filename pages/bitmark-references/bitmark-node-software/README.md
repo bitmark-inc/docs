@@ -29,6 +29,16 @@
   * [Proof of Work](block-verification-and-synchronization.md#proof-of-work)
   * [Majority Votes](block-verification-and-synchronization.md#majority-votes)
 
+## [Block Mining](mining.md##bitmark-mining)
+
+* [Overview](mining.md#overview)
+* [Block Diagram](mining.md#block-diagram)
+* [Hashing](mining.md#hashing)
+* [Difficulty](mining.md#difficulty)
+* [Communication](mining.md#communication)
+* [Verification and Broadcast](mining.md#verification-and-broadcast)
+* [Reward](mining.md#reward)
+
 ## [RPC Communication](rpc-communication.md)
 
 * [Introduction](rpc-communication.md#introduction)
@@ -41,17 +51,6 @@
 * [Blocks DB](node-modules.md#blocks-db)
 * [Index DB](node-modules.md#index-db)
 * [Use Cases](node-modules.md#use-cases)
-
-## [Bitmark Mining](mining.md##bitmark-mining)
-
-* [Overview](mining.md#overview)
-* [Block Diagram](mining.md#block-diagram)
-* [Hashing](mining.md#hashing)
-* [Difficulty](mining.md#difficulty)
-* [Communication](mining.md#communication)
-* [Block Verification and Broadcast](mining.md#block-verification-and-broadcast)
-* [Reward](mining.md#reward)
-
 
 ##  [Payment Verification](payment-verification.md#payment-verification)
 
@@ -66,7 +65,6 @@
   * [Directly RPC](payment-verification.md#directly-rpc)
   * [Discovery Service](payment-verification.md#discovery-service)
   * [Bitcoin peer\-to\-peer protocol (WIP)](payment-verification.md#bitcoin-peer-to-peer-protocol-wip)
-
 
 ## [Security feature of the Bitmark Blockchain](security.md#security-feature-of-the-bitmark-blockchain)
 
