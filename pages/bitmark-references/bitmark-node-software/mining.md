@@ -1,5 +1,5 @@
 ---
-title: Bitmark Mining
+title: Block Mining
 keywords: mining
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,7 +7,7 @@ permalink: /bitmark-references/bitmark-node-software/bitmark-mining
 folder: bitmark-references/bitmark-node-software
 ---
 
-# Bitmark Mining
+# Block Mining
 
 ## Overview
 
