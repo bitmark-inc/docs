@@ -7,13 +7,15 @@ permalink: /bitmark-references/bitmark-node-software/storage
 folder: bitmark-references/bitmark-node-software
 ---
 
-## Storage Databases
+# Storage Databases
 
 The `bitmarkd` program uses [LevelDB](https://github.com/google/leveldb) as its storage backend. LevelDB is a fast key-value storage that doesn't have the concept of logical tables found in traditional relational databases; instead, it partitions the key space by adding a prefix byte to each key. The key-value pairs with the same prefix corresponds to a pool of data entries with the same attributes. The values to be stored are compactly serialized to reduce the disk usage.
 
-There are two separate LevelDB databases under the data directory of `bitmarkd`:
+There are two separate LevelDB databases under the data directory of `bitmarkd`: blocks DB and index DB.
 
-1. *The blocks DB* keeps the raw block data.
+## Blocks DB
+
+*The blocks DB* keeps the raw block data.
 
 | pool name | prefix | key | value |
 |-----------|--------|-----|-------|
@@ -22,7 +24,9 @@ There are two separate LevelDB databases under the data directory of `bitmarkd`:
 | BlockOwnerPayment | H | block number              | acceptable cryptocurrencies in this block
 | BlockOwnerTxIndex | I | block foundation tx ID    | block number
 
-2. *The index DB* is built based on the blocks DB, mainly to ensure efficient client queries.
+## Index DB
+
+*The index DB* is built based on the blocks DB, mainly to ensure efficient client queries.
 
 | pool name | prefix | key | value |
 |-----------|--------|-----|-------|
@@ -36,6 +40,8 @@ There are two separate LevelDB databases under the data directory of `bitmarkd`:
 | ShareQuantity     | Q | account + share ID | balance of shares for the account
 
 The owner-related pools are interrelated. 
+
+## Use Cases
 
 Possible use cases:
 - Given account and varying index, one can use `OwnerData[OwnerList[account+index]]` to iterate all bitmarks which belong to this account.
