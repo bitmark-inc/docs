@@ -41,7 +41,7 @@
 
 ## [RPC Communication](rpc-communication.md)
 
-* [Introduction](rpc-communication.md#introduction)
+* [Overview](rpc-communication.md#overview)
 * [RPC Flow](rpc-communication.md#rpc-flow)
   * [Initializing](rpc-communication.md#initializing)
   * [Processing Messages](rpc-communication.md#processing-messages)
@@ -54,7 +54,7 @@
 
 ##  [Payment Verification](payment-verification.md#payment-verification)
 
-* [Flow](payment-verification.md#flow)
+* [Overview](payment-verification.md#overview)
 * [Reservoir Module](payment-verification.md#reservoir-module)
   * [Processing a new transaction](payment-verification.md#processing-a-new-transaction)
   * [Generate a payment id](payment-verification.md#generate-a-payment-id)
