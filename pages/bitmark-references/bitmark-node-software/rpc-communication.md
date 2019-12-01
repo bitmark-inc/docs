@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-node-software
 
 # RPC Communication
 
-## Introduction
+## Overview
 
 RPC (remote procedure call)  is an inter-process communication technique used for client-server based applications; it is used to communicated with the `bitmarkd` server. RPC calls are also called subroutine calls or function calls. 
 
