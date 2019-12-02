@@ -46,12 +46,6 @@
   * [Initializing](rpc-communication.md#initializing)
   * [Processing Messages](rpc-communication.md#processing-messages)
 
-## [Storage Databases](node-modules.md)
-
-* [Blocks DB](node-modules.md#blocks-db)
-* [Index DB](node-modules.md#index-db)
-* [Use Cases](node-modules.md#use-cases)
-
 ##  [Payment Verification](payment-verification.md#payment-verification)
 
 * [Overview](payment-verification.md#overview)
@@ -65,6 +59,12 @@
   * [Using RPC APIs](payment-verification.md#using-rpc-apis)
   * [Using Discovery Service](payment-verification.md#using-discovery-service)
   * [Using Bitcoin peer\-to\-peer protocol (WIP)](payment-verification.md#using-bitcoin-peer-to-peer-protocol-wip)
+
+## [Storage Databases](node-modules.md)
+
+* [Blocks DB](node-modules.md#blocks-db)
+* [Index DB](node-modules.md#index-db)
+* [Use Cases](node-modules.md#use-cases)
 
 ## [Security feature of the Bitmark Blockchain](security.md#security-feature-of-the-bitmark-blockchain)
 
