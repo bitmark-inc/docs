@@ -59,7 +59,7 @@
   * [Processing a new transaction](payment-verification.md#processing-a-new-transaction)
   * [Generating a payment id](payment-verification.md#generating-a-payment-id)
   * [Changing the state of a paid transaction](payment-verification.md#changing-the-state-of-a-paid-transaction)
-  * [Structures](payment-verification.md#structures)
+  * [Pending and Verified Structures](payment-verification.md#pending-and-verified-structures)
 * [Payment Module](payment-verification.md#payment-module)
   * [Payment Validation](payment-verification.md#payment-validation)
   * [Directly RPC](payment-verification.md#directly-rpc)
