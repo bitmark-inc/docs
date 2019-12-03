@@ -1,5 +1,5 @@
 ---
-title: Security
+title: Blockchain Security
 keywords: security
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,7 +7,7 @@ permalink: /bitmark-references/bitmark-node-software/security
 folder: bitmark-references/bitmark-node-software
 ---
 
-# Security
+# Blockchain Security
 
 The Bitmark Property System uses digital signatures and cryptographic
 hashes to secure its transactions and blocks.
