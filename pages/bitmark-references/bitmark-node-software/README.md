@@ -66,7 +66,7 @@
 * [Index DB](node-modules.md#index-db)
 * [Use Cases](node-modules.md#use-cases)
 
-## [Security feature of the Bitmark Blockchain](security.md#security-feature-of-the-bitmark-blockchain)
+## [Blockchain Security](security.md#security-feature-of-the-bitmark-blockchain)
 
 * [Transactions](security.md#transactions)
 * [Transaction Identifiers](security.md#transaction-identifiers)
