@@ -16,7 +16,7 @@
 * [Transactions: Block ownership record](bitmark-blockchain-overview.md#transactions-block-ownership-record)
   * [Block Foundation Record](bitmark-blockchain-overview.md#block-foundation-record)
   * [Block Owner Transfer Record](bitmark-blockchain-overview.md#block-owner-transfer-record)
-* [Blockchain structure](bitmark-blockchain-overview.md#blockchain-structure)
+* [Blockchain Structure](bitmark-blockchain-overview.md#blockchain-structure)
   * [Block Header](bitmark-blockchain-overview.md#block-header)
   * [Merkle tree](bitmark-blockchain-overview.md#merkle-tree)
   * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
@@ -50,15 +50,15 @@
 
 * [Overview](payment-verification.md#overview)
 * [Reservoir Module](payment-verification.md#reservoir-module)
-  * [Processing a new transaction](payment-verification.md#processing-a-new-transaction)
-  * [Generating a payment id](payment-verification.md#generating-a-payment-id)
-  * [Changing the state of a paid transaction](payment-verification.md#changing-the-state-of-a-paid-transaction)
+  * [Processing a New Transaction](payment-verification.md#processing-a-new-transaction)
+  * [Generating a Payment Id](payment-verification.md#generating-a-payment-id)
+  * [Changing the State of a Paid Transaction](payment-verification.md#changing-the-state-of-a-paid-transaction)
   * [Pending and Verified Structures](payment-verification.md#pending-and-verified-structures)
 * [Payment Module](payment-verification.md#payment-module)
   * [Validating Payment](payment-verification.md#validating-payment)
   * [Using RPC APIs](payment-verification.md#using-rpc-apis)
   * [Using Discovery Service](payment-verification.md#using-discovery-service)
-  * [Using Bitcoin peer\-to\-peer protocol (WIP)](payment-verification.md#using-bitcoin-peer-to-peer-protocol-wip)
+  * [Using Bitcoin Peer\-to\-Peer Protocol (WIP)](payment-verification.md#using-bitcoin-peer-to-peer-protocol-wip)
 
 ## [Storage Databases](node-modules.md)
 
