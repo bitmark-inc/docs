@@ -11,7 +11,7 @@ folder: bitmark-references/bitmark-node-software
 
 ## Overview
 
-Mining on the Bitmark blockchain requires an understanding of hashing and difficulty, as well as the communication, verification, and reward protocols.
+Mining on the Bitmark blockchain requires an understanding of hashing and difficulty, as well as of the communication, verification, and reward protocols.
 
 ## Block Diagram
 
@@ -30,9 +30,9 @@ The mining procedure for Bitmark occurs through interactions between `bitmarkd` 
 
 ## Hashing
 
-Hashing is the transformation of a string of characters into an unique value or key that represents the original string. There are different hash implementations using a wide range of algorithms; if the hash implementation is well designed, it is very difficult to guess original data from a given hash value.
+Hashing is the transformation of a string of characters into an unique value or key that represents the original string. There are different hash implementations using a wide range of algorithms; if the hash implementation is well designed, it is very difficult to guess the original data from a given hash value.
 
-The Bitmark Property System uses `argon2` to compute its hashing; `argon2` has some benefits, such as a memory-hard algorithm that provides resistance against GPU and ASIC hardware computation and the production of a hash that is 256 bits long.
+The Bitmark blockchain uses `argon2` to compute its hashing; `argon2` has some benefits, such as a memory-hard algorithm that provides resistance against GPU and ASIC hardware computation and the production of a hash that is 256 bits long.
 
 The `argon2` user-land software supports a wide range of parameters. 
 
@@ -93,7 +93,7 @@ The difficulty `Two` is  double the difficulty of `One`: `01ffffffffffffff`, whi
 
 ## Communication
 
-`bitmarkd` sends hashing job to `recorderd`. Each `bitmarkd` has a job queue that lists the records of what job have been sent to `recorderd`. If `recorderd` finds a possible hash that might fits the difficulty, it sends the result back to `bitmarkd`, and `bitmarkd` returns the validated result  to `recorderd`.
+`bitmarkd` sends a hashing job to `recorderd`. Each `bitmarkd` has a job queue that lists the records of what job have been sent to `recorderd`. If `recorderd` finds a possible hash that might fits the difficulty, it sends the result back to `bitmarkd`, and `bitmarkd` returns the validated result  to `recorderd`.
 
 The following message format is used to send from `recorderd` to `bitmarkd`:
 
@@ -103,7 +103,7 @@ The following message format is used to send from `recorderd` to `bitmarkd`:
 
 1. job
 
-    `bitmarkd` provides the job's number in the queue
+   the job's number in the queue, provided by `bitmarkd`
 
 1. packed
 
@@ -119,11 +119,11 @@ The following message format is used to send from  `bitmarkd` to `recorderd`:
 
     a string value of "true" and "false", it is used to denote if hash is valid or not
 
-For example, if `recorderd` receives a message of `job:2479 ok:false`, it means job number 2479 doesn't meet difficulty criteria. If `recorderd` receives a message of ``job:3000 ok:true`, it means job number 3000 meets the difficulty criteria.
+For example, if `recorderd` receives a message of `job:2479 ok:false`, it means job number 2479 doesn't meet difficulty criteria. If `recorderd` receives a message of `job:3000 ok:true`, it means job number 3000 meets the difficulty criteria.
 
 ## Verification and Broadcast
 
-`bitmarkd` receives blocks from other nodes or from `recorderd`; every received block needs to pass the following verifications:
+`bitmarkd` receives blocks from other nodes or from `recorderd`; each received block needs to pass the following verifications:
 
 1. block hash must meet difficulty
 1. block header information must be same as block data
@@ -135,6 +135,6 @@ For example, if `recorderd` receives a message of `job:2479 ok:false`, it means 
 
 ## Reward
 
-Miner account information is stored inside every block. In bitmark. A mining reward is not given to a miner when the block is mined; instead, the reward is given to a miner when transactions in the miner's block are transferred. The miner is rewarded 0.001 LTC for every transfer of a digital asset, which means if a miner mines a block with popular digital assets, they gets more rewards.
+Miner account information is stored inside each block. However, on the Bitmark blockchain, a mining reward is not given to a miner when the block is mined; instead, the reward is given to a miner when transactions in the miner's block are transferred. The miner is rewarded 0.001 LTC for every transfer of a digital asset, which means if a miner mines a block with popular digital assets, they get more rewards.
 
-For example, miner A mines block number 1000, and this block contains a digital asset. After some period of time, the owner of the digital asset transfers the asset to another account. Once the transaction has been put into blockchain, miner A receives a mining fee of 0.001 LTC. If the new owner of that digital asset transfer again, then miner A is rewarded an additional 0.001 LTC.
+For example, miner A mines block number 1000, and this block contains a digital asset. After some period of time, the owner of the digital asset transfers the asset to another account. Once the transfer record has been put into the blockchain, miner A receives a mining fee of 0.001 LTC. If the new owner of that digital asset transfer again, then miner A is rewarded an additional 0.001 LTC.
