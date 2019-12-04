@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-node-software
 
 # Blockchain Security
 
-The Bitmark Property System uses digital signatures and cryptographic
+The Bitmark blockchain uses digital signatures and cryptographic
 hashes to secure its transactions and blocks.
 
 ## Transactions
@@ -34,7 +34,7 @@ Details of the Ed25519 signature algorithm can be viewed at: https://ed25519.cr.
 The important features of Ed25519 for the Bitmark blockchain are:
 * high-security signatures with collision resistance
 * small 32-byte keys
-* signature is only 64 bytes
+* small 64-byte signature
 * fast verification
 
 ## Transaction Identifiers
@@ -92,7 +92,7 @@ block.  Other fields include timestamp, difficulty, and nonce.  The
 difficulty is scaled differently from Bitcoin and allows for much
 lower hashing rates; while a modern CPU can run SHA2/SHA3 at many
 thousands of hashes per second, it can only perform one or two Argon2
-hashes per second because of the increase complexity of the Algorithm.
+hashes per second because of the increase complexity of the algorithm.
 The nonce is used by the hashing program to adjust the header to find a hash that
 meets the difficulty.
 
