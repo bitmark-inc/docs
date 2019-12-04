@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-node-software
 
 # Storage Databases
 
-The `bitmarkd` program uses [LevelDB](https://github.com/google/leveldb) as its storage backend. LevelDB is a fast key-value storage that doesn't have the concept of logical tables found in traditional relational databases; instead, it partitions the key space by adding a prefix byte to each key. The key-value pairs with the same prefix corresponds to a pool of data entries with the same attributes. The values to be stored are compactly serialized to reduce the disk usage.
+The `bitmarkd` program uses [LevelDB](https://github.com/google/leveldb) as its storage backend. LevelDB is a fast key-value storage that doesn't have the concept of logical tables found in traditional relational databases; instead, it partitions the key space by adding a prefix byte to each key. The key-value pairs with the same prefix correspond to a pool of data entries with the same attributes. The values to be stored are compactly serialized to reduce disk usage.
 
 There are two separate LevelDB databases under the data directory of `bitmarkd`: blocks DB and index DB.
 
