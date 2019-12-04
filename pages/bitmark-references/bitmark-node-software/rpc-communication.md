@@ -11,17 +11,19 @@ folder: bitmark-references/bitmark-node-software
 
 ## Overview
 
-RPC (remote procedure call)  is an inter-process communication technique used for client-server based applications; it is used to communicated with the `bitmarkd` server. RPC calls are also called subroutine calls or function calls. 
+RPC (remote procedure call) is an inter-process communication technique used for client-server based applications; it is used to communicated with the `bitmarkd` server.
+
+RPC calls are also called subroutine calls or function calls. 
 
 ## RPC Flow
 
 ### Initializing
 
-When `bitmarkd` starts, it initialises RPC settings including maximum connection count, connection bandwidth, and communication encryption key. It then binds RPC on a specific port and listens to that RPC port.
+When `bitmarkd` starts, it initializes RPC settings including maximum connection count, connection bandwidth, and communication encryption key. It then binds RPC on a specific port and listens to that RPC port.
 
 ### Processing Messages
 
-Different RPC commands are processed by different functions. The following sections describes each command with examples. Each message is in JSON format: the key `method` denotes which remote method being executed, and the  key `params` denotes what arguments are being passed.
+Different RPC commands are processed by different functions. The following sections describes each command with examples. Each message is in JSON format: the key `method` denotes which remote method is being executed, and the  key `params` denotes what arguments are being passed.
 
 In order to test these examples, `bitmarkd` should be started in advance at the default RPC port of `2130`. `openssl` should be installed to run communications.
 
@@ -58,7 +60,7 @@ Example shell command:
 
 Parameter:
 
-- link - previous transaciton ID
+- link - previous transaction ID
 - owner - new owner account
 - signature - hex string of previous owner's signature
 - countersignature - hex string of new owner's signature
@@ -71,7 +73,7 @@ Example shell command:
 
 1. Bitmarks.Create - create a bitmark
 
-A bitmark is to created represent property ownership. It is composed of two parts: asset and owner.
+The creation paramaters are composed of two parts: asset and owner.
 
 Asset Parameters:
 
@@ -79,7 +81,7 @@ Asset Parameters:
 - fingerprint - fingerprint of asset
 - metadata - attributes related to an asset; each metadata attribute is composed of two parts, key and value, separated by \u0000. For example, to denote a key "date" with value "2001.01.01" would be "metadata": "date\u00002001.01.01"
 - registrant - owner account
-- signature - hext string of owner's signature
+- signature - hex string of owner's signature
 
 Owner Parameters:
 
