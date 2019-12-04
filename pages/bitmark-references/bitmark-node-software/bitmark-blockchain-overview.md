@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-node-software
 
 # Bitmark Blockchain Technical Overview
 
-This briefly describe the structure of the block chain. It moves
+This brief description of the structure of the structure of the Bitmark blockchain moves
 from the transactions up to the final structure of the chain
 itself.
 
@@ -35,7 +35,7 @@ Map
   validated by various routines to prevent excessive storage use.
   There must be an even number of sequences, as they form
   key-value pairs. There must not be a trailing NUL byte.  In JSON
-  representation the NUL byte will show as `\u0000`.  
+  representation, the NUL byte will show as `\u0000`.  
 
 Signature
 : An Ed25519 signature over all previous _bytes_ including _VarInt_
@@ -98,9 +98,9 @@ Signature        | Signature | Ed25519 signature of signer
 ### Issue Record
 
 An issue record actually issues an asset (or an additional
-copy) to an owner on the Bitmark blockchain.
+copy of an asset) to an owner on the Bitmark blockchain.
 
-Each issue must have a unique NONCE value to distinguish individual
+Each issue must have a unique nonce value to distinguish individual
 copies of that asset.
 
 Item             | Type      | Description
@@ -232,12 +232,12 @@ is valid by checking if its hash value is less than or equal to the
 value indicated by the difficulty.  
 
 The chain itself is formed by storing the hash of the previous block in the
-block header, which by links the current block to the previous block.
+block header, which links the current block to the previous block.
 
 ### Block Header
 
 The block header is used both to provide metadata (like timestamp) for
-that block and to verify that the list of transactions attached
+a block and to verify that the list of transactions attached
 to the block are valid.
 
 Item             | Type      | Description
@@ -251,7 +251,7 @@ Timestamp        | U64       | UNIX timestamp (seconds after start of 1970-01-01
 Difficulty       | U64       | Difficulty fraction as 57 bit mantissa + 8 bit exponent
 Nonce            | U64       | Nonce created by hashing to meet the difficulty
 
-### Merkle tree
+### Merkle Tree
 
 A Merkle Tree combines the hashes of individual records, such that
 only the same records hashed together in the same order will result in
@@ -265,7 +265,7 @@ The SHA3 algorithm is the current recommended hashing algorithm to use
 and fixes some vulnerability problems that were found in SHA2.  The
 SHA2 algorithm would have to be used twice to protect against this, which would
 cost more CPU resources.  The SHA3 is faster, so it reduces the time to
-build the Merkle Tree. SHA1 has been broken so was not considered.
+build the Merkle Tree. SHA1 has been broken, so it was not considered.
 
 The SHA3 algorithm is also used for transaction IDs and is similarly the
 hash of the packed binary transaction including all signatures.
@@ -285,7 +285,7 @@ point) value in the range:
 
     1 ≥ d > 0
 
-The difficulty value is encoded as a 57-bit mantissa, normalised so
+The difficulty value is encoded as a 57-bit mantissa, normalized so
 that the most significant bit is one and can be dropped, leaving 56 bits
 to store:
 
@@ -303,7 +303,7 @@ to store:
 
     Notes:
       1. the values here are shown as big endian, but the header is stored little endian
-      2. the "one" value represents exactly a difficulty of 1.0 ins the packed 64 bits
+      2. the "one" value represents exactly a difficulty of 1.0 in the packed 64 bits
 ~~~
 
 The hash is considered as a 256-bit fixed point value with 8 bits
