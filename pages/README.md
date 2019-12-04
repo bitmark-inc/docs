@@ -24,7 +24,7 @@
 
 ## [Bitmark References](/pages/bitmark-references/README.md#bitmark-references)
 
-**[Tutorial For Node Setup](/pages/bitmark-references/node-setup/bitmark-node-setup.md)**
+**[Bitmark Node Setup](/pages/bitmark-references/node-setup/bitmark-node-setup.md)**
 
 **[Bitmark Node Software](/pages/bitmark-references/bitmark-node-software/README.md)**
 * [Bitmark Blockchain Technical Overview](/pages/bitmark-references/bitmark-node-software/bitmark-blockchain-technical-overview.md)
