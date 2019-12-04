@@ -55,7 +55,6 @@
   * [Changing the State of a Paid Transaction](payment-verification.md#changing-the-state-of-a-paid-transaction)
   * [Pending and Verified Structures](payment-verification.md#pending-and-verified-structures)
 * [Payment Module](payment-verification.md#payment-module)
-  * [Validating Payment](payment-verification.md#validating-payment)
   * [Using RPC APIs](payment-verification.md#using-rpc-apis)
   * [Using Discovery Service](payment-verification.md#using-discovery-service)
   * [Using Bitcoin Peer\-to\-Peer Protocol (WIP)](payment-verification.md#using-bitcoin-peer-to-peer-protocol-wip)
