@@ -18,7 +18,7 @@
   * [Block Owner Transfer Record](bitmark-blockchain-overview.md#block-owner-transfer-record)
 * [Blockchain Structure](bitmark-blockchain-overview.md#blockchain-structure)
   * [Block Header](bitmark-blockchain-overview.md#block-header)
-  * [Merkle tree](bitmark-blockchain-overview.md#merkle-tree)
+  * [Merkle Tree](bitmark-blockchain-overview.md#merkle-tree)
   * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
   
 ## [Block Validation and Synchronization](block-verification-and-synchronization.md#block-verification-and-synchronization)
