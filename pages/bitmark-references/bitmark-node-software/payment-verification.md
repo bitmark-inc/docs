@@ -9,40 +9,40 @@ folder: bitmark-references/bitmark-node-software
 
 # Payment Verification
 
-In this section, we will introduce
+This section introduces:
 
-* How does the payment flow look like
-* How does bitmarkd validate a transaction which requires a payment from bitcoin / litecoin blockchain
+* What the Bitmark payment flow looks like
+* How `bitmarkd` validates a transaction that requires a payment from the Bitcoin or Litecoin blockchain
 
-## Flow
+## Overview
 
-When a user submit a new transaction to the blockchain by RPC, bitmarkd will process it and return a transaction detail that inlcudes payment information.
+When a user submits a new transaction to the Bitmark blockchain via RPC, `bitmarkd` will process it and return transaction details that include payment information.
 
-Someone needs to pay for the bitmark transaction by either bitcoin or litecoin blockchain according to the payment information. In the payment transaction, it must include the payment id by using `OP_RETURN` opcode.
+Someone then needs to pay for the Bitmark transaction using either the Bitcoin or Litecoin blockchain, in accordance with the payment information. This transaction must include the payment id returned by `bitmarkd` as part of the cryptocurrency transaction's `OP_RETURN` opcode.
 
-Once bitmark blockchain detects a payment transaction from either blockchain, the target bitmark transaction will be marked as verified and wait for miners to put it into a block.
+Once the Bitmark blockchain detects a payment transaction from either blockchain, it marks the target Bitmark transaction as verified and waits for miners to put it into a block.
 
 ## Reservoir Module
 
-Reservoir is module that is used to validating and storing transactions.
+Reservoir is the module that is used for validating and storing transactions.
 
 ### Processing a new transaction
 
-When a new transaction is submitted to the blockchain by RPC, it will be processed either by `StoreIssues` or `StoreTransfer` according to the type of the transaction. The processing includes the transaction existence checking as well as generating a payment id which is bound to transactions from this request.
+When a new transaction is submitted to the Bitmark blockchain by RPC, it will be processed either by `StoreIssues` or `StoreTransfer`, according to the type of the transaction. This processing checks for the existence of the transaction and also generates a payment id.
 
-### Generate a payment id
+### Generating a payment id
 
-In the `StoreIssues` function, every issue transaction record in the request will be packed into a binary data. These packed data will be concatenated together and be hashed by SHA3 algorithem. The result of that hashing will become the payment id. `StoreTransfer` works in the same way. The only different is that there will be only one transaction record in a transfer request.
+The `StoreIssues` function packs issue records as binary data. This packed data is concatenated together and hashed by the SHA3 algorithm. The result of that hashing becomes the payment id. `StoreTransfer` works in the same way for transfer records; the only difference is that there will only be one transaction record in a transfer request.
 
-### Change the state of a paid transaction
+### Changing the state of a paid transaction
 
-When bitmarkd detects a payment transaction from either blockchain, it will invoke function `SetTransferVerified` from reservoir. The target bitmark transaction will be marked as verified and wait for the miner to put it into a block.
+When `bitmarkd` detects a payment transaction from either blockchain, it invokes the function `SetTransferVerified` from Reservoir. The target Bitmark transaction is marked as verified and made available for miners to put it into a block.
 
-### Structures
+### Pending and Verified Structures
 
-In order to maintain all the transaction states in the bitmarkd, we use the following structures to manage all transactions in the bitmarkd.
+The following structures manage all of the payment-related transaction states in `bitmarkd`. They assist `bitmarkd` in validating payments for transactions.
 
-First, when a transaction comes in, reservoir will check them and save them into pending structures. If it is a valid new transaction, it will be saved in `pendingIndex` with its transaction id as a key. Based on the types of transaction, it will also add another record with its payment id as key. These structures assist bitmarkd validating the payments for transactions.
+**Pending Stuctures.** When a transaction initially comes in, Reservoir checks it and saves it into pending structures. If it is a valid new transaction, it will be saved in `pendingIndex` with its transaction id as a key. Reservoir will also add another record with its payment id as key, based on the type of transaction.
 
 ```go
 pendingTransactions map[pay.PayId]*transactionPaymentData
@@ -51,7 +51,7 @@ pendingPaidIssues   map[pay.PayId]*issuePaymentData
 pendingIndex        map[merkle.Digest]pay.PayId
 ```
 
-Once the system detect a payment transaction from the bitcoin or litecoin blockchain, those paid pending transactions will be moved to verified structures.
+**Verified Structures.** Once the Bitmark blockchain detects a payment transaction from the Bitcoin or Litecoin blockchain, pending transactions are be moved to verified structures.
 
 ```go
 verifiedTransactions map[pay.PayId]*transactionData
@@ -60,30 +60,28 @@ verifiedPaidIssues   map[pay.PayId]*issuePaymentData
 verifiedIndex        map[merkle.Digest]pay.PayId
 ```
 
-Verified transactions will be collected periodically and form a block foundation. The block data will be broadcasted to a recorderd so that a block can be generated.
+Verified transactions are collected periodically to form a block foundation. The block data is broadcasted to a `recorderd` so that a block can be generated.
 
 ## Payment Module
 
-Payment module defines how bitmarkd handles payment transactions from bitcoin / litecoin blockchain. When payment module is initialised, a background process will be launched to check blockchain transactions using the mechansim that is set in the configuration file.
+The payment module defines how `bitmarkd` handles payment transactions from the Bitcoin and Litecoin blockchains. When the payment module is initialized, a background process is launched to check blockchain transactions using a mechanism defined in the configuration file.
 
-### Payment Validation
+There are three mechanisms that can be used to allow `bitmarkd` to validate payments for transactions.
 
-There are three mechanisms that you can choose for the bitmarkd to validate payments for transactions.
+1. Using RPC APIs
+1. Using Discovery Service
+1. Using Bitcoin peer-to-peer protocol (WIP)
 
-1. Directly RPC
-1. Discovery Service
-1. Bitcoin peer-to-peer protocol (WIP)
+### Using RPC APIs
 
-### Directly RPC
+The Bitcoin and Litecoin daemons provide RPC APIs that can be used to invoke and query transactions on those blockchains. This is the simplest way to monitor transactions from the Bitcoin and Litecoin blockchains. Using this method, `bitmarkd` will check the block header for the cryptocurrency blockchains periodically. When a block reaches certain confirmation, `bitmarkd` will pull the block data and scan all transactions in it. If a transaction contains an `OP_RETURN` starting with `6a30`, it will be treated as a potential payment transaction and sent to Reservoir for pending transaction validation.
 
-Bitcoin / Litecoin daemon provides RPC api for people to invoke and query transactions on it. This is the simplest way to monitoring transactions from the bitcoin blockchain. In this method, bitmarkd will check the block header periodically. When a block reaches certain confirmation, bitmarkd will pull the block data and scan all transactions in it. If a transaction contains an OP_RETURN starts with `6a30`, it will be treated as a potential payment transaction and send to reservoir for validating pending transactions.
+The main drawback of this method is that Bitmark node runners will need to host a full node for both the Bitcoin and Litecoin blockchains. This consumes both computational power and storage because it requires recording of each blockchain's block data and validation of the healthiness of both chains.
 
-There are some drawback for this method. Node runners need to host a full-node for both bitcoin and litecoin blockchain. It will occupy storages and computation power from your because you have to save all block data and validation the healthiness of blockchains.
+### Using Discovery Service
 
-### Discovery Service
+Discovery is an open-source service that is built on top of blockchain nodes. It watches and extracts all potential payment transactions from both the Bitcoina dn Litecoin blockchains simultaneously. It also provides an abstract interface using the zeromq PUBSUB pattern, so that `bitmarkd` can listen to only related transaction, without traversal of whole blocks.
 
-The discovery is another open-sourced service that is built on top of blockchain nodes. It watches and extracts all potential payment transactions from both blockchains simultaneously. It also provides an abstract interface using zeromq PUBSUB pattern so that bitmarkd can only listen to related transaction without traversal the whole blocks.
+### Using Bitcoin peer-to-peer protocol (WIP)
 
-### Bitcoin peer-to-peer protocol (WIP)
-
-Bitcoin P2P protocol is the mechansim that bitcoin daemons communicate to each other in the network. By using this protocol, bitmarkd don't really need to rely on certain centralized nodes. It makes the validation process be decentralised. Learning from the SPV client, we only keep block headers for blockchains. For all detected payment transaction, it will send to reservoir by function `SetTransferVerified`. Therefore, it reduces huge storage cost comparing to host a full-node for bitcoin and litecoin.
+Bitcoin P2P protocol is the mechanism that Bitcoin daemons use to communicate with each other on the network. By using this protocol, `bitmarkd` doesn't need to rely on specific centralized nodes. instead, the validation process is decentralised. With lessons learned from the SPV client, Bitmark only keeps block headers for blockchains. All detected payment transactions are then sent to Reservoir by the function `SetTransferVerified`. This dramatically reduces storage costs compared to hosting a full node for Bitcoin and Litecoin.

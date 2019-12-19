@@ -7,35 +7,35 @@ permalink: /bitmark-references/bitmark-node-software/rpc-communication
 folder: bitmark-references/bitmark-node-software
 ---
 
-# RPC
+# RPC Communication
 
-## Introduction
+## Overview
 
-RPC is the abbreviation of remote procedure call, which is an inter-process communication technique used for client-server based applications. It is also known as subroutine call or function call.
+RPC (remote procedure call) is an inter-process communication technique used for client-server based applications; it is used to communicated with the `bitmarkd` server.
 
-# Flow
+RPC calls are also called subroutine calls or function calls. 
 
-## Initialization
+## RPC Flow
 
-When `bitmarkd` starts, it initialises RPC settings including maximum connection count, connection bandwidth, communication encryption key, binds RPC on specific port, listen RPC port.
+### Initializing
 
-## Processing Messages
+When `bitmarkd` starts, it initializes RPC settings including maximum connection count, connection bandwidth, and communication encryption key. It then binds RPC on a specific port and listens to that RPC port.
 
-Different RPC command is processed by differnet function, following sections describes each command with examples. Each message is in json format, with one key `method` denotes which remote method being executed, and the other key `params` denotes what arguments are passed.
+### Processing Messages
 
-In order to test example, `bitmarkd` should be started in advance, default RPC port is on `2130`. `openssl` should be installed in advance to run communication.
+Different RPC commands are processed by different functions. The following sections describes each command with examples. Each message is in JSON format: the key `method` denotes which remote method is being executed, and the  key `params` denotes what arguments are being passed.
 
-All methods are named in the format of `file_name.method_name`, for example, `Assets.Get` stands for method `Get` in file `assets.go`.
+In order to test these examples, `bitmarkd` should be started in advance at the default RPC port of `2130`. `openssl` should be installed to run communications.
 
-Available commands:
+All methods are named in the format of `file_name.method_name`, for example, `Assets.Get` stands for the method `Get` in the file `assets.go`.
+
+**Available commands:**
 
 1. Assets.Get - retrieve assets information
 
-It is necessary to provide array of asset fingerprints to query asset information fingerprints).
-
 Parameters:
 
-- fingerprints - an array of asset fingerprints for querying asset information
+- fingerprints - an array of asset fingerprints
 
 Example shell command:
 
@@ -45,9 +45,9 @@ Example shell command:
 
 1. Bitmark.Provenance - retrieve transfer history of a bitmark
 
-In order to get provenance (asset transfer history), following parameters are needed:
+Parameters:
 
-- count - number of return history
+- count - provenance depth to return
 - txID - string of transaction ID
 
 Example shell command:
@@ -58,12 +58,12 @@ Example shell command:
 
 1. Bitmark.Transfer - transfer a bitmark
 
-To transfer a bitmark, following parameters are needed:
+Parameter:
 
-- link - previous transaciton ID
-- owner - next owner account
-- signature - previous hex string of owner
-- countersignature - next hex string of owner
+- link - previous transaction ID
+- owner - new owner account
+- signature - hex string of previous owner's signature
+- countersignature - hex string of new owner's signature
 
 Example shell command:
 
@@ -73,22 +73,22 @@ Example shell command:
 
 1. Bitmarks.Create - create a bitmark
 
-A bitmark is to represent property ownership, it is composed of two parts: asset and owner.
+The creation paramaters are composed of two parts: asset and owner.
 
-asset parameters:
+Asset Parameters:
 
 - name - name of asset
 - fingerprint - fingerprint of asset
-- metadata - attributes related to an asset; each attribute of metadata is composed of two parts, key and value, separated by \u0000, for example to denote a key "date" to have value "2001.01.01" would be "metadata": "date\u00002001.01.01"
-- registrant - owner accoun
-- signature - hext string of account
+- metadata - attributes related to an asset; each metadata attribute is composed of two parts, key and value, separated by \u0000. For example, to denote a key "date" with value "2001.01.01" would be "metadata": "date\u00002001.01.01"
+- registrant - owner account
+- signature - hex string of owner's signature
 
-owner parameters:
+Owner Parameters:
 
-- assetID - Owner data includes asset id
-- owner - account of owner
-- nonce - string to make hash meets difficulty requirement
-- signature - hex string of account (signature)
+- assetID - asset id
+- owner - owner account
+- nonce - string to ensure hash meets difficulty requirement
+- signature - hex string of owner's signature
 
 Example shell command:
 
@@ -98,10 +98,10 @@ Example shell command:
 
 1. Bitmarks.Proof - provide payment information
 
-Payment informatin parameters:
+Parameters:
 
 - payID - payment id
-- nonce - string to make hash meets difficulty criteria (nonce)
+- nonce - string to ensure hash meets difficulty criteria (nonce)
 
 Example shell command:
 
@@ -111,14 +111,14 @@ Example shell command:
 
 1. BlockOwner.Transfer - transfer block ownership to another account
 
-Parameters to transfer block ownership:
+Parameters:
 
 - link - transaction hash
 - version - version to specify available payments
 - payments - payment information
-- owner - next owner
-- signature - hex string of owner
-- countersignature - hex strnig of next owner
+- owner - new owner
+- signature - hex string of previous owner's signature
+- countersignature - hex string of new owner's signature
 
 Example shell command:
 
@@ -138,7 +138,7 @@ Example shell command:
 
 1. Node.List - list available nodes
 
-Parameter:
+Parameters:
 
 - count - how many nodes to return
 
@@ -150,9 +150,9 @@ Example shell command:
 ```
 1. Transaction.Status - retrieve status of a transaction
 
-Parameter:
+Parameters:
 
-- txID - array of transaction hash
+- txID - array of transaction hashes
 
 Example shell command:
 

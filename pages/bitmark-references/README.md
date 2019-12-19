@@ -12,13 +12,13 @@ _The Bitmark References offer you an encyclopedia of features for the Bitmark Pr
 
 ## [Bitmark Node Software](bitmark-node-software/README.md)
 
-* [Bitmark Blockchain Overview](bitmark-node-software/bitmark-blockchain-overview.md)
+* [Bitmark Blockchain Technical Overview](bitmark-node-software/bitmark-blockchain-overview.md)
+* [Block Validation and Synchronization](bitmark-node-software/block-verification-and-synchronization.md)
+* [Block Mining](bitmark-node-software/mining.md)
 * [RPC Communication](bitmark-node-software/rpc-communication.md)
-* [Block Verification and Synchronization](bitmark-node-software/block-verification-and-synchronization.md)
-* [Storage](bitmark-node-software/node-modules.md)
-* [Bitmark Mining](bitmark-node-software/mining.md)
 * [Payment Verification](bitmark-node-software/payment-verification.md)
-* [Security](bitmark-node-software/security.md)
+* [Storage Databases](bitmark-node-software/node-modules.md)
+* [Blockchain Security](bitmark-node-software/security.md)
 
 
 ## [Bitmark SDK](bitmark-sdk/README.md)
