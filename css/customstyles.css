@@ -1,5 +1,55 @@
-body {
-    font-size:15px;
+/*fonts*/
+@font-face {
+  font-family: 'AvenirNextW1G'; /*// Avenir Next W1G Light*/
+  src: url('/fonts/Avenir-Next-W1G/AvenirNextW1G-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'AvenirNextW1G'; /*// Avenir Next W1G Bold*/
+  src: url('/fonts/Avenir-Next-W1G/AvenirNextW1G-Bold.ttf');
+  font-weight: 600;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'AvenirNextW1G'; /*// Avenir Next W1G medium*/
+  src: url('/fonts/Avenir-Next-W1G/AvenirNextW1G-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'AvenirNextW1G'; /*// Avenir Next W1G Thin*/
+  src: url('/fonts/Avenir-Next-W1G/AvenirNextW1G-Thin.ttf');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: 'AvenirNextW1G'; /*// Avenir Next W1G Regular*/
+  src: url('/fonts/Avenir-Next-W1G/AvenirNextW1G-Regular.ttf');
+  font-weight: 300;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'AndaleMono'; /*// AndaleMono*/
+  src: url('/fonts/andaleMono/AndaleMono.eot');
+  src: url('/fonts/andaleMono/AndaleMono.eot?#iefix') format('embedded-opentype'), url('../fonts/andaleMono/AndaleMono.woff') format('woff'), url('../fonts/andaleMono/AndaleMono.ttf') format('truetype'), url('../fonts/andaleMono/AndaleMono.svg#avenir') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+.home-logo {
+    display: inline-block;
+}
+
+p {
+  line-height: 1.5;
 }
 
 .bs-callout {
@@ -360,33 +410,37 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav li > a > span:after {
-    content: '\25be';
+    font-family: FontAwesome;
+    content: "\f107";
 }
 
 .nav li.active > a > span:after {
-    content: '\25b4';
+    font-family: FontAwesome;
+    content: '\f106';
 }
 
 .nav a:hover, .nav li.active > a {
-    background-color: #8D8D8D;
-    color: #f5f5f5;
+    background-color: #A4B5CD;
+    color: #fff;
 }
 
 .nav > li.active > a  {
-background-color: #347DBE;
 }
 
 .nav li a {
-    font-size: 12px;
+    /*font-size: 12px;*/
     line-height: 18px;
-    padding: 2px 10px;
+    padding: 5px 10px;
     background-color: #f1f1f1;
 }
 
 .nav > li > a {
-    font-size: 14px;
     line-height: 20px;
     padding: 4px 10px;
+}
+
+ul#mysidebar > li > a {
+    padding: 7px 10px;
 }
 
 ul#mysidebar {
@@ -394,7 +448,7 @@ ul#mysidebar {
 }
 
 .nav ul li ul li a {
-    padding-left:40px;
+    /*padding-left:40px;*/
 }
 
 .nav li.thirdlevel > a {
@@ -414,12 +468,16 @@ ul#mysidebar {
 }
 
 .nav li a:hover {
-    background-color: #8D8D8D;
+    background-color: #A4B5CD;
 }
 
 .nav ul li a {
     border-top:1px solid whitesmoke;
     padding-left:10px;
+}
+
+.nav ul li a:hover {
+    text-decoration: none;
 }
 /* end sidebar */
 
@@ -599,9 +657,6 @@ a[data-toggle] {
 a.fa.fa-envelope-o.mailto {
     font-weight: 600;
 }
-
-h3 {color: #ED1951; font-weight:normal; font-size:130%;}
-h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;}
 
 .alert, .callout {
     overflow: hidden;
@@ -882,32 +937,12 @@ span.soft {
     }
 }
 
+
 .col-md-9 img {
     max-width: 100%;
     max-height: 100%;
 }
 
-
-.post-content img {
-    margin: 12px 0px 3px 0px;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
-.col-md-9 img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-
-.post-content img {
-    margin: 12px 0px 3px 0px;
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
 
 .videoThumbs img {
     float: left;
@@ -918,9 +953,9 @@ span.soft {
 
 @media only screen and (min-width: 900px), only screen and (min-device-width: 900px) {
     .col-md-9 img {
-        max-width: 700px;
+/*        max-width: 700px;
         max-height: 700px;
-    }
+*/    }
 }
 
 *:hover > .anchorjs-link {
@@ -1019,6 +1054,13 @@ span.label.label-primary {
     font-weight: bold;
     color: black;
     }
+.subfolders ul li a {
+    background: #EDF0F4;
+}
+
+.subfolders.active {
+  border-bottom: solid 2px #A4B5CD;
+}
 
 a code {
     color: #248EC2;
