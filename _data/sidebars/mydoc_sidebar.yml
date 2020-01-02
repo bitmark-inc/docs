@@ -12,7 +12,7 @@ entries:
       url: /learning-bitmark/bitmark-property-system-introduction
       output: web
 
-    - title: Bitmark Blockchain
+    - title: Blockchain
       url: /learning-bitmark/bitmark-blockchain
       output: web
 
@@ -66,7 +66,7 @@ entries:
       output: web
 
 
-  - title: Bitmark References
+  - title: References
     output: web, pdf
     folderitems:
 
@@ -75,7 +75,7 @@ entries:
       output: web
 
       subfolders:
-        - title: Bitmark Node Software
+        - title: Node Software
           output: web
           subfolderitems:
 
@@ -152,7 +152,7 @@ entries:
             url: /bitmark-references/bitmark-cli/bitmark-cli-command-reference
             output: web
 
-  - title: Bitmark Appendix
+  - title: Appendix
     output: web, pdf
     folderitems:
 
@@ -164,7 +164,7 @@ entries:
       url: /bitmark-appendix/bitmark-shares
       output: web
 
-    - title: Bitmark Papers
+    - title: Papers
       url: /bitmark-appendix/bitmark-papers
       output: web
 
