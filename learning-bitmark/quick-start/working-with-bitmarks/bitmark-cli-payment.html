@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" transaction payment">
+<title>Bitmark CLI Payment | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Bitmark CLI Payment page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Bitmark CLI Payment">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Bitmark CLI Payment</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="paying-for-bitmark-transactions">Paying for Bitmark Transactions</h1>
+
+<p>Bitmark transaction fees for transfers and share-related transactions can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies.</p>
+
+<p>The process is as follows:</p>
+
+<p>The Bitmark-CLI submits transactions to its connected Bitmark Node via RPC. Once the Node server receives a transaction, it processes the transaction, sets it as Pending, and returns corresponding payment IDs, amounts, and addresses. The transaction is only updated from Pending to Verified, making it ready to be mined, once a payment is executed, either in BTC or LTC.</p>
+
+<p>In order for bitcoin or litecoin payment to be correctly recognized, freeing up the Bitmark transaction, it must include:</p>
+
+<ul>
+  <li>
+    <p>A correct amount</p>
+  </li>
+  <li>
+    <p>To the correct address</p>
+  </li>
+  <li>
+    <p>With the correct payment ID added as a BTC/LTC OP_RETURN opcode.</p>
+  </li>
+</ul>
+
+<p>Because common wallets do not support attaching the Bitmark blockchain payment identifier to the BTC/LTC transactions, Bitmark provides an app called the Bitmark Wallet to pay for Bitmark transactions that come from the Bitmark-CLI.</p>
+
+<h3 id="about-the-bitmark-wallet">About the Bitmark Wallet</h3>
+
+<p>The Bitmark Wallet is a dual-currency wallet, supporting both bitcoin and litecoin. It allows a user to send multiple payments to different addresses and to attach a hex data item to a transaction using the OP_RETURN feature of BTC/LTC.</p>
+
+<p>The wallet is a command-line tool which is written in Go and cannot work standalone; it can only send bitcoin and litecoin transactions via a correctly configured <code class="language-plaintext highlighter-rouge">bitcoind</code> and/or <code class="language-plaintext highlighter-rouge">litecoind</code>. Depending on the configuration of <code class="language-plaintext highlighter-rouge">bitcoind</code> and <code class="language-plaintext highlighter-rouge">litecoind</code>, the payment transactions are submitted as mainnet coins or testnet coins.</p>
+
+<p>Features:</p>
+
+<ul>
+  <li>
+    <p>Submit BTC/LTC transactions.</p>
+  </li>
+  <li>
+    <p>Update the wallet from the BTC/LTC block chain by querying the local daemon to request any transctions belonging to its addresses.</p>
+  </li>
+  <li>
+    <p>Display the wallet balance for each coin.</p>
+  </li>
+  <li>
+    <p>Generate and display an address that can be used to send more coins to the wallet.</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p><strong>NOTE:</strong>The Bitmark Wallet uses a master bip39-based recovery phrase, which must be printed and kept safe.</p>
+</blockquote>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>To use the Bitmark Wallet:</p>
+
+<ul>
+  <li>
+    <p>Git must be installed.</p>
+  </li>
+  <li>
+    <p>Go must be installed.</p>
+  </li>
+  <li>
+    <p>Python3 must be installed.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">bitcoind</code>/<code class="language-plaintext highlighter-rouge">litecoind</code> must be installed.</p>
+  </li>
+</ul>
+
+<h2 id="using-the-bitmark-wallet">Using the Bitmark Wallet</h2>
+
+<p>The main actions required to use the Bitmark wallet are:</p>
+
+<ul>
+  <li>
+    <p>Installing the Bitmark Wallet.</p>
+  </li>
+  <li>
+    <p>Syncing the wallet with coins.</p>
+  </li>
+  <li>
+    <p>Running the wallet.</p>
+  </li>
+  <li>
+    <p>Acquiring testnet coins.</p>
+  </li>
+</ul>
+
+<h3 id="installing-the-bitmark-wallet">Installing the Bitmark Wallet</h3>
+
+<p>To install the Bitmark wallet:</p>
+
+<ul>
+  <li>
+    <p>Clone the Bitmark Wallet</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nv">$git</span> clone https://github.com/bitmark-inc/bitmark-wallet.git
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install the Bitmark Wallet</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nv">$cd</span> bitmark-wallet/command/bitmark-wallet
+
+      <span class="nv">$go</span> <span class="nb">install</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create the Bitmark Wallet’s config file</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nv">$ </span><span class="nb">touch</span> &lt;CONFIG DIR&gt;/bitmark-wallet/bitmark-wallet.conf
+</code></pre></div>    </div>
+
+    <p><em>Example:</em></p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nv">$ </span><span class="nb">mkdir</span> ~/.config/bitmark-wallet
+      <span class="nv">$ </span><span class="nb">touch</span> ~/.config/bitmark-wallet/bitmark-wallet.conf
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="connecting-the-bitmark-wallet">Connecting the Bitmark Wallet</h3>
+
+<p>The Bitmark Wallet communicates with <code class="language-plaintext highlighter-rouge">litecoind</code> and <code class="language-plaintext highlighter-rouge">bitcoind</code> using RPC, so RPC needs to be enabled in the <code class="language-plaintext highlighter-rouge">bitcoin.conf</code> and <code class="language-plaintext highlighter-rouge">litecoin.conf</code> and the corresponding RPC username and password needs to be added into the appropriate config files.</p>
+
+<ul>
+  <li>
+    <p>Enable RPC in the BTC and LTC config files</p>
+
+    <pre><code class="language-#bitcoin.conf">
+      # RPC server port
+      rpcport = 18332
+      rpcbind = 127.0.0.1
+      rpcbind = [::1]
+
+      # RPC configuration
+      rpcthreads = 20
+      #rpcssl = 1
+      rpcallowip = 127.0.0.1
+      rpcallowip = [::1]
+
+      # authentication
+      rpcauth=&lt;rpc auth line for bitcoin&gt; [to be filled in later]
+</code></pre>
+
+    <pre><code class="language-#litecoin.conf">
+      # RPC server port
+      rpcport = 19332
+      rpcbind = 127.0.0.1
+      rpcbind = [::1]
+
+      # RPC configuration
+      rpcthreads = 20
+      #rpcssl = 1
+      rpcallowip = 127.0.0.1
+      rpcallowip = [::1]
+
+      # authentication
+      rpcauth=&lt;rpc auth line for bitcoin&gt; [to be filled in later]
+</code></pre>
+  </li>
+  <li>
+    <p>Run the <a href="/pages/learning-bitmark/quick-start/working-with-bitmarks/samples/rpcauth.py"><code class="language-plaintext highlighter-rouge">rpcauth.py</code></a> program to get the <code class="language-plaintext highlighter-rouge">rpcauth</code> lines and corresponding usernames &amp; passwords</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nv">$ </span>python3 rpcauth.py localhost
+</code></pre></div>    </div>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">      </span><span class="err">btc:</span><span class="w">
+          </span><span class="err">localhost:</span><span class="w">
+            </span><span class="err">rpcauth:</span><span class="w">  </span><span class="s2">"cotzntmnxllhcpsshvdzzuue:1c1671f8ffbdd8d845688dc450d2c4e1$ec4723c3a7c29d072c40749017d4d326576c68264595355fac8816d525220f7a"</span><span class="w">
+            </span><span class="err">username:</span><span class="w"> </span><span class="s2">"cotzntmnxllhcpsshvdzzuue"</span><span class="w">
+            </span><span class="err">password:</span><span class="w"> </span><span class="s2">"vN9v95_7qjWiHSMUx2QuriX6fUgjoPyZgJRm-1Og0-g="</span><span class="w">
+        </span><span class="err">ltc:</span><span class="w">
+          </span><span class="err">localhost:</span><span class="w">
+            </span><span class="err">rpcauth:</span><span class="w">  </span><span class="s2">"wzrhjmlikroaxjnckmgzcrfv:37ff59f93e737d95f3cb15a4c5b81d$ecf9e7d5ceaf79fa136865d950c64b88845582e78f4a7af5e8a1861ad8331f08"</span><span class="w">
+            </span><span class="err">username:</span><span class="w"> </span><span class="s2">"wzrhjmlikroaxjnckmgzcrfv"</span><span class="w">
+            </span><span class="err">password:</span><span class="w"> </span><span class="s2">"7iLL9pGM7W4LNQTjDmdYGj6mJ7nBFgYIix5OjRbR-v4="</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p>Copy the corresponding <code class="language-plaintext highlighter-rouge">rpcauth</code> lines and paste them into the litecoin and bitcoin config files</p>
+
+    <p><em>Example:</em></p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  #In litecoin.conf:
+
+      # authentication
+      rpcauth=wzrhjmlikroaxjnckmgzcrfv:37ff59f93e737d95f3cb15a4c5b81d$ecf9e7d5ceaf79fa136865d950c64b88845582e78f4a7af5e8a1861ad8331f08
+</code></pre></div>    </div>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  # In bitcoin.conf:
+
+      # authentication
+      rpcauth=cotzntmnxllhcpsshvdzzuue:1c1671f8ffbdd8d845688dc450d2c4e1$ec4723c3a7c29d072c40749017d4d326576c68264595355fac8816d525220f7a
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy the BTC and LTC RPC usernames and passwords and paste them into the corresponding fields in the <code class="language-plaintext highlighter-rouge">bitmark-wallet.conf</code></p>
+
+    <p><em>Example:</em>
+  <code class="language-plaintext highlighter-rouge"># bitmark-wallet.conf
+      agent {
+        btc{
+            type = "daemon"
+            node = "localhost:18332"
+            user = "cotzntmnxllhcpsshvdzzuue"
+            pass = "vN9v95_7qjWiHSMUx2QuriX6fUgjoPyZgJRm-1Og0-g="
+        }
+        ltc {
+          type = "daemon"
+          node = "localhost:19332"
+          user = "wzrhjmlikroaxjnckmgzcrfv"
+          pass = "7iLL9pGM7W4LNQTjDmdYGj6mJ7nBFgYIix5OjRbR-v4="
+        }
+      }
+ </code></p>
+  </li>
+</ul>
+
+<blockquote>
+  <p><strong>NOTE:</strong> Transactions on the main Bitmark blockchain need to be paid with real bitcoin and/or litecoin; transactions on the Bitmark testnet blockchain need to be paid with testnet coins.</p>
+</blockquote>
+
+<h3 id="running-the-bitmark-wallet">Running the Bitmark Wallet</h3>
+
+<p>To use the Bitmark Wallet:</p>
+
+<ul>
+  <li>
+    <p>Run the coin servers</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># bitcoind</span>
+      <span class="nv">$ </span>bitcoind <span class="nt">-datadir</span><span class="o">=</span>&lt;bitcoind config <span class="nb">dir</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># litecoind</span>
+      <span class="nv">$ </span>litecoind <span class="nt">-datadir</span><span class="o">=</span>&lt;litecoind config <span class="nb">dir</span><span class="o">&gt;</span>
+</code></pre></div>    </div>
+
+    <p><em>Example:</em></p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># bitcoind</span>
+      <span class="nv">$ </span>bitcoind <span class="nt">-datadir</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.config/bitcoin
+</code></pre></div>    </div>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># litecoind</span>
+      <span class="nv">$ </span>litecoind <span class="nt">-datadir</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.config/litecoin
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Initialize the Bitmark Wallet</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nv">$ </span> bitmark-wallet <span class="nt">--conf</span><span class="o">=</span>&lt;conf file&gt; init
+</code></pre></div>    </div>
+
+    <p><em>Example:</em></p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.config/bitmark-wallet/test/bitmark-wallet.conf init
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Sync the Wallet</p>
+
+    <blockquote>
+      <p>Syncing scans the blockchain from the block that was highest at the time it was last used to the current block height to see if any transactions matching any addresses in the wallet were sent.</p>
+    </blockquote>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># bitcoin</span>
+      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span>&lt;config file&gt; btc <span class="nb">sync</span> <span class="nt">--testnet</span>
+</code></pre></div>    </div>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># litecoin</span>
+      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span>&lt;config file&gt; ltc <span class="nb">sync</span> <span class="nt">--testnet</span>
+</code></pre></div>    </div>
+
+    <p><em>Example:</em></p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># bitcoind</span>
+      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.config/bitmark-wallet/test/bitmark-wallet.conf <span class="se">\</span>
+        btc <span class="nb">sync</span> <span class="nt">--testnet</span>
+</code></pre></div>    </div>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># litecoind</span>
+      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.config/bitmark-wallet/test/bitmark-wallet.conf <span class="se">\</span>
+        ltc <span class="nb">sync</span> <span class="nt">--testnet</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Generate BTC/LTC addresses for sending coins</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># bitcoin</span>
+      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span>&lt;config file&gt; btc newaddress <span class="nt">--testnet</span>
+</code></pre></div>    </div>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># litecoin</span>
+      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span>&lt;config file&gt; ltc newaddress <span class="nt">--testnet</span>
+</code></pre></div>    </div>
+
+    <p><em>Example:</em></p>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># bitcoind</span>
+      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.config/bitmark-wallet/test/bitmark-wallet.conf <span class="se">\</span>
+        btc newaddress <span class="nt">--testnet</span>
+</code></pre></div>    </div>
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># litecoind</span>
+      <span class="nv">$ </span>bitmark-wallet <span class="nt">--conf</span><span class="o">=</span><span class="k">${</span><span class="nv">HOME</span><span class="k">}</span>/.config/bitmark-wallet/test/bitmark-wallet.conf <span class="se">\</span>
+        ltc newaddress <span class="nt">--testnet</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="getting-testnet-coins">Getting testnet coins</h3>
+
+<p>To fund a mainnet wallet, you’ll need to send coins to the BTC or LTC address, but to fund a testnet wallet, you can simply request coins from a faucet.</p>
+
+<ul>
+  <li>
+    <p>Get some testnet litecoins at https://faucet.xblau.com/</p>
+  </li>
+  <li>
+    <p>Get some testnet bitcoins at https://coinfaucet.eu/en/btc-testnet/</p>
+  </li>
+</ul>
+
+<h2 id="paying-for-the-transaction">Paying for the Transaction</h2>
+
+<p>Once your Bitcoin Wallet is set up, it can be used to pay for transactions. Instructions and examples can be found in the sections on <a href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks#transferring-bitmarks-using-the-bitmark-cli">Transferring Bitmarks</a>, <a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#paying-for-a-share-creation">Paying for a Share Creation</a>, <a href="https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#paying-for-a-share-grant">Paying for a Share Grant</a>, and <a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#paying-for-a-share-swap">Paying for a Share Swap</a>.</p>
+
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

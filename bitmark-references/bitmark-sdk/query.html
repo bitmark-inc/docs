@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" sdk, query">
+<title>Query | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Query page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Query">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Query</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="query">Query</h1>
+
+<p>The bitmark SDK support queries over these records: assets, bitmarks and transactions (txs). These records are created or updated when different actions (register, issue or transfer) are applied.</p>
+
+<p>For the retrieval of a single record, use the record ID (<code class="language-plaintext highlighter-rouge">asset_id</code>, <code class="language-plaintext highlighter-rouge">bitmark_id</code> or <code class="language-plaintext highlighter-rouge">tx_id</code>) to retrieve the specific record.</p>
+
+<p>For the retrieval of a collection of records, several query parameters are provided to select a set of records based on supplied criteria. All records support the following filters:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pending</code>: whether to include pending records (not added to the blockchain yet)</li>
+  <li><code class="language-plaintext highlighter-rouge">limit</code>: the maximum number of records to be returned in one query</li>
+  <li><code class="language-plaintext highlighter-rouge">offset</code>: returns the records which are updated subsequently</li>
+</ul>
+
+<!-- TODO: explain how to iterate all records -->
+
+<p>Both bitmark and transaction record can be linked to a fundamental asset record, so they support two extra query parameters:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">referenced_asset</code>: specifies the asset ID which the records link to</li>
+  <li><code class="language-plaintext highlighter-rouge">load_asset</code>: whether to include referenced asset objects</li>
+</ul>
+
+<p>The actual query functions could be in snake case or camel case depends on which SDK is used. For simplicity, the camel case is used for explanation.</p>
+
+<h2 id="asset">Asset</h2>
+
+<p>An asset record is available when it’s registered and there is at least one accompanying bitmark issuance.</p>
+
+<h3 id="record-data-structure">Record data structure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>The asset ID</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>The asset name</td>
+    </tr>
+    <tr>
+      <td>metadata</td>
+      <td>The asset metadata, described by key-value paris</td>
+    </tr>
+    <tr>
+      <td>fingerprint</td>
+      <td>The hash value of the asset content, which serves as the unique identifier for the asset record in the blockchain</td>
+    </tr>
+    <tr>
+      <td>registrant</td>
+      <td>The account registering the asset</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>Possible values: <code class="language-plaintext highlighter-rouge">pending</code>, <code class="language-plaintext highlighter-rouge">confirmed</code></td>
+    </tr>
+    <tr>
+      <td>block_number</td>
+      <td>The block which incorporates the asset record</td>
+    </tr>
+    <tr>
+      <td>offset</td>
+      <td>An auto-incremental number which increments when the data is updated</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>When the asset status becomes <code class="language-plaintext highlighter-rouge">confirmed</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="query-for-a-specific-asset">Query for a specific asset</h3>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#2732da73-c7f7-4c02-b486-395d740486b3'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Go</a></li>
+
+	<li><a href="#">Java</a></li>
+
+</ul>
+
+<ul id="2732da73-c7f7-4c02-b486-395d740486b3" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Asset</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">assetId</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">response</span> <span class="o">=</span> <span class="kt">Asset</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="nv">assetID</span><span class="p">:</span> <span class="n">assetId</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">(</span>
+	<span class="s">"github.com/bitmark-inc/bitmark-sdk-go/asset"</span>
+<span class="p">)</span>
+
+<span class="c">// This sample assumes the SDK is already correctly initialized</span>
+<span class="k">func</span> <span class="n">getAssetExample</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">asset</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">asset</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="n">assetId</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Asset</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">assetId</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">AssetRecord</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">AssetRecord</span> <span class="n">asset</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="query-for-a-set-of-assets">Query for a set of assets</h3>
+
+<h4 id="assets-registered-by-the-specific-registrant">assets registered by the specific registrant</h4>
+
+<p>Use the account number of the registrant as the query argument.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#8cf48a57-a412-4349-9a55-6293312d15ff'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Go</a></li>
+
+	<li><a href="#">Java</a></li>
+
+</ul>
+
+<ul id="8cf48a57-a412-4349-9a55-6293312d15ff" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">assetQueryParams</span> <span class="o">=</span> <span class="nx">Asset</span><span class="p">.</span><span class="nx">newAssetQueryBuilder</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">registeredBy</span><span class="p">(</span><span class="dl">"</span><span class="s2">ec6yMcJATX6gjNwvqp8rbc4jNEasoUgbfBBGGyV5NvoJ54NXva</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pending</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
+
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Asset</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">assetQueryParams</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">params</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Asset</span><span class="o">.</span><span class="nf">newQueryParams</span><span class="p">()</span>
+                <span class="o">.</span><span class="nf">limit</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+                <span class="o">.</span><span class="nf">registeredBy</span><span class="p">(</span><span class="nv">registrant</span><span class="p">:</span> <span class="s">"ec6yMcJATX6gjNwvqp8rbc4jNEasoUgbfBBGGyV5NvoJ54NXva"</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">assets</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Asset</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">params</span><span class="p">:</span> <span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// import bmAsset "github.com/bitmark-inc/bitmark-sdk-go/asset"</span>
+<span class="n">params</span> <span class="o">:=</span> <span class="n">bmAsset</span><span class="o">.</span><span class="n">NewQueryParamsBuilder</span><span class="p">()</span><span class="o">.</span>
+		<span class="n">RegisteredBy</span><span class="p">(</span><span class="s">"ec6yMcJATX6gjNwvqp8rbc4jNEasoUgbfBBGGyV5NvoJ54NXva"</span><span class="p">)</span><span class="o">.</span>
+		<span class="n">Limit</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+<span class="n">assets</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bmAsset</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">AssetQueryBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AssetQueryBuilder</span><span class="o">().</span><span class="na">limit</span><span class="o">(</span><span class="n">limit</span><span class="o">).</span><span class="na">registeredBy</span><span class="o">(</span><span class="n">registrant</span><span class="o">);</span>
+<span class="nc">Asset</span><span class="o">.</span><span class="na">list</span><span class="o">(</span><span class="n">builder</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">AssetRecord</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">AssetRecord</span><span class="o">&gt;</span> <span class="n">assets</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h2 id="transaction-tx">Transaction (tx)</h2>
+
+<p>A new tx record is generated accordingly when one of the following actions is applied:</p>
+
+<ul>
+  <li>a new bitmark is issued</li>
+  <li>a bitmark is transferred</li>
+  <li>an offer is accepted</li>
+</ul>
+
+<p>Actions which are applied to the same bitmark will create a chain of transactions linked by <code class="language-plaintext highlighter-rouge">previous_id</code> (See <a href="###-Record-data-structure">Record data structure</a>).</p>
+
+<p><img src="/pages/bitmark-references/bitmark-sdk/record_tx.png" alt="a chain of transaction records" /></p>
+
+<h3 id="record-data-structure-1">Record data structure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>The tx ID</td>
+    </tr>
+    <tr>
+      <td>owner</td>
+      <td>The account owning the bitmark</td>
+    </tr>
+    <tr>
+      <td>previous_id</td>
+      <td>Links to the previous tx (ignored for issue tx)</td>
+    </tr>
+    <tr>
+      <td>previous_owner</td>
+      <td>The previous owner of the bitmark (ignored for issue tx)</td>
+    </tr>
+    <tr>
+      <td>bitmark_id</td>
+      <td>Links to the bitmark which this tx is applied to</td>
+    </tr>
+    <tr>
+      <td>asset_id</td>
+      <td>The asset ID</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>Possible values: <code class="language-plaintext highlighter-rouge">pending</code>, <code class="language-plaintext highlighter-rouge">confirmed</code></td>
+    </tr>
+    <tr>
+      <td>block_number</td>
+      <td>The block which incorporates the tx record</td>
+    </tr>
+    <tr>
+      <td>offset</td>
+      <td>An auto-incremental number which increments when the data is updated</td>
+    </tr>
+    <tr>
+      <td>confirmation</td>
+      <td>the number of blocks in the block chain that have been accepted by the network since the block that includes the transaction</td>
+    </tr>
+    <tr>
+      <td>countersign</td>
+      <td>Indicates if this tx is a 2-sig transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="query-for-a-specific-transaction">Query for a specific transaction</h3>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#24c9f7e5-39f2-463d-97c3-22d3a87af279'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Go</a></li>
+
+	<li><a href="#">Java</a></li>
+
+</ul>
+
+<ul id="24c9f7e5-39f2-463d-97c3-22d3a87af279" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">txResponse</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">txId</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">tx</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Transaction</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="nv">transactionID</span><span class="p">:</span> <span class="s">"3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1"</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"</span>
+<span class="n">tx</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bmTx</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1"</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Transaction</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">txId</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">GetTransactionResponse</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">GetTransactionResponse</span> <span class="n">res</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="query-for-a-set-of-transactions">Query for a set of transactions</h3>
+
+<h4 id="the-provenance-of-a-bitmark">the provenance of a bitmark</h4>
+
+<p>A list of transaction records to show the ownership changes of a bitmark. If a bitmark is issued by user A, and then transferred to user B and C, the return will include 3 transactions with user A, B and C as transaction owners respectively.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#7ac58bf7-6a89-4262-8993-e1ec428816a4'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Go</a></li>
+
+	<li><a href="#">Java</a></li>
+
+</ul>
+
+<ul id="7ac58bf7-6a89-4262-8993-e1ec428816a4" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">transactionQueryParams</span> <span class="o">=</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">newTransactionQueryBuilder</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">referencedBitmark</span><span class="p">(</span><span class="dl">"</span><span class="s2">c8e021c1a093c32909e4d29b4624f8a5443e349a597314b7c9527ce310749121</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
+
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">transactionQueryParams</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">query</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Transaction</span><span class="o">.</span><span class="nf">newTransactionQueryParams</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">referenced</span><span class="p">(</span><span class="nv">toBitmarkID</span><span class="p">:</span> <span class="s">"58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518"</span><span class="p">)</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">txs</span><span class="p">,</span> <span class="nv">_</span><span class="p">)</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Transaction</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">params</span><span class="p">:</span> <span class="n">query</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"</span>
+<span class="n">params</span> <span class="o">:=</span> <span class="n">bmTx</span><span class="o">.</span><span class="n">NewQueryParamsBuilder</span><span class="p">()</span><span class="o">.</span>
+    <span class="n">ReferencedBitmark</span><span class="p">(</span><span class="s">"58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518"</span><span class="p">)</span>
+<span class="n">txs</span><span class="p">,</span> <span class="n">referencedAssets</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bmTx</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">TransactionQueryBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TransactionQueryBuilder</span><span class="o">()</span>
+                                <span class="o">.</span><span class="na">referencedBitmark</span><span class="o">(</span><span class="s">"58737de5ad68a535da6277da62d11eb3ed76ff6dd7fc2adf3c42a4096d9a2518"</span><span class="o">);</span>
+<span class="nc">Transaction</span><span class="o">.</span><span class="na">list</span><span class="o">(</span><span class="n">builder</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">GetTransactionsResponse</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">GetTransactionsResponse</span> <span class="n">res</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h4 id="the-transaction-history-of-an-account">the transaction history of an account</h4>
+
+<!-- TODO: what does this mean? -->
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#33c6beb0-50f0-452f-a179-8843f782c29d'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Go</a></li>
+
+	<li><a href="#">Java</a></li>
+
+</ul>
+
+<ul id="33c6beb0-50f0-452f-a179-8843f782c29d" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">transactionQueryParams</span> <span class="o">=</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">newTransactionQueryBuilder</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">ownedBy</span><span class="p">(</span><span class="dl">"</span><span class="s2">eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
+
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Transaction</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">transactionQueryParams</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">query</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Transaction</span><span class="o">.</span><span class="nf">newTransactionQueryParams</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">owned</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="s">"eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9"</span><span class="p">,</span> <span class="nv">transient</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">txs</span><span class="p">,</span> <span class="nv">_</span><span class="p">)</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Transaction</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">params</span><span class="p">:</span> <span class="n">query</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// import bmTx "github.com/bitmark-inc/bitmark-sdk-go/tx"</span>
+<span class="n">params</span> <span class="o">:=</span> <span class="n">bmTx</span><span class="o">.</span><span class="n">NewQueryParamsBuilder</span><span class="p">()</span><span class="o">.</span>
+    <span class="n">OwnedBy</span><span class="p">(</span><span class="s">"eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9"</span><span class="p">)</span>
+<span class="n">txs</span><span class="p">,</span> <span class="n">referencedAssets</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bmTx</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">TransactionQueryBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TransactionQueryBuilder</span><span class="o">()</span>
+                                <span class="o">.</span><span class="na">ownedBy</span><span class="o">(</span><span class="s">"eZpG6Wi9SQvpDatEP7QGrx6nvzwd6s6R8DgMKgDbDY1R5bjzb9"</span><span class="o">);</span>
+<span class="nc">Transaction</span><span class="o">.</span><span class="na">list</span><span class="o">(</span><span class="n">builder</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">GetTransactionsResponse</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">GetTransactionsResponse</span> <span class="n">res</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h2 id="bitmark">Bitmark</h2>
+
+<p>The bitmark record is literally a compact data structure for a chain of transaction records towards the same digital property.</p>
+
+<p>When a bitmark is issued, the corresponding bitmark and transaction record are created.</p>
+
+<p><img src="/pages/bitmark-references/bitmark-sdk/record_bitmark_issue.png" alt="bitmark record at the time of issuance" /></p>
+
+<p>When a bitmark is transferred, more transaction records are added to the property chain and the bitmark record will be updated.</p>
+
+<p><img src="/pages/bitmark-references/bitmark-sdk/record_bitmark_transfer.png" alt="bitmark record after transfer" /></p>
+
+<h3 id="record-data-structure-2">Record data structure</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>The bitmark ID</td>
+    </tr>
+    <tr>
+      <td>asset_id</td>
+      <td>The asset ID</td>
+    </tr>
+    <tr>
+      <td>latest_tx_id</td>
+      <td>The latest tx ID</td>
+    </tr>
+    <tr>
+      <td>issuer</td>
+      <td>The account issuing the bitmark</td>
+    </tr>
+    <tr>
+      <td>owner</td>
+      <td>The account currently owning the bitmark</td>
+    </tr>
+    <tr>
+      <td>offer</td>
+      <td>See the <a href="####-offer">offer</a> attributes below.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>Possible values: <code class="language-plaintext highlighter-rouge">issuing</code>, <code class="language-plaintext highlighter-rouge">transferring</code>, <code class="language-plaintext highlighter-rouge">offering</code>, <code class="language-plaintext highlighter-rouge">settled</code>. See the following diagram for definition.</td>
+    </tr>
+    <tr>
+      <td>block_number</td>
+      <td>The block which incorporates the latest tx of this bitmark</td>
+    </tr>
+    <tr>
+      <td>offset</td>
+      <td>An auto-incremental number which increments when the data is updated</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>When the bitmark is issued</td>
+    </tr>
+    <tr>
+      <td>confirmed_at</td>
+      <td>The last time when the bitmark is transferred</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/pages/bitmark-references/bitmark-sdk/bitmark_status.png" alt="Bitmark status diagram" /></p>
+
+<h4 id="offer">offer</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>The offer ID</td>
+    </tr>
+    <tr>
+      <td>from</td>
+      <td>Represents the account creating the offer</td>
+    </tr>
+    <tr>
+      <td>to</td>
+      <td>Represents the account which can accept/reject the bitmark</td>
+    </tr>
+    <tr>
+      <td>record</td>
+      <td>The half-signed transfer tx</td>
+    </tr>
+    <tr>
+      <td>extra_info</td>
+      <td>Attached JSON message for indicating the details of this offer</td>
+    </tr>
+    <tr>
+      <td>created_at</td>
+      <td>The create time of the offer</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="query-for-a-specific-bitmark">Query for a specific bitmark</h3>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#143ca7b5-d0fe-4cf3-8bbe-dba7df6bc76f'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Go</a></li>
+
+	<li><a href="#">Java</a></li>
+
+</ul>
+
+<ul id="143ca7b5-d0fe-4cf3-8bbe-dba7df6bc76f" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">bitmarkId</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// false: not include asset, true: include asset</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">bitmark</span> <span class="o">=</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="nv">bitmarkID</span><span class="p">:</span> <span class="n">bitmarkId</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// import bmBitmark "github.com/bitmark-inc/bitmark-sdk-go/bitmark"</span>
+<span class="n">bitmark</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bmBitmark</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"3bfe21170de3ff1767a166896cf9c69c12534b77c75509b673d02489405a5bf1"</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Bitmark</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">bitmarkId</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">GetBitmarkResponse</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">GetBitmarkResponse</span> <span class="n">res</span><span class="o">)</span> <span class="o">{</span>
+                <span class="nc">BitmarkRecord</span> <span class="n">bitmark</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="na">getBitmark</span><span class="o">();</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="query-for-a-set-of-bitmarks">Query for a set of bitmarks</h3>
+
+<h4 id="bitmarks-issued-by-the-specific-issuer">bitmarks issued by the specific issuer</h4>
+
+<p>To list the bitmarks which are issued by the specific account number. The issuer can increase the quality of each returned bitmark.</p>
+
+<!-- TODO: examples -->
+
+<h4 id="bitmarks-owned-by-the-specific-owner">bitmarks owned by the specific owner</h4>
+
+<p>To list the bitmarks which are currently owned by the specific account number. The owner can transfer tach of the returned bitmarks to any other receiver.</p>
+
+<!-- TODO: examples -->
+
+<h4 id="bitmarks-offered-from-the-specific-sender">bitmarks offered from the specific sender</h4>
+
+<p>A sender can query the bitmarks offered from him and takeTo list the bitmarks which are offered by this sender. The sender can take action on these bitmarks (cancel an offer).</p>
+
+<!-- TODO: examples -->
+
+<h4 id="bitmarks-offered-to-the-specific-receiver">bitmarks offered to the specific receiver</h4>
+
+<p>To list the bitmarks which are offered to this receiver. The receiver can take actions on these bitmarks (accept or reject an offer).</p>
+
+<!-- TODO: examples -->
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

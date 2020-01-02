@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" cli, bitmark-cli, command line interface, quick setup">
+<title>Bitmark-CLI Quick Setup | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Bitmark-CLI Quick Setup page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Bitmark-CLI Quick Setup">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li class="active"><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Bitmark-CLI Quick Setup</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="quick-setup">Quick Setup</h1>
+
+<p>The bitmark-cli program is able to create an initial configuration
+when none exists.  It uses separate configuration files for testing
+and bitmark block chains so that there will not be any confusion.  The
+first action is to create an initial identity that will be used by
+default for any actions that require a signature.</p>
+
+<p>The initial setup command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmarkcli -i IDENTITY -n NETWORK setup -d 'DESCRIPTION OF IDENTITY' -c HOST:2130
+</code></pre></div></div>
+
+<p>For the testing network:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmarkcli -i fred -n testing setup -n -d 'Testing account for Fred' -c node-a1.test.bitmark.com:2130
+</code></pre></div></div>
+
+<p>For the bitmark network:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmarkcli -i fred -n bitmark setup -n -d 'Live account for Fred' -c node-a1.live.bitmark.com:2130
+</code></pre></div></div>
+
+<p>The configuration file will look like:
+path of file: <code class="language-plaintext highlighter-rouge">${XDG_CONFIG_HOME}/bitmark-cli/testing-cli.json</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "default_identity": "fred",
+  "testnet": true,
+  "connections": [
+    "node-a1.test.bitmark.com:2130"
+  ],
+  "identities": {
+    "fred": {
+      "description": "Testing account for Fred",
+      "account": "XXX...XXX",
+      "data": "XXX...XXX",
+      "salt": "XXX...XXX"
+    }
+  }
+}
+</code></pre></div></div>
+
+<p>Once this initial setup is complete all functions of the CLI are now available to use.</p>
+
+<p>Security:</p>
+<ul>
+  <li>During setup you will be asked for a password, make sure this is a
+secure one as this is the only thing that prevents the secret data
+in the file from being decrypted.</li>
+  <li>It is also recommended that the <code class="language-plaintext highlighter-rouge">seed</code> command is used to display
+the recovery phrase; print this and keep carefully to allow recovery
+or to add this account to another computer.</li>
+</ul>
+
+<h1 id="adding-extra-connections">Adding extra connections</h1>
+
+<p>If you want to make use of the connection feture to be able to send to
+different nodes then the above file will have to be edited to add
+them. The JSON configuration can be edited in any text editor, but be
+careful to keep the formatting correct; JSON is not tolerant of
+missing or extraneous commas.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "default_identity": "fred",
+  "testnet": true,
+  "connections": [
+    "node-a1.test.bitmark.com:2130",
+    "node-a2.test.bitmark.com:2130",
+    "node-a3.test.bitmark.com:2130",
+    "node-a4.test.bitmark.com:2130"
+  ],
+  "identities": {
+    "fred": {
+      "description": "Testing account for Fred",
+      "account": "XXX...XXX",
+      "data": "XXX...XXX",
+      "salt": "XXX...XXX"
+    }
+  }
+}
+</code></pre></div></div>
+
+<p>Now the bitmark-cli can use the global <code class="language-plaintext highlighter-rouge">-c N</code> option where N is in the range 0…3.
+this is useful for scripts to be able to spred the load across multiple nodes</p>
+
+<p>For the live bitmark block chain the servers are:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "connections": [
+    "node-a1.live.bitmark.com:2130",
+    "node-a2.live.bitmark.com:2130",
+    "node-a3.live.bitmark.com:2130",
+    "node-a4.live.bitmark.com:2130"
+  ],
+</code></pre></div></div>
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

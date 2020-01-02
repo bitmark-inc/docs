@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" action, sdk, register asset, issue bitmark, transfer bitmark">
+<title>Action | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Action page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Action">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Action</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="register-an-asset">Register an asset</h1>
+
+<p>The first step to create a digital property is to register assets.
+An asset can any digital object, including files, applications, code, and data.</p>
+
+<p>Each asset can described by name and metadata (both optional), and can be uniquely identified by its fingerprint.</p>
+
+<p>If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain.</p>
+
+<p>An asset record won’t be added to the blockchain without accompanying bitmark issuances (refer to the next section for more info). The “orphaned” asset records will be vanished after 3 days.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#1e4a09b0-665a-4a01-b578-327cf370e1db'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="1e4a09b0-665a-4a01-b578-327cf370e1db" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">Asset</span><span class="p">.</span><span class="nx">newRegistrationParams</span><span class="p">(</span><span class="nx">assetName</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">params</span><span class="p">.</span><span class="nx">setFingerprint</span><span class="p">(</span><span class="nx">filePath</span><span class="p">);</span>
+<span class="nx">params</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Asset</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">params</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Asset</span><span class="o">.</span><span class="nf">newRegistrationParams</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"asset_name"</span><span class="p">,</span>
+                                            <span class="nv">metadata</span><span class="p">:</span> <span class="p">[</span><span class="s">"desc"</span><span class="p">:</span> <span class="s">"sdk example"</span><span class="p">])</span>
+
+<span class="k">let</span> <span class="nv">fileURL</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"file"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">".ext"</span><span class="p">)</span><span class="o">!</span>
+<span class="k">try</span> <span class="n">params</span><span class="o">.</span><span class="nf">setFingerprint</span><span class="p">(</span><span class="nv">fromFileURL</span><span class="p">:</span> <span class="n">fileURL</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">params</span><span class="o">.</span><span class="nf">sign</span><span class="p">(</span><span class="n">account</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">assetId</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Asset</span><span class="o">.</span><span class="nf">register</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">metadata</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+<span class="nc">RegistrationParams</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RegistrationParams</span><span class="o">(</span><span class="s">"asset_name"</span><span class="o">,</span> <span class="n">metadata</span><span class="o">);</span>
+<span class="n">params</span><span class="o">.</span><span class="na">setFingerprintFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
+<span class="n">params</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">registrantKey</span><span class="o">);</span>
+<span class="nc">Asset</span><span class="o">.</span><span class="na">register</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">RegistrationResponse</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">RegistrationResponse</span> <span class="n">res</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">registrant</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"USER_A_SEED"</span><span class="p">)</span>
+<span class="n">params</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">asset</span><span class="o">.</span><span class="n">NewRegistrationParams</span><span class="p">(</span>
+    <span class="s">"SDK usage example"</span><span class="p">,</span>
+    <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">"author"</span><span class="o">:</span> <span class="s">"developer@bitmark.com"</span><span class="p">},</span>
+<span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">SetFingerprintFromData</span><span class="p">([]</span><span class="kt">byte</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">))</span>
+<span class="n">params</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">registrant</span><span class="p">)</span>
+<span class="n">assetID</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">asset</span><span class="o">.</span><span class="n">Register</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h1 id="issue-bitmarks">Issue bitmarks</h1>
+
+<p>This system records ownership claims for digital assets as digital property titles known as bitmarks.</p>
+
+<p>After the asset is registered, you can issue bitmarks with a permanent reference to the corresponding asset record.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#6e28dd46-61d3-4125-b0e4-9939d39efce4'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="6e28dd46-61d3-4125-b0e4-9939d39efce4" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">newIssuanceParams</span><span class="p">(</span><span class="nx">assetId</span><span class="p">,</span> <span class="nx">quantity</span> <span class="o">=</span> <span class="mi">100</span><span class="p">);</span>
+<span class="nx">params</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">bitmarkIds</span> <span class="o">=</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">issue</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">params</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">newIssuanceParams</span><span class="p">(</span><span class="nv">assetId</span><span class="p">:</span> <span class="n">assetId</span><span class="p">,</span>
+                                            <span class="nv">owner</span><span class="p">:</span> <span class="n">issuer</span><span class="o">.</span><span class="n">accountNumber</span><span class="p">,</span>
+                                            <span class="nv">quantity</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">params</span><span class="o">.</span><span class="nf">sign</span><span class="p">(</span><span class="n">issuer</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">bitmarkIds</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">issue</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Address</span> <span class="n">owner</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">toAddress</span><span class="o">();</span>
+<span class="nc">IssuanceParams</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IssuanceParams</span><span class="o">(</span><span class="n">assetId</span><span class="o">,</span> <span class="n">issuer</span><span class="o">,</span> <span class="n">quantity</span><span class="o">);</span>
+<span class="n">params</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">issuerKey</span><span class="o">);</span>
+<span class="nc">Bitmark</span><span class="o">.</span><span class="na">issue</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">txIds</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">issuer</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"USER_A_SEED"</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">NewIssuanceParams</span><span class="p">(</span><span class="s">"YOUR ASSET ID"</span><span class="p">,</span> <span class="m">10</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">issuer</span><span class="p">)</span>
+<span class="n">bitmarkIDs</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Issue</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h1 id="transfer-a-bitmark">Transfer a bitmark</h1>
+
+<p>Bitmark transfer, which is the process of transferring bitmark ownership from one Bitmark account to another.</p>
+
+<p>There are two ways to transfer a bitmark:</p>
+
+<ul>
+  <li><strong>direct transfer</strong> (1-sig transfer): only requires sender’s signature</li>
+  <li><strong>countersigned transfer</strong> (2-sig transfer):requires both sender’s and receiver’s signature</li>
+</ul>
+
+<p>Direct transfer is similar to sending emails, the sender does not get the consent from the receiver before sending a mail.</p>
+
+<p>Countersigned transfer is similar to certified mail or a package delivery that requires a signature, the receiver has the right to accept or reject the delivery of a package.
+The actual transfer won’t take effect until the receiver explicitly provides the second signature, a.k.a. countersignature, as the consent.</p>
+
+<p>A newly created bitmark can be transferred right after the issue tx is sent. After the first transfer transaction, any transfer can only be executed when the previous transfer transaction is already confirmed on the blockchain (i.e., the status of the bitmark has to be <code class="language-plaintext highlighter-rouge">settled</code>).</p>
+
+<h2 id="direct-transfer">Direct transfer</h2>
+
+<p>The sender can transfer a bitmark to another account without additional consent.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#eb773b21-f64e-4980-ae3f-4287ac572e2f'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="eb773b21-f64e-4980-ae3f-4287ac572e2f" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">newTransferParams</span><span class="p">(</span><span class="nx">receiverAccountNumber</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">params</span><span class="p">.</span><span class="nx">fromBitmark</span><span class="p">(</span><span class="nx">bitmarkId</span><span class="p">);</span> <span class="c1">// asynchronous, just to check the head_id</span>
+<span class="c1">// params.fromTxId(latestTxId); // or synchronous</span>
+<span class="nx">params</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">transfer</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">params</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">newTransferParams</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">receiverAccountNumber</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">params</span><span class="o">.</span><span class="nf">from</span><span class="p">(</span><span class="nv">bitmarkID</span><span class="p">:</span> <span class="n">bitmarkId</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">params</span><span class="o">.</span><span class="nf">sign</span><span class="p">(</span><span class="n">account</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">txId</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">transfer</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the link from bitmarkId</span>
+<span class="c1">// You can use traditional callback or modern await</span>
+<span class="c1">// Use await for better code but don't forget to catch exceptions maybe occur</span>
+<span class="nc">BitmarkRecord</span> <span class="n">bitmark</span> <span class="o">=</span> <span class="n">await</span><span class="o">((</span><span class="nc">Callable1</span><span class="o">&lt;</span><span class="nc">GetBitmarkResponse</span><span class="o">&gt;)</span> <span class="n">callback</span> <span class="o">-&gt;</span> <span class="nc">Bitmark</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">bitmarkId</span><span class="o">,</span> <span class="n">callback</span><span class="o">)).</span><span class="na">getBitmark</span><span class="o">();</span>
+<span class="nc">String</span> <span class="n">link</span> <span class="o">=</span> <span class="n">bitmark</span><span class="o">.</span><span class="na">getHeadId</span><span class="o">();</span>            
+
+<span class="c1">// Transfer bitmark</span>
+<span class="nc">TransferParams</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TransferParams</span><span class="o">(</span><span class="n">receiver</span><span class="o">,</span> <span class="n">link</span><span class="o">);</span>
+<span class="n">params</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">senderKey</span><span class="o">);</span>
+<span class="nc">Bitmark</span><span class="o">.</span><span class="na">transfer</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">String</span> <span class="n">txId</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sender</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"USER_A_SEED"</span><span class="p">)</span>
+<span class="n">params</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">NewTransferParams</span><span class="p">(</span><span class="s">"YOUR RECEIVER ACCOUNT NUMBER"</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">FromBitmark</span><span class="p">(</span><span class="s">"YOUR BITMARK ID"</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">sender</span><span class="p">)</span>
+<span class="n">txID</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Transfer</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h2 id="countersigned-transfer">Countersigned transfer</h2>
+
+<p>For some scenario, the developer want to get a permission from the receiver before we transfer a property to it. In the case, you will submit a two-signature transfer.</p>
+
+<h3 id="propose-a-bitmark-transfer-offer">Propose a bitmark transfer offer</h3>
+
+<p>The current owner of a bitmark can propose a transfer offer for another account. The actual ownership transfer won’t happen until the receiver accepts the offer.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#4ff4b34d-6edb-4cbc-bc80-f3ac37734960'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="4ff4b34d-6edb-4cbc-bc80-f3ac37734960" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">newTransferOfferParams</span><span class="p">(</span><span class="nx">receiverAccountNumber</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">params</span><span class="p">.</span><span class="nx">fromBitmark</span><span class="p">(</span><span class="nx">bitmarkId</span><span class="p">);</span> <span class="c1">// asynchrous, just to check the head_id</span>
+<span class="c1">// params.fromTxId(lastestTxId); // or synchrous</span>
+<span class="nx">params</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">senderAccount</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">offer</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">params</span> <span class="p">:</span><span class="o">=</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">newOfferParams</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">receiverAccountNumber</span><span class="p">,</span> <span class="nv">info</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">// info: extra info attach to the transfer offer, it can be nil</span>
+<span class="k">try</span> <span class="n">params</span><span class="o">.</span><span class="nf">from</span><span class="p">(</span><span class="nv">bitmarkID</span><span class="p">:</span> <span class="n">bitmarkId</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">params</span><span class="o">.</span><span class="nf">sign</span><span class="p">(</span><span class="n">account</span><span class="p">)</span>
+
+<span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">offer</span><span class="p">(</span><span class="nv">withOfferParams</span><span class="p">:</span> <span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get the link from bitmarkId</span>
+<span class="c1">// You can use traditional callback or modern await</span>
+<span class="c1">// Use await for better code but don't forget to catch exceptions maybe occur</span>
+<span class="nc">BitmarkRecord</span> <span class="n">bitmark</span> <span class="o">=</span> <span class="n">await</span><span class="o">((</span><span class="nc">Callable1</span><span class="o">&lt;</span><span class="nc">GetBitmarkResponse</span><span class="o">&gt;)</span> <span class="n">callback</span> <span class="o">-&gt;</span> <span class="nc">Bitmark</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">bitmarkId</span><span class="o">,</span> <span class="n">callback</span><span class="o">)).</span><span class="na">getBitmark</span><span class="o">();</span>
+<span class="nc">String</span> <span class="n">link</span> <span class="o">=</span> <span class="n">bitmark</span><span class="o">.</span><span class="na">getHeadId</span><span class="o">();</span>            
+
+<span class="c1">// Offer bitmark</span>
+<span class="nc">TransferOfferParams</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TransferOfferParams</span><span class="o">(</span><span class="n">receiver</span><span class="o">,</span> <span class="n">link</span><span class="o">);</span>
+<span class="n">params</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">senderKey</span><span class="o">);</span>
+<span class="nc">Bitmark</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">String</span> <span class="n">txId</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sender</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"USER_A_SEED"</span><span class="p">)</span>
+<span class="n">params</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">NewOfferParams</span><span class="p">(</span><span class="s">"YOUR RECEIVER ACCOUNT NUMBER"</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">FromBitmark</span><span class="p">(</span><span class="s">"YOUR BITMARK ID"</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">sender</span><span class="p">)</span>
+<span class="n">err</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Offer</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="query-offering-bitmarks">Query offering bitmarks</h3>
+
+<p>The receiver needs to query if there is any bitmark transfer offer waiting for the countersignature.
+For the details of query execution, please refer to <a href="/bitmark-references/bitmark-sdk/query##Bitmark">Query Bitmark</a>.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#8b6c6cda-cce3-4a79-b934-556c0c1ed708'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="8b6c6cda-cce3-4a79-b934-556c0c1ed708" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">bitmarkQueryParams</span> <span class="o">=</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">newBitmarkQueryBuilder</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">offerFrom</span><span class="p">(</span><span class="dl">"</span><span class="s2">e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog</span><span class="dl">"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
+
+<span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="nx">bitmarkQueryParams</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">query</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">newBitmarkQueryParams</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">limit</span><span class="p">(</span><span class="nv">size</span><span class="p">:</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">offer</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">bitmarks</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">params</span><span class="p">:</span> <span class="n">query</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">BitmarkQueryBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BitmarkQueryBuilder</span><span class="o">().</span><span class="na">offerFrom</span><span class="o">(</span><span class="s">"e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog"</span><span class="o">);</span>
+<span class="nc">Bitmark</span><span class="o">.</span><span class="na">list</span><span class="o">(</span><span class="n">builder</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">GetBitmarksResponse</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">GetBitmarksResponse</span> <span class="n">res</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">builder</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">NewQueryParamsBuilder</span><span class="p">()</span><span class="o">.</span><span class="n">OfferTo</span><span class="p">(</span><span class="s">"YOUR RECEIVER ACCOUNT NUMBER"</span><span class="p">)</span>
+<span class="n">bitmarks</span><span class="p">,</span> <span class="n">referencedAssets</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">List</span><span class="p">(</span><span class="n">builder</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="accept-the-bitmark-transfer-offer">Accept the bitmark transfer offer</h3>
+
+<p>If the receiver decides to accept the bitmark, the countersignature is generated and make the transfer action take effect.</p>
+
+<p>The status of the bitmark will change from <code class="language-plaintext highlighter-rouge">offering</code> to <code class="language-plaintext highlighter-rouge">transferring</code>.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#38531ca6-e5cc-48b6-8788-00c993ef6457'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="38531ca6-e5cc-48b6-8788-00c993ef6457" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">transferOfferResponseParams</span> <span class="o">=</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">newTransferResponseParams</span><span class="p">(</span><span class="nx">BITMARK_CONSTANTS</span><span class="p">.</span><span class="nx">TRANSFER_OFFER_RESPONSE_TYPES</span><span class="p">.</span><span class="nx">ACCEPT</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">transferOfferResponseParams</span><span class="p">.</span><span class="nx">fromBitmark</span><span class="p">(</span><span class="nx">bitmark</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>  <span class="c1">// asynchrous, just to get offer from Bitmark</span>
+<span class="c1">// transferOfferResponseParams.fromOffer(offer) // or synchrous</span>
+<span class="nx">transferOfferResponseParams</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">receiverAccount</span><span class="p">);</span>
+
+<span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">response</span><span class="p">(</span><span class="nx">transferOfferResponseParams</span><span class="p">,</span> <span class="nx">receiverAccount</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">responseParams</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">newTransferResponseParams</span><span class="p">(</span><span class="nv">withBitmark</span><span class="p">:</span> <span class="n">receivingBitmark</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="n">accept</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">responseParams</span><span class="o">.</span><span class="nf">sign</span><span class="p">(</span><span class="n">receiverAccount</span><span class="p">)</span>
+<span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">response</span><span class="p">(</span><span class="nv">withResponseParams</span><span class="p">:</span> <span class="n">responseParams</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">TransferResponseParams</span> <span class="n">params</span> <span class="o">=</span> <span class="nc">TransferResponseParams</span><span class="o">.</span><span class="na">accept</span><span class="o">(</span><span class="n">offerRecord</span><span class="o">);</span>
+<span class="n">params</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">receiverKey</span><span class="o">);</span>
+<span class="nc">Bitmark</span><span class="o">.</span><span class="na">respond</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">String</span> <span class="n">txId</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bmk</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"YOUR BITMARK ID"</span><span class="p">)</span>
+<span class="n">receiver</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"USER_B_SEED"</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">NewTransferResponseParams</span><span class="p">(</span><span class="n">bmk</span><span class="p">,</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Accept</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">receiver</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Respond</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="reject-the-transfer-offer">Reject the transfer offer</h3>
+
+<p>The receiver can also reject the bitmark transfer offer.
+The status of the bitmark will reverted to <code class="language-plaintext highlighter-rouge">settled</code>, and the sender can create a new transfer offer.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#4da888fc-c1a1-41e5-91ee-59d2eb8e6207'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="4da888fc-c1a1-41e5-91ee-59d2eb8e6207" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">transferOfferResponseParams</span> <span class="o">=</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">newTransferResponseParams</span><span class="p">(</span><span class="nx">BITMARK_CONSTANTS</span><span class="p">.</span><span class="nx">TRANSFER_OFFER_RESPONSE_TYPES</span><span class="p">.</span><span class="nx">REJECT</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">transferOfferResponseParams</span><span class="p">.</span><span class="nx">fromBitmark</span><span class="p">(</span><span class="nx">bitmark</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>  <span class="c1">// asynchronous, just to get offer from Bitmark</span>
+<span class="c1">// transferOfferResponseParams.fromOffer(offer) // or synchronous</span>
+<span class="nx">transferOfferResponseParams</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">receiverAccount</span><span class="p">);</span>
+
+<span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">response</span><span class="p">(</span><span class="nx">transferOfferResponseParams</span><span class="p">,</span> <span class="nx">receiverAccount</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">responseParams</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">newTransferResponseParams</span><span class="p">(</span><span class="nv">withBitmark</span><span class="p">:</span> <span class="n">receivingBitmark</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="n">reject</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">responseParams</span><span class="o">.</span><span class="nf">sign</span><span class="p">(</span><span class="n">receiverAccount</span><span class="p">)</span>
+<span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">response</span><span class="p">(</span><span class="nv">withResponseParams</span><span class="p">:</span> <span class="n">responseParams</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">TransferResponseParams</span> <span class="n">params</span> <span class="o">=</span> <span class="nc">TransferResponseParams</span><span class="o">.</span><span class="na">reject</span><span class="o">(</span><span class="n">offerRecord</span><span class="o">);</span>
+<span class="n">params</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">receiverKey</span><span class="o">);</span>
+<span class="nc">Bitmark</span><span class="o">.</span><span class="na">respond</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">String</span> <span class="n">txId</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bmk</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"YOUR BITMARK ID"</span><span class="p">)</span>
+<span class="n">receiver</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"USER_B_SEED"</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">NewTransferResponseParams</span><span class="p">(</span><span class="n">bmk</span><span class="p">,</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Reject</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">receiver</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Respond</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="cancel-the-transfer-offer">Cancel the transfer offer</h3>
+
+<p>If the receiver hasn’t responded to the bitmark transfer offer (neither accepted nor rejected), the sender can cancel the offer.</p>
+
+<p>Similar to the case of the receiver rejecting the offer, the status of the bitmark will be set to <code class="language-plaintext highlighter-rouge">settled</code> again, and becomes available for the next transfer.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#a1986ef2-a7f1-4cf1-a808-1c23a047518a'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="a1986ef2-a7f1-4cf1-a808-1c23a047518a" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">transferOfferResponseParams</span> <span class="o">=</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">newTransferResponseParams</span><span class="p">(</span><span class="nx">BITMARK_CONSTANTS</span><span class="p">.</span><span class="nx">TRANSFER_OFFER_RESPONSE_TYPES</span><span class="p">.</span><span class="nx">CANCEL</span><span class="p">);</span>
+<span class="k">await</span> <span class="nx">transferOfferResponseParams</span><span class="p">.</span><span class="nx">fromBitmark</span><span class="p">(</span><span class="nx">bitmark</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>  <span class="c1">// asynchronous, just to get offer from Bitmark</span>
+<span class="c1">// transferOfferResponseParams.fromOffer(offer) // or synchronous</span>
+
+<span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="nx">response</span><span class="p">(</span><span class="nx">transferOfferResponseParams</span><span class="p">,</span> <span class="nx">senderAccount</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">responseParams</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">newTransferResponseParams</span><span class="p">(</span><span class="nv">withBitmark</span><span class="p">:</span> <span class="n">bitmark</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="n">cancel</span><span class="p">)</span>
+<span class="k">try</span> <span class="n">responseParams</span><span class="o">.</span><span class="nf">sign</span><span class="p">(</span><span class="n">senderAccount</span><span class="p">)</span>
+<span class="k">try</span> <span class="kt">Bitmark</span><span class="o">.</span><span class="nf">response</span><span class="p">(</span><span class="nv">withResponseParams</span><span class="p">:</span> <span class="n">responseParams</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">TransferResponseParams</span> <span class="n">params</span> <span class="o">=</span> <span class="nc">TransferResponseParams</span><span class="o">.</span><span class="na">cancel</span><span class="o">(</span><span class="n">offerRecord</span><span class="o">,</span> <span class="n">sender</span><span class="o">);</span>
+<span class="n">params</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">senderKey</span><span class="o">);</span>
+<span class="nc">Bitmark</span><span class="o">.</span><span class="na">respond</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="k">new</span> <span class="nc">Callback1</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSuccess</span><span class="o">(</span><span class="nc">String</span> <span class="n">txId</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="nc">Throwable</span> <span class="n">throwable</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bmk</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Get</span><span class="p">(</span><span class="s">"YOUR BITMARK ID"</span><span class="p">)</span>
+<span class="n">sender</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"USER_A_SEED"</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">NewTransferResponseParams</span><span class="p">(</span><span class="n">bmk</span><span class="p">,</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Cancel</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">sender</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">bitmark</span><span class="o">.</span><span class="n">Respond</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

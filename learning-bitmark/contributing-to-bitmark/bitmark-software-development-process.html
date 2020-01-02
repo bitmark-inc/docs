@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" development process, work flow">
+<title>Bitmark Software Development Process | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Bitmark Software Development Process page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Bitmark Software Development Process">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li class="active"><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Bitmark Software Development Process</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="current-development-workflow">Current development workflow</h1>
+
+<p><strong>Right now we have these projects:</strong></p>
+<ul>
+  <li>bitmarkd</li>
+  <li>Core API</li>
+  <li>Updaterd</li>
+  <li>Backend services</li>
+  <li>Bitmark SDK</li>
+</ul>
+
+<p><strong>Development process:</strong></p>
+
+<p>Our current workflow uses OKR, where we define sprints as a deadline to deliver the software artefact, but we do not limit ourselves. We do translate the OKR in ISSUES on Github where we can track them. The external contributors can get involved with the project opening new ISSUES, being part of the discussion in existent ISSUES and make PULL REQUESTS within our projects.</p>
+
+<p><img src="/assets/images/project_bitmarkd.png" alt="" /></p>
+
+<p><strong>Branch, Tag and release process:</strong></p>
+
+<p>We have a single development branch master, from where we create tags to perform minor and major releases. The development never happens directly on branch master, instead the developer create a development branch from master, after the developer believes its branch is ready, it opens a pull request and assign another developer to make a review. After the review process, the developer merges its branch to master branch and deletes the development branch. The developers never commit directly into the master branch without passing through the review process.</p>
+
+<p><img src="/assets/images/github_branches.png" alt="" /></p>
+
+<p><strong>Review process:</strong></p>
+
+<p>We have a peer review process, where the developer can assign one or more individuals to verify its code, these individuals shall suggest modifications or accept the pull request, also the reviewer can reassign the review. Currently there are no time outs specified for reviewers, and in such a case, if a reviewer is delaying the review, it must discuss during the stand-up daily meeting.</p>
+
+<p><img src="/assets/images/review-process.png" alt="" /></p>
+
+<h1 id="development-work-flow-improvements">Development work-flow improvements</h1>
+
+<p><strong>Development process:</strong></p>
+
+<p>This is our working flow using GitHub. Here I describe 3 basic areas of our development process.</p>
+
+<p><img src="/assets/images/new-review-process.png" alt="" /></p>
+
+<p><strong>What to do when there is a new patch?</strong></p>
+
+<p>First, we need to ask ourselves, is it a trivial patch? In case it is not a 3-lines change patch, it means, it is not a trivial patch, sometimes even a 3-lines change is not trivial. We do need to be mature enough to understand what is and what is not a trivial patch. In case it is not a trivial patch, we shall open a GitHub issue with a proper title and describe what is the problem we are trying to fix, following with a pull request with a patch (if we have one), this patch must point out to the issue number. All the discussion related to implementation, shall be in the issue, code problems shall be in the pull request.</p>
+
+<p><strong>I would like to stress a bit how to perform a proper code review:</strong></p>
+
+<p>We need to always remember, there are other people watching us, the information is on the Internet and it will always be there, we need developers to engage with us, perhaps we need companies out there to see us relevant and join our cause.</p>
+
+<p><strong>What to do:</strong></p>
+
+<ol>
+  <li>Know what is under review, understand what the developer is trying to achieve.</li>
+  <li>Know what to look for in code: Structure, Style, Logic, Performance, Test coverage, Design, Readability, Maintainability and Functionality.</li>
+  <li>Does it pass on CircleCi/TravisCi and Jenkins? Otherwise don’t need start to make a review.</li>
+  <li>Build and test.</li>
+  <li>Give feedback that helps and not hurt, be impartial, as much as somebody prefers BLUE, some other people prefer YELLOW, so be impartial.</li>
+  <li>Communicate goals and expectations, we use Slack and if we have direct access to the person that opened the code review, instead to go and make a comment and wait the person reply, talk directly with the person, it saves time and foster a positive culture.</li>
+  <li>Peer review is all about trust, we need to be glad somebody is asking us to review its code.</li>
+  <li>Be nice, at the end of the day, there is no software made by only one person.</li>
+  <li>If the pull request comes from an outsider contributor, be nicer than usual, even if it is necessary to fix any code before merge and give all the credits to him/her, we need this person to come back and start to contribute more often. So, don’t be harsh with newcomers.</li>
+  <li>Remember, when doing a code review it might takes 30 minutes, but the person that made the code might have spent weeks, so be empathetic.</li>
+</ol>
+
+<p><strong>What not to do:</strong></p>
+
+<ol>
+  <li>Broken English, most of us are not native speakers, there is no problem to use Google translation to help us when we want to write something, especially when it is public.</li>
+  <li>Be specific and with short sentences, go direct to the point.</li>
+  <li>Nobody really cares if someones else prefer “for” or “while”, so don’t nit-picking other people’s code,  it is demotivating.</li>
+  <li>Don’t do unsolicited code review..</li>
+  <li>No power struggling in public, nobody will become “millionaire” bashing each other.</li>
+  <li>Don’t write big messages, short sentences are easier to understand, go to slack, send an email or make a phone call in case the peer works at Bitmark Inc..</li>
+  <li>Don’t be too verbose and pedantic.</li>
+</ol>
+
+<p><strong>Before opening a pull request:</strong></p>
+
+<p>Make sure everything is in place, when a pull request is open, it means the code is ready for review. Here are some steps before open a pull request.</p>
+<ol>
+  <li>Does the code needs a broad discussion with other peers?</li>
+  <li>How critical is the impact of these changes?</li>
+  <li>Is there a GitHub issue explaining what this code is about?</li>
+  <li>Is it a new feature? Do we have a software design document with the result of all discussion? (prior to code or prototype)</li>
+  <li>The toolings golint, misspell, go test and go build, did run fine, didn’t it?</li>
+  <li>Does the code does what it proposes?</li>
+  <li>Does the code follows the Golang specification? https://golang.org/ref/spec</li>
+  <li>Will reviewers know how to test and validate it?</li>
+  <li>Is there enough coverity with unit tests?</li>
+  <li>Does the commit history has a clear and concise message?</li>
+  <li>Does it needs documentation?</li>
+  <li>Does it needs QA?</li>
+  <li>Does this fix/feature needs to be part of the next release?</li>
+  <li>Do we need extra validation like run on TestNet for awhile?</li>
+</ol>
+
+<p><strong>Quality assurance:</strong></p>
+
+<p>The quality assurance team must focus on the number of issues closed and must be part of the next RELEASE, they also have the power to control what can and cannot be part of the next RELEASE, they shall be in charge to stabilize the software and make sure the documentation is update. They also must help to prepare the RELEASE notes.</p>
+
+<p>To make the software stable, we need to stabilize a branch and let the Developers test it and give time for QA to validate it prior to RELEASE it and also we need to enforce a freeze time where the branch won’t receive any critical change or new feature.</p>
+
+<p><img src="/assets/images/freeze-branch.png" alt="" /></p>
+
+<p><strong>Code freeze and QA steps:</strong></p>
+
+<ol>
+  <li>We must set a group of features or fixes as a milestone for the next RELEASE, best would be to have a ROADMAP or MoSCoW for a particular version.</li>
+  <li>We schedule a candidate date for the RELEASE.</li>
+  <li>We announce the freeze time.</li>
+  <li>Branch stable-version from master.</li>
+  <li>Freeze branch master and stable.</li>
+  <li>If QA find a regression, the fix must first goes into master and from there cherry-picked to stable.</li>
+  <li>QA must validate it first prior the PR merges into master and stable.</li>
+  <li>Release the software.</li>
+  <li>Unfreeze branch master.</li>
+</ol>
+
+<p><strong>Release process:</strong></p>
+
+<p>The release process is a critical path that ensures we will accomplish the stakeholders requirements and deliver the intended objectives. Also it establishes a routine of communication internally and external, stakeholders, developers and users have a standard to follow and knows what to expect from the project.</p>
+
+<p><img src="/assets/images/release-process.png" alt="" /></p>
+
+<p><strong>Release steps:</strong></p>
+
+<ol>
+  <li>Planning the release, what features shall be in this version, what bug fixes if we know beforehand, documentation update, users communication and so on.</li>
+  <li>Initial feature specification in a high level description, more detailed and technical specification (issue), code, PR and merge.</li>
+  <li>Build a release candidate and eat our own dog food.</li>
+  <li>QA verification trying to automate as much as possible any test.</li>
+  <li>QA tests, all GREEN, QA gives Acceptance, CTO pushes the GO button.</li>
+  <li>Build the official release and release notes.</li>
+  <li>QA and team validation.</li>
+  <li>Release rolled out.</li>
+  <li>Public communication.</li>
+  <li>Bitmark Inc. internal release validation (mimic an end user).</li>
+</ol>
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

@@ -1,24 +1,301 @@
----
-layout: none
-search: exclude
----
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
-  {% unless post.search == "exclude" %}
-  <url>
-    <loc>{{site.url}}{{post.url}}</loc>
-  </url>
-  {% endunless %}
-  {% endfor %}
+  
 
 
-  {% for page in site.pages %}
-  {% unless page.search == "exclude" %}
+  
+  
+  
+  
   <url>
-    <loc>{{site.url}}{{ page.url}}</loc>
+    <loc>http://localhost:4000/bitmark-references/bitmark-sdk/account</loc>
   </url>
-  {% endunless %}
-  {% endfor %}
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-sdk/action</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-node-software/bitmark-blockchain-overview</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/bitmark-blockchain</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-cli/bitmark-cli-command-reference</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-appendix/bitmark-eth-comparison</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/node-setup/tutorial-for-node-setup</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-appendix/bitmark-papers</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-sdk/getting-started</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-appendix/bitmark-shares</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/bitmark-terms-and-glossary</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-node-software/block-verification-and-synchronization</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/contributing-to-bitmark/bug-bounty-program</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/contributing-to-bitmark/bup</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/index.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-sdk/migration</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-node-software/bitmark-mining</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-node-software/storage</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-node-software/payment-verification</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/bitmark-property-system-introduction</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-sdk/query</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-cli/bitmark-cli-quick-setup</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-node-software/rpc-communication</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-node-software/security</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/quick-start/simple-solution-for-node-setup</loc>
+  </url>
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-sdk/store-seed</loc>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/bitmark-references/bitmark-sdk/websocket</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/assets/css/style.css</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/learning-bitmark/contributing-to-bitmark/bitmark-upgrade-proposal1.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/learning-bitmark/quick-start/simple-solution-for-executing-transactions.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/bitmark-appendix/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/bitmark-references/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/bitmark-references/bitmark-cli/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/bitmark-references/bitmark-node-software/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/bitmark-references/bitmark-sdk/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/bitmark-references/node-setup/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/learning-bitmark/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/learning-bitmark/contributing-to-bitmark/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/learning-bitmark/quick-start/</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/pages/learning-bitmark/quick-start/working-with-bitmarks/</loc>
+  </url>
+  
+  
 </urlset>

@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" cli, bitmark-cli, command line interface">
+<title>Bitmark-CLI Command Reference | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Bitmark-CLI Command Reference page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Bitmark-CLI Command Reference">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Bitmark-CLI Command Reference</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="bitmark-cli-command-reference">bitmark-cli Command Reference</h1>
+
+<h2 id="basic-command-structure">Basic Command Structure</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli [global-options] command [command-options]
+</code></pre></div></div>
+
+<h2 id="global-options">Global Options</h2>
+
+<p>Options listed as long form and their single character abbreviation.</p>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--verbose|-v</code>                   This allows the CLI to output additional information
+                                 for each command.  Most commands will
+                                 output the JSON request and response
+                                 sent to the bitmarkd.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--network|-n NETWORK</code>           Determines which network the
+                                 command will be sent to from these
+                                 values:
+                                 * <code class="language-plaintext highlighter-rouge">bitmark</code> the live network which uses live BTC or LTC to pay for the transactions.
+                                 * <code class="language-plaintext highlighter-rouge">testing</code> a network for testing newly developed programs, it uses testnet coins to pay for transactions.
+                                 * <code class="language-plaintext highlighter-rouge">local</code> a special case for running a regression test network on the loopback interface.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--connection|-c NUMBER</code>         Optionally allows for one of the other
+                                 connections listed in the
+                                 configuration file to be used instead
+                                 of defaulting to the first one.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--identity|-i NAME</code>             Optionally override the default identity to allow
+                                 running commands as another account.
+                                 (See “Identity definition” for more details)</p>
+
+<p><code class="language-plaintext highlighter-rouge">--password|-p PASSWORD</code>         This is primarily used for regression testing
+                                 scripts to supply a password.  It is
+                                 not recommended for normal use as the
+                                 password will be left in the command
+                                 history or be viewable by a process
+                                 display command (top, ps, etc.)</p>
+
+<p><code class="language-plaintext highlighter-rouge">--use-agent|-u EXECUTABLE</code>      This is the way to access a password
+                                 stored in a password manager. See below.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--zero-agent-cache|-z</code>          Prepends a <code class="language-plaintext highlighter-rouge">--clear</code> to the argument list of
+                                 the <code class="language-plaintext highlighter-rouge">--use-agent</code> command to force
+                                 the password manager to re-prompt for
+                                 the password.
+——————————-  ———————————</p>
+
+<h3 id="identity-definition">Identity definition</h3>
+
+<p>To represent a Bitmark account a short mnemonic <strong>Identity</strong> string is used.</p>
+
+<p>The identities are stored in the configuration file and contain 3 parts:</p>
+<ul>
+  <li>The password protected private key, used for signing transactions</li>
+  <li>The public Account Number (a Base58 string), used as the recipient in transfers</li>
+  <li>A description just to hold some additional text, never sent to blockchain</li>
+</ul>
+
+<p>After initial setup that first identity is normally used to sign all
+transactions, however it can be overridden by the global <code class="language-plaintext highlighter-rouge">--identity</code> option.</p>
+
+<h3 id="options-and-parameters-passed-to-the-agent-program">Options and parameters passed to the agent program:</h3>
+
+<p>The CLI program can use an external program or an executable script to
+request the password from a password manager.  The CLI provides a set
+of parameters that allows this program to determine which password is
+required, the <code class="language-plaintext highlighter-rouge">cache-id</code>.  The other parameters are for display
+purposes and correspond the the data required by the GNU Privacy Guard
+password dialog.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0:   --clear             = clear any cached password to force reprompt
+                           [only if zero-agent-cache option is set]
+1:   --confirm=1         = for additional confirm
+2:   cache-id            = "bitmark-cli:password:&lt;IDENTITY&gt;"
+3:   error-message       = ""
+4:   prompt              = "&lt;IDENTITY&gt;"
+5:   description         = descriptive string shows create/transfer operation
+</code></pre></div></div>
+
+<p>A sample <code class="language-plaintext highlighter-rouge">ask-gpg-agent</code> script is provided in the bitmarkd source
+code repository and this can be used to produce a similar script for
+other password managers.</p>
+
+<h1 id="cli-command-synopsis">CLI Command Synopsis</h1>
+
+<hr />
+<p>setup          Initialise bitmark-cli configuration file
+add            Add a new identity to configuration file
+create         Create one or more new bitmarks
+transfer       Transfer a bitmark to another account
+countersign    Countersign a two signature transaction
+blocktransfer  Transfer a bitmark to another account
+provenance     List provenance of a bitmark
+owned          List bitmarks owned
+share          Convert a bitmark into a share
+grant          Grant some shares of a bitmark to a receiver
+swap           Swap some shares of a bitmark with a receiver
+balance        Display balance of some shares
+status         Display the status of a bitmark
+list           List bitmark-cli identities
+bitmarkd       Display bitmarkd information
+seed           Decrypt and display identity’s recovery seed
+password       Change identity’s password
+fingerprint    Fingerprint a file (version 01 SHA3-512 algorithm)
+sign           Sign file
+verify         Verify file signature file
+version        Display bitmark-cli version
+help           Shows a list of commands or help for one command
+————-  ———————————</p>
+
+<h1 id="cli-commands">CLI commands</h1>
+
+<h2 id="setup">setup</h2>
+
+<p>Creates the initial configuration file for a network and sets the
+default identity.  There are separate files for each network.</p>
+
+<p><strong>Arguments.</strong> Both the <code class="language-plaintext highlighter-rouge">--network</code> and <code class="language-plaintext highlighter-rouge">--identity</code> global options must
+be set.</p>
+
+<p><strong>Additional input.</strong> Before creating the file, the CLI will prompt
+for a password to encrypt the generated seed. Be sure to choose a good
+random password to secure the account’s private key.</p>
+
+<p><strong>Errors.</strong>  If the configuration file already exists then this command
+will terminate with an error and not modify the file.</p>
+
+<p><strong>Bugs.</strong> Currently only adds one connection and no way to update this
+other than manual editing of the configuration file.</p>
+
+<h3 id="command-options">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--connect|-c HOST:PORT</code>        Sets the default bitmarkd connection, this
+                                TCP connection will be used for all data
+                                submitted to the blockchain.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--description|-d "STRING"</code>     Sets a description string for the initial
+                                identity.  This is only for the CLI
+                                user, it is not used by and command or
+                                sent over the network.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--new|-n</code>                      Specifies that a new account seed is to be generated.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--seed|-s SEED-STRING</code>         This is used in place of <code class="language-plaintext highlighter-rouge">--new</code> to import an
+                                existing account seed into the CLI
+                                configuration file.  The CLI accepts
+                                both V1 and V2 Base58 encoded seeds.
+——————————  ———————————</p>
+
+<h3 id="example">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing setup --connect=node-d1.test.bitmark.com:2130 --description="Bedrock Bowling Champion" --new
+</code></pre></div></div>
+
+<h2 id="add">add</h2>
+
+<p>Update the configuration file by adding a new identity for a
+network.</p>
+
+<p><strong>Arguments.</strong> Both the <code class="language-plaintext highlighter-rouge">--identity</code> and <code class="language-plaintext highlighter-rouge">--network</code> global options must
+be specified.</p>
+
+<p><strong>Additional input.</strong> Before creating the file the CLI will prompt for a
+password to encrypt the generated seed, choose a good random password
+to secure the account’s private key.  The password is not prompted
+when using the <code class="language-plaintext highlighter-rouge">--account</code> option since only the public key is
+present.</p>
+
+<p><strong>Errors.</strong> The identity must not already exist or the command will
+terminate with an error and not modify the file.</p>
+
+<h3 id="command-options-1">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--description|-d "STRING"</code>     Sets a description string for the initial identity.
+                                This is only descriptive text for the CLI user, it
+                                is not used by and command or sent over the network.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--new|-n</code>                      Specifies that a new account seed is to be generated.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--seed|-s SEED-STRING</code>         This is used in place of <code class="language-plaintext highlighter-rouge">--new</code> to import an existing account seed
+                                into the CLI configuration file.  The CLI accepts both V1 and V2
+                                Base58 encoded seeds.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--account|-a ACCOUNT-STRING</code>   This is used in place of <code class="language-plaintext highlighter-rouge">--new</code> or <code class="language-plaintext highlighter-rouge">--seed</code> to import an existing
+                                account into the CLI configuration file.  Since only the
+                                public key is contained within the Base58 encoded account, this
+                                identity cannot be used for signing items.  It is meant for use as
+                                the recipient of a transfer.
+——————————  ———————————</p>
+
+<h3 id="example-1">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=wilma --network=testing add --description="The real Ruler" --new
+</code></pre></div></div>
+
+<h2 id="create">create</h2>
+
+<p>This command create a bitmark by sending both an Asset record and one
+or more issue records.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> Before creating the Bitmark the CLI will prompt
+for a password to decrypt the identity’s private key to perform the
+signing operation.</p>
+
+<p><strong>Errors.</strong> The command will terminate with an error if the asset name
+or metadata do not match exactly when creating additional Bitmarks.
+In the “free issue (–zero)” case there will be an error if this issue
+already exists.</p>
+
+<h3 id="command-options-2">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--asset|-a "STRING"</code>           A short name to describe the asset being issued</p>
+
+<p><code class="language-plaintext highlighter-rouge">--metadata|-m "METADATA"</code>      A key-value map of data to provide details
+                                about the asset.  Keys and values
+                                are separated by a zero byte which is
+                                represented using JSON encoding as
+                                <code class="language-plaintext highlighter-rouge">"\u0000"</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">--fingerprint|-f "STRING"</code>     Any kind of string that represents a
+                                globally unique identifier for an
+                                asset.  There is a <code class="language-plaintext highlighter-rouge">fingerprint</code> command
+                                that will give the same hex string that
+                                Bitmark Inc. applications also use.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--zero|-z</code>                     Restrict the issue to the initial free one.
+                                (See “Free issues” below)</p>
+
+<p><code class="language-plaintext highlighter-rouge">--quantity|-q NUMBER</code>          Allows issuing a block of bitmarks for a single
+                                payment up to a maximum of 100.  If
+                                the free issue had not been created
+                                then only a quantity of one is allowed
+                                and this issue must be confirmed
+                                before a larger quantity is allowed.
+——————————  ———————————</p>
+
+<h3 id="example-2">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing create --asset='Fred Flintstone' --metadata='desc\u0000photo of Fred Flintstone\u0000src\u0000Wikipedia' --fingerprint=01ee0039791329016fc93e083ede6bd4266ed6f65812b483c05b5bf75252112178a4ffeeb4ede5949c6e4d9e26fba00f95fbc71b4fa7c5a9220bec49e6c18848fe
+</code></pre></div></div>
+
+<h3 id="free-issues">Free issues</h3>
+
+<p>For any asset there is a special issue that is free of cost.  Even if
+an asset already exists a different Bitmark account can create a free
+issue for it.  Internally the issue record has a NONCE value of zero.</p>
+
+<p>This leads to the following cases:</p>
+
+<ul>
+  <li>
+    <p>A new asset, a free issue must be made and must be confirmed before
+any other issue can be made against this asset.  Trying to issue
+quantity greater than one in this case will always fail as the
+confirmed asset does not yet exist.</p>
+  </li>
+  <li>
+    <p>A confirmed existing asset, an account that never made an issue
+against this asset could choose to make its single free issue or
+simply issue a quantity of two or more and pay for them.  In this
+case the free issue does not have to be used, but the CLI will
+always attempt to make a free issue for a one off issue and try a
+paid if it cannot.</p>
+  </li>
+</ul>
+
+<h2 id="transfer">transfer</h2>
+
+<p>To transfer a bitmark to another account.</p>
+
+<p>The default case is to perform a two signature transfer and requires
+the use of the <code class="language-plaintext highlighter-rouge">countersign</code> command to produce the final record to
+send to the blockchain.</p>
+
+<p>If the unratified mode is used then the transfer is sent right away
+and the payment details are returned.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> Before transferring the Bitmark the CLI will
+prompt for a password to decrypt the identity’s private key to perform
+the signing operation.</p>
+
+<p><strong>Errors.</strong> The command will terminate with an error if the transfer
+cannot be validated by the blockchain.</p>
+
+<h3 id="command-options-3">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--txid|-t HEX-ID</code>               Transaction id from a previous issue or transfer.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--receiver|-r IDENTITY|ACCOUNT</code> Identity name for the account or the
+                                 account (in Base58) as the
+                                 destination of the transfer.  If an
+                                 identity is used it can be either a
+                                 full account or a public key only
+                                 item.  It is not necessary to know
+                                 the password for this and only the
+                                 sender (specified by global identity
+                                 option) needs to sign.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--unratified|-u</code>                For into the single signature transfer mode.  In
+                                 this case the transfer is sent
+                                 directly to the block chain and
+                                 payment information is shown.
+——————————-  ———————————</p>
+
+<h3 id="example-3">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing transfer --txid=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --receiver=barney
+</code></pre></div></div>
+
+<h2 id="countersign">countersign</h2>
+
+<p>To complete a two signature operation.  This command take the hex code
+and signs with the global identity.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> Before creating the Bitmark the CLI will prompt
+for a password to decrypt the identity’s private key to perform the
+signing operation.</p>
+
+<p><strong>Errors.</strong> The command will terminate with an error if this identity
+does not match the receiver in the transaction.</p>
+
+<h3 id="command-options-4">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--transaction|-t HEX-DATA</code>      The transaction hex data from a previous
+                                 transfer or other two signature
+                                 operation.  This data will only have a
+                                 single signature.
+——————————-  ———————————</p>
+
+<h3 id="example-4">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=barney --network=testing countersign --transaction=05208981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee0021138a0b5c7ed5ab0c80bfd3968749e824f599bbf05540c045d26f72cedbfdb49977403e421917b8c1fbaa385b023fb84f19660e1b6f85e0f09473d6f7143de2450fba99dd931d2d42c01133e9e749dcb1d8a729114c0fe007a1617304f255274a7108
+</code></pre></div></div>
+
+<h2 id="blocktransfer">blocktransfer</h2>
+
+<p>To transfer the ownership of a block to another account and/or change
+the crypto-currency addresses.</p>
+
+<p>This can only be used if the account belonging to a miner is added to
+the CLI configuration.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> Before creating the Bitmark the CLI will prompt
+for a password to decrypt the identity’s private key to perform the
+signing operation.</p>
+
+<p><strong>Errors.</strong> The command will terminate with an error if the blockchain
+cannot validate the transaction.</p>
+
+<h3 id="command-options-5">Command options</h3>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--txid|-t HEX-ID</code>               The transaction id from a previous issue or
+                                 transfer.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--receiver|-r IDENTITY|ACCOUNT</code> Identity name for the account or the
+                                 account (in Base58) as the
+                                 destination of the transfer.  If an
+                                 identity is used it can be either a
+                                 full account or a public key only
+                                 item.  It is not necessary to know
+                                 the password for this and only the
+                                 sender (specified by global identity
+                                 option) needs to sign.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--bitcoin|-b ADDRESS</code>           A valid Bitcoin address for the corresponding
+                                 network. All future earnings from
+                                 that block will be sent to the new
+                                 address.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--litecoin|-l ADDRESS</code>          A valid Litecoin address for the corresponding
+                                 network. All future earnings from
+                                 that block will be sent to the new
+                                 address.
+——————————-  ———————————</p>
+
+<h3 id="example-5">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing blocktransfer --txid=
+</code></pre></div></div>
+
+<h2 id="provenance">provenance</h2>
+
+<p>Display the provenance starting from a particular transaction id back
+in time towards the issue record.  Since the record count is limited
+it may be necessary to use the last transaction id with a new call to
+<code class="language-plaintext highlighter-rouge">provenance</code> to display more records; then repeat until the asset
+record is output.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<h3 id="command-options-6">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--txid|-t HEX-ID</code>              The transaction id from a previous issue or
+                                transfer.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--count|-c NUMBER</code>             Limit the number of provenance records displayed.
+                                This defaults to 20 records if omitted
+                                and can be set from 1 to 100.
+——————————  ———————————</p>
+
+<h3 id="example-6">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing provenance --txid=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --count=10
+</code></pre></div></div>
+
+<h2 id="owned">owned</h2>
+
+<p>Display the ownership records for a given identity or account</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<h3 id="command-options-7">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--owner|-o IDENTITY|ACCOUNT</code>   To list records for a different account
+                                either by an identity or a Base58
+                                account string.  The default is to use
+                                the global identity.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--start|-s NUMBER</code>             Specify another start point rather the the default
+                                of zero.  The output JSON includes a
+                                field <code class="language-plaintext highlighter-rouge">next</code> which if non-zero means
+                                there are more records to display.
+                                Just use the value of <code class="language-plaintext highlighter-rouge">next</code> in
+                                subsequent <code class="language-plaintext highlighter-rouge">owned</code> commands to page
+                                though all ownership records.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--count|-c NUMBER</code>             Limit the number of ownership records displayed.
+                                This defaults to 20 records if omitted
+                                and can be set from 1 to 100.
+——————————  ———————————</p>
+
+<h3 id="example-7">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing owned
+bitmark-cli --identity=fred --network=testing owned --owner barney
+bitmark-cli --identity=fred --network=testing owned --owner eywWbSGcYaYPkY4e2aerGWRs1fNoaSDxh3BgLVENgBZmhTsdLz
+</code></pre></div></div>
+
+<h2 id="share">share</h2>
+
+<p>Convert a bitmark into a fractions.  Once this is done the provenance
+is ended and only <code class="language-plaintext highlighter-rouge">grant</code> or <code class="language-plaintext highlighter-rouge">swap</code> commands can operate on the
+fractions created.  The quantity of shares created must be some
+meaningful value and once set can never be changes.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> Before creating the Bitmark Share the CLI will
+prompt for a password to decrypt the identity’s private key to perform
+the signing operation.</p>
+
+<p><strong>Errors.</strong> The command will terminate with an error if the
+transaction id is already converted to shares.</p>
+
+<h3 id="command-options-8">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--txid|-t HEX-ID</code>               The transaction id from a previous
+                                 issue or transfer.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--quantity|-d NUMBER</code>           Split the bitmark up into a quantity of
+                                 fractions up to the limit of an
+                                 unsigned 64 bit number.  This sets to
+                                 total number available and is a
+                                 permanent limit.
+——————————-  ———————————</p>
+
+<h3 id="example-8">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing share --txid=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --quantity=1000000
+</code></pre></div></div>
+
+<h2 id="grant">grant</h2>
+
+<p>Transfer a number of shares of a particular id to a receiver.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> Before granting the Bitmark Share the CLI will
+prompt for a password to decrypt the identity’s private key to perform
+the signing operation.</p>
+
+<p><strong>Errors.</strong> The command will terminate with an error if the share
+quantity is greater than the remaining balance.</p>
+
+<h3 id="command-options-9">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--receiver|-r IDENTITY|ACCOUNT</code> The identity or Base58 account that
+                                 is to receive the shares.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--share-id|-s SHARE-ID</code>         The transaction id of the share record,
+                                 which is used to identify the fractional item.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--quantity|-q NUMBER</code>           The quantity of share to grant to the receiving
+                                 account.  The default is one and can
+                                 be any value up to the current
+                                 balance of the owner.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--before-block|-b NUMBER</code>       This is used to provide a “time” limit on
+                                 the operation and the transaction
+                                 must be submitted and confirmed
+                                 before this block is present on the
+                                 blockchain.
+——————————-  ———————————</p>
+
+<h3 id="example-9">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing grant --receiver=barney --share-id=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --quantity=1000 --before-block=234765
+</code></pre></div></div>
+
+<h2 id="swap">swap</h2>
+
+<p>Perform an atomic swap between two different shares.</p>
+
+<p>The system ensures the swap occurs as a single operation and no
+possibility of partial completion.  This is a two signature command
+and the recipient must use <code class="language-plaintext highlighter-rouge">countersign</code> to submit and pay before the
+expiry block is reached on the blockchain.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> Before granting the Bitmark Share the CLI will
+prompt for a password to decrypt the identity’s private key to perform
+the signing operation.</p>
+
+<p><strong>Errors.</strong> The command will terminate with an error if the
+share quantities are greater than the remaining balances.</p>
+
+<h3 id="command-options-10">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--receiver|-r IDENTITY|ACCOUNT</code> The <em>countersigner</em> identity or Base58
+                                 account.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--share-id-one|-s SHARE-ID</code>     The transaction id of the share record,
+                                 that the <em>initiator</em> is sending, used
+                                 to identify the first fractional item.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--quantity-one|-q NUMBER</code>       The quantity of share-id-one that the
+                                 <em>initiator</em> is granting to the <em>countersigner</em>.
+                                 The default is one and can be any value up to the
+                                 current balance of the <em>initiator</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--share-id-two|-S SHARE-ID</code>     The transaction id of the share record,
+                                 that the <em>countersigner</em> is sending, used
+                                 to identify the second fractional item.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--quantity-two|-Q NUMBER</code>       The quantity of  share-id-two that the
+                                 <em>countersigner</em> is granting to the
+                                 <em>initiator</em>.  The default is
+                                 one and can be any value up to the
+                                 current balance of the <em>countersigner</em>.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--before-block|-b NUMBER</code>       This is used to provide a “time” limit on
+                                 the operation and the transaction
+                                 must be submitted and confirmed
+                                 before this block is present on the
+                                 blockchain.
+——————————-  ———————————</p>
+
+<h3 id="example-10">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing swap --receiver=barney --share-id-one=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --quantity-one=1000 --share-id-two=1bf75e25d7770ba6405500d39cac30f40249927fd3ee46beae42c9d9b85202f8 --quantity-otwo=79 --before-block=234765 --before-block=234765
+</code></pre></div></div>
+
+<h2 id="balance">balance</h2>
+
+<p>Display the share balances for a particular owner.</p>
+
+<p>The display starts at the particular id and outputs <code class="language-plaintext highlighter-rouge">count</code> items.  To
+display more take the last share id and use in another <code class="language-plaintext highlighter-rouge">balance</code>
+command.  (To avoid a repeat of that record use the incremented id as
+the command will search for the next used id)</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<h3 id="command-options-11">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--owner|-o IDENTITY|ACCOUNT</code>    To list records for a different account
+                                 either by an identity or a Base58
+                                 account string.  The default is to
+                                 use the global identity.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--share-id|-s SHARE-ID</code>         The transaction id of the share record, which
+                                 is used to identify the fractional
+                                 item to show the balance.</p>
+
+<p><code class="language-plaintext highlighter-rouge">--count|-c NUMBER</code>              Limit the number of balance records displayed.
+                                 This defaults to 20 records if
+                                 omitted and can be set from 1 to 100.
+——————————-  ———————————</p>
+
+<h3 id="example-11">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing balance --owner=barney --share-id=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --count=10
+</code></pre></div></div>
+
+<h2 id="status">status</h2>
+
+<p>Display the status of a particular transaction id to set whether it is:</p>
+
+<ul>
+  <li>Not found = not present on the blockchain or in that node’s memory.</li>
+  <li>Pending = awaiting payment confirmation.</li>
+  <li>Verified = payment is confirmed and just waiting to be incorporated into a block.</li>
+  <li>Confirmed = store on the blockchain.</li>
+</ul>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<h3 id="command-options-12">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--txid|-t HEX-ID</code>               The transaction id from a previous
+                                 issue or transfer.
+——————————-  ———————————</p>
+
+<h3 id="example-12">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --network=testing status --txid=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee
+</code></pre></div></div>
+
+<h2 id="list">list</h2>
+
+<p>Display all the configuration file identities’ public data:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SK</code> flag to indicate the encrypted seed is present</li>
+  <li>The short identity name</li>
+  <li>Base58 account string (the encoded public key)</li>
+  <li>Descriptive text</li>
+</ul>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<h3 id="example-13">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --network=testing list
+</code></pre></div></div>
+
+<h2 id="bitmarkd">bitmarkd</h2>
+
+<p>Display basic blockchain status from the selected bitmark node program.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<h3 id="example-14">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --network=testing bitmarkd
+bitmark-cli --network=testing --connection=2 bitmarkd
+</code></pre></div></div>
+
+<h2 id="seed">seed</h2>
+
+<p>Display the decrypted seed basic blockchain status from the selected
+bitmark node program.  The output is a JSON block containing all
+account data both public and private.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> Before displaying the seed the CLI will
+prompt for a password to decrypt the identity’s private key
+to be able to display it.</p>
+
+<h3 id="command-options-13">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--recovery|-r</code>                  Only display the words of the recovery
+                                 phrase in plain text.
+——————————-  ———————————</p>
+
+<h3 id="example-15">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing seed
+bitmark-cli --identity=fred --network=testing seed --recovery
+</code></pre></div></div>
+
+<h2 id="password">password</h2>
+
+<p>Change the password of the selected identity.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> The CLI will prompt for a password, then prompt
+for the new password.  The new password will be prompted a second time
+to ensure that the password was entered accurately.</p>
+
+<h3 id="example-16">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing password
+</code></pre></div></div>
+
+<h2 id="fingerprint">fingerprint</h2>
+
+<p>Display a fingerprint that is compatible to the method used by
+other Bitmark Inc applications.  The result is shown as a hexadecimal
+string.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<h3 id="command-options-14">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--file|-f PATH-NAME</code>            Specify the file to fingerprint.
+——————————-  ———————————</p>
+
+<h3 id="example-17">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --network=testing fingerprint --file=Fred_Flintsone.png
+</code></pre></div></div>
+
+<h2 id="sign">sign</h2>
+
+<p>Display a signature for a file.  The result is shown as a hexadecimal
+string.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Additional input.</strong> The CLI will prompt for a password to decrypt
+the private key to perform the signing operation.</p>
+
+<h3 id="command-options-15">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--file|-f PATH-NAME</code>            Specify the file to sign
+——————————-  ———————————</p>
+
+<h3 id="example-18">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --identity=fred --network=testing sign --file=Fred_Flintsone.png
+</code></pre></div></div>
+
+<h2 id="verify">verify</h2>
+
+<p>Verify the signature of a file matches the expected owner.  This is
+the corresponding command to the <code class="language-plaintext highlighter-rouge">sign</code> command.</p>
+
+<p><strong>Arguments.</strong> The <code class="language-plaintext highlighter-rouge">--network</code> global option must be specified.</p>
+
+<p><strong>Errors.</strong> The command will indicate an error if the signature does
+not match.</p>
+
+<h3 id="command-options-16">Command options</h3>
+
+<hr />
+<p><code class="language-plaintext highlighter-rouge">--file|-f PATH-NAME</code>            Specify the file to verify</p>
+
+<p><code class="language-plaintext highlighter-rouge">--signature|-s HEX</code>             Signature hex string from the sign command</p>
+
+<p><code class="language-plaintext highlighter-rouge">--owner|-o IDENTITY|ACCOUNT</code>    To check the signer by an identity
+                                 or a Base58 account string.  The
+                                 default is to use the global identity.
+——————————-  ———————————</p>
+
+<h3 id="example-19">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --network=testing verify --file=Fred_Flintsone.png --owner=fred
+</code></pre></div></div>
+
+<h2 id="version">version</h2>
+
+<p>Display the version of the CLI program.</p>
+
+<h3 id="example-20">EXAMPLE</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bitmark-cli --network=testing version
+</code></pre></div></div>
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

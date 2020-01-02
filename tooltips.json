@@ -1,17 +1,27 @@
----
-layout: null
-search: exclude
----
-
 {
 "entries":
 [
-{% for page in site.tooltips %}
+
 {
-"doc_id": "{{ page.doc_id }}",
-"body": "{{ page.content | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' }}"
-} {% unless forloop.last %},{% endunless %}
-{% endfor %}
+"doc_id": "baseball",
+"body": ""
+} ,
+
+{
+"doc_id": "basketball",
+"body": ""
+} ,
+
+{
+"doc_id": "football",
+"body": ""
+} ,
+
+{
+"doc_id": "soccer",
+"body": ""
+} 
+
 ]
 }
 

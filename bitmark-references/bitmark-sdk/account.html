@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" account, sdk">
+<title>Account | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Account page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Account">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Account</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="account">Account</h1>
+
+<p>Within the Bitmark system, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations.</p>
+
+<p>An account incorporates the public-private key-pair and the private key is required to <a href="https://en.wikipedia.org/wiki/Digital_signature">digitally sign</a> any Bitmark blockchain record, including asset records, issue records, and transfer records.</p>
+
+<h2 id="create-an-account">Create an account</h2>
+
+<p>Create a new identity to participate Bitmark blockchain.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#b2ca9b48-5378-4ad3-9a44-15fe2ef06fd6'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="b2ca9b48-5378-4ad3-9a44-15fe2ef06fd6" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Account</span><span class="p">();</span>
+
+<span class="c1">// or</span>
+<span class="kd">const</span> <span class="nx">Account</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Account</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Account</span><span class="p">();</span>
+
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">account</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Account</span><span class="p">()</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Account</span><span class="o">();</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">acct</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">New</span><span class="p">()</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h2 id="get-the-account-number">Get the account number</h2>
+
+<p>The account number of an account serves as a pseudonymous identifier within the Bitmark blockchain, which can represent:</p>
+
+<ul>
+  <li><strong>registrant</strong> of an asset</li>
+  <li><strong>owner</strong> of a bitmark</li>
+  <li><strong>sender</strong> of a bitmark transfer offer</li>
+  <li><strong>receiver</strong> of a bitmark transfer offer</li>
+</ul>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#7ffedf75-4243-4791-8f25-41c973f58d96'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="7ffedf75-4243-4791-8f25-41c973f58d96" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">accountNumber</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">getAccountNumber</span><span class="p">();</span>
+<span class="c1">// ffzcoJeg7p6kJrV6VNhS6juuceTCKMmek1WrXopvbzNTvYqANy</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">accountNumber</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="nf">accountNumber</span><span class="p">()</span>
+<span class="c1">// ffzcoJeg7p6kJrV6VNhS6juuceTCKMmek1WrXopvbzNTvYqANy</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">accountNumber</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">getAccountNumber</span><span class="o">();</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">acct</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">New</span><span class="p">()</span>
+<span class="n">accountNumber</span> <span class="o">:=</span> <span class="n">acct</span><span class="o">.</span><span class="n">AccountNumber</span><span class="p">()</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h2 id="export-an-account">Export an account</h2>
+
+<p>There are two formats for exporting an account: <strong>seed</strong> and <strong>recovery phrase</strong>, both of which store all the required information to instantiate an account.</p>
+
+<p>Both seed and recovery phrase can be used to derive the original private key of an account, so it is critical to keep them stored securely.</p>
+
+<h3 id="seed">Seed</h3>
+
+<p>The seed is the more compact format of an exported account. See <a href="/bitmark-references/bitmark-sdk/store-seed">Store seed</a> to learn how to securely store seeds in mobile phones.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#a42b47ff-0bcb-456d-8374-7e53b010c384'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="a42b47ff-0bcb-456d-8374-7e53b010c384" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">seed</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">getSeed</span><span class="p">();</span>
+<span class="c1">// 9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">seed</span> <span class="o">=</span> <span class="k">try</span> <span class="n">account</span><span class="o">.</span><span class="nf">toSeed</span><span class="p">()</span>
+<span class="c1">// 5XEECttvVsk5xPjZ1zrgtWoauw2xmPwTKCWEN5GF24UpaGZhAGS6tXd</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Seed</span> <span class="n">seed</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">getSeed</span><span class="o">();</span>
+<span class="nc">String</span> <span class="n">encodedSeed</span> <span class="o">=</span> <span class="n">seed</span><span class="o">.</span><span class="na">getEncodedSeed</span><span class="o">();</span>
+<span class="c1">// 9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">acct</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">New</span><span class="p">()</span>
+<span class="n">seed</span> <span class="o">:=</span> <span class="n">acct</span><span class="o">.</span><span class="n">Seed</span><span class="p">()</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="recovery-phrase">Recovery Phrase</h3>
+
+<p>The recovery phrase, which consists of 12 <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki">mnemonic words</a>, is superior for human interaction compared to the handling of seed. If you don’t custody the seeds of your users, make sure you present the recovery phrase to them and teach them <a href="https://help.trustwallet.com/hc/en-us/articles/360016509753-Best-Practices-for-Storing-Your-Recovery-Phrase">how to store it in a secure place</a>. Currently English and traditional Chinese phrases are supported.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#cb8a88dc-5f08-4dc6-b7ed-ade4a53a2292'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="cb8a88dc-5f08-4dc6-b7ed-ade4a53a2292" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// English version</span>
+<span class="kd">let</span> <span class="nx">recoveryPhrase</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">getRecoveryPhrase</span><span class="p">();</span>
+<span class="c1">// or</span>
+<span class="kd">let</span> <span class="nx">recoveryPhrase</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">getRecoveryPhrase</span><span class="p">(</span><span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// "name gaze apart lamp lift zone believe steak session laptop crowd hill"</span>
+
+<span class="c1">// Chinese version</span>
+<span class="kd">let</span> <span class="nx">recoveryPhrase</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">getRecoveryPhrase</span><span class="p">(</span><span class="dl">"</span><span class="s2">cn</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// "箱 阻 起 归 彻 矮 问 栽 瓜 鼓 支 乐"</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// English version</span>
+<span class="k">let</span> <span class="nv">phrase</span> <span class="o">=</span> <span class="k">try</span> <span class="n">account</span><span class="o">.</span><span class="nf">getRecoverPhrase</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="o">.</span><span class="n">english</span><span class="p">)</span>
+
+<span class="c1">// Traditional Chinese version</span>
+<span class="k">let</span> <span class="nv">phrase</span> <span class="o">=</span> <span class="k">try</span> <span class="n">account</span><span class="o">.</span><span class="nf">getRecoverPhrase</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="o">.</span><span class="n">chineseTraditional</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// English ver</span>
+<span class="nc">RecoveryPhrase</span> <span class="n">recoveryPhrase</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">getRecoveryPhrase</span><span class="o">();</span>
+<span class="c1">// Or</span>
+<span class="nc">RecoveryPhrase</span> <span class="n">recoveryPhrase</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">getRecoveryPhrase</span><span class="o">(</span><span class="nc">Locale</span><span class="o">.</span><span class="na">ENGLISH</span><span class="o">);</span>
+
+<span class="nc">String</span><span class="o">[]</span> <span class="n">mnemonicWords</span> <span class="o">=</span> <span class="n">recoveryPhrase</span><span class="o">.</span><span class="na">getMnemonicWords</span><span class="o">();</span>
+<span class="c1">// ["name", "gaze", "apart", "lamp", "lift", "zone",</span>
+<span class="c1">//  "believe", "steak", "session", "laptop", "crowd", "hill"]</span>
+
+<span class="c1">// Chinese ver</span>
+<span class="nc">RecoveryPhrase</span> <span class="n">recoveryPhrase</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">getRecoveryPhrase</span><span class="o">(</span><span class="nc">Locale</span><span class="o">.</span><span class="na">TRADITIONAL_CHINESE</span><span class="o">);</span>
+<span class="nc">String</span><span class="o">[]</span> <span class="n">mnemonicWords</span> <span class="o">=</span> <span class="n">recoveryPhrase</span><span class="o">.</span><span class="na">getMnemonicWords</span><span class="o">();</span>
+<span class="c1">// ["箱", "阻", "起", "归", "彻", "矮", "问", "栽", "瓜", "鼓", "支", "乐"]</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">acct</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">New</span><span class="p">()</span>
+<span class="n">phrase</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">acct</span><span class="o">.</span><span class="n">RecoveryPhrase</span><span class="p">(</span><span class="n">language</span><span class="o">.</span><span class="n">AmericanEnglish</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h2 id="import-an-account">Import an account</h2>
+
+<p>As mentioned in <a href="#Export-an-account">Export an account</a>, an account could be exported as either <code class="language-plaintext highlighter-rouge">seed</code> or <code class="language-plaintext highlighter-rouge">recovery phrase</code>, so there are two corresponding functions to recover an account from the supported exported formats.</p>
+
+<h3 id="recover-from-seed">Recover from seed</h3>
+
+<p>To instantiate an account from a given seed.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#8b0a979d-9576-4025-9693-d6f4e7034063'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="8b0a979d-9576-4025-9693-d6f4e7034063" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">account</span> <span class="o">=</span> <span class="nx">Account</span><span class="p">.</span><span class="nx">fromSeed</span><span class="p">(</span><span class="dl">"</span><span class="s2">9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">account</span> <span class="o">=</span> <span class="kt">Account</span><span class="p">(</span><span class="nv">fromSeed</span><span class="p">:</span> <span class="s">"5XEECttvVsk5xPjZ1zrgtWoauw2xmPwTKCWEN5GF24UpaGZhAGS6tXd"</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="nc">Account</span><span class="o">.</span><span class="na">fromSeed</span><span class="o">(</span><span class="s">"9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8"</span><span class="o">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">acct</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8"</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h3 id="recover-from-phrase">Recover from phrase</h3>
+
+<p>To instantiate an account from a given recovery phrase.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#eb251afa-d8b6-44fc-a2f3-365bfebf8491'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="eb251afa-d8b6-44fc-a2f3-365bfebf8491" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// English version</span>
+<span class="kd">let</span> <span class="nx">account</span> <span class="o">=</span> <span class="nx">Account</span><span class="p">.</span><span class="nx">fromRecoveryPhrase</span><span class="p">(</span><span class="dl">"</span><span class="s2">name gaze apart lamp lift zone believe steak session laptop crowd hill</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// or</span>
+<span class="kd">let</span> <span class="nx">account</span> <span class="o">=</span> <span class="nx">Account</span><span class="p">.</span><span class="nx">fromRecoveryPhrase</span><span class="p">(</span><span class="dl">"</span><span class="s2">name gaze apart lamp lift zone believe steak session laptop crowd hill</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">);</span>
+
+
+<span class="c1">// Chinese version</span>
+<span class="kd">let</span> <span class="nx">account</span> <span class="o">=</span> <span class="nx">Account</span><span class="p">.</span><span class="nx">fromRecoveryPhrase</span><span class="p">(</span><span class="dl">"</span><span class="s2">箱 阻 起 归 彻 矮 问 栽 瓜 鼓 支 乐</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">cn</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// English version</span>
+<span class="k">let</span> <span class="nv">account</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Account</span><span class="p">(</span><span class="nv">recoverPhrase</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s">"music"</span><span class="p">,</span> <span class="s">"life"</span><span class="p">,</span> <span class="s">"stone"</span><span class="p">,</span> <span class="s">"brain"</span><span class="p">,</span> <span class="s">"slush"</span><span class="p">,</span> <span class="s">"mango"</span><span class="p">,</span>
+     <span class="s">"diagram"</span><span class="p">,</span> <span class="s">"business"</span><span class="p">,</span> <span class="s">"dumb"</span><span class="p">,</span> <span class="s">"cinnamon"</span><span class="p">,</span> <span class="s">"coral"</span><span class="p">,</span> <span class="s">"year"</span><span class="p">],</span>
+    <span class="nv">language</span><span class="p">:</span> <span class="o">.</span><span class="n">english</span>
+<span class="p">)</span>
+
+<span class="c1">// Traditional Chinese version</span>
+<span class="k">let</span> <span class="nv">account</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">Account</span><span class="p">(</span><span class="nv">recoverPhrase</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s">"婆"</span><span class="p">,</span> <span class="s">"潮"</span><span class="p">,</span> <span class="s">"睛"</span><span class="p">,</span> <span class="s">"毫"</span><span class="p">,</span> <span class="s">"壤"</span><span class="p">,</span> <span class="s">"殿"</span><span class="p">,</span> <span class="s">"北"</span><span class="p">,</span> <span class="s">"謝"</span><span class="p">,</span> <span class="s">"人"</span><span class="p">,</span> <span class="s">"答"</span><span class="p">,</span> <span class="s">"隊"</span><span class="p">,</span> <span class="s">"星"</span><span class="p">],</span>
+    <span class="nv">language</span><span class="p">:</span> <span class="o">.</span><span class="n">chineseTraditional</span>
+<span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="nc">Account</span><span class="o">.</span><span class="na">fromRecoveryPhrase</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"gaze"</span><span class="o">,</span> <span class="s">"apart"</span><span class="o">,</span> <span class="s">"lamp"</span><span class="o">,</span> <span class="s">"lift"</span><span class="o">,</span> <span class="s">"zone"</span><span class="o">,</span> <span class="s">"believe"</span><span class="o">,</span> <span class="s">"steak"</span><span class="o">,</span> <span class="s">"session"</span><span class="o">,</span> <span class="s">"laptop"</span><span class="o">,</span> <span class="s">"crowd"</span><span class="o">,</span> <span class="s">"hill"</span><span class="o">);</span> <span class="c1">// English</span>
+
+<span class="c1">// Or</span>
+<span class="nc">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="nc">Account</span><span class="o">.</span><span class="na">fromRecoveryPhrase</span><span class="o">(</span><span class="s">"箱"</span><span class="o">,</span> <span class="s">"阻"</span><span class="o">,</span> <span class="s">"起"</span><span class="o">,</span> <span class="s">"归"</span><span class="o">,</span> <span class="s">"彻"</span><span class="o">,</span> <span class="s">"矮"</span><span class="o">,</span> <span class="s">"问"</span><span class="o">,</span> <span class="s">"栽"</span><span class="o">,</span> <span class="s">"瓜"</span><span class="o">,</span> <span class="s">"鼓"</span><span class="o">,</span> <span class="s">"支"</span><span class="o">,</span> <span class="s">"乐"</span><span class="o">);</span> <span class="c1">// Chinese</span>
+
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">acct</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromRecoveryPhrase</span><span class="p">(</span>
+    <span class="p">[]</span><span class="kt">string</span><span class="p">{</span>
+        <span class="s">"name"</span><span class="p">,</span> <span class="s">"gaze"</span><span class="p">,</span> <span class="s">"apart"</span><span class="p">,</span> <span class="s">"lamp"</span><span class="p">,</span> <span class="s">" lift"</span><span class="p">,</span> <span class="s">" zone"</span><span class="p">,</span>
+        <span class="s">"believe"</span><span class="p">,</span> <span class="s">"steak"</span><span class="p">,</span> <span class="s">"session"</span><span class="p">,</span> <span class="s">"laptop"</span><span class="p">,</span> <span class="s">"crowd"</span><span class="p">,</span> <span class="s">"hill"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">language</span><span class="o">.</span><span class="n">AmericanEnglish</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h2 id="sign-and-verify">Sign and Verify</h2>
+
+<p>An account can be used to sign arbitrary message, and any party with the received message and the corresponding signature can validate if the message was created by a known sender (authentication), and the message was not altered in transit (integrity). This functionality is usually useful when you have a server application which needs to authenticate if the requests are from valid users.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#9ea6a47a-ebf8-4ce1-aff1-886cf5519b26'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="9ea6a47a-ebf8-4ce1-aff1-886cf5519b26" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Account</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Hello, world!</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// message could be either string or buffer</span>
+<span class="kd">let</span> <span class="nx">signature</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> <span class="c1">// signature is a buffer</span>
+
+<span class="kd">let</span> <span class="nx">accountNumber</span> <span class="o">=</span> <span class="nx">account</span><span class="p">.</span><span class="nx">getAccountNumber</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">isAuthentic</span> <span class="o">=</span> <span class="nx">Account</span><span class="p">.</span><span class="nx">verify</span><span class="p">(</span><span class="nx">accountNumber</span><span class="p">,</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">signature</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">account</span> <span class="p">:</span><span class="o">=</span> <span class="k">try</span> <span class="kt">Account</span><span class="p">()</span>
+
+<span class="c1">// create a signature</span>
+<span class="k">let</span> <span class="nv">message</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="o">.</span><span class="nf">data</span><span class="p">(</span><span class="nv">using</span><span class="p">:</span> <span class="o">.</span><span class="n">utf8</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">signature</span> <span class="o">=</span> <span class="k">try</span> <span class="n">account</span><span class="o">.</span><span class="nf">sign</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">)</span>
+
+<span class="c1">// verify the signature from other side</span>
+<span class="k">let</span> <span class="nv">senderAccountNumber</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="n">address</span>
+<span class="k">let</span> <span class="nv">isAuthentic</span> <span class="o">=</span> <span class="n">senderAccountNumber</span><span class="o">.</span><span class="nf">verify</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="n">message</span><span class="p">,</span> <span class="nv">signature</span><span class="p">:</span> <span class="n">signature</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="nc">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Account</span><span class="o">();</span>
+<span class="kd">final</span> <span class="n">accountNumber</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">getAccountNumber</span><span class="o">();</span>
+<span class="kd">final</span> <span class="n">message</span> <span class="o">=</span> <span class="s">"Hello, world!"</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
+
+<span class="c1">// sign</span>
+<span class="kt">byte</span><span class="o">[]</span> <span class="n">signature</span> <span class="o">=</span> <span class="n">account</span><span class="o">.</span><span class="na">sign</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+
+<span class="c1">// verify</span>
+<span class="kt">boolean</span> <span class="n">verified</span> <span class="o">=</span> <span class="nc">Account</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">accountNumber</span><span class="o">,</span> <span class="n">signature</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
+
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// client side</span>
+<span class="n">acct</span><span class="p">,</span> <span class="n">_</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">FromSeed</span><span class="p">(</span><span class="s">"YOUR SEED"</span><span class="p">)</span>
+
+<span class="n">msg</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">)</span>
+<span class="n">sig</span> <span class="o">:=</span> <span class="n">acct</span><span class="o">.</span><span class="n">Sign</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="c">// server side can verify if the message is from the client and</span>
+<span class="n">err</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">Verify</span><span class="p">(</span><span class="n">acct</span><span class="o">.</span><span class="n">AccountNumber</span><span class="p">(),</span> <span class="n">msg</span><span class="p">,</span> <span class="n">sig</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+
+<h2 id="validate-an-account-number">Validate an account number</h2>
+
+<p>The function returns an error to indicate whether a given account number is valid in current runtime environment, i.e.,
+the format is correct and its network matches to the network specified in the SDK config during initialization.</p>
+
+<ul class="uk-tab" data-uk-switcher="{connect:'#3b0cfd9d-dd82-46fb-acab-5deaf90f2846'}">
+
+	<li class="uk-active"><a href="#">JS</a></li>
+
+	<li><a href="#">Swift</a></li>
+
+	<li><a href="#">Java</a></li>
+
+	<li><a href="#">Go</a></li>
+
+</ul>
+
+<ul id="3b0cfd9d-dd82-46fb-acab-5deaf90f2846" class="uk-switcher uk-margin">
+
+	<li>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">isValid</span> <span class="o">=</span> <span class="nx">Account</span><span class="p">.</span><span class="nx">isValidAccountNumber</span><span class="p">(</span><span class="nx">accountNumber</span><span class="p">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">isValid</span> <span class="o">=</span> <span class="kt">Account</span><span class="o">.</span><span class="nf">isValidAccountNumber</span><span class="p">(</span><span class="n">accountNumber</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">boolean</span> <span class="n">isValid</span> <span class="o">=</span> <span class="nc">Account</span><span class="o">.</span><span class="na">isValidAccountNumber</span><span class="o">(</span><span class="n">accountNumber</span><span class="o">);</span>
+</code></pre></div></div>
+</li>
+
+	<li>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">err</span> <span class="o">:=</span> <span class="n">account</span><span class="o">.</span><span class="n">ValidateAccountNumber</span><span class="p">(</span><span class="s">"e1pFRPqPhY2gpgJTpCiwXDnVeouY9EjHY6STtKwdN6Z4bp4sog"</span><span class="p">)</span>
+</code></pre></div></div>
+</li>
+
+</ul>
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

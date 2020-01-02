@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Bitmark SDK | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Bitmark SDK page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Bitmark SDK">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Bitmark SDK</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="bitmark-sdk">Bitmark SDK</h1>
+
+<h2 id="overview"><a href="/bitmark-references/bitmark-sdk/getting-started#overview">Overview</a></h2>
+
+<h2 id="getting-started"><a href="/bitmark-references/bitmark-sdk/getting-started#getting-started">Getting Started</a></h2>
+
+<ul>
+  <li><a href="/bitmark-references/bitmark-sdk/getting-started#installation">Installation</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/getting-started#get-your-api-token">Get your API token</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/getting-started#configuration">Configuration</a></li>
+</ul>
+
+<h2 id="account"><a href="/bitmark-references/bitmark-sdk/account#account">Account</a></h2>
+
+<ul>
+  <li><a href="/bitmark-references/bitmark-sdk/account#create-an-account">Create an account</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/account#get-the-account-number">Get the account number</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/account#export-an-account">Export an account</a>
+    <ul>
+      <li><a href="/bitmark-references/bitmark-sdk/account#seed">Seed</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/account#recovery-phrase">Recovery Phrase</a></li>
+    </ul>
+  </li>
+  <li><a href="/bitmark-references/bitmark-sdk/account#import-an-account">Import an account</a>
+    <ul>
+      <li><a href="/bitmark-references/bitmark-sdk/account#recover-from-seed">Recover from seed</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/account#recover-from-phrase">Recover from phrase</a></li>
+    </ul>
+  </li>
+  <li><a href="/bitmark-references/bitmark-sdk/account#sign-and-verify">Sign and Verify</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/account#validate-an-account-number">Validate an account number</a></li>
+</ul>
+
+<h2 id="actions"><a href="/bitmark-references/bitmark-sdk/action">Actions</a></h2>
+
+<ul>
+  <li><a href="/bitmark-references/bitmark-sdk/action#register-an-asset">Register an asset</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/action#issue-bitmarks">Issue bitmarks</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/action#transfer-a-bitmark">Transfer a bitmark</a>
+    <ul>
+      <li><a href="/bitmark-references/bitmark-sdk/action#direct-transfer">Direct transfer</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/action#countersigned-transfer">Countersigned transfer</a>
+        <ul>
+          <li><a href="/bitmark-references/bitmark-sdk/action#propose-a-bitmark-transfer-offer">Propose a bitmark transfer offer</a></li>
+          <li><a href="/bitmark-references/bitmark-sdk/action#query-offering-bitmarks">Query offering bitmarks</a></li>
+          <li><a href="/bitmark-references/bitmark-sdk/action#accept-the-bitmark-transfer-offer">Accept the bitmark transfer offer</a></li>
+          <li><a href="/bitmark-references/bitmark-sdk/action#reject-the-transfer-offer">Reject the transfer offer</a></li>
+          <li><a href="/bitmark-references/bitmark-sdk/action#cancel-the-transfer-offer">Cancel the transfer offer</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="query"><a href="/bitmark-references/bitmark-sdk/query#query">Query</a></h2>
+
+<ul>
+  <li><a href="/bitmark-references/bitmark-sdk/query#asset">Asset</a>
+    <ul>
+      <li><a href="/bitmark-references/bitmark-sdk/query#record-data-structure">Record data structure</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/query#query-for-a-specific-asset">Query for a specific asset</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/query#query-for-a-set-of-assets">Query for a set of assets</a>
+        <ul>
+          <li><a href="/bitmark-references/bitmark-sdk/query#assets-registered-by-the-specific-registrant">assets registered by the specific registrant</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/bitmark-references/bitmark-sdk/query#transaction-tx">Transaction (tx)</a>
+    <ul>
+      <li><a href="/bitmark-references/bitmark-sdk/query#record-data-structure-1">Record data structure</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/query#query-for-a-specific-transaction">Query for a specific transaction</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/query#query-for-a-set-of-transactions">Query for a set of transactions</a>
+        <ul>
+          <li><a href="/bitmark-references/bitmark-sdk/query#the-provenance-of-a-bitmark">The provenance of a bitmark</a></li>
+          <li><a href="/bitmark-references/bitmark-sdk/query#the-transaction-history-of-an-account">The transaction history of an account</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/bitmark-references/bitmark-sdk/query#bitmark">Bitmark</a>
+    <ul>
+      <li><a href="/bitmark-references/bitmark-sdk/query#record-data-structure-2">Record data structure</a>
+        <ul>
+          <li><a href="/bitmark-references/bitmark-sdk/query#offer">offer</a></li>
+        </ul>
+      </li>
+      <li><a href="/bitmark-references/bitmark-sdk/query#query-for-a-specific-bitmark">Query for a specific bitmark</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/query#query-for-a-set-of-bitmarks">Query for a set of bitmarks</a>
+        <ul>
+          <li><a href="/bitmark-references/bitmark-sdk/query#bitmarks-issued-by-the-specific-issuer">bitmarks issued by the specific issuer</a></li>
+          <li><a href="/bitmark-references/bitmark-sdk/query#bitmarks-owned-by-the-specific-owner">bitmarks owned by the specific owner</a></li>
+          <li><a href="/bitmark-references/bitmark-sdk/query#bitmarks-offered-from-the-specific-sender">bitmarks offered from the specific sender</a></li>
+          <li><a href="/bitmark-references/bitmark-sdk/query#bitmarks-offered-to-the-specific-receiver">bitmarks offered to the specific receiver</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="store-seed"><a href="/bitmark-references/bitmark-sdk/store-seed#store-seed">Store Seed</a></h2>
+
+<ul>
+  <li><a href="/bitmark-references/bitmark-sdk/store-seed#android">Android</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/store-seed#ios">iOS</a></li>
+</ul>
+
+<h2 id="web-socket"><a href="/bitmark-references/bitmark-sdk/websocket#web-socket">Web Socket</a></h2>
+
+<ul>
+  <li><a href="/bitmark-references/bitmark-sdk/websocket#event">Event</a></li>
+  <li><a href="/bitmark-references/bitmark-sdk/websocket#java">Java</a>
+    <ul>
+      <li><a href="/bitmark-references/bitmark-sdk/websocket#connectdisconnect">Connect/Disconnect</a></li>
+      <li><a href="/bitmark-references/bitmark-sdk/websocket#subscribeunsubscribe">Subscribe/Unsubscribe</a></li>
+    </ul>
+  </li>
+  <li><a href="/bitmark-references/bitmark-sdk/websocket#swift">Swift</a></li>
+</ul>
+
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

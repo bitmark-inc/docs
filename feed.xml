@@ -1,32 +1,13 @@
----
-search: exclude
-layout: none
----
-
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>{{ site.title | xml_escape }}</title>
-        <description>{{ site.description | xml_escape }}</description>
-        <link>{{ site.url }}/</link>
-        <atom:link href="{{ "/feed.xml" | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-        <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-        <generator>Jekyll v{{ jekyll.version }}</generator>
-        {% for post in site.posts limit:10 %}
-        <item>
-            <title>{{ post.title | xml_escape }}</title>
-            <description>{{ post.content | xml_escape }}</description>
-            <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-            <link>{{ post.url | prepend: site.url }}</link>
-            <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
-            {% for tag in post.tags %}
-            <category>{{ tag | xml_escape }}</category>
-            {% endfor %}
-            {% for tag in page.tags %}
-            <category>{{ cat | xml_escape }}</category>
-            {% endfor %}
-        </item>
-        {% endfor %}
+        <title>docs</title>
+        <description>Bitmark Inc. Documentation</description>
+        <link>http://localhost:4000/</link>
+        <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Fri, 03 Jan 2020 00:49:32 +0800</pubDate>
+        <lastBuildDate>Fri, 03 Jan 2020 00:49:32 +0800</lastBuildDate>
+        <generator>Jekyll v3.8.5</generator>
+        
     </channel>
 </rss>

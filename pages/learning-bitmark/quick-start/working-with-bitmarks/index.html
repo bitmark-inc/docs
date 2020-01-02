@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Working with Bitmarks | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Working with Bitmarks page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Working with Bitmarks">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Working with Bitmarks</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="working-with-bitmarks">Working with Bitmarks</h1>
+
+<p>Interacting with Bitmark requires the creation of a Bitmark Account. Afterward, users can register Bitmark Certificates for their digital properties, which they may later transfer to other users or divide into Bitmark shares.</p>
+
+<p>Most work with the Bitmark Property System can be done via one of three methods: the <a href="https://a.bitmark.com/">Bitmark App</a> (for iOS or Android), the <a href="https://github.com/bitmark-inc">Bitmark SDK</a> (for a variety of programming languages), or the Bitmark CLI (available as part of a <a href="https://github.com/bitmark-inc/docs/blob/master/learning-bitmark/quick-start/simple-solution-for-node-setup.md">Bitmark node</a>).</p>
+
+<ul>
+  <li>
+    <p>The <strong>Bitmark App</strong> is a simple mobile app that allows anyone to protect their legal rights to their data and other digital assets by registering them as properties on the Bitmark blockchain.</p>
+  </li>
+  <li>
+    <p>The <strong>Bitmark SDK</strong> is a collection of libraries for different programming languages and mobile platforms. In addition to providing language-specific bindings for the Bitmark APIs, the SDK also simplifies local key management for signing and encryption.</p>
+  </li>
+  <li>
+    <p>The <strong>Bitmark CLI</strong> is a command line tool that allows a user to interact with the Bitmark blockchain by connecting to one or several nodes in the network. All transactions are submitted directly to one of these connected nodes and consequently are verified by the node before being forwarded to the network.</p>
+  </li>
+</ul>
+
+<p>These documents detail the usage of each of these methods.</p>
+
+<h2 id="creating-bitmark-accounts"><a href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account#creating-bitmark-account">Creating Bitmark Accounts</a></h2>
+
+<ul>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account#about-the-bitmark-account-number">About the Bitmark Account Number</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account#creating-a-bitmark-account-using-the-bitmark-app">Creating a Bitmark Account using the Bitmark App</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account#creating-a-bitmark-account-using-the-bitmark-sdk">Creating a Bitmark Account using the Bitmark SDK</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account#creating-a-bitmark-account-using-the-bitmark-cli">Creating a Bitmark Account using the Bitmark-CLI</a></li>
+</ul>
+
+<h2 id="registering-bitmark-certificates"><a href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks#registering-bitmark-certificates">Registering Bitmark Certificates</a></h2>
+
+<ul>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks#prerequisites">Prerequisites</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks#registering-bitmark-certificates-using-the-bitmark-app">Registering Bitmark Certificates using the Bitmark App</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks#registering-bitmark-certificates-using-the-bitmark-sdk">Registering Bitmark Certificates using the Bitmark SDK</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks#registering-bitmark-certificates-using-the-bitmark-cli">Registering Bitmark Certificates using the Bitmark CLI</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks#exploring-bitmark-transactions-using-the-bitmark-registry-website">Exploring Bitmark transactions using the Bitmark Registry website</a></li>
+</ul>
+
+<h2 id="transferring-bitmark-certificates"><a href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks#transferring-bitmark-certificates">Transferring Bitmark Certificates</a></h2>
+
+<ul>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks#prerequisites">Prerequisites</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks#transferring-bitmarks-using-the-bitmark-app">Transferring bitmarks using the Bitmark App</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks#transferring-bitmarks-using-the-bitmark-sdk">Transferring bitmarks using the Bitmark SDK</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks#transferring-bitmarks-using-the-bitmark-cli">Transferring bitmarks using the Bitmark CLI</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks#exploring-bitmark-transactions-using-the-bitmark-registry-website">Exploring Bitmark transactions using the Bitmark Registry website</a></li>
+</ul>
+
+<h2 id="working-with-bitmark-shares"><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#bitmark-shares">Working with Bitmark Shares</a></h2>
+
+<ul>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#about-bitmark-shares-records">About Bitmark shares records</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#prerequisites">Prerequisites</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#creating-bitmark-shares">Creating Bitmark shares</a>
+    <ul>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#creating-bitmark-shares-from-a-bitmark-certificate">Creating Bitmark shares from a Bitmark Certificate</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#paying-for-a-share-creation">Paying for a share creation</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#verifying-a-share-creation-transaction">Verifying a share creation transaction</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#verifying-the-share-creation-results">Verifying the share creation results</a></li>
+    </ul>
+  </li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#granting-bitmark-shares-to-another-account">Granting Bitmark shares to another account</a>
+    <ul>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#initializing-a-share-grant">Initializing a share grant</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#countersigning-a-share-grant">Countersigning a share grant</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#paying-for-a-share-grant">Paying for a share grant</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#verifying-a-share-grant">Verifying a share grant</a></li>
+    </ul>
+  </li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#swapping-bitmark-shares">Swapping Bitmark shares</a>
+    <ul>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#initializing-a-share-swap">Initializing a share swap</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#countersigning-a-share-swap">Countersigning a share swap</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#paying-for-a-share-swap">Paying for a share swap</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares#verifying-a-share-swap">Verifying a share swap</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="paying-for-bitmark-transactions"><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Paying for Bitmark Transactions</a></h2>
+
+<ul>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment#about-the-bitmark-wallet">About the Bitmark Wallet</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment#prerequisites">Prerequisites</a></li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment#using-the-bitmark-wallet">Using the Bitmark Wallet</a>
+    <ul>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment#installing-the-bitmark-wallet">Installing the Bitmark Wallet</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment#connecting-the-bitmark-wallet">Connecting the Bitmark Wallet</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment#running-the-bitmark-wallet">Running the Bitmark Wallet</a></li>
+      <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment#getting-testnet-coins">Getting testnet coins</a></li>
+    </ul>
+  </li>
+  <li><a href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment#paying-for-the-transaction">Paying for the Transaction</a></li>
+</ul>
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

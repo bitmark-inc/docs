@@ -1,33 +1,535 @@
----
-title: search
-layout: none
-search: exclude
----
-
 [
-{% for page in site.pages %}
-{% unless page.search == "exclude" %}
-{
-"title": "{{ page.title | escape }}",
-"tags": "{{ page.tags }}",
-"keywords": "{{page.keywords}}",
-"url": "{{ /page.url }}",
-"summary": "{{page.summary | strip }}"
-}
-{% unless forloop.last and site.posts.size < 1 %},{% endunless %}
-{% endunless %}
-{% endfor %}
 
-{% for post in site.posts %}
+
+
 
 {
-"title": "{{ post.title | escape }}",
-"tags": "{{ post.tags }}",
-"keywords": "{{post.keywords}}",
-"url": "{{ /post.url }}",
-"summary": "{{post.summary | strip }}"
+"title": "Account",
+"tags": "",
+"keywords": "account, sdk",
+"url": "/bitmark-references/bitmark-sdk/account",
+"summary": ""
 }
-{% unless forloop.last %},{% endunless %}
-{% endfor %}
+,
+
+
+
+{
+"title": "Action",
+"tags": "",
+"keywords": "action, sdk, register asset, issue bitmark, transfer bitmark",
+"url": "/bitmark-references/bitmark-sdk/action",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Blockchain Technical Overview",
+"tags": "",
+"keywords": "blockchain",
+"url": "/bitmark-references/bitmark-node-software/bitmark-blockchain-overview",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Blockchain Introduction",
+"tags": "",
+"keywords": "blockchain",
+"url": "/learning-bitmark/bitmark-blockchain",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark-CLI Command Reference",
+"tags": "",
+"keywords": "cli, bitmark-cli, command line interface",
+"url": "/bitmark-references/bitmark-cli/bitmark-cli-command-reference",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark versus Ethereum",
+"tags": "",
+"keywords": "ethereum, bitmarkvsethereum",
+"url": "/bitmark-appendix/bitmark-eth-comparison",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Node Installation",
+"tags": "",
+"keywords": "node, node setup",
+"url": "/bitmark-references/node-setup/tutorial-for-node-setup",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Papers",
+"tags": "",
+"keywords": "papers",
+"url": "/bitmark-appendix/bitmark-papers",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Getting Started",
+"tags": "",
+"keywords": "sdk, sdk doc",
+"url": "/bitmark-references/bitmark-sdk/getting-started",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Shares",
+"tags": "",
+"keywords": "bitmark shares",
+"url": "/bitmark-appendix/bitmark-shares",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Software Development Process",
+"tags": "",
+"keywords": "development process, work flow",
+"url": "/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Glossary",
+"tags": "",
+"keywords": "terms, glossary",
+"url": "/learning-bitmark/bitmark-terms-and-glossary",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Block Validation and Synchronization",
+"tags": "",
+"keywords": "blockchain, verification, sync, synchronization",
+"url": "/bitmark-references/bitmark-node-software/block-verification-and-synchronization",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bug Bounty Program",
+"tags": "",
+"keywords": "bug bounty",
+"url": "/learning-bitmark/contributing-to-bitmark/bug-bounty-program",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Upgrade Proposal",
+"tags": "",
+"keywords": "upgrade proposal",
+"url": "/learning-bitmark/contributing-to-bitmark/bup",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Creating Bitmark Accounts",
+"tags": "",
+"keywords": "create account",
+"url": "/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account",
+"summary": ""
+}
+,
+
+
+
+
+
+{
+"title": "Official Documentation for working with Bitmark",
+"tags": "",
+"keywords": "homepage, home",
+"url": "/index.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Registering Bitmark Certificates",
+"tags": "",
+"keywords": "register bitmark certificates",
+"url": "/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Account Migration",
+"tags": "",
+"keywords": "sdk, migration",
+"url": "/bitmark-references/bitmark-sdk/migration",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Block Mining",
+"tags": "",
+"keywords": "mining",
+"url": "/bitmark-references/bitmark-node-software/bitmark-mining",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Storage Databases",
+"tags": "",
+"keywords": "node modules, storage",
+"url": "/bitmark-references/bitmark-node-software/storage",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark CLI Payment",
+"tags": "",
+"keywords": "transaction payment",
+"url": "/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Payment Verification",
+"tags": "",
+"keywords": "payment, payment verification",
+"url": "/bitmark-references/bitmark-node-software/payment-verification",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Property System Introduction",
+"tags": "",
+"keywords": "introduction, property system",
+"url": "/learning-bitmark/bitmark-property-system-introduction",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Query",
+"tags": "",
+"keywords": "sdk, query",
+"url": "/bitmark-references/bitmark-sdk/query",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark-CLI Quick Setup",
+"tags": "",
+"keywords": "cli, bitmark-cli, command line interface, quick setup",
+"url": "/bitmark-references/bitmark-cli/bitmark-cli-quick-setup",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "RPC Communication",
+"tags": "",
+"keywords": "rpc",
+"url": "/bitmark-references/bitmark-node-software/rpc-communication",
+"summary": ""
+}
+,
+
+
+
+
+
+{
+"title": "Blockchain Security",
+"tags": "",
+"keywords": "security",
+"url": "/bitmark-references/bitmark-node-software/security",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Running a Bitmark Node",
+"tags": "",
+"keywords": "node setup",
+"url": "/learning-bitmark/quick-start/simple-solution-for-node-setup",
+"summary": ""
+}
+,
+
+
+
+
+
+{
+"title": "Store Seed",
+"tags": "",
+"keywords": "sdk, store seed",
+"url": "/bitmark-references/bitmark-sdk/store-seed",
+"summary": ""
+}
+,
+
+
+
+
+
+
+
+{
+"title": "Transferring Bitmark Certificates",
+"tags": "",
+"keywords": "transaction, transfer",
+"url": "/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Using Bitmark Shares",
+"tags": "",
+"keywords": "bitmark shares",
+"url": "/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Web Socket",
+"tags": "",
+"keywords": "sdk, web socket",
+"url": "/bitmark-references/bitmark-sdk/websocket",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "/assets/css/style.css",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "/pages/learning-bitmark/contributing-to-bitmark/bitmark-upgrade-proposal1.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "",
+"tags": "",
+"keywords": "",
+"url": "/pages/learning-bitmark/quick-start/simple-solution-for-executing-transactions.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Documentation",
+"tags": "",
+"keywords": "",
+"url": "/pages/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Appendix",
+"tags": "",
+"keywords": "",
+"url": "/pages/bitmark-appendix/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark References",
+"tags": "",
+"keywords": "",
+"url": "/pages/bitmark-references/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark-CLI",
+"tags": "",
+"keywords": "",
+"url": "/pages/bitmark-references/bitmark-cli/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Node Software",
+"tags": "",
+"keywords": "",
+"url": "/pages/bitmark-references/bitmark-node-software/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark SDK",
+"tags": "",
+"keywords": "",
+"url": "/pages/bitmark-references/bitmark-sdk/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Bitmark Node Installation",
+"tags": "",
+"keywords": "",
+"url": "/pages/bitmark-references/node-setup/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Learning Bitmark",
+"tags": "",
+"keywords": "",
+"url": "/pages/learning-bitmark/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Contributing to Bitmark",
+"tags": "",
+"keywords": "",
+"url": "/pages/learning-bitmark/contributing-to-bitmark/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Quick Start",
+"tags": "",
+"keywords": "",
+"url": "/pages/learning-bitmark/quick-start/",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Working with Bitmarks",
+"tags": "",
+"keywords": "",
+"url": "/pages/learning-bitmark/quick-start/working-with-bitmarks/",
+"summary": ""
+}
+
+
+
+
+
 
 ]

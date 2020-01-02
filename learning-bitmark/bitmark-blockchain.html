@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" blockchain">
+<title>Bitmark Blockchain Introduction | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Bitmark Blockchain Introduction page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Bitmark Blockchain Introduction">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Bitmark Blockchain Introduction</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="bitmark-blockchain-introduction">Bitmark Blockchain Introduction</h1>
+
+<h2 id="technical-overview">Technical Overview</h2>
+
+<p>The Bitmark blockchain is the property system for the digital generation. It was built with cutting-edge blockchain technology to match the needs of our borderless and global digital lives and futures.</p>
+
+<p><img src="/assets/images/bitmark_processes_en_2500w.png" alt="Bitmark Blockchain" /></p>
+
+<p>The Bitmark blockchain features some of the same strengths as other blockchains, such as the immutability of an ordered and distributed ledger. However, the Bitmark blockchain is specialized for property transactions and has speciific strengths related to that: by uniquely identifying property, encoding its title, and supporting transfers, Bitmark creates clear provenance and chain of ownership for unique digital assets. This decentralized structure empowers individuals by granting them personal control over their assets.</p>
+
+<p>To read more about the Bitmark property system, how it expands on the basic ideas of the blockchain, and how it uses a variety of blockchain records to manage digital property and data, please <a href="https://medium.com/clean-titles/defining-property-in-the-digital-environment-part-three-4c3ecbab5833">read our blog posts here</a>.</p>
+
+<p>For more details, read our Technical FAQ below or our <a href="https://docs.bitmark.com/bitmark-appendix/bitmark-papers">papers</a>.</p>
+
+<h2 id="technical-faq">Technical FAQ</h2>
+
+<p>The following questions and answers are drawn in part from our papers and provide more depth than the overview of the Bitmark property system found in our blog posts.</p>
+
+<p><strong>The Bitmark Blockchain</strong></p>
+
+<ul>
+  <li>
+    <p><a href="#why-use-the-bitmark-blockchain-to-record-property">Why use the Bitmark Blockchain to record property?</a></p>
+  </li>
+  <li>
+    <p><a href="#why-not-just-use-bitcoin-or-ethereum-tokens-to-represent-property">Why not just use Bitcoin or Ethereum tokens to represent property?</a></p>
+  </li>
+</ul>
+
+<p><strong>Registering Bitmark Certificates</strong></p>
+
+<ul>
+  <li>
+    <p><a href="#how-are-property-owners-identified-in-the-bitmark-property-system">How are property owners identified in the Bitmark Property System?</a></p>
+  </li>
+  <li>
+    <p><a href="#how-is-property-registered-in-the-bitmark-property-system">How is property registered in the Bitmark Property System?</a></p>
+  </li>
+  <li>
+    <p><a href="#how-are-bitmark-miners-encouraged-to-publish-issue-records">How are Bitmark miners encouraged to publish issue records?</a></p>
+  </li>
+  <li>
+    <p><a href="#how-does-the-bitmark-blockchain-protect-property">How does the Bitmark Blockchain protect property?</a></p>
+  </li>
+</ul>
+
+<p><strong>Transferring Bitmark Certificates</strong></p>
+
+<ul>
+  <li>
+    <p><a href="#how-is-property-transferred-in-the-bitmark-property-system">How is property transferred in the Bitmark Propeerty System?</a></p>
+  </li>
+  <li>
+    <p><a href="#how-are-bitmark-miners-encouraged-to-publish-transfer-records">How are Bitmark miners encouraged to publish transfer records?</a></p>
+  </li>
+</ul>
+
+<h3 id="the-bitmark-blockchain">The Bitmark Blockchain</h3>
+
+<h4 id="why-use-the-bitmark-blockchain-to-record-property">Why use the Bitmark Blockchain to record property?</h4>
+
+<p>When you own land, means of production, inventions, creative works, or other assets, you also have a title to those assets. A property title is the legal instrument by which an entity claims ownership of an asset. It also serves as a “container” for transferring property rights from one owner to another. To be legally binding, title transfers must be publicly recorded in property systems such as county land registrars or a state departments of motor vehicles.</p>
+
+<p><img src="/assets/images/bitmark_ownership_en_2500w.png" alt="Bitmark Ownership" /></p>
+
+<p>Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate. The Bitmark Blockchain offers the opportunity to register titles for your digital assets.</p>
+
+<h4 id="why-not-just-use-bitcoin-or-ethereum-tokens-to-represent-property">Why not just use Bitcoin or Ethereum tokens to represent property?</h4>
+
+<p>Traditional cryptocurrency tokens can be split and rejoined, which is a bad model for property: you wouldn’t want to cut a painting into six parts, then put it back together! The fungibility of traditional cryptocurrency is also at odds with the need to record provenance for property. Finally, there’s no ability on traditional systems for a recipient to countersign to agree to the transfer of property.</p>
+
+<p>There are methods to get around some of this issues on the Bitcoin blockchain, such as recording information in OP_RETURNS or directly encoding data in UTXOs. Similarly, specific smart contracts could have been created in Ethereum to create non-fungible tokens.</p>
+
+<p>However, we ultimately felt that a network designed specifically for registering property rights could minimize resource requirements and reduce security attack vectors. The question then became “Is registering, tracking, and trading digital property popular enough to warrant a specialized system?” History shows that the answer to that is clearly “yes”; we believe that it’s the most sustainable long-term strategy.</p>
+
+<h3 id="registering-bitmark-certificates">Registering Bitmark Certificates</h3>
+
+<h4 id="how-are-property-owners-identified-in-the-bitmark-property-system">How are property owners identified in the Bitmark Property System?</h4>
+
+<p>Each property owner in the Bitmark Property System is identified by a public key. They must then decide how to store their linked private key. They could choose to do so themselves, possibly using the Bitmark mobile app, or they could store it directly with Bitmark. They can also decide to link their public key to a real-world identity or to remain pseudonymous.</p>
+
+<h4 id="how-is-property-registered-in-the-bitmark-property-system">How is property registered in the Bitmark Property System?</h4>
+
+<p>The Bitmark blockchain records registrations with Bitmark Certificates that can be easily read and verified.</p>
+
+<p>An asset record contains the following information:</p>
+
+<ul>
+  <li>
+    <p>A fingerprint hash of the asset, with options delineated by the Bitmark Trade Service.</p>
+  </li>
+  <li>
+    <p>The registrant of the asset, defined by their public key.</p>
+  </li>
+  <li>
+    <p>The name of the asset, a short name of 64 UTF-8 characters or less</p>
+  </li>
+  <li>
+    <p>Optional metadata, consisting of key-value pairs.</p>
+  </li>
+  <li>
+    <p>A signature of a hash of the above fields, using the registrant’s private key.</p>
+  </li>
+</ul>
+
+<p>There can only be one asset record for each digital property on the Bitmark blockchain. It’s only placed on the blockchain when an issue record for the asset is verified and itself placed on the Bitmark blockchain. Later issue records for the same asset will point back to the original asset record.</p>
+
+<p>An issue record contains the following information:</p>
+
+<ul>
+  <li>
+    <p>An assetindex, which is a SHA3-512 hash of the asset’s fingerprint.</p>
+  </li>
+  <li>
+    <p>A nonce, which numbers this particular issuance of the asset.</p>
+  </li>
+  <li>
+    <p>The owner of the asset, defined by their public key.</p>
+  </li>
+  <li>
+    <p>A signature of a hash of the above fields, using the registrant’s private key.</p>
+  </li>
+</ul>
+
+<p>There can be multiple issue records for the same property, each defined by a different nonce, and each representing a different instance of the property. Typically, these represent “limited editions” of a digital asset or authorized copies of digital data.</p>
+
+<h4 id="how-are-bitmark-miners-encouraged-to-publish-issue-records">How are Bitmark miners encouraged to publish issue records?</h4>
+
+<p>Registration of a an asset on the Bitmark Blockchain usually doesn’t require a payment; instead, a Hashcash calculation is conducted by the asset owner.</p>
+
+<p>Though a miner isn’t immediately paid for these issuances in his block, he’s still incentivized to mine the issue records because he’s given a Bitmark Certificate on the block. This will reward him when the digital properties in the block are later transferred.</p>
+
+<h4 id="how-does-the-bitmark-blockchain-protect-property">How does the Bitmark Blockchain protect property?</h4>
+
+<p>A decentralized system such as Bitmark allows almost anyone to issue Bitmark Certificates to just about anything. When legal disputes arise, the immutability of the blockchain allows it to serve as evidence in conflicting ownership claims. This permanent public record of ownership can also help deter bad actors. Encryption can be used to further protect digital assets that have been registered as bitmark certificates.</p>
+
+<p><img src="/assets/images/ownership_blockchain-digital_property_en_2500w.png" alt="Bitmark Blockchain protects Ownership" /></p>
+
+<h3 id="transferring-bitmark-certificates">Transferring Bitmark Certificates</h3>
+
+<h4 id="how-is-property-transferred-in-the-bitmark-property-system">How is property transferred in the Bitmark Property System?</h4>
+
+<p>Once an asset has been issued, trading it simply requires the owner to create a new transfer record that points back to the original issue record (or to the previous transfer record) and that shows the new owner of the asset. Because the blockchain is ordered and because it’s immutable, this creates a permanent chain of custody, reaching back to the asset’s origins.</p>
+
+<p><img src="/assets/images/bitmark_signature_chain_graphic_en_2500w.png" alt="Bitmark signature chain" /></p>
+
+<p>A transfer record contains the following information:</p>
+
+<ul>
+  <li>
+    <p>A link, which is a SHA3-512 hash of the asset’s previous record, creating the chain of ownership.</p>
+  </li>
+  <li>
+    <p>An owner, which is the public key of the recipient of the asset.</p>
+  </li>
+  <li>
+    <p>An optional payment, which lists the Bitcoin or Litecoin currency, an amount, and an address.</p>
+  </li>
+  <li>
+    <p>A signature of a hash of the above fields, using the previous owner’s private key.</p>
+  </li>
+  <li>
+    <p>An optional countersignature using the new owner’s private key.</p>
+  </li>
+</ul>
+
+<p>In order to create a transfer record, the previous owner must pay a small transfer fee. There is no option for instead performing a Hashcash calculation.</p>
+
+<h4 id="how-are-bitmark-miners-encouraged-to-publish-transfer-records">How are Bitmark miners encouraged to publish transfer records?</h4>
+
+<p>Transaction fees are required for transfer records. (They can also be optionally used for issue records.) They incentivize the miners to include records in their blocks. Because there is no cryptocurrency on the Bitmark blockchain itself, these fees are managed through interactions with cryptocurrency blockchains.</p>
+
+<p>Whereas most blockchains have a single, verified mempool, Bitmark has two mempools: a pending mempool and a verified mempool. After a Bitmark transaction is created and its signature and link are checked, it’s placed in the pending mempool. It will stay there for up to an hour or until its fee is paid.</p>
+
+<p>The placement of a record in the pending mempool marks the beginning of a five-step process where the Bitmark blockchain requests transaction fees and eventually sends them to miners (called “recorders” on the Bitmark blockchain):</p>
+
+<ol>
+  <li>
+    <p>After creating a transaction, the creator receives a payment request, which includes both a payment ID and a list of possible currencies (currently BTC Bitcoin and LTC Litecoin) and payment addresses.</p>
+  </li>
+  <li>
+    <p>The record creator pays the fee on one of those other blockchains and includes the payment ID in the payment transaction’s OP_RETURN. This fee should be 0.0002 BTC or 0.002 LTC</p>
+  </li>
+  <li>
+    <p>Bitmark watches those other blockchains; when it spots a payment it moves the associated Bitmark transaction from the pending mempool to the verified mempool, making it available for mining.</p>
+  </li>
+  <li>
+    <p>When a miner successfully mines a block, he includes his own payment addresses for all possible currencies.</p>
+  </li>
+  <li>
+    <p>Bitmark pays fees from the block to the miner at his linked addresses.</p>
+  </li>
+</ol>
+
+<p>Even though the Bitmark blockchain doesn’t transact currencies, it is able to leverage the advantages of cryptocurrencies by these links to other blockchains.</p>
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>

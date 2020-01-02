@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" register bitmark certificates">
+<title>Registering Bitmark Certificates | Bitmark Documentation</title>
+
+<link rel="stylesheet" href="/css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="/css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.3.3.7.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/customstyles.css">
+<link rel="stylesheet" href="/css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="/css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/uikit.min.css" />
+<script src="/js/uikit.min.js"></script>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="docs" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 250,
+                    easing: 'swing'
+                }
+            });
+
+            // expand first level at indexes [0,3,7] 
+            $("#mysidebar").navgoco('toggle', true, 0, 3, 7);
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/index.html"><span class="projectTitle home-logo"><img src="/assets/images/Bitmark_Logo-desktop_white.svg" alt="Bitmark logo"/><!-- Home --></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/bitmark-inc/docs" target="_blank" rel="noopener">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:support@bitmark.com?subject=Bitmark Inc feedback&body=I have some feedback about the Registering Bitmark Certificates page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Need help?</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: '/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Registering Bitmark Certificates">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle"> </li>
+  
+  
+  
+  <li>
+      <a title="Learning Bitmark" href="#">Learning Bitmark</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark Property System" href="/learning-bitmark/bitmark-property-system-introduction">Bitmark Property System</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Blockchain" href="/learning-bitmark/bitmark-blockchain">Bitmark Blockchain</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Quick Start" href="">Quick Start</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Run a Bitmark Node" href="/learning-bitmark/quick-start/simple-solution-for-node-setup">Run a Bitmark Node</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Creating Bitmark Account" href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Creating Bitmark Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Registering Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks">Registering Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Transferring Bitmark Certificates" href="/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks">Transferring Bitmark Certificates</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Using Bitmark Shares" href="/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares">Using Bitmark Shares</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Payment" href="/learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment">Bitmark-CLI Payment</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Contributing to Bitmark" href="">Contributing to Bitmark</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Software Development Process" href="/learning-bitmark/contributing-to-bitmark/bitmark-software-development-process">Bitmark Software Development Process</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Upgrade Proposal" href="/learning-bitmark/contributing-to-bitmark/bup">Bitmark Upgrade Proposal</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bug Bounty Program" href="/learning-bitmark/contributing-to-bitmark/bug-bounty-program">Bug Bounty Program</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Terms and Glossary" href="/learning-bitmark/bitmark-terms-and-glossary">Bitmark Terms and Glossary</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark References" href="#">Bitmark References</a>
+      <ul>
+          
+          
+          
+          <li><a title="Tutorial For Node Setup" href="/bitmark-references/node-setup/tutorial-for-node-setup">Tutorial For Node Setup</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark Node Software" href="">Bitmark Node Software</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Bitmark Blockchain Overview" href="/bitmark-references/bitmark-node-software/bitmark-blockchain-overview">Bitmark Blockchain Overview</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="RPC Communication" href="/bitmark-references/bitmark-node-software/rpc-communication">RPC Communication</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Block Verification and Synchronization" href="/bitmark-references/bitmark-node-software/block-verification-and-synchronization">Block Verification and Synchronization</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Payment Verification" href="/bitmark-references/bitmark-node-software/payment-verification">Payment Verification</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark Mining" href="/bitmark-references/bitmark-node-software/bitmark-mining">Bitmark Mining</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Storage" href="/bitmark-references/bitmark-node-software/storage">Storage</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Security" href="/bitmark-references/bitmark-node-software/security">Security</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark SDK" href="">Bitmark SDK</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Getting Started" href="/bitmark-references/bitmark-sdk/getting-started">Getting Started</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Account" href="/bitmark-references/bitmark-sdk/account">Account</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Actions" href="/bitmark-references/bitmark-sdk/action">Actions</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Query" href="/bitmark-references/bitmark-sdk/query">Query</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Migration" href="/bitmark-references/bitmark-sdk/migration">Migration</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Store Seed" href="/bitmark-references/bitmark-sdk/store-seed">Store Seed</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Web Socket" href="/bitmark-references/bitmark-sdk/websocket">Web Socket</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Bitmark CLI" href="">Bitmark CLI</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Quick Setup" href="/bitmark-references/bitmark-cli/bitmark-cli-quick-setup">Quick Setup</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Bitmark-CLI Command Reference" href="/bitmark-references/bitmark-cli/bitmark-cli-command-reference">Bitmark-CLI Command Reference</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Bitmark Appendix" href="#">Bitmark Appendix</a>
+      <ul>
+          
+          
+          
+          <li><a title="Bitmark versus Ethereum" href="/bitmark-appendix/bitmark-eth-comparison">Bitmark versus Ethereum</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Shares" href="/bitmark-appendix/bitmark-shares">Bitmark Shares</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Bitmark Papers" href="/bitmark-appendix/bitmark-papers">Bitmark Papers</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <!-- <div class="post-header">
+   <h1 class="post-title-main">Registering Bitmark Certificates</h1>
+</div> -->
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+
+    <div class="row">
+        <div class="col-md-9"><h1 id="registering-bitmark-certificates">Registering Bitmark Certificates</h1>
+
+<p>Assets with titles that have been publicly recorded are <a href="/learning-bitmark/bitmark-property-system-introduction">more valuable</a> than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates. This can be done using the <a href="#registering-bitmark-certificates-using-the-bitmark-app">Bitmark App</a>, the <a href="#registering-bitmark-certificates-using-the-bitmark-sdk">Bitmark SDK</a>, or the <a href="#registering-bitmark-certificates-using-the-bitmark-cli">Bitmark-CLI</a>.</p>
+
+<p>The process of registering a Bitmark Certificate for a digital asset occurs in two steps:</p>
+
+<ul>
+  <li>
+    <p>Registering the asset: this creates an <em>Asset Record</em>, which is stored on the Bitmark blockchain.</p>
+  </li>
+  <li>
+    <p>Issuing bitmarks: this creates <em>Issue Records</em> linking to the corresponding asset record, which are also stored on the Bitmark blockchain.</p>
+  </li>
+</ul>
+
+<p>This process registers legal property rights on the public Bitmark blockchain for an individual’s digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether the individual wants to keep it, sell it, or donate it.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Any user who want to interact with the Bitmark Property System must have a Bitmark Account. Please refer to the <a href="/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account">Bitmark Account</a> section for instructions on creating a new Bitmark Account.</p>
+
+<h2 id="registering-bitmark-certificates-using-the-bitmark-app">Registering Bitmark Certificates using the Bitmark App</h2>
+
+<p>To register a new property using the Bitmark App:</p>
+
+<ul>
+  <li>
+    <p>On the <strong>PROPERTIES</strong> screen tap <strong>CREATE FIRST PROPERTY</strong> or <strong>+</strong></p>
+
+    <blockquote>
+      <p>This opens the <strong>PROPERTIES &gt; REGISTER</strong> screen.</p>
+    </blockquote>
+
+    <div style="background-color: #efefef; text-align: center;">
+      <img src="/assets/images/RegisteringProperties_0.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
+      <img src="/assets/images/RegisteringProperties_1.png" alt="Properties Register screen" title="Properties Register screen" width="250" style="padding: 20px" />
+  </div>
+  </li>
+  <li>
+    <p>Tap <strong>PHOTOS</strong> or <strong>FILES</strong> to browse the desired asset on your mobile device</p>
+
+    <blockquote>
+      <p>You must grant permission for access to <code class="language-plaintext highlighter-rouge">Photos</code> and/or <code class="language-plaintext highlighter-rouge">Files</code>.</p>
+    </blockquote>
+
+    <div style="background-color: #efefef; text-align: center;">
+      <img src="/assets/images/RegisteringProperties_2.png" alt="Grant Permission popup" title="Grant Permission popup" width="250" style="padding: 20px" />
+      <img src="/assets/images/RegisteringProperties_3.png" alt="Open Photos action sheet" title="Open Photos action sheet" width="250" style="padding: 20px" />
+      <img src="/assets/images/RegisteringProperties_4.png" alt="PHOTOS browsed" title="PHOTOS browsed" width="250" style="padding: 20px" />
+  </div>
+
+    <p><br /></p>
+  </li>
+  <li>
+    <p>Fill in the required information</p>
+
+    <blockquote>
+      <p>As soon as the desired asset is selected, the App will compute the asset’s fingerprint and open the <strong>REGISTER PROPERTY RIGHTS</strong> screen, which allows users to provide more detailed information about the asset.</p>
+
+      <ul>
+        <li>
+          <p>Currently, the <code class="language-plaintext highlighter-rouge">PROPERTY NAME</code> and <code class="language-plaintext highlighter-rouge">NUMBER OF BITMARKS TO ISSUE</code> fields are mandatory.</p>
+        </li>
+        <li>
+          <p>For each <code class="language-plaintext highlighter-rouge">Asset</code>, a user can issue multiple Bitmark Certificates, with the number defined by  <code class="language-plaintext highlighter-rouge">number of bitmarks</code> in the <strong>REGISTER PROPERTY RIGHTS</strong> screen.</p>
+        </li>
+      </ul>
+    </blockquote>
+
+    <div style="background-color: #efefef; text-align: center;">
+      <img src="/assets/images/RegisteringProperties_5.png" alt="Register Property Rights screen" title="Register Property Rights screen" width="250" style="padding: 20px" />
+      <img src="/assets/images/RegisteringProperties_6.PNG" alt="Fill in required information" title="Fill in required information" width="250" style="padding: 20px" />
+  </div>
+  </li>
+  <li>
+    <p>Tap <strong>ISSUE</strong> button</p>
+
+    <blockquote>
+      <p>As soon as <strong>ISSUE</strong> is tapped, the App submits both the <code class="language-plaintext highlighter-rouge">Asset Registration</code> and <code class="language-plaintext highlighter-rouge">bitmarks Issuance</code> transactions to the Bitmark network. After the submission is successful, the properties will be added to the <strong>PROPERTIES &gt; YOURS</strong> screen.</p>
+
+      <p><strong>NOTE:</strong> It will take a while for the transactions to be confirmed on the Bitmark blockchain after submission.</p>
+    </blockquote>
+
+    <div style="background-color: #efefef; text-align: center;">
+      <img src="/assets/images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
+      <img src="/assets/images/RegisteringProperties_8.png" alt="Submission succeeded" title="Submission succeeded" width="250" style="padding: 20px" />
+      <img src="/assets/images/RegisteringProperties_9.PNG" alt="Properties added" title="Properties added" width="250" style="padding: 20px" />
+  </div>
+  </li>
+</ul>
+
+<h2 id="registering-bitmark-certificates-using-the-bitmark-sdk">Registering Bitmark Certificates using the Bitmark SDK</h2>
+
+<p>To register a new property using the Bitmark JS SDK:</p>
+
+<ul>
+  <li><a href="https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-sdk">Configure the SDK and create an account</a></li>
+  <li>
+    <p>Register an asset</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Create a Bitmark Account as the Issuer</span>
+  <span class="kd">let</span> <span class="nx">account</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Account</span><span class="p">();</span>
+
+  <span class="c1">// Define the asset name &amp; metadata</span>
+  <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Example asset</span><span class="dl">"</span><span class="p">;</span>
+  <span class="kd">let</span> <span class="nx">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="dl">"</span><span class="s2">Example key</span><span class="dl">"</span><span class="p">:</span><span class="dl">"</span><span class="s2">Example alue</span><span class="dl">"</span><span class="p">};</span>
+
+  <span class="c1">// Build and sign the asset registration request</span>
+  <span class="kd">let</span> <span class="nx">params</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Asset</span><span class="p">.</span><span class="nx">newRegistrationParams</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">params</span><span class="p">.</span><span class="nx">setFingerprint</span><span class="p">(</span><span class="nx">filepath</span><span class="p">);</span>
+  <span class="nx">params</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+
+  <span class="c1">// Send the request</span>
+  <span class="kd">let</span> <span class="nx">assets</span> <span class="o">=</span> <span class="p">(</span><span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Asset</span><span class="p">.</span><span class="nx">register</span><span class="p">(</span><span class="nx">params</span><span class="p">)).</span><span class="nx">assets</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">assetId</span> <span class="o">=</span> <span class="nx">assets</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Issue the first Bitmark Certificate</p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// Build and sign the bitmark issuance request</span>
+  <span class="kd">let</span> <span class="nx">issueParams</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Bitmark</span><span class="p">.</span><span class="nx">newIssuanceParams</span><span class="p">(</span><span class="nx">assetId</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nx">issueParams</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span><span class="nx">account</span><span class="p">);</span>
+
+  <span class="c1">// Send the request</span>
+  <span class="kd">let</span> <span class="nx">bitmarks</span> <span class="o">=</span> <span class="p">(</span><span class="k">await</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">Bitmark</span><span class="p">.</span><span class="nx">issue</span><span class="p">(</span><span class="nx">issueParams</span><span class="p">)).</span><span class="nx">bitmarks</span><span class="p">;</span>
+
+  <span class="kd">let</span> <span class="nx">bitmarkId</span> <span class="o">=</span> <span class="nx">bitmarks</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify the issuance transaction by querying for the Bitmark by its <code class="language-plaintext highlighter-rouge">bitmarkId</code></p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="k">await</span> <span class="nx">Bitmark</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">bitmarkId</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="registering-bitmark-certificates-using-the-bitmark-cli">Registering Bitmark Certificates using the Bitmark-CLI</h2>
+
+<p>See <a href="https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli">The Basics of Bitmark-CLI</a> for more information on the interface.</p>
+
+<p>To register a new property using the Bitmark-CLI:</p>
+
+<ul>
+  <li>
+    <p>Compute the hash of an asset</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>bitmark-cli <span class="nt">-n</span> &lt;network&gt; <span class="se">\</span>
+  fingerprint <span class="nt">-f</span> &lt;file&gt;
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>The <code class="language-plaintext highlighter-rouge">fingerprint</code> command computes the hash of a file</p>
+
+      <p><strong>Command Options:</strong></p>
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">file</code> - The file from which the hash is computed.</li>
+      </ul>
+    </blockquote>
+
+    <p><em>Example:</em></p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>bitmark-cli <span class="nt">-n</span> testing <span class="se">\</span>
+  fingerprint <span class="nt">-f</span> test.txt
+</code></pre></div>    </div>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"file_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filename.test"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fingerprint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Issue the first Bitmark Certificate</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>bitmark-cli <span class="nt">-n</span> &lt;network&gt; <span class="nt">-i</span> &lt;identity&gt; <span class="se">\</span>
+  create <span class="nt">-a</span> <span class="s1">'&lt;asset name&gt;'</span> <span class="se">\</span>
+  <span class="nt">-m</span> <span class="s1">'&lt;asset metadata&gt;'</span> <span class="se">\</span>
+  <span class="nt">-f</span> &lt;asset fingerprint&gt; <span class="se">\</span>
+  <span class="nt">-z</span>
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>The <code class="language-plaintext highlighter-rouge">create</code> command registers an asset from a fingerprint <em>and</em> issues the corresponding bitmarks</p>
+
+      <p><strong>Global Options:</strong></p>
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">identity</code> - The identity of the registrant’s Bitmark Account, which is stored in the Bitmark-CLI config file.</li>
+      </ul>
+
+      <p><strong>Command Options:</strong></p>
+      <ul>
+        <li>
+          <p><code class="language-plaintext highlighter-rouge">asset name</code> - The <code class="language-plaintext highlighter-rouge">name</code> field in the asset record.</p>
+        </li>
+        <li>
+          <p><code class="language-plaintext highlighter-rouge">asset metadata</code> - The <code class="language-plaintext highlighter-rouge">metadata</code> field in the asset record.</p>
+        </li>
+        <li>
+          <p><code class="language-plaintext highlighter-rouge">asset fingerprint</code> - The hash of the asset.</p>
+        </li>
+        <li>
+          <p><code class="language-plaintext highlighter-rouge">-z</code> option - This is the first Bitmark issued for the asset.</p>
+        </li>
+      </ul>
+    </blockquote>
+
+    <p><em>Example:</em></p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>bitmark-cli <span class="nt">-n</span> testing <span class="nt">-i</span> first <span class="se">\</span>
+  create <span class="nt">-a</span> <span class="s1">'Example asset'</span> <span class="se">\</span>
+  <span class="nt">-m</span> <span class="s1">'Key1\u0000Value1\u0000Key2\u0000Value2'</span> <span class="se">\</span>
+  <span class="nt">-f</span> 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 <span class="se">\</span>
+  <span class="nt">-z</span>
+</code></pre></div>    </div>
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"issueIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"payId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b30bf53de9f6ae5ca59259fd695566bce692d422201c222ff136ab3193f16301e055b1030ce46a1981f439105b3a96e2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payNonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a7b23fc462594028"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"difficulty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000ffffffffffffff8000000000000000000000000000000000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"submittedNonce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000001a67fa973"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"proofStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accepted"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify the status of the Bitmark issuance transaction</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>bitmark-cli <span class="nt">-n</span> &lt;network&gt;<span class="se">\</span>
+    status <span class="nt">-t</span> &lt;txid&gt;
+</code></pre></div>    </div>
+
+    <blockquote>
+      <p>The <code class="language-plaintext highlighter-rouge">status</code> commands checks if a Bitmark has been issued</p>
+
+      <p><strong>Command Options:</strong></p>
+      <ul>
+        <li><code class="language-plaintext highlighter-rouge">txid</code> — The transaction being verified, corresponding to the <code class="language-plaintext highlighter-rouge">issueIds</code> from the <code class="language-plaintext highlighter-rouge">create</code> command</li>
+      </ul>
+
+      <p><strong>Returns:</strong></p>
+      <ul>
+        <li>
+          <p><code class="language-plaintext highlighter-rouge">Pending</code> - Not paid.</p>
+        </li>
+        <li>
+          <p><code class="language-plaintext highlighter-rouge">Verified</code> - Paid but not confirmed on the blockchain.</p>
+        </li>
+        <li>
+          <p><code class="language-plaintext highlighter-rouge">Confirmed</code> - Confirmed on the blockchain.</p>
+        </li>
+      </ul>
+    </blockquote>
+
+    <p><em>Example:</em></p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nv">$ </span>bitmark-cli <span class="nt">-n</span> testing <span class="se">\</span>
+    status <span class="nt">-t</span> <span class="se">\</span>
+    b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
+</code></pre></div>    </div>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">Check</span><span class="w"> </span><span class="err">right</span><span class="w"> </span><span class="err">after</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">command</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+
+  </span><span class="err">//</span><span class="w"> </span><span class="err">Check</span><span class="w"> </span><span class="err">again</span><span class="w"> </span><span class="err">after</span><span class="w"> </span><span class="err">some</span><span class="w"> </span><span class="err">minutes</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="exploring-bitmark-transactions-using-the-bitmark-registry-website">Exploring Bitmark transactions using the Bitmark Registry website</h2>
+
+<p>Userse can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry web application:</p>
+
+<ul>
+  <li>
+    <p>For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com</p>
+  </li>
+  <li>
+    <p>For transactions on the Bitmark testnet blockchain: https://registry.test.bitmark.com</p>
+  </li>
+</ul>
+</div>
+        
+        <div class="col-md-3">
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc" class="affix"></div>
+</div>
+        
+    </div>
+
+    
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               	&copy;2020 Bitmark Inc. All rights reserved.
+				<br/> Powered by <a href="https://jekyllrb.com/">Jekyll</a>
+<!-- <p><img src="/assets/images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div> -->
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>
