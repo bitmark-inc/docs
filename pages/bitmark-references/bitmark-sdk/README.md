@@ -11,16 +11,16 @@
 
 ## [Account](account.md#account)
 
-* [Create an account](account.md#create-an-account)
-* [Get the account number](account.md#get-the-account-number)
-* [Export an account](account.md#export-an-account)
-  * [Seed](account.md#seed)
-  * [Recovery Phrase](account.md#recovery-phrase)
-* [Import an account](account.md#import-an-account)
-  * [Recover from seed](account.md#recover-from-seed)
-  * [Recover from phrase](account.md#recover-from-phrase)
-* [Sign and Verify](account.md#sign-and-verify)
-* [Validate an account number](account.md#validate-an-account-number)
+* [Creating an account](account.md#creating-an-account)
+* [Retrieving the account number](account.md#retrieving-the-account-number)
+* [Exporting an account](account.md#exporting-an-account)
+  * [Exporting a seed](account.md#exporting-a-seed)
+  * [Exporting a recovery phrase](account.md#exporting-a-recovery-phrase)
+* [Importing an account](account.md#importing-an-account)
+  * [Recovering from a seed](account.md#recovering-from-a-seed)
+  * [Recovering from a phrase](account.md#recovering-from-a-phrase)
+* [Signing and verifying](account.md#signing-and-verifying)
+* [Validating an account number](account.md#validating-an-account-number)
 
 
 ## [Actions](action.md)
