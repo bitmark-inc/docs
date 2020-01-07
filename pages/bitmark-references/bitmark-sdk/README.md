@@ -4,9 +4,9 @@
 
 ## [Getting Started](bitmark-sdk-document.md#getting-started)
 
-* [Installation](bitmark-sdk-document.md#installation)
-* [Get your API token](bitmark-sdk-document.md#get-your-api-token)
-* [Configuration](bitmark-sdk-document.md#configuration)
+* [Installing SDK Packages](bitmark-sdk-document.md#installing-sdk-packages)
+* [Acquiring an API token](bitmark-sdk-document.md#acquiring-an-api-token)
+* [Configuring the SDK](bitmark-sdk-document.md#configuring-the-sdk)
 
 
 ## [Account](account.md#account)
