@@ -364,7 +364,7 @@ _, err := bitmark.Respond(params)
 {% endcodetab %}
 {% endcodetabs %}
 
-### Rejecting a transfer
+### Rejecting a transfer offer
 
 The receiver can also reject a bitmark transfer offer.
 The status of the bitmark will reverted to `settled`, and the sender can create a new transfer offer.
