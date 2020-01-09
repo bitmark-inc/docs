@@ -25,16 +25,16 @@
 
 ## [Actions](action.md)
 
-* [Register an asset](action.md#register-an-asset)
-* [Issue bitmarks](action.md#issue-bitmarks)
-* [Transfer a bitmark](action.md#transfer-a-bitmark)
+* [Registering an asset](action.md#registering-an-asset)
+* [Issuing a bitmark](action.md#issuing-a-bitmark)
+* [Transferring a bitmark](action.md#transferring-a-bitmark)
   * [Direct transfer](action.md#direct-transfer)
   * [Countersigned transfer](action.md#countersigned-transfer)
-    * [Propose a bitmark transfer offer](action.md#propose-a-bitmark-transfer-offer)
-    * [Query offering bitmarks](action.md#query-offering-bitmarks)
-    * [Accept the bitmark transfer offer](action.md#accept-the-bitmark-transfer-offer)
-    * [Reject the transfer offer](action.md#reject-the-transfer-offer)
-    * [Cancel the transfer offer](action.md#cancel-the-transfer-offer)
+    * [Proposing a transfer offer](action.md#proposing-a-transfer-offer)
+    * [Querying for offers](action.md#querying-for-offers)
+    * [Accepting a transfer offer](action.md#accepting-a-transfer-offer)
+    * [Rejecting a transfer offer](action.md#rejecting-a-transfer-offer)
+    * [Canceling a transfer offer](action.md#canceling-a-transfer-offer)
 
 
 ## [Query](query.md#query)
