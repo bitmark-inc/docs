@@ -37,7 +37,7 @@
     * [Canceling a transfer offer](action.md#canceling-a-transfer-offer)
 
 
-## [Queries](query.md#query)
+## [Queries](query.md)
 
 * [Asset](query.md#asset)
   * [Record data structure](query.md#record-data-structure)
@@ -61,7 +61,7 @@
     * [bitmarks offered to the specific receiver](query.md#bitmarks-offered-to-the-specific-receiver)
 
 
-## [Store Seed](store-seed.md#store-seed)
+## [Storing a Seed](store-seed.md)
   
 * [Android](store-seed.md#android)
 * [iOS](store-seed.md#ios)
