@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-sdk
 
 # Queries
 
-The bitmark SDK support queries about assets, bitmarks, and transactions (txs), which are records that are created or updated when different actions (register, issue, or transfer) are applied.
+The Bitmark SDK support queries about assets, bitmarks, and transactions (txs), which are records that are created or updated when different actions (register, issue, or transfer) occur.
 
 For the retrieval of a single record, use the record ID (`asset_id` for an asset, `bitmark_id` for a bitmark, or `tx_id` for a transaction) with the standard function to retrieve that specific record.
 
@@ -17,15 +17,15 @@ For the retrieval of a collection of records, use one of several query functions
 
 All records support the following filters:
 
-- `pending`: determines whether to include pending records (not added to the blockchain yet)
+- `pending`: determines whether to include pending records that are not yet added to the blockchain
 - `limit`: sets the maximum number of records to be returned in one query
-- `offset`: returns the records which are updated subsequently
+- `offset`: returns the records that are updated subsequently
 
 <!-- TODO: explain how to iterate all records -->
 
 Both bitmark and transaction record can be linked to a fundamental asset record, so they support two extra query parameters:
 
-- `referenced_asset`: specifies the asset ID which the records link to
+- `referenced_asset`: specifies the asset ID that the records link to
 - `load_asset`: determines whether to include referenced asset objects
 
 The actual query functions could be in snake case or camel case depends on which SDK is used. For simplicity, the camel case is used for explanation.
@@ -46,7 +46,7 @@ An asset record is available when it's registered and there is at least one acco
 | status | The status on the blockchain, which has possible values of `pending` or `confirmed` |
 | block_number | The block that incorporates the asset record |
 | offset | An auto-incremental number, which increments when the data is updated |
-| created_at | The time whhen the asset status becomes `confirmed` |
+| created_at | The time when the asset status becomes `confirmed` |
 
 ### Querying for a specific asset
 
@@ -169,7 +169,7 @@ Actions that are applied to the same bitmark will create a chain of transactions
 | status | The status on the blockchain, which has possible values of `pending` or `confirmed` |
 | block_number | The block that incorporates the tx record |
 | offset | An auto-incremental number that increments when the data is updated |
-| confirmation | the number of blocks in the block chain that have been accepted by the network since the block that includes the transaction |
+| confirmation | the number of blocks in the blockchain that have been accepted by the network since the block that includes the transaction |
 | countersign | Whether this tx is a two-signature transfer |
 
 ### Querying for a specific transaction
@@ -315,7 +315,7 @@ When a bitmark is issued, the corresponding bitmark and transaction record are c
 
 ![bitmark record at the time of issuance](record_bitmark_issue.png)
 
-When a bitmark is transferred, more transaction records are added to the property chain and the bitmark record will be updated.
+When a bitmark is transferred, more transaction records are added to the property chain and the bitmark record is updated.
 
 ![bitmark record after transfer](record_bitmark_transfer.png)
 
@@ -390,6 +390,7 @@ Bitmark.get(bitmarkId, new Callback1<GetBitmarkResponse>() {
 
 To list the bitmarks that are issued by the specific account number, use that account as an argument. The issuer can increase the quality of each returned bitmark.
 
+<!-- TODO: Better explain what "increase the quality" means -->
 <!-- TODO: examples -->
 
 #### Bitmarks owned by a specific owner
@@ -400,12 +401,12 @@ To list the bitmarks that are currently owned by the specific account number, us
 
 #### Bitmarks offered from the specific sender
 
-To list the bitmarks which are offered by a sender, use that account as an argument. The sender can take action on these bitmarks (cancel an offer).
+To list the bitmarks that are offered by a sender, use that account as an argument. The sender can take action on these bitmarks (sych as cancel an offer).
 
 <!-- TODO: examples -->
 
 #### bitmarks offered to the specific receiver
 
-To list the bitmarks which are offered to a receiver, use that account as an argument. The receiver can take actions on these bitmarks (accept or reject an offer).
+To list the bitmarks which are offered to a receiver, use that account as an argument. The receiver can take actions on these bitmarks (such as accept or reject an offer).
 
 <!-- TODO: examples -->
