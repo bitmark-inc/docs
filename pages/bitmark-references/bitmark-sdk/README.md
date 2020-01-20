@@ -60,6 +60,13 @@
     * [bitmarks offered from the specific sender](query.md#bitmarks-offered-from-the-specific-sender)
     * [bitmarks offered to the specific receiver](query.md#bitmarks-offered-to-the-specific-receiver)
 
+## [Triggering from Web Socket Events](websocket.md#web-socket)
+  
+* [Event](websocket.md#event)
+* [Java](websocket.md#java)
+    * [Connect/Disconnect](websocket.md#connectdisconnect)
+    * [Subscribe/Unsubscribe](websocket.md#subscribeunsubscribe)
+* [Swift](websocket.md#swift)
 
 ## [Storing a Seed](store-seed.md)
   
@@ -67,11 +74,5 @@
 * [iOS](store-seed.md#ios)
 
 
-## [Web Socket](websocket.md#web-socket)
-  
-* [Event](websocket.md#event)
-* [Java](websocket.md#java)
-    * [Connect/Disconnect](websocket.md#connectdisconnect)
-    * [Subscribe/Unsubscribe](websocket.md#subscribeunsubscribe)
-* [Swift](websocket.md#swift)
+
 
