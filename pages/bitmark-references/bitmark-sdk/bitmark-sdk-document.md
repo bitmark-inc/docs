@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-sdk
 
 # Overview
 
-The Bitmark Property System is a universal property system for conferring the same property rights to digital assets as have long existed for physical assets. The system records ownership claims for digital assets on the public Bitmark blockchain using digital property titles known as Bitmark Certificates. These digital assets can be any sort of digital object, including files, applications, code, and data. 
+The Bitmark Property System is a universal property system that confers the same property rights to digital assets that have long existed for physical assets. The system records ownership claims for digital assets on the public Bitmark blockchain using digital property titles known as Bitmark certificates. These digital assets can be any sort of digital object, including files, applications, code, and data. 
 
 In the digital world:
 
@@ -17,7 +17,7 @@ In the digital world:
 
 You can work with the Bitmark blockchain to look up Bitmark certificates or even to register and transfer digital properties using the Bitmark SDK, a collection of libraries for different programming languages and mobile platforms. In addition to providing language-specific bindings to the Bitmark APIs, the SDK also simplifies local key management for signing and encryption.
 
-For simplicity, the term *bitmark certificate* is shortened as *bitmark* in the SDK.
+For simplicity, the term *Bitmark certificate* is shortened as *bitmark* in the SDK.
 
 # Getting Started
 
