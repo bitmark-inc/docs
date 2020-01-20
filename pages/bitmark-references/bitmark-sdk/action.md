@@ -9,13 +9,13 @@ folder: bitmark-references/bitmark-sdk
 
 # Actions
 
-The Bitmark Property System focuses on digital assets that can be registered, issues, or transferred.
+The Bitmark Property System focuses on digital assets that can be registered, issued, or transferred.
 
 ## Registering an asset
 
 The first step in creating a digital property is registering an asset, which can be any digital object including files, applications, code, or data.
 
-Each asset can be described by a name and metadata (both optional) and must be uniquely identified by its fingerprint. If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain.
+Each asset can be described by a name and by metadata (both optional) and must be uniquely identified by its fingerprint. If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain.
 
 An asset record won't be added to the blockchain without an accompanying bitmark issuances (see the next section for more info). Such an "orphaned" asset records will vanish after three days.
 
@@ -137,7 +137,7 @@ There are two ways to transfer a bitmark from one Bitmark account to another:
 - **direct transfer** (1-sig transfer): only requires the sender's signature
 - **countersigned transfer** (2-sig transfer): requires both the sender's and the receiver's signature
 
-Direct transfer is similar to sending emails: the sender does not get consent from the receiver before sending a mail.
+Direct transfer is similar to sending emails: the sender does not get consent from the receiver before sending the mail.
 
 Countersigned transfer is similar to certified mail or a package delivery that requires a signature: the receiver has the right to accept or reject the delivery of a package. The actual transfer won't take effect until the receiver explicitly provides the second signature, a.k.a. countersignature, as consent.
 
