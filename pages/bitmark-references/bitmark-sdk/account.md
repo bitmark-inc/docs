@@ -11,7 +11,7 @@ folder: bitmark-references/bitmark-sdk
 
 Within the Bitmark Property System, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations.
 
-An account incorporates the public-private key-pair; the private key is required to [digitally sign](https://en.wikipedia.org/wiki/Digital_signature) any Bitmark blockchain record, including asset records, issue records, and transfer records.
+An account incorporates the public-private key-pair; the private key is needed to [digitally sign](https://en.wikipedia.org/wiki/Digital_signature) any Bitmark blockchain record, including asset records, issue records, and transfer records.
 
 ## Creating an account
 
@@ -84,7 +84,7 @@ accountNumber := acct.AccountNumber()
 
 There are two formats for exporting an account: **seed** and **recovery phrase**, both of which store all the required information to instantiate an account.
 
-Both the seed and the recovery phrase can be used to derive the original private key of an account, so it is critical to keep them stored securely. 
+Both the seed and the recovery phrase can be used to derive the original private key of an account, so it is critical to store them securely.
 
 ### Exporting a seed
 
@@ -120,7 +120,7 @@ seed := acct.Seed()
 
 ### Exporting a recovery phrase
 
-The recovery phrase, which consists of 12 [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior to the seed for human interaction. If you don't maintain custody the seeds of your users, make sure you present the recovery phrase to them and teach them [how to store it in a secure place](https://help.trustwallet.com/hc/en-us/articles/360016509753-Best-Practices-for-Storing-Your-Recovery-Phrase). 
+The recovery phrase, which consists of twelve [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior to the seed for human interaction. If you don't maintain custody of the seeds of your users, make sure you present the recovery phrase to them and teach them [how to store it in a secure place](https://help.trustwallet.com/hc/en-us/articles/360016509753-Best-Practices-for-Storing-Your-Recovery-Phrase). 
 
 Currently English and traditional Chinese phrases are supported.
 
@@ -260,7 +260,7 @@ acct, err := account.FromRecoveryPhrase(
 
 ## Signing and verifying
 
-An account can be used to sign an arbitrary message. Any party with the received message and the corresponding signature can then validate if the message was created by a known sender (authentication) and that the message was not altered in transit (integrity). This functionality is usually useful when you have a server application that needs to authenticate if the requests are from valid users.
+An account can be used to sign an arbitrary message. Any party with the received message and the corresponding signature can then validate if the message was created by a known sender (authentication) and that the message was not altered in transit (integrity). This functionality is usually useful when you have a server application that needs to authenticate whether requests are from valid users.
 
 {% codetabs %}
 {% codetab JS %}
@@ -317,7 +317,7 @@ err := account.Verify(acct.AccountNumber(), msg, sig)
 ## Validating an account number
 
 Validating a given account number verifies that it is valid in the current runtime environment (i.e.,
-the format is correct and its network matches to the network specified in the SDK config during initialization). The SDK functions return an error if the validation fails.
+the format is correct and its network matches the network specified in the SDK config during initialization). The SDK functions return an error if the validation fails.
 
 {% codetabs %}
 {% codetab JS %}
