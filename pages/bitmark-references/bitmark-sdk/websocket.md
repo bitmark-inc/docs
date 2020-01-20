@@ -8,7 +8,7 @@ folder: bitmark-references/bitmark-sdk
 ---
 
 # Web Socket
-Realtime event triggering is trending in modern application development. It helps application to always be up to date and so provides better user experience.
+Realtime event triggering is trending in modern application development. It helps application to always be up to date and so provides better user experiences.
 Bitmark SDK offers Web Socket event triggering so that the application can be notified immediately when anything changes.
 
 ## Event
@@ -18,17 +18,17 @@ Bitmark SDK offers Web Socket event triggering so that the application can be no
   + `bitmarkId`: the id of the bitmark that changed
   + `txId`: the corresponding transaction id
   + `presence`: whether the bitmark is owned or not by the corresponding `Account`
-- New transfer offer: Sent when users receive new transfer offer, for two-signatures transfer.
+- New transfer offer: Sent when users receive new transfer offers, for two-signatures transfer.
   + `bitmarkId`: the id of the bitmark that's offered
 - New pending issuance: Sent when users issue new bitmarks.
   + `bitmarkId` : the id of the bitmark that's issuing
-- New pending transfer: Sent when a transfer occurs to both sender and receiver.
+- New pending transfer: Sent when a transfer occurs, to both sender and receiver.
   + `txId`: the transaction id
   + `owner`: the recipient of this transfer
   + `prevTxId`: the previous transaction id
   + `prevOwner`: the sender who made the transfer
 
-Note: The attribute names could be different depending on the SDK is used. This document refers specifically to the Java SDK.
+Note: The attribute names could be different depending on the SDK used. This document refers specifically to the Java SDK.
 
 ### Connect/Disconnect
 {% codetabs %}
