@@ -11,6 +11,8 @@ folder: bitmark-references/bitmark-sdk
 
 Storing your `Account` using a mobile application is very important to ensure its security and to protect your user data against attackers. Bitmark SDK supports storing your Account seed securely in mobile applications on both the **Android** and **iOS** platforms.
 
+_Unlike other SDK documents, which cover Go, Java, JavaScript, and Swift, this document only describes the SDK for mobile platforms: Java for Android and Swift for iOS._
+
 ## Android
 
 The Android Bitmark SDK  provides `KeyAuthenticationSpec.Builder` for storing and retrieving `Account` securely. 
@@ -94,20 +96,20 @@ account.removeFromKeyStore(activity, spec, new Callback0() {
 
 Bitmark Android SDK supports storing keys from Android **API 23(M)** and above because of the security level.
 
-Bitmark Android SDK would authenticate the user **each time** they use the key (depend on the `KeyAuthenticationSpec` setting) to protect the user against attackers. We use Android Key Store system with a lot of security algorithm for protecting the user's key.
+Bitmark Android SDK would authenticate the user **each time** they use the key (depend on the `KeyAuthenticationSpec` setting) to protect the user against attackers. The SDK uses the Android Key Store system with a lot of security algorithm for protecting the user's key.
 
 **NOTE**:
 
 - You **need** to `extends StatefulActivity` in the host `Activity` you pass for storing, retrieving, or deleting the key.
 - **React Native** is also supported as an *experimental* feature. You **need** to `extends StatefulReactActivity` in the host `Activity` you want to pass for storing, retrieving, or deleting the key.
-- We use Android Key store for securely storing the `Account` so that if the key used to encrypt `Account` is invalidated by some method, such as adding or removing the fingerprint, or even if the key is no longer available, some official `Exception` will be thrown. For more detail, please visit [here](https://developer.android.com/training/articles/keystore).
+- We use Android Key store for securely storing the `Account` so that if the key used to encrypt `Account` is invalidated by some method, such as adding or removing the fingerprint, or even if the key is no longer available, some official `Exception` will be thrown. For more details, please visit [Android's article on keystore](https://developer.android.com/training/articles/keystore).
 
 ## iOS
 
 Bitmark Swift SDK uses iOS keychain to store bitmark accounts. To use this feature, on your app, you need to setup the keychain first.
 
 | Parameter | Description |
-| `service` | your keychain service name; dependant on what is configured in the entitlement file |
+| `service` | your keychain service name; dependent on what is configured in the entitlement file |
 | `alias` | the key to save your account into keychain; default value is your account number |
 
 ```swift
