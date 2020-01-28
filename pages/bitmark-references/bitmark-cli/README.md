@@ -2,9 +2,9 @@
 
 ## [Quick Setup](quick-setup.md#quick-setup)
 
-* [Quick Setup](quick-setup.md#quick-setup)
-* [Adding extra connections](quick-setup.md#adding-extra-connections)
-
+* [Creating an Identity](quick-setup#creating-an-identity)
+* [Configuring the CLI](quick-setup#configuring-the-cli)
+* [Adding Extra Connections](quick-setup.md#adding-extra-connections)
 
 ## [Bitmark\-CLI Command Reference](bitmark-cli.md#bitmark-cli-command-reference)
   
