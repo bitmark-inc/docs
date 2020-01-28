@@ -11,96 +11,94 @@ folder: bitmark-references/bitmark-cli
 
 ## Basic Command Structure
 
+The basic structure of `bitmark-cli` commands is:
 ~~~
 bitmark-cli [global-options] command [command-options]
 ~~~
 
-## Global Options
+### Global Options
 
-Options listed as long form and their single character abbreviation.
+Global options have both long-form and single character abbreviations:
 
 -------------------------------  ---------------------------------
-`--verbose|-v`                   This allows the CLI to output additional information
+`--verbose|-v`                   Requests that the CLI output additional information
                                  for each command.  Most commands will
-                                 output the JSON request and response
+                                 output the JSON request and the response
                                  sent to the bitmarkd.
 
 `--network|-n NETWORK`           Determines which network the
                                  command will be sent to from these
                                  values:
-                                 * `bitmark` the live network which uses live BTC or LTC to pay for the transactions.
-                                 * `testing` a network for testing newly developed programs, it uses testnet coins to pay for transactions.
-                                 * `local` a special case for running a regression test network on the loopback interface.
+                                 * `bitmark`, the live network, which uses live BTC or LTC to pay for transactions.
+                                 * `testing`, a network for testing newly developed programs, which uses testnet coins to pay for transactions.
+                                 * `local`, a special case for running a regression test network on the loopback interface.
 
-`--connection|-c NUMBER`         Optionally allows for one of the other
+`--connection|-c NUMBER`         Requests that one of the other
                                  connections listed in the
-                                 configuration file to be used instead
+                                 configuration file be used, instead
                                  of defaulting to the first one.
 
-`--identity|-i NAME`             Optionally override the default identity to allow
+`--identity|-i NAME`             Overrides the default identity to allow
                                  running commands as another account.
-                                 (See "Identity definition" for more details)
+                                 See "Options: identity" for more details.
 
-`--password|-p PASSWORD`         This is primarily used for regression testing
-                                 scripts to supply a password.  It is
-                                 not recommended for normal use as the
+`--password|-p PASSWORD`         Supplies a password, primarily for regeression testing scripts. It is
+                                 not recommended for normal use, as the
                                  password will be left in the command
-                                 history or be viewable by a process
-                                 display command (top, ps, etc.)
+                                 history and be viewable by process
+                                 display commands such as `top` and `ps`.
 
-`--use-agent|-u EXECUTABLE`      This is the way to access a password
-                                 stored in a password manager. See below.
+`--use-agent|-u EXECUTABLE`      Accesses password
+                                 stored in a password manager. See "Options: agent program" for more details.
 
 `--zero-agent-cache|-z`          Prepends a `--clear` to the argument list of
-                                 the `--use-agent` command to force
+                                 the `--use-agent` command, to force
                                  the password manager to re-prompt for
                                  the password.
 -------------------------------  ---------------------------------
 
-### Identity definition
+### Options: Identity
 
-To represent a Bitmark account a short mnemonic **Identity** string is used.
-
-The identities are stored in the configuration file and contain 3 parts:
-* The password protected private key, used for signing transactions
-* The public Account Number (a Base58 string), used as the recipient in transfers
-* A description just to hold some additional text, never sent to blockchain
+A short mnemonic **identity** string is used to represent each Bitmark account. These identities are stored in the configuration file and contain three parts:
+* The password-protected private key, used for signing transactions.
+* The public Account Number (a Base58 string), used as the recipient in transfers.
+* A description for holding additional text, which is never sent to blockchain.
 
 After initial setup that first identity is normally used to sign all
-transactions, however it can be overridden by the global `--identity` option.
+transactions. However, it can be overridden by the global `--identity` option.
 
-### Options and parameters passed to the agent program:
+### Options: Agent Programs
 
 The CLI program can use an external program or an executable script to
-request the password from a password manager.  The CLI provides a set
-of parameters that allows this program to determine which password is
-required, the `cache-id`.  The other parameters are for display
-purposes and correspond the the data required by the GNU Privacy Guard
+request the password from a password manager.  The CLI provides 
+a `cache-id` parameter that allows this program to determine which password is
+required. Other parameters are used for display
+purposes and correspond to the data required by the GNU Privacy Guard
 password dialog.
 
 ~~~
 0:   --clear             = clear any cached password to force reprompt
                            [only if zero-agent-cache option is set]
-1:   --confirm=1         = for additional confirm
+1:   --confirm=1         = for additional confirmation
 2:   cache-id            = "bitmark-cli:password:<IDENTITY>"
 3:   error-message       = ""
 4:   prompt              = "<IDENTITY>"
-5:   description         = descriptive string shows create/transfer operation
+5:   description         = shows create/transfer operation as a descriptive string
 ~~~
 
 A sample `ask-gpg-agent` script is provided in the bitmarkd source
-code repository and this can be used to produce a similar script for
+code repository; it can be used as a model to create a similar script for
 other password managers.
 
 
-# CLI Command Synopsis
+## CLI Command Synopsis
 
 -------------  ---------------------------------
 setup          Initialise bitmark-cli configuration file
 add            Add a new identity to configuration file
 create         Create one or more new bitmarks
 transfer       Transfer a bitmark to another account
-countersign    Countersign a two signature transaction
+countersign    Countersign a two-signature transaction
 blocktransfer  Transfer a bitmark to another account
 provenance     List provenance of a bitmark
 owned          List bitmarks owned
@@ -117,13 +115,13 @@ fingerprint    Fingerprint a file (version 01 SHA3-512 algorithm)
 sign           Sign file
 verify         Verify file signature file
 version        Display bitmark-cli version
-help           Shows a list of commands or help for one command
+help           Show a list of commands or help for one command
 -------------  ---------------------------------
 
 
-# CLI commands
+## CLI commands
 
-## setup
+### setup
 
 Creates the initial configuration file for a network and sets the
 default identity.  There are separate files for each network.
@@ -138,35 +136,37 @@ random password to secure the account's private key.
 **Errors.**  If the configuration file already exists then this command
 will terminate with an error and not modify the file.
 
-**Bugs.** Currently only adds one connection and no way to update this
+**Bugs.** Currently only adds one connection, with no way to update this
 other than manual editing of the configuration file.
 
-### Command options
+#### Command options
 
 ------------------------------  ---------------------------------
-`--connect|-c HOST:PORT`        Sets the default bitmarkd connection, this
+`--connect|-c HOST:PORT`        Sets the default bitmarkd connection. This
                                 TCP connection will be used for all data
                                 submitted to the blockchain.
 
 `--description|-d "STRING"`     Sets a description string for the initial
                                 identity.  This is only for the CLI
-                                user, it is not used by and command or
+                                user, it is not used by any command and is not
                                 sent over the network.
 
 `--new|-n`                      Specifies that a new account seed is to be generated.
 
-`--seed|-s SEED-STRING`         This is used in place of `--new` to import an
+`--seed|-s SEED-STRING`         Used in place of `--new`, imports an
                                 existing account seed into the CLI
                                 configuration file.  The CLI accepts
-                                both V1 and V2 Base58 encoded seeds.
+                                both V1 and V2 Base58-encoded seeds.
 ------------------------------  ---------------------------------
 
-### EXAMPLE
+#### EXAMPLE
 
 ~~~
 bitmark-cli --identity=fred --network=testing setup --connect=node-d1.test.bitmark.com:2130 --description="Bedrock Bowling Champion" --new
 ~~~
 
+----> ETH
+----> #s fixed to here. Add +1 to everything <----
 
 ## add
 
