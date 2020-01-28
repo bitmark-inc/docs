@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-cli
 
 # Quick Setup
 
-The `bitmark-cli` program can be used on both the testnet and Bitmark blockchains, with seperate configuration files created for each blockchain, to avoid confusion.
+The `bitmark-cli` program can be used on both the testing and Bitmark blockchains, with seperate configuration files created for each blockchain, to avoid confusion.
 
 ## Creating an Identity
 
@@ -23,7 +23,7 @@ bitmarkcli -i IDENTITY -n NETWORK setup -d 'DESCRIPTION OF IDENTITY' -c HOST:213
 
 You can then create the initial configuration file.
 
-For the testnet blocking:
+For the testing blocking:
 
 ~~~
 bitmarkcli -i fred -n testing setup -n -d 'Testing account for Fred' -c node-a1.test.bitmark.com:2130
@@ -74,7 +74,7 @@ them. The JSON configuration can be edited in any text editor, but be
 careful to keep the formatting correct; JSON is not tolerant of
 missing or extraneous commas.
 
-**Testnet Example:**
+**Testing Example:**
 
 ~~~
 {
