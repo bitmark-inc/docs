@@ -1,11 +1,11 @@
 ---
-title: Official Documentation for Working with Bitmark
+title: Official Bitmark Documentation
 keywords: homepage, home
 sidebar: mydoc_sidebar
 permalink: /index.html
 ---
 
-# Official Documentation for Working with Bitmark
+# Official Bitmark Documentation
 
 The Bitmark Property System allows individuals to use the Bitmark blockchain to register and acquire digital assets, giving them control over how they're used, transferred, licensed, or sold. It's a self-sovereign system that permits everyone to be the ultimate authority for their digital property.
 
