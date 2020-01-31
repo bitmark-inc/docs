@@ -90,7 +90,6 @@ A sample `ask-gpg-agent` script is provided in the bitmarkd source
 code repository; it can be used as a model to create a similar script for
 other password managers.
 
-
 ## CLI Command Synopsis
 
 -------------  ---------------------------------
@@ -133,7 +132,7 @@ be set.
 for a password to encrypt the generated seed. Be sure to choose a good
 random password to secure the account's private key.
 
-**Errors.**  If the configuration file already exists then this command
+**Errors.**  If the configuration file already exists, this command
 will terminate with an error and not modify the file.
 
 **Bugs.** Currently only adds one connection, with no way to update this
@@ -148,7 +147,7 @@ other than manual editing of the configuration file.
 
 `--description|-d "STRING"`     Sets a description string for the initial
                                 identity.  This is only for the CLI
-                                user, it is not used by any command and is not
+                                user; it is not used by any command and is not
                                 sent over the network.
 
 `--new|-n`                      Specifies that a new account seed is to be generated.
@@ -159,172 +158,169 @@ other than manual editing of the configuration file.
                                 both V1 and V2 Base58-encoded seeds.
 ------------------------------  ---------------------------------
 
-#### EXAMPLE
+#### Example
 
 ~~~
 bitmark-cli --identity=fred --network=testing setup --connect=node-d1.test.bitmark.com:2130 --description="Bedrock Bowling Champion" --new
 ~~~
 
-----> ETH
-----> #s fixed to here. Add +1 to everything <----
+### add
 
-## add
-
-Update the configuration file by adding a new identity for a
+Updates the configuration file by adding a new identity on a
 network.
 
 **Arguments.** Both the `--identity` and `--network` global options must
 be specified.
 
-**Additional input.** Before creating the file the CLI will prompt for a
-password to encrypt the generated seed, choose a good random password
-to secure the account's private key.  The password is not prompted
+**Additional input.** Before creating the file, the CLI will prompt for a
+password to encrypt the generated seed. Choose a good random password
+to secure the account's private key. The password is not prompted
 when using the `--account` option since only the public key is
 present.
 
 **Errors.** The identity must not already exist or the command will
 terminate with an error and not modify the file.
 
-### Command options
+#### Command options
 
 ------------------------------  ---------------------------------
 `--description|-d "STRING"`     Sets a description string for the initial identity.
-                                This is only descriptive text for the CLI user, it
-                                is not used by and command or sent over the network.
+                                This is only descriptive text for the CLI user; it
+                                is not used by any command nor sent over the network.
 
 `--new|-n`                      Specifies that a new account seed is to be generated.
 
-`--seed|-s SEED-STRING`         This is used in place of `--new` to import an existing account seed
-                                into the CLI configuration file.  The CLI accepts both V1 and V2
-                                Base58 encoded seeds.
+`--seed|-s SEED-STRING`         Used in place of `--new`, imports an existing account seed
+                                into the CLI configuration file. The CLI accepts both V1 and V2
+                                Base58-encoded seeds.
 
-`--account|-a ACCOUNT-STRING`   This is used in place of `--new` or `--seed` to import an existing
+`--account|-a ACCOUNT-STRING`   Used in place of `--new` or `--seed`, imports an existing
                                 account into the CLI configuration file.  Since only the
-                                public key is contained within the Base58 encoded account, this
+                                public key is contained within the Base58-encoded account, this
                                 identity cannot be used for signing items.  It is meant for use as
                                 the recipient of a transfer.
 ------------------------------  ---------------------------------
 
-### EXAMPLE
+#### Example
 
 ~~~
 bitmark-cli --identity=wilma --network=testing add --description="The real Ruler" --new
 ~~~
 
 
-## create
+### create
 
-This command create a bitmark by sending both an Asset record and one
+Creates a bitmark by sending both an asset record and one
 or more issue records.
 
 **Arguments.** The `--network` global option must be specified.
 
-**Additional input.** Before creating the Bitmark the CLI will prompt
+**Additional input.** Before creating the Bitmark, the CLI will prompt
 for a password to decrypt the identity's private key to perform the
 signing operation.
 
 **Errors.** The command will terminate with an error if the asset name
 or metadata do not match exactly when creating additional Bitmarks.
-In the "free issue (--zero)" case there will be an error if this issue
+In the "free issue (--zero)", case there will be an error if this issue
 already exists.
 
-### Command options
+#### Command options
 
 ------------------------------  ---------------------------------
-`--asset|-a "STRING"`           A short name to describe the asset being issued
+`--asset|-a "STRING"`          Describes the asset being issued with a short name.
 
-`--metadata|-m "METADATA"`      A key-value map of data to provide details
-                                about the asset.  Keys and values
-                                are separated by a zero byte which is
+`--metadata|-m "METADATA"`      Provides details
+                                about the asset using a key-value map of data.  Keys and values
+                                are separated by a zero byte, which is
                                 represented using JSON encoding as
-                                `"\u0000"`
+                                `"\u0000"`.
 
-`--fingerprint|-f "STRING"`     Any kind of string that represents a
+`--fingerprint|-f "STRING"`     Represents a
                                 globally unique identifier for an
-                                asset.  There is a `fingerprint` command
+                                asset using any type of string. There is a `fingerprint` command
                                 that will give the same hex string that
                                 Bitmark Inc. applications also use.
 
-`--zero|-z`                     Restrict the issue to the initial free one.
+`--zero|-z`                     Restricts the issue to the initial free one.
                                 (See "Free issues" below)
 
-`--quantity|-q NUMBER`          Allows issuing a block of bitmarks for a single
-                                payment up to a maximum of 100.  If
-                                the free issue had not been created
-                                then only a quantity of one is allowed
+`--quantity|-q NUMBER`          Allows issuance of a block of bitmarks up to a maximum of 100 for a single
+                                payment.  If
+                                the free issue had not been created,
+                                then only a quantity of one is allowed,
                                 and this issue must be confirmed
                                 before a larger quantity is allowed.
 ------------------------------  ---------------------------------
 
-### EXAMPLE
+#### Example
 
 ~~~
 bitmark-cli --identity=fred --network=testing create --asset='Fred Flintstone' --metadata='desc\u0000photo of Fred Flintstone\u0000src\u0000Wikipedia' --fingerprint=01ee0039791329016fc93e083ede6bd4266ed6f65812b483c05b5bf75252112178a4ffeeb4ede5949c6e4d9e26fba00f95fbc71b4fa7c5a9220bec49e6c18848fe
 ~~~
 
 
-### Free issues
+#### Note: Free issues
 
-For any asset there is a special issue that is free of cost.  Even if
-an asset already exists a different Bitmark account can create a free
+For any asset, there is a special issue that is free of cost.  Even if
+the asset already exists, a different Bitmark account can create a free
 issue for it.  Internally the issue record has a NONCE value of zero.
 
 This leads to the following cases:
 
-* A new asset, a free issue must be made and must be confirmed before
+* For a new asset, a free issue must be made and must be confirmed before
   any other issue can be made against this asset.  Trying to issue
   quantity greater than one in this case will always fail as the
   confirmed asset does not yet exist.
 
-* A confirmed existing asset, an account that never made an issue
+* For a confirmed existing asset, an account that never made an issue
   against this asset could choose to make its single free issue or
   simply issue a quantity of two or more and pay for them.  In this
-  case the free issue does not have to be used, but the CLI will
-  always attempt to make a free issue for a one off issue and try a
-  paid if it cannot.
+  case, the free issue does not have to be used, but the CLI will
+  always attempt to make a free issue for a one-off issue and try a
+  paid issue if it cannot.
 
-## transfer
+### transfer
 
-To transfer a bitmark to another account.
+Transfers a bitmark to another account.
 
-The default case is to perform a two signature transfer and requires
+  The default case is to perform a two-signature transfer, which requires
 the use of the `countersign` command to produce the final record to
 send to the blockchain.
 
-If the unratified mode is used then the transfer is sent right away
+If the unratified mode is used instead, then the transfer is sent immediately
 and the payment details are returned.
 
 **Arguments.** The `--network` global option must be specified.
 
-**Additional input.** Before transferring the Bitmark the CLI will
+**Additional input.** Before transferring a Bitmark, the CLI will
 prompt for a password to decrypt the identity's private key to perform
 the signing operation.
 
 **Errors.** The command will terminate with an error if the transfer
 cannot be validated by the blockchain.
 
-### Command options
+#### Command options
 
 -------------------------------  ---------------------------------
-`--txid|-t HEX-ID`               Transaction id from a previous issue or transfer.
+`--txid|-t HEX-ID`               Records transaction id from a previous issue or transfer.
 
-`--receiver|-r IDENTITY|ACCOUNT` Identity name for the account or the
-                                 account (in Base58) as the
+`--receiver|-r IDENTITY|ACCOUNT` Selects the identity name for the account or else the
+                                 account itself (in Base58) as the
                                  destination of the transfer.  If an
                                  identity is used it can be either a
-                                 full account or a public key only
+                                 full account or a public-key-only
                                  item.  It is not necessary to know
-                                 the password for this and only the
+                                 the password for this, and only the
                                  sender (specified by global identity
                                  option) needs to sign.
 
-`--unratified|-u`                For into the single signature transfer mode.  In
-                                 this case the transfer is sent
+`--unratified|-u`                Specifies the single signature transfer mode.  In
+                                 this case, the transfer is sent
                                  directly to the block chain and
                                  payment information is shown.
 -------------------------------  ---------------------------------
 
-### EXAMPLE
+#### Example
 
 ~~~
 bitmark-cli --identity=fred --network=testing transfer --txid=8981eb58c965e2360b3ffeedf47d8f770a2fff7f67e5c348302d839afbf83dee --receiver=barney
