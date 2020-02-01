@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-cli
 
 # Quick Setup
 
-The `bitmark-cli` program can be used on both the testing and Bitmark blockchains, with seperate configuration files created for each blockchain, to avoid confusion.
+The `bitmark-cli` program can be used on both the testing and Bitmark blockchains, with seperate configuration files created for each blockchain to avoid confusion.
 
 ## Creating an Identity
 
@@ -36,7 +36,7 @@ bitmarkcli -i fred -n bitmark setup -n -d 'Live account for Fred' -c node-a1.liv
 ~~~
 
 
-The configuration file will have a path osuch as `${XDG_CONFIG_HOME}/bitmark-cli/testing-cli.json` and will look like this:
+The configuration file will have a path such as `${XDG_CONFIG_HOME}/bitmark-cli/testing-cli.json` and will look like this:
 
 
 ~~~
@@ -57,13 +57,13 @@ The configuration file will have a path osuch as `${XDG_CONFIG_HOME}/bitmark-cli
 }
 ~~~
 
-Once this initial setup is complete, all functions of the CLI will be available to use.
+Once this initial setup is complete, all functions of the command-line interface program (CLI) will be available to use.
 
 Security:
 * During setup you will be asked for a password. Make sure it is secure, as it is the only thing that prevents the secret data
   in the file from being decrypted.
 * It is also recommended that the `seed` command be used to display
-  the recovery phrase; print this and carefully store it to allow recovery
+  the recovery phrase for your data; print this and carefully store it to allow recovery
   or to add this account to another computer.
 
 ## Adding Extra Connections
