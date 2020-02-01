@@ -26,7 +26,7 @@ Global options have both long-form and single character abbreviations:
                                  output the JSON request and the response
                                  sent to the bitmarkd.
 
-`--network|-n NETWORK`           Thenetwork the
+`--network|-n NETWORK`           The network the
                                  command will be sent to, from these
                                  values:
                                  * `bitmark`, the live network, which uses live BTC or LTC to pay for transactions.
@@ -41,13 +41,13 @@ Global options have both long-form and single character abbreviations:
 `--identity|-i NAME`             An account to run commands as.
                                  See "Options: identity" for more details.
 
-`--password|-p PASSWORD`         A password, primarilyused  for regeression testing scripts. It is
+`--password|-p PASSWORD`         A password, primarily used  for regeression testing scripts. It is
                                  not recommended for normal use, as the
                                  password will be left in the command
                                  history and be viewable by process
                                  display commands such as `top` and `ps`.
 
-`--use-agent|-u EXECUTABLE`      Access to a password
+`--use-agent|-u EXECUTABLE`      Access method for a password
                                  stored in a password manager. See "Options: agent program" for more details.
 
 `--zero-agent-cache|-z`          Toggle to prepend a `--clear` to the argument list of
@@ -59,9 +59,10 @@ Global options have both long-form and single character abbreviations:
 ### Options: Identity
 
 A short mnemonic **identity** string is used to represent each Bitmark account. These identities are stored in the configuration file and contain three parts:
+
 * The password-protected private key, used for signing transactions.
 * The public Account Number (a Base58 string), used as the recipient in transfers.
-* A description for holding additional text, which is never sent to blockchain.
+* A description that holds additional text, which is never sent to blockchain.
 
 After initial setup that first identity is normally used to sign all
 transactions. However, it can be overridden by the global `--identity` option.
@@ -76,7 +77,7 @@ purposes and correspond to the data required by the GNU Privacy Guard
 password dialog.
 
 ~~~
-0:   --clear             = clear any cached password to force reprompt
+0:   --clear             = clears any cached password to force reprompt
                            [only if zero-agent-cache option is set]
 1:   --confirm=1         = for additional confirmation
 2:   cache-id            = "bitmark-cli:password:<IDENTITY>"
@@ -85,19 +86,19 @@ password dialog.
 5:   description         = shows create/transfer operation as a descriptive string
 ~~~
 
-A sample `ask-gpg-agent` script is provided in the bitmarkd source
+A sample `ask-gpg-agent` script is provided in the `bitmarkd` source
 code repository; it can be used as a model to create a similar script for
 other password managers.
 
 ## CLI Command Synopsis
 
 -------------  ---------------------------------
-setup          Initialise bitmark-cli configuration file
+setup          Initialize bitmark-cli configuration file
 add            Add a new identity to configuration file
 create         Create one or more new bitmarks
 transfer       Transfer a bitmark to another account
 countersign    Countersign a two-signature transaction
-blocktransfer  Transfer a bitmark to another account
+blocktransfer  Transfer a block to another account
 provenance     List provenance of a bitmark
 owned          List bitmarks owned
 share          Convert a bitmark into a share
@@ -151,7 +152,7 @@ other than manual editing of the configuration file.
 
 `--new|-n`                      Toggle that specifies that a new account seed is to be generated.
 
-`--seed|-s SEED-STRING`         Used in place of `--new`, an
+`--seed|-s SEED-STRING`         Used in place of `--new`. An
                                 existing account seed to be placed into the CLI
                                 configuration file.  The CLI accepts
                                 both V1 and V2 Base58-encoded seeds.
@@ -189,12 +190,12 @@ terminate with an error and not modify the file.
 
 `--new|-n`                      Toggle that specifies that a new account seed is to be generated.
 
-`--seed|-s SEED-STRING`         Used in place of `--new`, an
+`--seed|-s SEED-STRING`         Used in place of `--new`. An
                                 existing account seed to be placed into the CLI
                                 configuration file.  The CLI accepts
                                 both V1 and V2 Base58-encoded seeds.
 
-`--account|-a ACCOUNT-STRING`   Used in place of `--new` or `--seed`, an existing
+`--account|-a ACCOUNT-STRING`   Used in place of `--new` or `--seed`. An existing
                                 account to be imported into the CLI configuration file.  Since only the
                                 public key is contained within the Base58-encoded account, this
                                 identity cannot be used for signing items.  It is meant for use as
@@ -244,8 +245,8 @@ already exists.
 `--zero|-z`                     Toggle that restricts the issue to the initial free one.
                                 (See "Free issues" below)
 
-`--quantity|-q NUMBER`          How many Bitmarks to issue for a single payment, up to 100.  If
-                                the free issue had not been created,
+`--quantity|-q NUMBER`          The number of Bitmarks to issue for a single payment, up to 100.  If
+                                the free issue has not been created,
                                 then only a quantity of one is allowed,
                                 and this issue must be confirmed
                                 before a larger quantity is allowed.
@@ -282,7 +283,7 @@ This leads to the following cases:
 
 Transfers a bitmark to another account.
 
-  The default case is to perform a two-signature transfer, which requires
+The default case is to perform a two-signature transfer, which requires
 the use of the `countersign` command to produce the final record to
 send to the blockchain.
 
@@ -328,7 +329,7 @@ bitmark-cli --identity=fred --network=testing transfer --txid=8981eb58c965e2360b
 
 ### countersign
 
-Complete a two-signature operation.  This command take the hex code from the operation
+Completes a two-signature operation.  This command takes the hex code from the operation
 and signs with the global identity.
 
 **Arguments.** The `--network` global option must be specified.
@@ -407,10 +408,10 @@ bitmark-cli --identity=fred --network=testing blocktransfer --txid=
 
 ### provenance
 
-Displays the provenance starting from a particular transaction id, back
-in time towards the issue record.  Since the record count is limited,
+Displays the provenance of an asset starting from a particular transaction id and moving back
+in time toward the issue record.  Since the record count is limited,
 it may be necessary to use the last transaction id with a new call to
-`provenance` to display more records, then repeat until the asset
+`provenance` to display more records, then repeat until the entire asset
 record is output.
 
 **Arguments.** The `--network` global option must be specified.
@@ -442,7 +443,7 @@ Displays the ownership records for a given identity or account
 
 ------------------------------  ---------------------------------
 `--owner|-o IDENTITY|ACCOUNT`   A different account to list records for, specified either by
-                                 an identity or a Base58
+                                an identity or a Base58
                                 account string.  The default is to use
                                 the global identity.
 
@@ -454,7 +455,7 @@ Displays the ownership records for a given identity or account
                                 subsequent `owned` commands to page
                                 though all ownership records.
 
-`--count|-c NUMBER`             Limitation for the number of ownership records displayed.
+`--count|-c NUMBER`             Limit for the number of ownership records displayed.
                                 This defaults to 20 records if omitted
                                 and can be set from 1 to 100.
 ------------------------------  ---------------------------------
@@ -492,7 +493,7 @@ transaction id is already converted to shares.
 
 `--quantity|-d NUMBER`           A quantity of
                                  fractions to split the Bitmark into, up to the limit of an
-                                 unsigned 64 bit number.  This sets to
+                                 unsigned 64-bit number.  This sets the
                                  total number of shares available and is a
                                  permanent limit.
 -------------------------------  ---------------------------------
@@ -530,7 +531,7 @@ quantity is greater than the remaining balance.
                                  be any value up to the current
                                  balance of the owner.
 
-`--before-block|-b NUMBER`       A "time" limit for
+`--before-block|-b NUMBER`       A time limit for
                                  the operation: the transaction
                                  must be submitted and confirmed
                                  before this block is present on the
@@ -555,7 +556,7 @@ expiry block is reached on the blockchain.
 
 **Arguments.** The `--network` global option must be specified.
 
-**Additional input.** Before granting the Bitmark Share the CLI will
+**Additional input.** Before granting the Bitmark Share, the CLI will
 prompt for a password to decrypt the identity's private key to perform
 the signing operation.
 
@@ -572,7 +573,7 @@ share quantities are greater than the remaining balances.
                                  that the *initiator* is sending, used
                                  to identify the first fractional item.
 
-`--quantity-one|-q NUMBER`       The quantity of share-id-one that the
+`--quantity-one|-q NUMBER`       The quantity of `share-id-one` that the
                                  *initiator* is granting to the *countersigner*.
                                  The default is one, but it can be any value up to the
                                  current balance of the *initiator*.
@@ -581,13 +582,13 @@ share quantities are greater than the remaining balances.
                                  that the *countersigner* is sending, used
                                  to identify the second fractional item.
 
-`--quantity-two|-Q NUMBER`       The quantity of  share-id-two that the
+`--quantity-two|-Q NUMBER`       The quantity of  `share-id-two` that the
                                  *countersigner* is granting to the
                                  *initiator*.  The default is
                                  one, but it can be any value up to the
                                  current balance of the *countersigner*.
 
-`--before-block|-b NUMBER`       A "time" limit for
+`--before-block|-b NUMBER`       A time limit for
                                  the operation: the transaction
                                  must be submitted and confirmed
                                  before this block is present on the
@@ -607,7 +608,7 @@ Displays the share balances for a particular owner.
 
 The display starts at a particular id and outputs `count` items.  To
 display more, take the last share id displayed and use that in another `balance`
-command.  (To avoid a repeat of that record, use the incremented id as
+command. (To avoid a repeat of that record, use the incremented id as
 the command to search for the next used id.)
 
 **Arguments.** The `--network` global option must be specified.
@@ -624,7 +625,7 @@ the command to search for the next used id.)
                                  is used to identify the fractional
                                  item to show the balance.
 
-`--count|-c NUMBER`              A limitation on the number of balance records displayed.
+`--count|-c NUMBER`              A limit on the number of balance records displayed.
                                  This defaults to 20 records if
                                  omitted and can be set from 1 to 100.
 -------------------------------  ---------------------------------
@@ -638,7 +639,7 @@ bitmark-cli --identity=fred --network=testing balance --owner=barney --share-id=
 
 ### status
 
-Display the status of a particular transaction id, to set whether it is:
+Displays the status of a particular transaction id, to see whether it is:
 
 * `Not found`: transaction not present on the blockchain or in that node's memory.
 * `Pending`: tansaction awaiting payment confirmation.
@@ -772,7 +773,7 @@ the private key to perform the signing operation.
 #### Command options
 
 -------------------------------  ---------------------------------
-`--file|-f PATH-NAME`            Tthe file to sign
+`--file|-f PATH-NAME`            The file to sign
 -------------------------------  ---------------------------------
 
 
