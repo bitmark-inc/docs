@@ -9,7 +9,7 @@
 ## [Bitmark\-CLI Command Reference](bitmark-cli.md#bitmark-cli-command-reference)
   
 * [Basic Command Structure](bitmark-cli.md#basic-command-structure)
-* [Global Options](bitmark-cli.md#global-options)
+  * [Global Options](bitmark-cli.md#global-options)
   * [Options: Identity](bitmark-cli.md#options-identity)
   * [Options: Agent Programs](bitmark-cli.md#options-agent-programs)
 
