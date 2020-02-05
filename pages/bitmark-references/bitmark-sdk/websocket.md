@@ -19,7 +19,7 @@ Bitmark SDK offers Web Socket event triggering to help the application can be no
   + `txId`: the corresponding transaction id
   + `presence`: indicate that the bitmark is owned or not by the corresponding `Account`
 - New transfer offer: This event will be sent when users receive new transfer offer (for 2 signatures transfer) from someone.
-  + `bitmarkId`: the id of bitmark is coming
+  + `bitmarkId`: the id of the bitmark that's offered
 - New pending issuance: This event will be sent when users issue new bitmarks.
   + `bitmarkId` : the id of bitmark is issuing
 - New pending transfer: This event will be sent to both sender and receiver.
