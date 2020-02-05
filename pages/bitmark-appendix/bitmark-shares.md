@@ -24,7 +24,7 @@ folder: bitmark-appendix
   share.
 
 * Shares can be freely traded in any quantity without keeping a linked
-  history.  i.e. there is no real order to share transactions after
+  history.  i.e., there is no real order to share transactions after
   initial creation.
 
 ## Actions that can be performed
@@ -34,7 +34,7 @@ folder: bitmark-appendix
 * Shares can be granted from the original supply to other accounts.
 
 * Accounts holding shares can effectively trade them, but only among
-  holders of a single Bitmark Share (i.e. same Share ID).  This leads
+  holders of a single Bitmark Share (i.e., same Share ID).  This leads
   to a requirement of a **swap** action to do inter share trading or
   something approximating to currency exchange.  This could also be
   used to swap out old shares for new shares with a different total
