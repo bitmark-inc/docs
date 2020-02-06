@@ -23,7 +23,7 @@ If you prefer, you can install a Bitmark Node [by hand](../..//bitmark-reference
 
 + [Docker](https://docs.docker.com/install/) must be installed on your system.
     +  Windows users must run docker on Hyper-V.
-+ You must [log in](https://docs.docker.com/engine/reference/commandline/login/) to your docker with a [docker hub]((https://hub.docker.com/)) account.
++ You must [log in](https://docs.docker.com/engine/reference/command line/login/) to your docker with a [docker hub]((https://hub.docker.com/)) account.
 + You must have and know your **public IP** address.
 + You must have **a bitcoin and a litecoin address** for receiving mining rewards.
 + Your environment must be open for incoming connections through port 2136.  

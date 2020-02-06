@@ -39,7 +39,7 @@ Remember that a byte is made up of two hexadecimal characters. The header string
 0500/8300/a182000000000000/1e886357e769dab9c5f9b68a9101c13888a8b9aaf2bc21ff3aa2b78fbac11400/2684b245a1f51f54677770530032471f0ec4c36ffae5f14001eb15f42082e31b/ecc1895d00000000/d3dbb256c7042f00/deb653d83b4a0bc7
 ```
 
-Also remember that each element has its bytes reversed because it's encoded in Little Endian. The various fields are thus decoded as follows:
+Also remember that each element has its bytes reversed because it is encoded in Little Endian. The various fields are thus decoded as follows:
 ```
 Version:0x5,
 TransactionCount:0x83,
@@ -142,7 +142,7 @@ It also will choose the chain that has hash `abcdefg` on block height
 |  E     |  1000          |  gfedcba     |
 |  F     |  1000          |  gfedcba     |
 
-In thie example, two chains have equal votes. 
+In this example, two chains have equal votes. 
 
 |  Count  |  Block Height  |  Block Hash  |
 | ------- | -------------- | ------------ |

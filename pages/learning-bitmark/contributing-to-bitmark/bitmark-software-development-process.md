@@ -95,7 +95,7 @@ Make sure everything is in place, when a pull request is open, it means the code
 11. Does it needs documentation?
 12. Does it needs QA?
 13. Does this fix/feature needs to be part of the next release?
-14. Do we need extra validation like run on TestNet for awhile?
+14. Do we need extra validation like run on TestNet for a while?
 
 **Quality assurance:**
 

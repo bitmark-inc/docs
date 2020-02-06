@@ -45,15 +45,13 @@ Signature
   
 String
 : A sequence of UTF-8 _bytes_ preceded by a _VarInt_ byte count.
-  The count is validated by various routines to prevent excessive
-  storage use.
+  The count is validated by various routines to prevent excessive storage use.
 
 VarInt
 : A sequence of 1 to 9 _bytes_ that represents a 64-bit unsigned
   integer in Little-Endian form. The high bit of each byte is used as a continuation flag,
   so 0 … 127 can be represented by each byte. Each successive byte
-  adds 7 more bits. The 9^th^
-  byte does not have a continuation flag, so it adds eight bits to the integer, bringing the total for the nine bytes to 64 bits.
+  adds 7 more bits. The 9th byte does not have a continuation flag, so it adds eight bits to the integer, bringing the total for the nine bytes to 64 bits.
   
 The following variable types are used only in Bitmark block headers, because they are fixed length fields:
 
