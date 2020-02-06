@@ -21,7 +21,7 @@ bitmark-cli [global-options] command [command-options]
 Global options have both long-form and single character abbreviations:
 
 -------------------------------  ---------------------------------
-`--verbose|-v`                   Toggle to output additional information
+`--verbose|-v`                   An option to output additional information
                                  for each command.  Most commands will
                                  output the JSON request and the response
                                  sent to the bitmarkd.
@@ -50,7 +50,7 @@ Global options have both long-form and single character abbreviations:
 `--use-agent|-u EXECUTABLE`      Access method for a password
                                  stored in a password manager. See "Options: agent program" for more details.
 
-`--zero-agent-cache|-z`          Toggle to prepend a `--clear` to the argument list of
+`--zero-agent-cache|-z`          An option to prepend a `--clear` to the argument list of
                                  the `--use-agent` command, to force
                                  the password manager to re-prompt for
                                  the password.
@@ -150,7 +150,7 @@ other than manual editing of the configuration file.
                                 user; it is not used by any command and is not
                                 sent over the network.
 
-`--new|-n`                      Toggle that specifies that a new account seed is to be generated.
+`--new|-n`                      An option that specifies that a new account seed is to be generated.
 
 `--seed|-s SEED-STRING`         Used in place of `--new`. An
                                 existing account seed to be placed into the CLI
@@ -188,7 +188,7 @@ terminate with an error and not modify the file.
                                 This is only descriptive text for the CLI user; it
                                 is not used by any command nor sent over the network.
 
-`--new|-n`                      Toggle that specifies that a new account seed is to be generated.
+`--new|-n`                      An option that specifies that a new account seed is to be generated.
 
 `--seed|-s SEED-STRING`         Used in place of `--new`. An
                                 existing account seed to be placed into the CLI
@@ -242,7 +242,7 @@ already exists.
                                 that will give the same hex string that
                                 Bitmark Inc. applications also use.
 
-`--zero|-z`                     Toggle that restricts the issue to the initial free one.
+`--zero|-z`                     An option that restricts the issue to the initial free one.
                                 (See "Free issues" below)
 
 `--quantity|-q NUMBER`          The number of Bitmarks to issue for a single payment, up to 100.  If
@@ -314,7 +314,7 @@ cannot be validated by the blockchain.
                                  sender (specified by global identity
                                  option) needs to sign.
 
-`--unratified|-u`                Toggle that specifies the single-signature transfer mode.  In
+`--unratified|-u`                An option that specifies the single-signature transfer mode.  In
                                  this case, the transfer is sent
                                  directly to the block chain and
                                  payment information is shown.
