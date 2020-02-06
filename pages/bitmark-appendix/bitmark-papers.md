@@ -1,5 +1,5 @@
 ---
-title: Bitmark Papers
+title: Papers
 keywords: papers
 last_updated: 
 sidebar: mydoc_sidebar
@@ -8,7 +8,7 @@ folder: bitmark-appendix
 ---
 
 
-# Bitmark Papers
+# Papers
 
 ## Bitmark: The property system for the digital environment
 

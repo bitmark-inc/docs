@@ -3,7 +3,7 @@ title: Running a Bitmark Node
 keywords: node setup
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/quick-start/simple-solution-for-node-setup
+permalink: /learning-bitmark/quick-start/running-a-bitmark-node
 folder: learning-bitmark/quick-start
 ---
 

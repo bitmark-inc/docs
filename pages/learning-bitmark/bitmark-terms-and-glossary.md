@@ -1,13 +1,13 @@
 ---
-title: Bitmark Glossary
+title: Glossary
 keywords: terms, glossary
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/bitmark-terms-and-glossary
+permalink: /learning-bitmark/glossary
 folder: learning-bitmark
 ---
 
-# Bitmark Glossary
+# Glossary
 
 **Account** — _See Bitmark Account._
 

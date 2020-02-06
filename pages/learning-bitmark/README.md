@@ -3,13 +3,13 @@
 
 _Learning Bitmark provides an introduction to the Bitmark Property System, including tutorial-style documents that will take you step by step through the basic Bitmark Property System features._
 
-## [Bitmark Property System Introduction](problem-we-are-trying-to-solve.md#bitmark-property-system-introduction)
+## [Property System Introduction](problem-we-are-trying-to-solve.md#property-system-introduction)
   
 * [The Power of Property Systems](problem-we-are-trying-to-solve.md#the-power-of-property-systems)
 * [Bitmark's Property System](problem-we-are-trying-to-solve.md#bitmarks-property-system)
 * [Bitmark's Technology](problem-we-are-trying-to-solve.md#bitmarks-technology)
 
-## [Bitmark Blockchain Introduction](bitmark-blockchain.md)
+## [Blockchain Introduction](bitmark-blockchain.md)
 
 * [Technical Overview](bitmark-blockchain.md#technical-overview)
 * [Technical FAQ](bitmark-blockchain.md#technical-faq)
@@ -24,6 +24,7 @@ _Learning Bitmark provides an introduction to the Bitmark Property System, inclu
 
 ## [Contributing to Bitmark](contributing-to-bitmark/README.md)
 
+* [Software Development Process](bitmark-software-development-process.md#software-development-process)
 * [Bitmark Upgrade Proposal](contributing-to-bitmark/bup.md)
 * [Bug Bounty Program](contributing-to-bitmark/bug-bounty-program.md)
 

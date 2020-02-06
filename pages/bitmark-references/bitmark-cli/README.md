@@ -6,7 +6,7 @@
 * [Adding extra connections](quick-setup.md#adding-extra-connections)
 
 
-## [Bitmark\-CLI Command Reference](bitmark-cli.md#bitmark-cli-command-reference)
+## [Command Reference](bitmark-cli.md#command-reference)
   
 * [Basic Command Structure](bitmark-cli.md#basic-command-structure)
 * [Global Options](bitmark-cli.md#global-options)

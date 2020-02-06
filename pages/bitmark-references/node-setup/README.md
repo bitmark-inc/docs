@@ -1,5 +1,5 @@
 
-# [Bitmark Node Installation](bitmark-node-setup.md#tutorial-for-node-setup)
+# [Tutorial for Node setup](bitmark-node-setup.md#tutorial-for-node-setup)
 
 ## [Prerequisites](bitmark-node-setup.md#prerequisites)
   

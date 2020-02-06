@@ -1,5 +1,5 @@
 ---
-title: Bitmark-CLI Quick Setup
+title: Quick Setup
 keywords: cli, bitmark-cli, command line interface, quick setup
 last_updated: 
 sidebar: mydoc_sidebar

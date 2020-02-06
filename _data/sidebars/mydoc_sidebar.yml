@@ -9,11 +9,11 @@ entries:
     folderitems:
 
     - title: Property System Introduction
-      url: /learning-bitmark/bitmark-property-system-introduction
+      url: /learning-bitmark/property-system-introduction
       output: web
 
     - title: Blockchain Introduction
-      url: /learning-bitmark/bitmark-blockchain
+      url: /learning-bitmark/blockchain
       output: web
 
       subfolders:
@@ -22,7 +22,7 @@ entries:
           subfolderitems:
 
             - title: Running a Node
-              url: /learning-bitmark/quick-start/simple-solution-for-node-setup
+              url: /learning-bitmark/quick-start/running-a-node
               output: web
 
             - title: Creating an Account
@@ -50,7 +50,7 @@ entries:
           subfolderitems:
 
             - title: Software Development Process
-              url: /learning-bitmark/contributing-to-bitmark/bitmark-software-development-process
+              url: /learning-bitmark/contributing-to-bitmark/software-development-process
               output: web
 
             - title: Bitmark Upgrade Proposals
@@ -62,7 +62,7 @@ entries:
               output: web
 
     - title: Terms and Glossary
-      url: /learning-bitmark/bitmark-terms-and-glossary
+      url: /learning-bitmark/glossary
       output: web
 
 
@@ -80,7 +80,7 @@ entries:
           subfolderitems:
 
           - title: Blockchain
-            url: /bitmark-references/bitmark-node-software/bitmark-blockchain-overview
+            url: /bitmark-references/bitmark-node-software/blockchain-overview
             output: web
 
           - title: RPC Communication
@@ -165,7 +165,7 @@ entries:
       output: web
 
     - title: White Papers
-      url: /bitmark-appendix/bitmark-papers
+      url: /bitmark-appendix/papers
       output: web
 
 

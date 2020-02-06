@@ -1,13 +1,13 @@
 ---
-title: Bitmark CLI Payment
+title: CLI Payment
 keywords: transaction payment
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment
+permalink: /learning-bitmark/quick-start/working-with-bitmarks/cli-payment
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 
-# Paying for Bitmark Transactions
+# CLI payment
 
 Bitmark transaction fees for transfers and share-related transactions can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies. 
 

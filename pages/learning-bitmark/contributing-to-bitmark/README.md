@@ -1,5 +1,7 @@
 # Contributing to Bitmark
 
+## [Software Development Process](bitmark-software-development-process.md#software-development-process)
+
 ## [Bitmark Upgrade Proposal](bup.md#bitmark-upgrade-proposal)
   
 * [What is a BUP?](bup.md#what-is-a-bup)

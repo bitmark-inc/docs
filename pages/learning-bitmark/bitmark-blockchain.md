@@ -1,13 +1,13 @@
 ---
-title: Bitmark Blockchain Introduction
+title: Blockchain Introduction
 keywords: blockchain
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/bitmark-blockchain
+permalink: /learning-bitmark/blockchain-introduction
 folder: learning-bitmark
 ---
 
-# Bitmark Blockchain Introduction
+# Blockchain Introduction
 
 ## Technical Overview
 

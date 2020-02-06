@@ -7,37 +7,32 @@ permalink: /learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-sha
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 
-# Working with Bitmark shares
+# Using Bitmark shares
 
-In some cases, the ownership of a property is shared between different parties or people. To support these situations, the Bitmark Property System provides a feature called **[Bitmark shares](https://docs.bitmark.com/bitmark-appendix/bitmark-shares)**.
-
-Any owner of a Bitmark Certificate is able to:
-
-* [Create Bitmark shares](#creating-bitmark-shares) from that Bitmark Certificate.
-* [Grant Bitmark shares](#granting-bitmark-shares-to-another-account) to another account.
-* [Swap Bitmark shares](#swapping-bitmark-shares) with other accounts.
-
-
-Currently, only the Bitmark-CLI supports working with bitmark shares.
+Currently, only the Bitmark CLI supports working with bitmark shares.
 
 > **NOTE:** Transactions related to Bitmark shares require a transaction fee. On the bitmark network, the fee can be paid with BTC or LTC
 >
 > * Real BTC and/or LTC are used to pay for transaction fee on the Bitmark main chain
 > * Testnet BTC and/or LTC are used to pay for transaction fee on the Bitmark testing chain
 
-### About Bitmark shares records
+## The Basics of CLI commands
 
-Three records related to Bitmark shares are stored on the Bitmark blockchain.
+All Bitmark-CLI commands follow the same basic structure:
 
-* *Balance Record* - created by a bitmark owner to permanently set the total number of a particular share for a Bitmark Certificate.
-* *Grant Record* - created by an owner to grant an amount of his share balance to another owner.
-* *Swap Record* - created by two owners to simultaenously swap their shares of different Bitmark Certificates.
+`$ bitmark-cli [global-options] command [command-options]`
+    
+You will need to send the Bitmark-CLI the global option `--network` (abbreviation: `-n`) to identify the network that you are sending the command to.
+
+**Network Options:**
+* `bitmark`:  the live network, which uses live BTC or LTC to pay for the transactions.
+* `testing`:  a network for testing newly developed programs, which uses testnet coins to pay for transactions.
+* `local`: a special case for running a regression test network on the loopback interface.
 
 ## Prerequisites
 
-The `bitmark-wallet` software is required for paying for transactions. Please refer to the [Payment on Bitmark CLI](payment-for-bitmark-cli.md) document for instructions on installing it.
+The `bitmark-wallet` software is required for paying for transactions. Please refer to the [CLI payment](payment-for-bitmark-cli.md) document for instructions on installing it.
 
-See [The Basics of Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli) for more information on the interface.
 
 ## Creating Bitmark shares
 
@@ -508,7 +503,7 @@ To initialize a swap of shares using the Bitcoin-CLI:
     }
   ```
 
-#### Countersigning a share swap
+### Countersigning a share swap
 
 A share-swap transaction requires two signatures. The sender signs when running the `swap` command, after which the receiver must countersign. This process is the same as when countersigning a `grant` transaction.
 

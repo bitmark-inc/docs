@@ -3,7 +3,7 @@
 
 _The Bitmark References offer you an encyclopedia of features for the Bitmark Property System that can be used for reference purposes._
 
-## [Bitmark Node Setup](node-setup/bitmark-node-setup.md)
+## [Tutorial for Node setup](node-setup/bitmark-node-setup.md)
   
 * [Prerequisites](node-setup/bitmark-node-setup.md#prerequisites)
 * [Installing the Prerequisite Packages](node-setup/bitmark-node-setup.md#installing-the-prerequisite-packages)

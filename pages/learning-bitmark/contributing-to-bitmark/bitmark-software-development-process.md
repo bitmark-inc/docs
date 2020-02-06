@@ -1,13 +1,15 @@
 ---
-title: Bitmark Software Development Process
+title: Software Development Process
 keywords: development process, work flow
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/contributing-to-bitmark/bitmark-software-development-process
+permalink: /learning-bitmark/contributing-to-bitmark/software-development-process
 folder: learning-bitmark/contributing-to-bitmark
 ---
 
-# Current development workflow
+# Software Development Process
+
+## Current development workflow
 
 **Right now we have these projects:**
 * bitmarkd
@@ -36,7 +38,7 @@ We have a peer review process, where the developer can assign one or more indivi
 
 ![](/assets/images/review-process.png)
 
-# Development work-flow improvements
+## Development work-flow improvements
 
 **Development process:**
 

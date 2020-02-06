@@ -1,5 +1,5 @@
 ---
-title: Bitmark-CLI Command Reference
+title: Command Reference
 keywords: cli, bitmark-cli, command line interface
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,7 +7,7 @@ permalink: /bitmark-references/bitmark-cli/bitmark-cli-command-reference
 folder: bitmark-references/bitmark-cli
 ---
 
-# bitmark-cli Command Reference
+# Command Reference
 
 ## Basic Command Structure
 

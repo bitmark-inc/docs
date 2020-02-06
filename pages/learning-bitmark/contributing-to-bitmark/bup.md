@@ -8,6 +8,7 @@ folder: learning-bitmark/contributing-to-bitmark
 ---
 
 # Bitmark Upgrade Proposal
+
 ## What is a BUP?
 A Bitmark Upgrade Proposal (BUP) is a design document providing
 information to the Bitmark community or describing a new feature for
