@@ -17,10 +17,12 @@ _Learning Bitmark provides an introduction to the Bitmark Property System, inclu
 ## [Quick Start](quick-start/README.md#quick-start)
 
 * [Running a Bitmark Node](quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
-* [Creating Bitmark Accounts](quick-start/working-with-bitmarks/creating-bitmark-account.md)
-* [Registering Bitmark Certificates](quick-start/working-with-bitmarks/issuing-bitmarks.md)
-* [Transferring Bitmark Certificates](quick-start/working-with-bitmarks/transferring-bitmarks.md)
-* [Working with Bitmark shares](quick-start//working-with-bitmarks/using-bitmark-shares.md)
+* [Working with Bitmark](working-with-bitmark.md)
+* [Using the Bitmark app](using-bitmark-app.md)
+* [Using the SDK](using-sdk.md)
+* [Using the CLI](using-cli.md)
+* [CLI Payment](payment-for-bitmark-cli.md)
+* [Using Bitmark shares](using-bitmark-shares.md)
 
 ## [Contributing to Bitmark](contributing-to-bitmark/README.md)
 
@@ -28,5 +30,4 @@ _Learning Bitmark provides an introduction to the Bitmark Property System, inclu
 * [Bitmark Upgrade Proposal](contributing-to-bitmark/bup.md)
 * [Bug Bounty Program](contributing-to-bitmark/bug-bounty-program.md)
 
-## [Bitmark Terms and Glossary](bitmark-terms-and-glossary.md)
-* [Bitmark Terms and Glossary](bitmark-terms-and-glossary.md)
+## [Glossary](bitmark-terms-and-glossary.md)

@@ -3,7 +3,7 @@ title: Using Bitmark Shares
 keywords: bitmark shares
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares
+permalink: /learning-bitmark/quick-start/using-bitmark-shares
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 

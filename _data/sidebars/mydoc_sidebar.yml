@@ -25,24 +25,28 @@ entries:
               url: /learning-bitmark/quick-start/running-a-node
               output: web
 
-            - title: Creating an Account
-              url: /learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account
+            - title: Working with Bitmark
+              url: /learning-bitmark/quick-start/working-with-bitmark
               output: web
 
-            - title: Registering Bitmark Certificates
-              url: /learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks
+            - title: Using the Bitmark app
+              url: /learning-bitmark/quick-start/using-the-bitmark-app
               output: web
 
-            - title: Transferring Bitmark Certificates
-              url: /learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks
+            - title: Using the SDK
+              url: /learning-bitmark/quick-start/using-the-cli
               output: web
 
-            - title: Using Bitmark Shares
-              url: /learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares
+            - title: Using the CLI
+              url: /learning-bitmark/quick-start/using-the-cli
               output: web
 
-            - title: Paying for Transactions from the CLI
-              url: /learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment
+            - title: CLI payment
+              url: /learning-bitmark/quick-start/cli-payment
+              output: web
+
+            - title: Using Bitmark shares
+              url: /learning-bitmark/quick-start/using-bitmark-shares
               output: web
 
         - title: Contributing to Bitmark
@@ -61,7 +65,7 @@ entries:
               url: /learning-bitmark/contributing-to-bitmark/bug-bounty-program
               output: web
 
-    - title: Terms and Glossary
+    - title: Glossary
       url: /learning-bitmark/glossary
       output: web
 
@@ -70,7 +74,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Tutorial For Node Setup
+    - title: Tutorial for Node setup
       url: /bitmark-references/node-setup/tutorial-for-node-setup
       output: web
 
@@ -79,7 +83,7 @@ entries:
           output: web
           subfolderitems:
 
-          - title: Blockchain
+          - title: Blockchain Overview
             url: /bitmark-references/bitmark-node-software/blockchain-overview
             output: web
 
@@ -148,7 +152,7 @@ entries:
             url: /bitmark-references/bitmark-cli/bitmark-cli-quick-setup
             output: web
 
-          - title: Bitmark-CLI Command Reference
+          - title: Command Reference
             url: /bitmark-references/bitmark-cli/bitmark-cli-command-reference
             output: web
 

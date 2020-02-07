@@ -1,13 +1,13 @@
 ---
-title: General concepts
+title: Working with Bitmark
 keywords: bitmark, account, transaction
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/quick-start/working-with-bitmarks/general-concepts
+permalink: /learning-bitmark/quick-start/working-with-bitmark
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 
-# General concepts
+# Working with Bitmark
 
 ## Bitmark Account
 
@@ -52,7 +52,7 @@ Once an asset has been registered, the owner can trade it by creating a transfer
 
 Bitmark owners can transfer their Bitmark Certificates to others using the [Bitmark App](using-bitmark-app.md#transferring-bitmark-certificates), the [SDK](using-sdk.md#transferring-bitmark-certificates), or the [CLI](using-cli.md#transferring-bitmark-certificates).
 
-### Bitmark shares
+## Bitmark shares
 
 In some cases, the ownership of a property is shared between different parties or people. To support these situations, the Bitmark Property System provides a feature called **[Bitmark shares](https://docs.bitmark.com/bitmark-appendix/bitmark-shares)**.
 

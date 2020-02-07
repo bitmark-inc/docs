@@ -3,7 +3,7 @@ title: Using the SDK
 keywords: bitmark, account, transaction
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/quick-start/working-with-bitmarks/using-sdk
+permalink: /learning-bitmark/quick-start/using-the-sdk
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 
@@ -11,11 +11,11 @@ folder: learning-bitmark/quick-start/working-with-bitmarks
 
 This section introduces a simple way to create a new Bitmark Account and execute bitmark transactions using the JS SDK. For a detailed explanation, further functions, and other languages please consult the [Bitmark SDK](../../../../bitmark-references/bitmark-sdk/bitmark-sdk-document.md) documents.
 
-## Creating a Bitmark Account
+## Initializing the JS SDK
 
-To initialize the Bitmark JS SDK, create a Bitmark Account, and export the related information:
+To initialize the JS SDK:
 
-* Install the Bitmark JS SDK
+* Install the JS SDK
 
     `# npm install bitmark-sdk`
 
@@ -37,6 +37,10 @@ To initialize the Bitmark JS SDK, create a Bitmark Account, and export the relat
     > * "livenet" - all requests are submitted to the public Bitmark blockchain, which is the main chain. 
     > 
     > * "testnet" - all  requests are submitted to the testing Bitmark blockchain, which is normally used for testing and development activities.
+
+## Creating a Bitmark Account
+
+To create a Bitmark Account, and export the related information:
 
 * Create a new Bitmark account
 

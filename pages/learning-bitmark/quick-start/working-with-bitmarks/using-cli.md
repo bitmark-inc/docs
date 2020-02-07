@@ -3,7 +3,7 @@ title: Using the CLI
 keywords: bitmark, account, transaction
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/quick-start/working-with-bitmarks/using-sdk
+permalink: /learning-bitmark/quick-start/using-the-cli
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 

@@ -3,7 +3,7 @@ title: Using the Bitmark app
 keywords: bitmark, account, transaction
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /learning-bitmark/quick-start/working-with-bitmarks/usinng-bitmark-app
+permalink: /learning-bitmark/quick-start/using-the-bitmark-app
 folder: learning-bitmark/quick-start/working-with-bitmarks
 ---
 
