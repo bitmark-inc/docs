@@ -54,13 +54,13 @@ Bitmark owners can transfer their Bitmark Certificates to others using the [Bitm
 
 ## Bitmark shares
 
-In some cases, the ownership of a property is shared between different parties or people. To support these situations, the Bitmark Property System provides a feature called **[Bitmark shares](https://docs.bitmark.com/bitmark-appendix/bitmark-shares)**.
+In some cases, the ownership of a property is shared between different parties or people. To support these situations, the Bitmark Property System provides a feature called **[Bitmark shares](/pages/bitmark-appendix/bitmark-shares)**.
 
 Any owner of a Bitmark Certificate is able to:
 
-* [Create Bitmark shares](#creating-bitmark-shares) from that Bitmark Certificate.
-* [Grant Bitmark shares](#granting-bitmark-shares-to-another-account) to another account.
-* [Swap Bitmark shares](#swapping-bitmark-shares) with other accounts.
+* [Create Bitmark shares](using-bitmark-shares.md#creating-bitmark-shares) from that Bitmark Certificate.
+* [Grant Bitmark shares](using-bitmark-shares.md#granting-bitmark-shares-to-another-account) to another account.
+* [Swap Bitmark shares](using-bitmark-shares.md#swapping-bitmark-shares) with other accounts.
 
 Three records related to Bitmark shares are stored on the Bitmark blockchain.
 
