@@ -9,12 +9,12 @@
 
 **[Quick Start](/pages/learning-bitmark/quick-start/README.md)**
 * [Running a Bitmark Node](/pages/learning-bitmark/quick-start/simple-solution-for-node-setup.md)
-* [Working with Bitmark](working-with-bitmark.md)
-* [Using the Bitmark app](using-bitmark-app.md)
-* [Using the SDK](using-sdk.md)
-* [Using the CLI](using-cli.md)
-* [CLI Payment](payment-for-bitmark-cli.md)
-* [Using Bitmark shares](using-bitmark-shares.md)
+* [Working with Bitmark](/pages/learning-bitmark/quick-start/working-with-bitmarks/working-with-bitmark.md)
+* [Using the Bitmark app](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-app.md)
+* [Using the SDK](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-sdk.md)
+* [Using the CLI](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-cli.md)
+* [CLI Payment](/pages/learning-bitmark/quick-start/working-with-bitmarks/payment-for-bitmark-cli.md)
+* [Using Bitmark shares](/pages/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md)
 
 **[Contributing to Bitmark](/pages/learning-bitmark/contributing-to-bitmark/README.md)**
 * [Software Development Process](bitmark-software-development-process.md)

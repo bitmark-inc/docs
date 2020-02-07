@@ -13,9 +13,9 @@
 
 ## [Working with bitmarks](working-with-bitmarks/README.md#working-with-bitmarks)
 
-* [Working with Bitmark](working-with-bitmark.md)
-* [Using the Bitmark app](using-bitmark-app.md)
-* [Using the SDK](using-sdk.md)
-* [Using the CLI](using-cli.md)
-* [CLI Payment](payment-for-bitmark-cli.md)
-* [Using Bitmark shares](using-bitmark-shares.md)
+* [Working with Bitmark](working-with-bitmarks/working-with-bitmark.md)
+* [Using the Bitmark app](working-with-bitmarks/using-bitmark-app.md)
+* [Using the SDK](working-with-bitmarks/using-sdk.md)
+* [Using the CLI](working-with-bitmarks/using-cli.md)
+* [CLI Payment](working-with-bitmarks/payment-for-bitmark-cli.md)
+* [Using Bitmark shares](working-with-bitmarks/using-bitmark-shares.md)

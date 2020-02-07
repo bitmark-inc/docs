@@ -17,16 +17,16 @@ _Learning Bitmark provides an introduction to the Bitmark Property System, inclu
 ## [Quick Start](quick-start/README.md#quick-start)
 
 * [Running a Bitmark Node](quick-start/simple-solution-for-node-setup.md#run-a-bitmark-node)
-* [Working with Bitmark](working-with-bitmark.md)
-* [Using the Bitmark app](using-bitmark-app.md)
-* [Using the SDK](using-sdk.md)
-* [Using the CLI](using-cli.md)
-* [CLI Payment](payment-for-bitmark-cli.md)
-* [Using Bitmark shares](using-bitmark-shares.md)
+* [Working with Bitmark](quick-start/working-with-bitmarks/working-with-bitmark.md)
+* [Using the Bitmark app](quick-start/working-with-bitmarks/using-bitmark-app.md)
+* [Using the SDK](quick-start/working-with-bitmarks/using-sdk.md)
+* [Using the CLI](quick-start/working-with-bitmarks/using-cli.md)
+* [CLI Payment](quick-start/working-with-bitmarks/payment-for-bitmark-cli.md)
+* [Using Bitmark shares](quick-start/working-with-bitmarks/using-bitmark-shares.md)
 
 ## [Contributing to Bitmark](contributing-to-bitmark/README.md)
 
-* [Software Development Process](bitmark-software-development-process.md#software-development-process)
+* [Software Development Process](contributing-to-bitmark/bitmark-software-development-process.md)
 * [Bitmark Upgrade Proposal](contributing-to-bitmark/bup.md)
 * [Bug Bounty Program](contributing-to-bitmark/bug-bounty-program.md)
 
