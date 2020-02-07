@@ -54,7 +54,7 @@ Bitmark owners can transfer their Bitmark Certificates to others using the [Bitm
 
 ## Bitmark shares
 
-In some cases, the ownership of a property is shared between different parties or people. To support these situations, the Bitmark Property System provides a feature called **[Bitmark shares](/pages/bitmark-appendix/bitmark-shares)**.
+In some cases, the ownership of a property is shared between different parties or people. To support these situations, the Bitmark Property System provides a feature called **[Bitmark shares](../.../../bitmark-appendix/bitmark-shares)**.
 
 Any owner of a Bitmark Certificate is able to:
 

@@ -108,7 +108,7 @@ To create Bitmark shares using the Bitmark-CLI:
 
 ### Paying for a share creation
 
-Paying for Bitmark share creation works the same way as [paying for a Bitmark Certificate transfer](/pages/learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-cli).
+Paying for Bitmark share creation works the same way as [paying for a Bitmark Certificate transfer](using-cli.md#transferring-bitmarks-using-the-bitmark-cli).
 
 To do so using the Bitmark-CLI:
 

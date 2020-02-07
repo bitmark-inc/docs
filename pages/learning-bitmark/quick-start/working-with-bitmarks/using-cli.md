@@ -9,7 +9,7 @@ folder: learning-bitmark/quick-start/working-with-bitmarks
 
 # Using the CLI
 
-This section introduces simple commands to create a new Bitmark Account, execute some simple transactions using the Bitmark-CLI. For the command structures, detailed explanations, and other functions please refer the [Bitmark-CLI](/pages/bitmark-references/bitmark-cli/bitmark-cli.md) documents.
+This section introduces simple commands to create a new Bitmark Account, execute some simple transactions using the Bitmark-CLI. For the command structures, detailed explanations, and other functions please refer the [Bitmark-CLI](../../../bitmark-references/bitmark-cli/bitmark-cli.md) documents.
 
 ## The Basics of CLI commands
 
@@ -32,7 +32,7 @@ The `bitmark-wallet` software is required for paying for transactions. Please re
 
 To create a Bitmark Account using the BitmarkCLI:
 
-* Install [Bitmark-CLI](/pages/bitmark-references/bitmark-cli/bitmark-cli.md)
+* Install [Bitmark-CLI](../../../bitmark-references/bitmark-cli/bitmark-cli.md)
 
 * Initialize the Bitmark-CLI configuration
 
