@@ -2,16 +2,16 @@
 
 ## [Quick Setup](quick-setup.md#quick-setup)
 
-* [Quick Setup](quick-setup.md#quick-setup)
-* [Adding extra connections](quick-setup.md#adding-extra-connections)
-
+* [Creating an Identity](quick-setup#creating-an-identity)
+* [Configuring the CLI](quick-setup#configuring-the-cli)
+* [Adding Extra Connections](quick-setup.md#adding-extra-connections)
 
 ## [Bitmark\-CLI Command Reference](bitmark-cli.md#bitmark-cli-command-reference)
   
 * [Basic Command Structure](bitmark-cli.md#basic-command-structure)
-* [Global Options](bitmark-cli.md#global-options)
-  * [Identity definition](bitmark-cli.md#identity-definition)
-  * [Options and parameters passed to the agent program:](bitmark-cli.md#options-and-parameters-passed-to-the-agent-program)
+  * [Global Options](bitmark-cli.md#global-options)
+  * [Options: Identity](bitmark-cli.md#options-identity)
+  * [Options: Agent Programs](bitmark-cli.md#options-agent-programs)
 
 ## [CLI Command Synopsis](bitmark-cli.md#cli-command-synopsis)
 
