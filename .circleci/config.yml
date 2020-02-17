@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Test
           command: |
-            find pages -type f -name '*.md' | xargs -n 1 sh check-spelling.sh
+            find pages -type f -name '*.md' | xargs -n 1 sh tools/check-spelling.sh
 
   build:
     executor: build-deploy-executor
