@@ -7,7 +7,7 @@ awk '
         code=0
         flag=1
     }
-    /^~~~|^ *```/{
+    /^~~~|^[[:space:]]*```/{
         code = !code
         flag=0
     } 
