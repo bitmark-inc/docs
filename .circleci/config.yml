@@ -43,6 +43,7 @@ jobs:
       - run:
           name: Test
           command: |
+            printenv
             find pages -type f -name '*.md' | xargs -n 1 sh tools/check-spelling.sh
 
   build:
