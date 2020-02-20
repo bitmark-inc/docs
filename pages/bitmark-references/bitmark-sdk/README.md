@@ -60,7 +60,7 @@
     * [bitmarks offered from the specific sender](query.md#bitmarks-offered-from-the-specific-sender)
     * [bitmarks offered to the specific receiver](query.md#bitmarks-offered-to-the-specific-receiver)
 
-## [Triggering from Web Socket Events](websocket.md#web-socket)
+## [Receiving WebSocket Events](websocket.md#web-socket)
   
 * [Event](websocket.md#event)
 * [Java](websocket.md#java)
