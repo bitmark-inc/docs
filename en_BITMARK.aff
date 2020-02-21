@@ -1,3 +1,14 @@
 SET UTF-8
 
 IGNORE -
+
+SFX D Y 2
+SFX D 0 d e
+SFX D 0 ed [^e]
+
+SFX S Y 2
+SFX S 0 s [^y]
+SFX S y ies y
+
+SFX O Y 1
+SFX O 0 's .
