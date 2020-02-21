@@ -19,13 +19,15 @@ This tutorial explains how to set up the `bitmarkd` and/or the `recorderd` servi
 + You must have **a Bitcoin and a Litecoin address** for receiving mining rewards.
 + Your environment must be open for incoming connections through port 2136.
 + Hardware minimum requirements:
-    - memory >= 2G
-    - free disk space >= 20G
+    - memory >= 2 GB
+    - free disk space >= 20 GB
     - broadband Internet connection with upload speeds of at least 400 kilobits (50 kilobytes) per second
 
 ## Installing a Bitmark Node and Generating Required Keys and Certificates
 
-Installing the required packages requires specific commands on Debian, FreeBSD, macOS, and Ubuntu.
+A Bitmark node can be installed differently, depending on the operating system. Installations on FreeBSD, Ubuntu, and macOS can be done through pre-built packages.
+
+If some special functionality is required, or there are no available packages yet for your OS, a Bitmark node can also be compiled from source files. For more information, see [Building From Source](###-Building-From-Source).
 
 ### FreeBSD
 
@@ -43,7 +45,7 @@ $ apt update
 $ apt install bitmarkd
 ```
 
-### MacOSX
+### macOS
 
 You need [Brew](https://brew.sh/) installed and configured.
 
@@ -54,7 +56,7 @@ $ brew install bitmarkd
 
 ### Building From Source
 
-[See detailed instructions here.](https://github.com/bitmark-inc/bitmarkd)
+[See detailed instructions here.](https://github.com/bitmark-inc/bitmarkd#operating-system-specific-setup-commands)
 
 ## Setting up and running `bitmarkd`
 
@@ -66,7 +68,7 @@ The installation includes a sample configuration which has some embedded instruc
 | Ubuntu  | `/etc/bitmarkd.sample`                    |
 | MacOSX  | `/usr/local/etc/bitmarkd/bitmarkd.sample` |
 
-Create the configuration directory and copy the sample configuration:
+Copy the sample configuration.
 
 ```shell
 $ cp ${SAMPLE_CONFIGURATION_PATH}  ~/.bitmarkd.conf
@@ -74,15 +76,19 @@ $ cp ${SAMPLE_CONFIGURATION_PATH}  ~/.bitmarkd.conf
 
 Edit the `bitmarkd.conf` to set up appropriate chain, cryptocurrencies addresses, IP addresses, and ports.
 
+```shell	
+$ ${EDITOR} ~/.bitmarkd.conf	
+```
+
 Finally, start the program.
 
 ```
-$ bitmarkd --config-file="${CONFIG_FILE_PATH}" start
+$ bitmarkd --config-file=~/.bitmarkd.conf start
 ```
 
 For more information on `bitmarkd` sub-commands, run the following command:
 ```
-$ bitmarkd --config-file="${CONFIG_FILE_PATH}" help
+$ bitmarkd --config-file=~/.bitmarkd.conf help
 ```
 
 ## Setting up and running `recorderd`
@@ -93,20 +99,26 @@ Setting up `recorderd` is similar to setting up `bitmarkd`.
 
 First, setup and edit your configuration file. For mining using the local `bitmarkd`, the sample configuration should work without changes.
 
-| OS      | CONFIG_FILE_PATH                |
-|---------|---------------------------------|
-| FreeBSD | `/usr/local/etc/recorderd.conf` |
-| Ubuntu  | `/etc/recorderd.conf`           |
+| OS      | Sample configuration file path            |
+|---------|-------------------------------------------|
+| FreeBSD | `/usr/local/etc/recorderd.conf`           |
+| Ubuntu  | `/etc/recorderd.conf`                     |
 | MacOSX  | `/usr/local/etc/recorderd/recorderd.conf` |
+
+Copy the sample configuration.
+
+```shell
+$ cp ${SAMPLE_CONFIGURATION_PATH}  ~/.recorderd.conf
+```
 
 Start the program.
 
 ```
-$ recorderd --config-file="${CONFIG_FILE_PATH}" start
+$ recorderd --config-file=~/.recorderd.conf start
 ```
 
 For more information on `recorderd` sub-commands, run the following command:
 
 ```
-$ recorderd --config-file="${CONFIG_FILE_PATH}" help
+$ recorderd --config-file=~/.recorderd.conf help
 ```
