@@ -42,4 +42,4 @@
 
 # [Browse our FAQ](/pages/browse-our-faq/README.md)
 
-*[Bitmark Protocol FAQ](/pages/browse-our-faq/bitmark-protocol-faq.md)
+* [Bitmark Protocol FAQ](/pages/browse-our-faq/bitmark-protocol-faq.md)

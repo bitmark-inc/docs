@@ -3,8 +3,8 @@ title: CLI payment
 keywords: transaction payment
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /get-started/register-and-control-data/cli/cli-payment
-folder: get-started/register-and-control-data/cli
+permalink: /register-and-control-data/cli/cli-payment
+folder: register-and-control-data/cli
 ---
 
 # CLI payment

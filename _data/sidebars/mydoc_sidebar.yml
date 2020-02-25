@@ -85,11 +85,11 @@ entries:
       url: /contribute-to-the-protocol/governance
       output: web
     
-  - title: Bitmark Upgrade Proposal
+    - title: Bitmark Upgrade Proposal
       url: /contribute-to-the-protocol/bitmark-upgrade-proposal
       output: web
   
-  - title: Security Program
+    - title: Security Program
       url: /contribute-to-the-protocol/security-program
       output: web
 

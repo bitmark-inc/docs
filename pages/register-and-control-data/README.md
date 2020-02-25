@@ -2,10 +2,11 @@
 
 ## [Register data](register-data.md)
 
-* [Preparationn](register-data.md#preparation)
+* [Prerequisites](register-data.md#prerequisites)
 * [Issue the first bitmark](register-data.md#issue-the-first-bitmark)
 * [Issue more](register-data.md#issue-more)
 * [Explore the transactions using the Registry website](register-data.md#explore-the-transactions-using-the-Registry-website)
+* [References](register-data.md#references)
 
 <br>
 

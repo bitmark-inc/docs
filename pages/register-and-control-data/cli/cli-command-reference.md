@@ -3,8 +3,8 @@ title: bitmark-cli Command Reference
 keywords: cli, bitmark-cli, command line interface
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /get-started/register-and-control-data/cli/bitmark-cli-command-reference
-folder: get-started/register-and-control-data/cli
+permalink: /register-and-control-data/cli/bitmark-cli-command-reference
+folder: register-and-control-data/cli
 ---
 
 # bitmark-cli Command Reference

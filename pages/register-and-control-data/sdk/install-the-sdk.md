@@ -1,13 +1,13 @@
 ---
-title: SDK overview
+title: Install the SDK
 keywords: sdk, sdk installation, sdk configuration
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /getting-started/register-and-control-data/sdk-overview
-folder: getting-started/register-and-control-data/
+permalink: /register-and-control-data/install-the-sdk
+folder: register-and-control-data/sdk
 ---
 
-# SDK overview
+# Install the SDK
 
 The Bitmark property system is an universal property system for conferring the same property rights to digital assets that have long existed for physical assets. This system records ownership claims for digital assets as digital property titles known as bitmark certificates on the Bitmark public blockchain. A digital asset can be any digital object, including files, applications, code, and data. In the digital world:
 
@@ -89,7 +89,7 @@ BitmarkSDK.initialize(config: SDKConfig(apiToken: "api-token",
 {% endcodetab %}
 {% codetab Java %}
 ```java
-final GlobalConfiguration.Builder builder = GlobalConfiguration.builder().withApiToken("api-token").withNetwork(Network.LIVE_NET);
+final GlobalConfiguration.Builder builder = GlobalConfiguration.builder().withApiToken("api-token").withNetwork(Network.TEST_NET);
 BitmarkSDK.init(builder);
 ```
 {% endcodetab %}

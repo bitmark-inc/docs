@@ -3,8 +3,8 @@ title: CLI quick setup
 keywords: cli, bitmark-cli, command line interface, quick setup
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /get-started/register-and-control-data/cli/cli-quick-setup
-folder: get-started/register-and-control-data/cli
+permalink: /register-and-control-data/cli/cli-quick-setup
+folder: register-and-control-data/cli
 ---
 
 # CLI quick setup

@@ -9,7 +9,7 @@ folder: register-and-control-data
 
 # Register data
 
-Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates(or bitmarks). This can be done using the  SDK and the CLI.
+Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates (or bitmarks). This can be done using the SDK and the CLI.
 
 The process of registering a Bitmark Certificate for a digital asset occurs in two steps:
 
@@ -19,20 +19,41 @@ The process of registering a Bitmark Certificate for a digital asset occurs in t
 
 This process registers legal property rights on the public Bitmark blockchain for an individual's digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether the individual wants to keep it, sell it, or donate it.
 
-## Preparation
+## Prerequisites
 
-* SDK installation
-* CLI installation
+**Using the SDK**
+* [Install the SDK](sdk/install-the-sdk.md#installation)
+* [Get your API token](sdk/install-the-sdk.md#get-your-api-token)
+
+**Using the CLI**
+* [Install the CLI along with the bitmarkd](run-a-node.md)
+* [Install and configure the Bitmark Wallet](cli/cli-payment.md#installing-and-configuring-the-bitmark-wallet)
 
 ## Issue the first bitmark
 
-//Todo: Explain steps
+The first step to create a digital property is to register assets. 
+
+* Each asset can described by name and metadata (both optional), and can be uniquely identified by its fingerprint. 
+* If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain. 
+* An asset record won't be added to the blockchain without accompanying bitmark issuances. The "orphaned" asset records will be vanished after 3 days.
+
+For any asset there is a special issue that is free of cost. Even if an asset already exists a different Bitmark account can create a free issue for it.
 
 ### Using the SDK
 
 {% codetabs %}
 {% codetab JS %}
 ```javascript
+//Configure the SDK
+const sdk = require('bitmark-sdk-js');
+
+const config = {
+  apiToken: "api-token",
+  network: "testnet"
+};
+
+sdk.init(config);
+
 // Creat a Bitmark account
 let registrant = new sdk.Account();
 
@@ -61,6 +82,13 @@ let bitmarkId = bitmarks[0].id;
 {% endcodetab %}
 {% codetab Swift %}
 ```swift
+//Configure the SDK
+import BitmarkSDK
+
+BitmarkSDK.initialize(config: SDKConfig(apiToken: "api-token",
+                                        network: .testnet,
+                                        urlSession: URLSession.shared))
+
 // Creat a Bitmark account
 let registrant = try Account()
 
@@ -78,7 +106,6 @@ let assetId = try Asset.register(params)
 
 // Build and sign the bitmark issuance request
 var params = try Bitmark.newIssuanceParams(assetId: assetId,
-                                            owner: registrant.accountNumber,
                                             quantity: 1)
 try params.sign(registrant)
 
@@ -88,6 +115,10 @@ let bitmarkIds = try Bitmark.issue(params)
 {% endcodetab %}
 {% codetab Java %}
 ```java
+//Configure the SDK
+final GlobalConfiguration.Builder builder = GlobalConfiguration.builder().withApiToken("api-token").withNetwork(Network.TEST_NET);
+BitmarkSDK.init(builder);
+
 // Create a Bitmark Account as the Issuer
 Account registrant = new Account();
 
@@ -133,6 +164,20 @@ Bitmark.issue(params, new Callback1<List<String>>() {
 {% endcodetab %}
 {% codetab Go %}
 ```go
+//Configure the SDK
+import sdk "github.com/bitmark/bitmark-inc/bitmark-sdk-go"
+
+func main() {
+	config := &sdk.Config{
+		APIToken: "YOUR API TOKEN",
+		Network:  sdk.Testnet,
+		HTTPClient: &http.Client{
+			Timeout: 10 * time.Second,
+		},
+	}
+	sdk.Init(config)
+}
+
 // Create a Bitmark Account as the Issuer
 registrant, err := account.New()
 
@@ -163,37 +208,32 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% codetabs %}
 {% codetab Command %}
 ```sh
-// Create an identity
+# Create an identity
 $ bitmark-cli -i IDENTITY -n NETWORK setup -d 'DESCRIPTION OF IDENTITY' -c HOST:2130
 
-//Compute the asset hash
+# Compute the asset hash
 $ bitmark-cli -n <network> fingerprint -f <file>
 
-//register asset along with issuing the first bitmark
-$ bitmark-cli -n <network> -i <identity> create -a '<asset name>' -m '<asset metadata>' 
-\ -f <asset fingerprint> -z
+# register asset along with issuing the first bitmark
+$ bitmark-cli -n <network> -i <identity> create -a '<asset name>' -m '<asset metadata>' -f <asset fingerprint> -z
 
-//Verify the status of the issuance transaction
+# Verify the status of the issuance transaction
 $ bitmark-cli -n <network> status -t <txid>
 
 ```
 {% endcodetab %}
 {% codetab Example %}
 ```sh
-// Create a Bitmark Account as the Issuer
+# Create a Bitmark Account as the Issuer
 
-//Compute file hash
+#  Compute file hash
 $ bitmark-cli -n testing fingerprint -f test.txt
 
-//Issue the first bitmark of the asset
-$ bitmark-cli -n testing -i first \
-    create -a 'asset_name' -m 'From\u0000CLI\u0000desc\u0000example' \
-    -f \ 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z
+# Issue the first bitmark of the asset
+$ bitmark-cli -n testing -i first create -a 'asset_name' -m 'From\u0000CLI\u0000desc\u0000example' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z
 
-//Verify the status of the issuance transaction
-$ bitmark-cli -n testing \
-      status -t \
-      b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
+# Verify the status of the issuance transaction
+$ bitmark-cli -n testing status -t b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
 ```
 {% endcodetab %}
 {% codetab Output %}
@@ -219,7 +259,7 @@ $ bitmark-cli -n testing \
 
 // Cheking status while pending
 {
-  "status": "Pending"
+  "status": "Verified"
 }
 
 // Cheking status once confirmed
@@ -232,16 +272,22 @@ $ bitmark-cli -n testing \
 
 ## Issue more
 
-//Todo: Explain steps
+After an asset is registered, users can issue more bitmarks with a permanent reference to the corresponding asset record. Those issuance transactions need to be paid to be confirmed on the Blockchain.
+
+* SDK users pay for the issuance transactions using the SDK credit system
+* CLI users pay for the issuance transactions by sending BTC or LTC to the indicated address.
 
 ### Using the SDK
 
 {% codetabs %}
 {% codetab JS %}
 ```javascript
+//import the issuer account
+let issuer = Account.fromSeed("your_account_seed");
+
 // Build and sign the bitmark issuance request
 let issueParams = sdk.Bitmark.newIssuanceParams(assetId, 10);
-issueParams.sign(registrant);
+issueParams.sign(issuer);
 
 // Submit the issue request
 let bitmarks = (await sdk.Bitmark.issue(issueParams)).bitmarks;
@@ -249,11 +295,13 @@ let bitmarks = (await sdk.Bitmark.issue(issueParams)).bitmarks;
 {% endcodetab %}
 {% codetab Swift %}
 ```swift
+//import the issuer account
+issuer = Account(fromSeed:"your_account_seed");
+
 // Build and sign the bitmark issuance request
 var params = try Bitmark.newIssuanceParams(assetId: assetId,
-                                            owner: registrant.accountNumber,
-                                            quantity: 1)0
-try params.sign(registrant)
+                                            quantity: 10)
+try params.sign(issuer)
 
 // Submit the issue request
 let bitmarkIds = try Bitmark.issue(params)
@@ -261,9 +309,12 @@ let bitmarkIds = try Bitmark.issue(params)
 {% endcodetab %}
 {% codetab Java %}
 ```java
+//import the issuer account
+Account issuer = Account.fromSeed("your_account_seed");
+
 // Build and sign the bitmark issuance request
 IssuanceParams params = new IssuanceParams(assetId, 10);
-params.sign(registrant.getKeyPair());
+params.sign(issuer.getKeyPair());
 
 // Submit the issue request
 Bitmark.issue(params, new Callback1<List<String>>() {
@@ -281,6 +332,9 @@ Bitmark.issue(params, new Callback1<List<String>>() {
 {% endcodetab %}
 {% codetab Go %}
 ```go
+//import the issuer account
+issuer, err := account.FromSeed("your_account_seed");
+
 // Build and sign the bitmark issuance request
 params := bitmark.NewIssuanceParams(assetID, 10)
 params.Sign(issuer)
@@ -296,37 +350,34 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% codetabs %}
 {% codetab Command %}
 ```sh
-// Create an identity
-$ bitmark-cli -i IDENTITY -n NETWORK setup -d 'DESCRIPTION OF IDENTITY' -c HOST:2130
+# Issue more bitmarks on an existing asset
+$ bitmark-cli -n <network> -i <identity> create -a '<asset name>' -m '<asset metadata>' -f <asset fingerprint> -q 10
 
-//Compute the asset hash
-$ bitmark-cli -n <network> fingerprint -f <file>
-
-//register asset along with issuing the first bitmark
-$ bitmark-cli -n <network> -i <identity> create -a '<asset name>' -m '<asset metadata>' 
-\ -f <asset fingerprint> -z
-
-//Verify the status of the issuance transaction
+# Verify the status of the issuance transaction
 $ bitmark-cli -n <network> status -t <txid>
+
+# Pay by BTC
+$ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> sendmany --hex-data '<payId>' '<btc address>,<btc amount in satoshi>'
+
+# OR Pay by LTC
+$ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> sendmany --hex-data '<payId>' '<ltc address>,<ltc amount in photon>'
 
 ```
 {% endcodetab %}
 {% codetab Example %}
 ```sh
-// Create a Bitmark Account as the Issuer
+# Issue more bitmarks on an existing asset
+$ bitmark-cli -n testing -i first create -a 'asset_name' -m 'From\u0000CLI\u0000desc\u0000example' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -q 10
 
-//Compute file hash
-$ bitmark-cli -n testing fingerprint -f test.txt
+# Verify the status of the issuance transaction
+$ bitmark-cli -n testing status -t b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
 
-//Issue the first bitmark of the asset
-$ bitmark-cli -n testing -i first \
-    create -a 'asset_name' -m 'From\u0000CLI\u0000desc\u0000example' \
-    -f \ 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z
+# Pay by BTC
+$ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> sendmany --hex-data '<payId>' '<btc address>,<btc amount in satoshi>'
 
-//Verify the status of the issuance transaction
-$ bitmark-cli -n testing \
-      status -t \
-      b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
+# OR Pay by LTC
+$ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> sendmany --hex-data '<payId>' '<ltc address>,<ltc amount in photon>'
+
 ```
 {% endcodetab %}
 {% codetab Output %}
@@ -350,9 +401,20 @@ $ bitmark-cli -n testing \
     "proofStatus": "Accepted"
 }
 
-// Cheking status while pending
+// Cheking status before payment
 {
   "status": "Pending"
+}
+
+//Payment command's output
+{
+    "txId": "ca94ae188ba8bfdc42e026950c5e13a2f1082dae484a45c5dc29217ac0c9a23f",
+    "rawTx": "0100000001b76a37054a086c5bd68afd61914bb4badc78c9e7ef59e6b692777cc18063632d020000006b483045022100db6f27ec3e1e59c34887f262217d5ff819947c561f0ecd11034ba8b32dbdc87002203ef82d80be8e43434eb16e22248e4533a1d3c2831e19802ce55a308604d76f3c012103b45a55c3e48209581d63ba5ceea9a0e94ae49e18056d85a6dadec535dbe237a2ffffffff03400d0300000000001976a914d2ebb7b259fb7410dca19b707c4091195d818ac488ac8091e305000000001976a9142d477753d17099534f9249b54cda36081d4e5eba88ac0000000000000000326a30d819cff364b9211093fe09c2b462bdd05154472a72fac91a882a8f1129674dc92ac5d2724c8d26b16d414de8fbc5c62e00000000"
+}
+
+// Cheking status while pending
+{
+  "status": "Verified"
 }
 
 // Cheking status once confirmed
@@ -370,3 +432,8 @@ Userse can explore all of the transactions on the Bitmark blockchain using the B
 * For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
 
 * For transactions on the Bitmark testnet blockchain: https://registry.test.bitmark.com
+
+## References
+
+* [CLI command reference](cli/cli-command-reference.md)
+* [CLI quick setup](cli/cli-quick-setup.md)
