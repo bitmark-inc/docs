@@ -11,21 +11,17 @@ folder: register-and-control-data
 
 Once an asset has been registered, the owner can trade it by creating a transfer record that points back to the original issue record (or to a previous transfer record) and that lists the new owner of the asset. Because the blockchain is ordered and because it's immutable, this creates a permanent chain of custody reaching back to the asset's origins.
 
-Bitmark owners can transfer their Bitmark Certificates to others using the [Bitmark SDK](#transferring-bitmarks-using-the-bitmark-sdk), or the [Bitmark-CLI](#transferring-bitmarks-using-the-bitmark-cli).
+Bitmark owners can transfer their Bitmark Certificates to others using the SDK and the CLI.
 
 ## Prerequisites
 
-* [Bitmark Accounts](creating-bitmark-account.md) must be created.
+**Using the SDK**
+* [Install the SDK](sdk/getting-started.md#installing-sdk-packages)
+* [Accquire an API token](sdk/getting-started.md#acquiring-an-api-token)
 
-* [Bitmark Certificates](issuing-bitmarks.md) must be registered.
-
-* If using the Bitmark-CLI, [Payment on Bitmark-CLI](payment-for-bitmark-cli.md) tools must be ready.
-
-## Transferring bitmarks using the Bitmark SDK
-
-To transfer a Bitmark Certificate using the Bitmark JS SDK:
-
-* [Configure the SDK and create an account (`sender`)](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-sdk) and/or [register a Bitmark Certificate and retrieve its `bitmarkId`](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md#registering-bitmark-certificates-using-the-bitmark-sdk)
+**Using the CLI**
+* [Install the CLI along with the bitmarkd](run-a-node.md)
+* [Install and configure the Bitmark Wallet](cli/cli-payment.md#installing-and-configuring-the-bitmark-wallet)
 
 * Submit a transfer transaction
 

@@ -31,9 +31,9 @@ This process registers legal property rights on the public Bitmark blockchain fo
 
 ## Issue the first bitmark
 
-The first step to create a digital property is to register assets. 
+The first step to create a digital property is to register assets 
 
-* Each asset can described by name and metadata (both optional), and can be uniquely identified by its fingerprint. 
+* Each asset can be described by name and metadata (both optional), and can be uniquely identified by its fingerprint. 
 * If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain. 
 * An asset record won't be added to the blockchain without accompanying bitmark issuances. The "orphaned" asset records will be vanished after 3 days.
 
@@ -209,22 +209,23 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% codetab Command %}
 ```sh
 # Create an identity
-$ bitmark-cli -i IDENTITY -n NETWORK setup -d 'DESCRIPTION OF IDENTITY' -c HOST:2130
+$ bitmark-cli -i IDENTITY -n <local|testing|bitmark> add -d 'DESCRIPTION OF IDENTITY' --new
 
 # Compute the asset hash
-$ bitmark-cli -n <network> fingerprint -f <file>
+$ bitmark-cli -n <local|testing|bitmark> fingerprint -f <file>
 
 # register asset along with issuing the first bitmark
-$ bitmark-cli -n <network> -i <identity> create -a '<asset name>' -m '<asset metadata>' -f <asset fingerprint> -z
+$ bitmark-cli -n <local|testing|bitmark> -i <identity> create -a '<asset name>' -m '<asset metadata>' -f <asset fingerprint> -z
 
 # Verify the status of the issuance transaction
-$ bitmark-cli -n <network> status -t <txid>
+$ bitmark-cli -n <local|testing|bitmark> status -t <txid>
 
 ```
 {% endcodetab %}
 {% codetab Example %}
 ```sh
 # Create a Bitmark Account as the Issuer
+bitmark-cli -n testing -i first add -d 'first' --new
 
 #  Compute file hash
 $ bitmark-cli -n testing fingerprint -f test.txt
@@ -233,7 +234,7 @@ $ bitmark-cli -n testing fingerprint -f test.txt
 $ bitmark-cli -n testing -i first create -a 'asset_name' -m 'From\u0000CLI\u0000desc\u0000example' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z
 
 # Verify the status of the issuance transaction
-$ bitmark-cli -n testing status -t b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
+$ bitmark-cli -n testing status -t 45a3e08658db810d7fda4c34a852f3707bc8e4518571c8c8a79835d0a9bb3834
 ```
 {% endcodetab %}
 {% codetab Output %}
@@ -246,23 +247,23 @@ $ bitmark-cli -n testing status -t b069f2956b828281dec040782eea3d63793ab4cf17c26
 
 //Registering the asset from its hash
 {
-    "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
-    "issueIds": [
-        "b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23"
-    ],
-    "payId": "b30bf53de9f6ae5ca59259fd695566bce692d422201c222ff136ab3193f16301e055b1030ce46a1981f439105b3a96e2",
-    "payNonce": "a7b23fc462594028",
-    "difficulty": "0000ffffffffffffff8000000000000000000000000000000000000000000000",
-    "submittedNonce": "00000001a67fa973",
-    "proofStatus": "Accepted"
+  "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
+  "issueIds": [
+    "45a3e08658db810d7fda4c34a852f3707bc8e4518571c8c8a79835d0a9bb3834"
+  ],
+  "payId": "05943784313be02e7f1823f398f82bccf803933863804a46c42119ad2a8d1f85476d2211a1079acb5cebe6682daf7168",
+  "payNonce": "8ae68bb87c4a926b",
+  "difficulty": "0000ffffffffffffff8000000000000000000000000000000000000000000000",
+  "submittedNonce": "0000000125ef307e",
+  "proofStatus": "Accepted"
 }
 
-// Cheking status while pending
+// Cheking status
 {
   "status": "Verified"
 }
 
-// Cheking status once confirmed
+// After about 2 minutes
 {
   "status": "Confirmed"
 }
@@ -351,10 +352,10 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% codetab Command %}
 ```sh
 # Issue more bitmarks on an existing asset
-$ bitmark-cli -n <network> -i <identity> create -a '<asset name>' -m '<asset metadata>' -f <asset fingerprint> -q 10
+$ bitmark-cli -n <local|testing|bitmark> -i <identity> create -a '<asset name>' -m '<asset metadata>' -f <asset fingerprint> -q 10
 
 # Verify the status of the issuance transaction
-$ bitmark-cli -n <network> status -t <txid>
+$ bitmark-cli -n <local|testing|bitmark> status -t <txid>
 
 # Pay by BTC
 $ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> sendmany --hex-data '<payId>' '<btc address>,<btc amount in satoshi>'
@@ -370,35 +371,60 @@ $ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> sendman
 $ bitmark-cli -n testing -i first create -a 'asset_name' -m 'From\u0000CLI\u0000desc\u0000example' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -q 10
 
 # Verify the status of the issuance transaction
-$ bitmark-cli -n testing status -t b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23
+$ bitmark-cli -n testing status -t 742fdff03ead89375b95d0c3e834ccaf5d6446b8dd4897cd6757e78317384150
 
 # Pay by BTC
-$ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> sendmany --hex-data '<payId>' '<btc address>,<btc amount in satoshi>'
+$ bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf btc --testnet sendmany --hex-data '35b336aa5dbd78a6dd14f2dff528384bb7d0066125facf898b31a942e76d74626c083b3e3f5ba07a579924604dfd3a56' 'msxN7C7cRNgbgyUzt3EcvrpmWXc59sZVN4,100000'
 
 # OR Pay by LTC
-$ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> sendmany --hex-data '<payId>' '<ltc address>,<ltc amount in photon>'
+$ bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf ltc --testnet sendmany --hex-data '35b336aa5dbd78a6dd14f2dff528384bb7d0066125facf898b31a942e76d74626c083b3e3f5ba07a579924604dfd3a56' 'mjPkDNakVA4w4hJZ6WF7p8yKUV2merhyCM,1000000'
 
+# Verify the status of the issuance transaction
+$ bitmark-cli -n testing status -t 742fdff03ead89375b95d0c3e834ccaf5d6446b8dd4897cd6757e78317384150
 ```
 {% endcodetab %}
 {% codetab Output %}
 ```json
-// Computing asset hash
+// Issue more bitmarks on an existing asset
 {
-    "file_name": "filename.test",
-    "fingerprint":"0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f799c7527859361f1694acef106d5131a96641eae524e1c323500"
-}
-
-//Registering the asset from its hash
-{
-    "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
-    "issueIds": [
-        "b069f2956b828281dec040782eea3d63793ab4cf17c26f7639e95f6f3b20ba23"
+  "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
+  "issueIds": [
+    "742fdff03ead89375b95d0c3e834ccaf5d6446b8dd4897cd6757e78317384150",
+    "8babb6641dfd8a2eadd41b2cd46dfa43e035551b8d23b34eb18fde8895b43dec",
+    "6b4316c2316f7894fca0ab3f5a4893bcb7fd84d4812ec11b0f7f4090b2185346",
+    "f0ce573b8a0c73422f76aa367f64286879377af5d4f8e60da1f92430627be6e0",
+    "eea9b090c24cb3c370583d961a7aff8bdbb4fb9ad0787101189ab96abd263403",
+    "450d295025b79fb0e125bcb41ef1846301c366d51811de1f3690e623576443c9",
+    "e1d6e3e54fa0f23d1fa76d9514018ec2a6b686d91af82e370edd73597c99b7e2",
+    "f549830586b81e08048d8ecf0277b2e3d2ac27b0759d86d94e630dd9754d4e41",
+    "398fd9d41ac2163f268584b4a6a050b14bdab62592534d102514e410b9d34076",
+    "1f895b7dcd08cd7738f7cb22165b6a3c133ab04885280d9e12799f967e6300c6"
+  ],
+  "payId": "35b336aa5dbd78a6dd14f2dff528384bb7d0066125facf898b31a942e76d74626c083b3e3f5ba07a579924604dfd3a56",
+  "payNonce": "0000000000000000",
+  "difficulty": "",
+  "submittedNonce": "",
+  "proofStatus": "NotFound",
+  "payments": {
+    "BTC": [
+      {
+        "currency": "BTC",
+        "address": "msxN7C7cRNgbgyUzt3EcvrpmWXc59sZVN4",
+        "amount": "100000"
+      }
     ],
-    "payId": "b30bf53de9f6ae5ca59259fd695566bce692d422201c222ff136ab3193f16301e055b1030ce46a1981f439105b3a96e2",
-    "payNonce": "a7b23fc462594028",
-    "difficulty": "0000ffffffffffffff8000000000000000000000000000000000000000000000",
-    "submittedNonce": "00000001a67fa973",
-    "proofStatus": "Accepted"
+    "LTC": [
+      {
+        "currency": "LTC",
+        "address": "mjPkDNakVA4w4hJZ6WF7p8yKUV2merhyCM",
+        "amount": "1000000"
+      }
+    ]
+  },
+  "commands": {
+    "BTC": "bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf btc --testnet sendmany --hex-data '35b336aa5dbd78a6dd14f2dff528384bb7d0066125facf898b31a942e76d74626c083b3e3f5ba07a579924604dfd3a56' 'msxN7C7cRNgbgyUzt3EcvrpmWXc59sZVN4,100000'",
+    "LTC": "bitmark-wallet --conf ${XDG_CONFIG_HOME}/bitmark-wallet/test/test-bitmark-wallet.conf ltc --testnet sendmany --hex-data '35b336aa5dbd78a6dd14f2dff528384bb7d0066125facf898b31a942e76d74626c083b3e3f5ba07a579924604dfd3a56' 'mjPkDNakVA4w4hJZ6WF7p8yKUV2merhyCM,1000000'"
+  }
 }
 
 // Cheking status before payment
@@ -408,16 +434,16 @@ $ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> sendman
 
 //Payment command's output
 {
-    "txId": "ca94ae188ba8bfdc42e026950c5e13a2f1082dae484a45c5dc29217ac0c9a23f",
-    "rawTx": "0100000001b76a37054a086c5bd68afd61914bb4badc78c9e7ef59e6b692777cc18063632d020000006b483045022100db6f27ec3e1e59c34887f262217d5ff819947c561f0ecd11034ba8b32dbdc87002203ef82d80be8e43434eb16e22248e4533a1d3c2831e19802ce55a308604d76f3c012103b45a55c3e48209581d63ba5ceea9a0e94ae49e18056d85a6dadec535dbe237a2ffffffff03400d0300000000001976a914d2ebb7b259fb7410dca19b707c4091195d818ac488ac8091e305000000001976a9142d477753d17099534f9249b54cda36081d4e5eba88ac0000000000000000326a30d819cff364b9211093fe09c2b462bdd05154472a72fac91a882a8f1129674dc92ac5d2724c8d26b16d414de8fbc5c62e00000000"
+  "txId": "69a1a4810d0b703fb855397334bb3c04a0dc90e3c2c5cfa1d64b6c100f5ffe7d", 
+  "rawTx": "0100000001c2de9f79c6d5c112b5b8c2979c7d9ec18a5712e995c6eaafc44a8a2ac3852c23010000006a473044022063e3135e76403d4d07ba24f9053ca59cd56c9140ff11c49796e7dd6f08b9912d0220637f83fb58754ad5c9be816af3af09fbadb47f60f70627b2b8e7732f6adf8e700121031202a8f1cb428470d172d93d71d12bf3be8aa54b30426b185a0938cd966bef94ffffffff03a0860100000000001976a914886fc94c1420d404103f32d1c812513857f6ecc988ac4042fc94000000001976a914ca0d5ec57c5eae9b5d362f59ef7ec7e1b2e8251d88ac0000000000000000326a3035b336aa5dbd78a6dd14f2dff528384bb7d0066125facf898b31a942e76d74626c083b3e3f5ba07a579924604dfd3a5600000000"
 }
 
-// Cheking status while pending
+// Cheking status after the payment
 {
   "status": "Verified"
 }
 
-// Cheking status once confirmed
+// Cheking status after about 2 minutes
 {
   "status": "Confirmed"
 }
@@ -427,11 +453,11 @@ $ bitmark-wallet --conf <Bitmark-Wallet config file> ltc --<ltc network> sendman
 
 ## Explore the transactions using the Registry website
 
-Userse can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry web application:
+Userse can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry website:
 
-* For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
+* [Explore transactions on the Bitmark blockchain](https://registry.bitmark.com)
 
-* For transactions on the Bitmark testnet blockchain: https://registry.test.bitmark.com
+* [Explore transactions on the Bitmark testnet blockchain](https://registry.test.bitmark.com)
 
 ## References
 
