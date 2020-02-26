@@ -26,9 +26,9 @@ _The Bitmark References offer you an encyclopedia of features for the Bitmark Pr
 * [Overview and Getting started](bitmark-sdk/bitmark-sdk-document.md)
 * [Account](bitmark-sdk/account.md)
 * [Actions](bitmark-sdk/actions.md)
-* [Query](bitmark-sdk/query.md)
-* [Store Seed](bitmark-sdk/store-seed.md)
-* [Web Socket](bitmark-sdk/web-socket.md)
+* [Queries](bitmark-sdk/query.md)
+* [Triggering from Web Socket Events](bitmark-sdk/web-socket.md)
+* [Storing a Seed](bitmark-sdk/store-seed.md)
 
 
 ## [Bitmark\-CLI](bitmark-cli/README.md)

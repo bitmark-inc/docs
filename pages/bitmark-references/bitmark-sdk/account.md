@@ -9,13 +9,13 @@ folder: bitmark-references/bitmark-sdk
 
 # Account
 
-Within the Bitmark system, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations.
+Within the Bitmark Property System, an account represents any entity capable of creating and owning property, whether individuals, institutions, or organizations.
 
-An account incorporates the public-private key-pair and the private key is required to [digitally sign](https://en.wikipedia.org/wiki/Digital_signature) any Bitmark blockchain record, including asset records, issue records, and transfer records.
+An account incorporates the public-private key-pair; the private key is needed to [digitally sign](https://en.wikipedia.org/wiki/Digital_signature) any Bitmark blockchain record, including asset records, issue records, and transfer records.
 
-## Create an account
+## Creating an account
 
-Create a new identity to participate Bitmark blockchain.
+You must create a new identity to participate on the Bitmark blockchain.
 
 {% codetabs %}
 {% codetab JS %}
@@ -45,14 +45,14 @@ acct, err := account.New()
 {% endcodetab %}
 {% endcodetabs %}
 
-## Get the account number
+## Retrieving the account number
 
-The account number of an account serves as a pseudonymous identifier within the Bitmark blockchain, which can represent:
+The account number of an account serves as a pseudonymous identifier within the Bitmark blockchain. It can represent:
 
-- **registrant** of an asset
-- **owner** of a bitmark
-- **sender** of a bitmark transfer offer
-- **receiver** of a bitmark transfer offer
+- The **registrant** of an asset
+- The **owner** of a bitmark
+- The **sender** of a bitmark transfer offer
+- The **receiver** of a bitmark transfer offer
 
 {% codetabs %}
 {% codetab JS %}
@@ -80,13 +80,13 @@ accountNumber := acct.AccountNumber()
 {% endcodetab %}
 {% endcodetabs %}
 
-## Export an account
+## Exporting an account
 
 There are two formats for exporting an account: **seed** and **recovery phrase**, both of which store all the required information to instantiate an account.
 
-Both seed and recovery phrase can be used to derive the original private key of an account, so it is critical to keep them stored securely. 
+Both the seed and the recovery phrase can be used to derive the original private key of an account, so it is critical to store them securely.
 
-### Seed
+### Exporting a seed
 
 The seed is the more compact format of an exported account. See [Store seed](store-seed.md) to learn how to securely store seeds in mobile phones.
 
@@ -118,9 +118,11 @@ seed := acct.Seed()
 {% endcodetab %}
 {% endcodetabs %}
 
-### Recovery Phrase
+### Exporting a recovery phrase
 
-The recovery phrase, which consists of 12 [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior for human interaction compared to the handling of seed. If you don't custody the seeds of your users, make sure you present the recovery phrase to them and teach them [how to store it in a secure place](https://help.trustwallet.com/hc/en-us/articles/360016509753-Best-Practices-for-Storing-Your-Recovery-Phrase). Currently English and traditional Chinese phrases are supported.
+The recovery phrase, which consists of twelve [mnemonic words](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), is superior to the seed for human interaction. If you don't maintain custody of the seeds of your users, make sure you present the recovery phrase to them and teach them [how to store it in a secure place](https://help.trustwallet.com/hc/en-us/articles/360016509753-Best-Practices-for-Storing-Your-Recovery-Phrase). 
+
+Currently English and traditional Chinese phrases are supported.
 
 {% codetabs %}
 {% codetab JS %}
@@ -170,13 +172,13 @@ phrase, err := acct.RecoveryPhrase(language.AmericanEnglish)
 {% endcodetab %}
 {% endcodetabs %}
 
-## Import an account
+## Importing an account
 
-As mentioned in [Export an account](#Export-an-account), an account could be exported as either `seed` or `recovery phrase`, so there are two corresponding functions to recover an account from the supported exported formats.
+As mentioned in [Exporting an account](#exporting-an-account), an account could be exported as either a `seed` or a `recovery phrase`, so there are two corresponding functions to recover an account from the supported exported formats.
 
-### Recover from seed
+### Recovering from a seed
 
-To instantiate an account from a given seed.
+To instantiate an account from a given seed:
 
 {% codetabs %}
 {% codetab JS %}
@@ -201,9 +203,9 @@ acct, err := account.FromSeed("9J87CAsHdFdoEu6N1unZk3sqhVBkVL8Z8")
 {% endcodetab %}
 {% endcodetabs %}
 
-### Recover from phrase
+### Recovering from a phrase
 
-To instantiate an account from a given recovery phrase.
+To instantiate an account from a given recovery phrase:
 
 {% codetabs %}
 {% codetab JS %}
@@ -256,9 +258,9 @@ acct, err := account.FromRecoveryPhrase(
 {% endcodetab %}
 {% endcodetabs %}
 
-## Sign and Verify
+## Signing and verifying
 
-An account can be used to sign arbitrary message, and any party with the received message and the corresponding signature can validate if the message was created by a known sender (authentication), and the message was not altered in transit (integrity). This functionality is usually useful when you have a server application which needs to authenticate if the requests are from valid users.
+An account can be used to sign an arbitrary message. Any party with the received message and the corresponding signature can then validate if the message was created by a known sender (authentication) and that the message was not altered in transit (integrity). This functionality is usually useful when you have a server application that needs to authenticate whether requests are from valid users.
 
 {% codetabs %}
 {% codetab JS %}
@@ -312,10 +314,10 @@ err := account.Verify(acct.AccountNumber(), msg, sig)
 {% endcodetab %}
 {% endcodetabs %}
 
-## Validate an account number
+## Validating an account number
 
-The function returns an error to indicate whether a given account number is valid in current runtime environment, i.e.,
-the format is correct and its network matches to the network specified in the SDK config during initialization.
+Validating a given account number verifies that it is valid in the current runtime environment (i.e.,
+the format is correct and its network matches the network specified in the SDK config during initialization). The SDK functions return an error if the validation fails.
 
 {% codetabs %}
 {% codetab JS %}
