@@ -4,7 +4,7 @@
 
 # How to add words to Bitmark dictionary?
 
-`en_Bitmark.dic` contains a list of words, one per line. The first line of the dictionaries contains the approximate word count (for optimal hash memory size). Each word may optionally be followed by a slash ("/") and one or more flags, which represents the word attributes, for example affixes. The supported flags are:
+`en_Bitmark.dic` contains a list of words, one per line. The first line of the dictionaries contains the approximate word count (for optimal hash memory size). Each word may optionally be followed by a slash ("/") and one or more flags, which represents the word attributes, such as prefixes and suffixes. The supported flags are:
 
 | Flag | Meaning         | Example | Acceptable spellings |
 |------|-----------------|---------|----------------------|
