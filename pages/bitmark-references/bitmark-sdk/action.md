@@ -1,5 +1,5 @@
 ---
-title: Action
+title: Actions
 keywords: action, sdk, register asset, issue bitmark, transfer bitmark
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,16 +7,17 @@ permalink: /bitmark-references/bitmark-sdk/action
 folder: bitmark-references/bitmark-sdk
 ---
 
-# Register an asset
+# Actions
 
-The first step to create a digital property is to register assets.
-An asset can any digital object, including files, applications, code, and data.
+The Bitmark Property System focuses on digital assets that can be registered, issued, or transferred.
 
-Each asset can described by name and metadata (both optional), and can be uniquely identified by its fingerprint.
+## Registering an asset
 
-If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain.
+The first step in creating a digital property is registering an asset, which can be any digital object including files, applications, code, or data.
 
-An asset record won't be added to the blockchain without accompanying bitmark issuances (refer to the next section for more info). The "orphaned" asset records will be vanished after 3 days.
+Each asset can be described by a name and by metadata (both optional) and must be uniquely identified by its fingerprint. If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain.
+
+An asset record won't be added to the blockchain without an accompanying bitmark issuances (see the next section for more info). Such an "orphaned" asset records will vanish after three days.
 
 {% codetabs %}
 {% codetab JS %}
@@ -76,11 +77,11 @@ assetID, err := asset.Register(params)
 {% endcodetab %}
 {% endcodetabs %}
 
-# Issue bitmarks
+## Issuing a bitmark
 
-This system records ownership claims for digital assets as digital property titles known as bitmarks.
+This Bitmark Property System records ownership claims for digital assets as digital property titles known as Bitmark certificates, or bitmarks.
 
-After the asset is registered, you can issue bitmarks with a permanent reference to the corresponding asset record.
+After an asset is registered, you can issue bitmarks with a permanent reference to the corresponding asset record.
 
 {% codetabs %}
 {% codetab JS %}
@@ -129,23 +130,20 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% endcodetab %}
 {% endcodetabs %}
 
-# Transfer a bitmark
+## Transferring a bitmark
 
-Bitmark transfer, which is the process of transferring bitmark ownership from one Bitmark account to another.
+There are two ways to transfer a bitmark from one Bitmark account to another:
 
-There are two ways to transfer a bitmark:
+- **direct transfer** (1-sig transfer): only requires the sender's signature
+- **countersigned transfer** (2-sig transfer): requires both the sender's and the receiver's signature
 
-- **direct transfer** (1-sig transfer): only requires sender's signature
-- **countersigned transfer** (2-sig transfer):requires both sender's and receiver's signature
+Direct transfer is similar to sending emails: the sender does not get consent from the receiver before sending the mail.
 
-Direct transfer is similar to sending emails, the sender does not get the consent from the receiver before sending a mail.
+Countersigned transfer is similar to certified mail or a package delivery that requires a signature: the receiver has the right to accept or reject the delivery of a package. The actual transfer won't take effect until the receiver explicitly provides the second signature, a.k.a. countersignature, as consent.
 
-Countersigned transfer is similar to certified mail or a package delivery that requires a signature, the receiver has the right to accept or reject the delivery of a package.
-The actual transfer won't take effect until the receiver explicitly provides the second signature, a.k.a. countersignature, as the consent.
+A newly created bitmark can be transferred right after the issue transaction is sent. Following the first transfer transaction, an additional transfer can only be executed when the previous transfer transaction is already confirmed on the blockchain (i.e., the status of the bitmark has to be `settled`).
 
-A newly created bitmark can be transferred right after the issue tx is sent. After the first transfer transaction, any transfer can only be executed when the previous transfer transaction is already confirmed on the blockchain (i.e., the status of the bitmark has to be `settled`).
-
-## Direct transfer
+### Direct transfer
 
 The sender can transfer a bitmark to another account without additional consent.
 
@@ -206,11 +204,11 @@ txID, err := bitmark.Transfer(params)
 
 ## Countersigned transfer
 
-For some scenario, the developer want to get a permission from the receiver before we transfer a property to it. In the case, you will submit a two-signature transfer.
+For some scenarios, the sender wants to get a permission from the receiver before transferring property. In the case, the sender initiates a two-signature transfer.
 
-### Propose a bitmark transfer offer
+### Proposing a transfer offer
 
-The current owner of a bitmark can propose a transfer offer for another account. The actual ownership transfer won't happen until the receiver accepts the offer.
+The current owner of a bitmark can propose a transfer offer to another account. The actual ownership transfer won't happen until the receiver accepts the offer.
 
 {% codetabs %}
 {% codetab JS %}
@@ -266,9 +264,9 @@ err := bitmark.Offer(params)
 {% endcodetab %}
 {% endcodetabs %}
 
-### Query offering bitmarks
+### Querying for offers
 
-The receiver needs to query if there is any bitmark transfer offer waiting for the countersignature.
+The receiver needs to query if there are any bitmark transfer offers waiting for their countersignature.
 For the details of query execution, please refer to [Query Bitmark](query.md##Bitmark).
 
 {% codetabs %}
@@ -314,9 +312,9 @@ bitmarks, referencedAssets, err := bitmark.List(builder)
 {% endcodetab %}
 {% endcodetabs %}
 
-### Accept the bitmark transfer offer
+### Accepting a transfer offer
 
-If the receiver decides to accept the bitmark, the countersignature is generated and make the transfer action take effect.
+If the receiver decides to accept the bitmark transfer offer, they generate a countersignature, and the transfer action takes effect.
 
 The status of the bitmark will change from `offering` to `transferring`.
 
@@ -366,9 +364,9 @@ _, err := bitmark.Respond(params)
 {% endcodetab %}
 {% endcodetabs %}
 
-### Reject the transfer offer
+### Rejecting a transfer offer
 
-The receiver can also reject the bitmark transfer offer.
+The receiver can also reject a bitmark transfer offer.
 The status of the bitmark will reverted to `settled`, and the sender can create a new transfer offer.
 
 {% codetabs %}
@@ -417,11 +415,11 @@ _, err := bitmark.Respond(params)
 {% endcodetab %}
 {% endcodetabs %}
 
-### Cancel the transfer offer
+### Canceling a transfer offer
 
-If the receiver hasn't responded to the bitmark transfer offer (neither accepted nor rejected), the sender can cancel the offer.
+If a receiver hasn't responded to a bitmark transfer offer (neither accepted nor rejected it), the sender can cancel the offer.
 
-Similar to the case of the receiver rejecting the offer, the status of the bitmark will be set to `settled` again, and becomes available for the next transfer.
+Similar to the case of the receiver rejecting the offer, the status of the bitmark will be set to `settled` again, and the bitmark becomes available for a new transfer.
 
 {% codetabs %}
 {% codetab JS %}

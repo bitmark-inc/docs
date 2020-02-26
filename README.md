@@ -40,8 +40,8 @@
 * [Getting Started](/pages/bitmark-references/bitmark-sdk/bitmark-sdk-document.md)
 * [Account](/pages/bitmark-references/bitmark-sdk/account.md)
 * [Actions](/pages/bitmark-references/bitmark-sdk/action.md)
-* [Query](/pages/bitmark-references/bitmark-sdk/query.md)
-* [Store Seed](/pages/bitmark-references/bitmark-sdk/store-seed.md)
+* [Queries](/pages/bitmark-references/bitmark-sdk/query.md)
+* [Storing a Seed](/pages/bitmark-references/bitmark-sdk/store-seed.md)
 * [Web Socket](/pages/bitmark-references/bitmark-sdk/websocket.md)
 
 **[Bitmark\-CLI](/pages/bitmark-references/bitmark-cli/README.md)**

@@ -1,5 +1,5 @@
 ---
-title: Query
+title: Queries
 keywords: sdk, query
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,24 +7,26 @@ permalink: /bitmark-references/bitmark-sdk/query
 folder: bitmark-references/bitmark-sdk
 ---
 
-# Query
+# Queries
 
-The bitmark SDK support queries over these records: assets, bitmarks and transactions (txs). These records are created or updated when different actions (register, issue or transfer) are applied.
+The Bitmark SDK support queries about assets, bitmarks, and transactions (txs), which are records that are created or updated when different actions (register, issue, or transfer) occur.
 
-For the retrieval of a single record, use the record ID (`asset_id`, `bitmark_id` or `tx_id`) to retrieve the specific record.
+For the retrieval of a single record, use the record ID (`asset_id` for an asset, `bitmark_id` for a bitmark, or `tx_id` for a transaction) with the standard function to retrieve that specific record.
 
-For the retrieval of a collection of records, several query parameters are provided to select a set of records based on supplied criteria. All records support the following filters:
+For the retrieval of a collection of records, use one of several query functions to select a set of records based on specific criteria. 
 
-- `pending`: whether to include pending records (not added to the blockchain yet)
-- `limit`: the maximum number of records to be returned in one query
-- `offset`: returns the records which are updated subsequently
+All records support the following filters:
+
+- `pending`: determines whether to include pending records that are not yet added to the blockchain
+- `limit`: sets the maximum number of records to be returned in one query
+- `offset`: returns the records that are updated subsequently
 
 <!-- TODO: explain how to iterate all records -->
 
 Both bitmark and transaction record can be linked to a fundamental asset record, so they support two extra query parameters:
 
-- `referenced_asset`: specifies the asset ID which the records link to
-- `load_asset`: whether to include referenced asset objects
+- `referenced_asset`: specifies the asset ID that the records link to
+- `load_asset`: determines whether to include referenced asset objects
 
 The actual query functions could be in snake case or camel case depends on which SDK is used. For simplicity, the camel case is used for explanation.
 
@@ -38,15 +40,15 @@ An asset record is available when it's registered and there is at least one acco
 | --------- | ----------- |
 | id | The asset ID |
 | name | The asset name |
-| metadata | The asset metadata, described by key-value paris |
+| metadata | The asset metadata, described by key-value pairs |
 | fingerprint | The hash value of the asset content, which serves as the unique identifier for the asset record in the blockchain |
 | registrant | The account registering the asset |
-| status | Possible values: `pending`, `confirmed` |
-| block_number | The block which incorporates the asset record |
-| offset | An auto-incremental number which increments when the data is updated |
-| created_at | When the asset status becomes `confirmed` |
+| status | The status on the blockchain, which has possible values of `pending` or `confirmed` |
+| block_number | The block that incorporates the asset record |
+| offset | An auto-incremental number, which increments when the data is updated |
+| created_at | The time when the asset status becomes `confirmed` |
 
-### Query for a specific asset
+### Querying for a specific asset
 
 {% codetabs %}
 {% codetab JS %}
@@ -88,11 +90,11 @@ Asset.get(assetId, new Callback1<AssetRecord>() {
 {% endcodetab %}
 {% endcodetabs %}
 
-### Query for a set of assets
+### Querying for a set of assets
 
-#### assets registered by the specific registrant
+#### Assets registered by the specific registrant
 
-Use the account number of the registrant as the query argument.
+To retrieve a set of all assets registered by a specific account, use the account number of the registrant as the query argument.
 
 {% codetabs %}
 {% codetab JS %}
@@ -144,13 +146,13 @@ Asset.list(builder, new Callback1<List<AssetRecord>>() {
 
 ## Transaction (tx)
 
-A new tx record is generated accordingly when one of the following actions is applied:
+A new transaction record is generated when one of the following actions occurs:
 
 - a new bitmark is issued
 - a bitmark is transferred
 - an offer is accepted
 
-Actions which are applied to the same bitmark will create a chain of transactions linked by `previous_id` (See [Record data structure](###-Record-data-structure)).
+Actions that are applied to the same bitmark will create a chain of transactions linked by `previous_id` (See [Record data structure](###-Record-data-structure)).
 
 ![a chain of transaction records](record_tx.png)
 
@@ -160,17 +162,17 @@ Actions which are applied to the same bitmark will create a chain of transaction
 | --------- | ----------- |
 | id | The tx ID |
 | owner | The account owning the bitmark |
-| previous_id | Links to the previous tx (ignored for issue tx) |
+| previous_id | A link to the previous tx (ignored for issue tx) |
 | previous_owner | The previous owner of the bitmark (ignored for issue tx) |
-| bitmark_id | Links to the bitmark which this tx is applied to |
+| bitmark_id | A link to the bitmark that this tx is applied to |
 | asset_id | The asset ID |
-| status | Possible values: `pending`, `confirmed` |
-| block_number | The block which incorporates the tx record |
-| offset | An auto-incremental number which increments when the data is updated |
-| confirmation | the number of blocks in the block chain that have been accepted by the network since the block that includes the transaction |
-| countersign | Indicates if this tx is a 2-sig transfer |
+| status | The status on the blockchain, which has possible values of `pending` or `confirmed` |
+| block_number | The block that incorporates the tx record |
+| offset | An auto-incremental number that increments when the data is updated |
+| confirmation | the number of blocks in the blockchain that have been accepted by the network since the block that includes the transaction |
+| countersign | Whether this tx is a two-signature transfer |
 
-### Query for a specific transaction
+### Querying for a specific transaction
 
 {% codetabs %}
 {% codetab JS %}
@@ -206,11 +208,11 @@ Transaction.get(txId, new Callback1<GetTransactionResponse>() {
 {% endcodetab %}
 {% endcodetabs %}
 
-### Query for a set of transactions
+### Querying for a set of transactions
 
-#### the provenance of a bitmark
+#### Transactions depicting the provenance of a bitmark
 
-A list of transaction records to show the ownership changes of a bitmark. If a bitmark is issued by user A, and then transferred to user B and C, the return will include 3 transactions with user A, B and C as transaction owners respectively.
+To retrieve the set of transactions that make up provenance of a bitmark, use a bitmark as an argument. This will produce a list of transaction records that show the ownership changes of a bitmark. If a bitmark is issued by user A, and then transferred to user B then to user C, the return will include three transactions with user A, B, and C as transaction owners respectively.
 
 {% codetabs %}
 {% codetab JS %}
@@ -256,8 +258,9 @@ Transaction.list(builder, new Callback1<GetTransactionsResponse>() {
 {% endcodetab %}
 {% endcodetabs %}
 
-#### the transaction history of an account
+#### Transactions created by an account
 
+To retrieve the set of transactions initiated by the same account, use the account ID as an argument.
 <!-- TODO: what does this mean? -->
 
 {% codetabs %}
@@ -306,13 +309,13 @@ Transaction.list(builder, new Callback1<GetTransactionsResponse>() {
 
 ## Bitmark
 
-The bitmark record is literally a compact data structure for a chain of transaction records towards the same digital property.
+The bitmark record is a compact data structure that depicts a chain of transaction records for the same digital property.
 
 When a bitmark is issued, the corresponding bitmark and transaction record are created.
 
 ![bitmark record at the time of issuance](record_bitmark_issue.png)
 
-When a bitmark is transferred, more transaction records are added to the property chain and the bitmark record will be updated.
+When a bitmark is transferred, more transaction records are added to the property chain and the bitmark record is updated.
 
 ![bitmark record after transfer](record_bitmark_transfer.png)
 
@@ -325,27 +328,27 @@ When a bitmark is transferred, more transaction records are added to the propert
 | latest_tx_id | The latest tx ID |
 | issuer | The account issuing the bitmark |
 | owner | The account currently owning the bitmark |
-| offer | See the [offer](####-offer) attributes below. |
-| status | Possible values: `issuing`, `transferring`, `offering`, `settled`. See the following diagram for definition. |
-| block_number | The block which incorporates the latest tx of this bitmark |
-| offset | An auto-incremental number which increments when the data is updated |
-| created_at | When the bitmark is issued |
-| confirmed_at | The last time when the bitmark is transferred |
+| offer | A set of attributes, described under [offer](#offer-data-structure) below. |
+| status | The current status of a bitmark, which can be `issuing`, `transferring`, `offering`, or `settled`. See the following diagram for definitions. |
+| block_number | The block that incorporates the latest tx of this bitmark |
+| offset | An auto-incremental number that increments when the data is updated |
+| created_at | The time when the bitmark was issued |
+| confirmed_at | The last time when the bitmark was transferred |
 
 ![Bitmark status diagram](bitmark_status.png)
 
-#### offer
+#### Offer data structure
 
 | Attribute | Description |
 | --------- | ----------- |
 | id | The offer ID |
-| from | Represents the account creating the offer |
-| to | Represents the account which can accept/reject the bitmark |
+| from | The account creating the offer |
+| to | The account which can accept/reject the offer |
 | record | The half-signed transfer tx |
-| extra_info | Attached JSON message for indicating the details of this offer |
+| extra_info | An attached JSON message for indicating the details of this offer |
 | created_at | The create time of the offer |
 
-### Query for a specific bitmark
+### Querying for a specific bitmark
 
 {% codetabs %}
 {% codetab JS %}
@@ -381,28 +384,29 @@ Bitmark.get(bitmarkId, new Callback1<GetBitmarkResponse>() {
 {% endcodetab %}
 {% endcodetabs %}
 
-### Query for a set of bitmarks
+### Querying for a set of bitmarks
 
-#### bitmarks issued by the specific issuer
+#### Bitmarks issued by a specific issuer
 
-To list the bitmarks which are issued by the specific account number. The issuer can increase the quality of each returned bitmark.
+To list the bitmarks that are issued by the specific account number, use that account as an argument. The issuer can increase the quality of each returned bitmark.
+
+<!-- TODO: Better explain what "increase the quality" means -->
+<!-- TODO: examples -->
+
+#### Bitmarks owned by a specific owner
+
+To list the bitmarks that are currently owned by the specific account number, use that account as an argument. The owner can transfer any of the returned bitmarks to any other receiver.
 
 <!-- TODO: examples -->
 
-#### bitmarks owned by the specific owner
+#### Bitmarks offered from the specific sender
 
-To list the bitmarks which are currently owned by the specific account number. The owner can transfer tach of the returned bitmarks to any other receiver.
-
-<!-- TODO: examples -->
-
-#### bitmarks offered from the specific sender
-
-A sender can query the bitmarks offered from him and takeTo list the bitmarks which are offered by this sender. The sender can take action on these bitmarks (cancel an offer).
+To list the bitmarks that are offered by a sender, use that account as an argument. The sender can take action on these bitmarks (sych as cancel an offer).
 
 <!-- TODO: examples -->
 
 #### bitmarks offered to the specific receiver
 
-To list the bitmarks which are offered to this receiver. The receiver can take actions on these bitmarks (accept or reject an offer).
+To list the bitmarks which are offered to a receiver, use that account as an argument. The receiver can take actions on these bitmarks (such as accept or reject an offer).
 
 <!-- TODO: examples -->

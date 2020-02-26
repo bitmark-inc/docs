@@ -1,5 +1,5 @@
 ---
-title: Web Socket
+title: Receiving WebSocket Events
 keywords: sdk, web socket
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,28 +7,28 @@ permalink: /bitmark-references/bitmark-sdk/websocket
 folder: bitmark-references/bitmark-sdk
 ---
 
-# Web Socket
-Realtime event triggering is trending in modern application development nowadays. It helps the application is always up to date and so provides better user experience.
-Bitmark SDK offers Web Socket event triggering to help the application can be notified immediately when there are anything changes.
+# Receiving WebSocket Events
+Realtime event triggering is trending in modern application development. It helps application to always be up to date and so provides better user experiences.
+Bitmark SDK offers Web Socket event triggering so that the application can be notified immediately when anything changes.
 
 ## Event
-- New block: This event will be sent when bitmark blockchain has a new block.
+- New block: Sent when the Bitmark blockchain has a new block.
   + `blockNumber` : new block number
-- Bitmark changed: This event will be sent when users issue new bitmarks, receive new bitmarks, or send them to new owner.
-  + `bitmarkId`: the id of bitmark is changed
+- Bitmark changed: Sent when users issue new bitmarks, receive new bitmarks, or send them to a new owner.
+  + `bitmarkId`: the id of the bitmark that changed
   + `txId`: the corresponding transaction id
-  + `presence`: indicate that the bitmark is owned or not by the corresponding `Account`
-- New transfer offer: This event will be sent when users receive new transfer offer (for 2 signatures transfer) from someone.
-  + `bitmarkId`: the id of the bitmark that's offered
-- New pending issuance: This event will be sent when users issue new bitmarks.
-  + `bitmarkId` : the id of bitmark is issuing
-- New pending transfer: This event will be sent to both sender and receiver.
+  + `presence`: whether the bitmark is owned or not by the corresponding `Account`
+- New transfer offer: Sent when users receive new transfer offers, for two-signatures transfer.
+  + `bitmarkId`: the id of the bitmark that's offered.
+- New pending issuance: Sent when users issue new bitmarks.
+  + `bitmarkId` : the id of the bitmark that's issuing.
+- New pending transfer: Sent when a transfer occurs, to both sender and receiver.
   + `txId`: the transaction id
-  + `owner`: the receiver of this transfer
+  + `owner`: the recipient of this transfer
   + `prevTxId`: the previous transaction id
   + `prevOwner`: the sender who made the transfer
 
-Note: The attributes name could be different depends on the SDK is used. This instruction prefers the Java SDK for the explanation.
+Note: The attribute names could be different depending on the SDK used. This document refers specifically to the Java SDK.
 
 ### Connect/Disconnect
 {% codetabs %}

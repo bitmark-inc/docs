@@ -1,5 +1,5 @@
 ---
-title: Store Seed
+title: Storing a Seed
 keywords: sdk, store seed
 last_updated: 
 sidebar: mydoc_sidebar
@@ -7,30 +7,34 @@ permalink: /bitmark-references/bitmark-sdk/store-seed
 folder: bitmark-references/bitmark-sdk
 ---
 
-# Store Seed
+# Storing a Seed
 
-Store key in mobile application is very important to ensure the security, protect user data against attackers. Bitmark SDK provides the utility for storing Account seed securely in mobile application, support **Android/iOS** platform.
+Storing your `Account` using a mobile application is very important to ensure its security and to protect your user data against attackers. Bitmark SDK supports storing your Account seed securely in mobile applications on both the **Android** and **iOS** platforms.
+
+_Unlike other SDK documents, which cover Go, Java, JavaScript, and Swift, this document only describes the SDK for mobile platforms: Java for Android and Swift for iOS._
 
 ## Android
 
-Bitmark SDK Android provides `KeyAuthenticationSpec.Builder` to declare how we store/retrieve `Account` securely. The `KeyAuthenticationSpec.Builder` attributes is described following.
+The Android Bitmark SDK  provides `KeyAuthenticationSpec.Builder` for storing and retrieving `Account` securely. 
+
+`KeyAuthenticationSpec.Builder` possesses the following attributes:
 
 | Attribute | Function | Description |
 | --------- | ----------- | ----------- |
-| `keyAlias` | `setKeyAlias(String`) | The alias represents for the account. Each time you store `Account`, you should use different alias even in the same `Account`
-| `isAuthenticationRequired` | `setAuthenticationRequired(boolean)` | Need the authentication each time store/retrieve the `Account` |
-| `authenticationValidityDuration` | `setAuthenticationValidityDuration(int)` | The time frame in second that the `Account` using does not need to be authenticated each time you use it. In this mode, the authentication method is always **PIN/Password/Pattern** |
-| `useAlternativeAuthentication` | `setUseAlternativeAuthentication` | Using the **PIN/Password/Pattern** as an alternative authentication method in case the device does not support biometric authentication |
+| `keyAlias` | `setKeyAlias(String`) | An alias representing the account. Each time you store an `Account`, you should use a different alias, even for the same `Account` |
+| `isAuthenticationRequired` | `setAuthenticationRequired(boolean)` | Whether authentication is required each time you store or retrieve the `Account` |
+| `authenticationValidityDuration` | `setAuthenticationValidityDuration(int)` | The time frame in seconds during which the `Account` will not need to be authenticated again. In this mode, the authentication method is always **PIN/Password/Pattern** |
+| `useAlternativeAuthentication` | `setUseAlternativeAuthentication` | Whether to use **PIN/Password/Pattern** as an alternative authentication method in case the device does not support biometric authentication |
 | `authenticationTitle` | `setAuthenticationTitle(String)` | The title for the authentication dialog |
 | `authenticationDescription` | `setAuthenticationDescription(String)` | The description for the authentication dialog |
 
-The following describes `Exception` would be thrown.
+The following `Exception`s might be thrown by `KeyAuthenticationSpec.Builder`:
 
 | Exception | Description |
 | --------- | ----------- |
-| `AuthenticationException` | This exception let you know the corresponding behaviors from users when we do authenticate them |
-| `AuthenticationRequiredException` | This exception will be returned if users didn't setup the authentication method in System Setting |
-| `HardwareNotSupportedException` | This exception let you know the device does not support required hardware for authentication |
+| `AuthenticationException` | This exception describes the corresponding behaviors from users when they are authenticated |
+| `AuthenticationRequiredException` | This exception is returned if users didn't setup the authentication method in System Setting |
+| `HardwareNotSupportedException` | This exception states that the device does not support the required hardware for authentication |
 
 ```java
 // Storing your account
@@ -90,17 +94,23 @@ account.removeFromKeyStore(activity, spec, new Callback0() {
 
 ```
 
-Bitmark Android SDK supports storing key from Android **API 23(M)** and above because of the security level.
+Bitmark Android SDK supports storing keys from Android **API 23(M)** and above because of the security level.
 
-Bitmark Android SDK would authenticate user **each time** they use the key (depend on your `KeyAuthenticationSpec`), so protects user against attackers. We use Android Key Store system with a lot of security algorithm for protecting user's key.
+Bitmark Android SDK would authenticate the user **each time** they use the key (depend on the `KeyAuthenticationSpec` setting) to protect the user against attackers. The SDK uses the Android Key Store system with a lot of security algorithm for protecting the user's key.
 
 **NOTE**:
 
-- You **need** to `extends StatefulActivity` in the host `Activity` you pass for storing/getting/deleting the key.
-- **React Native** is also supported as an *experimental* feature. You **need** to `extends StatefulReactActivity` in the host `Activity` you want to pass for storing/getting/deleting the key.
-- We use Android Key store for securely storing the `Account` so that if the key is used to encrypt `Account` is invalidated by some reasons like add/remove the fingerprint or even the key is no longer available, some official `Exception` will be thrown. For more detail, please visit [here](https://developer.android.com/training/articles/keystore).
+- You **need** to `extends StatefulActivity` in the host `Activity` you pass for storing, retrieving, or deleting the key.
+- **React Native** is also supported as an *experimental* feature. You **need** to `extends StatefulReactActivity` in the host `Activity` you want to pass for storing, retrieving, or deleting the key.
+- We use Android Key store for securely storing the `Account` so that if the key used to encrypt `Account` is invalidated by some method, such as adding or removing the fingerprint, or even if the key is no longer available, some official `Exception` will be thrown. For more details, please visit [Android's article on keystore](https://developer.android.com/training/articles/keystore).
 
 ## iOS
+
+Bitmark Swift SDK uses iOS keychain to store bitmark accounts. To use this feature, on your app, you need to setup the keychain first.
+
+| Parameter | Description |
+| `service` | your keychain service name; dependent on what is configured in the entitlement file |
+| `alias` | the key to save your account into keychain; default value is your account number |
 
 ```swift
 // Storing your account
@@ -114,7 +124,3 @@ try Account.loadFromKeychain(service: "com.bitmarksdk.example",
                                 requireAuthenticationWithMessage: nil)
 ```
 
-Bitmark Swift SDK uses iOS keychain to store bitmark accounts. To use this feature, on your app, you need to setup the keychain first.
-Parameters:
-1. `service`: your keychain service name, depends on what you configurated on your entitlement file.
-2. `alias`: the key to save your account into keychain. Default value is your account number.
