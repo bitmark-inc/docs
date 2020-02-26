@@ -1,37 +1,120 @@
 # Golang CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-go/ for more details
-version: 2
-jobs:
-  build:
+version: 2.1
+
+executors:
+  build-deploy-executor:
     docker:
-      # specify the version
+      - image: circleci/ruby:2.6.5
+
+    working_directory: ~/docs
+
+jobs:
+  test:
+    docker:
       - image: circleci/golang:1.12
         environment:
           - GO111MODULE: "on"
 
-    working_directory: ~/docs-testing/
+    working_directory: ~/docs
     steps:
       - checkout
       - run: sudo sh -c 'mkdir -p /etc/apt/source.list.d/'
       - run:
           name: Add repo testing
           command: |
-             sudo sh -c 'echo "deb http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list.d/testing.list'
-             sudo sh -c 'echo "deb-src http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list.d/testing.list'
-             sudo sh -c 'echo "deb http://security.debian.org/ testing/updates  main contrib non-free" >> /etc/apt/source.list.d/testing.list'
+            sudo sh -c 'echo "deb http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list.d/testing.list'
+            sudo sh -c 'echo "deb-src http://ftp.de.debian.org/debian/ testing main contrib non-free" >> /etc/apt/sources.list.d/testing.list'
+            sudo sh -c 'echo "deb http://security.debian.org/ testing/updates  main contrib non-free" >> /etc/apt/source.list.d/testing.list'
       - run:
-          name: Add repo stable 
+          name: Add repo stable
           command: |
-             sudo sh -c 'echo "deb http://ftp.de.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list.d/stable.list'
-             sudo sh -c 'echo "deb-src http://ftp.de.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list.d/stable.list'
-             sudo sh -c 'echo "deb http://security.debian.org/ stable/updates  main contrib non-free" >> /etc/apt/source.list.d/stable.list'
+            sudo sh -c 'echo "deb http://ftp.de.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list.d/stable.list'
+            sudo sh -c 'echo "deb-src http://ftp.de.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list.d/stable.list'
+            sudo sh -c 'echo "deb http://security.debian.org/ stable/updates  main contrib non-free" >> /etc/apt/source.list.d/stable.list'
       - run:
           name: Prepare environment
           command: |
-             sudo apt-get update
-             sudo apt-get install perl
-             sudo apt-get install git
-             git clone "https://github.com/araujobsd/igor" ~/docs-testing/igor
-             cd ~/docs-testing/igor/ && sh make-spellingwords
-             ~/docs-testing/igor/check-all ~/docs-testing/
+            sudo apt-get update
+            sudo apt-get install perl
+            sudo apt-get install -y hunspell hunspell-en-gb hunspell-en-us
+            hunspell -D
+      - run:
+          name: Test
+          command: |
+            find pages -type f -name '*.md' | xargs -n 1 sh tools/check-spelling.sh
+
+  build:
+    executor: build-deploy-executor
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - bundler-{{ checksum "Gemfile.lock" }}
+            - bundler-
+
+      - run:
+          name: Prepare environment
+          command: |
+            gem install jekyll bundler
+            bundle install --clean --path vendor/bundle
+
+      - save_cache:
+          key: bundler-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Build
+          command: |
+            bundle exec jekyll build
+
+      - persist_to_workspace:
+          root: ~/docs
+          paths:
+            - _site
+
+  deploy:
+    executor: build-deploy-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/docs
+
+      - add_ssh_keys:
+          fingerprints:
+            - "c8:fc:c0:b1:ad:0e:9c:52:f2:be:ea:0e:9f:69:40:a3"
+
+      - run:
+          name: Prepare environment
+          command: |
+
+            git config --global user.email "hieupham@bitmark.com"
+            git config --global user.name "hieupham.bitmark"
+            echo 'export GH_COMMIT=$(git rev-parse HEAD)' >> $BASH_ENV
+
+      - run:
+          name: Deploy
+          command: |
+            git clone "git@github.com:bitmark-inc/bitmark-inc.github.io.git" ~/docs-deploy
+            cp -r ~/docs/_site/. ~/docs-deploy
+            cd ~/docs-deploy
+            git commit -am "commit automatically by CircleCI, reflect the change from /docs repo at commit '$GH_COMMIT'"
+            git push origin master
+
+workflows:
+  version: 2
+  test-build-deploy:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
