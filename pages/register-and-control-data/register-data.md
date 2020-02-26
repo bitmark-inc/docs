@@ -22,8 +22,8 @@ This process registers legal property rights on the public Bitmark blockchain fo
 ## Prerequisites
 
 **Using the SDK**
-* [Install the SDK](sdk/install-the-sdk.md#installation)
-* [Get your API token](sdk/install-the-sdk.md#get-your-api-token)
+* [Install the SDK](sdk/getting-started.md#installing-sdk-packages)
+* [Accquire an API token](sdk/getting-started.md#acquiring-an-api-token)
 
 **Using the CLI**
 * [Install the CLI along with the bitmarkd](run-a-node.md)
@@ -435,5 +435,17 @@ Userse can explore all of the transactions on the Bitmark blockchain using the B
 
 ## References
 
-* [CLI command reference](cli/cli-command-reference.md)
-* [CLI quick setup](cli/cli-quick-setup.md)
+CLI
+  * [CLI command reference](cli/cli-command-reference.md)
+  * [CLI quick setup](cli/cli-quick-setup.md)
+
+<br>
+
+SDK
+  * [SDK Getting Started](sdk/getting-started.md)
+  * [SDK Account](sdk/account.md)
+  * [SDK Action](sdk/action.md)
+  * [SDK Query](sdk/query.md)
+  * [SDK Migration](sdk/migration.md)
+  * [SDK Store Seed](sdk/store-seed.md)
+  * [SDK Web Socket](sdk/websocket.md)

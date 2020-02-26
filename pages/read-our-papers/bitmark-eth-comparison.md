@@ -13,8 +13,7 @@ The Bitmark Property System enables management of digital property rights, but t
 
 So why use Bitmark instead of Ethereum?
 
-
-The simplest answer is that Bitmark is for digital property management, while Ethereum is instead intended to enable distributed computing. Ethereum certainly can do an impressive number of different things, but Bitmark was optimized for this specific use case, and as a result  it is faster, more efficient, and cheaper to manage assets on the Bitmark blockchain than to use Ethereum.
+The simplest answer is that Bitmark was built for digital property management, while Ethereum is instead intended to enable distributed computing. Ethereum certainly can do an impressive number of different things, but Bitmark was optimized for this specific use case, and as a result  it is faster, more efficient, and cheaper to manage assets on the Bitmark blockchain than to use Ethereum.
 
 <br>
 
