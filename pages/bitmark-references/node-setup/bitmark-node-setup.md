@@ -25,7 +25,7 @@ This tutorial explains how to set up the `bitmarkd` and/or the `recorderd` servi
 
 ## Installing a Bitmark Node and Generating Required Keys and Certificates
 
-A Bitmark node can be installed differently, depending on the operating system. Installations on FreeBSD, Ubuntu, and macOS can be done through pre-built packages.
+Bitmark nodes can be installed on a variety of different operating systems, with pre-built packages available for FreeBSD, Ubuntu, and macOS.
 
 If some special functionality is required, or there are no available packages yet for your OS, a Bitmark node can also be compiled from source files. For more information, see [Building From Source](###-Building-From-Source).
 
@@ -47,7 +47,13 @@ $ apt install bitmarkd
 
 ### macOS
 
-You need [Brew](https://brew.sh/) installed and configured.
+You need to install Brew:
+
+```shell
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Visit the [Brew](https://brew.sh/) site for more information on the installation and configuration options.
 
 ```shell
 $ brew tap bitmark-inc/bitmark
