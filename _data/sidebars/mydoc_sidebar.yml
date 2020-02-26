@@ -86,7 +86,7 @@ entries:
       output: web
     
     - title: Bitmark Upgrade Proposal
-      url: /contribute-to-the-protocol/bitmark-upgrade-proposal
+      url: /contribute-to-the-protocol/bup
       output: web
   
     - title: Security Program
@@ -97,8 +97,8 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Bitmark Protocal FAQ
-      url: /browse-our-faq/bitmark-protocol-faq
+    - title: Bitmark Protocol FAQ
+      url: /browser-our-faq/bitmark-protocol-faq
       output: web
 
 
