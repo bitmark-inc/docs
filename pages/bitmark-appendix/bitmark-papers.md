@@ -10,6 +10,8 @@ folder: bitmark-appendix
 
 # Bitmark Papers
 
+Bitmark has produced white papers that lay the foundation for digital property rights, for the Bitmark Property System, and for the need for asset fingerprinting.
+
 ## Bitmark: The property system for the digital environment
 
 **Christopher Hall, Casey Alt, Lê Quý Quốc Cường, and Sean Moss-Pultz**

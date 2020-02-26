@@ -5,9 +5,9 @@
 
 ## [Bitmark shares](bitmark-shares.md)
   
-* [Reasoning](bitmark-shares.md#reasoning)
-* [Actions that can be performed](bitmark-shares.md#actions-that-can-be-performed)
-* [The implementation](bitmark-shares.md#the-implementation)
+* [The Reasoning](bitmark-shares.md#the-reasoning)
+* [The Actions](bitmark-shares.md#the-actions)
+* [The Implementation](bitmark-shares.md#the-implementation)
 
 ## [Bitmark Papers](bitmark-papers.md)
 
