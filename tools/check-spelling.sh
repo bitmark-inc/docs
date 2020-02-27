@@ -7,7 +7,7 @@ awk '
         code=0
         flag=1
     }
-    /^~~~|^[[:space:]]*```/{
+    /^~~~|^[[:space:]]*```|^---/{
         code = !code
         flag=0
     } 
@@ -15,6 +15,10 @@ awk '
         if(!code && flag) {
             gsub("`[^`]+`","")
             gsub("][(][^)]*[)]","]")
+            gsub("<br>","")
+            gsub("<.+/>","")
+            gsub("<!--.+-->","")
+            gsub("[end]?codetab[s]?( (JS)|(Swift) )?","")
             print $0
         }
         flag=1
