@@ -25,11 +25,11 @@
 
 <br>
 
-## [Contribute to the Protocol](/pages/contribute-to-the-protocol/README.md)
+## [Contribute to the Protocol](/pages/contribute-to-the-protocol.md)
 
-* [Governance](/pages/contribute-to-the-protocol/governance.md)
-* [Bitmark Upgrade Proposal](/pages/contribute-to-the-protocol/bup.md)
-* [Security Program](/pages/contribute-to-the-protocol/security-program.md)
+* [About the Bitmark Protocol](/pages/contribute-to-the-protocol.md#about-the-bitmark-protocol)
+* [Principles of Operation](/pages/contribute-to-the-protocol.md#principles-of-operation)
+* [Security Program](/pages/contribute-to-the-protocol.md#security-program)
 
 <br>
 

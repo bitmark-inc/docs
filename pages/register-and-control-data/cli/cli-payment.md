@@ -290,8 +290,3 @@ To fund a mainnet wallet, you'll need to send coins to the BTC or LTC address, b
 * Get some testnet litecoins at https://faucet.xblau.com/
 
 * Get some testnet bitcoins at https://coinfaucet.eu/en/btc-testnet/
-
-## Paying for the Transaction
-
-Once your Bitcoin Wallet is set up, it can be used to pay for transactions. Instructions and examples can be found in the sections on [Transferring Bitmarks](transferring-bitmarks.md#transferring-bitmarks-using-the-bitmark-cli), [Paying for a Share Creation](using-bitmark-shares.md#paying-for-a-share-creation), [Paying for a Share Grant](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares.md#paying-for-a-share-grant), and [Paying for a Share Swap](using-bitmark-shares.md#paying-for-a-share-swap).
-
