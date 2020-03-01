@@ -15,7 +15,7 @@ Bitmark transaction fees for transfers and share-related transactions can be pai
 
 The process is as follows:
 
-The Bitmark-CLI submits transactions to its connected Bitmark Node via RPC. Once the Node server receives a transaction, it processes the transaction, sets it as Pending, and returns corresponding payment ID, amounts, and addresses. The transaction is only updated from Pending to Verified, making it ready to be mined, once a payment is executed, either in BTC or LTC.
+The Bitmark-CLI submits transactions to its connected Bitmark Node via RPC. Once the Node server receives a transaction, it processes the transaction, sets it as Pending, and returns corresponding payment IDs, amounts, and addresses. The transaction is only updated from Pending to Verified, making it ready to be mined, once a payment is executed, either in BTC or LTC.
 
 In order for bitcoin or litecoin payment to be correctly recognized, freeing up the Bitmark transaction, it must include:
 

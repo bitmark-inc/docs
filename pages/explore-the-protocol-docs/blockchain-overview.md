@@ -75,7 +75,7 @@ names or metadata.
 Other transactions have an identifier that is the SHA3-256 hash of
 the entire record (including all signatures). This shorter identifier
 of 256 bits is used both to save space in records and to easily distinguish
-transaction ids from asset ids.
+transaction IDs from asset IDs.
 
 ### Asset Record
 

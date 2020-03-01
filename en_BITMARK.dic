@@ -4,16 +4,16 @@
 a.k.a.
 aggregator/S
 API/S
-Apps
+App/S
 Argon2
 ASIC/S
-assetId
+assetId/S
 backend
 barcode
 Base58
 BigTech
 Bitcoin
-bitcoin
+bitcoin/S
 bitcoind
 bitmark-cli
 Bitmark/O
@@ -38,6 +38,7 @@ Christopher
 CircleCI
 CLI
 codebase
+committer/S
 config
 crypto
 cryptocurrency/S
@@ -57,7 +58,7 @@ Golang
 GPU/S
 hashcash
 Homebrew
-ID
+ID/S
 incentivize/D
 iOS
 iPhone
@@ -71,7 +72,7 @@ KKBOX
 KKFARM
 LevelDB
 Litecoin
-litecoin
+litecoin/S
 litecoind
 livenet
 loopback
@@ -98,7 +99,7 @@ OwnerList
 OwnerNextCount
 OwnerTxIndex
 P2P
-payId
+payId/S
 PoW
 ps
 PUBSUB
@@ -130,7 +131,7 @@ TOC
 TravisCI
 trustless
 tx/S
-txId
+txId/S
 Tzu-Yun
 U8
 U16
