@@ -19,7 +19,7 @@
 * [Blockchain Structure](bitmark-blockchain-overview.md#blockchain-structure)
   * [Block Header](bitmark-blockchain-overview.md#block-header)
   * [Merkle Tree](bitmark-blockchain-overview.md#merkle-tree)
-  * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
+  * [Block Hashing (Argon2, difficulty, proof of work \.\.\.)](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
   
 ## [Block Validation and Synchronization](block-verification-and-synchronization.md#block-verification-and-synchronization)
 

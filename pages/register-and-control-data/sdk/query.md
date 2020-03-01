@@ -401,7 +401,7 @@ To list the bitmarks that are currently owned by the specific account number, us
 
 #### Bitmarks offered from the specific sender
 
-To list the bitmarks that are offered by a sender, use that account as an argument. The sender can take action on these bitmarks (sych as cancel an offer).
+To list the bitmarks that are offered by a sender, use that account as an argument. The sender can take action on these bitmarks (such as cancel an offer).
 
 <!-- TODO: examples -->
 

@@ -13,7 +13,7 @@ Bitmark transaction fees for transfers and share-related transactions can be pai
 
 The process is as follows:
 
-The Bitmark-CLI submits transactions to its connected Bitmark Node via RPC. Once the Node server receives a transaction, it processes the transaction, sets it as Pending, and returns corresponding payment IDs, amounts, and addresses. The transaction is only updated from Pending to Verified, making it ready to be mined, once a payment is executed, either in BTC or LTC.
+The Bitmark-CLI submits transactions to its connected Bitmark Node via RPC. Once the Node server receives a transaction, it processes the transaction, sets it as Pending, and returns corresponding payment ID, amounts, and addresses. The transaction is only updated from Pending to Verified, making it ready to be mined, once a payment is executed, either in BTC or LTC.
 
 In order for bitcoin or litecoin payment to be correctly recognized, freeing up the Bitmark transaction, it must include:
 
@@ -35,7 +35,7 @@ Features:
 
 * Submit BTC/LTC transactions.
 
-* Update the wallet from the BTC/LTC block chain by querying the local daemon to request any transctions belonging to its addresses.
+* Update the wallet from the BTC/LTC block chain by querying the local daemon to request any transaction belonging to its addresses.
 
 * Display the wallet balance for each coin.
 
@@ -140,7 +140,7 @@ The Bitmark wallet communicates with `litecoind` and `bitcoind` using RPC, so RP
         rpcauth=<rpc auth line for bitcoin> [to be filled in later]
     ```
 
-* Run the [`rpcauth.py`](samples/rpcauth.py) program to get the `rpcauth` lines and corresponding usernames & passwords
+* Run the [`rpcauth.py`](samples/rpcauth.py) program to get the `rpcauth` lines and corresponding username & password
 
     ```shell
         $ python3 rpcauth.py localhost
@@ -177,7 +177,7 @@ The Bitmark wallet communicates with `litecoind` and `bitcoind` using RPC, so RP
         rpcauth=cotzntmnxllhcpsshvdzzuue:1c1671f8ffbdd8d845688dc450d2c4e1$ec4723c3a7c29d072c40749017d4d326576c68264595355fac8816d525220f7a
     ```
 
-* Copy the BTC and LTC RPC usernames and passwords and paste them into the corresponding fields in the `bitmark-wallet.conf`
+* Copy the BTC and LTC RPC username and password and paste them into the corresponding fields in the `bitmark-wallet.conf`
 
     *Example:*
     ``` # bitmark-wallet.conf
@@ -287,6 +287,6 @@ To use the Bitmark Wallet:
 
 To fund a mainnet wallet, you'll need to send coins to the BTC or LTC address, but to fund a testnet wallet, you can simply request coins from a faucet.
 
-* Get some testnet litecoins at https://faucet.xblau.com/
+* Get some testnet ltc at https://faucet.xblau.com/
 
-* Get some testnet bitcoins at https://coinfaucet.eu/en/btc-testnet/
+* Get some testnet btc at https://coinfaucet.eu/en/btc-testnet/

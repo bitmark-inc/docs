@@ -9,7 +9,7 @@ folder: explore-the-protocol-docs
 
 # Block Validation and Synchronization
 
-The structure of transactions and block headers is detailed in the [Bitmark Blockchain Technical Overview](bitmark-blockchain-overview.md). What follows are the technical details for how blocks are validated, then synchronized on the Bitmark Blockchain. 
+The structure of transactions and block headers is detailed in the [Bitmark Blockchain Technical Overview](blockchain-overview.md). What follows are the technical details for how blocks are validated, then synchronized on the Bitmark Blockchain. 
 
 ## Block Structure
 
@@ -20,8 +20,8 @@ A block intended for validation on the Bitmark blockchain contains a [block head
 |   2             | block version number                                                      |
 |   2             | transaction count inside the block                                        |
 |   8             | block number (block height)                                               |
-|  32             | argon2 hash of previous block header                                      |
-|  32             | sha3 hash of all transactions in the block (merkle root)                  |
+|  32             | Argon2 hash of previous block header                                      |
+|  32             | SHA-3 hash of all transactions in the block (Merkle root)                  |
 |   8             | timestamp of block generation time, seconds since 1970-01-01T00:00:00 UTC |
 |   8             | current difficulty in compact mode                                        |
 |   8             | number to make hash meets difficulty                                      |
@@ -54,22 +54,22 @@ Different types of transactions following the block header will then be differen
 
 ## Block Validation
 
-When a block is received, the following tests are conducted to ensure its validatity:
+When a block is received, the following tests are conducted to ensure its validity:
 
 1. Length of all parts inside a block must match.
-1. Incoming block version number must be equal or larger than current block version number.
-1. Incoming block height must be 1 ahead of current block height.
-1. Incoming block must contain at least 1 transaction, at most 9999 transactions.
-1. Incoming block generation time must be within 5 minutes compared to received time.
-1. Incoming block generation time must be no larger than 10 minutes compared to current block generation time.
-1. Incoming block generation time must be within specific range.
-1. Incoming block difficulty must be same as current difficulty.
-1. Incoming block hash must meet difficulty criteria.
-1. Incoming block's previous block hash must be same as current block hash.
-1. Incoming transaction must fit each type's format and length.
-1. Incoming transaction owner ownership must be valid.
-1. Incoming transaction payment must be valid.
-1. Incoming block's SHA3 of all transactions with must be valid.
+2. Incoming block version number must be equal or larger than current block version number.
+3. Incoming block height must be 1 ahead of current block height.
+4. Incoming block must contain at least 1 transaction, at most 9999 transactions.
+5. Incoming block generation time must be within 5 minutes compared to received time.
+6. Incoming block generation time must be no larger than 10 minutes compared to current block generation time.
+7. Incoming block generation time must be within specific range.
+8. Incoming block difficulty must be same as current difficulty.
+9. Incoming block hash must meet difficulty criteria.
+10. Incoming block's previous block hash must be same as current block hash.
+11. Incoming transaction must fit each type's format and length.
+12. Incoming transaction owner ownership must be valid.
+13. Incoming transaction payment must be valid.
+14. Incoming block's SHA-3 of all transactions with must be valid.
 
 After a block is validated, a node stores that block into its internal
 database (`leveldb`), then the node broadcasts this newly saved block to all connected
@@ -97,7 +97,7 @@ When deciding upon the next block, each node considers decisions from other node
 
 A variety of conditions could occurs when nodes are deciding whether to select a block.
 
-1. majority votes exists
+1. Majority votes exists
 
 | Node   | Block Height   | Block Hash | 
 | ------ | -------------- | ---------- |
@@ -131,7 +131,7 @@ Meanwhile, node-3 will see the following results when asking for majority votes:
 It also will choose the chain that has hash `abcdefg` on block height
 1000, which means it will sync to the other nodes.
 
-1. several groups with same votes
+2. Several groups with same votes
 
 |  Node  |  Block Height  |  Block Hash  |
 | ------ | -------------- | ------------ |

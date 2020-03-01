@@ -32,7 +32,7 @@ The following `Exception`s might be thrown by `KeyAuthenticationSpec.Builder`:
 
 | Exception | Description |
 | --------- | ----------- |
-| `AuthenticationException` | This exception describes the corresponding behaviors from users when they are authenticated |
+| `AuthenticationException` | This exception describes the corresponding behavior from users when they are authenticated |
 | `AuthenticationRequiredException` | This exception is returned if users didn't setup the authentication method in System Setting |
 | `HardwareNotSupportedException` | This exception states that the device does not support the required hardware for authentication |
 

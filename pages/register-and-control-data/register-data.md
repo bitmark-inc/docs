@@ -23,7 +23,7 @@ This process registers legal property rights on the public Bitmark blockchain fo
 
 **Using the SDK**
 * [Install the SDK](sdk/getting-started.md#installing-sdk-packages)
-* [Accquire an API token](sdk/getting-started.md#acquiring-an-api-token)
+* [Acquire an API token](sdk/getting-started.md#acquiring-an-api-token)
 
 **Using the CLI**
 * [Install the CLI along with the bitmarkd](run-a-node.md)
@@ -54,7 +54,7 @@ const config = {
 
 sdk.init(config);
 
-// Creat a Bitmark account
+// Create a Bitmark account
 let registrant = new sdk.Account();
 
 // Define the asset name & metadata
@@ -89,7 +89,7 @@ BitmarkSDK.initialize(config: SDKConfig(apiToken: "api-token",
                                         network: .testnet,
                                         urlSession: URLSession.shared))
 
-// Creat a Bitmark account
+// Create a Bitmark account
 let registrant = try Account()
 
 // Define the asset name & metadata
@@ -258,7 +258,7 @@ $ bitmark-cli -n testing status -t 45a3e08658db810d7fda4c34a852f3707bc8e4518571c
   "proofStatus": "Accepted"
 }
 
-// Cheking status
+// Checking status
 {
   "status": "Verified"
 }
@@ -453,7 +453,7 @@ $ bitmark-cli -n testing status -t 742fdff03ead89375b95d0c3e834ccaf5d6446b8dd489
 
 ## Explore the transactions using the Registry website
 
-Userse can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry website:
+Users can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry website:
 
 * [Explore transactions on the Bitmark blockchain](https://registry.bitmark.com)
 

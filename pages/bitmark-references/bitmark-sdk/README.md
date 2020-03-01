@@ -34,7 +34,7 @@
     * [Querying for offers](action.md#querying-for-offers)
     * [Accepting a transfer offer](action.md#accepting-a-transfer-offer)
     * [Rejecting a transfer offer](action.md#rejecting-a-transfer-offer)
-    * [Canceling a transfer offer](action.md#canceling-a-transfer-offer)
+    * [Cancelling a transfer offer](action.md#cancelling-a-transfer-offer)
 
 
 ## [Queries](query.md)

@@ -31,7 +31,7 @@ Three records related to Bitmark shares are stored on the Bitmark blockchain.
 
 * *Balance Record* - created by a bitmark owner to permanently set the total number of a particular share for a Bitmark Certificate.
 * *Grant Record* - created by an owner to grant an amount of his share balance to another owner.
-* *Swap Record* - created by two owners to simultaenously swap their shares of different Bitmark Certificates.
+* *Swap Record* - created by two owners to simultaneously swap their shares of different Bitmark Certificates.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ Any Bitmark owner can divide a Bitmark Certificate into a number of shares by cr
 
 * Once the Bitmark Certificate is converted into shares, it can no longer be transferred any more, though the shares can be granted or swapped. The provenance of the bitmark is concluded.
 
-* All of the created shares are alocated to the owner.
+* All of the created shares are allocated to the owner.
 
 * A share creation transaction costs 0.002 LTC or 0.0002 BTC as the transaction fee.
 
@@ -122,7 +122,7 @@ To do so using the Bitmark-CLI:
     $ bitcoind -datadir=<bitcoind config dir>
 
     # OR run the litecoind
-    $ litecoind -datadir=<litcoind config dir>
+    $ litecoind -datadir=<litecoind config dir>
 
     #Pay by BTC
     $ bitmark-wallet --conf <Bitmark-Wallet config file> btc --<btc network> \
@@ -200,7 +200,7 @@ To verify the status of the share creation using Bitmark-CLI:
       "status": "Verified"
     }
 
-    //Check again fter some minutes
+    //Check again after some minutes
     {
       "status": "Confirmed"
     }
@@ -357,7 +357,7 @@ To countersign a share grant using the Bitcoin-CLI:
   >
   >* `grantId` - The transaction id of the share granting.
   >
-  >* `payId` - The payid to attach to the payment command.
+  >* `payId` - The payId to attach to the payment command.
   >
   >* `payment` - The corresponding amounts and addresses to pay for the transaction in different currencies.
 
@@ -481,7 +481,7 @@ To initialize a swap of shares using the Bitcoin-CLI:
   >
   >* `shareId2` - The id of the shares that the receiver is swapping.
   >
-  >* `quantity2` - The number of shares that the receiveer want to swap with the sender.
+  >* `quantity2` - The number of shares that the receiver want to swap with the sender.
   >
   >* `block_number` - A time-limit after which the request expires and becomes invalid. Every 30 blocks from the current block adds one hour of expiration. 
   > - [Bitmark Blockchain's current block height](https://registry.bitmark.com)

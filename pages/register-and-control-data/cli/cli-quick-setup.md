@@ -1,6 +1,6 @@
 ---
 title: CLI quick setup
-keywords: cli, bitmark-cli, command line interface, quick setup
+keywords: CLI, bitmark-cli, command line interface, quick setup
 last_updated: 
 sidebar: mydoc_sidebar
 permalink: /register-and-control-data/cli/cli-quick-setup
@@ -9,7 +9,7 @@ folder: register-and-control-data/cli
 
 # CLI quick setup
 
-The `bitmark-cli` program can be used on both the testing and Bitmark blockchains, with seperate configuration files created for each blockchain to avoid confusion.
+The `bitmark-cli` program can be used on both the testing and Bitmark blockchains, with separate configuration files created for each blockchain to avoid confusion.
 
 ## Creating an Identity
 

@@ -44,4 +44,4 @@ Forgery is a serious issue and can be devastating to business. Valuables like ar
 In this work, we present ObjectMinutiae, a framework for authenticating different objects or materials via extracting and matching their fingerprints. Unlike biometrics fingerprinting processes, which use patterns such as ridge ending and bifurcation points as the interest points, our work applies stereo photometric techniques for reconstructing objects’ local image regions that contain the surface texture information. The interest points of the recovered image regions can be detected and described by state-of-the-art computer vision algorithms. Together with dimension reduction and hashing techniques, our proposed system is able to perform object verification using compact image features. With neutral and different torturing conditions, preliminary results on multiple types of papers support the use of our framework for practical object authentication tasks.
 
 * [Read PDF](/assets/pdf/objectminutiae.pdf)
-* [Watch on Youtube](https://www.youtube.com/watch?v=JgyGChTNy3E)
+* [Watch on YouTube](https://www.youtube.com/watch?v=JgyGChTNy3E)

@@ -19,7 +19,7 @@ We offer rewards in Bitcoin:
 
 | Critical | High    | Medium  | Low     | Note     |
 |----------|---------|---------|---------|----------|
-| 1BTC     | 0.5 BTC | 0.2 BTC | 0.1 BTC | 0.01 BTC |
+| 1 BTC     | 0.5 BTC | 0.2 BTC | 0.1 BTC | 0.01 BTC |
 
 Latest bug updates:
 * **2018.11.14**: Congratulations to bughunterboy for finding bugs and earning rewards!
@@ -63,7 +63,7 @@ Rewards are considered based on the impact and severity of the vulnerability, wi
 * If a bug does not fit into the Critical or High criteria as defined above, it will be considered Medium, Low, or Note
 
 * Only unknown and first-submitted bugs are considered eligible for a reward
-* A dtailed proof of concept has to be presented when claiming a Critical or High bug
+* A detailed proof of concept has to be presented when claiming a Critical or High bug
 
 ## Disclosure policy
 Please discuss with us before disclosure of your bugs. Bitmark will endeavor to respond to reports within **2-3 business days** and will make every effort to quickly address reported vulnerabilities. To encourage responsible reporting, we commit that we will **not take legal action** against you or ask law enforcement to investigate you if you give us at least **90 days** from the time of your report to correct the issue before you make the reported vulnerability public.
@@ -71,4 +71,4 @@ Please discuss with us before disclosure of your bugs. Bitmark will endeavor to 
 [CONTACT US](mailto:security@bitmark.com)
 
 #### For more info
-Read our [Governance policy](https://bitmark.com/en/legal/governance-policy), or view the [Bitmark Github](https://bitmark.com/en/developers/github) repo if you are interested in contributing code.
+Read our [Governance policy](https://bitmark.com/en/legal/governance-policy), or view the [Bitmark GitHub](https://bitmark.com/en/developers/github) repo if you are interested in contributing code.

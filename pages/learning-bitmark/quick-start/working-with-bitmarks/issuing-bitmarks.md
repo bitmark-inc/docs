@@ -9,7 +9,7 @@ folder: learning-bitmark/quick-start/working-with-bitmarks
 
 # Registering Bitmark Certificates
 
-Assets with titles that have been publicly recorded are [more valuable](../../problem-we-are-trying-to-solve.md) than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates. This can be done using the [Bitmark App](#registering-bitmark-certificates-using-the-bitmark-app), the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark-CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
+Assets with titles that have been publicly recorded are [more valuable](../../problem-we-are-trying-to-solve.md) than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates. This can be done using the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark-CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
 
 The process of registering a Bitmark Certificate for a digital asset occurs in two steps:
 
@@ -22,56 +22,6 @@ This process registers legal property rights on the public Bitmark blockchain fo
 ## Prerequisites
 
 Any user who want to interact with the Bitmark Property System must have a Bitmark Account. Please refer to the [Bitmark Account](creating-bitmark-account.md) section for instructions on creating a new Bitmark Account.
-
-## Registering Bitmark Certificates using the Bitmark App
-
-To register a new property using the Bitmark App:
-
-* On the **PROPERTIES** screen tap **CREATE FIRST PROPERTY** or **+**
-
-    > This opens the **PROPERTIES > REGISTER** screen.
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/RegisteringProperties_0.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
-        <img src="/assets/images/RegisteringProperties_1.png" alt="Properties Register screen" title="Properties Register screen" width="250" style="padding: 20px" />
-    </div>
-
-* Tap **PHOTOS** or **FILES** to browse the desired asset on your mobile device
-
-    > You must grant permission for access to `Photos` and/or `Files`.
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/RegisteringProperties_2.png" alt="Grant Permission popup" title="Grant Permission popup" width="250" style="padding: 20px" />
-        <img src="/assets/images/RegisteringProperties_3.png" alt="Open Photos action sheet" title="Open Photos action sheet" width="250" style="padding: 20px" />
-        <img src="/assets/images/RegisteringProperties_4.png" alt="PHOTOS browsed" title="PHOTOS browsed" width="250" style="padding: 20px" />
-    </div>
-
-    <br>
-
-* Fill in the required information
-
-    > As soon as the desired asset is selected, the App will compute the asset's fingerprint and open the **REGISTER PROPERTY RIGHTS** screen, which allows users to provide more detailed information about the asset.
-    >
-    >* Currently, the `PROPERTY NAME` and `NUMBER OF BITMARKS TO ISSUE` fields are mandatory.
-    >
-    >* For each `Asset`, a user can issue multiple Bitmark Certificates, with the number defined by  `number of bitmarks` in the **REGISTER PROPERTY RIGHTS** screen.
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/RegisteringProperties_5.png" alt="Register Property Rights screen" title="Register Property Rights screen" width="250" style="padding: 20px" />
-        <img src="/assets/images/RegisteringProperties_6.PNG" alt="Fill in required information" title="Fill in required information" width="250" style="padding: 20px" />
-    </div>
-
-* Tap **ISSUE** button
-
-    >As soon as **ISSUE** is tapped, the App submits both the `Asset Registration` and `bitmarks Issuance` transactions to the Bitmark network. After the submission is successful, the properties will be added to the **PROPERTIES > YOURS** screen.
-    >
-    > **NOTE:** It will take a while for the transactions to be confirmed on the Bitmark blockchain after submission.
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/RegisteringProperties_7.png" alt="Submitting transaction" title="Submitting transactions" width="250" style="padding: 20px" />
-        <img src="/assets/images/RegisteringProperties_8.png" alt="Submission succeeded" title="Submission succeeded" width="250" style="padding: 20px" />
-        <img src="/assets/images/RegisteringProperties_9.PNG" alt="Properties added" title="Properties added" width="250" style="padding: 20px" />
-    </div>
 
 ## Registering Bitmark Certificates using the Bitmark SDK
 
@@ -239,7 +189,7 @@ To register a new property using the Bitmark-CLI:
 
 ## Exploring Bitmark transactions using the Bitmark Registry website
 
-Userse can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry web application:
+Users can explore all of the transactions on the Bitmark blockchain using the Bitmark Registry web application:
 
 * For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
 

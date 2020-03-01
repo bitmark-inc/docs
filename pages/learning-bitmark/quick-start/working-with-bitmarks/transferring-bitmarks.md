@@ -11,83 +11,17 @@ folder: learning-bitmark/quick-start/working-with-bitmarks
 
 Once an asset has been registered, the owner can trade it by creating a transfer record that points back to the original issue record (or to a previous transfer record) and that lists the new owner of the asset. Because the blockchain is ordered and because it's immutable, this creates a permanent chain of custody reaching back to the asset's origins.
 
-<div style="background-color: #efefef; text-align: center;">
-    <img src="/assets/images/TransferringBitmark_0.png" alt="Record chain" title="Record chain" style="padding: 20px" />
-</div>
-
-Bitmark owners can transfer their Bitmark Certificates to others using the [Bitmark App](#transferring-bitmarks-using-the-bitmark-app), the [Bitmark SDK](#transferring-bitmarks-using-the-bitmark-sdk), or the [Bitmark-CLI](#transferring-bitmarks-using-the-bitmark-cli).
+Bitmark owners can transfer their Bitmark Certificates to others using the SDK and the CLI.
 
 ## Prerequisites
 
-* [Bitmark Accounts](creating-bitmark-account.md) must be created.
+**Using the SDK**
+* [Install the SDK](sdk/getting-started.md#installing-sdk-packages)
+* [Acquire an API token](sdk/getting-started.md#acquiring-an-api-token)
 
-* [Bitmark Certificates](issuing-bitmarks.md) must be registered.
-
-* If using the Bitmark-CLI, [Payment on Bitmark-CLI](payment-for-bitmark-cli.md) tools must be ready.
-
-## Transferring bitmarks using the Bitmark App
-
-To transfer a Bitmark Certificate using the Bitmark App:
-
-* On the **PROPERTIES > YOURS** screen, tap on the desired property to open the **PROPERTY DETAILS** screen
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/TransferBitmark_1.png" alt="Properties screen" title="Properties screen" width="250" style="padding: 20px" />
-        <img src="/assets/images/TransferBitmark_2.png" alt="Property Details screen" title="Property Details screen" width="250" style="padding: 20px" />
-    </div>
-
-    <br>
-
-* Tap on the `...` at the top right corner to open the options and select the **TRANSFER** option
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/TransferBitmark_3.png" alt="Property options" title="Property options" width="250" style="padding: 20px" />
-        <img src="/assets/images/TransferBitmark_4.png" alt="Bitmark Transfer screen" title="Bitmark Transfer screen" width="250" style="padding: 20px" />
-    </div>
-
-    <br>
-
-* Fill in the recipient account and tap **TRANSFER**
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/TransferBitmark_5.png" alt="Enter Account screen" title="Enter Account screen" width="250" style="padding: 20px" />
-        <img src="/assets/images/TransferBitmark_6.png" alt="Transferring screen" title="Transferring screen" width="250" style="padding: 20px" />
-    </div>
-
-    <br>
-
-* Observe changes on the sender side: the property disappears
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/TransferBitmark_7.png" alt="Transferred" title="Transferred" width="250" style="padding: 20px" />
-    </div>
-
-    <br>
-
-* Observe changes on the recipient side right after the transfer
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/TransferBitmark_8.png" alt="Recipient Properties screen" title="Recipient Properties screen" width="250" style="padding: 20px" />
-        <img src="/assets/images/TransferBitmark_9.png" alt=" Recipient Properties Details screen" title="Recipient Properties Details screen" width="250" style="padding: 20px" />
-    </div>
-
-    <br>
-
-* Observe changes on the recipient side after some minutes
-
-    <div style="background-color: #efefef; text-align: center;">
-        <img src="/assets/images/TransferBitmark_10.png" alt="Confirmed Properties screen" title="Confirmed Properties screen" width="250" style="padding: 20px" />
-        <img src="/assets/images/TransferBitmark_11.png" alt="Confirmed Details screen" title="Confirmed Details screen" width="250" style="padding: 20px" />
-    </div>
-
-<br>
-<br>
-
-## Transferring bitmarks using the Bitmark SDK
-
-To transfer a Bitmark Certificate using the Bitmark JS SDK:
-
-* [Configure the SDK and create an account (`sender`)](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-sdk) and/or [register a Bitmark Certificate and retrieve its `bitmarkId`](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks.md#registering-bitmark-certificates-using-the-bitmark-sdk)
+**Using the CLI**
+* [Install the CLI along with the bitmarkd](run-a-node.md)
+* [Install and configure the Bitmark Wallet](cli/cli-payment.md#installing-and-configuring-the-bitmark-wallet)
 
 * Submit a transfer transaction
 
@@ -119,7 +53,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
     ```shell
     $ bitmark-cli -n <network> -i <sender identity>\
       transfer -r <receiver> \
-      -t <txid> -u
+      -t <txId> -u
     ```
     
     > The `transfer` command submits a transfer transaction to the network. 
@@ -130,7 +64,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
     > **Command Options:**
     >* `receiver` - The identifier of the recipient's Bitmark Account. This can be a Bitmark Account Number or the Bitmark Account's identity, if it's stored in the Bitmark-CLI config file
     >
-    > `txid` - The id of the last transaction of the Bitmark that is being transferring.
+    > `txId` - The id of the last transaction of the Bitmark that is being transferring.
     >
     >**NOTE:** A transfer transaction on the Bitmark blockchain requires a transaction fee of 0.0002 BTC (20000 satoshis) or 0.002 LTC (200000 photons). Therefore, after the `transfer` command, the user will need to execute the payment on the Bitcoin or Litecoin blockchain. This payment information is included in the output of the `transfer` command.
     >
@@ -251,7 +185,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
       "status": "Verified"
     }
 
-    //Check again fter some minutes
+    //Check again after some minutes
     {
       "status": "Confirmed"
     }
@@ -266,7 +200,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
       provenance -t <transferID>
     ```
 
-    >The `provenance` command returns all the transaction records related to an asset from the transaction corresponding to the txid back to the Bitmark's asset registration record. 
+    >The `provenance` command returns all the transaction records related to an asset from the transaction corresponding to the txId back to the Bitmark's asset registration record. 
     >
     > **Command options:**
     >* `transferID` - `transferId` - The transfer transaction id, printed as `transferId` in the output of the `transfer` command
@@ -330,6 +264,3 @@ Users can explore all of the transactions on the Bitmark blockchain using the Bi
 * For transactions on the Bitmark livenet blockchain: https://registry.bitmark.com
 
 * For transactions on the Bitmark testnet blockchain: https://registry.test.bitmark.com
-
-
-

@@ -21,7 +21,7 @@ This tutorial explains how to set up the `bitmarkd` and/or the `recorderd` servi
 
 ## Installing the Prerequisite Packages
 
-Installing the required packages requires specific commabds on Debian, FreeBSD, macOS, and Ubuntu.
+Installing the required packages requires specific commands on Debian, FreeBSD, macOS, and Ubuntu.
 
 ### Installing Packages on Debian
 
@@ -55,9 +55,9 @@ For the other packages, install from `stable` or `testing` as you prefer; both v
     $ pkg install libzmq4 libargon2
 ```
 
-### Installing Packages on MacOSX
+### Installing Packages on macOS
 
-_Be sure that homebrew is installed correctly before beginning._
+_Be sure that Homebrew is installed correctly before beginning._
 
 Then:
 ```shell
@@ -102,7 +102,7 @@ Create the configuration directory and copy the sample configuration:
     $ cp ~/bitmarkd/command/bitmarkd/bitmarkd.conf.sample  ~/.config/bitmarkd/bitmarkd.conf
 ```
 
-Afteward, edit the `bitmarkd.conf` to set up appropriate IP addresses, ports, and local bitcoin testnet connection. The sample configuration has some embedded instructions for quick setup, and only a few items near the beginning of the file need to be changed for basic use.
+Afterwards, edit the `bitmarkd.conf` to set up appropriate IP addresses, ports, and local bitcoin testnet connection. The sample configuration has some embedded instructions for quick setup, and only a few items near the beginning of the file need to be changed for basic use.
 
 ```shell
     $ ${EDITOR} ~/.config/bitmarkd/bitmarkd.conf

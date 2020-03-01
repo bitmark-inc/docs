@@ -18,7 +18,7 @@
 * [Blockchain Structure](blockchain-overview.md#blockchain-structure)
   * [Block Header](blockchain-overview.md#block-header)
   * [Merkle Tree](blockchain-overview.md#merkle-tree)
-  * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
+  * [Block Hashing (Argon2, difficulty, proof of work \.\.\.)](blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
   
 ## [Block Validation and Synchronization](block-verification-and-synchronization.md#block-verification-and-synchronization)
 

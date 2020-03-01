@@ -47,7 +47,7 @@ We chose a permissive license in order to allow the broadest possible set of use
 
 ## Principles of Operation
 
-Bitmark Inc. will maintain the primary code repository for the Bitmark Protocol software project and will retain primary development and maintenance responsibility.  We will also retain control of the codecommit decisions, at least until a sufficiently strong community has arisen from which to select trusted code committers.
+Bitmark Inc. will maintain the primary code repository for the Bitmark Protocol software project and will retain primary development and maintenance responsibility.  We will also retain control of the code commit decisions, at least until a sufficiently strong community has arisen from which to select trusted code committers.
 
 Bitmark Inc. will also provide one or more community moderators to guide the discussion about the project, again, at least until a sufficiently strong community has arisen from which to select trusted community moderators. 
 
@@ -65,7 +65,7 @@ Our expectation is that only Bitmark employees speak for the organization for wh
 A Bitmark Upgrade Proposal (BUP) is a design document providing information to the Bitmark community or describing a new feature for
 Bitmark or its processes or environment. A BUP provides a concise technical specification of the feature and a rationale for it.
 
-We have a repo at Github specifically for BUPs. We do not maintain it as part of the
+We have a repo at GitHub specifically for BUPs. We do not maintain it as part of the
 Bitmark documentation [repository](https://github.com/bitmark-inc/docs) because we want that to be a clean 
 environment where developers are not distracted by other
 repos.
@@ -89,7 +89,7 @@ We offer rewards in Bitcoin:
 
 | Critical | High    | Medium  | Low     | Note     |
 |----------|---------|---------|---------|----------|
-| 1BTC     | 0.5 BTC | 0.2 BTC | 0.1 BTC | 0.01 BTC |
+| 1 BTC    | 0.5 BTC | 0.2 BTC | 0.1 BTC | 0.01 BTC |
 
 Latest bug updates:
 * **2018.11.14**: Congratulations to bughunterboy for finding bugs and earning rewards!

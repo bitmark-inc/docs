@@ -9,7 +9,7 @@ folder: bitmark-references/node-setup
 
 #  Bitmark Node Installation
 
-The [Bitmark Quickstart](../../learning-bitmark/quick-start) includes a tutorial on [installing the Bitmark Property System using docker](../../learning-bitmark/quick-start/simple-solution-for-node-setup.md). That setup is intended for beginners who want to make it fast and easy to run the Bitmark Property System using a `docker` container that wraps all components and settings. Developers, or people who want to study the main program, may instead choose to run `bitmarkd` or `recorderd` services directly. 
+That setup is intended for beginners who want to make it fast and easy to run the Bitmark Property System using a `docker` container that wraps all components and settings. Developers, or people who want to study the main program, may instead choose to run `bitmarkd` or `recorderd` services directly. 
 
 A full-node of bitmarkd consists of a `bitmarkd`, a `recorderd`, a payment system, a `litecoind`, and a `bitcoind`. The `bitmarkd` service  verifies and records transactions on the Bitmark blockchain while the `recorderd` service computes the Bitmark proof-of-work algorithm that allows nodes to compete to win blocks on the Bitmark blockchain. 
 
@@ -23,7 +23,7 @@ This tutorial explains how to set up the `bitmarkd` and/or the `recorderd` servi
 
 ## Installing the Prerequisite Packages
 
-Installing the required packages requires specific commabds on Debian, FreeBSD, macOS, and Ubuntu.
+Installing the required packages requires specific commands on Debian, FreeBSD, macOS, and Ubuntu.
 
 ### Installing Packages on Debian
 
@@ -57,9 +57,9 @@ For the other packages, install from `stable` or `testing` as you prefer; both v
     $ pkg install libzmq4 libargon2
 ```
 
-### Installing Packages on MacOSX
+### Installing Packages on macOS
 
-_Be sure that homebrew is installed correctly before beginning._
+_Be sure that Homebrew is installed correctly before beginning._
 
 Then:
 ```shell
@@ -104,7 +104,7 @@ Create the configuration directory and copy the sample configuration:
     $ cp ~/bitmarkd/command/bitmarkd/bitmarkd.conf.sample  ~/.config/bitmarkd/bitmarkd.conf
 ```
 
-Afteward, edit the `bitmarkd.conf` to set up appropriate IP addresses, ports, and local bitcoin testnet connection. The sample configuration has some embedded instructions for quick setup, and only a few items near the beginning of the file need to be changed for basic use.
+Afterward, edit the `bitmarkd.conf` to set up appropriate IP addresses, ports, and local bitcoin testnet connection. The sample configuration has some embedded instructions for quick setup, and only a few items near the beginning of the file need to be changed for basic use.
 
 ```shell
     $ ${EDITOR} ~/.config/bitmarkd/bitmarkd.conf

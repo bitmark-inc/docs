@@ -9,7 +9,7 @@ folder: bitmark-references/bitmark-cli
 
 # Quick Setup
 
-The `bitmark-cli` program can be used on both the testing and Bitmark blockchains, with seperate configuration files created for each blockchain to avoid confusion.
+The `bitmark-cli` program can be used on both the testing and Bitmark blockchains, with separate configuration files created for each blockchain to avoid confusion.
 
 ## Creating an Identity
 

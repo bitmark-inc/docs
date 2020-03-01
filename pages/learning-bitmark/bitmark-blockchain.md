@@ -15,7 +15,7 @@ The Bitmark blockchain is the property system for the digital generation. It was
 
 ![Bitmark Blockchain](/assets/images/bitmark_processes_en_2500w.png)
 
-The Bitmark blockchain features some of the same strengths as other blockchains, such as the immutability of an ordered and distributed ledger. However, the Bitmark blockchain is specialized for property transactions and has speciific strengths related to that: by uniquely identifying property, encoding its title, and supporting transfers, Bitmark creates clear provenance and chain of ownership for unique digital assets. This decentralized structure empowers individuals by granting them personal control over their assets.
+The Bitmark blockchain features some of the same strengths as other blockchains, such as the immutability of an ordered and distributed ledger. However, the Bitmark blockchain is specialized for property transactions and has specific strengths related to that: by uniquely identifying property, encoding its title, and supporting transfers, Bitmark creates clear provenance and chain of ownership for unique digital assets. This decentralized structure empowers individuals by granting them personal control over their assets.
 
 To read more about the Bitmark property system, how it expands on the basic ideas of the blockchain, and how it uses a variety of blockchain records to manage digital property and data, please [read our blog posts here](https://medium.com/clean-titles/defining-property-in-the-digital-environment-part-three-4c3ecbab5833).
 
@@ -43,7 +43,7 @@ The following questions and answers are drawn in part from our papers and provid
 
 **Transferring Bitmark Certificates**
 
-* [How is property transferred in the Bitmark Propeerty System?](#how-is-property-transferred-in-the-bitmark-property-system)
+* [How is property transferred in the Bitmark Property System?](#how-is-property-transferred-in-the-bitmark-property-system)
 
 * [How are Bitmark miners encouraged to publish transfer records?](#how-are-bitmark-miners-encouraged-to-publish-transfer-records)
 
@@ -91,7 +91,7 @@ There can only be one asset record for each digital property on the Bitmark bloc
 
 An issue record contains the following information:
 
-* An assetindex, which is a SHA3-512 hash of the asset’s fingerprint.
+* An assetId, which is a SHA3-512 hash of the asset’s fingerprint.
 
 * A nonce, which numbers this particular issuance of the asset.
 

@@ -642,7 +642,7 @@ bitmark-cli --identity=fred --network=testing balance --owner=barney --share-id=
 Displays the status of a particular transaction id, to see whether it is:
 
 * `Not found`: transaction not present on the blockchain or in that node's memory.
-* `Pending`: tansaction awaiting payment confirmation.
+* `Pending`: transaction awaiting payment confirmation.
 * `Verified`: payment is confirmed, and the transaction is waiting to be incorporated into a block.
 * `Confirmed`: transaction stored on the blockchain.
 

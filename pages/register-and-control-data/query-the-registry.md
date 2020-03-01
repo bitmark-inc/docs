@@ -38,7 +38,7 @@ An asset record is available when it's registered and there is at least one acco
 | --------- | ----------- |
 | id | The asset ID |
 | name | The asset name |
-| metadata | The asset metadata, described by key-value paris |
+| metadata | The asset metadata, described by key-value pairs |
 | fingerprint | The hash value of the asset content, which serves as the unique identifier for the asset record in the blockchain |
 | registrant | The account registering the asset |
 | status | Possible values: `pending`, `confirmed` |
@@ -168,7 +168,7 @@ Actions which are applied to the same bitmark will create a chain of transaction
 | block_number | The block which incorporates the tx record |
 | offset | An auto-incremental number which increments when the data is updated |
 | confirmation | the number of blocks in the block chain that have been accepted by the network since the block that includes the transaction |
-| countersign | Indicates if this tx is a 2-sig transfer |
+| countersign | Indicates if this tx is a 2-signature transfer |
 
 ### Query for a specific transaction
 
@@ -391,13 +391,13 @@ To list the bitmarks which are issued by the specific account number. The issuer
 
 #### bitmarks owned by the specific owner
 
-To list the bitmarks which are currently owned by the specific account number. The owner can transfer tach of the returned bitmarks to any other receiver.
+To list the bitmarks which are currently owned by the specific account number. The owner can transfer the returned bitmarks to any other receiver.
 
 <!-- TODO: examples -->
 
 #### bitmarks offered from the specific sender
 
-A sender can query the bitmarks offered from him and takeTo list the bitmarks which are offered by this sender. The sender can take action on these bitmarks (cancel an offer).
+A sender can query the bitmarks which are offered by this sender. The sender can take action on these bitmarks (cancel an offer).
 
 <!-- TODO: examples -->
 

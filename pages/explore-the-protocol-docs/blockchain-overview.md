@@ -30,12 +30,12 @@ Byte
 : A single _binary_ byte.
 
 Map
-: A sequence of NUL-separated UTF-8 _byte_ sequences preceded by a _VarInt_
+: A sequence of NULL-separated UTF-8 _byte_ sequences preceded by a _VarInt_
   byte count. The count is
   validated by various routines to prevent excessive storage use.
   There must be an even number of sequences, as they form
-  key-value pairs. There must not be a trailing NUL byte.  In JSON
-  representation, the NUL byte will show as `\u0000`.  
+  key-value pairs. There must not be a trailing NULL byte.  In JSON
+  representation, the NULL byte will show as `\u0000`.  
 
 Signature
 : An Ed25519 signature over all previous _bytes_ including _VarInt_
@@ -56,7 +56,7 @@ VarInt
 The following variable types are used only in Bitmark block headers, because they are fixed length fields:
 
 Unn
-: An unsigned integer with a length of "nn" bits. Normally this will be
+: An unsigned integer with a length of `"nn"` bits. Normally this will be
   multiples of 8 bits such as: U8, U16, U32, U64. 
 
 ## Transactions: Asset, Issue, and Transfer Records
@@ -263,12 +263,12 @@ The SHA3 algorithm is the current recommended hashing algorithm to use
 and fixes some vulnerability problems that were found in SHA2.  The
 SHA2 algorithm would have to be used twice to protect against this, which would
 cost more CPU resources.  The SHA3 is faster, so it reduces the time to
-build the Merkle Tree. SHA1 has been broken, so it was not considered.
+build the Merkle Tree. SHA-1 has been broken, so it was not considered.
 
 The SHA3 algorithm is also used for transaction IDs and is similarly the
 hash of the packed binary transaction including all signatures.
 
-### Block Hashing (argon2, difficulty, proof of work ...)
+### Block Hashing (Argon2, difficulty, proof of work ...)
 
 To prevent hardware attack of the Proof of Work system using GPUs or
 ASICs, a memory hard algorithm is used: Argon2.  Its parameters are

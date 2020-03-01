@@ -9,24 +9,22 @@ folder: explore-the-protocol-docs
 
 # Block Mining
 
-## Overview
-
 Mining on the Bitmark blockchain requires an understanding of hashing and difficulty, as well as of the communication, verification, and reward protocols.
 
 ## Block Diagram
 
-            +--------------+  zero mq protocol   +---------------+
-            |              |  ---------------->  |               |
-            |   bitmarkd   |                     |   recorderd   |
-            |              |  <----------------  |               |
-            +--------------+  zero mq protocol   +---------------+
+            +--------------+  ZeroMQ protocol   +---------------+
+            |              |  --------------->  |               |
+            |   bitmarkd   |                    |   recorderd   |
+            |              |  <---------------  |               |
+            +--------------+  ZeroMQ protocol   +---------------+
 
 The mining procedure for Bitmark occurs through interactions between `bitmarkd` and `recorderd`: 
 1. `bitmarkd` sends a job to `recorderd`, requesting a hash that meets certain criteria.
-1. `recorderd` tries to find possible hashes that meets those criteria.
-1. If a hash is found, `recorderd` sends a message back to `bitmarkd` and requests a validation.
-1. When `bitmarkd` receives this message from `recorderd`, it validates the hash and returns the result to `recorderd`.
-1. If `bitmarkd` receives no valid hashes from other nodes or from `recorderd`, then it will periodically send hash tasks to `recorderd` (currently every 1 minute), until a valid hash is found or received.
+2. `recorderd` tries to find possible hashes that meets those criteria.
+3. If a hash is found, `recorderd` sends a message back to `bitmarkd` and requests a validation.
+4. When `bitmarkd` receives this message from `recorderd`, it validates the hash and returns the result to `recorderd`.
+5. If `bitmarkd` receives no valid hashes from other nodes or from `recorderd`, then it will periodically send hash tasks to `recorderd` (currently every 1 minute), until a valid hash is found or received.
 
 ## Hashing
 
@@ -45,29 +43,29 @@ f8a17bc25cb53e848e2d09811ade4b8a037f628443661b88611faf5d9a5a1f33
 
 The hash of a block is made from the following information, hashed through the `argon2` algorithm:
 
-1. block record version
+1. Block record version
 
     blockchain header version
 
-1. transaction count
+2. Transaction count
 
     number of transactions in the block
 
-1. merkle tree
+3. Merkle tree
 
     A binary tree where the leaves are hashes of transactions; there is an allowable limit of 9999 transaction hashes maximum per block, with random transactions selected if the number of verified transactions exceeds that value.
 
-1. timestamp
+4. Timestamp
 
     block generated time
 
-1. difficulty
+5. Difficulty
 
     hashing difficulty
 
-1. nonce
+6. Nonce
 
-    random string to make the hash fit the difficuty
+    random string to make the hash fit the difficulty
 
 ## Difficulty
 
@@ -101,21 +99,21 @@ The following message format is used to send from `recorderd` to `bitmarkd`:
 
     a string "block.nonce" to represent the type of request
 
-1. job
+2. job
 
    the job's number in the queue, provided by `bitmarkd`
 
-1. packed
+3. packed
 
     a nonce that may make hash meet difficulty
 
 The following message format is used to send from  `bitmarkd` to `recorderd`:
 
-1. job
+4. job
 
     job number
 
-1. ok
+5. ok
 
     a string value of "true" and "false", it is used to denote if hash is valid or not
 
@@ -126,10 +124,10 @@ For example, if `recorderd` receives a message of `job:2479 ok:false`, it means 
 `bitmarkd` receives blocks from other nodes or from `recorderd`; each received block needs to pass the following verifications:
 
 1. block hash must meet difficulty
-1. block header information must be same as block data
-1. block header must contain correct information of previous block hash
-1. payment information must be valid
-1. compared to local block number, incoming block number must be incremented by 1
+2. block header information must be same as block data
+3. block header must contain correct information of previous block hash
+4. payment information must be valid
+5. compared to local block number, incoming block number must be incremented by 1
 
 `bitmarkd` discards incoming block if any of verification fails; a block that passes verifications is stored in `bitmarkd` and broadcast to all connected nodes.
 

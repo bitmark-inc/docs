@@ -1,6 +1,6 @@
 ---
 title: bitmark-cli Command Reference
-keywords: cli, bitmark-cli, command line interface
+keywords: CLI, bitmark-cli, command line interface
 last_updated: 
 sidebar: mydoc_sidebar
 permalink: /register-and-control-data/cli/bitmark-cli-command-reference
@@ -360,7 +360,7 @@ bitmark-cli --identity=barney --network=testing countersign --transaction=052089
 ### blocktransfer
 
 Transfers the ownership of a block to another account and/or changes
-the crypto-currency addresses.
+the cryptocurrency addresses.
 
 This can only be used if the account belonging to a miner is added to
 the CLI configuration.
@@ -642,7 +642,7 @@ bitmark-cli --identity=fred --network=testing balance --owner=barney --share-id=
 Displays the status of a particular transaction id, to see whether it is:
 
 * `Not found`: transaction not present on the blockchain or in that node's memory.
-* `Pending`: tansaction awaiting payment confirmation.
+* `Pending`: transaction awaiting payment confirmation.
 * `Verified`: payment is confirmed, and the transaction is waiting to be incorporated into a block.
 * `Confirmed`: transaction stored on the blockchain.
 

@@ -17,7 +17,7 @@ Bitmark owners can transfer their Bitmark Certificates to others using the SDK a
 
 **Using the SDK**
 * [Install the SDK](sdk/getting-started.md#installing-sdk-packages)
-* [Accquire an API token](sdk/getting-started.md#acquiring-an-api-token)
+* [Acquire an API token](sdk/getting-started.md#acquiring-an-api-token)
 
 **Using the CLI**
 * [Install the CLI along with the bitmarkd](run-a-node.md)
@@ -53,7 +53,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
     ```shell
     $ bitmark-cli -n <network> -i <sender identity>\
       transfer -r <receiver> \
-      -t <txid> -u
+      -t <txId> -u
     ```
     
     > The `transfer` command submits a transfer transaction to the network. 
@@ -64,7 +64,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
     > **Command Options:**
     >* `receiver` - The identifier of the recipient's Bitmark Account. This can be a Bitmark Account Number or the Bitmark Account's identity, if it's stored in the Bitmark-CLI config file
     >
-    > `txid` - The id of the last transaction of the Bitmark that is being transferring.
+    > `txId` - The id of the last transaction of the Bitmark that is being transferring.
     >
     >**NOTE:** A transfer transaction on the Bitmark blockchain requires a transaction fee of 0.0002 BTC (20000 satoshis) or 0.002 LTC (200000 photons). Therefore, after the `transfer` command, the user will need to execute the payment on the Bitcoin or Litecoin blockchain. This payment information is included in the output of the `transfer` command.
     >
@@ -185,7 +185,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
       "status": "Verified"
     }
 
-    //Check again fter some minutes
+    //Check again after some minutes
     {
       "status": "Confirmed"
     }
@@ -200,7 +200,7 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
       provenance -t <transferID>
     ```
 
-    >The `provenance` command returns all the transaction records related to an asset from the transaction corresponding to the txid back to the Bitmark's asset registration record. 
+    >The `provenance` command returns all the transaction records related to an asset from the transaction corresponding to the txId back to the Bitmark's asset registration record. 
     >
     > **Command options:**
     >* `transferID` - `transferId` - The transfer transaction id, printed as `transferId` in the output of the `transfer` command

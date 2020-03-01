@@ -59,7 +59,7 @@ folder: learning-bitmark
 
 **data** — Information that is stored in a digital form: digital data. 
 
-**decentralized** — A _istributed_ system that has no single-point-of-failure.
+**decentralized** — A _distributed_ system that has no single-point-of-failure.
 
 **digital asset** - Something of value that exist solely or primarily in digital form.
 

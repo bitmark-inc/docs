@@ -42,7 +42,7 @@ When `bitmarkd` detects a payment transaction from either blockchain, it invokes
 
 The following structures manage all of the payment-related transaction states in `bitmarkd`. They assist `bitmarkd` in validating payments for transactions.
 
-**Pending Stuctures.** When a transaction initially comes in, Reservoir checks it and saves it into pending structures. If it is a valid new transaction, it will be saved in `pendingIndex` with its transaction id as a key. Reservoir will also add another record with its payment id as key, based on the type of transaction.
+**Pending Structures.** When a transaction initially comes in, Reservoir checks it and saves it into pending structures. If it is a valid new transaction, it will be saved in `pendingIndex` with its transaction id as a key. Reservoir will also add another record with its payment id as key, based on the type of transaction.
 
 ```go
 pendingTransactions map[pay.PayId]*transactionPaymentData
@@ -60,7 +60,7 @@ verifiedPaidIssues   map[pay.PayId]*issuePaymentData
 verifiedIndex        map[merkle.Digest]pay.PayId
 ```
 
-Verified transactions are collected periodically to form a block foundation. The block data is broadcasted to a `recorderd` so that a block can be generated.
+Verified transactions are collected periodically to form a block foundation. The block data is broadcast to a `recorderd` so that a block can be generated.
 
 ## Payment Module
 
@@ -80,7 +80,7 @@ The main drawback of this method is that Bitmark node runners will need to host 
 
 ### Using Discovery Service
 
-Discovery is an open-source service that is built on top of blockchain nodes. It watches and extracts all potential payment transactions from both the Bitcoina dn Litecoin blockchains simultaneously. It also provides an abstract interface using the zeromq PUBSUB pattern, so that `bitmarkd` can listen to only related transaction, without traversal of whole blocks.
+Discovery is an open-source service that is built on top of blockchain nodes. It watches and extracts all potential payment transactions from both the Bitcoin and Litecoin blockchains simultaneously. It also provides an abstract interface using the ZeroMQ PUBSUB pattern, so that `bitmarkd` can listen to only related transaction, without traversal of whole blocks.
 
 ### Using Bitcoin peer-to-peer protocol (WIP)
 
