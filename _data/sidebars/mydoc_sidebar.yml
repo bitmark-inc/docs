@@ -78,20 +78,8 @@ entries:
       output: web
 
   - title: Contribute to the Protocol
+    url: /contribute-to-the-protocol
     output: web, pdf
-    folderitems:
-
-    - title: Governance
-      url: /contribute-to-the-protocol/governance
-      output: web
-    
-    - title: Bitmark Upgrade Proposal
-      url: /contribute-to-the-protocol/bup
-      output: web
-  
-    - title: Security Program
-      url: /contribute-to-the-protocol/security-program
-      output: web
 
   - title: Browse our FAQ
     output: web, pdf
