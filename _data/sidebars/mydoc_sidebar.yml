@@ -78,8 +78,12 @@ entries:
       output: web
 
   - title: Contribute to the Protocol
-    url: /contribute-to-the-protocol
-    output: web, pdf
+    output: web
+    folderitems:
+
+    - title: Contribute to the Protocol
+      url: /contribute-to-the-protocol
+      output: web
 
   - title: Browse our FAQ
     output: web, pdf
