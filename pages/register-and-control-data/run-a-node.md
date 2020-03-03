@@ -64,7 +64,7 @@ $ brew install bitmarkd
 
 [See detailed instructions here.](https://github.com/bitmark-inc/bitmarkd#operating-system-specific-setup-commands)
 
-## Setting up and running `bitmarkd`
+## Setting up and running bitmarkd
 
 The installation includes a sample configuration which has some embedded instructions for quick setup, and only a few items near the beginning of the file need to be changed for basic use. The sample configuration could be found at:
 
@@ -98,7 +98,7 @@ For more information on `bitmarkd` sub-commands, run the following command:
 $ bitmarkd --config-file=~/.bitmarkd.conf help
 ```
 
-## Setting up and running `recorderd`
+## Setting up and running recorderd
 
 `recorderd` is the mining program for the Bitmark Property System, which can optionally be run to support the Bitmark blockchain (and to earn bitmarks on blocks). 
 
