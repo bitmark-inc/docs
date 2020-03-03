@@ -4,170 +4,102 @@ entries:
 - title: sidebar
   folders:
 
-  - title: Learning the Bitmark Property System
+  - title: Register & Control data
     output: web, pdf
     folderitems:
 
-    - title: Property System Introduction
-      url: /learning-bitmark/bitmark-property-system-introduction
+    - title: Register data
+      url: /register-and-control-data/register-data
       output: web
 
-    - title: Blockchain Introduction
-      url: /learning-bitmark/bitmark-blockchain
+    - title: Control access
+      url: /register-and-control-data/control-access
       output: web
 
-      subfolders:
-        - title: Quick Start
-          output: web
-          subfolderitems:
+    - title: Transfer rights
+      url: /register-and-control-data/transfer-rights
+      output: web
 
-            - title: Running a Node
-              url: /learning-bitmark/quick-start/simple-solution-for-node-setup
-              output: web
+    - title: Share rights
+      url: /register-and-control-data/share-rights
+      output: web
 
-            - title: Creating an Account
-              url: /learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account
-              output: web
-
-            - title: Registering Bitmark Certificates
-              url: /learning-bitmark/quick-start/working-with-bitmarks/issuing-bitmarks
-              output: web
-
-            - title: Transferring Bitmark Certificates
-              url: /learning-bitmark/quick-start/working-with-bitmarks/transferring-bitmarks
-              output: web
-
-            - title: Using Bitmark Shares
-              url: /learning-bitmark/quick-start/working-with-bitmarks/using-bitmark-shares
-              output: web
-
-            - title: Paying for Transactions from the CLI
-              url: /learning-bitmark/quick-start/working-with-bitmarks/bitmark-cli-payment
-              output: web
-
-        - title: Contributing to Bitmark
-          output: web
-          subfolderitems:
-
-            - title: Software Development Process
-              url: /learning-bitmark/contributing-to-bitmark/bitmark-software-development-process
-              output: web
-
-            - title: Bitmark Upgrade Proposals
-              url: /learning-bitmark/contributing-to-bitmark/bup
-              output: web
-
-            - title: Bug Bounty Program
-              url: /learning-bitmark/contributing-to-bitmark/bug-bounty-program
-              output: web
-
-    - title: Terms and Glossary
-      url: /learning-bitmark/bitmark-terms-and-glossary
+    - title: Run a Node
+      url: /register-and-control-data/run-a-node
       output: web
 
 
-  - title: References
+  - title: Explore the Protocol Docs
     output: web, pdf
     folderitems:
 
-    - title: Tutorial For Node Setup
-      url: /bitmark-references/node-setup/tutorial-for-node-setup
+    - title: Blockchain Overview
+      url: /explore-the-protocol-docs/blockchain-overview
       output: web
 
-      subfolders:
-        - title: Node Software
-          output: web
-          subfolderitems:
+    - title: Block Validation and Synchronization
+      url: /explore-the-protocol-docs/block-verification-and-synchronization
+      output: web
 
-          - title: Blockchain
-            url: /bitmark-references/bitmark-node-software/bitmark-blockchain-overview
-            output: web
+    - title: Block Mining
+      url: /explore-the-protocol-docs/block-mining
+      output: web
 
-          - title: RPC Communication
-            url: /bitmark-references/bitmark-node-software/rpc-communication
-            output: web
+    - title: Payment Verification
+      url: /explore-the-protocol-docs/payment-verification
+      output: web
+    
+    - title: Storage Databases
+      url: /explore-the-protocol-docs/storage-databases
+      output: web
+    
+    - title: Blockchain Security
+      url: /explore-the-protocol-docs/blockchain-security
+      output: web
+    
+    - title: RPC Communication
+      url: /explore-the-protocol-docs/rpc-communication
+      output: web
+    
+    - title: Glossary
+      url: /explore-the-protocol-docs/glossary
+      output: web
 
-          - title: Block Verification and Synchronization
-            url: /bitmark-references/bitmark-node-software/block-verification-and-synchronization
-            output: web
-
-          - title: Payment Verification
-            url: /bitmark-references/bitmark-node-software/payment-verification
-            output: web
-
-          - title: Mining
-            url: /bitmark-references/bitmark-node-software/bitmark-mining
-            output: web
-
-          - title: Storage
-            url: /bitmark-references/bitmark-node-software/storage
-            output: web
-
-          - title: Security
-            url: /bitmark-references/bitmark-node-software/security
-            output: web
-
-        - title: SDK
-          output: web
-          subfolderitems:
-
-          - title: Getting Started
-            url: /bitmark-references/bitmark-sdk/getting-started
-            output: web
-
-          - title: Account
-            url: /bitmark-references/bitmark-sdk/account
-            output: web
-
-          - title: Actions
-            url: /bitmark-references/bitmark-sdk/action
-            output: web
-
-          - title: Query
-            url: /bitmark-references/bitmark-sdk/query
-            output: web
-
-          - title: Migration
-            url: /bitmark-references/bitmark-sdk/migration
-            output: web
-
-          - title: Store Seed
-            url: /bitmark-references/bitmark-sdk/store-seed
-            output: web
-
-          - title: Web Socket
-            url: /bitmark-references/bitmark-sdk/websocket
-            output: web
-
-
-        - title: CLI
-          output: web
-          subfolderitems:
-
-          - title: Quick Setup
-            url: /bitmark-references/bitmark-cli/bitmark-cli-quick-setup
-            output: web
-
-          - title: Bitmark-CLI Command Reference
-            url: /bitmark-references/bitmark-cli/bitmark-cli-command-reference
-            output: web
-
-  - title: Appendix
+  - title: Read our Papers
     output: web, pdf
     folderitems:
 
     - title: Bitmark versus Ethereum
-      url: /bitmark-appendix/bitmark-eth-comparison
-      output: web
-
-    - title: Bitmark Shares
-      url: /bitmark-appendix/bitmark-shares
+      url: /read-our-papers/bitmark-eth-comparison
       output: web
 
     - title: White Papers
-      url: /bitmark-appendix/bitmark-papers
+      url: /read-our-papers//white-papers
       output: web
 
+  - title: Contribute to the Protocol
+    output: web, pdf
+    folderitems:
+
+    - title: Governance
+      url: /contribute-to-the-protocol/governance
+      output: web
+    
+    - title: Bitmark Upgrade Proposal
+      url: /contribute-to-the-protocol/bup
+      output: web
+  
+    - title: Security Program
+      url: /contribute-to-the-protocol/security-program
+      output: web
+
+  - title: Browse our FAQ
+    output: web, pdf
+    folderitems:
+
+    - title: Bitmark Protocol FAQ
+      url: /browser-our-faq/bitmark-protocol-faq
+      output: web
 
 
 

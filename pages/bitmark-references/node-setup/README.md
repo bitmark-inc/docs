@@ -7,7 +7,7 @@
 
  * [Installing packages on Debian](bitmark-node-setup.md#installing-packages-on-debian)
  * [Installing packages on FreeBSD](bitmark-node-setup.md#installing-packages-on-freebsd)
- * [Installing packages on MacOSX](bitmark-node-setup.md#installing-packages-on-macosx)
+ * [Installing packages on macOS](bitmark-node-setup.md#installing-packages-on-macos)
  * [Installing packages on Ubuntu](bitmark-node-setup.md#installing-packages-on-ubuntu)
 
 ## [Downloading and Installing a Bitmark Node](bitmark-node-setup.md#downloading-and-installing-a-bitmark-node)

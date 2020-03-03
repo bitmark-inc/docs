@@ -222,7 +222,7 @@ signing operation.
 
 **Errors.** The command will terminate with an error if the asset name
 or metadata do not match exactly when creating additional Bitmarks.
-In the "free issue (--zero)", case there will be an error if this issue
+In the "free issue (`--zero`)", case there will be an error if this issue
 already exists.
 
 #### Command options
@@ -642,7 +642,7 @@ bitmark-cli --identity=fred --network=testing balance --owner=barney --share-id=
 Displays the status of a particular transaction id, to see whether it is:
 
 * `Not found`: transaction not present on the blockchain or in that node's memory.
-* `Pending`: tansaction awaiting payment confirmation.
+* `Pending`: transaction awaiting payment confirmation.
 * `Verified`: payment is confirmed, and the transaction is waiting to be incorporated into a block.
 * `Confirmed`: transaction stored on the blockchain.
 

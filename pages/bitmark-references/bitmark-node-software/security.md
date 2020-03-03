@@ -42,7 +42,7 @@ The important features of Ed25519 for the Bitmark blockchain are:
 Transactions are securely incorporated into a block through the
 SHA3-256 algorithm, which is used to derive a 32-byte identifier for
 each transaction.  This secure hash is performed over all bytes,
-including the signatures of the packed transaction.The reason for signing over the signature bytes is to protect against
+including the signatures of the packed transaction. The reason for signing over the signature bytes is to protect against
 signature substitution.
 
 SHA3 is a NIST

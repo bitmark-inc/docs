@@ -134,8 +134,8 @@ bitmarkIDs, err := bitmark.Issue(params)
 
 There are two ways to transfer a bitmark from one Bitmark account to another:
 
-- **direct transfer** (1-sig transfer): only requires the sender's signature
-- **countersigned transfer** (2-sig transfer): requires both the sender's and the receiver's signature
+- **direct transfer** (1-signature transfer): only requires the sender's signature
+- **countersigned transfer** (2-signature transfer): requires both the sender's and the receiver's signature
 
 Direct transfer is similar to sending emails: the sender does not get consent from the receiver before sending the mail.
 
@@ -415,7 +415,7 @@ _, err := bitmark.Respond(params)
 {% endcodetab %}
 {% endcodetabs %}
 
-### Canceling a transfer offer
+### Cancelling a transfer offer
 
 If a receiver hasn't responded to a bitmark transfer offer (neither accepted nor rejected it), the sender can cancel the offer.
 

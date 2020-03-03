@@ -7,7 +7,7 @@ permalink: /learning-bitmark/bitmark-terms-and-glossary
 folder: learning-bitmark
 ---
 
-# Bitmark Glossary
+# Glossary
 
 **Account** — _See Bitmark Account._
 
@@ -45,9 +45,9 @@ folder: learning-bitmark
 
 **bitmarkd** - The main Bitmark program. It verifies and records transactions on the _Bitmark blockchain_.
 
-**bitmark-cli** - A command line interface for interacting with _bitmarkd_ (and thus the _Bitmark Property System_.
+**Bitmark CLI** - A command line interface for interacting with _bitmarkd_ (and thus the _Bitmark Property System_.
 
-**bitmark-wallet** - A wallet that allows a _recorder_ to receive _bitcoins_ and _litecoins_.
+**Bitmark Wallet** - A wallet that allows a _recorder_ to receive _bitcoins_ and _litecoins_.
 
 **bitmark-webui** - A web-based user interface to monitor and configure a Bitmark _node_ via a web browser.
 
@@ -59,7 +59,7 @@ folder: learning-bitmark
 
 **data** — Information that is stored in a digital form: digital data. 
 
-**decentralized** — A _istributed_ system that has no single-point-of-failure.
+**decentralized** — A _distributed_ system that has no single-point-of-failure.
 
 **digital asset** - Something of value that exist solely or primarily in digital form.
 

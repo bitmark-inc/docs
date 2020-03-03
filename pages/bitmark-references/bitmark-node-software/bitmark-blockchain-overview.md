@@ -30,12 +30,12 @@ Byte
 : A single _binary_ byte.
 
 Map
-: A sequence of NUL-separated UTF-8 _byte_ sequences preceded by a _VarInt_
+: A sequence of NULL-separated UTF-8 _byte_ sequences preceded by a _VarInt_
   byte count. The count is
   validated by various routines to prevent excessive storage use.
   There must be an even number of sequences, as they form
-  key-value pairs. There must not be a trailing NUL byte.  In JSON
-  representation, the NUL byte will show as `\u0000`.  
+  key-value pairs. There must not be a trailing NULL byte.  In JSON
+  representation, the NULL byte will show as `\u0000`.  
 
 Signature
 : An Ed25519 signature over all previous _bytes_ including _VarInt_
@@ -56,7 +56,7 @@ VarInt
 The following variable types are used only in Bitmark block headers, because they are fixed length fields:
 
 Unn
-: An unsigned integer with a length of "nn" bits. Normally this will be
+: An unsigned integer with a length of `"nn"` bits. Normally this will be
   multiples of 8 bits such as: U8, U16, U32, U64. 
 
 ## Transactions: Asset, Issue, and Transfer Records
@@ -75,7 +75,7 @@ names or metadata.
 Other transactions have an identifier that is the SHA3-256 hash of
 the entire record (including all signatures). This shorter identifier
 of 256 bits is used both to save space in records and to easily distinguish
-transaction ids from asset ids.
+transaction IDs from asset IDs.
 
 ### Asset Record
 
@@ -101,27 +101,27 @@ copy of an asset) to an owner on the Bitmark blockchain.
 Each issue must have a unique nonce value to distinguish individual
 copies of that asset.
 
-Item             | Type      | Description
-:--------------- | :-------- | :-----------------------
-Type code        | Byte      | Issue Record type code
-AssetId          | Binary    | Link to asset record (SHA3-512 of asset fingerprint)
-Owner            | Account   | The public key of the signer
-Nonce            | VarInt    | Allow for multiple issues of the same asset
-Signature        | Signature | Ed25519 signature of signer
+Item             | Type        | Description
+:--------------- | :---------- | :-----------------------
+Type code        | Byte        | Issue Record type code
+AssetId          | Binary      | Link to asset record (SHA3-512 of asset fingerprint)
+Owner            | Account     | The public key of the signer
+Nonce            | VarInt      | Allow for multiple issues of the same asset
+Signature        | Signature   | Ed25519 signature of signer
 
 ### Transfer Record
 
 A transfer record transfers ownership of an issued asset in a provenance chain on
 the Bitmark blockchain.
 
-Item             | Type      | Description
-:--------------- | :-------- | :-----------------------
-Type code        | Byte      | Transfer Record type code
-Link             | Binary    | Link to previous Issue or Transfer (SHA3-256 of previous transaction)
-Escrow           | Payment   | Optional escrow payment and address
-Owner            | Account   | The public key of the new owner
-Signature        | Signature | Ed25519 signature of linked previous owner
-CounterSignature | Signature | Ed25519 signature of this record owner
+Item             | Type        | Description
+:--------------- | :---------- | :-----------------------
+Type code        | Byte        | Transfer Record type code
+Link             | Binary      | Link to previous Issue or Transfer (SHA3-256 of previous transaction)
+Escrow           | Payment     | Optional escrow payment and address
+Owner            | Account     | The public key of the new owner
+Signature        | Signature   | Ed25519 signature of linked previous owner
+CounterSignature | Signature   | Ed25519 signature of this record owner
 
 
 ## Transactions: Share
@@ -135,28 +135,28 @@ A share balance record marks the end of a provenance chain. It splits the issued
 into an initial quantity of shares.  From this point on, the shares can
  be granted or swapped with other Bitmark accounts.
 
-Item             | Type      | Description
-:--------------- | :-------- | :-----------------------
-Type code        | Byte      | Bitmark Balance type code
-Link             | Binary    | Link to previous Issue or Transfer (SHA3-256 of previous transaction)
-Quantity         | VarInt    | Initial balance quantity
-Signature        | Signature | Ed25519 signature of linked previous owner
+Item             | Type        | Description
+:--------------- | :---------- | :-----------------------
+Type code        | Byte        | Bitmark Balance type code
+Link             | Binary      | Link to previous Issue or Transfer (SHA3-256 of previous transaction)
+Quantity         | VarInt      | Initial balance quantity
+Signature        | Signature   | Ed25519 signature of linked previous owner
 
 
 ### Share Grant Record
 
 A share grant record moves a quantity of shares from one owner to another.
 
-Item             | Type      | Description
-:--------------- | :-------- | :-----------------------
-Type code        | Byte      | Share Grant type code
-ShareId          | Binary    | Link to previous Issue (SHA3-256 of issue transaction)
-Quantity         | VarInt    | Number of shares to transfer to recipient
-Owner            | Account   | Public key of the current owner
-Recipient        | Account   | Public key of the new owner
-BeforeBlock      | VarInt    | Expiry block height for transaction
-Signature        | Signature | Ed25519 signature of current owner
-CounterSignature | Signature | Ed25519 signature of recipient
+Item             | Type        | Description
+:--------------- | :---------- | :-----------------------
+Type code        | Byte        | Share Grant type code
+ShareId          | Binary      | Link to previous Issue (SHA3-256 of issue transaction)
+Quantity         | VarInt      | Number of shares to transfer to recipient
+Owner            | Account     | Public key of the current owner
+Recipient        | Account     | Public key of the new owner
+BeforeBlock      | VarInt      | Expiry block height for transaction
+Signature        | Signature   | Ed25519 signature of current owner
+CounterSignature | Signature   | Ed25519 signature of recipient
 
 ### Share Swap Record
 
@@ -164,18 +164,18 @@ A share swap record performs an atomic swap between two owners
 with two different share types.  The action is indivisible, and there
 is no possibility of a half transaction being executed.
 
-Item             | Type      | Description
-:--------------- | :-------- | :-----------------------
-Type code        | Byte      | Share Swap type code
-ShareIdOne       | Binary    | Link to previous Issue (SHA3-256 of issue transaction)
-QuantityOne      | VarInt    | Number of shares one to transfer to owner two
-OwnerOne         | Account   | The public key of the share one owner
-ShareIdTwo       | Binary    | Link to previous Issue (SHA3-256 of issue transaction)
-QuantityTwo      | VarInt    | Number of shares two to transfer to owner one
-OwnerTwo         | Account   | The public key of the share two owner
-BeforeBlock      | VarInt    | Expiry block height for transaction
-Signature        | Signature | Ed25519 signature of owner one
-CounterSignature | Signature | Ed25519 signature of owner two
+Item             | Type        | Description
+:--------------- | :---------- | :-----------------------
+Type code        | Byte        | Share Swap type code
+ShareIdOne       | Binary      | Link to previous Issue (SHA3-256 of issue transaction)
+QuantityOne      | VarInt      | Number of shares one to transfer to owner two
+OwnerOne         | Account     | The public key of the share one owner
+ShareIdTwo       | Binary      | Link to previous Issue (SHA3-256 of issue transaction)
+QuantityTwo      | VarInt      | Number of shares two to transfer to owner one
+OwnerTwo         | Account     | The public key of the share two owner
+BeforeBlock      | VarInt      | Expiry block height for transaction
+Signature        | Signature   | Ed25519 signature of owner one
+CounterSignature | Signature   | Ed25519 signature of owner two
 
 ## Transactions: Block Ownership
 
@@ -188,14 +188,14 @@ that block.  It is only set by the block mining process.  It is also
 used to set the miner's payment addresses, which are used when
 transactions reference those in the block.
 
-Item             | Type      | Description
-:--------------- | :-------- | :-----------------------
-Type code        | Byte      | Block Foundation type code
-Version          | VarInt    | Sets the combination of supported currencies
-Payments         | Map       | Map of Currency and Address
-Owner            | Account   | Public key of the owner
-Nonce            | VarInt    | Additional NONCE for mining
-Signature        | Signature | Ed25519 signature of owner
+Item             | Type        | Description
+:--------------- | :---------- | :-----------------------
+Type code        | Byte        | Block Foundation type code
+Version          | VarInt      | Sets the combination of supported currencies
+Payments         | Map         | Map of Currency and Address
+Owner            | Account     | Public key of the owner
+Nonce            | VarInt      | Additional NONCE for mining
+Signature        | Signature   | Ed25519 signature of owner
 
 
 ### Block Owner Transfer Record
@@ -204,16 +204,16 @@ A block owner transfer record allows the current owner of a block to transfer an
 future earnings from that block to another owner, with new currency
 addresses.
 
-Item             | Type      | Description
-:--------------- | :-------- | :-----------------------
-Type code        | Byte      | Block Foundation type code
-Link             | Binary    | Link to previous Foundation or Block Transfer (SHA3-256 of previous transaction)
-Escrow           | Payment   | Optional escrow payment and address
-Version          | VarInt    | Sets the combination of supported currencies
-Payments         | Map       | Map of Currency and Address
-Owner            | Account   | Public key of the new owner
-Signature        | Signature | Ed25519 signature of linked previous owner
-CounterSignature | Signature | Ed25519 signature of this record owner
+Item             | Type        | Description
+:--------------- | :---------- | :-----------------------
+Type code        | Byte        | Block Foundation type code
+Link             | Binary      | Link to previous Foundation or Block Transfer (SHA3-256 of previous transaction)
+Escrow           | Payment     | Optional escrow payment and address
+Version          | VarInt      | Sets the combination of supported currencies
+Payments         | Map         | Map of Currency and Address
+Owner            | Account     | Public key of the new owner
+Signature        | Signature   | Ed25519 signature of linked previous owner
+CounterSignature | Signature   | Ed25519 signature of this record owner
 
 ## Blockchain structure
 
@@ -238,16 +238,16 @@ The block header is used both to provide metadata (like timestamp) for
 a block and to verify that the list of transactions attached
 to the block are valid.
 
-Item             | Type      | Description
-:--------------- | :-------- | :-----------------------
-Version          | U16       | Version of block rules in action
-TransactionCount | U16       | Number of transactions in the block
-Number           | U64       | The number of this block
-PreviousBlock    | Argon2    | Thirty-two byte hash of the previous block
-MerkleRoot       | SHA3-256  | Thirty-two byte hash of the transaction Merkle tree
-Timestamp        | U64       | UNIX timestamp (seconds after start of 1970-01-01)
-Difficulty       | U64       | Difficulty fraction as 57 bit mantissa + 8 bit exponent
-Nonce            | U64       | Nonce created by hashing to meet the difficulty
+Item             | Type        | Description
+:--------------- | :---------- | :-----------------------
+Version          | U16         | Version of block rules in action
+TransactionCount | U16         | Number of transactions in the block
+Number           | U64         | The number of this block
+PreviousBlock    | Argon2      | Thirty-two byte hash of the previous block
+MerkleRoot       | SHA3-256    | Thirty-two byte hash of the transaction Merkle tree
+Timestamp        | U64         | UNIX timestamp (seconds after start of 1970-01-01)
+Difficulty       | U64         | Difficulty fraction as 57 bit mantissa + 8 bit exponent
+Nonce            | U64         | Nonce created by hashing to meet the difficulty
 
 ### Merkle Tree
 
@@ -263,12 +263,12 @@ The SHA3 algorithm is the current recommended hashing algorithm to use
 and fixes some vulnerability problems that were found in SHA2.  The
 SHA2 algorithm would have to be used twice to protect against this, which would
 cost more CPU resources.  The SHA3 is faster, so it reduces the time to
-build the Merkle Tree. SHA1 has been broken, so it was not considered.
+build the Merkle Tree. SHA-1 has been broken, so it was not considered.
 
 The SHA3 algorithm is also used for transaction IDs and is similarly the
 hash of the packed binary transaction including all signatures.
 
-### Block Hashing (argon2, difficulty, proof of work ...)
+### Block Hashing (Argon2, difficulty, proof of work ...)
 
 To prevent hardware attack of the Proof of Work system using GPUs or
 ASICs, a memory hard algorithm is used: Argon2.  Its parameters are

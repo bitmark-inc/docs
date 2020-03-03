@@ -6,7 +6,7 @@
 * [Prerequisites](simple-solution-for-node-setup.md#prerequisites)
 * [Installing Your Bitmark Node](simple-solution-for-node-setup.md#installing-your-bitmark-node)
 * [Using the Management Panel](simple-solution-for-node-setup.md#using-the-management-panel)
-  * [Step 1: Opening A Node\-Management Webpage](simple-solution-for-node-setup.md#step-1-opening-a-node-management-webpage)
+  * [Step 1: Opening A Node Management Web page](simple-solution-for-node-setup.md#step-1-opening-a-node-management-web-page)
   * [Step 2: Running bitmarkd and recorderd](simple-solution-for-node-setup.md#step-2-running-bitmarkd-and-recorderd)
 * [Important Notice On Network](simple-solution-for-node-setup.md#important-notice-on-network)
 

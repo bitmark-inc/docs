@@ -45,11 +45,11 @@ Though Bitmark Inc. has built out its own use cases for the Bitmark Property Sys
 
 ## Bitmark's Technology
 
-The Bitmark Property System is built on the Bitmark blockchain, an exciting twenty-first century technology that allows for trustless digital interactions between a group of people. It centers on a distributed public ledger that does not depend on any centralized authority. Anyone can write permanent records to the ledger as long as they follow the proper protocols.
+The Bitmark Property System is built on the Bitmark blockchain, an exciting twenty-first century technology that allows for trustless digital interactions between a group of people. It centres on a distributed public ledger that does not depend on any centralized authority. Anyone can write permanent records to the ledger as long as they follow the proper protocols.
 
 The records on the Bitmark blockchain are protected by cryptography. Assets are uniquely fingerprinted with hashes, and ownership is recorded with public keys and then confirmed with private-key signatures. Transfers of assets and grants or swaps of shares are verified with another signature from that same private key.
 
-The Bitmark blockchain has been designed specifically for the issuance and transfer of digital property, so it does not have its own native cryptocurrency. However, payments for asset transfers can be made in either Bitcoins or Litecoins, then verified on the blockchains of those cryptocurrencies.
+The Bitmark blockchain has been designed specifically for the issuance and transfer of digital property, so it does not have its own native cryptocurrency. However, payments for asset transfers can be made in either bitcoins or litecoins, then verified on the blockchains of those cryptocurrencies.
 
 Miners, called recorders on the Bitmark blockchain, keep everything running. They assemble asset records, issue records, transfer records, balance records, grant records, and swap records into blocks, which are built with a proof-of-work system. Miners are incentivized to include issue records through a Bitmark Certificate on the block itself and to include other records through a fee, also paid in Litecoin or Bitcoin.
 

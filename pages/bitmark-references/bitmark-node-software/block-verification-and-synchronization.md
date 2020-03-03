@@ -9,23 +9,25 @@ folder: bitmark-references/bitmark-node-software
 
 # Block Validation and Synchronization
 
-The structure of transactions and block headers is detailed in the [Bitmark Blockchain Technical Overview](bitmark-blockchain-overview.md). What follows are the technical details for how blocks are validated, then synchronized on the Bitmark Blockchain. 
+# Block Validation and Synchronization
+
+The structure of transactions and block headers is detailed in the [Bitmark Blockchain Technical Overview](bitmark-lockchain-overview.md). What follows are the technical details for how blocks are validated, then synchronized on the Bitmark Blockchain. 
 
 ## Block Structure
 
 A block intended for validation on the Bitmark blockchain contains a [block header](bitmark-blockchain-overview.md#block-header) followed by a number of transactions, laid out as follows:
 
-|  size (bytes)   | data                                                                      |
-| --------------- | ------------------------------------------------------------------------- |
-|   2             | block version number                                                      |
-|   2             | transaction count inside the block                                        |
-|   8             | block number (block height)                                               |
-|  32             | argon2 hash of previous block header                                      |
-|  32             | sha3 hash of all transactions in the block (merkle root)                  |
-|   8             | timestamp of block generation time, seconds since 1970-01-01T00:00:00 UTC |
-|   8             | current difficulty in compact mode                                        |
-|   8             | number to make hash meets difficulty                                      |
-|   ... to end    | transactions                                                              |
+|  size (bytes)   | data                                                                      
+| --------------- | ------------------------------------------------------------------------- 
+|   2             | block version number                                                      
+|   2             | transaction count inside the block                                        
+|   8             | block number (block height)                                               
+|  32             | Argon2 hash of previous block header                                      
+|  32             | SHA-3 hash of all transactions in the block (Merkle root)                  |
+|   8             | timestamp of block generation time, seconds since `1970-01-01T00:00:00 UTC` 
+|   8             | current difficulty in compact mode                                        
+|   8             | number to make hash meets difficulty                                      
+|   ... to end    | transactions                                                              
 
 
 
@@ -54,22 +56,22 @@ Different types of transactions following the block header will then be differen
 
 ## Block Validation
 
-When a block is received, the following tests are conducted to ensure its validatity:
+When a block is received, the following tests are conducted to ensure its validity:
 
 1. Length of all parts inside a block must match.
-1. Incoming block version number must be equal or larger than current block version number.
-1. Incoming block height must be 1 ahead of current block height.
-1. Incoming block must contain at least 1 transaction, at most 9999 transactions.
-1. Incoming block generation time must be within 5 minutes compared to received time.
-1. Incoming block generation time must be no larger than 10 minutes compared to current block generation time.
-1. Incoming block generation time must be within specific range.
-1. Incoming block difficulty must be same as current difficulty.
-1. Incoming block hash must meet difficulty criteria.
-1. Incoming block's previous block hash must be same as current block hash.
-1. Incoming transaction must fit each type's format and length.
-1. Incoming transaction owner ownership must be valid.
-1. Incoming transaction payment must be valid.
-1. Incoming block's SHA3 of all transactions with must be valid.
+2. Incoming block version number must be equal or larger than current block version number.
+3. Incoming block height must be 1 ahead of current block height.
+4. Incoming block must contain at least 1 transaction, at most 9999 transactions.
+5. Incoming block generation time must be within 5 minutes compared to received time.
+6. Incoming block generation time must be no larger than 10 minutes compared to current block generation time.
+7. Incoming block generation time must be within specific range.
+8. Incoming block difficulty must be same as current difficulty.
+9. Incoming block hash must meet difficulty criteria.
+10. Incoming block's previous block hash must be same as current block hash.
+11. Incoming transaction must fit each type's format and length.
+12. Incoming transaction owner ownership must be valid.
+13. Incoming transaction payment must be valid.
+14. Incoming block's SHA-3 of all transactions with must be valid.
 
 After a block is validated, a node stores that block into its internal
 database (`leveldb`), then the node broadcasts this newly saved block to all connected
@@ -89,7 +91,7 @@ In order for a block to be accepted by network participants, miners must have co
 
 For a block to be valid, it must hash to a value less than the current difficulty; this means that each block indicates that work has been done generating it. Each block contains the hash of the preceding block, thus each block has a chain of blocks that together contain a large amount of work. Changing a block (which can only be done by making a new block containing the same predecessor) requires regenerating all successors and redoing the work they contain. This protects the block chain from tampering.
 
-Bitmark uses [argon2](https://en.wikipedia.org/wiki/Argon2) to hash the block header; the rest of the data in the block is protected by having the Merkle Tree root hash as part of the header. If transactions are different or in a different order then the Merkle Tree root will not match. and the block will be rejected.
+Bitmark uses [Argon2](https://en.wikipedia.org/wiki/Argon2) to hash the block header; the rest of the data in the block is protected by having the Merkle Tree root hash as part of the header. If transactions are different or in a different order then the Merkle Tree root will not match. and the block will be rejected.
 
 ### Majority Votes
 
@@ -97,16 +99,16 @@ When deciding upon the next block, each node considers decisions from other node
 
 A variety of conditions could occurs when nodes are deciding whether to select a block.
 
-1. majority votes exists
+1. Majority votes exists
 
-| Node   | Block Height   | Block Hash | 
-| ------ | -------------- | ---------- |
-| 1      | 1000           | abcdefg    |
-| 2      | 1000           | abcdefg    |
-| 3      | 1000           | gfedcba    |
-| 4      | 1000           | abcdefg    |
-| 5      | 1000           | abcdefg    |
-| 6      | 1000           | abcdefg    |
+| Node   | Block Height   | Block Hash                                                            | 
+| ------ | -------------- | --------------------------------------------------------------------- |
+| 1      | 1000           | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+| 2      | 1000           | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+| 3      | 1000           | `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`    |
+| 4      | 1000           | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+| 5      | 1000           | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+| 6      | 1000           | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
 
 In this example, node-3 resides on a different chain than the others (because
 its block hash is different from others at same block height).
@@ -114,41 +116,41 @@ its block hash is different from others at same block height).
 Each node will then query its fellows to determine the majority vote.
 Assuming all nodes are connected, node-1, node-2, node-4, node-5, and node-6 will all see the following results when they ask for consensus.
 
-|  Count  |  Block Height  |  Block Hash  |
-| ------- | -------------- | ------------ |
-|  4      |  1000          |  abcdefg     |
-|  1      |  1000          |  gfedcba     |
+|  Count  |  Block Height  |  Block Hash                                                           |
+| ------- | -------------- | --------------------------------------------------------------------- |
+|  4      |  1000          | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+|  1      |  1000          | `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`    |
 
 They will each choose the chain that has hash `abcdefg` on block
 height 1000.
 
 Meanwhile, node-3 will see the following results when asking for majority votes:
 
-|  Count  |  Block Height  |  Block Hash  |
-| ------- | -------------- | ------------ |
-|  5      |  1000          |  abcdefg     |
+|  Count  |  Block Height  |  Block Hash                                                           |
+| ------- | -------------- | --------------------------------------------------------------------- |
+|  5      |  1000          | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
 
 It also will choose the chain that has hash `abcdefg` on block height
 1000, which means it will sync to the other nodes.
 
-1. several groups with same votes
+2. Several groups with same votes
 
-|  Node  |  Block Height  |  Block Hash  |
-| ------ | -------------- | ------------ |
-|  A     |  1000          |  abcdefg     |
-|  B     |  1000          |  abcdefg     |
-|  C     |  1000          |  abcdefg     |
-|  D     |  1000          |  gfedcba     |
-|  E     |  1000          |  gfedcba     |
-|  F     |  1000          |  gfedcba     |
+|  Node  |  Block Height  |  Block Hash                                                            |
+| ------ | -------------- | ---------------------------------------------------------------------- |
+|  A     |  1000          |  `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+|  B     |  1000          |  `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+|  C     |  1000          |  `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+|  D     |  1000          |  `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`    |
+|  E     |  1000          |  `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`    |
+|  F     |  1000          |  `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`    |
 
 In this example, two chains have equal votes. 
 
-|  Count  |  Block Height  |  Block Hash  |
-| ------- | -------------- | ------------ |
-|  3      |  1000          |  abcdefg     |
-|  3      |  1000          |  gfedcba     |
+|  Count  |  Block Height  |  Block Hash                                                           |
+| ------- | -------------- | --------------------------------------------------------------------- |
+|  3      |  1000          | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+|  3      |  1000          | `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`    |
 
-In this case, there's a tie between `abcdefg` and `gfedcba`, and the chain with the smaller hash value will be chosen. Since block hash is stored in little endian, the value of `gfedcba` is actually the smaller value, and the chain with that block hash is chosen. This means that `gfedcba` will eventually win over as the selected chain and dominate the network.
+In this case, there's a tie between `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d` and `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`, and the chain with the smaller hash value will be chosen. Since block hash is stored in little endian, the value of `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d` is actually the smaller value, and the chain with that block hash is chosen. This means that `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d` will eventually win over as the selected chain and dominate the network.
 
 This tie breaking selection could occur when a new node-7 joins the network or when some node notes that all other connected, remote nodes have separated into equal groups.

@@ -19,7 +19,7 @@
 * [Blockchain Structure](bitmark-blockchain-overview.md#blockchain-structure)
   * [Block Header](bitmark-blockchain-overview.md#block-header)
   * [Merkle Tree](bitmark-blockchain-overview.md#merkle-tree)
-  * [Block Hashing (argon2, difficulty, proof of work \.\.\.)](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
+  * [Block Hashing (Argon2, difficulty, proof of work \.\.\.)](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-)
   
 ## [Block Validation and Synchronization](block-verification-and-synchronization.md#block-verification-and-synchronization)
 
@@ -57,7 +57,7 @@
 * [Payment Module](payment-verification.md#payment-module)
   * [Using RPC APIs](payment-verification.md#using-rpc-apis)
   * [Using Discovery Service](payment-verification.md#using-discovery-service)
-  * [Using Bitcoin Peer\-to\-Peer Protocol (WIP)](payment-verification.md#using-bitcoin-peer-to-peer-protocol-wip)
+  * [Using Bitcoin Peer-to-Peer Protocol (WIP)](payment-verification.md#using-bitcoin-peer-to-peer-protocol-wip)
 
 ## [Storage Databases](node-modules.md)
 

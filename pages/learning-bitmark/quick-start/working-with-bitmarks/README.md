@@ -17,7 +17,7 @@ These documents detail the usage of each of these methods.
 * [About the Bitmark Account Number](creating-bitmark-account.md#about-the-bitmark-account-number)
 * [Creating a Bitmark Account using the Bitmark App](creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-app)
 * [Creating a Bitmark Account using the Bitmark SDK](creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-sdk)
-* [Creating a Bitmark Account using the Bitmark-CLI](creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli)
+* [Creating a Bitmark Account using the Bitmark CLI](creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli)
 
 
 ## [Registering Bitmark Certificates](issuing-bitmarks.md#registering-bitmark-certificates)

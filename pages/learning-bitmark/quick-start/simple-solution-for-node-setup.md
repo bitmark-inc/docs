@@ -9,7 +9,7 @@ folder: learning-bitmark/quick-start
 
 # Running a Bitmark Node
 
-There are many ways to interact with the Bitmark blockchain. Some of them, such as using the [Bitmark App](https://a.bitmark.com/), are extremely easy and accessible. However, users who want the deepest interactions with the Bitmark blockchain will probably want to run their own Bitmark Node, which will grant them immediate, local acesss to the blockchain, and which can also give them the ability to act as a recorder, if desired.
+There are many ways to interact with the Bitmark blockchain. Some of them, such as using the [Bitmark App](https://a.bitmark.com/), are extremely easy and accessible. However, users who want the deepest interactions with the Bitmark blockchain will probably want to run their own Bitmark Node, which will grant them immediate, local access to the blockchain, and which can also give them the ability to act as a recorder, if desired.
 
 ## Starting your Bitmark Node
 
@@ -31,7 +31,7 @@ If you prefer, you can install a Bitmark Node [by hand](../..//bitmark-reference
 
 ## Installing Your Bitmark Node
 
-A downloadable script will help you to install your Bitmark node. This script will pull down the latest bitmark-node container image from docker hub and then will start a bitmark node container for you. 
+A downloadable script will help you to install your Bitmark node. This script will pull down the latest bitmark node container image from docker hub and then will start a bitmark node container for you. 
  
 +  Linux and mac users:
     + [Download the scripts for Linux and Mac](https://bitmark-node-docker-scripts.s3-ap-northeast-1.amazonaws.com/install-node-linux-mac.sh)
@@ -50,26 +50,26 @@ A downloadable script will help you to install your Bitmark node. This script wi
     + Follow the script instruction and select "1) Installation"
     
 +  After installation:
-    + Execute `docker ps` in your command-line/shell to check if bitmark-node is running
+    + Execute `docker ps` in your command-line/shell to check if bitmark node is running
 ![docker ps result](https://i.imgur.com/l3dF4Hl.jpg)
 
 ## Using the Management Panel
 
 Following installation, you will be able to manipulate the Bitmark daemons directly from WebUI, a node-management web page.
 
-### Step 1: Opening A Node-Management Webpage 
-+ Access the node management webpage at http://127.0.0.1:9980
+### Step 1: Opening A Node-Management Web page 
++ Access the node management web page at http://127.0.0.1:9980
 + Input your BTC and LTC address for receiving mining rewards in a pop-up screen
 ![Input your BTC&LTC Address](https://i.imgur.com/IRTlyjY.jpg?1)
 
 + Notice: WebUI is an interface for controlling Bitmark node services. Users can only access it through a local network. The WebUI port cannot be  accessed from the internet due to security reasons.
 ### Step 2: Running bitmarkd and recorderd
-+ On the startup screen:
++ On the start screen:
     + Run `bitmarkd` by clicking the "start button" for "Bitmark Node (bitmarkd)"
     + After `bitmarkd` is running, run a `recorderd` by clicking the "start button" for "Recorder Node (recorderd)"
     +  If you don't want to use your machine to help Bitmark with mining, don't run the `recorderd`
 
-![startup screen](https://i.imgur.com/aeONALb.jpg)
+![start screen](https://i.imgur.com/aeONALb.jpg)
 
 + After the daemons are running:
     + Wait for five connections, to establish a distributed network
@@ -90,7 +90,7 @@ For your Blockchain node to work, you must ensure that the following ports are a
 
 Linux and Mac users can open this port with the following command:
 
-netcat -v [Your Public IP] 2136
+```$netcat -v [Your Public IP] 2136```
 
 Windows users can use `telnet` to test that a port is open:
 

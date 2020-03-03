@@ -18,7 +18,7 @@ Bitmark has produced white papers that lay the foundation for digital property r
 
 *2016 NOVEMBER 7*
 
-This paper proposes a digital property system that achieves secure authentication and transfer of both digital and physical objects, from one party to another, without requiring a central authority. Digital signatures provide a method to issue and transfer titles ("bitmark certificates") within the system. Using a blockchain algorithm, distributed consensus on who owns what can be achieved. Digital assets can be uniquely identified using cryptographically hash functions. Physical unclonable functions (PUFs) provide a method to uniquely identify physical assets. Title transfers are peer-to- peer, verifiable, and create an unforgeable chain-of-ownership (“provenance”).
+This paper proposes a digital property system that achieves secure authentication and transfer of both digital and physical objects, from one party to another, without requiring a central authority. Digital signatures provide a method to issue and transfer titles ("bitmark certificates") within the system. Using a blockchain algorithm, distributed consensus on who owns what can be achieved. Digital assets can be uniquely identified using cryptographically hash functions. Physical unclonable functions (PUFs) provide a method to uniquely identify physical assets. Title transfers are peer-to-peer, verifiable, and create an unforgeable chain-of-ownership (“provenance”).
 
 * [Read PDF](/assets/pdf/bitmark-technical-white-paper.pdf)
 * [Read EPUB](/assets/epubs/bitmark_technical-white-paper.epub)
@@ -45,4 +45,4 @@ Forgery is a serious issue and can be devastating to business. Valuables like ar
 In this work, we present ObjectMinutiae, a framework for authenticating different objects or materials via extracting and matching their fingerprints. Unlike biometrics fingerprinting processes, which use patterns such as ridge ending and bifurcation points as the interest points, our work applies stereo photometric techniques for reconstructing objects’ local image regions that contain the surface texture information. The interest points of the recovered image regions can be detected and described by state-of-the-art computer vision algorithms. Together with dimension reduction and hashing techniques, our proposed system is able to perform object verification using compact image features. With neutral and different torturing conditions, preliminary results on multiple types of papers support the use of our framework for practical object authentication tasks.
 
 * [Read PDF](/assets/pdf/objectminutiae.pdf)
-* [Watch on Youtube](https://www.youtube.com/watch?v=JgyGChTNy3E)
+* [Watch on YouTube](https://www.youtube.com/watch?v=JgyGChTNy3E)

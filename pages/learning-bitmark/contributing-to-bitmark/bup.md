@@ -15,7 +15,7 @@ Bitmark or its processes or environment. A BUP provides a
 concise technical specification of the feature and a rationale for it.
 
 ## Where I can find the BUPs?
-We have a repo at Github specifically for BUPs. We do not maintain it as part of the
+We have a repo at GitHub specifically for BUPs. We do not maintain it as part of the
 Bitmark documentation [repository](https://github.com/bitmark-inc/docs) because we want that to be a clean 
 environment where developers are not distracted by other
 repos.

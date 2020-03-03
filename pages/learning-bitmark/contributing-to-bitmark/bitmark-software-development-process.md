@@ -18,7 +18,7 @@ folder: learning-bitmark/contributing-to-bitmark
 
 **Development process:**
 
-Our current workflow uses OKR, where we define sprints as a deadline to deliver the software artefact, but we do not limit ourselves. We do translate the OKR in ISSUES on Github where we can track them. The external contributors can get involved with the project opening new ISSUES, being part of the discussion in existent ISSUES and make PULL REQUESTS within our projects.
+Our current workflow uses OKR, where we define sprints as a deadline to deliver the software artefact, but we do not limit ourselves. We do translate the OKR in ISSUES on GitHub where we can track them. The external contributors can get involved with the project opening new ISSUES, being part of the discussion in existent ISSUES and make PULL REQUESTS within our projects.
 
 ![](/assets/images/project_bitmarkd.png)
 
@@ -58,7 +58,7 @@ We need to always remember, there are other people watching us, the information 
 
 1. Know what is under review, understand what the developer is trying to achieve.
 2. Know what to look for in code: Structure, Style, Logic, Performance, Test coverage, Design, Readability, Maintainability and Functionality.
-3. Does it pass on CircleCi/TravisCi and Jenkins? Otherwise don't need start to make a review.
+3. Does it pass on CircleCI/TravisCI and Jenkins? Otherwise don't need start to make a review.
 4. Build and test.
 5. Give feedback that helps and not hurt, be impartial, as much as somebody prefers BLUE, some other people prefer YELLOW, so be impartial.
 6. Communicate goals and expectations, we use Slack and if we have direct access to the person that opened the code review, instead to go and make a comment and wait the person reply, talk directly with the person, it saves time and foster a positive culture.
@@ -71,7 +71,7 @@ We need to always remember, there are other people watching us, the information 
 
 1. Broken English, most of us are not native speakers, there is no problem to use Google translation to help us when we want to write something, especially when it is public.
 2. Be specific and with short sentences, go direct to the point.
-3. Nobody really cares if someones else prefer "for" or "while", so don't nit-picking other people's code,  it is demotivating.
+3. Nobody really cares if someone else prefer "for" or "while", so don't nit-picking other people's code,  it is demotivating.
 4. Don't do unsolicited code review..
 5. No power struggling in public, nobody will become "millionaire" bashing each other.
 6. Don't write big messages, short sentences are easier to understand, go to slack, send an email or make a phone call in case the peer works at Bitmark Inc..
@@ -84,16 +84,16 @@ Make sure everything is in place, when a pull request is open, it means the code
 2. How critical is the impact of these changes?
 3. Is there a GitHub issue explaining what this code is about?
 4. Is it a new feature? Do we have a software design document with the result of all discussion? (prior to code or prototype)
-5. The toolings golint, misspell, go test and go build, did run fine, didn't it?
+5. The tools, misspell, go test and go build, did run fine, didn't it?
 6. Does the code does what it proposes?
 7. Does the code follows the Golang specification? https://golang.org/ref/spec
 8. Will reviewers know how to test and validate it?
-9. Is there enough coverity with unit tests?
+9. Is there enough coverage with unit tests?
 10. Does the commit history has a clear and concise message?
 11. Does it needs documentation?
 12. Does it needs QA?
 13. Does this fix/feature needs to be part of the next release?
-14. Do we need extra validation like run on TestNet for a while?
+14. Do we need extra validation like run on Testnet for a while?
 
 **Quality assurance:**
 

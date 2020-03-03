@@ -37,8 +37,11 @@ jobs:
           name: Prepare environment
           command: |
             sudo apt-get update
-            sudo apt-get install perl
-            sudo apt-get install -y hunspell hunspell-en-gb hunspell-en-us
+            sudo apt-get install -y hunspell
+            sudo wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.dic?id=a4473e06b56bfe35187e302754f6baaa8d75e54f -O /usr/share/hunspell/en_GB.dic
+            sudo wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.aff?id=a4473e06b56bfe35187e302754f6baaa8d75e54f -O /usr/share/hunspell/en_GB.aff
+            sudo wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic?id=a4473e06b56bfe35187e302754f6baaa8d75e54f -O /usr/share/hunspell/en_US.dic
+            sudo wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.aff?id=a4473e06b56bfe35187e302754f6baaa8d75e54f -O /usr/share/hunspell/en_US.aff
             hunspell -D
       - run:
           name: Test
