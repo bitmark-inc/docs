@@ -27,7 +27,7 @@ This tutorial explains how to set up the `bitmarkd` and/or the `recorderd` servi
 
 Bitmark nodes can be installed on a variety of different operating systems, with pre-built packages available for FreeBSD, Ubuntu, and macOS.
 
-If some special functionality is required, or there are no available packages yet for your OS, a Bitmark node can also be compiled from source files. For more information, see [Building From Source](###-Building-From-Source).
+If some special functionality is required, or there are no available packages yet for your OS, a Bitmark node can also be compiled from source files. For more information, see [Building From Source](#building-from-source).
 
 ### FreeBSD
 
