@@ -222,7 +222,7 @@ signing operation.
 
 **Errors.** The command will terminate with an error if the asset name
 or metadata do not match exactly when creating additional Bitmarks.
-In the "free issue (--zero)", case there will be an error if this issue
+In the "free issue (`--zero`)", case there will be an error if this issue
 already exists.
 
 #### Command options

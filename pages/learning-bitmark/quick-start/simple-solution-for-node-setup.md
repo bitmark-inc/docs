@@ -50,7 +50,7 @@ A downloadable script will help you to install your Bitmark node. This script wi
     + Follow the script instruction and select "1) Installation"
     
 +  After installation:
-    + Execute `docker ps` in your command-line/shell to check if bitmark-node is running
+    + Execute `docker ps` in your command-line/shell to check if bitmark node is running
 ![docker ps result](https://i.imgur.com/l3dF4Hl.jpg)
 
 ## Using the Management Panel
@@ -90,7 +90,7 @@ For your Blockchain node to work, you must ensure that the following ports are a
 
 Linux and Mac users can open this port with the following command:
 
-netcat -v [Your Public IP] 2136
+```$netcat -v [Your Public IP] 2136```
 
 Windows users can use `telnet` to test that a port is open:
 

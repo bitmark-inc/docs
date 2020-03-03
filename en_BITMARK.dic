@@ -27,6 +27,7 @@ bip39-based
 BIP39
 blockchain/S
 blockchain/O
+blockchain-based
 BlockHeaderHash
 BlockOwnerPayment
 BlockOwnerTxIndex

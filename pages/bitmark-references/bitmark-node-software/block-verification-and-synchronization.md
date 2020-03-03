@@ -9,23 +9,25 @@ folder: bitmark-references/bitmark-node-software
 
 # Block Validation and Synchronization
 
-The structure of transactions and block headers is detailed in the [Bitmark Blockchain Technical Overview](blockchain-overview.md). What follows are the technical details for how blocks are validated, then synchronized on the Bitmark Blockchain. 
+# Block Validation and Synchronization
+
+The structure of transactions and block headers is detailed in the [Bitmark Blockchain Technical Overview](bitmark-lockchain-overview.md). What follows are the technical details for how blocks are validated, then synchronized on the Bitmark Blockchain. 
 
 ## Block Structure
 
 A block intended for validation on the Bitmark blockchain contains a [block header](bitmark-blockchain-overview.md#block-header) followed by a number of transactions, laid out as follows:
 
-|  size (bytes)   | data                                                                      |
-| --------------- | ------------------------------------------------------------------------- |
-|   2             | block version number                                                      |
-|   2             | transaction count inside the block                                        |
-|   8             | block number (block height)                                               |
-|  32             | Argon2 hash of previous block header                                      |
+|  size (bytes)   | data                                                                      
+| --------------- | ------------------------------------------------------------------------- 
+|   2             | block version number                                                      
+|   2             | transaction count inside the block                                        
+|   8             | block number (block height)                                               
+|  32             | Argon2 hash of previous block header                                      
 |  32             | SHA-3 hash of all transactions in the block (Merkle root)                  |
-|   8             | timestamp of block generation time, seconds since 1970-01-01T00:00:00 UTC |
-|   8             | current difficulty in compact mode                                        |
-|   8             | number to make hash meets difficulty                                      |
-|   ... to end    | transactions                                                              |
+|   8             | timestamp of block generation time, seconds since `1970-01-01T00:00:00 UTC` 
+|   8             | current difficulty in compact mode                                        
+|   8             | number to make hash meets difficulty                                      
+|   ... to end    | transactions                                                              
 
 
 
@@ -146,8 +148,8 @@ In this example, two chains have equal votes.
 
 |  Count  |  Block Height  |  Block Hash                                                           |
 | ------- | -------------- | --------------------------------------------------------------------- |
-|  3      |  1000          | 58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d    |
-|  3      |  1000          | c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d    |
+|  3      |  1000          | `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d`    |
+|  3      |  1000          | `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`    |
 
 In this case, there's a tie between `58583d17235c2b4e171c003fc96cde12fd52bb4b35658cbe85dd394f52fea08d` and `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d`, and the chain with the smaller hash value will be chosen. Since block hash is stored in little endian, the value of `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d` is actually the smaller value, and the chain with that block hash is chosen. This means that `c77a4078350526ca9da34b50e4920558082b7e5c7d8f50b6fb1ecb0e78b44a0d` will eventually win over as the selected chain and dominate the network.
 
