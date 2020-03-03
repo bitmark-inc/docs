@@ -31,7 +31,7 @@ If you prefer, you can install a Bitmark Node [by hand](../..//bitmark-reference
 
 ## Installing Your Bitmark Node
 
-A downloadable script will help you to install your Bitmark node. This script will pull down the latest bitmark-node container image from docker hub and then will start a bitmark node container for you. 
+A downloadable script will help you to install your Bitmark node. This script will pull down the latest bitmark node container image from docker hub and then will start a bitmark node container for you. 
  
 +  Linux and mac users:
     + [Download the scripts for Linux and Mac](https://bitmark-node-docker-scripts.s3-ap-northeast-1.amazonaws.com/install-node-linux-mac.sh)

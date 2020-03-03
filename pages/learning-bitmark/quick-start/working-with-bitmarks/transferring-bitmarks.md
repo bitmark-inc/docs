@@ -40,13 +40,11 @@ Bitmark owners can transfer their Bitmark Certificates to others using the SDK a
         await Transaction.get(txId);
     ```
 
-## Transferring bitmarks using the Bitmark-CLI
+## Transferring bitmarks using the Bitmark CLI
 
-The Bitmark-CLI allows users to transfer bitmarks by submitting the transactions to its connected node and then broadcasting to the network.
+The Bitmark CLI allows users to transfer bitmarks by submitting the transactions to its connected node and then broadcasting to the network.
 
-See [The Basics of Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli) for more information on the interface.
-
-To transfer a Bitmark Certificate using the Bitmark-CLI:
+To transfer a Bitmark Certificate using the Bitmark CLI:
 
 * Submit a transfer request
 
@@ -59,10 +57,10 @@ To transfer a Bitmark Certificate using the Bitmark-CLI:
     > The `transfer` command submits a transfer transaction to the network. 
     >
     > **Global Options:**
-    >* `sender identity` - The identity of the sender's Bitmark Account, which is stored in the Bitmark-CLI config file
+    >* `sender identity` - The identity of the sender's Bitmark Account, which is stored in the Bitmark CLI config file
     >
     > **Command Options:**
-    >* `receiver` - The identifier of the recipient's Bitmark Account. This can be a Bitmark Account Number or the Bitmark Account's identity, if it's stored in the Bitmark-CLI config file
+    >* `receiver` - The identifier of the recipient's Bitmark Account. This can be a Bitmark Account Number or the Bitmark Account's identity, if it's stored in the Bitmark CLI config file
     >
     > `txId` - The id of the last transaction of the Bitmark that is being transferring.
     >

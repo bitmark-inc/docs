@@ -9,7 +9,7 @@ folder: learning-bitmark/quick-start/working-with-bitmarks
 
 # Registering Bitmark Certificates
 
-Assets with titles that have been publicly recorded are [more valuable](../../problem-we-are-trying-to-solve.md) than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates. This can be done using the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark-CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
+Assets with titles that have been publicly recorded are [more valuable](../../problem-we-are-trying-to-solve.md) than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates. This can be done using the [Bitmark SDK](#registering-bitmark-certificates-using-the-bitmark-sdk), or the [Bitmark CLI](#registering-bitmark-certificates-using-the-bitmark-cli).
 
 The process of registering a Bitmark Certificate for a digital asset occurs in two steps:
 
@@ -70,11 +70,11 @@ To register a new property using the Bitmark JS SDK:
 
 
 
-## Registering Bitmark Certificates using the Bitmark-CLI
+## Registering Bitmark Certificates using the Bitmark CLI
 
-See [The Basics of Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli) for more information on the interface.
+See [The Basics of Bitmark CLI](https://github.com/bitmark-inc/docs/blob/shannona-patch-working-with-bitmark/learning-bitmark/quick-start/working-with-bitmarks/creating-bitmark-account.md#creating-a-bitmark-account-using-the-bitmark-cli) for more information on the interface.
 
-To register a new property using the Bitmark-CLI:
+To register a new property using the Bitmark CLI:
 
 * Compute the hash of an asset
 
@@ -114,7 +114,7 @@ To register a new property using the Bitmark-CLI:
     > The `create` command registers an asset from a fingerprint *and* issues the corresponding bitmarks
     >
     > **Global Options:**
-    >* `identity` - The identity of the registrant's Bitmark Account, which is stored in the Bitmark-CLI config file. 
+    >* `identity` - The identity of the registrant's Bitmark Account, which is stored in the Bitmark CLI config file. 
     >
     > **Command Options:**
     >* `asset name` - The `name` field in the asset record.

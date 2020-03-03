@@ -1,4 +1,4 @@
-# Bitmark-CLI
+# Bitmark CLI
 
 ## [Quick Setup](quick-setup.md#quick-setup)
 

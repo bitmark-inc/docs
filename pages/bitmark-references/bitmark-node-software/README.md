@@ -57,7 +57,7 @@
 * [Payment Module](payment-verification.md#payment-module)
   * [Using RPC APIs](payment-verification.md#using-rpc-apis)
   * [Using Discovery Service](payment-verification.md#using-discovery-service)
-  * [Using Bitcoin Peer\-to\-Peer Protocol (WIP)](payment-verification.md#using-bitcoin-peer-to-peer-protocol-wip)
+  * [Using Bitcoin Peer-to-Peer Protocol (WIP)](payment-verification.md#using-bitcoin-peer-to-peer-protocol-wip)
 
 ## [Storage Databases](node-modules.md)
 

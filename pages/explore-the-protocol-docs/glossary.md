@@ -45,9 +45,9 @@ folder: explore-the-protocol-docs
 
 **bitmarkd** - The main Bitmark program. It verifies and records transactions on the _Bitmark blockchain_.
 
-**bitmark-cli** - A command line interface for interacting with _bitmarkd_ (and thus the _Bitmark Property System_.
+**Bitmark CLI** - A command line interface for interacting with _bitmarkd_ (and thus the _Bitmark Property System_.
 
-**bitmark-wallet** - A wallet that allows a _recorder_ to receive _bitcoins_ and _litecoins_.
+**Bitmark Wallet** - A wallet that allows a _recorder_ to receive _bitcoins_ and _litecoins_.
 
 **bitmark-webui** - A web-based user interface to monitor and configure a Bitmark _node_ via a web browser.
 

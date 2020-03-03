@@ -97,7 +97,7 @@ The following message format is used to send from `recorderd` to `bitmarkd`:
 
 1. request
 
-    a string "block.nonce" to represent the type of request
+    a string `block.nonce` to represent the type of request
 
 2. job
 

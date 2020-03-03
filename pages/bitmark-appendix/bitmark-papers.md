@@ -18,7 +18,7 @@ Bitmark has produced white papers that lay the foundation for digital property r
 
 *2016 NOVEMBER 7*
 
-This paper proposes a digital property system that achieves secure authentication and transfer of both digital and physical objects, from one party to another, without requiring a central authority. Digital signatures provide a method to issue and transfer titles ("bitmark certificates") within the system. Using a blockchain algorithm, distributed consensus on who owns what can be achieved. Digital assets can be uniquely identified using cryptographically hash functions. Physical unclonable functions (PUFs) provide a method to uniquely identify physical assets. Title transfers are peer-to- peer, verifiable, and create an unforgeable chain-of-ownership (“provenance”).
+This paper proposes a digital property system that achieves secure authentication and transfer of both digital and physical objects, from one party to another, without requiring a central authority. Digital signatures provide a method to issue and transfer titles ("bitmark certificates") within the system. Using a blockchain algorithm, distributed consensus on who owns what can be achieved. Digital assets can be uniquely identified using cryptographically hash functions. Physical unclonable functions (PUFs) provide a method to uniquely identify physical assets. Title transfers are peer-to-peer, verifiable, and create an unforgeable chain-of-ownership (“provenance”).
 
 * [Read PDF](/assets/pdf/bitmark-technical-white-paper.pdf)
 * [Read EPUB](/assets/epubs/bitmark_technical-white-paper.epub)

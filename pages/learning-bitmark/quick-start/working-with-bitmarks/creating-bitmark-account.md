@@ -9,7 +9,7 @@ folder: learning-bitmark/quick-start/working-with-bitmarks
 
 # Creating Bitmark Accounts
 
-Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark SDK](#creating-a-bitmark-account-using-the-bitmark-sdk), or the [Bitmark-CLI](#creating-a-bitmark-account-using-the-bitmark-cli).
+Any user interacting with the Bitmark Property System requires a Bitmark Account. It can be created using the [Bitmark SDK](#creating-a-bitmark-account-using-the-bitmark-sdk), or the [Bitmark CLI](#creating-a-bitmark-account-using-the-bitmark-cli).
 
 After creating an Account, a user will often want to recover the seed (which is the private key that can be used to control the Account) and the recovery phrase (which is a set of 12 mnemonic words that can be used to regenerate the seed).
 
@@ -74,17 +74,17 @@ To initialize the Bitmark JS SDK, create a Bitmark Account, and export the relat
     let phrase = account.getRecoveryPhrase();
     ```
 
-## Creating a Bitmark Account using the Bitmark-CLI
+## Creating a Bitmark Account using the Bitmark CLI
 
-This section introduces simple commands to create a new Bitmark Account using the Bitmark-CLI. For the command structures, detailed explanations, and other functions please refer the [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) documents.
+This section introduces simple commands to create a new Bitmark Account using the Bitmark CLI. For the command structures, detailed explanations, and other functions please refer the [Bitmark CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md) documents.
 
-### The Basics of Bitmark-CLI
+### The Basics of Bitmark CLI
 
-All Bitmark-CLI commands follow the same basic structure:
+All Bitmark CLI commands follow the same basic structure:
 
 `$ bitmark-cli [global-options] command [command-options]`
     
-You will need to send the Bitmark-CLI the global option `--network` (abbreviation: `-n`) to identify the network that you are sending the command to.
+You will need to send the Bitmark CLI the global option `--network` (abbreviation: `-n`) to identify the network that you are sending the command to.
 
 **Network Options:**
 * `bitmark`:  the live network, which uses live BTC or LTC to pay for the transactions.
@@ -95,25 +95,25 @@ You will need to send the Bitmark-CLI the global option `--network` (abbreviatio
 
 To create a Bitmark Account using the Bitmark CLI:
 
-* Install [Bitmark-CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
+* Install [Bitmark CLI](https://github.com/bitmark-inc/docs/blob/master/bitmark-references/bitmark-cli/bitmark-cli.md)
 
-* Initialize the Bitmark-CLI configuration
+* Initialize the Bitmark CLI configuration
 
     ```shell
     $ bitmark-cli -n <network> -i <identity> \
     setup -c <node>:2130 -d '<description>' -n
     ```
 
-    >The `setup` command initializes the Bitmark-CLI config file.
+    >The `setup` command initializes the Bitmark CLI config file.
     >
     > **Global Options:**
     >* `network` - The network to which the command is sent.
-    >* `identity` - The identity of the Bitmark-CLI user.
+    >* `identity` - The identity of the Bitmark CLI user.
     >
     > **Command Options:**
-    >* `node` - The Bitmark node to which the Bitmark-CLI connects and submits its transactions.
+    >* `node` - The Bitmark node to which the Bitmark CLI connects and submits its transactions.
     >* `description` - The identity’s description. 
-    >* `-n` (abbr. of --new) - A new account is being created.
+    >* `-n` (abbr. of `--new`) - A new account is being created.
     
     *Example:*
  
@@ -128,7 +128,7 @@ To create a Bitmark Account using the Bitmark CLI:
     $ bitmark-cli -n <network> -i <identity> \
     add -d '<description>' -n
     ```
-    > The `add` command adds a new user after the Bitmark-CLI configuration was initialized. 
+    > The `add` command adds a new user after the Bitmark CLI configuration was initialized. 
     > The command options have the same meanings as in the `setup` command.
     
     *Example:*  
@@ -142,7 +142,7 @@ To create a Bitmark Account using the Bitmark CLI:
     $ bitmark-cli -n <network> list
     ```
 
-    > The `list` command lists all the users of the Bitmark-CLI.
+    > The `list` command lists all the users of the Bitmark CLI.
     
     *Example:*
 
@@ -160,7 +160,7 @@ To create a Bitmark Account using the Bitmark CLI:
     $ bitmark-cli -n <network> -i <identity> seed
     ```
 
-    > The `seed` command prints out all the information about a Bitmark-CLI user. 
+    > The `seed` command prints out all the information about a Bitmark CLI user. 
     
     *Example:*
  

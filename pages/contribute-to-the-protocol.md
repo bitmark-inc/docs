@@ -9,7 +9,7 @@ folder:
 
 
 # Contribute to the Protocol
-_Last updated: 24-FEB 2020_
+_Last updated: 24 FEB 2020_
 
 [TOC]
 
