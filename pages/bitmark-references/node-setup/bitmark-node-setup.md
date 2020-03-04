@@ -72,7 +72,7 @@ The installation includes a sample configuration which has some embedded instruc
 |---------|-------------------------------------------|
 | FreeBSD | `/usr/local/etc/bitmarkd.sample`          |
 | Ubuntu  | `/etc/bitmarkd.sample`                    |
-| MacOSX  | `/usr/local/etc/bitmarkd/bitmarkd.sample` |
+| macOS   | `/usr/local/etc/bitmarkd/bitmarkd.sample` |
 
 Copy the sample configuration.
 
@@ -109,7 +109,7 @@ First, setup and edit your configuration file. For mining using the local `bitma
 |---------|-------------------------------------------|
 | FreeBSD | `/usr/local/etc/recorderd.conf`           |
 | Ubuntu  | `/etc/recorderd.conf`                     |
-| MacOSX  | `/usr/local/etc/recorderd/recorderd.conf` |
+| macOS   | `/usr/local/etc/recorderd/recorderd.conf` |
 
 Copy the sample configuration.
 
