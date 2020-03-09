@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Domaine Sans Text';
+    src: url('DomaineSansText-Light.woff2') format('woff2'),
+        url('DomaineSansText-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Domaine Sans Text Regular';
+    src: url('DomaineSansText-Regular.woff2') format('woff2'),
+        url('DomaineSansText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -6,8 +6,8 @@
   {% for folder in entry.folders %}
   {% if folder.output contains "web" %}
   <li>
-      <a title="{{folder.title}}" href="#">{{folder.title}}</a>
-      <ul>
+      <a class="sidebar-title" title="{{folder.title}}" href="#">{{folder.title}}</a>
+      <ul class="sidebar-list">
           {% for folderitem in folder.folderitems %}
           {% if folderitem.output contains "web" %}
           {% if folderitem.external_url %}
