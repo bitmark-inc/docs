@@ -137,7 +137,7 @@ h2 {
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 .bs-callout {
@@ -490,6 +490,14 @@ a.accordion-toggle, a.accordion-collapsed {
   right: 3px;
   top: 14px;
 }
+.sidebar-list li.active a b {
+  border-bottom: solid 1px #333;
+}
+
+.sidebar-list li a b {
+  font-weight: 300;
+}
+
 .nav, .nav ul, .nav li {
     list-style: none;
 }
@@ -1052,7 +1060,7 @@ span.soft {
 @media (min-width: 1000px) {
 
     ul#mysidebar {
-        /*width: 350px;*/
+        min-width: 300px;
     }
 }
 
