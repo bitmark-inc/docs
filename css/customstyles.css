@@ -379,7 +379,7 @@ ul#results-container a:hover {
 }
 
 div#toc ul li {
-    margin: 8px 0px 8px 22px;
+    margin: 8px 0px 8px 10px;
     font-size: 14px;
     list-style: disc;
 }
@@ -607,7 +607,7 @@ ul#mysidebar {
 
 .nav ul li a {
     /*border-top:1px solid whitesmoke;*/
-    padding-left:10px;
+    /*padding-left:10px;*/
 }
 
 .nav ul li a:hover {
