@@ -128,6 +128,14 @@ h2 {
   display: none;
 }
 
+.nav.navbar-nav li {
+  margin-right: 45px;
+}
+
+.nav.navbar-nav li:last-child{
+  margin-right: 0;
+}
+
 .home-logo {
     display: inline-block;
     font-family: domaine-sans;
@@ -342,7 +350,7 @@ p.post-meta {font-size: 80%; color: #777;}
     top: 40px; /* if you change anything about the nav, you'll prob. need to reset the top and left values here.*/
     left: 20px;
     z-index: -1;
-    width:223px;
+    width:256px;
     border-left: 1px solid #dedede;
 }
 
@@ -362,14 +370,32 @@ ul#results-container a:hover {
 #search-input {
     padding: .5em;
     margin-left:20px;
-    width:20em;
+    width:256px;
     font-size: 0.8em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-top:10px;
+    font-family: "AtlasGrotesk";
+    font-size: 14px;
+    border: 0;
+}
+#search-input::-webkit-input-placeholder { /* Edge */
+  text-transform: capitalize;
+}
+
+#search-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  text-transform: capitalize;
+}
+
+#search-input::placeholder {
+  text-transform: capitalize;
 }
 /* end search */
+
+input:focus {
+  outline: none;
+}
 
 .filter-options {
     margin-bottom: 20px;
@@ -379,7 +405,7 @@ ul#results-container a:hover {
 }
 
 div#toc ul li {
-    margin: 8px 0px 8px 10px;
+    margin: 8px 0px 8px 13px;
     font-size: 14px;
     list-style: disc;
 }
@@ -479,7 +505,8 @@ a.accordion-toggle, a.accordion-collapsed {
 .sidebar-list li {
   position: relative;
 }
-.sidebar-list li:after {
+/*sidebar menu back vertical line*/
+/*.sidebar-list li:after {
   content: "";
   background: #C1C0C0;
   display: inline-block;
@@ -489,7 +516,7 @@ a.accordion-toggle, a.accordion-collapsed {
   position: absolute;
   right: 3px;
   top: 14px;
-}
+}*/
 .sidebar-list li.active a b {
   border-bottom: solid 1px #333;
 }
@@ -503,7 +530,7 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav ul {
-    padding: 0 0 0 10px;
+    padding: 0 0 0 0px;
     /*margin: 0 0 0 18px;*/
     margin:0px;
 }
@@ -539,19 +566,20 @@ a.accordion-toggle, a.accordion-collapsed {
     padding-left: 5px;
 }
 
-.nav li > a > span:after {
+/*sidebar menu toggle icon - arrow*/
+/*.nav li > a > span:after {
     font-family: FontAwesome;
     content: "\f107";
-}
+}*/
 
-.nav li.active > a > span:after {
+/*.nav li.active > a > span:after {
     font-family: FontAwesome;
     content: '\f106';
 }
-
+*/
 .nav a:hover, .nav li.active > a {
     /*background-color: #A4B5CD;*/
-    color: #000;
+    /*color: #000;*/
 }
 
 .nav > li.active > a  {
