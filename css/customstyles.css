@@ -415,9 +415,9 @@ div#toc ul li:first-child {
 }
 
 div#toc ul {
-    padding: 5px 5px 5px 15px;
+    padding: 5px 5px 5px 0px;
     border-radius: 5px;
-    max-width: 300px;
+    max-width: 216px;
     color: gray;
 }
 
@@ -450,7 +450,7 @@ div#toc >ul::before {
 
 div#toc {
     margin-top: 20px;
-    overflow: auto;
+    /*overflow: auto;*/
     max-height: 90%;
 }
 
@@ -492,6 +492,11 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 /* navgoco sidebar styles (customized) */
+#tg-sb-sidebar {
+  max-width: 255px;
+  margin-right: 75px;
+  padding: 0px;
+}
 .sidebar-title {
   font-weight: 500;
   font-size: 17px;
@@ -588,7 +593,7 @@ a.accordion-toggle, a.accordion-collapsed {
 .nav li a {
     font-size: 14px;
     line-height: 18px;
-    padding: 5px 10px;
+    padding: 5px 10px 5px 0px;
     /*background-color: #f1f1f1;*/
 }
 
@@ -602,7 +607,7 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 ul#mysidebar > li > a {
-    padding: 7px 10px;
+    padding: 7px 10px 7px 0px;
 }
 
 ul#mysidebar {
@@ -1087,9 +1092,18 @@ span.soft {
 
 @media (min-width: 1000px) {
 
-    ul#mysidebar {
-        min-width: 300px;
-    }
+  ul#mysidebar {
+    min-width: 255px;
+  }
+
+  #tg-sb-content {
+    min-width: 882px;
+  }
+
+
+  .page-article {
+    min-width: 630px;
+  }
 }
 
 @media (max-width: 900px) {
