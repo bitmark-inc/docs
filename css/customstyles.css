@@ -144,8 +144,23 @@ h2 {
 
 }
 
+.home-logo:after {
+  content:"DOCS";
+  color:#BEAB88;
+  padding-left: 10px;
+}
+
 p {
   line-height: 1.8;
+}
+
+.page-article a{
+  border-bottom: solid 1px #BEAB88;
+}
+
+.page-article {
+  padding-left: 0;
+  padding-right: 30px;
 }
 
 .bs-callout {
