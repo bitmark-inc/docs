@@ -48,19 +48,19 @@ entries:
     - title: Payment Verification
       url: /explore-the-protocol-docs/payment-verification
       output: web
-    
+
     - title: Storage Databases
       url: /explore-the-protocol-docs/storage-databases
       output: web
-    
+
     - title: Blockchain Security
       url: /explore-the-protocol-docs/blockchain-security
       output: web
-    
+
     - title: RPC Communication
       url: /explore-the-protocol-docs/rpc-communication
       output: web
-    
+
     - title: Glossary
       url: /explore-the-protocol-docs/glossary
       output: web
@@ -74,7 +74,7 @@ entries:
       output: web
 
     - title: White Papers
-      url: /read-our-papers//white-papers
+      url: /read-our-papers/white-papers
       output: web
 
   - title: Contribute to the Protocol
@@ -90,7 +90,7 @@ entries:
     folderitems:
 
     - title: Bitmark Protocol FAQ
-      url: /browser-our-faq/bitmark-protocol-faq
+      url: /browse-our-faq/bitmark-protocol-faq
       output: web
 
 

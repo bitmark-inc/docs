@@ -18,8 +18,8 @@ _Last updated: 24 FEB 2020_
 
 We expect you probably got here from https://bitmark.com.  But just in case you didn’t, the explanation of the Bitmark Protocol is here: 
 
-*   [https://bitmark.com/faq](../browse-our-faq/bitmark-protocol-faq.md)
-*   [https://bitmark.com/white-papers](../read-our-papers/white-papers.md)
+*   [https://bitmark.com/faq](../browse-our-faq/bitmark-protocol-faq)
+*   [https://bitmark.com/white-papers](../read-our-papers/white-papers)
 
 The Bitmark Protocol software project is the means by which the peer-to-peer network implements the Bitmark Protocol.
 
