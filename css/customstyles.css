@@ -1103,6 +1103,9 @@ span.soft {
     #mysidebar {
         position: relative;
     }
+    .page-article {
+      margin-top: 30px;
+    }
 }
 
 @media (min-width: 1000px) {

@@ -24,7 +24,8 @@ a:hover {
 a {
   color: #000;
   text-decoration: none;
-  cursor: pointer
+  cursor: pointer;
+
 }
 
 .uk-link:hover,
