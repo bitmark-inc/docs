@@ -277,9 +277,8 @@ typical x86 CPU core.  The current setting for the hashing power of CPUs
 is still very low, on the order of a few hashes per second; this means
 that the difficulty scale is much lower than other blockchain systems.
 
-The difficulty is represented as a
-[https://en.wikipedia.org/wiki/Floating-point_arithmetic](floating
-point) value in the range:
+The difficulty is represented as a [floating
+point](https://en.wikipedia.org/wiki/Floating-point_arithmetic) value in the range:
 
     1 ≥ d > 0
 

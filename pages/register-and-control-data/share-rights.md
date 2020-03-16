@@ -9,7 +9,7 @@ folder: register-and-control-data
 
 # Share rights
 
-In some cases, the ownership of a property is shared between different parties or people. To support these situations, the Bitmark Property System provides a feature called **[Bitmark shares](shares/bitmark-shares)**.
+In some cases, the ownership of a property is shared between different parties or people. To support these situations, the Bitmark Property System provides a feature called **[Bitmark shares](shares/bitmark-shares.md)**.
 
 Any owner of a Bitmark Certificate is able to:
 
