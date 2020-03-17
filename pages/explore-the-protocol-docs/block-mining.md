@@ -69,7 +69,7 @@ The hash of a block is made from the following information, hashed through the `
 
 ## Difficulty
 
-As described in the [Bitmark Blockchain Technical Overview](bitmark-blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-), difficulty is decided by blockchain consensus rules. A higher difficulty means that it is harder for a miner to find a valid hash; when a hash meets a difficulty, that means that the hash value is less than or equal to the difficulty level. Usually, the difficulty level is represented by a number.
+As described in the [Bitmark Blockchain Technical Overview](blockchain-overview.md#block-hashing-argon2-difficulty-proof-of-work-), difficulty is decided by blockchain consensus rules. A higher difficulty means that it is harder for a miner to find a valid hash; when a hash meets a difficulty, that means that the hash value is less than or equal to the difficulty level. Usually, the difficulty level is represented by a number.
 
 For example, when difficulty is 2, the hash of a block should contains at least 10 (8+2) leading zeros. A block hash of "012345678901234567890123456789012" would not meet this difficulty criteria because it only has one leading zero, but a block hash of "00000000001234567890123456789012" would because it contains 10 leading zeros.
 

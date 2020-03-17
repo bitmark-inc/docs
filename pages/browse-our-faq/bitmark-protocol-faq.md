@@ -3,7 +3,7 @@ title: Bitmark Protocol FAQ
 keywords: faq
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /browser-our-faq/bitmark-protocol-faq
+permalink: /browse-our-faq/bitmark-protocol-faq
 folder: browser-our-faq
 ---
 

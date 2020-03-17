@@ -9,12 +9,11 @@ folder: register-and-control-data
 
 # Register data
 
-Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates (or bitmarks). This can be done using the SDK and the CLI.
+Assets with titles that have been publicly recorded are more valuable than those without. They are what grant basic rights, such as the ability to resell, rent, lend, and donate the property. The Bitmark blockchain allows individuals to access these rights for digital assets by registering their titles as Bitmark Certificates (or bitmarks). This can be done using the [SDK](#register-data-using-the-sdk) and the [CLI](#register-data-using-the-cli).
 
 The process of registering a Bitmark Certificate for a digital asset occurs in two steps:
 
 * Registering the asset: this creates an *Asset Record*, which is stored on the Bitmark blockchain.
-
 * Issuing bitmarks: this creates *Issue Records* linking to the corresponding asset record, which are also stored on the Bitmark blockchain.
 
 This process registers legal property rights on the public Bitmark blockchain for an individual's digital assets, including personal health and social data, creative works such as art, photography, and music, and other intellectual property. These legal rights determine who owns property and what can be done with it, whether the individual wants to keep it, sell it, or donate it.
@@ -29,17 +28,13 @@ This process registers legal property rights on the public Bitmark blockchain fo
 * [Install the CLI along with the bitmarkd](run-a-node.md)
 * [Install and configure the Bitmark Wallet](cli/cli-payment.md#installing-and-configuring-the-bitmark-wallet)
 
-## Issue the first bitmark
 
-The first step to create a digital property is to register assets 
 
-* Each asset can be described by name and metadata (both optional), and can be uniquely identified by its fingerprint. 
-* If an asset record with the same fingerprint value already exists in the blockchain, the new asset record is rejected from incorporation in the blockchain. 
-* An asset record won't be added to the blockchain without accompanying bitmark issuances. The "orphaned" asset records will be vanished after 3 days.
+## Register data using the SDK
 
-For any asset there is a special issue that is free of cost. Even if an asset already exists a different Bitmark account can create a free issue for it.
+### Register an asset
 
-### Using the SDK
+An asset record requires an accompanying bitmark issuance to be added to the blockchain. This first issuance is free of charge, but additional issuances for the same asset require a fee.
 
 {% codetabs %}
 {% codetab JS %}
@@ -203,82 +198,9 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% endcodetab %}
 {% endcodetabs %} 
 
-### Using the CLI
+### Issue more bitmarks
 
-{% codetabs %}
-{% codetab Command %}
-```sh
-# Create an identity
-$ bitmark-cli -i IDENTITY -n <local|testing|bitmark> add -d 'DESCRIPTION OF IDENTITY' --new
-
-# Compute the asset hash
-$ bitmark-cli -n <local|testing|bitmark> fingerprint -f <file>
-
-# register asset along with issuing the first bitmark
-$ bitmark-cli -n <local|testing|bitmark> -i <identity> create -a '<asset name>' -m '<asset metadata>' -f <asset fingerprint> -z
-
-# Verify the status of the issuance transaction
-$ bitmark-cli -n <local|testing|bitmark> status -t <txid>
-
-```
-{% endcodetab %}
-{% codetab Example %}
-```sh
-# Create a Bitmark Account as the Issuer
-bitmark-cli -n testing -i first add -d 'first' --new
-
-#  Compute file hash
-$ bitmark-cli -n testing fingerprint -f test.txt
-
-# Issue the first bitmark of the asset
-$ bitmark-cli -n testing -i first create -a 'asset_name' -m 'From\u0000CLI\u0000desc\u0000example' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z
-
-# Verify the status of the issuance transaction
-$ bitmark-cli -n testing status -t 45a3e08658db810d7fda4c34a852f3707bc8e4518571c8c8a79835d0a9bb3834
-```
-{% endcodetab %}
-{% codetab Output %}
-```json
-// Computing asset hash
-{
-    "file_name": "filename.test",
-    "fingerprint":"0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f799c7527859361f1694acef106d5131a96641eae524e1c323500"
-}
-
-//Registering the asset from its hash
-{
-  "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
-  "issueIds": [
-    "45a3e08658db810d7fda4c34a852f3707bc8e4518571c8c8a79835d0a9bb3834"
-  ],
-  "payId": "05943784313be02e7f1823f398f82bccf803933863804a46c42119ad2a8d1f85476d2211a1079acb5cebe6682daf7168",
-  "payNonce": "8ae68bb87c4a926b",
-  "difficulty": "0000ffffffffffffff8000000000000000000000000000000000000000000000",
-  "submittedNonce": "0000000125ef307e",
-  "proofStatus": "Accepted"
-}
-
-// Checking status
-{
-  "status": "Verified"
-}
-
-// After about 2 minutes
-{
-  "status": "Confirmed"
-}
-```
-{% endcodetab %}
-{% endcodetabs %}
-
-## Issue more
-
-After an asset is registered, users can issue more bitmarks with a permanent reference to the corresponding asset record. Those issuance transactions need to be paid to be confirmed on the Blockchain.
-
-* SDK users pay for the issuance transactions using the SDK credit system
-* CLI users pay for the issuance transactions by sending BTC or LTC to the indicated address.
-
-### Using the SDK
+After an asset is registered, users can issue additional bitmarks with a permanent reference to the corresponding asset record. SDK users pay for those issuances using the SDK credit system.
 
 {% codetabs %}
 {% codetab JS %}
@@ -346,7 +268,81 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% endcodetab %}
 {% endcodetabs %} 
 
-### Using the CLI
+## Register data using the CLI
+
+### Register an asset
+
+The steps and logics of registering an asset do not change regardless of whether which tool is used. An asset record requires an accompanying bitmark issuance to be added to the blockchain. This first issuance is free of charge, but additional issuances for the same asset require a fee.
+
+{% codetabs %}
+{% codetab Command %}
+```sh
+# Create an identity
+$ bitmark-cli -i IDENTITY -n <local|testing|bitmark> add -d 'DESCRIPTION OF IDENTITY' --new
+
+# Compute the asset hash
+$ bitmark-cli -n <local|testing|bitmark> fingerprint -f <file>
+
+# register asset along with issuing the first bitmark
+$ bitmark-cli -n <local|testing|bitmark> -i <identity> create -a '<asset name>' -m '<asset metadata>' -f <asset fingerprint> -z
+
+# Verify the status of the issuance transaction
+$ bitmark-cli -n <local|testing|bitmark> status -t <txid>
+
+```
+{% endcodetab %}
+{% codetab Example %}
+```sh
+# Create a Bitmark Account as the Issuer
+bitmark-cli -n testing -i first add -d 'first' --new
+
+#  Compute file hash
+$ bitmark-cli -n testing fingerprint -f test.txt
+
+# Issue the first bitmark of the asset
+$ bitmark-cli -n testing -i first create -a 'asset_name' -m 'From\u0000CLI\u0000desc\u0000example' -f 0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f0799c7527859361f1694acef106d5131a96641eae524e1c323500 -z
+
+# Verify the status of the issuance transaction
+$ bitmark-cli -n testing status -t 45a3e08658db810d7fda4c34a852f3707bc8e4518571c8c8a79835d0a9bb3834
+```
+{% endcodetab %}
+{% codetab Output %}
+```json
+// Computing asset hash
+{
+    "file_name": "filename.test",
+    "fingerprint":"0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f799c7527859361f1694acef106d5131a96641eae524e1c323500"
+}
+
+//Registering the asset from its hash
+{
+  "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
+  "issueIds": [
+    "45a3e08658db810d7fda4c34a852f3707bc8e4518571c8c8a79835d0a9bb3834"
+  ],
+  "payId": "05943784313be02e7f1823f398f82bccf803933863804a46c42119ad2a8d1f85476d2211a1079acb5cebe6682daf7168",
+  "payNonce": "8ae68bb87c4a926b",
+  "difficulty": "0000ffffffffffffff8000000000000000000000000000000000000000000000",
+  "submittedNonce": "0000000125ef307e",
+  "proofStatus": "Accepted"
+}
+
+// Checking status
+{
+  "status": "Verified"
+}
+
+// After about 2 minutes
+{
+  "status": "Confirmed"
+}
+```
+{% endcodetab %}
+{% endcodetabs %}
+
+### Issue more bitmarks
+
+The CLI users pay for transactions of issuing more bitmarks by sending BTC or LTC to the indicated address.
 
 {% codetabs %}
 {% codetab Command %}

@@ -13,7 +13,7 @@ The structure of transactions and block headers is detailed in the [Bitmark Bloc
 
 ## Block Structure
 
-A block intended for validation on the Bitmark blockchain contains a [block header](bitmark-blockchain-overview.md#block-header) followed by a number of transactions, laid out as follows:
+A block intended for validation on the Bitmark blockchain contains a [block header](blockchain-overview.md#block-header) followed by a number of transactions, laid out as follows:
 
 |  size (bytes)   | data                                                                      
 | --------------- | ------------------------------------------------------------------------- 

@@ -18,7 +18,7 @@ _Last updated: 24 FEB 2020_
 
 We expect you probably got here from https://bitmark.com.  But just in case you didn’t, the explanation of the Bitmark Protocol is here:
 
-*   [https://bitmark.com/products/bitmark-protocol/faq](../browse-our-faq/bitmark-protocol-faq)
+*   [https://bitmark.com/faq](../browse-our-faq/bitmark-protocol-faq)
 *   [https://bitmark.com/white-papers](../read-our-papers/white-papers)
 
 The Bitmark Protocol software project is the means by which the peer-to-peer network implements the Bitmark Protocol.
@@ -102,7 +102,7 @@ Latest bug updates:
 
 ##### Bug scope
 Only bugs in Scope are eligible for a bug bounty. A qualifying bug has to be a danger to the blockchain records, privacy, or client operations. These include bugs in:
-1. **Protocol**: Flaws in protocol design, an example being the incentive design flaw in the [white paper](https://bitmark.com/assets/bitmark_technical-white-paper.pdf)
+1. **Protocol**: Flaws in protocol design, an example being the incentive design flaw in the [white paper](/assets/pdf/bitmark-technical-white-paper.pdf)
 2. **Implementation of client**: Any implementation bug in `bitmarkd` that could cause cause bad block, invalid assets, transaction failure, bad operations, or program crashes
 3. **Cryptography**: Incorrect implementation of Cryptographic algorithms
 4. **Network Attacks**: Attacks such as Sybil attacks

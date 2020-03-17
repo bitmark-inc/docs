@@ -11,7 +11,7 @@ folder: register-and-control-data
 
 Once an asset has been registered, the owner can trade it by creating a transfer record that points back to the original issue record (or to a previous transfer record) and that lists the new owner of the asset. Because the blockchain is ordered and because it's immutable, this creates a permanent chain of custody reaching back to the asset's origins.
 
-Bitmark owners can transfer their Bitmark Certificates to others using the SDK and the CLI.
+Bitmark owners can transfer their bitmarks to others using the [SDK](#transfer-bitmarks-using-the-sdk) and the [CLI](#transfer-bitmarks-using-the-cli).
 
 ## Prerequisites
 
@@ -22,6 +22,8 @@ Bitmark owners can transfer their Bitmark Certificates to others using the SDK a
 **Using the CLI**
 * [Install the CLI along with the bitmarkd](run-a-node.md)
 * [Install and configure the Bitmark Wallet](cli/cli-payment.md#installing-and-configuring-the-bitmark-wallet)
+
+## Transfer bitmarks using the SDK
 
 * Submit a transfer transaction
 
@@ -40,7 +42,7 @@ Bitmark owners can transfer their Bitmark Certificates to others using the SDK a
         await Transaction.get(txId);
     ```
 
-## Transferring bitmarks using the Bitmark CLI
+## Transfer bitmarks using the CLI
 
 The Bitmark CLI allows users to transfer bitmarks by submitting the transactions to its connected node and then broadcasting to the network.
 
