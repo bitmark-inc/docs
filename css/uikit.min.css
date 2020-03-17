@@ -31,7 +31,7 @@ a {
 .uk-link:hover,
 a:hover {
   color: black;
-  text-decoration: underline
+  /*text-decoration: underline*/
 }
 
 abbr[title] {

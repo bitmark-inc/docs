@@ -158,6 +158,11 @@ p {
   border-bottom: solid 1px #BEAB88;
 }
 
+.page-article a:hover{
+  border-bottom: solid 1px #000;
+  text-decoration: none;
+}
+
 .page-article {
   padding-left: 0;
   padding-right: 30px;
