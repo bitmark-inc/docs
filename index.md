@@ -1,6 +1,6 @@
 ---
 title: Official Bitmark Documentation
-keywords: homepage, home
+keywords: Bitmark restores trust in data
 sidebar: mydoc_sidebar
 permalink: /index.html
 ---
