@@ -1,5 +1,71 @@
 /*fonts*/
 @font-face {
+  font-family: 'domaine-sans'; /*// domaine-sans Regular*/
+  src: url('../fonts/domaine-sans/DomaineSansText-Regular.otf');
+  src: url('../fonts/domaine-sans/DomaineSansText-Regular.woff') format('woff'), url('../fonts/domaine-sans/DomaineSansText-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'domaine-sans'; /*// domaine-sans Regular*/
+  src: url('../fonts/domaine-sans/DomaineSansText-Light.woff');
+  src: url('../fonts/domaine-sans/DomaineSansText-Light.woff') format('woff'), url('../fonts/domaine-sans/DomaineSansText-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'AtlasGrotesk'; /*// AtlasGrotesk-Regular*/
+  src: url('/fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Regular.eot');
+  src: url('/fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Regular.woff') format('woff'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Regular.ttf') format('truetype'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Regular.svg#AtlasGrotesk-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'AtlasGrotesk'; /*// AtlasGrotesk-Medium*/
+  src: url('/fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Medium.eot');
+  src: url('/fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Medium.woff') format('woff'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Medium.ttf') format('truetype'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Medium.svg#AtlasGrotesk-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'AtlasGrotesk'; /*// AtlasGrotesk-Light*/
+  src: url('/fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Light.eot');
+  src: url('/fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Light.woff') format('woff'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Light.ttf') format('truetype'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Light.svg#AtlasGrotesk-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: 'AtlasGrotesk'; /*// AtlasGrotesk-Medium*/
+  src: url('/fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Bold.eot');
+  src: url('/fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Bold.woff') format('woff'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Bold.ttf') format('truetype'),
+  url('../fonts/AtlasGrotesk-Light-Web/AtlasGrotesk-Bold.svg#AtlasGrotesk-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
   font-family: 'AvenirNextW1G'; /*// Avenir Next W1G Light*/
   src: url('/fonts/Avenir-Next-W1G/AvenirNextW1G-Light.ttf');
   font-weight: 300;
@@ -44,12 +110,57 @@
   text-rendering: optimizeLegibility;
 }
 
+h1 {
+  font-size: 47px;
+  font-weight: 300;
+  line-height: 55px;
+  margin-bottom: 40px;
+  padding: 10px 0;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.navbar-nav>li>a[href^="http://"]:after, .navbar-nav>li>a[href^="https://"]:after{
+  display: none;
+}
+
+.nav.navbar-nav li {
+  margin-right: 45px;
+}
+
+.nav.navbar-nav li:last-child{
+  margin-right: 0;
+}
+
 .home-logo {
     display: inline-block;
+    font-family: domaine-sans;
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+
+.home-logo:after {
+  content:"DOCS";
+  color:#BEAB88;
+  padding-left: 10px;
 }
 
 p {
-  line-height: 1.5;
+  line-height: 1.8;
+}
+
+.page-article a{
+  border-bottom: solid 1px #BEAB88;
+}
+
+.page-article {
+  padding-left: 0;
+  padding-right: 30px;
 }
 
 .bs-callout {
@@ -254,7 +365,7 @@ p.post-meta {font-size: 80%; color: #777;}
     top: 40px; /* if you change anything about the nav, you'll prob. need to reset the top and left values here.*/
     left: 20px;
     z-index: -1;
-    width:223px;
+    width:256px;
     border-left: 1px solid #dedede;
 }
 
@@ -274,14 +385,32 @@ ul#results-container a:hover {
 #search-input {
     padding: .5em;
     margin-left:20px;
-    width:20em;
+    width:256px;
     font-size: 0.8em;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin-top:10px;
+    font-family: "AtlasGrotesk";
+    font-size: 14px;
+    border: 0;
+}
+#search-input::-webkit-input-placeholder { /* Edge */
+  text-transform: capitalize;
+}
+
+#search-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  text-transform: capitalize;
+}
+
+#search-input::placeholder {
+  text-transform: capitalize;
 }
 /* end search */
+
+input:focus {
+  outline: none;
+}
 
 .filter-options {
     margin-bottom: 20px;
@@ -291,16 +420,24 @@ ul#results-container a:hover {
 }
 
 div#toc ul li {
-    margin: 8px 0px 8px 22px;
-    font-size: 90%;
-    list-style: square;
+    margin: 8px 0px 8px 13px;
+    font-size: 14px;
+    list-style: disc;
 }
+
+div#toc ul li:first-child {
+  padding-top: 10px;
+}
+
 div#toc ul {
-    background-color: whitesmoke;
-    padding: 5px;
+    padding: 5px 5px 5px 0px;
     border-radius: 5px;
-    max-width: 300px;
+    max-width: 216px;
     color: gray;
+}
+
+div#toc ul a {
+  color: #828080;
 }
 
 div#toc ul li ul {
@@ -315,9 +452,10 @@ div#toc ul li ul li::before {
 div#toc >ul::before {
     content: "Table of Contents";
     font-weight: 500;
-    color: #555;
+    color: #828080;
+    font-size: 17px;
     text-align:center;
-    margin-left:auto;
+    margin-left:-15px;
     margin-right:auto;
     width:70px;
     padding-top:20px;
@@ -327,12 +465,12 @@ div#toc >ul::before {
 
 div#toc {
     margin-top: 20px;
-    overflow: auto;
+    /*overflow: auto;*/
     max-height: 90%;
 }
 
 div#main {
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 li.dropdownActive a {
@@ -369,12 +507,50 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 /* navgoco sidebar styles (customized) */
+#tg-sb-sidebar {
+  max-width: 255px;
+  margin-right: 75px;
+  padding: 0px;
+}
+.sidebar-title {
+  font-weight: 500;
+  font-size: 17px;
+}
+.sidebar-title:hover {
+  background: transparent !important;
+}
+.sidebar-list {
+  font-size: 14px;
+}
+.sidebar-list li {
+  position: relative;
+}
+/*sidebar menu back vertical line*/
+/*.sidebar-list li:after {
+  content: "";
+  background: #C1C0C0;
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  transform: rotate(90deg);
+  position: absolute;
+  right: 3px;
+  top: 14px;
+}*/
+.sidebar-list li.active a b {
+  border-bottom: solid 1px #333;
+}
+
+.sidebar-list li a b {
+  font-weight: 300;
+}
+
 .nav, .nav ul, .nav li {
     list-style: none;
 }
 
 .nav ul {
-    padding: 0;
+    padding: 0 0 0 0px;
     /*margin: 0 0 0 18px;*/
     margin:0px;
 }
@@ -405,34 +581,35 @@ a.accordion-toggle, a.accordion-collapsed {
 
 .nav li > a > span {
     float: right;
-    font-size: 19px;
+    font-size: 24px;
     font-weight: bolder;
     padding-left: 5px;
 }
 
-.nav li > a > span:after {
+/*sidebar menu toggle icon - arrow*/
+/*.nav li > a > span:after {
     font-family: FontAwesome;
     content: "\f107";
-}
+}*/
 
-.nav li.active > a > span:after {
+/*.nav li.active > a > span:after {
     font-family: FontAwesome;
     content: '\f106';
 }
-
+*/
 .nav a:hover, .nav li.active > a {
-    background-color: #A4B5CD;
-    color: #fff;
+    /*background-color: #A4B5CD;*/
+    /*color: #000;*/
 }
 
 .nav > li.active > a  {
 }
 
 .nav li a {
-    /*font-size: 12px;*/
+    font-size: 14px;
     line-height: 18px;
-    padding: 5px 10px;
-    background-color: #f1f1f1;
+    padding: 5px 10px 5px 0px;
+    /*background-color: #f1f1f1;*/
 }
 
 .nav > li > a {
@@ -440,8 +617,12 @@ a.accordion-toggle, a.accordion-collapsed {
     padding: 4px 10px;
 }
 
+.nav li a.email i {
+  display: none;
+}
+
 ul#mysidebar > li > a {
-    padding: 7px 10px;
+    padding: 7px 10px 7px 0px;
 }
 
 ul#mysidebar {
@@ -461,7 +642,7 @@ ul#mysidebar {
 
 
 .nav ul li a {
-    background-color: #FAFAFA;
+    /*background-color: #FAFAFA;*/
 }
 
 .nav li a {
@@ -469,12 +650,12 @@ ul#mysidebar {
 }
 
 .nav li a:hover {
-    background-color: #A4B5CD;
+    /*background-color: #A4B5CD;*/
 }
 
 .nav ul li a {
-    border-top:1px solid whitesmoke;
-    padding-left:10px;
+    /*border-top:1px solid whitesmoke;*/
+    /*padding-left:10px;*/
 }
 
 .nav ul li a:hover {
@@ -490,11 +671,11 @@ ul#mysidebar {
     border-radius: 5px;
 }
 
-span.projectTitle {
+/*span.projectTitle {
     font-family: Helvetica;
     font-weight: bold;
 }
-
+*/
 .footer {
     text-align: right;
 }
@@ -780,7 +961,7 @@ ol.series li {
 }
 
 #mysidebar .nav ul {
-    background-color: #FAFAFA;
+    /*background-color: #FAFAFA;*/
 }
 .nav ul.series li {
     list-style: decimal;
@@ -788,7 +969,7 @@ ol.series li {
 }
 
 .nav ul.series li a:hover {
-    background-color: gray;
+    /*background-color: gray;*/
 }
 .nav ul.series {
     padding-left: 30px;
@@ -922,13 +1103,25 @@ span.soft {
     #mysidebar {
         position: relative;
     }
+    .page-article {
+      margin-top: 30px;
+    }
 }
 
 @media (min-width: 1000px) {
 
-    ul#mysidebar {
-        /*width: 350px;*/
-    }
+  ul#mysidebar {
+    min-width: 255px;
+  }
+
+  #tg-sb-content {
+    min-width: 882px;
+  }
+
+
+  .page-article {
+    min-width: 630px;
+  }
 }
 
 @media (max-width: 900px) {

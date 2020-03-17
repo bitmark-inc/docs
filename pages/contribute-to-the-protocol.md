@@ -1,10 +1,10 @@
 ---
 title: Contribute to the Protocol
 keywords: governance, security program, Bitmark Upgrade Proposal
-last_updated: 
+last_updated:
 sidebar: mydoc_sidebar
 permalink: /contribute-to-the-protocol
-folder: 
+folder:
 ---
 
 
@@ -16,7 +16,7 @@ _Last updated: 24 FEB 2020_
 
 ## About the Bitmark Protocol
 
-We expect you probably got here from https://bitmark.com.  But just in case you didn’t, the explanation of the Bitmark Protocol is here: 
+We expect you probably got here from https://bitmark.com.  But just in case you didn’t, the explanation of the Bitmark Protocol is here:
 
 *   [https://bitmark.com/faq](../browse-our-faq/bitmark-protocol-faq)
 *   [https://bitmark.com/white-papers](../read-our-papers/white-papers)
@@ -49,11 +49,11 @@ We chose a permissive license in order to allow the broadest possible set of use
 
 Bitmark Inc. will maintain the primary code repository for the Bitmark Protocol software project and will retain primary development and maintenance responsibility.  We will also retain control of the code commit decisions, at least until a sufficiently strong community has arisen from which to select trusted code committers.
 
-Bitmark Inc. will also provide one or more community moderators to guide the discussion about the project, again, at least until a sufficiently strong community has arisen from which to select trusted community moderators. 
+Bitmark Inc. will also provide one or more community moderators to guide the discussion about the project, again, at least until a sufficiently strong community has arisen from which to select trusted community moderators.
 
 Bitmark Inc. will provide its reasons for all of its decisions regarding the Bitmark Protocol software project, including the direction it chooses for development, code commit decisions, and community management decisions.
 
-The primary method of communication among the communities will be one or more mailing lists. This creates an archive of community conversations and allows asynchronous conversations.  Our expectations for behavior are here: https://bitmark.com/conduct.  Generally speaking, however, we expect our community members to conduct open and honest conversations, **_while always treating each other with respect and honoring the dignity of each individual participant_**.  
+The primary method of communication among the communities will be one or more mailing lists. This creates an archive of community conversations and allows asynchronous conversations.  Our expectations for behavior are here: https://bitmark.com/conduct.  Generally speaking, however, we expect our community members to conduct open and honest conversations, **_while always treating each other with respect and honoring the dignity of each individual participant_**.
 
 We will over time evaluate the community to determine whether we have a sufficient number of active participants to establish additional roles for community members or to establish a more democratic mode of governance.
 
@@ -66,7 +66,7 @@ A Bitmark Upgrade Proposal (BUP) is a design document providing information to t
 Bitmark or its processes or environment. A BUP provides a concise technical specification of the feature and a rationale for it.
 
 We have a repo at GitHub specifically for BUPs. We do not maintain it as part of the
-Bitmark documentation [repository](https://github.com/bitmark-inc/docs) because we want that to be a clean 
+Bitmark documentation [repository](https://github.com/bitmark-inc/docs) because we want that to be a clean
 environment where developers are not distracted by other
 repos.
 
@@ -74,7 +74,7 @@ For full access to all BUPs, please go to: [Bitmark Upgrade Proposal](https://gi
 
 Please assume that everything you contribute intentionally to the Bitmark Protocol software project is public. This includes emails on public lists, wikis, other online discussions of all sorts, and software or documentation that you post to this website or our revision control repositories.  There may be cases where you are invited to share private information for various purposes, and denote that information as such. That information is subject to the privacy policy of Bitmark Inc., located here:  [https://bitmark.com/privacy](https://bitmark.com/privacy).  Similarly, other information collected by this website is subject to that privacy policy.
 
-Although what participants disclose here is public, both community members and Bitmark Inc. are limited by intellectual property law in how the use of community member contributions. **_Bitmark Inc. only accepts voluntary contributions of software and documentation that are expressly licensed to Bitmark Inc. (or all comers) under the ISC license._** 
+Although what participants disclose here is public, both community members and Bitmark Inc. are limited by intellectual property law in how the use of community member contributions. **_Bitmark Inc. only accepts voluntary contributions of software and documentation that are expressly licensed to Bitmark Inc. (or all comers) under the ISC license._**
 
 
 ## Security Program
@@ -126,7 +126,7 @@ Bugs that are out of scope include those that require:
 * Submit your report to: [Bug Bounty Submission Form](https://docs.google.com/forms/d/e/1FAIpQLSeVzZfd-DDQNuVVDMkwgu4VSxmPnvB6OLo_sw_9CH1w34xoZA/viewform)
 
 ### Collecting rewards
-Rewards are considered based on the impact and severity of the vulnerability, with relation to the scope and quality of the report. 
+Rewards are considered based on the impact and severity of the vulnerability, with relation to the scope and quality of the report.
 
 * Critical Bugs: key leaks
 * High Bugs (At Least): invalid block or corrupted database

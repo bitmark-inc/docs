@@ -3,6 +3,10 @@
 topnav:
 - title: Topnav
   items:
-    - title: GitHub
-      external_url: https://github.com/bitmark-inc/docs
+    - title: Registry
+      external_url: https://registry.bitmark.com/
+    - title: FAQ
+      external_url: https://bitmark.com/products/bitmark-protocol/faq/
+    # - title: GitHub
+    #   external_url: https://github.com/bitmark-inc/docs
 

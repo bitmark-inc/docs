@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'AtlasGrotesk-Light';
+  src: url('AtlasGrotesk-Light-Web.eot'); /* IE9 Compat Modes */
+  src: url('AtlasGrotesk-Light-Web.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('AtlasGrotesk-Light-Web.woff') format('woff'), /* Pretty Modern Browsers */
+       url('AtlasGrotesk-Light-Web.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('AtlasGrotesk-Light-Web.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'AtlasGrotesk-Medium';
+  src: url('AtlasGrotesk-Regular.eot'); /* IE9 Compat Modes */
+  src: url('AtlasGrotesk-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('AtlasGrotesk-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('AtlasGrotesk-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('AtlasGrotesk-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}

@@ -6,33 +6,33 @@
   {% for folder in entry.folders %}
   {% if folder.output contains "web" %}
   <li>
-      <a title="{{folder.title}}" href="#">{{folder.title}}</a>
-      <ul>
+      <a class="sidebar-title" title="{{folder.title}}" href="#">{{folder.title}}</a>
+      <ul class="sidebar-list">
           {% for folderitem in folder.folderitems %}
           {% if folderitem.output contains "web" %}
           {% if folderitem.external_url %}
-          <li><a title="{{folderitem.title}}" href="{{folderitem.external_url}}" target="_blank" rel="noopener">{{folderitem.title}}</a></li>
+          <li><a title="{{folderitem.title}}" href="{{folderitem.external_url}}" target="_blank" rel="noopener"><b>{{folderitem.title}}</b></a></span></li>
           {% elsif page.url == folderitem.url %}
-          <li class="active"><a title="{{folderitem.title}}" href="{{folderitem.url}}">{{folderitem.title}}</a></li>
+          <li class="active"><a title="{{folderitem.title}}" href="{{folderitem.url}}"><b>{{folderitem.title}}</b></a></li>
           {% elsif folderitem.type == "empty" %}
-          <li><a title="{{folderitem.title}}" href="{{folderitem.url}}">{{folderitem.title}}</a></li>
+          <li><a title="{{folderitem.title}}" href="{{folderitem.url}}"><b>{{folderitem.title}}</b></a></li>
 
           {% else %}
-          <li><a title="{{folderitem.title}}" href="{{folderitem.url}}">{{folderitem.title}}</a></li>
+          <li><a title="{{folderitem.title}}" href="{{folderitem.url}}"><b>{{folderitem.title}}</b></a></li>
           {% endif %}
           {% for subfolders in folderitem.subfolders %}
           {% if subfolders.output contains "web" %}
           <li class="subfolders">
-              <a title="{{subfolders.title}}" href="{{subfolders.url}}">{{ subfolders.title }}</a>
+              <a title="{{subfolders.title}}" href="{{subfolders.url}}"><b>{{ subfolders.title }}</b></a>
               <ul>
                   {% for subfolderitem in subfolders.subfolderitems %}
                   {% if subfolderitem.output contains "web" %}
                   {% if subfolderitem.external_url %}
-                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.external_url}}" target="_blank" rel="noopener">{{subfolderitem.title}}</a></li>
+                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.external_url}}" target="_blank" rel="noopener"><b>{{subfolderitem.title}}</b></a></li>
                   {% elsif page.url == subfolderitem.url %}
-                  <li class="active"><a title="{{subfolderitem.title}}" href="{{subfolderitem.url}}">{{subfolderitem.title}}</a></li>
+                  <li class="active"><a title="{{subfolderitem.title}}" href="{{subfolderitem.url}}"><b>{{subfolderitem.title}}</b></a></li>
                   {% else %}
-                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.url}}">{{subfolderitem.title}}</a></li>
+                  <li><a title="{{subfolderitem.title}}" href="{{subfolderitem.url}}"><b>{{subfolderitem.title}}</b></a></li>
                   {% endif %}
                   {% endif %}
                   {% endfor %}

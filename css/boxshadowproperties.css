@@ -1,7 +1,7 @@
 /* box-shadow fonts return errors with prince, so extracting here to put in web output only */
 
 #search-demo-container ul#results-container {
-    box-shadow: 2px 3px 2px #dedede;
+    /*box-shadow: 2px 3px 2px #dedede;*/
 }
 
 

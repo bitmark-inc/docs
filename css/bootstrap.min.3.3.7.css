@@ -2010,8 +2010,10 @@ pre code {
 
 @media (min-width:1200px) {
   .container {
-    width: 1170px
-  }
+    width: 1440px;
+    padding-left: 108px;
+    padding-right: 108px;
+
 }
 
 .container-fluid {
@@ -4992,7 +4994,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .nav>li>a:focus,
 .nav>li>a:hover {
   text-decoration: none;
-  background-color: #eee
+  /*background-color: #eee*/
 }
 
 .nav>li.disabled>a {
@@ -5210,7 +5212,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 .navbar {
   position: relative;
-  min-height: 57px;
+  /*min-height: 57px;*/
   margin-bottom: 20px;
   border: 1px solid transparent
 }
@@ -5342,7 +5344,6 @@ textarea.input-group-sm>.input-group-btn>.btn {
   float: left;
   height: 50px;
   padding: 15px 15px;
-  font-size: 18px;
   line-height: 20px
 }
 

@@ -1,10 +1,10 @@
 /*! UIkit 2.27.5 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 html {
-  font: 300 16px "AvenirNextW1G", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font: 300 14px "AtlasGrotesk", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   background: #fff;
-  color: #444
+  color: #333
 }
 
 body {
@@ -22,9 +22,10 @@ a:hover {
 
 .uk-link,
 a {
-  color: #0060F2;
+  color: #000;
   text-decoration: none;
-  cursor: pointer
+  cursor: pointer;
+
 }
 
 .uk-link:hover,
@@ -172,19 +173,8 @@ h6 {
   margin-top: 25px
 }
 
-.uk-h1,
-h1 {
-  font-size: 60px;
-  line-height: 80px;
-  margin-bottom: 40px;
-  padding: 10px 0;
-}
 
-.uk-h2,
-h2 {
-  font-size: 32px;
-  line-height: 40px;
-}
+
 
 .uk-h3,
 h3 {

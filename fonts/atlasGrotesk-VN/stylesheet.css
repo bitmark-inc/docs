@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'AtlasGrotesk-VN-Light';
+  src: url('AtlasGrotesk-VN-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AtlasGrotesk-VN-Medium';
+  src: url('AtlasGrotesk-VN-Medium.otf') format('opentype');
+}
