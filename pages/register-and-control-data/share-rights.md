@@ -440,7 +440,7 @@ $ bitmark-cli -n testing balance -o second
 {% endcodetab %}
 {% endcodetabs %}
 
-For the details of CLI commands and their parametters, please refer to the [CLI command reference](cli/cli-command-reference.md).
+For the details of CLI commands and their parameters, please refer to the [CLI command reference](cli/cli-command-reference.md).
 
 
 ## Explore the transactions using the Registry website

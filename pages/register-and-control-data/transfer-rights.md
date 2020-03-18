@@ -126,7 +126,7 @@ For some scenarios, the sender wants to get a permission from the recipient befo
 
 **Propose a transfer offer**
 
-The sender initiates a two-signature transfer by propsing a transfer offer
+The sender initiates a two-signature transfer by proposing a transfer offer
 
 {% codetabs %}
 {% codetab JS %}
@@ -624,7 +624,7 @@ $ bitmark-cli -n testing provenance -t 4656604222152d08606d42a40c8590c2100c177ca
 {% endcodetab %}
 {% endcodetabs %}
 
-For the details of CLI commands and their parametters, please refer to the [CLI command reference](cli/cli-command-reference.md).
+For the details of CLI commands and their parameters, please refer to the [CLI command reference](cli/cli-command-reference.md).
 
 
 ## Explore the transactions using the Registry website
