@@ -17,7 +17,6 @@ Any owner of a Bitmark Certificate is able to:
 * [Grant Bitmark shares](#granting-bitmark-shares-to-another-account) to another account.
 * [Swap Bitmark shares](#swapping-bitmark-shares) with other accounts.
 
-
 Currently, only the Bitmark CLI supports working with bitmark shares. Transactions related to Bitmark shares require a transaction fee. On the bitmark network, the fee can be paid with BTC or LTC
 
 * Real BTC and/or LTC are used to pay for transaction fee on the Bitmark main chain
@@ -441,7 +440,7 @@ $ bitmark-cli -n testing balance -o second
 {% endcodetab %}
 {% endcodetabs %}
 
-For the details of CLI commands and their parametters, please refer to the [CLI command reference](cli/cli-command-reference.md).
+For the details of CLI commands and their parameters, please refer to the [CLI command reference](cli/cli-command-reference.md).
 
 
 ## Explore the transactions using the Registry website
