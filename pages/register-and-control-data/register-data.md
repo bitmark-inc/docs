@@ -29,7 +29,6 @@ This process registers legal property rights on the public Bitmark blockchain fo
 * [Install and configure the Bitmark Wallet](cli/cli-payment.md#installing-and-configuring-the-bitmark-wallet)
 
 
-
 ## Register data using the SDK
 
 ### Register an asset
@@ -198,6 +197,7 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% endcodetab %}
 {% endcodetabs %} 
 
+
 ### Issue more bitmarks
 
 After an asset is registered, users can issue additional bitmarks with a permanent reference to the corresponding asset record. SDK users pay for those issuances using the SDK credit system.
@@ -268,6 +268,7 @@ bitmarkIDs, err := bitmark.Issue(params)
 {% endcodetab %}
 {% endcodetabs %} 
 
+
 ## Register data using the CLI
 
 ### Register an asset
@@ -309,12 +310,14 @@ $ bitmark-cli -n testing status -t 45a3e08658db810d7fda4c34a852f3707bc8e4518571c
 {% codetab Output %}
 ```json
 // Computing asset hash
+/*====================*/
 {
     "file_name": "filename.test",
     "fingerprint":"0122aa7d05ce9d324feca37780eeeeb7af8611eefb61cfe42bf9f8127071b481520b529e06c9f799c7527859361f1694acef106d5131a96641eae524e1c323500"
 }
 
 //Registering the asset from its hash
+/*=================================*/
 {
   "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
   "issueIds": [
@@ -328,10 +331,10 @@ $ bitmark-cli -n testing status -t 45a3e08658db810d7fda4c34a852f3707bc8e4518571c
 }
 
 // Checking status
+/*==============*/
 {
   "status": "Verified"
 }
-
 // After about 2 minutes
 {
   "status": "Confirmed"
@@ -339,6 +342,7 @@ $ bitmark-cli -n testing status -t 45a3e08658db810d7fda4c34a852f3707bc8e4518571c
 ```
 {% endcodetab %}
 {% endcodetabs %}
+
 
 ### Issue more bitmarks
 
@@ -382,6 +386,7 @@ $ bitmark-cli -n testing status -t 742fdff03ead89375b95d0c3e834ccaf5d6446b8dd489
 {% codetab Output %}
 ```json
 // Issue more bitmarks on an existing asset
+/*=======================================*/
 {
   "assetId": "dac17bef505f7a5acf890a1d0f232b7d847f1e951cf1f5b880de13253a10df43cdbcab553e08050808e0b3fdfd2581a798dcdf9cedbbddf4476ead14caa612d3",
   "issueIds": [
@@ -424,21 +429,23 @@ $ bitmark-cli -n testing status -t 742fdff03ead89375b95d0c3e834ccaf5d6446b8dd489
 }
 
 // Cheking status before payment
+/*============================*/
 {
   "status": "Pending"
 }
 
 //Payment command's output
+/*======================*/
 {
   "txId": "69a1a4810d0b703fb855397334bb3c04a0dc90e3c2c5cfa1d64b6c100f5ffe7d", 
   "rawTx": "0100000001c2de9f79c6d5c112b5b8c2979c7d9ec18a5712e995c6eaafc44a8a2ac3852c23010000006a473044022063e3135e76403d4d07ba24f9053ca59cd56c9140ff11c49796e7dd6f08b9912d0220637f83fb58754ad5c9be816af3af09fbadb47f60f70627b2b8e7732f6adf8e700121031202a8f1cb428470d172d93d71d12bf3be8aa54b30426b185a0938cd966bef94ffffffff03a0860100000000001976a914886fc94c1420d404103f32d1c812513857f6ecc988ac4042fc94000000001976a914ca0d5ec57c5eae9b5d362f59ef7ec7e1b2e8251d88ac0000000000000000326a3035b336aa5dbd78a6dd14f2dff528384bb7d0066125facf898b31a942e76d74626c083b3e3f5ba07a579924604dfd3a5600000000"
 }
 
 // Cheking status after the payment
+/*===============================*/
 {
   "status": "Verified"
 }
-
 // Cheking status after about 2 minutes
 {
   "status": "Confirmed"
@@ -446,6 +453,7 @@ $ bitmark-cli -n testing status -t 742fdff03ead89375b95d0c3e834ccaf5d6446b8dd489
 ```
 {% endcodetab %}
 {% endcodetabs %}
+
 
 ## Explore the transactions using the Registry website
 
@@ -461,7 +469,6 @@ CLI
   * [CLI command reference](cli/cli-command-reference.md)
   * [CLI quick setup](cli/cli-quick-setup.md)
 
-<br>
 
 SDK
   * [SDK Getting Started](sdk/getting-started.md)
