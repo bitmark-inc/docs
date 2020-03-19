@@ -3,7 +3,7 @@ title: Installation
 keywords: installation
 last_updated: 
 sidebar: mydoc_sidebar
-permalink: /essentials/Installation
+permalink: /essentials/installation
 folder: essentials
 ---
 
