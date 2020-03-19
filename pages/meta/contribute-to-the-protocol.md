@@ -143,7 +143,7 @@ Contact us at: [security@bitmark.com](mailto:security@bitmark.com)
 
 ## Updates to this Document
 
-Bitmark Inc. may update this document from time to time. We will maintain a [revision history](https://github.com/bitmark-inc/docs/tree/master/pages/meta/contribute-to-the-protocol.md) in our revision control repository.
+Bitmark Inc. may update this document from time to time. We will maintain a [revision history](https://github.com/bitmark-inc/legal) in our revision control repository.
 
 
 ## Questions
