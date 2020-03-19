@@ -17,10 +17,12 @@ BigTech
 Bitcoin
 bitcoin/S
 bitcoind
+bitcoin.conf
 bitmark-cli
 Bitmark/O
 bitmark/S
 bitmarkd
+bitmark-wallet.conf
 bitmark-webui
 bip39
 bip39-based
@@ -81,6 +83,7 @@ LevelDB
 Litecoin
 litecoin/S
 litecoind
+litecoin.conf
 Little-Endian
 livenet
 loopback
@@ -130,6 +133,7 @@ RFID
 RPC
 satoshi/S
 SDK
+SDK/O
 SHA-1
 SHA-2
 SHA-3

@@ -4,93 +4,94 @@ entries:
 - title: sidebar
   folders:
 
-  - title: Register & Control data
+  - title: Essentials
     output: web, pdf
     folderitems:
 
+    - title: Installation
+      url: /essentials/installation
+      output: web
+
     - title: Register data
-      url: /register-and-control-data/register-data
+      url: /essentials/register-data
       output: web
 
     - title: Control access
-      url: /register-and-control-data/control-access
+      url: /essentials/control-access
       output: web
 
     - title: Transfer rights
-      url: /register-and-control-data/transfer-rights
+      url: /essentials/transfer-rights
       output: web
 
     - title: Share rights
-      url: /register-and-control-data/share-rights
+      url: /essentials/share-rights
+      output: web
+
+    - title: Query the Registry
+      url: /essentials/query-the-registry
       output: web
 
     - title: Run a Node
-      url: /register-and-control-data/run-a-node
+      url: /essentials/run-a-node
       output: web
 
 
-  - title: Explore the Protocol Docs
+  - title: In-Depth
     output: web, pdf
     folderitems:
 
     - title: Blockchain Overview
-      url: /explore-the-protocol-docs/blockchain-overview
+      url: /in-depth/blockchain-overview
       output: web
 
     - title: Block Validation and Synchronization
-      url: /explore-the-protocol-docs/block-verification-and-synchronization
+      url: /in-depth/block-verification-and-synchronization
       output: web
 
     - title: Block Mining
-      url: /explore-the-protocol-docs/block-mining
+      url: /in-depth/block-mining
       output: web
 
     - title: Payment Verification
-      url: /explore-the-protocol-docs/payment-verification
+      url: /in-depth/payment-verification
       output: web
 
     - title: Storage Databases
-      url: /explore-the-protocol-docs/storage-databases
+      url: /in-depth/storage-databases
       output: web
 
     - title: Blockchain Security
-      url: /explore-the-protocol-docs/blockchain-security
+      url: /in-depth/blockchain-security
       output: web
 
     - title: RPC Communication
-      url: /explore-the-protocol-docs/rpc-communication
+      url: /in-depth/rpc-communication
       output: web
 
-    - title: Glossary
-      url: /explore-the-protocol-docs/glossary
-      output: web
 
-  - title: Read our Papers
+  - title: Meta
     output: web, pdf
     folderitems:
 
-    - title: Bitmark versus Ethereum
-      url: /read-our-papers/bitmark-eth-comparison
+    - title: Glossary
+      url: /meta/glossary
       output: web
 
     - title: White Papers
-      url: /read-our-papers/white-papers
+      url: /meta/white-papers
       output: web
 
-  - title: Contribute to the Protocol
-    output: web
-    folderitems:
+    - title: Bitmark versus Ethereum
+      url: /meta/bitmark-eth-comparison
+      output: web
 
     - title: Contribute to the Protocol
-      url: /contribute-to-the-protocol
+      url: /meta/contribute-to-the-protocol
       output: web
 
-  - title: Browse our FAQ
-    output: web, pdf
-    folderitems:
-
-    - title: Bitmark Protocol FAQ
-      url: /browse-our-faq/bitmark-protocol-faq
+    - title: FAQ
+      url: /meta/bitmark-protocol-faq
       output: web
 
 
