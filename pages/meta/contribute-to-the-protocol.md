@@ -18,8 +18,8 @@ _Last updated: 24 FEB 2020_
 
 We expect you probably got here from https://bitmark.com.  But just in case you didn’t, the explanation of the Bitmark Protocol is here:
 
-*   [https://bitmark.com/faq](../browse-our-faq/bitmark-protocol-faq)
-*   [https://bitmark.com/white-papers](../read-our-papers/white-papers)
+*   [https://bitmark.com/faq](bitmark-protocol-faq.md)
+*   [https://bitmark.com/white-papers](white-papers.md)
 
 The Bitmark Protocol software project is the means by which the peer-to-peer network implements the Bitmark Protocol.
 
@@ -143,7 +143,7 @@ Contact us at: [security@bitmark.com](mailto:security@bitmark.com)
 
 ## Updates to this Document
 
-Bitmark Inc. may update this document from time to time. We will maintain a [revision history](https://github.com/bitmark-inc/legal/commits/master/contribute.md) in our revision control repository.
+Bitmark Inc. may update this document from time to time. We will maintain a [revision history](https://github.com/bitmark-inc/docs/tree/master/pages/meta/contribute-to-the-protocol.md) in our revision control repository.
 
 
 ## Questions

@@ -9,7 +9,7 @@ folder: essentials/cli
 
 # CLI payment
 
-Bitmark transaction fees for transfers and share-related transactions can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies. 
+Bitmark transaction fees can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies. 
 
 The process is as follows:
 

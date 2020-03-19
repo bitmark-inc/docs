@@ -15,10 +15,11 @@ Users can interact with the Bitmark System using
 * The Bitmark CLI.
 
 ## SDK Installation and Configuration
+The Bitmark SDK enables data registration, rights transfer, and registry querying in the Bitmark property system. The SDK's simplified interface allows developers to easily build on the core Bitmark infrastructure by reading from and writing to the Bitmark blockchain.
 
 ### Install SDK Packages
 
-The Bitmark SDK can be installed for JavaScript, Swift, Java, or Go.
+The SDK can be installed for JavaScript, Swift, Java, or Go.
 
 {% codetabs %}
 {% codetab JS %}
@@ -111,13 +112,17 @@ func main() {
 
 ## CLI Installation and Setup
 
+The Bitmark CLI is a command line interface which submits transactions to its connected Bitmark Node via RPC. CLI users are able to register data, transfer rights, share rights as well as query the registry by submitting corresponding transactions dirrectly to the connected Node.
+
 ### Install the CLI
 
-CLI users interact with the Bitmark blockchain by submit a transaction to a node with which the CLI connects. 
+As the CLI needs to connect with a Node to communicate with the Bitmark Blockchain, the CLI installation is included in the Node installation. 
 
 Refer [Run a node](run-a-node.md) section for the instructions.
 
 ### Install the Bitmark wallet for payment
+
+In the Bitmark Property Systen, only the first bitmark issuance of a registered data is free of charge. All the other transactions require transaction fees. Bitmark transaction fees can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies. Because common wallets do not support attaching the Bitmark blockchain payment identifier to the BTC/LTC transactions, Bitmark provides an app called the Bitmark Wallet to pay for Bitmark transactions that come from the Bitmark CLI.
 
 The main actions required to use the Bitmark wallet are:
 
