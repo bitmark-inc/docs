@@ -112,7 +112,7 @@ func main() {
 
 ## CLI Installation and Setup
 
-The Bitmark CLI is a command line interface which submits transactions to its connected Bitmark Node via RPC. CLI users are able to register data, transfer rights, share rights as well as query the registry by submitting corresponding transactions dirrectly to the connected Node.
+The Bitmark CLI is a command line interface which submits transactions to its connected Bitmark Node via RPC. CLI users are able to register data, transfer rights, share rights as well as query the registry by submitting corresponding transactions directly to the connected Node.
 
 ### Install the CLI
 
@@ -122,7 +122,7 @@ Refer [Run a node](run-a-node.md) section for the instructions.
 
 ### Install the Bitmark wallet for payment
 
-In the Bitmark Property Systen, only the first bitmark issuance of a registered data is free of charge. All the other transactions require transaction fees. Bitmark transaction fees can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies. Because common wallets do not support attaching the Bitmark blockchain payment identifier to the BTC/LTC transactions, Bitmark provides an app called the Bitmark Wallet to pay for Bitmark transactions that come from the Bitmark CLI.
+In the Bitmark Property System, only the first bitmark issuance of a registered data is free of charge. All the other transactions require transaction fees. Bitmark transaction fees can be paid in either Bitcoin (BTC) or Litecoin (LTC) cryptocurrencies. Because common wallets do not support attaching the Bitmark blockchain payment identifier to the BTC/LTC transactions, Bitmark provides an app called the Bitmark Wallet to pay for Bitmark transactions that come from the Bitmark CLI.
 
 The main actions required to use the Bitmark wallet are:
 
