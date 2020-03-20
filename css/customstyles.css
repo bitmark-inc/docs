@@ -567,7 +567,7 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav > li {
-    margin: 1px 0;
+    margin: 1px 0 20px 0;
 }
 
 .nav > li li {
