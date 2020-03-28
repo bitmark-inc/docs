@@ -129,7 +129,7 @@ h2 {
 }
 
 .nav.navbar-nav li {
-  margin-right: 45px;
+  margin: 4px 45px 14px 0;
 }
 
 .nav.navbar-nav li:last-child{
