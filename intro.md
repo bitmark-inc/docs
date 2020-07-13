@@ -16,22 +16,22 @@ Bitmark is a technology company focused on establishing and protecting _your_ ri
 
 ## The Bitmark Core
 
-The **Bitmark Rights System** is our core technology, focused on allowing you to record, transfer, and use rights. It's a blockchain-based technology that uses an immutable and trustless ledger to permanent record the establishment and (potentially) transfer of rights of a variety of types. It's accessible through a mobile app and a command-line interface, while APIs in a variety of programming languages allow developers to create their own applications that interface with the Bitmark Rights System.
+The **Bitmark Rights System** is Bitmark's core technology; it's focused on allowing you to record, transfer, and use rights. It's a blockchain-based technology that uses an immutable and trustless ledger to permanently record the establishment and (potentially) transfer of rights of a variety of types. It's accessible through a mobile app and a command-line interface, while APIs in a number of programming languages allow developers to create their own applications that interface with the Bitmark Rights System.
 
 ## Hohlfeldian Rights
 
-Rights can be assessed based on The Hohfeldian Analytical System, which we feel is a powerful way to understand and categorize rights. It describes "molecular rights" based on the four elements that make them up. These elements are largely focused on "duties" (or obligations) that we have to one another.
+Rights can be assessed based on The Hohfeldian Analytical System. This powerful system constructs "molecular rights" through the four fundamental elements that make them up. These elements are largely focused on "duties" (or obligations) that we have to one another and to society, which we call "first-order rights"; as well as the ability to change those duties, which we call "second-order rights".
 
-   * *Privilege (or Liberty).* A first-level right. A privilege is based the lack of a duty to do the opposite. 
-      * _Example: Free Speech._ Most people have a privilege to say what they want; but they have a duty not to endanger others, so that privilege ends if they are inciting a riot or yelling "fire" in a crowded theatre.
-      * _Example: Freedom of Movement_ Most people have a privelege to move about freely; but a criminal may have a duty to instead stay in their house (house arrest) or in a jail (incarceration).
-   * *Claim.* A first-level right. A claim is based on someone else's duty to do something.
-      * _Example: Property Right._ A person has claim on a land (or house or object) because society has a duty to recognize and protect that claim.
+   * *Privilege (or Liberty).* A first-order right. A privilege is based the lack of a duty to do the opposite. 
+      * _Example: Free Speech._ Most people have a privilege to say what they want; but they have a duty not to endanger others, so the free-speech privilege ends if they are inciting a riot or yelling "fire" in a crowded theatre.
+      * _Example: Freedom of Movement_ Most people have a privilege to move about freely; but a criminal may have a duty to instead stay in their house (house arrest) or in a jail (incarceration), and a sick person may have a duty to stay away from others (quarantine).
+   * *Claim.* A first-order right. A claim is based on someone else's duty to do something.
+      * _Example: Property Right._ A person has a claim on land (or a house or an object) because society has a duty to recognize and protect that claim.
       * _Example: Royalty Right._ A creator or owner has a claim on a percentage of earnings because a publisher or distributor has a duty to pay those funds.
-   * *Authority (or Power).* A second-level right. An ability to change someone's privileges, claims, authorities, or immunities.
-      * _Example: Executive Right._ a group leader or company president has the right to decide what group members or employees can do within their organization.
-      * _Example: Legislative Right._ The US Congress has the right to make laws that affect the rights of people.
-   * Immunity. A second-level right. A second-level right. A protection against changes from authority (and against imappropriate claims).
+   * *Authority (or Power).* A second-order right. An ability to change someone's privileges, claims, authorities, or immunities.
+      * _Example: Executive Right._ a group leader or company president has the ability to decide what members or employees can do within their organization.
+      * _Example: Legislative Right._ The US Congress has the ability to make laws that affect the rights of people.
+   * Immunity. A second-order right. A protection against changes from authority (and against imappropriate claims).
       * _Example: Inalienable Right._ Many societies recognize inalienable rights that are fundamental and can't be taken away. In the US, these include the rights to life, liberty, and pursuit of happiness.
       * _Example: Non-discrimination Right._ Modern societies tend to recognize the right of people to not have their rights abridged due to race, religion, sex, or other innate characteristics.
       
@@ -39,33 +39,32 @@ The Bitmark Rights System initially focused on property rights, but was quickly 
 
 ## Bitmark Components
 
-The Bitmark Rights System is build aroun three major components:
+The Bitmark Rights System is composed of three major components:
 
 *I: Rights.*
 
-A recorded set of "Rights Capabilities". These are descriptions of what rights (capabilities) are given to which entities for which things. The Rights Capabilities are maintained autonomously on a distributed blockchain-based ledger, without the need for a centralized server, and can be delegated. 
+A recorded set of "Rights Capabilities". These are descriptions of what rights (capabilities) are given to which entities for which things. Rights Capabilities are maintained autonomously on a distributed blockchain-based ledger, without the need for a centralized server, and can be delegated. 
 
-Rights in the system could include: privileges to use other components of the system (such as the enclave); claims over instances of those components; administrative authority to change those privileges for certain components; or immunities from have priveleges changed. They could also describe rights in the physical world.
+Rights in the system could include: privileges to use other components of the system (such as the Enclave); claims over instances of those components; administrative authority to change those privileges for certain components; or immunities from have privileges changed. They could also describe Rights in the physical world.
 
 *II: Enclaves.* 
 
 Personal and community data stores, protected through encryption. 
 
-The Rights system defines: who can read from, write to, delete, or otherwise use an enclave; who owns an enclave; who has duties due from the use of an enclave; who has the right to change rights on an enclave; and who can never lose their rights on an enclave.
+The Rights system integrates with Enclaves to define: who can read from, write to, delete, or otherwise use an Enclave; who owns an Enclave; who has claims due from the use of an Enclave; who has the right to change Rights on an Enclave; and who can never lose their Rights on an Enclave.
 
 *III: Charters.*
 
 A set of tools and options associated with a community.
 
-These include a default set of rights for a community as well as developer resources for creating and adjusting molecular right packages and other tools such as the Charter social graph.
+These include a default set of rights for a community, developer resources for creating and adjusting molecular right packages, and other tools such as the Charter social graph.
 
 ## Bitmark Apps
 
 Bitmark has developed several user-facing apps based on these components:
 
-   * *OurBeat.* A community and rights platform for music beat makers. It stores beats in Enclaves and records specifically rights for them, both for others within the community to freely reuse them and for people outside of the community to license them.
-   * *A2P.* A community and rights platform for visual digital artists. It allows them to sell collectible digital prints, records rights, and retains their providence using the blockchain.
-   * *Autonomy.* A community and rights platform for public health. It allows community members to store health information in personal and community enclaves while ensuring that their retain authority over that data.
+   * *OurBeat.* A community and rights platform for music beat makers. It stores beats in Enclaves and records specific Rights for them — allowing others within the community to freely reuse beats and for people outside of the community to license them.
+   * *A2P.* A community and rights platform for visual digital artists. It allows them to sell collectible digital prints, records Rights, and retain their providence using the blockchain.
+   * *Autonomy.* A community and rights platform for public health. It allows community members to store health information in personal and community Enclaves while ensuring that they retain authority over that data.
 
-_The following documents provide support on using the blockchain that is at the core of the Bitmark Rights System._
-
+_The following documents provide support on recording Rights on the blockchain that is at the core of the Bitmark Rights System._
