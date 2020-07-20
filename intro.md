@@ -14,6 +14,12 @@ Rights are pillars of our society. They're fundamental to civilization. They det
 
 Bitmark is a technology company focused on establishing and protecting _your_ rights.
 
+## The Problem & Our Solution
+
+Unfortunately, rights are being eroded as we transform from a physical society to a digital society. Music, books, and movies are being released online, but there's no secondary market: once a creator removes something from sale, it's gone forever. Your health records are being recorded online, but it's often hard or impossible for other healthcare practicioners to access those records, and _you_ may not be able to do so at all. You share information about yourself to social media networks, but you have no control over the corporations that are reselling your information to advertising networks and other data collectors. 
+
+That's where the Bitmark Rights System comes in. Its goal is to protect your rights in the digital world, so that you don't lose what should be your inalienable privileges just because you went online.
+
 ## The Bitmark Core
 
 The **Bitmark Rights System** is Bitmark's core technology; it's focused on allowing you to record, transfer, and use rights. It's a blockchain-based technology that uses an immutable and trustless ledger to permanently record the establishment and (potentially) transfer of rights of a variety of types. It's accessible through a mobile app and a command-line interface, while APIs in a number of programming languages allow developers to create their own applications that interface with the Bitmark Rights System.
@@ -67,4 +73,8 @@ Bitmark has developed several user-facing apps based on these components:
    * *A2P.* A community and rights platform for visual digital artists. It allows them to sell collectible digital prints, records Rights, and retain their provenance using the blockchain.
    * *Autonomy.* A community and rights platform for public health. It allows community members to store health information in personal and community Enclaves while ensuring that they retain authority over that data.
 
-_The following documents provide support on recording Rights on the blockchain that is at the core of the Bitmark Rights System._
+## A Tool for Developers
+
+Bitmark's apps are intended as great examples of how to use the Bitmark Rights System to create communities, to protect the rights of their participants, and to do so in a way that benefits everyone. But, they're just the tip of the iceberg. The following documents open up these possibilities to you, the developers. They detail how the Bitmark Rights System can be used to record Rights on the blockchain, to create social graphs, and to link to enclaves.
+
+Rights are the basis not just of individual liberties on the internet, but also of trade, commerce, and other economy. By creating rights-based communities of your own, you too can participate in the international data ecoystem.
