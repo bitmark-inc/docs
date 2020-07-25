@@ -16,13 +16,15 @@ Bitmark is a technology company focused on establishing and protecting _your_ ri
 
 ## The Problem & Our Solution
 
-Unfortunately, rights are being eroded as we transform from a physical society to a digital society. Music, books, and movies are being released online, but there's no secondary market: once a creator removes something from sale, it's gone forever. Your health records are being recorded online, but it's often hard or impossible for other healthcare practicioners to access those records, and _you_ may not be able to do so at all. You share information about yourself to social media networks, but you have no control over the corporations that are reselling your information to advertising networks and other data collectors. 
+Unfortunately, rights are being eroded as we transform from a physical society to a digital society. Music, books, and movies are being released online, but there's no secondary market: once a creator removes something from sale, it's gone forever. Your health records are being recorded digitally, but it's often hard or impossible for other healthcare practicioners to access those records, and _you_ may not be able to do so at all. You share information about yourself to social media networks, but you have no control over the corporations that are reselling your information to advertising networks and other data collectors. 
 
-That's where the Bitmark Rights System comes in. Its goal is to protect your rights in the digital world, so that you don't lose what should be your inalienable privileges just because you went online.
+Worse, we're not thinking about how we could be using the advantages of the electronic world to expand on traditional rights. We could be engineering rights that are fully autonomous: dynamically controlled by the people who they apply to and their agents. As we take our society digital, there are vast possibilities to create a new era of programmable rights.
+
+That's where the Bitmark Rights System comes in. Its goal is to give you a full array of rights in the digital world: protecting your inalienable privileges and using the power of the digital world to take them to the next level.
 
 ## The Bitmark Core
 
-The **Bitmark Rights System** is Bitmark's core technology; it's focused on allowing you to record, transfer, and use rights. It's a blockchain-based technology that uses an immutable and trustless ledger to permanently record the establishment and (potentially) transfer of rights of a variety of types. It's accessible through a mobile app and a command-line interface, while APIs in a number of programming languages allow developers to create their own applications that interface with the Bitmark Rights System.
+The **Bitmark Rights System** is Bitmark's core technology; it's focused on allowing you to record, transfer, use, and program rights. It's a blockchain-based technology that uses an immutable and trustless ledger to permanently record the establishment and (potentially) transfer of rights of a variety of types. It's accessible through a mobile app and a command-line interface, while APIs in a number of programming languages allow developers to create their own applications to interface with the Bitmark Rights System.
 
 ## Hohlfeldian Rights
 
@@ -35,13 +37,13 @@ Rights can be assessed based on The Hohfeldian Analytical System. This powerful 
       * _Example: Property Right._ A person has a claim on land (or a house or an object) because society has a duty to recognize and protect that claim.
       * _Example: Royalty Right._ A creator or owner has a claim on a percentage of earnings because a publisher or distributor has a duty to pay those funds.
    * *Authority (or Power).* A second-order right. An ability to change someone's privileges, claims, authorities, or immunities.
-      * _Example: Executive Right._ a group leader or company president has the ability to decide what members or employees can do within their organization.
       * _Example: Legislative Right._ The US Congress has the ability to make laws that affect the rights of people.
-   * Immunity. A second-order right. A protection against changes by rights of authority (and against imappropriate claims).
-      * _Example: Inalienable Right._ Many societies recognize inalienable rights that are fundamental and can't be taken away. In the US, these include the rights to life, liberty, and pursuit of happiness.
+      * _Example: Programmable Right._ An online agent could have the ability to change privileges, claims, immunties, or authority based on e-commerce.
+   * Immunity. A second-order right. A protection against changes (and against imappropriate claims) by rights of authority.
+      * _Example: Inalienable Right._ Many societies recognize inalienable rights that are fundamental and can't be taken away. In the US, these include the rights to life, liberty, and the pursuit of happiness.
       * _Example: Non-discrimination Right._ Modern societies tend to recognize the right of people to not have their rights abridged due to race, religion, sex, or other innate characteristics.
       
-The Bitmark Rights System initially focused on property rights, but was quickly expanded to royalty rights. Its ledger may be used to record molecular rights made up of any of these elements.
+The Bitmark Rights System initially focused on property rights, but was quickly expanded to royalty rights. Its ledger may be used to record molecular rights made up of any of these elements, and its API may be used to program these rights.
 
 ## Bitmark Components
 
@@ -49,9 +51,9 @@ The Bitmark Rights System is composed of three major components:
 
 *I: Rights.*
 
-A recorded set of "Rights Capabilities". These are descriptions of what rights (capabilities) are given to which entities for which things. Rights Capabilities are maintained autonomously on a distributed blockchain-based ledger, without the need for a centralized server, and can be delegated. 
+A recorded set of "Rights Capabilities". These are descriptions of what rights (capabilities) are given to which entities for which things. Rights Capabilities are maintained autonomously on a distributed blockchain-based ledger, without the need for a centralized server, and can be delegated. These Rights Capabilities are also programmable. They can be monitored and modified by agents, creating a dynamic rights ecosystem totally unlike that known in the physical world.
 
-Rights in the system could include: privileges to use other components of the system (such as the Enclave); claims over instances of those components; administrative authority to change those privileges for certain components; or immunities from have privileges changed. They could also describe Rights in the physical world.
+Rights that can be programmed in the system could include: privileges to use other components of the system (such as the Enclave); claims over instances of those components; administrative authority to change those privileges for certain components; or immunities from having privileges changed. They could also describe Rights in the physical world.
 
 *II: Enclaves.* 
 
