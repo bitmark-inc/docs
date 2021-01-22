@@ -387,22 +387,58 @@ Bitmark.get(bitmarkId, new Callback1<GetBitmarkResponse>() {
 
 To list the bitmarks which are issued by the specific account number. The issuer can increase the quality of each returned bitmark.
 
-<!-- TODO: examples -->
+<!-- TODO: examples for go, swift and android -->
+{% codetabs %}
+{% codetab JS %}
+````javascript
+let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder().issuedBy(account.getAccountNumber()).build();
+let response = await Bitmark.list(bitmarkQueryParams); // false: not include asset, true: include asset
+let bitmarks = response.bitmarks;
+````
+{% endcodetab %}
+{% endcodetabs %}
 
 #### bitmarks owned by the specific owner
 
 To list the bitmarks which are currently owned by the specific account number. The owner can transfer the returned bitmarks to any other receiver.
 
-<!-- TODO: examples -->
+<!-- TODO: examples for go, swift and android -->
+{% codetabs %}
+{% codetab JS %}
+````javascript
+let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder().ownedBy(account.getAccountNumber()).build();
+let response = await Bitmark.list(bitmarkQueryParams); // false: not include asset, true: include asset
+let bitmarks = response.bitmarks;
+````
+{% endcodetab %}
+{% endcodetabs %}
 
 #### bitmarks offered from the specific sender
 
 A sender can query the bitmarks which are offered by this sender. The sender can take action on these bitmarks (cancel an offer).
 
-<!-- TODO: examples -->
+<!-- TODO: examples for go, swift and android -->
+{% codetabs %}
+{% codetab JS %}
+````javascript
+let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder().offerFrom(account.getAccountNumber()).build();
+let response = await Bitmark.list(bitmarkQueryParams); // false: not include asset, true: include asset
+let bitmarks = response.bitmarks;
+````
+{% endcodetab %}
+{% endcodetabs %}
 
 #### bitmarks offered to the specific receiver
 
 To list the bitmarks which are offered to this receiver. The receiver can take actions on these bitmarks (accept or reject an offer).
 
-<!-- TODO: examples -->
+<!-- TODO: examples for go, swift and android -->
+{% codetabs %}
+{% codetab JS %}
+````javascript
+let bitmarkQueryParams = Bitmark.newBitmarkQueryBuilder().offerTo(account.getAccountNumber()).build();
+let response = await Bitmark.list(bitmarkQueryParams); // false: not include asset, true: include asset
+let bitmarks = response.bitmarks;
+````
+{% endcodetab %}
+{% endcodetabs %}
