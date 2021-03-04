@@ -22,7 +22,7 @@ The simplest answer is that Bitmark was built for digital property management, w
 | Token Creation | Bitmark | ERC-20 |
 |----------------|---------|--------|
 | Throughput: Create Token Ownership     | 66,666/hour   | 1,200/hour
-| Cost: Create 1 Type of Token Ownership | $0.297        | $6.343
+| Cost: Create 1 Type of Token Ownership | $0.152        | $5.013
 | Storage: Issue Token                   | 1,077 bytes   | 6,399 bytes
 
 <br>
@@ -30,7 +30,7 @@ The simplest answer is that Bitmark was built for digital property management, w
 | Token Transference | Bitmark | ERC-20 |
 |--------------------|---------|--------|
 | Throughput: Transfer Token             | 100,000/hour  | 42,480/hour
-| Cost: Transfer Token                   | $0.223        | $0.769
+| Cost: Transfer Token                   | $0.114        | $0.226
 
 <br>
 
@@ -40,7 +40,7 @@ The simplest answer is that Bitmark was built for digital property management, w
 | Token Creation | Bitmark | ERC-721 |
 |----------------|---------|---------|
 | Throughput: Create Token Ownership     | 100,000/hour  | 8,880/hour
-| Cost: Create 1 Token Ownership         | $0.148        | $1.019
+| Cost: Create 1 Token Ownership         | $0.076        | $0.805
 | Storage: Token                         | 8,602 bytes   | 47,195 bytes
 
 <br>
@@ -48,7 +48,7 @@ The simplest answer is that Bitmark was built for digital property management, w
 | Token Transference | Bitmark | ERC-721 |
 |--------------------|---------|---------|
 | Throughput: Transfer Token             | 121,200/hour  | 12,720/hour
-| Cost: Transfer Token                   | $0.223        | $0.731
+| Cost: Transfer Token                   | $0.114        | $0.577
 
 <br>
 
